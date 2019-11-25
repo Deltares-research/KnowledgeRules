@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>52230210</EoLpagenr>
+			<LatName>Barbus barbus</LatName>
+			<CommonNames>
+				<Name name = "Barbeel" language = "NL"/>			
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name ="HSI">
+			<System name="Voortplanting Barbeel (grindbedden)">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+Deze dosis-effect relaties zijn niet gevalideerd.
+Toepasbaarheid
+Deze dosis-effect relaties zijn bepaald aan de hand van literatuur die gebaseerd op metingen afkomstig van het verspreidingsgebied van de Barbeel. Hierdoor zijn de rekenregels niet op een locatie toegespitst en dienen ze voor gebruik gekalibreerd te worden op het te onderzoeken gebied.
+Voorbeeldproject
+Er is geen voorbeeldproject beschikbaar.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Substraattype">
+						<type>categorical</type>
+						<layername>"Substraattype"</layername>
+						<unit>"Substraat"</unit>
+						<statistic>average</statistic>
+						<description>"Meest voorkomende substraattype in het paaigebied gedurende de paaitijd."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="waterplanten " HSI="0.2"/>
+							<parameter cat="klei/modder/silt (kleiner dan 0.06 mm) " HSI="0"/>
+							<parameter cat="zand ( 0.06-0.5 mm) " HSI="0.5"/>
+							<parameter cat="grof zand (0.5-4 mm ) " HSI="0.8"/>
+							<parameter cat="grind (4-32 mm) " HSI="1"/>							
+							<parameter cat="kiezels (32-64 mm) " HSI="0.8"/>
+							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="0.2"/>
+						</valuesCategorical>
+					</ResponseCurve>					
+					<ResponseCurve name="Percentage modder of slib">
+						<type>scalar</type>
+						<layername>"Percentage modder of slib"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage modder of slib (kleiner dan 0.06 mm) in het paaisubstraat gedurende de paaitijd."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="25" HSI="0"/>
+							<parameter value="30" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Diameter grindbed">
+						<type>scalar</type>
+						<layername>"Diameter grindbed"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde diameter van vlakke grindbedden zonder vegetatie gedurende de paaitijd."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="1" HSI="0"/>
+							<parameter value="3" HSI="1"/>
+							<parameter value="7" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Diepte">
+						<type>scalar</type>
+						<layername>"Diepte"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde diepte van grindbedden gedurende de paaitijd."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="20" HSI="0"/>
+							<parameter value="30" HSI="1"/>
+							<parameter value="40" HSI="1"/>
+							<parameter value="100" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Debietfluctuatie">
+						<type>scalar</type>
+						<layername>"Debietfluctuatie"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Maximale verschil in waterpeil in het paaigebied gedurende de paai en de ontwikkeling van de eieren en dooierzaklarven (tot 3 weken na paai)"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="40" HSI="0"/>
+							<parameter value="70" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Stroomsnelheid">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde stroomsnelheid boven grindbedden in het paaigebied gemeten op 0.6 meter diepte gedurende de paaitijd."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="10" HSI="0"/>
+							<parameter value="25" HSI="1"/>
+							<parameter value="75" HSI="1"/>
+							<parameter value="175" HSI="0"/>
+							<parameter value="200" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zuurstofgehalte">
+						<type>scalar</type>
+						<layername>"Zuurstofgehalte"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde minimum zuurstofgehalte van het water in het paaigebied gedurende de paai en de ontwikkeling van eieren en dooierzaklarven (tot 3 weken na de paai) "</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="5" HSI="0"/>
+							<parameter value="9" HSI="1"/>
+							<parameter value="12" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperatuur (paai)">
+						<type>scalar</type>
+						<layername>"Temperatuur (paai)"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde watertemperatuur in het paaigebied gedurende de paaitijd"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="8" HSI="0"/>
+							<parameter value="13" HSI="1"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="29" HSI="0"/>
+							<parameter value="35" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperatuur (eieren)">
+						<type>scalar</type>
+						<layername>"Temperatuur (eieren)"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde maximale watertemperatuur in het paaigebied gedurende de ontwikkeling van de eieren (tot 2 weken na de paai)."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="8" HSI="0"/>
+							<parameter value="13" HSI="1"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="22" HSI="0"/>
+							<parameter value="35" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+			<System name="Larven en juvenielen Barbeel (oeverzones)">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+Deze dosis-effect relaties zijn niet gevalideerd.
+Toepasbaarheid
+Deze dosis-effect relaties zijn bepaald aan de hand van literatuur die gebaseerd op metingen afkomstig van het verspreidingsgebied van de Barbeel. Hierdoor zijn de rekenregels niet op een locatie toegespitst en dienen ze voor gebruik gekalibreerd te worden op het te onderzoeken gebied.
+Voorbeeldproject
+Er is geen voorbeeldproject beschikbaar.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Substraattype">
+						<type>categorical</type>
+						<layername>"Substraattype"</layername>
+						<unit>"Substraat"</unit>
+						<statistic>average</statistic>
+						<description>"Meest voorkomende substraattype in de ondiepe oeverzones gedurende de zomer."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="waterplanten " HSI="1"/>
+							<parameter cat="klei/modder/silt (kleiner dan 0.06 mm) " HSI="1"/>
+							<parameter cat="zand ( 0.06-0.5 mm) " HSI="0.8"/>
+							<parameter cat="grof zand (0.5-4 mm ) " HSI="0.6"/>
+							<parameter cat="grind (4-32 mm) " HSI="0.5"/>							
+							<parameter cat="kiezels (32-64 mm) " HSI="0.4"/>
+							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="0.3"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+					<ResponseCurve name="Diepte">
+						<type>scalar</type>
+						<layername>"Diepte"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde diepte van de oeverzoens gedurende de zomer."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="0.2" HSI="1"/>
+							<parameter value="1" HSI="1"/>
+							<parameter value="3.2" HSI="0"/>
+							<parameter value="4" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Stroomsnelheid">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde stroomsnelheid in ondiepe oeverzones gedurende de zomer"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="30" HSI="0.2"/>
+							<parameter value="60" HSI="0"/>
+							<parameter value="70" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Beschutting oevers">
+						<type>scalar</type>
+						<layername>"Beschutting oevers"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage van de oever met een uitgeholde vorm (erosie-oevers) of met overhangende bomen, struiken of kruidachtige planten, of met in het water hangende wortels, gedurende de zomer."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="20" HSI="0"/>
+							<parameter value="80" HSI="1"/>
+							<parameter value="100" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zuurstofgehalte">
+						<type>scalar</type>
+						<layername>"Zuurstofgehalte"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde minimum zuurstofgehalte in ondiepe oeverzones gedurende de zomer"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="2" HSI="0"/>
+							<parameter value="9" HSI="1"/>
+							<parameter value="11" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Watertemperatuur">
+						<type>scalar</type>
+						<layername>"Watertemperatuur"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="13" HSI="0"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="25" HSI="1"/>
+							<parameter value="30" HSI="0"/>
+							<parameter value="35" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+			<System name="Adulte Barbeel (hoofdstroom rivier)">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+Deze dosis-effect relaties zijn niet gevalideerd.
+Toepasbaarheid
+Deze dosis-effect relaties zijn bepaald aan de hand van literatuur die gebaseerd op metingen afkomstig van het verspreidingsgebied van de Barbeel. Hierdoor zijn de rekenregels niet op een locatie toegespitst en dienen ze voor gebruik gekalibreerd te worden op het te onderzoeken gebied.
+Voorbeeldproject
+Er is geen voorbeeldproject beschikbaar.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Substraattype">
+						<type>categorical</type>
+						<layername>"Substraattype"</layername>
+						<unit>"Substraat"</unit>
+						<statistic>average</statistic>
+						<description>"Hoofdbestanddeel van het bodemsubstraat in de hoofdstroom van de rivier."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="waterplanten " HSI="0.2"/>
+							<parameter cat="klei/modder/silt (kleiner dan 0.06 mm) " HSI="0"/>
+							<parameter cat="zand ( 0.06-0.5 mm) " HSI="0.5"/>
+							<parameter cat="grof zand (0.5-4 mm ) " HSI="0.8"/>
+							<parameter cat="grind (4-32 mm) " HSI="1.0"/>							
+							<parameter cat="kiezels (32-64 mm) " HSI="1.0"/>
+							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+					<ResponseCurve name="Diepte index">
+						<type>scalar</type>
+						<layername>"Diepte index"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"Mate waarin afwisselend diepe en ondiepe delen aanwezig zijn in de hoofdstroom gedurende de zomer. De index wordt berekend aan de hand van de volgende formule: Diepte index = Log( % ondiep / % diep ); % ondiep = % kleiner dan 0.7 meter; % diep = % groter dan 1.5 meter."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="0.18" HSI="1"/>
+							<parameter value="0.37" HSI="0.75"/>
+							<parameter value="0.6" HSI="0.5"/>
+							<parameter value="0.95" HSI="0.25"/>
+							<parameter value="1.28" HSI="0.1"/>
+							<parameter value="2" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Verhouding dieptes">
+						<type>scalar</type>
+						<layername>"Verhouding dieptes"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage van het wateroppervlak dat een diepte heeft van kleiner dan 0.7 meter of groter dan 1.5 meter."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="67" HSI="1"/>
+							<parameter value="100" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Stroomsnelheid">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde stroomsnelheid in de hoofdstroom over het gehele jaar, gemeten op 0.6 meter diepte."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="10" HSI="1"/>
+							<parameter value="25" HSI="1"/>
+							<parameter value="50" HSI="0"/>
+							<parameter value="60" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Index stroomsnelheid">
+						<type>scalar</type>
+						<layername>"Index stroomsnelheid"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer. Stroomsnelheid index = log( % langzaamstromend / % snelstromend ); % langzaamstromend = % kleiner dan 20 cm/s; % snelstromend = % groter dan 40 cm/s"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="0.18" HSI="1"/>
+							<parameter value="0.37" HSI="0.75"/>
+							<parameter value="0.6" HSI="0.5"/>
+							<parameter value="0.95" HSI="0.25"/>
+							<parameter value="1.28" HSI="0.1"/>
+							<parameter value="2" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Verdeling stroomsnelheid">
+						<type>scalar</type>
+						<layername>"Verdeling stroomsnelheid"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="67" HSI="1"/>
+							<parameter value="100" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Beschutting oevers">
+						<type>scalar</type>
+						<layername>"Beschutting oevers"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage van de oever met beschutting in de vorm van overhangende bomen, struiken of kruidachtige planten, in het water hangende wortels, holten en spleten tussen rotsen, onderwater liggende boomstronken, overhangende vorm van de oever (erosie-oever) of bruggen."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="20" HSI="0"/>
+							<parameter value="80" HSI="1"/>
+							<parameter value="100" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zuurstofgehalte">
+						<type>scalar</type>
+						<layername>"Zuurstofgehalte"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde minimum zuurstofgehalte in de hoofdstroom gedurende de zomer"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="3.5" HSI="0"/>
+							<parameter value="5" HSI="0.6"/>
+							<parameter value="7" HSI="1"/>
+							<parameter value="11" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Watertemperatuur">
+						<type>scalar</type>
+						<layername>"Watertemperatuur"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="15" HSI="0"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="25" HSI="1"/>
+							<parameter value="30" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Trofiegraad">
+						<type>categorical</type>
+						<layername>"Trofiegraad"</layername>
+						<unit>"Trofiegraad"</unit>
+						<statistic>average</statistic>
+						<description>"Trofiegraad van de rivier."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="oligotroof / zwak eutroof" HSI="1"/>
+							<parameter cat="matig eutroof" HSI="0.5"/>
+							<parameter cat="sterk eutroof " HSI="0"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[
+Habitat beschrijving
+Algemeen voorkomen
+Het verspreidingsgebied van de barbeel loopt vanaf het stroomgebied van de Rhone en de Donau in het Zuiden, tot aan de rivieren de Dnieper en de Neman in het noorden en oosten van Europa. In Engeland is de barbeel alleen inheems in sommige rivieren in het zuid-oosten, maar door uitzetting komt de soort nu ook voor in stroomgebieden van de Severn, Avon, Thames, Welland en Trent. In België komt de barbeel voor in de Maas en enkele zijrivieren hiervan zoals de Ourthe, Semois, Lesse, Sambre en Ambleve. De gehele levenscyclus speelt zich af in het zoete water. #1. 
+In Nederland werd de Barbeel vroeger waargenomen in de IJssel, de Lek, de Rijn bij Arnhem en de Maas. De barbeel was talrijk in de Limburgse Maas en minder algemeen voorkomend in de Rijn, de Waal en de Geldersche IJssel. Door de bouw van stuwen en door de kanalisatie en normalisatie van de rivieren is de barbeelstand na WO-II afgenomen #1. 
+Voedselhabitat en strategie
+De barbeel is een typische bodemvis die zijn voedsel zoekt tussen de stenen en het zand gedurende de schemer en de nacht. Met de bekdraden en de dikke uitstulpbare lippen wordt het voedsel gevoeld en geproefd. De reukzin is hierbij eveneens van belang #1. 
+De barbeel is een omnivore vis met een voorkeur voor dierlijk voedsel. Het voedsel bestaat uit insektenlarven, wormen, kreeftachtigen, weekdieren en soms ook kleine vis of visbroed. Plantendelen en organisch afval worden eveneens gegeten. De jonge barbelen (0+) voeden zich met zoöplankton #1.
+Reproductie en migratie
+De barbeel is een soort die onder de kaperachtigen het meest trekt in de rivieren. Een trekkende barbeel kan zelfs een afstand van 300 km in 37 dagen afleggen in stroomopwaartse richting. In het voorjaar zoeken de vissen de hoger gelegen gedeelten in de rivier op die zij in het najaar door de grotere waterafvoer hebben moeten verlaten. In het najaar is er juist een tendens om rustiger en dieper water op te zoeken om te overwinteren. Deze migraties vinden plaats om te kunnen paaien op vlakke kiezelbeddingen met een flinke stroming. 
+De mannetjes zijn na 3 a 4 jaar geslachtsrijp en de vrouwtjes pas veel later (na 8 jaar is 50% geslachtsrijp). De paaitijd loopt van mei tot begin juli. In het voorjaar trekken volwassen barbelen stroomopwaarts. Deze trek wordt veroorzaakt door een voortdurend stijgende watertemperatuur, en mogelijk ook door een afnemend debiet. Bij een temperatuur van 14 tot 18 graden Celsius wordt er gepaaid. Dit gebeurt op een diepte van 30-40 cm op een vlakke bodem van stenen en grind met een flinke stroming. Deze grindbedden liggen doorgaans in of net stroomopwaarts van de monding van een zijriviertje. De trek naar deze gebieden gebeurt bij schemer en in de nacht. Het paaien gebeurt gedeeltelijk ook overdag. Hierbij wordt de bodem flink omgewoeld #1.
+De eieren hebben een kleverig omhulsel waardoor ze aan het grind en zand blijven plakken. Ze hebben een goudgele kleur en een diameter van 2 mm. Na 1 of 2 weken komen de eieren uit, afhankelijk van de watertemperatuur. Bij 6 tot 8 graden Celsius komen de eieren na 13-16 dagen uit. Bij 15-22 graden Celsius komen de eieren na 4 tot 7 dagen uit #1.
+De dooierzaklarven zijn lichtschuw en verbergen zich tussen de kiezelstenen voor een periode van ongeveer 10 dagen. Deze periode hangt samen met de watertemperatuur, waarbij een hogere temperatuur (20 graden Celsius) zorgt voor een kortere periode (6 dagen). Wanneer de dooierzak geresorbeerd is, zwemmen de larven vrij in het water en zijn dan niet meer lichtschuw. Ze voeden zich met zoöplankton #1.
+In de ondiepe maar goed doorstroomde oeverzones zwemmen de larven vervolgens stroomopwaarts naar rustiger en dieper water. Deze migratie vindt in de schemering en 's nachts plaats. Overdag houden de juvenielen zich schuil voor predatoren. Na ongeveer 30 dagen na de bevruchting wordt het alevin (juveniel) stadium bereikt, althans in kweekexperimenten bij een gemiddelde temperatuur van 22,6 graden Celsius #1.
+Leeftijd en mortaliteit
+De maximale leeftijd van de Barbeel is 25 jaar. De groei van de barbeel is over het algemeen langzaam. De groei van de mannetjes is trager dan van de vrouwtjes. De maximale lengte is 70 cm bij een gewicht van 3 kilo. De groeisnelheid van de barbeel verschilt per geografisch gebied. In Zuid Duitsland en in het stroomgebied van de Donau groeit de Barbeel het snelst, waardoor een maximale lengte van 1 meter bereikt kan worden. In Engeland en België is de groei trager. In Zuid- Frankrijk (Rhone-gebied) is de groei het traagst. Deze groeiverschillen hebben waarschijnlijk niet direct te maken met de voedselsituatie maar met genetische verschillen: door isolatie van bepaalde populaties zijn ondersoorten ontstaan. De groei is dichtheidsafhankelijk gebleken in de rivier de Severn in Engeland. De groei kan sterk vertraagd worden door de darmparasiet Pomphothyncus laevis. Een andere ziekte die bij barbelen voorkomt is een vorm van builenpest, veroorzaakt door de bacterie Myxobus pferifferi #1. 
+Milieu voorwaarden
+De barbeel komt voor in de zogenoemde barbeelzone van de rivieren. Deze barbeelzone bevindt zich in de middenloop van de rivieren en wordt gekenmerkt door een matige tot krachtige stroming en een schone bodem met zand, grind en keien. Het water moet er wel zuurstofrijk zijn en de temperatuur moet ongeveer 15-22 graden Celsius in de zomer bedragen. 
+n het algemeen prefereren barbelen het midden van de stroom. De grotere exemplaren komen in de diepere stroomdelen voor, de kleinere zijn meer te vinden in de ondiepere, snelstromende gedeelten. Er treedt geen schoolvorming op maar barbelen komen wel altijd voor in kleine groepen van enkele individuen #1.
+De belangrijkste redenen dat bepaalde barbeelpopulaties zijn verdwenen zijn verontreiniging van het water en fysische veranderingen in het leefmilieu. Door organische en allerlei chemische verontreiniging zijn al vele populaties uit rivieren verdwenen. De barbeel is over het algemeen zeer gevoelig voor thermische verontreiniging, evenals hoge concentraties chlorides, sulfaten, detergenten en organo-chlooor verbindingen. Verder zijn door kanalisering en bedijking stroomversnellingen en grindbedden verdwenen. Eveneens is er minder variatie in diepte en stroomsnelheid dan voorheen. Ook de bouw van onpasseerbare stuwen is nadeling: hierdoor wordt de paaimigratie naar stroomopwaarts gelegen gebieden en rekolonisatie van andere rivieren bemoeilijkt #1. 
+Dosis-effect relaties
+De Dosis-effect relaties zijn opgesteld per levensvorm van de Barbeel. Hierin is onderscheid gemaakt tussen de voortplanting, larven en juveniel en adult. 
+]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Bakker, H.D." year="1992" title="Habitat Geschiktheid Index Model. De Barbeel Barbus barbus L." journal="Organisatie ter Verbetering van de Binnevisserij" identification="juli 1992">
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

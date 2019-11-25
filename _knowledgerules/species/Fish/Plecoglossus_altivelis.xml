@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>994386</EoLpagenr>
+			<LatName>Plecoglossus altivelis</LatName>
+			<CommonNames>
+				<Name name="Ayu" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Japan" id="1861060"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2000-01-01</StartDate>
+						<EndDate>2019-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="ENG">
+						<text><![CDATA[TO BE FILLED]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="DissolvedOxygen">
+						<type>scalar</type>
+						<layername>"DOMax2"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>minimum</statistic>
+						<description>"Minimum tolerable dissolved oxygen level for the Ayu fish species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2019-06-20</date>
+						<references>
+							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+								<html></html>
+							</reference>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="5" HSI="0"/>
+							<parameter value="7" HSI="1"/>
+							<parameter value="20" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="FlowVelocity">
+						<type>scalar</type>
+						<layername>"Max_flow_velocity"</layername>
+						<unit>"m/s"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum tolerable flow velocity for the Ayu fish species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2019-06-20</date>
+						<references>
+							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+								<html></html>
+							</reference>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="0.2" HSI="1"/>
+							<parameter value="0.4" HSI="1"/>
+							<parameter value="3" HSI="0"/>
+							<parameter value="5" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="SuspendedMatter">
+						<type>scalar</type>
+						<layername>"Mean_suspended_sediment"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>mean</statistic>
+						<description>"Tolerable suspended matter for the Ayu fish species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2019-06-20</date>
+						<references>
+							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+								<html></html>
+							</reference>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="21" HSI="1"/>
+							<parameter value="125" HSI="0"/>
+							<parameter value="150" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="WaterDepth">
+						<type>scalar</type>
+						<layername>"Mean_waterdepth"</layername>
+						<unit>"m"</unit>
+						<statistic>mean</statistic>
+						<description>"Tolerable water depth for the Ayu fish species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2019-06-20</date>
+						<references>
+							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+								<html></html>
+							</reference>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="0.13" HSI="1"/>
+							<parameter value="1" HSI="1"/>
+							<parameter value="25" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+			<Description language="ENG">
+			<text><![CDATA[TO BE FILLED]]></text>
+		</Description></SpeciesDescription>
+	<Documentation>
+		<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+		</reference>	
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

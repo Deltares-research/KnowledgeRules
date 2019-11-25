@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46470938</EoLpagenr>
+			<LatName>Dreissena polymorpha</LatName>
+			<CommonNames>
+				<Name name="Zebra mussel" language="ENG"></Name>
+				<Name name="Zebra mossel" language="NL"></Name>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[Deze dosis-effect relaties zijn gevalideerd voor het IJsselmeer (#4) en Markermeer (#5, #7). In deze validatie is voor het IJsselmeer nog geen effecrelaties voor slibconcentraties meegenomen.
+Voor de validatie van het Markermeer zijn de effectrelaties voor slibconcentraties wel meegenomen. Echter, de slibconcentraties zijn bekend voor het jaar 2007 en de driehoeksmosselmeting is gedaan in 2004. Nieuwe driehoeksmosseldata is te verwachten in 2010/2011. Nieuwe validatie is dan 	nodig, wat waarschijnlijk leidt tot een betere predictie van het model, doordat mismatch van het model van de meetdata nu vooral plaats heeft op de plaatsen waar volgens het model slib limiterend is voor de groei van driehoeksmosselen.
+aanwezigheid goed voorspeld  = 0.69
+afwezigheid goed voorspeld    = 0.80
+aanwezigheid fout voorspeld   = 0.31
+afwezigheid fout voorspeld     = 0.20
+Hierbij is aanwezigheid van de driehoeksmossel in het model gezet op een habitatgeschiktheid van 0.5.
+
+Toepasbaarheid
+Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Chloride">
+						<type>scalar</type>
+						<layername>"CL"</layername>
+						<unit>"g/l"</unit>
+						<statistic>minimum</statistic>
+						<description>"Tolerable chlorine content for the Zebra mussel species"</description>
+						<author>"K.E. van de Wolfshaar, M. Haasnoot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="1" HSI="1"/>
+							<parameter value="1.1" HSI="0"/>
+							<parameter value="5" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="WaterTemperature">
+						<type>scalar</type>
+						<layername>"AverageSummerWaterTemperature"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>summer average (june - august)</statistic>
+						<description>"Average summer water temperature tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="13" HSI="1"/>
+							<parameter value="17" HSI="1"/>
+							<parameter value="20" HSI="0"/>
+							<parameter value="25" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Orthofosfate">
+						<type>scalar</type>
+						<layername>"AverageOrthofosfate"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average orthophosphate tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="0.01" HSI="1"/>
+							<parameter value="0.1" HSI="1"/>
+							<parameter value="0.3" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen">
+						<type>scalar</type>
+						<layername>"AverageOxygen"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average oxygen content tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="5" HSI="0"/>
+							<parameter value="7" HSI="1"/>
+							<parameter value="15" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Soil">
+						<type>categorical</type>
+						<layername>"SoilType"</layername>
+						<unit>"soil"</unit>
+						<statistic>average</statistic>
+						<description>"Average soil type tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="klei" HSI="0.466"/>
+							<parameter cat="leem" HSI="0.688"/>
+							<parameter cat="zand" HSI="0.743"/>
+							<parameter cat="veen" HSI="0.074"/>
+							<parameter cat="stortsteen" HSI="0.879"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="SiltFraction">
+						<type>range / categorical</type>
+						<layername>"SiltFraction"</layername>
+						<unit>"silt fraction / description"</unit>
+						<statistic>average</statistic>
+						<description>"Average silt content tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="slibarm" HSI="0.753"/>
+							<parameter rangemin="10" rangemax="25" cat="matig slibrijk" HSI="0.45"/>
+							<parameter rangemin="25" rangemax="100" cat="slibrijk" HSI="0.103"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Shells">
+						<type>scalar</type>
+						<layername>"ShellsContent"</layername>
+						<unit>"ml/m2"</unit>
+						<statistic>average</statistic>
+						<description>"Average shell content tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="10" HSI="0.4"/>
+							<parameter value="20" HSI="0.6"/>
+							<parameter value="30" HSI="0.8"/>
+							<parameter value="40" HSI="1"/>
+							<parameter value="100" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="SiltConcentration">
+						<type>scalar</type>
+						<layername>"SiltContent"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average silt content tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="500" HSI="1"/>
+							<parameter value="600" HSI="0.8"/>
+							<parameter value="700" HSI="0.6"/>
+							<parameter value="800" HSI="0.4"/>
+							<parameter value="900" HSI="0.2"/>
+							<parameter value="1000" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="WaterdepthLakes">
+						<type>ranges</type>
+						<layername>"WaterdepthLakes"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth tolerable for the Zebra mossel species in Lakes"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesRanges>
+							<parameter rangemin="0" rangemax="2" HSI="0.287"/>
+							<parameter rangemin="2" rangemax="5" HSI="0.76"/>
+							<parameter rangemin="5" rangemax="10" HSI="0.634"/>
+							<parameter rangemin="10" rangemax="25" HSI="0.205"/>
+							<parameter rangemin="25" rangemax="50" HSI="0.033"/>
+							<parameter rangemin="50" rangemax="999999" HSI="0"/>
+						</valuesRanges>
+					</ResponseCurve>
+					<ResponseCurve name="WaterdepthRivers">
+						<type>ranges</type>
+						<layername>"WaterdethRivers"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth tolerable for the Zebra mossel species in Rivers"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesRanges>
+							<parameter rangemin="0" rangemax="1" HSI="0.4"/>
+							<parameter rangemin="1" rangemax="3" HSI="1"/>
+							<parameter rangemin="3" rangemax="5" HSI="0.4"/>
+							<parameter rangemin="5" rangemax="999999" HSI="0"/>
+						</valuesRanges>
+					</ResponseCurve>
+					<ResponseCurve name="FlowVelocity">
+						<type>scalar</type>
+						<layername>"Flowvelocity"</layername>
+						<unit>"m/s"</unit>
+						<statistic>average</statistic>
+						<description>"Flow velocity tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="0.5" HSI="1"/>
+							<parameter value="0.8" HSI="0"/>
+							<parameter value="1" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[De milieucondities die van belang zijn voor de driehoeksmossel zijn zoet water, bodemtype, waterdiepte en watertemperatuur #2, #6.
+
+Driehoeksmosselen vestigen zich op hard substraat zoals stenen en schelpen. Ze foerageren door algen te filteren uit het water. Hoge slibconcentraties in het water of op de bodem kunnen dit verhinderen en zorgen uiteindelijk voor verstikking. 
+Uit experimenten in het lab uitgevoerd naar mosselfiltratie van driehoeksmosselen onder verschillende anorganische slibconcentraties blijkt dat de filtratie van driehoeksmosselen op slib afneemt met toenemende slibconcentraties (#11). Een slibconcentratie van meer dan 1 g/L maakt de filtratie voor de 		mosselen erg lastig. Bij deze concentratie is niet alleen de filtratie op slib zelf laag, maar ook die op de groenalg (#11). Op den duur zou dit kunnen betekenen dat de mosselen weinig goed voedsel binnen krijgen (en teveel bezig zijn met het verwijderen van slib via pseudofaeces) waardoor ze niet goed groeien en misschien wel dood gaan. 
+De diepte waarop mosselen voorkomen verschilt per gebied. Er zijn waarnemingen tot 50 meter diepte gedaan ([#9). De hoogste dichtheden vinden meestal plaats op een diepte tussen de 2 en 5 m (#2). In ondieptes wordt de afwezigheid mogelijk veroorzaakt door de snelle temperatuurwisselen of door predatiedruk op mosselen of door een hoge wintersterfte als gevolg van een lange periode met zuurstofloosheid bij ijsbedekking (#8). Bij grotere dieptes (>5m) zijn temperatuur en zuurstofgehalte vaak limiterende factoren (#10).
+
+De groei en reproduktie van de driehoeksmosselen wordt beïnvloed door de watertemperatuur #2. In koude wateren (< 15 ˚C) is de periode van groei kort en is de reproduktie minimaal (Morton, 1969; Lewandowski, 1982; Strayer, 1991). Ook warme wateren hebben een negatief effect op de populatie-ontwikkeling (Walz, 1974). Sterftecijfers nemen toe bij watertemperaturen van > 26-32 ˚C (Strayer, 1991). Noordhuis en Houwing (2003) suggereren dat er mogelijk een negatief effect is van relatief warme winters. De eerste eieren en larven worden in de Poolse meren gesignaleerd bij watertemperaturen van 17-19 ˚C (Lewandowski, 1982) en in de Noord-Amerikaanse meren bij 13 ˚C (Hebert e.a., 1989).
+
+In het IJsselmeer begint de jaarlijkse lengtegroei van de driehoeksmosselen in april en eindigt in september. Uit onderzoek van Reeders (1989) is gebleken, dat bij een watertemperatuur van 5-20 ˚C de filtratiesnelheid optimaal is. Beneden de 5 ˚C neemt de filtratiesnelheid abrupt af tot een geringe waarde en bij een watertemperatuur van meer dan 20 ˚C neemt de snelheid geleidelijk af. Volgens het onderzoek van Morton (1969) vindt alleen lengtegroei plaats bij een watertemperatuur van meer dan 11 ˚C en komt bij een watertemperatuur van meer dan 30 ˚C de lengtegroei geheel tot stilstand. De driehoeksmossel is zeer gevoelig voor snelle stijgingen van de watertemperatuur. Bij bestrijding van de driehoeksmosselen in koelwatersystemen wordt daarom de thermoshock-methode gehanteerd: bij een watertemperatuur van 35 ˚C wordt in een half uur alle aangroei gedood (Jenner en Mommen, 1985). De ontwikkelingsmogelijkheden van driehoeksmosselen in de Randmeren wordt beperkt door een aantal factoren, waaronder de snelle stijging van de watertemperatuur en grote dagelijkse temperatuurschommelingen die in het voorjaar in de ondiepe en beschutte meren kunnen optreden. Door deze veranderingen wordt de voortplanting van de driehoeksmosselen volledig verstoord (Vanhemelrijk e.a., 1993).	
+
+Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen tot een verandering van het voorkomen van de driehoeksmossel leiden.]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. " journal="WL | Delft Hydraulics" identification="WL report Q4015">
+		</reference>
+		<reference author="Duel, H. en Specken B." year="1994" title="Habitatmodel Driehoeksmossel en andere modellen voor het voorspellen van de populatie-omvang van de Driehoeksmossel Dreissena polymorpha in meren en rivieren." journal="TNO-BSA" identification="werkdocument P94-026 1994">
+		</reference>
+		<reference author="Van der Lee, G., H. Duel, S. Groot, H. Aarts, R. Pouwels" year="2000" title="Kwaliteit van het HEP-instrumentarium voor toepassing in het IJsselmeergebied." journal="WL | Delft Hydraulics" identification="WL-rapport T2391">
+		</reference>
+		<reference author="Noordhuis, R. en EJ. Houwing" year="2003" title="Oorzaken en gevolgen van een vermoedelijke crash met betrekking tot waterkwaliteit, slibhuishouding en natuurwaarden." journal="RIZA, Lelystad" identification="RIZA rapport 2003.016">
+		</reference>
+		<reference author="Van de Wolfshaar, K.E., M. Haasnoot" year="2007" title="Toetsing dosis-effect relaties HABITAT. Pilot voor het Markermeer en de Voordelta." journal="WL | Delft Hydraulics" identification="WL-report Q4327">
+			<html><![CDATA["http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"]]></html> 
+		</reference>
+		<reference author="Strayer, D.L." year="1991" title=" Projected distribution of the zebra mussel. Dreissana polymorpha, in North America." journal="Can. J. Fish. Aquati. Sci." identification="48:1389-1395">
+		</reference>
+		<reference author="Laane, W.E.M." year="1994" title="Habitatmodellen Driehoeksmossel, Hydropsyche contubernalis en Oeveraas." journal="RIZA, Lelystad" identification="werkdocument 96.044x.">
+		</reference>
+		<reference author="Sprung, M." year="1994" title="The other life: An account of present knowledge of the larval phase of Dreissana polymorpha." journal="Zebra Myssels, biology, impacts and control." identification="Chapter 2 pp 39-53">
+		</reference>
+		<reference author="Dionisio, M." year="2009" title="Memo: Invloed van slibconcentratie op mosselfiltratie" journal="Deltares" identification="-">
+			<html><![CDATA["https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962&preview=/25722962/25952424/Memo%20Slibinvloed%20driehoeksmosselen.doc#Driehoeksmossel-Dreissenapolymorpha+quagga-3"]]></html>
+		</reference>
+		<reference author="Haasnoot et al" year="2005" title="Seizoensgebonden Peilen in het IJsselmeergbied" journal="Deltares" identification="-">
+			<html><![CDATA[http://public.deltares.nl/download/attachments/16384257/Haasnoot+et+al+2005.pdf?version=1]]></html>
+		</reference>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="Deltares" identification="-">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf]]></html>
+		</reference>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="Deltares" identification="-">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf]]></html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

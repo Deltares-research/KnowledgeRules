@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46581641</EoLpagenr>
+			<LatName>Abramis brama</LatName>
+			<CommonNames>
+				<Name name="Brasem" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750404"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+ Deze dosis-effect relaties zijn niet gevalideerd.
+Toepasbaarheid
+Amerika
+Voorbeeld project
+Er is geen voorbeeldproject beschikbaar.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Paaisubstraat">
+						<type>categorical</type>
+						<layername>"Paaisubstraat"</layername>
+						<unit>"-"</unit>
+						<statistic>Paaisubstraat</statistic>
+						<description>"Paaisubstraat"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="0" HSI="0"/>
+							<parameter cat="kleiner dan 0.1" HSI="0.2"/>
+							<parameter cat="0.1 - 0.8" HSI="0.4"/>
+							<parameter cat="groter dan 0.5" HSI="1"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Diepte">
+						<type>scalar</type>
+						<layername>"Diepte"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Diepte"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="10" HSI="0.5"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="80" HSI="1"/>
+							<parameter value="200" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperatuur (paai)">
+						<type>scalar</type>
+						<layername>"Temperatuur (paai)"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Temperatuur (paai)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="8" HSI="0"/>
+							<parameter value="12" HSI="0.8"/>
+							<parameter value="16" HSI="1"/>
+							<parameter value="18" HSI="1"/>
+							<parameter value="20" HSI="0.8"/>
+							<parameter value="24" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zuurstofgehalte (ei)">
+						<type>scalar</type>
+						<layername>"Zuurstofgehalte (ei)"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>minimum</statistic>
+						<description>"Minimum zuurstofgehalte (ei)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="3.0" HSI="0"/>
+							<parameter value="5.0" HSI="0.5"/>
+							<parameter value="7.0" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Chloride (ei)">
+						<type>scalar</type>
+						<layername>"Chloride (ei)"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum chloride (ei)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="3" HSI="1"/>
+							<parameter value="12" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="pH (paai)">
+						<type>scalar</type>
+						<layername>"pH (paai)"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"pH (paai)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="5.0" HSI="0"/>
+							<parameter value="6.5" HSI="1"/>
+							<parameter value="9.0" HSI="1"/>
+							<parameter value="10.5" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Stroomsnelheid (larve)">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid (larve)"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Stroomsnelheid (larve)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="3" HSI="1"/>
+							<parameter value="10" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Waterplanten">
+						<type>scalar</type>
+						<layername>"Waterplanten"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Bedekking van waterplanten"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.5"/>
+							<parameter value="10" HSI="1"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="50" HSI="0.5"/>
+							<parameter value="100" HSI="0.3"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zichtdiepte">
+						<type>scalar</type>
+						<layername>"Zichtdiepte"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Zichtdiepte"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="0.4" HSI="1"/>
+							<parameter value="1" HSI="0.5"/>
+							<parameter value="3" HSI="0.3"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Sediment">
+						<type>scalar</type>
+						<layername>"Percentage zachte kalkhoudende kleibodem"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage zachte kalkhoudende kleibodem"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.5"/>
+							<parameter value="100" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Stroomsnelheid (adult)">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid (adult)"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Stroomsnelheid (adult)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="5" HSI="1"/>
+							<parameter value="25" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperatuur (adult)">
+						<type>scalar</type>
+						<layername>"Temperatuur (adult)"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Temperatuur (adult)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="4" HSI="0"/>
+							<parameter value="13" HSI="1"/>
+							<parameter value="24" HSI="1"/>
+							<parameter value="30" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zuurstofgehalte (adult)">
+						<type>scalar</type>
+						<layername>"Zuurstofgehalte (adult)"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddeld zuurstofgehalte (adult)"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="1" HSI="0"/>
+							<parameter value="2" HSI="0.5"/>
+							<parameter value="3" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zoutgehalte">
+						<type>scalar</type>
+						<layername>"Zoutgehalte"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum chloridegehalte"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="5.7" HSI="0.8"/>
+							<parameter value="7.2" HSI="0.6"/>
+							<parameter value="9" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="pH">
+						<type>scalar</type>
+						<layername>"pH"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"pH"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="3.5" HSI="0"/>
+							<parameter value="4.4" HSI="0.5"/>
+							<parameter value="6.5" HSI="1"/>
+							<parameter value="9.0" HSI="1"/>
+							<parameter value="10.5" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Gemiddeld totaal fosfaatgehalte">
+						<type>categorical</type>
+						<layername>"Gemiddeld totaal fosfaatgehalte"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddeld totaal fosfaatgehalte"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="0" HSI="0"/>
+							<parameter cat="kleiner dan 0.5" HSI="0.4"/>
+							<parameter cat="kleiner dan 1.0" HSI="0.8"/>
+							<parameter cat="groter dan 1.0" HSI="1"/>
+						</valuesCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[
+Habitat beschrijving
+Algemeen voorkomen
+De Brasem komt in het grootste deel van Europa voor. Aan de zuidkant wordt het verspreidingsgebied begrensd door de Alpen en de Pyreneeën. In het noorden van Schotland en in noordelijk Scandinavië is de brasem niet aanwezig. Van nature strekt het verspreidingsgebied zich in het oosten uit tot aan de Oeral maar is door uitzettingen uitgebreid tot in Siberië. In het oosten van zijn verspreidingsgebied komen populaties voor die in zout water leven en alleen voor de paai naar brak tot zoet water trekken. In Nederland komt Brasem zowel in zoet als in brak water voor. In brak water zijn de dichtheden lager dan in zoet water. Brasem prefereert voedselrijke meren, kanalen en langzaam stromende wateren met een modderige bodem. In kleine stromende rivieren komt brasem slechts in lage dichtheden voor. In grote rivieren zoals Rijn, Elbe, Donau en Wolga komt de brasem vooral in de midden-en benedenrivier voor. In snelstromende rivieren komt Brasem alleen in de delta voor #1.
+In het Nederlandse binnenwater is de brasem een zeer algemeen voorkomende vissoort. Onder sportvissers is de brasem erg populair, maar voor de beroepsvisserij, door zijn geringe waarde, niet. De brasem is een typische vis voor eutrofe en hypertrofe wateren met weinig ondergedoken waterplanten en een continue blauwalgenbloei. In eutrofe en hypertrofe wateren kan brasem meer dan de helft van de visbiomassa uitmaken, vaak zijn de dichtheden hoog en is de individuele groei slecht. Een biomassa van 350 kg/ha is geen uitzondering. We spreken in dergelijke situaties van verbrasemde wateren. Verondersteld wordt dat brasem in voedselrijke wateren via voedselconcurrentie onder andere de productie van aal kan beperken #1.
+De brasem wordt gekenmerkt door zijn hoge rug en afgeplatte flanken. De hoogte van de vis bedraagt 30-40% van de lengte. De kop is klein in verhouding tot de rest van het lichaam. De brasem heeft een kleine, onderstandige uitstulpbare bek. De bovenkant van de kop en de rug is donkergrijs gekleurd, vaak met een zwarte glans. De flanken zijn bij jonge vis zilvergrijs, bij oudere vis zijn de flanken meer geelbruin of bronskleurig. De buik is bijna wit. De borst en buikvinnen zijn lichtgrijs de overige vinnen zijn donkergrijs. De aarsvin is opvallend lang #1.
+De groei is afhankelijk van de temperatuur en het voedselaanbod. Een slechte groei treedt op als dichtheden erg hoog worden en er sterke voedselconcurrentie gaat plaatsvinden. Men vermoedt dat de groei meer wordt gereguleerd door dichtheidsafhankelijke processen dan door de temperatuur. Onder optimale omstandigheden kan brasem zeer snel groeien, na 2 jaar kan een lengte van 20 cm en na 8 jaar een lengte van 50 cm bereikt worden. In Nederland wordt de groei genoemd als 2-jarige brasem een lengte van 12 cm heeft en 8-jarige vis een lengte van 40 cm haalt. De maximale lengte is 80 cm, het maximale gewicht is ongeveer 10 kg #1. Men vermoet dat in een aantal kleine Nederlandse wateren het aanbod van muggenlarven en wormen in de bodem de beperkende factor voor de groei van oudere Brasem is. In andere Europese wateren lijkt een hoge dichtheid aan muggenlarven een voorwaarde te zijn voor een snelle groei. Het uitdunnen van de Brasemstand heeft tot gevolg dat de voedselsituatie kan verbeteren en de groeisnelheid dientengevolge hoger wordt.
+Voedselhabitat en strategie
+Over het algemeen foerageert jonge vis vooral in de oeverzone, oudere vis komt meer op diepere delen voor. Alleen in zeer voedselarme wateren foerageren volwassen brasems voornamelijk in de oeverzone. Het grootste deel van zijn leven brengt de Brasem in scholen door. Schoolvorming begint al in het larf-stadium in ondiep water. In het voorjaar trekken de scholen naar de paaigebieden. Na de paai splitsen de scholen zich op kleinere groepen die bestaan uit exemplaren van ongeveer dezelfde lengte en leeftijd. Alleen zeer oude brasem leeft niet meer in een school maar in groepen van hooguit enkele exemplaren of solitair. Na de paai is volwassen brasem vooral in het open water te vinden #1.
+Larven voeden zich in eerste instantie met fyto- en zoöplankton. Na 10-11 dagen bestaat het dieet hoofdzakelijk uit zoöplankton. Vanaf een lengte van 2 cm komen ook kleine muggenlarven in het dieet voor. Vanaf een jaar of twee heeft de brasem een voorkeur voor bodemorganismen. Het dieet bestaat dan uit muggenlarven en larven van andere insecten die op relatief ondiepe plaatsen bemachtigd worden. Brasem van drie jaar en ouder zoekt meestal voedsel op diepere plaatsen. Naast muggenlarven bestaat het dieet uit Tubifex, slakken en mosseltjes. Bij het voedsel zoeken in de bodem kan veel dood organisch materiaal als voedsel opgenomen worden. Het gewicht van detritus kan 80-90% van de totale inhoud van het maag-darm kanaal uitmaken. Ook plantaardig materiaal en plankton staat bij volwassen brasems op het menu #1. 
+Een groot aantal vissoorten waaronder andere cypriniden zoals kolblei, blankvoorn en karper maar ook aal en pos kunnen als voedselconcurrent van brasem optreden. De grootste concurrentie met blankvoorn en karper treedt op als de jonge vis bij de bodem gaat foerageren. Oudere vis heeft vaak een meer specifieke voedselkeuze waardoor alleen in weinig gedifferentieerde wateren er in deze fase nog sterke voedselconcurrentie op kan treden #1 . 
+Reproductie en migratie
+Paai vindt over het algemeen plaats in de periode eind april tot midden juni. De temperatuur is bepalend voor het tijdstip waarop de paai begint. De paai vindt bij voorkeur plaats bij rustig weer in de avond in ondiepe, niet of weinig stromende, met oever- of ondergedoken waterplanten begroeide oevers. In brak water voorkomende brasem trekt meestal naar zoet water om te paaien.
+Tijdens de paai is de brasem in grote scholen geconcentreerd. Op de paaiplaatsen zijn meestal meer mannetjes dan vrouwtjes aanwezig omdat mannetjes langer paairijp blijven. Grote mannetjes hebben op de paaiplaats een territorium van ongeveer 5 m2. Uit dit territorium worden andere mannetjes verdreven. Vrouwtjes worden naar het territorium gelokt door snel heen en weer te zwemmen. Onder optimale omstandigheden duurt de paai zo'n 2-3 dagen. Onder minder gunstige omstandigheden wordt de paaiperiode verlengd of wordt er meerdere malen per jaar gepaaid. Door herhaaldelijk te paaien wordt het risico dart de eieren door ongunstige omstandigheden verloren gaan gespreid. De paai stopt bij een plotselinge temperatuurdaling. Het wijfje legt 150.000-300.000 eieren per kilogram lichaamsgewicht. De leeftijd en de lengte van de paaitijd hebben invloed op het aantal eieren dat afgezet wordt #1. 
+De kleverige eieren zijn lichtgeel van kleur en hebben een diameter van 1.5-2 mm. De incubatietijd van de eieren duurt, afhankelijk van de temperatuur, 3-12 dagen. Bij uitkomst is de larve ongeveer 4 mm lang. In eerste instantie blijven de larven aan waterplanten hangen en teren ze in op de dooierzak. Daarna beginnen de laren zelfstandig voedsel op te nemen. Brasem van 20 mm begint op de bodem naar voedsel te zoeken en trekt weg uit de zeer ondiepe oeverzone. Bij een lengte van 9 tot 14 cm krijgt de Brasem zijn definitieve lichaamsvorm #1.
+Op 6-7 jarige leeftijd wordt Brasem geslachtsrijp. Voor het bereiken van de geslachtsrijpheid is de lengte van minder groot belang dan de leeftijd. Zowel bij een lengte va 14 cm als 35 cm kan brasem geslachtsrijp worden. In oudere leeftijdsgroepen zijn meer vrouwtjes dan mannetjes aanwezig doordat mannetjes een hogere sterftesnelheid hebben. Brasem wordt ongeveer 15 jaar oud #1.
+Leeftijd en mortaliteit
+De overleving tot het vrijzwemmende stadium is meestal slechts 1% of minder. Zowel eieren als pas uitgekomen larven zijn erg gevoelig voor predatie door van allerlei ongewervelden zoals slakken en platwormen, maar ook door vissen en amfibieën. 1- en 2-jarige brasems worden door roofvissen zoals snoek, snoekbaars, baars en aal gegeten. Snoek kleiner dan 45 cm eet veel jonge brasem en kan hierdoor de aanwas van nieuwe jaarklassen brasem limiteren. Ook snoekbaars kan een grote invloed op de groei en jaarklassterkte van Brasem hebben. De Brasem maakt over het algemeen slechts een gering deel uit van het dieet van predatoren. Alleen als er geen andere prooidieren beschikbaar zijn, is het aandeel brasem in het dieet van predatoren groot. De maximale lengte waarbij brasem nog gevoelig is voor predatie is afhankelijk van de lengte van de predatoren, maar over het algemeen is voor Brasem groter dan 20 cm de kans om te sterven door predatie zeer gering. Door zijn hoge lichaamsvorm is de Brasem moeilijk door predatoren in te slikken #1. 
+Milieu-factoren
+Paai vindt bij voorkeur plaats in vegetatierijke delen. Het oppervlak van een paaigebied moet minimaal 100 m^2^ groot zijn. Zuurstofconcentraties zijn met name van belang voor de eieren: bij een gehalte lager dan 3 mg/l treed 100% sterfte op. Zuurgraad is juist belang voor het paren: buiten een pH 4.4 en 10.5 vindt er geen paai plaats. Verder is de temperatuur van belang voor sterfte en voedselopname: bij watertemperaturen van 30 graden Celsius of meer treedt er sterfte op, bij een temperatuur lager dan 4 graden Celsius neemt de Baars geen voedsel meer op. 
+]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Van Breukelen, S." year="1992" title="Habitat Geschiktheid Index Model: Brasem Abramis brama." journal="" identification="Organisatie ter Verbetering van de Binnenvisserij. november 1992"/>
+		<reference author="" year="2012" title="http://en.wikipedia.org/ (Bluegill)" journal="" identification="18-12-2012"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

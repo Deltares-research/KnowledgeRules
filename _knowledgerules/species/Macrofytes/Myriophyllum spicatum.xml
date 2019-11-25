@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>47339598</EoLpagenr>
+			<LatName>Myriophyllum spicatum</LatName>
+			<CommonNames>
+				<Name name="Aarvederkruid" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Markermeer doorzicht">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language ="NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+Deze dosis-effect relaties zijn gevalideerd op het Markermeer.
+
+Toepasbaarheid
+Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)
+.]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_myrio">
+						<layername>"HGI_myrio"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Berekening HGI"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"HGI_myrio"</output>
+						<equation>"1 / (1+P_myrio)"</equation>
+						<Parameters>
+							<valuesScalar dataname="P_myrio" type="scalar" unit="-">
+								<parameter min="0" max="999"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_doorzicht">
+						<layername>"Effect_doorzicht"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van doorzicht op Aarvederkruid"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_myrio"</output>
+						<equation>"1*exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="doorzicht" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_extinctie">
+						<layername>"Effect_extinctie"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van extinctie op Aarvederkruid"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_myrio"</output>
+						<equation>"1*exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="extinctie" type="scalar" unit="m-1">
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[Habitatbeschrijving
+Aarvederkruid komt zowel in zoet als in brak voedselrijk water voor. De plant komt van nature voor in Eurazië en heeft zich daarvandaan verspreid naar Noord-Amerika waar het een invasieve soort is geworden. De plant komt over het algemeen voor op een diepte van 0,5 tot 3,5 m op een bodem van zand, leem, zavel, veen of klei. De groeiplaatsen waar ze gevonden kunnen worden zijn: kleisloten, afgravingen, duinplassen, laagveenplassen en in spoorsloten. Aarvederkruid is vrij algemeen in het westen van Nederland (maar vrij zeldzaam in Zeeland), in het noordelijk zeekleigebied, het rivierengebied en in stedelijke omgeving. Elders vrij zeldzaam tot zeldzaam (#1,#2).
+
+Dosis-effect relaties
+Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (#3). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect waterplanten hebben op dit lichtklimaat, leidde in het NMIJ project tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (#5). In (#6) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van aarvederkruid in de Macromij benadering en in de nieuwe mixed model benadering.
+
+De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.
+
+Doorzicht:
+P_myrio = 1*exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte))
+
+Extinctie:
+P_myrio = 1*exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte))
+
+HGI myrio = 1 / (1+P_myrio)
+
+deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )
+diepte_zom = de gemiddelde waterdiepte in de zomer (m)
+doorzicht = secchi diepte (m)
+extinctie = extinctiecoefficient (1/m)
+strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)
+
+Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's doorzicht en extinctie.]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://nl.wikipedia.org/wiki/Aarvederkruid]]></html>
+		</reference>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://www.wilde-planten.nl/aarvederkruid.htm]]></html>
+		</reference>
+		<reference author="Van den Berg M.S., W. Joosse and H. Coops" year="2003" title="A statistical model predicting the occurrence and dynamics of submerged macrophytes in shallow lakes in the Netherlands." journal="Hydrobiologia 611:623" identification=""/>
+		<reference author="Scheffer, M." year="1998" title="Ecology of Shallow Lakes." journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

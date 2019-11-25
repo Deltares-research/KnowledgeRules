@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema\AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>000000</EoLpagenr>
+			<LatName>""</LatName>
+			<CommonNames>
+				<Name name = "Draadwieren" language = "NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Draadwieren">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+Deze dosis-effect relaties zijn gevalideerd op het Markermeer.
+
+Toepasbaarheid
+Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)
+.]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_Draadwier ">
+						<layername>"HGI_Draadwier "</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Berekening HGI"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"HGI_Draadwier"</output>
+						<equation>"1 / (1+P_filam_algae)"</equation>
+						<Parameters>
+							<valuesScalar dataname="P_filam_algae" type="scalar" unit="-">
+								<parameter min="0" max="999"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_doorzicht">
+						<layername>"Effect_doorzicht"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van doorzicht op Draadwieren"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_filam_algae"</output>
+						<equation>"1/(1+exp(-(-1.009677173+deelgebied-1.488380475*diepte_zom+0.062599049*(diepte_zom^2)-0.019458869*diepte_zom*doorzicht-9.49*E-05*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="doorzicht" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_extinctie">
+						<layername>"Effect_extinctie"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van extinctie op Draadwieren"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_filam_algae"</output>
+						<equation>"1/(1+exp(-(-0.276884752+deelgebied-1.323829778*diepte_zom+0.058226538*(diepte_zom^2)-0.073627804*diepte_zom*extinctie-9.28E-5*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="extinctie" type="scalar" unit="m-1">
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+		<text><![CDATA[Habitatbeschrijving
+Draadwieren komen vrijwel overal op de wereld voor (#1, #2, #3). Bij draadalgen wordt onderscheid gemaakt tussen drijvende draadalgen (flab), draadalgen die zich op de bodem bevinden (benthisch), of op en tussen waterplanten (epi-, resp. metafytisch) (#4). Een bekend geslacht van benthische draadalgen is Cladophora, die veel voorkomt op stortstenen in de oevers van voedselrijke meren. Andere draadalgen, onder andere Enteromorpha intestinalis (darmwier), Spirogyra en Vaucheria, beginnen hun ontwikkeling juist op de bodem. Deze algen kunnen uitgroeien tot dichte vegetaties die op een gegeven ogenblik gaan drijven en dan het zogeheten ‘flab’ vormen (flab = Floating Algal Biomass) (#4). Aangezien draadwieren gewoonlijk niet tot op genus- of soortniveau worden gedomineerd, wordt veelal volstaan met de algemene aanduiding ‘draadwieren’ (#3).
+Draadwieren zijn een normaal verschijnsel in ondiepe wateren en komen wijdverbreid voor. Extreme hoge bedekkingen van draadwieren zijn echter een eutrofiëringsverschijnsel dat mede kan leiden tot het instorten van de onderwatervegetatie. In veel gevallen (maar niet alle!) heeft een hoge bedekkingsgraad van draadwieren een duidelijke relatie met hoge nutriëntenconcentraties. Echter, dit betekent niet automatisch dat lage bedekkingen van draadwieren ook lage nutriëntenconcentraties indiceert (#3). 
+Dosis-effect relaties
+Voor deze soort waren tot voor kort nog geen kennisregels beschikbaar. Op basis van een mixed model benadering zijn in 2014 kennisregels opgesteld. Meer details over de methode zijn terug te vinden in  (#6) en  (#7). 
+Wat betreft het lichtklimaat zijn afzonderlijke dosis-effect relaties opgesteld voor zowel doorzicht als extinctie. Voor een toelichting op deze begrippen, zie de pagina’s doorzicht en extinctie.
+Doorzicht:
+P_filam_algae=1/(1+exp(-(-1.009677173+deelgebied-1.488380475*diepte_zom+0.062599049*(diepte_zom^2)-0.019458869*diepte_zom*doorzicht-9.49*E-05*strijklengte)))
+Extinctie:
+P_filam_algae= 1/(1+exp(-(-0.276884752+deelgebied-1.323829778*diepte_zom+0.058226538*(diepte_zom^2)-0.073627804*diepte_zom*extinctie-9.28E-5*strijklengte)))
+HGI Draadwier = 1 / (1+P_filam_algae)
+deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )
+diepte_zom = de gemiddelde waterdiepte in de zomer (m)
+doorzicht = secchi diepte (m)
+extinctie = extinctiecoefficient (1/m)
+strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)
+Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's doorzicht en extinctie.]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Wells, R.D.S et al." year="1999" title="The Rise and Fall of Water Net Hydrodictyon reticulatum in New Zealand" journal="J. Aquat. Plant Manage" identification="37: 49-55"/>
+		<reference author="" year="" title="Enteromorpha Distribution" journal="" identification=""/>
+		<reference author="Van den Berg M.S. en R. Pot (red)" year="2007" title="Achtergronddocument referenties en maatlatten overige waterflora ten behoeve van de Kaderrichtlijn Water" journal="" identification=""/>
+		<reference author="" year="" title="Persoonlijke communicatie Ruurd Noordhuis" journal="" identification=""/>
+		<reference author="" year="" title="Draadalglandschap Onderwaterfotografie W.Kolvoort " journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

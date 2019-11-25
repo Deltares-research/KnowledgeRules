@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Knowledge Rules project ( Copyright under GPLv3 by Stichting Deltares ) -->
+<schema xmlns:AutXML="http://www.wldelft.nl/fews" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.wldelft.nl/fews" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<element name="AutecologyXML" type="AutXML:AutecologyXMLConfigComplexType"/>
+	<complexType name="AutecologyXMLConfigComplexType">
+		<sequence>
+			<element name="Topic" type="AutXML:TopicComplexType" minOccurs="0">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="Autecology" type="AutXML:AutecologyComplexType" minOccurs="0">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="FysicalCharacteristics" type="AutXML:FCComplexType" minOccurs="0">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="Traits" type="AutXML:TraitsComplexType" minOccurs="0">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="SpeciesDescription" type="AutXML:SDComplexType" minOccurs="0">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="Documentation" type="AutXML:DocumentationComplexType" minOccurs="0">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="DataSources" type="AutXML:DataSourcesComplexType" minOccurs="0">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="TopicComplexType">
+		<choice>
+			<element name="Species" type="AutXML:SpeciesComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</choice>
+	</complexType>
+	<complexType name="SpeciesComplexType">
+		<sequence>
+			<element name="EoLpagenr" type="AutXML:ExternalIntegerSimpleType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="LatName" type="string" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="CommonNames" type="AutXML:CommonNamesComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<choice>
+				<element name="SpecCode" type="string" minOccurs="0" maxOccurs="1">
+					<annotation>
+						<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+					</annotation>
+				</element>
+			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="AutecologyComplexType">
+		<sequence>
+			<element name="ModelType" type="AutXML:ModelTypeComplexType" minOccurs="1" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="ModelTypeComplexType">
+		<sequence>
+			<element name="System" type="AutXML:SystemComplexType" minOccurs="1" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	<complexType name="SystemComplexType">
+		<sequence>
+			<element name="Scope" type="AutXML:ScopeComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="SystemDescription" type="AutXML:SDComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="SystemFlowDiagrams" type="AutXML:SystemFlowDiagramsComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="KnowledgeRules" type="AutXML:KnowledgeRulesComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	<complexType name="ScopeComplexType">
+		<sequence>
+			<element name="SpatialScope" type="AutXML:SpatialScopeComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="TemporalScope" type="AutXML:TemporalScopeComplexType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="SpatialScopeComplexType">
+		<sequence>
+			<element name="GeoNames" type="AutXML:GeoNamesComplexType" minOccurs="1" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="GeoNamesComplexType">
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="id" type="integer" use="required"/>
+	</complexType>
+	<complexType name="TemporalScopeComplexType">
+		<sequence>
+			<element name="StartDate" type="AutXML:dateType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="EndDate" type="AutXML:dateType" minOccurs="1" maxOccurs="1">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="SystemFlowDiagramsComplexType">
+		<sequence>
+			<element name="FlowDiagram" type="AutXML:FlowDiagramComplexType" minOccurs="1" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="FlowDiagramComplexType">
+		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	<complexType name="KnowledgeRulesComplexType">
+		<choice>
+			<element name="ResponseCurve" type="AutXML:ResponseCurveComplexType" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="FormulaBased" type="AutXML:FormulaBasedComplexType" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</choice>
+	</complexType>
+	<complexType name="ResponseCurveComplexType">
+		<sequence>
+			<element name="type" type="AutXML:TypeSingleType" minOccurs="0"/>
+			<element name="layername" type="string" minOccurs="0"/>
+			<element name="unit" type="string" minOccurs="0"/>
+			<element name="statistic" type="string" minOccurs="0"/>
+			<element name="description" type="string" minOccurs="0"/>
+			<element name="author" type="string" minOccurs="0"/>
+			<element name="date" type="AutXML:dateType" minOccurs="0"/>
+			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="0"/>
+			<choice>
+				<element name="valuesScalar" type="AutXML:RCValuesScalarComplexType" minOccurs="0"/>
+				<element name="valuesCategorical" type="AutXML:RCValuesCategoricalComplexType" minOccurs="0"/>
+				<element name="valuesRangeCategorical" type="AutXML:RCValuesRangeCategoricalComplexType" minOccurs="0"/>
+				<element name="valuesRanges" type="AutXML:RCValuesRangesComplexType" minOccurs="0"/>
+			</choice>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	<complexType name="FormulaBasedComplexType">
+		<sequence>
+			<element name="layername" type="string" minOccurs="0"/>
+			<element name="unit" type="string" minOccurs="0"/>
+			<element name="statistic" type="string" minOccurs="0"/>
+			<element name="description" type="string" minOccurs="0"/>
+			<element name="author" type="string" minOccurs="0"/>
+			<element name="date" type="AutXML:dateType" minOccurs="0"/>
+			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="0"/>
+			<element name="output" type="string" minOccurs="0"/>
+			<element name="equation" type="string" minOccurs="0"/>
+			<element name="Parameters" type="AutXML:FBParametersComplexType" minOccurs="0"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	<complexType name="ReferencesComplexType">
+		<sequence>
+			<element name="reference" type="AutXML:ReferenceComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="FBParametersComplexType">
+		<sequence>
+			<element name="valuesConstant" type="AutXML:FBConstantValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="valuesScalar" type="AutXML:FBScalarValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="RCValuesScalarComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterScalarRCComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="RCValuesCategoricalComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterCategoricalRCComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="RCValuesRangeCategoricalComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterRangeCategoricalRCComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="RCValuesRangesComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterRangesRCComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="FBConstantValuesComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterConstantFBComplexType" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="dataname" type="string" use="required"/>
+		<attribute name="type" type="string" use="required" fixed="constant"/>
+		<attribute name="unit" type="string" use="required"/>
+	</complexType>
+	<complexType name="FBScalarValuesComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterScalarFBComplexType" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="dataname" type="string" use="required"/>
+		<attribute name="type" type="string" use="required" fixed="scalar"/>
+		<attribute name="unit" type="string" use="required"/>
+	</complexType>
+	<complexType name="ParameterConstantFBComplexType">
+		<attribute name="constantset" type="string" use="required"/>
+		<attribute name="value" type="string" use="required"/>
+	</complexType>
+	<complexType name="ParameterScalarFBComplexType">
+		<attribute name="min" type="string" use="required"/>
+		<attribute name="max" type="string" use="required"/>
+	</complexType>
+	<complexType name="ParameterScalarRCComplexType">
+		<attribute name="value" type="string" use="required"/>
+		<attribute name="HSI" type="string" use="required"/>
+	</complexType>
+	<complexType name="ParameterCategoricalRCComplexType">
+		<attribute name="cat" type="string" use="required"/>
+		<attribute name="HSI" type="string" use="required"/>
+	</complexType>
+	<complexType name="ParameterRangeCategoricalRCComplexType">
+		<attribute name="rangemin" type="string" use="required"/>
+		<attribute name="rangemax" type="string" use="required"/>
+		<attribute name="cat" type="string" use="required"/>
+		<attribute name="HSI" type="string" use="required"/>
+	</complexType>
+	<complexType name="ParameterRangesRCComplexType">
+		<attribute name="rangemin" type="string" use="required"/>
+		<attribute name="rangemax" type="string" use="required"/>
+		<attribute name="HSI" type="string" use="required"/>
+	</complexType>
+	<complexType name="SDComplexType">
+		<sequence>
+			<element name="Description" type="AutXML:DescriptionComplexType"/>
+		</sequence>
+	</complexType>
+	<complexType name="FCComplexType"/>
+	<complexType name="TraitsComplexType"/>
+	<complexType name="DocumentationComplexType">
+		<sequence>
+			<element name="reference" type="AutXML:ReferenceComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="DataSourcesComplexType"/>
+	<complexType name="CommonNamesComplexType">
+		<sequence>
+			<element name="Name" type="AutXML:NameComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="NameComplexType">
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="language" type="string" use="required"/>
+	</complexType>
+	<complexType name="DescriptionComplexType">
+		<sequence>
+			<element name="text" type="string"/>
+		</sequence>
+		<attribute name="language" type="string" use="required"/>
+	</complexType>
+	<complexType name="ReferenceComplexType">
+		<choice>
+			<element name="html" type="string" minOccurs="0" maxOccurs="1"/>
+		</choice>
+		<attribute name="author" type="string" use="required"/>
+		<attribute name="year" type="string" use="required"/>
+		<attribute name="title" type="string" use="required"/>
+		<attribute name="journal" type="string" use="required"/>
+		<attribute name="identification" type="string" use="required"/>
+	</complexType>
+	<complexType name="DateTimeComplexType">
+		<attribute name="date" type="AutXML:dateType" use="required"/>
+	</complexType>
+	<simpleType name="dateType">
+		<restriction base="date">
+			<pattern value="\d\d\d\d-\d\d-\d\d"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="TypeSingleType">
+		<restriction base="string">
+			<enumeration value="scalar"/>
+			<enumeration value="categorical"/>
+			<enumeration value="range / categorical"/>
+			<enumeration value="ranges"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ExternalIntegerSimpleType">
+		<union memberTypes="integer">
+			<simpleType>
+				<restriction base="string">
+					<pattern value="[$][a-zA-Z0-9.()*/+-_]+[$]"/>
+				</restriction>
+			</simpleType>
+		</union>
+	</simpleType>
+</schema>

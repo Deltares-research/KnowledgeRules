@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>313678</EoLpagenr>
+			<LatName>Ondatra zibethicus</LatName>
+			<CommonNames>
+				<Name name = "Muskusrat" language = "NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+		</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1999-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+					<text><![CDATA[
+Onzekerheid en validatie
+ Deze rekenregels zijn niet gevalideerd.
+De rekenregels zijn opgesteld aan de hand van lieratuuronderzoek #1
+Toepasbaarheid
+De rekenregels zijn opgesteld om het potentieel leefgebied van de Muskusrat te bepalen en zijn toepasbaar op grote en kleinere zoete wateren die stagnant tot snelstromend zijn #1.
+Voorbeeld project
+Geen
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Breedte water">
+						<type>scalar</type>
+						<layername>"Breedte water"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Breedte water"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="6" HSI="0.5"/>
+							<parameter value="7" HSI="1"/>
+							<parameter value="30" HSI="1"/>
+							<parameter value="35" HSI="0"/>
+							<parameter value="40" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Aanwezigheid steile oevers">
+						<type>categorical</type>
+						<layername>"Aanwezigheid steile oevers"</layername>
+						<unit>"-"</unit>
+						<statistic>Aanwezigheid steile oevers</statistic>
+						<description>"NB. Voor de nestbouw zijn relatief steile taluds nodig, Bij wateren smaller dan 6 meter moeten de steile delen van zowel de noord- als zuidoever worden bepaald, bij bredere wateren de oevers afzonderlijk. Uitgaande van een homerange van 300 meter dient minimaal 10 meter geschikte oever aanwezig te zijn (dus 1m per 30 meter)#1</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="minder dan 1m : 30 m" HSI="0.7"/>
+							<parameter cat="meer dan 1m : 30 m" HSI="1"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Oeversubstraat">
+						<type>categorical</type>
+						<layername>"Oeversubstraat"</layername>
+						<unit>"-"</unit>
+						<statistic>Oeversubstraat</statistic>
+						<description>"Oeversubstraat"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="ondoorgraafbaar" HSI="0.5"/>
+							<parameter cat="doorgraafbaar" HSI="1"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Bedekking oevervegetatie">
+						<type>scalar</type>
+						<layername>"Bedekking oevervegetatie"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Bedekking oevervegetatie"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="50" HSI="0.5"/>
+							<parameter value="100" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Beheer oevervegetatie">
+						<type>categorical</type>
+						<layername>"Beheer oevervegetatie"</layername>
+						<unit>"-"</unit>
+						<statistic>Beheer</statistic>
+						<description>"Door vertrapping van de burchten kunnen muskusratten niet voorkomen bij beweiding. Maaien maakt de beschutting minder"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="beweiden" HSI="0"/>
+							<parameter cat="maaien" HSI="0.6"/>
+							<parameter cat="niets doen" HSI="1"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Hoogte vegetatie">
+						<type>range / categorical</type>
+						<layername>"Hoogte oevervegetatie"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Als de oever niet goed doorgraafbaar is, worden er burchten gemaakt. Hiervoor dient voldoende oevervegetatie in de omgeving aanwezig te zijn #1. "</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="50" cat="1" HSI="0"/>
+							<parameter rangemin="50" rangemax="999" cat="2" HSI="1"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+	<Description language="NL"><text><![CDATA[
+Habitat beschrijving
+Algemeen voorkomen
+De muskusrat is in Nederland ingevoerd voor de pelsfokkerij en is door ontsnapping nu de grootste woelmuissoort in Europa #1. De muskusrat komt nu in grote delen van Europa voor met uitzondering van Groot-Brittannië, Ierland, het grootste deel van Scandinavië en Zuid-Europa #2. In Nederland is de muskusrat bijna overal te vinden, met uitzondering van de Veluwe, het westelijk deel van Noord- en Zuid-Holland, Schouwen-Duivenland en Walcheren #1. 
+De muskusrat heeft een sterk aanpassingsvermogen en komt voor in verschillende watertypen, zowel in afgelegen moerassen als in waterpartijen binnen verstedelijkte gebieden. De soort heeft echter een voorkeur voor stagnante wateren met relatief steile oevers en een rijke oeverbegroeiïng #1. De muskusrat is erg schuw en is meestal alleen ’s nachts waar te nemen. In het najaar trekt de muskusrat instinctief naar diepere sloten, waar de kans op opgesloten raken door ijs kleiner is. Het territorium van de muskusrat is 1 tot 5 km2 groot en weert andere muskusratten uit dit gebied #2. 
+Afhankelijk van het oeversubstraat kan de muskusrat twee typen nesten bouwen. De voorkeur heeft om een burcht (hol) in een steile oever te graven, maar wanneer oevers niet begraafbaar zijn worden er ook wel burchten gebouwd van riet- en grasstengels. De ingang van de burcht wordt onder water aangelegd. Bij kleine veranderingen in het waterpeil, wordt de ingang verplaatst en de oude ingang afgesloten. Deze burchten worden bij voorkeur op een zuidelijke geëxponeerde oever aangelegd en in mindere mate in grote wateren #1. 
+De muskusrat wordt met name in oevers met rijke oeverbegroeiing aangetroffen en bij niet al te grote wateren. Dit laatste is een gevolg van het feit dat golfslag de oever kan eroderen wat een bedreiging vormt voor de burchten van de muskusrat. In droogvallende watergangen is er slechts zelden bewoning aangetroffen. Poldersloten worden in de winter verlaten. Hiervoor kan de regel toegepast worden dat in de winter de waterdiepte > 1 meter moet zijn #1.
+Voedselhabitat en strategie
+De muskusrat is hoofdzakelijk een herbivoor. Hij foerageert in Nederland voornamelijk op wortels van riet, lisdodde, biezen, kruiden, gras en bieten #1. Daarnaast wordt er ook wel eens dierlijk voedsel gegeten, zoals weekdieren, kreeften en vis #1 en #2. Jonge muskusratten eten voornamelijk kruiden. 
+NB. 
+Reproductie en migratie
+In maart tot september vindt de voortplanting van de muskusrat plaats. De draagtijd van de zwangere vrouwtjes is 30 dagen. Er zijn soms 2 tot 3 worpen, met maximaal 6 jongen. De sterfte van de jongen in het eerste jaar ligt circa rond de 70%. De vrouwtjes die uit de eerste worp voortkomen kunnen nog aan de voortplanting van dat zelfde jaar deelnemen #1,doordat de jongen na de vijfde maand geslachtsrijp zijn #2. 
+Twee keer in het jaar trek de muskusrat erop uit. In het voorjaar gaan de mannetjes (de rammen) en de vrouwtjes (de moertjes) op zoek naar een geschikte partner ten behoeve van de voortplanting #2. In het najaar worden de jonge dieren door de ouder weggestuurd en gaan deze op zoek naar een eigen territorium #2. 
+Mortaliteit
+Zelf heeft de muskusrat in Nederland weinig natuurlijke vijanden. Echter op de jonge dieren wordt wel gejaagd, onder andere door de vos, bunzing en hermelijn en mogelijk ook snoek en snoekbaars #1. Een muskusrat wordt ongeveer 3 jaar oud. Echter, 80-90% redt de eerste winter niet #2. 
+]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Hollands., H., J.O. Reinhold" year="1999" title="HSI-modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van huidige ecologische kennis" journal="" identification="Dienst Weg- en Waterbouwkunde"/>
+		<reference author="" year="2012" title="www.zoogdiervereniging.nl (Muskusrat)" journal="" identification="11 december 2012">
+			<html><![CDATA[www.zoogdiervereniging.nl/zoogdiersoorten/muskusrat]]></html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

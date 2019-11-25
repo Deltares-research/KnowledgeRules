@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+<Topic>
+		<Species>
+			<EoLpagenr>49230193</EoLpagenr>
+			<LatName>Cerastoderma lamarckii</LatName>
+			<CommonNames>
+				<Name name="Brakwaterkokkel" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>2002-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+(warning) Het model is niet gevalideerd.
+
+Toepasbaarheid
+De rekenregels zijn samengesteld uit logistische regressie op de Westerschelde data verkregen door Ysebaert en Meire (1999)#3. Het model is opgezet voor het Veerse Meer#2.
+
+Voorbeeldproject
+Er is geen voorbeeldproject.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Diepte winter">
+						<type>scalar</type>
+						<layername>"Diepte winter"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Diepte winter"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="0.05" HSI="0"/>
+							<parameter value="1" HSI="1"/>
+							<parameter value="8" HSI="1"/>
+							<parameter value="10" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zoutgehalte">
+						<type>scalar</type>
+						<layername>"Zoutgehalte"</layername>
+						<unit>"promille"</unit>
+						<statistic>average</statistic>
+						<description>"Zoutgehalte"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="5" HSI="0"/>
+							<parameter value="10" HSI="1"/>
+							<parameter value="30" HSI="1"/>
+							<parameter value="35" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Stroomsnelheid">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid"</layername>
+						<unit>"m/s"</unit>
+						<statistic>average</statistic>
+						<description>"Stroomsnelheid"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="0.5" HSI="1"/>
+							<parameter value="0.7" HSI="0"/>
+							<parameter value="1" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[
+Habitat beschrijving
+Algemeen voorkomen
+In brak water in het Nederlands deltagebied is de brakwaterkokkel vrij algemeen. In het Waddengebied is de soort zeldzamer. Voor de afsluiting van de Zuiderzee was de soort daar talrijk aanwezig #2. De brakwaterkokkel blijft kleiner dan zijn verwant familielid, de gewone Kokkel, en heeft een “scheefgetrokken” schelp. De ribben zijn aan de achterzijde van de schelp zwak ontwikkeld.
+
+Milieurandvoorwaarden
+Brakwaterkokkels leven in rustig water, vooral achter de dijken of in zee ingegraven in het zand. De habitatgeschiktheid voor de Brakwaterkokkel neemt af bij maximale stroomsnelheden groter dan 0.5 m/s #2. De brakwaterkokkel komt voor tot tientallen meters diepte #1, maar 8 tot 10 meter is over het algemeen de maximale diepte #2. De soort kan goed met zeer hoge en zeer lage zoutgehalten omgaan, maar kan slecht tegen droogval. Doordat de soort ook in ondiep water leeft, komt de soort vooral voor buiten het effectgebied van de getijdeslag #1.
+
+In vergelijking tot de gewone kokkel kan de brakwaterkokkel beter tegen lage zoutgehalten, maar slechter tegen zoutgehalten hoger dan 30 promille #2.
+]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="" year="2012" title="http://www.natuurinformatie.nl/ (Brakwaterkokkel) " journal="" identification="26 november 2012">
+			<html><![CDATA[http://www.natuurinformatie.nl//nnm.dossiers/natuurdatabase.nl/i003565.html]]></html>
+		</reference>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+		<reference author="Ysebaert,T.,Meire,P." year="1999" title="Macrobenthos of the Schelde estuary: predicting macrobenthic species responses in the estuarine environment. A statistical analysis of the Schelde estuary macrobenthos within the ECOFLAT project. " journal="" identification="Report Institute of Nature Conservation IN99/19. Brussel, Belgium. 226 p. 1999"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

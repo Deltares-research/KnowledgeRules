@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46581656</EoLpagenr>
+			<LatName>Rutilus rutilus</LatName>
+			<CommonNames>
+				<Name name = "Blankvoorn" language = "NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+	<ModelType name="HSI">
+		<System name="voortplanting">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>2010-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL"><text><![CDATA[
+Onzekerheden en validatie
+Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.
+]]></text></Description></SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Aanwezigheid paaisubstraat t.o.v. hele opp.">
+						<type>range / categorical</type>
+						<layername>"Aanwezigheid paaisubstraat t.o.v. hele opp."</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Aanwezigheid paaisubstraat t.o.v. hele opp."</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0.1" cat="1" HSI="0.2"/>
+							<parameter rangemin="0.1" rangemax="0.5" cat="2" HSI="0.8"/>
+							<parameter rangemin="0.5" rangemax="100" cat="3" HSI="1"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Waterdiepte geschikt voor paai">
+						<type>scalar</type>
+						<layername>"Waterdiepte geschikt voor paai"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdiepte geschikt voor paai"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="10" HSI="0"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="50" HSI="1"/>
+							<parameter value="150" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Gemiddelde temperatuur tijdens de paai">
+						<type>scalar</type>
+						<layername>"Gemiddelde temperatuur tijdens de paai"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde temperatuur tijdens de paai"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="4.5" HSI="0"/>
+							<parameter value="5.5" HSI="0.2"/>
+							<parameter value="8" HSI="0.8"/>
+							<parameter value="11" HSI="1"/>
+							<parameter value="16" HSI="1"/>
+							<parameter value="20" HSI="0.8"/>
+							<parameter value="22" HSI="0.2"/>
+							<parameter value="24" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="pH (voor paai)">
+						<type>scalar</type>
+						<layername>"pH (voor paai)"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"pH (voor paai)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="5.0" HSI="0"/>
+							<parameter value="5.5" HSI="0.6"/>
+							<parameter value="7" HSI="1"/>
+							<parameter value="9" HSI="1"/>
+							<parameter value="10.5" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Gemiddelde saliniteit">
+						<type>scalar</type>
+						<layername>"Gemiddelde saliniteit"</layername>
+						<unit>"promille"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde saliniteit"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="3" HSI="0.8"/>
+							<parameter value="5" HSI="0.5"/>
+							<parameter value="6" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+		<ModelType name="HSI">
+			<System name="larve">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>2010-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheden en validatie
+Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Stroomsnelheid (larve)">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid (larve)"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Stroomsnelheid (larve)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.8"/>
+							<parameter value="1" HSI="1"/>
+							<parameter value="5" HSI="1"/>
+							<parameter value="10" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Maximale temperatuur (larve)">
+						<type>scalar</type>
+						<layername>"Maximale temperatuur (larve)"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximale temperatuur (larve)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="15" HSI="0"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="25" HSI="1"/>
+							<parameter value="30" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+		<ModelType name = "HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>2010-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+Onzekerheden en validatie
+Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Vegetatie dichtheid">
+						<type>scalar</type>
+						<layername>"Vegetatie dichtheid"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Vegetatie dichtheid (Referentie: #1, aangepast aan de hand van #3.)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.2"/>
+							<parameter value="26" HSI="1"/>
+							<parameter value="35" HSI="1"/>
+							<parameter value="50" HSI="1"/>
+							<parameter value="80" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Doorzicht">
+						<type>scalar</type>
+						<layername>"Doorzicht"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Doorzicht"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="25" HSI="1"/>
+							<parameter value="50" HSI="1"/>
+							<parameter value="200" HSI="1"/>
+							<parameter value="500" HSI="0.5"/>
+							<parameter value="600" HSI="0.5"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Stroomsnelheid (adult)">
+						<type>scalar</type>
+						<layername>"Stroomsnelheid (adult)"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Stroomsnelheid (adult)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="60" HSI="1"/>
+							<parameter value="90" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="pH (adult)">
+						<type>scalar</type>
+						<layername>"pH (adult)"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"pH (adult)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="4.5" HSI="0"/>
+							<parameter value="5.5" HSI="1"/>
+							<parameter value="9" HSI="1"/>
+							<parameter value="10.5" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Gemiddeld zuurstofgehalte">
+						<type>scalar</type>
+						<layername>"Gemiddeld zuurstofgehalte"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddeld zuurstofgehalte"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="1" HSI="0"/>
+							<parameter value="5" HSI="1"/>
+							<parameter value="6" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Gemiddelde temperatuur (adult)">
+						<type>scalar</type>
+						<layername>"Gemiddelde temperatuur (adult)"</layername>
+						<unit>"graden Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde temperatuur (adult)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="10" HSI="0"/>
+							<parameter value="12" HSI="0.5"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="25" HSI="1"/>
+							<parameter value="30" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Saliniteit (adult)">
+						<type>scalar</type>
+						<layername>"Saliniteit (adult)"</layername>
+						<unit>"promille"</unit>
+						<statistic>average</statistic>
+						<description>"Saliniteit (adult)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="5" HSI="0.7"/>
+							<parameter value="12" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[
+Habitat beschrijving
+Algemeen voorkomen
+De blankvoorn is een van de meest algemeen voorkomende vissoorten in de Nederlandse binnenwateren. Het verspreidingsgebied van de blankvoorn strekt zich uit over een groot deel van Europa en het noordelijk deel van Azië. In Europa loopt de zuidgrens noordoostelijk van de Pyreneeën, noordelijk van de Alpen en daarna weer zuidelijk over de Balkon tot diep in Siberië. Tot in het noorden van Europa kan de blankvoorn voorkomen, in het noorden van Schotland en het noordweseten van Noorwegen kom de blankvoorn niet voor. Ook in Ierland komt de blankvoorn van nature niet voor, door sportvissers is de blankvoorn hier uitgezet#1.Voor verspreiding zie figuur #4.
+Voedselhabitat en strategie
+De blankvoorn is een omnivoor met een breed voedselspectrum. Het voedsel van jonge blankvoorn bestaat uit zoöplankton, in het bijzonder watervlooien. Oudere blankvoorn heeft een aanzienlijk uitgebreider voedselpakket. Zowel dierlijk voedsel, zoals
+slakjes, driehoeksmosselen, insectenlarven, wormen en kreeftachtigen, als plantaardig materiaal, zoals algen en detritus, worden door deze vis gegeten #2. De blankvoorn kan zowel op zicht jagen waarbij afzonderlijke voedseldeeltjes aangevallen worden, als op de tast waarbij voedseldeeltjes uit het water of sediment gefiltreerd worden#1. Voor de beschikbaarheid van voedsel en beschutting is het noodzakelijk dat er waterplanten aanwezig zijn, ook het doorzicht en de stroomsnelheid zijn van belang. In het algemeen stelt de blankvoorn eisen aan de waterkwaliteit, deze zijn weergegeven bij de waterkwaliteit rekenregels.
+Reproductie en migratie
+In de paaitijd, die doorgaans in april en mei valt, maar die tot in de zomer kan doorlopen, gaat de blankvoorn op zoek naar geschikte paaiplaatsen. Deze liggen veelal dicht onder de oever in stilstaand tot zwak stromend, ondiep water met beschutting tegen golfslag. De eieren worden afgezet op ondergedoken waterplanten, maar ook oeverplanten, boomwortels, stenen en andere obstakels worden als afzetsubstraat gebruikt. Zowel larven als juvenielen blijven geruime tijd in de oeverbegroeiing. Hierdoor is de blankvoorn sterker dan brasem gebonden aan wateren met begroeiing #2. Ook is er een optimale en maximale temperatuur, pH en saliniteit voor de paai, deze zijn weergegeven in onderstaan rekenregels.
+Leeftijd en mortaliteit
+De blankvoorn bereikt in het eerste jaar een lengte van 5 tot 7 cm. Onder gemiddelde omstandigheden is de blankvoorn geslachtsrijp op een leeftijd van 3 tot 5 jaar, de mannetjes eerder dan de vrouwtjes. De lengte is dan rond 15 cm. De maximale lengte is 45 cm en de maximale leeftijd ca. 10 jaar #2.
+Response functies
+Voor de blankvoorn zijn er een aantal response functies beschikbaar (uit #1). Voor elk studiegebied zal een afweging moeten worden gemaakt welke functies worden meegenomen in het model, ze kunnen ook dienen als randvoorwaarde en hoeven dan niet gemodelleerd te worden. Een voorbeeld hiervan is de saliniteit, als de gemeten waarde nooit boven de maximale tolorantie waarde uitkomt is het niet noodzakelijk deze te modellen. Als echter verwacht wordt dat de saliniteit zal stijgen door een bepaalde maatregel is het wel relevant deze mee te nemen in de modellering.
+Voor de blankvoorn zijn vooral de volgende functies van belang: % aanwezig paaisubstraat, diepte van het paaigebied, doorzicht, stroomsnelheid en vegetatiedichtheid.
+]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Breukelen, S. Van" year="1992" title="Habitat Geschiktheid Model: de Blankvoorn Rutilus rutilus." journal="Organisatie ter Verbetering van de Binnenvisserij." identification=""/>
+		<reference author="Sportvisserij Nederland" year="2006" title="Soortprofiel Blankvoorn (Rutilus rutilis)." journal="" identification=""/>
+		<reference author="Kranenbarg et al." year="2010" title="Habitatgeschiktheid index model Bittervoorn Rhodeus sericeus amarus (Bloch, 1782)." journal="OVB, Nieuwegein" identification=""/>
+		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="hoofdstuk 3 - habitatvoorkeur nuljarige vissen." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

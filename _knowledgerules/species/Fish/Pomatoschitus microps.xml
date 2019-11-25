@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46575290</EoLpagenr>
+			<LatName>Pomatoschitus microps</LatName>
+			<CommonNames>
+				<Name name= "Brakwatergrondel" language = "NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2000-01-01</StartDate>
+						<EndDate>2002-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language = "NL">
+						<text><![CDATA[
+Onzekerheid en validatie
+De dosis-effect relaties zijn niet gevalideerd.
+Toepasbaarheid
+De reponse functies zijn toepasbaar voor het Veerse Meer #1
+Voorbeeldproject
+Er is geen voorbeeldproject beschikbaar.
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Waterdiepte">
+						<type>scalar</type>
+						<layername>"Waterdiepte"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdiepte"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="0.5" HSI="0"/>
+							<parameter value="1" HSI="1"/>
+							<parameter value="5" HSI="1"/>
+							<parameter value="10" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Zoutgehalte">
+						<type>scalar</type>
+						<layername>"Zoutgehalte"</layername>
+						<unit>"promille"</unit>
+						<statistic>average</statistic>
+						<description>"Zoutgehalte"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="10" HSI="0"/>
+							<parameter value="15" HSI="1"/>
+							<parameter value="30" HSI="1"/>
+							<parameter value="35" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[
+Habitat beschrijving
+Algemeen voorkomen
+De brakwatergrondel is een klein visje dat op waterbodems voorkomt. Het wordt circa zes centimeter lang en heeft een doorzichtig lichaam #2 en wordt gekenmerkt door twee rugvinnen en aaneengegroeide buikvinnen waarmee het zich in zwak stromend water aan de ondergrond kunnen vastzuigen #1. 
+Milieuvoorwaarden
+De brakwatergrondel is een typisch estuariene soort en komt uitsluitend in ondiepe kustwateren en estuaria voor tot een diepte van ongeveer 2 meter. Ze leven op zandige, kleiachtige of modderige bodems en zijn algemeen talrijk in ondiepe geulen (0.2 tot 2 m diepte). Brakwatergrondels kunnen sterke schommelingen in temperatuur en zoutgehalte goed verdragen. Ze leiden echter sterk onder koude winters, met als gevolg dat de aantallen sterk kunnen variëren #1. In de late herfst, als de temperatuur zakt beneden 5 a 7 graden Celsius, migreert de brakwatgrondel naar de diepere geulen om te overwinteren. Blijft de temperatuur boven 7 graden Celsius, dan treedt deze wintermigratie niet op #1. 
+Brakwatergrondels hebben een brede zouttolerantie en kan zowel in zout als zoet water leven. Als de regel bevindt de Brakwatergrondel zich in estuaria bij voorkeur in gebieden met een zoutgehalte tussen de 15 en 30 promille.
+Voedselhabitat en strategie
+De brakwatergrondel leeft van ongewervelde bodemdiertjes, waaronder kleine kreeftachtigen en wormen #2.
+Reproductie en migratie
+In de zomer van het tweede levensjaar paait de brakwatergrondel in estuaria #1. Elders kunnen ze al in hun eerste levensjaar paren #2. Vrouwtjes kunnen meerdere keren per seizoen paaien. Het mannetje van Brakwatergrondel heeft in de paaitijd een zwarte tot blauwe vlek in de eerste rugvin. De brakwatergrondel zet zijn eieren af onder of tussen stenen, schelpen of waterplanten #2. 
+]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="" year="" title=" www.ravon.nl (Brakwatergrondel)" journal="" identification=""/>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

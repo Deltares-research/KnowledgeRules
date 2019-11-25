@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>-999999</EoLpagenr>
+			<LatName>Chara spp</LatName>
+			<CommonNames>
+				<Name name = "Macrofauna EKR" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+	</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Netherlands">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2000-01-01</StartDate>
+						<EndDate>2007-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+1. Inleiding
+De factsheet 'Macrofauna van stromende wateren' is oorspronkelijk van toepassing verklaard voor de watertypen R5, R6, R10, R12, R14, R15 en R18. De kleinere beken stonden hier niet tussen, met het argument dat deze niet aan Brussel gerapporteerd hoeven te worden. In de praktijk bleek er echter wel behoefte aan kennisregels voor de kleine stromende wateren. Omdat de rekenregels zijn gebaseerd op een dataset die ook deze kleinere watertypen omvat, zijn de kennisregels ook van toepassing verklaard op de kleinere typen (R4, R9, R11, R13 en R17).
+				
+De rekenregels van macrofauna in stromende wateren gelden dus voor de volgende watertypen (Elbersen et al., 2003; Van der Molen & Pot, dec. 2007):
+				
+R4: Permanent langzaam stromende bovenloop op zand
+R5: Langzaam stromende middenloop/benedenloop
+R6 Langzaam stromende riviertje op zand/klei
+R9: Langzaam stromende bovenloop op kalkhoudende bodem
+R10: Langzaam stromende middenloop op kalkhoudende bodem
+R11: Langzaam stromende bovenloop op veenbodem
+R12: Langzaam stromende middenloop/benedenloop op veenbodem
+R13: Snelstromende bovenloop op zand
+R14: Snelstromende middenloop/benedenloop op zand
+R15: Snelstromend riviertje op kiezelhoudende bodem
+R17: Snelstromende bovenloop op kalkhoudende bodem
+R18: Snelstromende middenloop/benedenloop op kalkhoudende bodem
+
+2. Sturende variabelen
+In fase 1 van de KRW-verkenner is gekozen voor een benadering gebaseerd op de stuurvariabele stromingsdiversiteit. Stromingsdiversiteit alleen lijkt niet voldoende om een score op de KRW-maatlat (EKR) te voorspellen (Cremers et al., 2005). Voor fase 2 is onderzocht of directe relaties zijn af te leiden tussen stuurvariabelen en de maatlatscore op basis van metingen. In het project 'Validatie en verdere optimalisatie KRW-maatlatten voor de natuurlijke rivier- en meertypen' (Royal Haskoning, 2005) zijn de volgende hydromorfologische variabelen aangeven als belangrijkste stuurvariabelen op de macrofaunamaatlat:
+- Meandering/sinuositeit;
+- Breedte- en dieptevariatie;
+- Stroomsnelheid en stromingsdiversiteit;
+- Oeverbegroeiing;
+- Obstakels, i.e. hout en bladpakketten in de stroming zorgen voor een diversiteit in stroomsnelheden en dienen als habitat;
+- Substraat.
+
+De mate van meandering bepaalt voor een groot deel de diversiteit aan stroomsnelheid, breedte, diepte en substraat en is hierdoor een vrij goede totaalvariabele. Een belangrijke aanvullende variabele is de stroomsnelheid. Naast deze hydromorfologische variabelen be?nvloedt waterkwaliteit de maatlatscore voor macrofauna. De belangrijkste sturende chemische variabelen zijn:
+- Zuurstof / biologisch zuurstof verbruik (BZV);
+- Fosfaat;
+- Stikstof.
+
+In zoete wateren is fosfaat meer sturend dan stikstof.
+
+3. Rekenregels abiotiek - macrofauna in beken en kleine rivieren
+De rekenregels voor macrofauna in stromende wateren zijn ontwikkeld aan de hand van een selectie van fysisch-chemische variabelen. De geselecteerde variabelen hebben een grote invloed op de maatlatscore en zijn relatief eenvoudig te bepalen. De soortensamenstelling van macrofauna is zelden het gevolg van ??n stressor, maar wordt bepaald door een combinatie van stressoren. De volgende variabelen zijn gekozen als stuurvariabelen:
+- Fysisch: meandering en stroomsnelheid;
+- Chemisch: totaal fosfaat en BZV.
+
+Substraat, oeverbegroeiing en obstakels zijn naast de geselecteerde variabelen belangrijke sturende factoren voor macrofauna in beken. Deze variabelen zijn echter moeilijk te bepalen en te kwantificeren. Voor een deel komen deze variabelen tot uiting in de stuurvariabele meandering: sterk meanderende beken hebben over het algemeen meer variatie in substraat en meer hoog opgaande begroeiing. Deze begroeiing resulteert in meer dood hout en blad in de beek. Rechtgetrokken beken liggen vaak in landbouwgebied waardoor er weinig hoog opgaande begroeiing langs de oever van de beek aanwezig is en de hoeveelheid dood hout en blad in het water verwaarloosbaar is. Beheer waarbij dood en levend plantenmateriaal uit de beek wordt verwijderd om een goede doorstroming te garanderen, draagt verder bij tot reductie van dood hout en blad in het water.
+
+Voor elke variabele is een formule afgeleid (zie bijlage 2) die de maximaal haalbare Ecologische Kwaliteit Ratio(EKR) op de macrofaunamaatlat berekent (Tabel 3.1). Deze maximaal haalbare EKR is gebaseerd op plafondwaarden voor de stuurvariabelen. Voor alle variabelen dient een waarde ingevuld te worden. De laagste EKR-verwachting geldt als eindscore voor de maximaal haalbare EKR. Deelscores worden afgetopt op 1. De stuurvariabele die de laagste EKR-verwachting geeft, geldt als de bepalende stuurvariabele welke middels maatregelen moet worden hersteld.
+
+De werking van de geselecteerde variabelen op de maatlatscore is bij de hier beschouwde watertypen vrijwel gelijk. Het zijn in feite allemaal grotere permanente beken met verschillen in geologie (zand, veen, klei) die niet van direct belang zijn op de hier af te leiden rekenregels. Bijlage 3 toont aan dat rekenregels voor de variabelen meandering, fosfaat en BZV niet apart voor langzaam en snelstromende type wateren afgeleid hoeven te worden, maar dat dezelfde rekenregels volstaan voor beide typen. Alleen voor stroomsnelheid dient onderscheid gemaakt te worden in snel- en langzaam stromende rivieren.
+
+4. Kwaliteit rekenregels en validatie
+De kwaliteit van de rekenregels van 'macrofauna in kleine stromende wateren' is tijdens de peer review van maart 2007 als 'matig' beoordeeld.
+
+Validatie langzaam stromende beken
+In figuur 4.1 is de maatlatscore van 26 veldmonsters uit langzaam stromende beken (R5 & R6) uitgezet tegen de door de rekenregels berekende EKR-score. Uitbijters met een lagere maatlatscore dan de berekende score worden waarschijnlijk veroorzaakt door pressures die niet in de gekozen variabelen tot uiting komen (bestrijdingsmiddelen, zware metalen), calamiteiten of periodes van zeer lage stroomsnelheden. De kwaliteit voor een waterlichaam als geheel wordt berekend door de scores van een aantal monsters binnen hetzelfde waterlichaam te middelen. Van de geanalyseerde monsters week de berekende score hooguit 2 klassen af van de EKR volgens de maatlatten. 76% van de geanalyseerde monsters kwam exact overeen met de scores van de maatlatten(zie Figuur 4.2).
+
+Validatie a.h.v. de dataset Roer en Overmaas
+Een tweede dataset, afkomstig van Waterschap Roer en Overmaas, is op dezelfde wijze geanalyseerd. Hiervoor is een n van 41 veldmonsters gebruikt, waarvan 39 uit snelstromende beken (R17 en R18) en twee uit langzaam stromende beken (R4 en R11). De resultaten van deze validatie worden gepresenteerd in figuur 4.3 en 4.4. De scores van de KRW-Verkenner komen redelijk overeen met de maatlatscores. De rekenregels van de verkenner berekenen relatief lage scores als gevolg van een lage score voor meandering. De gegevens voor meandering komen uit een database van Waterschap Roer en Overmaas en zijn overgenomen uit Duitse methodes en definities. Deze methoden en definities wijken af van de Nederlandse interpretatie en classificatie. Op deze wijze worden wateren die in Nederland geclassificeerd worden als meanderend, volgens de Duitse methode vaak een klasse lager, als slingerend geclassificeerd. De uiteindelijke afwijking van de scores is over het algemeen slechts minder dan 1 kwaliteitsklasse. Bij ruim de helft van de monsters komt de kwaliteitsklasse goed overeen.
+
+Onderstaande tekst vormt een weergave van de discussie tijdens de peer review van maart 2007.
+
+Macrofauna is met name afhankelijk van substraat. Er zijn echter onvoldoende gegevens beschikbaar om hiervoor goede relaties af te leiden. Daarbij worden er vraagtekens gesteld bij het afleiden van de plafondwaarden. Multipele regressie kan wellicht tot betere relaties leiden. Hierdoor ontstaat bijvoorbeeld meer inzicht in de grote variatie in score bij een lage P-concentratie. Door het gebruik van plafondwaarden wordt wel snel inzichtelijk waar knelpunten liggen.
+
+Het areaal aan habitats is minder van belang dan bij vissen. Bij een bepaald minimumareaal zal de maatlatscore hetzelfde zijn als bij een veel groter areaal.
+
+5. Maatregel - effect relaties
+In de KRW-verkenner kunnen maatregelen worden geselecteerd welke effect hebben op de ecologische toestand van de verschillende kwaliteitselementen. Tabel 5.1 geeft de huidige maatregelen uit de KRW-verkenner weer. Hierbij is aangegeven welke rekenregel (en welke stuurvariabele) gebruikt moet worden om het effect van de maatregel te vertalen naar een effect op de maatlatscore (EKR). Maatregelen gericht op meandering (en verwante stuurvariabelen), stroming en sanering van puntbronnen blijken het meest effectief voor macrofauna (Tabel 5.1). Vrijwel alle maatregelen uit de verkenner hebben effect op een van de stuurvariabelen. Op locaties waar hermeanderen geen optie is door bijvoorbeeld ruimtegebrek kunnen natuurvriendelijke oevers en een natuurvriendelijk beheer voor een lichte ecologische verbetering voor macrofauna zorgen door het cre?ren van habitat (vooral in de vorm van vegetatie). Om het positieve effect van natuurvriendelijke oevers en natuurvriendelijk beheer tot uiting te laten komen in de maatlatscore kan een lichte verhoging van EKR doorgevoerd worden. Dit kan gedaan worden door de EKR-waarde op te hogen met een vast getal van bijvoorbeeld 0.1 per maatregel. Huidige gekanaliseerde (vaak slechte of ontoereikende) beken zouden dan door de aanleg van natuurvriendelijke oevers en het uitvoeren van natuurvriendelijk beheer een klasse kunnen stijgen. Bij meer natuurlijk meanderende beken zijn deze maatregelen geen optie. Dit omdat deze beken over natuurlijke oevers beschikken die over het algemeen niet intensief beheerd worden.
+
+De maatregelen grijpen in op de variabelen DN, KM en DP (voor uitleg, zie hieronder). Deze variabelen vormen onderdeel van de formule waarmee de EKR voor macrofauna wordt berekend. De EKR-score voor macrofauna in beken en kleine rivieren wordt als volgt berekend (Van der Molen & Pot, dec. 2007):
+
+EKR = [ 200 * (KM% / KMmax) + 2 * (100 - DN%) + (KM% + DP%) ] / 500, waarbij:
+
+- DN % (abundantie); het percentage individuen behorende tot de negatief dominante indicatoren op basis van abundantieklassen;
+- KM % (aantal taxa); het percentage kenmerkende taxa;
+- KMmax (maximaal aantal kenmerkende taxa); dit aantal ligt voor ieder watertype vast (zie bijlage I);
+- KM % + DP % (abundantie); het percentage individuen behorende tot de kenmerkende en positief dominante indicatoren op basis van
+abundantieklassen.
+
+Voor een gedetailleerdere uitleg over de berekening van de EKR voor macrofauna wordt verwezen naar Van der Molen & Pot (dec. 2007).
+
+6. Toepasbaarheid
+De werking van de geselecteerde variabelen op de maatlatscore is bij alle hier beschouwde watertypen vrijwel gelijk. Het zijn in feite allemaal grotere permanente beken met verschillen in geologie (zand, veen, klei) die niet van direct belang zijn op de hier afgeleide rekenregels. Alleen voor stroomsnelheid moet onderscheid gemaakt worden tussen langzaam en snelstromende wateren (zie tabel 3.1); voor de variabelen meandering, fosfaatgehalte en BZV volstaan dezelfde rekenregels in beide watertypen.]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="EKR_Meandering">
+						<layername>"EKR_Meandering"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Habitatgeschiktheid voor Macrofauna"</description>
+						<author>"Gerben van Geest"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
+						</references>
+						<output>"EKR_Meandering"</output>
+						<equation>"-0.2563 * ln(meanderingsklasse) + 0.9385"</equation>
+						<Parameters>
+							<valuesConstant dataname = "meanderingsklasse" type = "constant" unit = "klasse">
+								<parameter constantset ="Meanderend (sinuositeit >1.5)" value="1"/>
+								<parameter constantset ="Slingerend (sinuositeit 1.26-1.5)" value="2"/>
+								<parameter constantset ="Zwak slingerend (sinuositeit 1.06-1.25)" value="3"/>
+								<parameter constantset ="Gestrekt (sinuositeit 1.01-1.05)" value="5"/>
+								<parameter constantset ="Recht (sinuositeit 1)" value="5"/>
+							</valuesConstant>
+						</Parameters>
+					</FormulaBased>					
+					<FormulaBased name="EKR_StroomsnelheidLangzaam">
+						<layername>"EKR_StroomsnelheidLangzaam"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Habitatgeschiktheid voor Macrofauna"</description>
+						<author>"Gerben van Geest"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
+						</references>
+						<output>"EKR_Stroomsnelheid"</output>
+						<equation>"0.1532 * ln(stroomsnelheid) + 0.3999"</equation>
+						<Parameters>
+							<valuesScalar dataname="stroomsnelheid" type="scalar" unit="cm/s">
+								<parameter min="0.0001" max = "50.0"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="EKR_StroomsnelheidSnel">
+						<layername>"EKR_StroomsnelheidSnel"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Habitatgeschiktheid voor Macrofauna"</description>
+						<author>"Gerben van Geest"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
+						</references>
+						<output>"EKR_Stroomsnelheid"</output>
+						<equation>"0.1342 * ln(stroomsnelheid) + 0.1753"</equation>
+						<Parameters>
+							<valuesScalar dataname = "stroomsnelheid" type = "scalar" unit = "cm/s">
+								<parameter min="50.0" max = "200.0"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>					
+					<FormulaBased name="EKR_TotaalFosfaat">
+						<layername>"EKR_TotaalFosfaat"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Habitatgeschiktheid voor Macrofauna"</description>
+						<author>"Gerben van Geest"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
+						</references>
+						<output>"EKR_TotaalFosfaat"</output>
+						<equation>"-0.1911 * ln(Ptotaal) + 0.5613"</equation>
+						<Parameters>
+							<valuesScalar dataname = "Ptotaal" type = "scalar" unit = "mg/l">
+								<parameter min="0.1" max = "1.0"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="EKR_BZV">
+						<layername>"EKR_BZV"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Habitatgeschiktheid voor Macrofauna"</description>
+						<author>"Gerben van Geest"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
+						</references>
+						<output>"EKR_BZV"</output>
+						<equation>"-0.4152 * ln(BZV) + 1.2635"</equation>
+						<Parameters>
+							<valuesScalar dataname = "BZV" type = "scalar" unit = "mg/l">
+								<parameter min="2.0" max = "10.0"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>	
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA[TO BE FILLED]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Bal, D., H.M. Beije, M. Fellinger, R. Haveman, A.J.F.M. van Opstal en F.J. van Zadelhoff" year="2001" title="Handboek natuurdoeltypen" journal="Wageningen" identification="Rapport IKC-LNV"/>
+		<reference author="Cremers, N., A. de Swaaf, R. Portielje, J. Kranenbarg, J. Elbersen en J. Delsma" year="2005" title="KRW-verkenner (fase 1); Deel rapportage spoor Afbeelding Kennis" journal="" identification=""/>
+		<reference author="Elbersen, J.W.H., P.F.M. Verdonschot, B. Roels en J.G. Hartholt" year="2003" title="Definitiestudie Kaderrichtlijn Water (KRW). I. Typologie Nederlandse Oppervlaktewateren" journal="Alterra" identification="Alterra-rapport 669"/>
+		<reference author="Hamme, H. van der" year="1992" title="Macrofauna van Noord-Holland" journal="Provincie Noord-Holland, Dienst Ruimte en Groen, Haarlem" identification="Proefschrift K.U. Nijmegen"/>
+		<reference author="Heinis, F. en C.H.M., Evers " year="2006" title="Getalswaarden nutri?nten voor de Goede Ecologische Toestand voor natuurlijke wateren" journal="Royal Haskoning, Heinis Waterbeheer, RIVM en Alterra in opdracht van RIZA" identification=""/>
+		<reference author="Kaderrichtlijn Water" year="2000" title="Richtlijn 2000/60/EG van het Europees Parlement en de Raad. 23 oktober 2000; tot vastlegging van een kader voor communautaire maatregelen betreffende het waterbeleid.." journal="" identification=""/>
+		<reference author="Knoben, R.A.E. en P.A.M. Kamsma" year="2004" title="Achtergronddocument referenties en maatlatten voor macrofauna." journal="Landelijke expertgroep" identification=""/>
+		<reference author="Limnodata neerlandica" year="" title="Aquatisch-ecologische databank voor Nederland" journal="" identification=""/>
+		<reference author="Moller Pillot, H.K.M. en R. Buskens" year="1990" title="De Nederlandse chironomidae. Deel 1c. Nederlanse faunistische mededelingen" journal="Leiden" identification="-"/>
+		<reference author="Royal Haskoning" year="2005" title="Validatie en verdere optimalisatie van de concept KRW-maatlatten voor de natuurlijke rivier- en meertypen. " journal="Royal Haskoning in samenwerking met Witteveen+Bos en Taken Landschapsplanning in opdracht van RIZA" identification="-"/>
+		<reference author="Van der Molen, D.T." year="2004b" title="Referenties en concept-maatlatten voor rivieren voor de Kaderrichtlijn Water." journal="-" identification="Rapportnummer 2004-43"/>
+		<reference author="Van der Molen, D.T. en Pot, R." year="2007" title="Referenties en maatlatten voor natuurlijke watertypen voor de Kaderrichtlijn Water." journal="STOWA" identification="STOWA rapport nummer 2007-32"/>
+		<reference author="Verdonschot, P., Goedhart, P., Nijboer, R., Vlek, H." year="2003" title="Voorspelling van effecten van ingrepen in het waterbeheer op aquatische gemeenschappen; De ontwikkeling van voorspellingsmodellen voor beken en sloten in Nederland." journal="Wageningen" identification="Alterra rapport 738"/>
+		<reference author="Verdonschot, P.F.M." year="1990" title="Ecologische karakterisering van oppervlaktewateren in Overijssel." journal="Leersum" identification="Rapport RIN"/>
+		<reference author="Verdonschot, P.F.M" year="1995" title="Beken stromen. Leidraad voor ecologisch beekherstel" journal="WEW" identification=" 95-03 WEW-06"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

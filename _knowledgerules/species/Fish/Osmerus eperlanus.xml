@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46563008</EoLpagenr>
+			<LatName>Osmerus eperlanus</LatName>
+			<CommonNames>
+				<Name name = "Smelt" language = "ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="North Atlantic Ocean" id="3411923"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2000-01-01</StartDate>
+						<EndDate>2006-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language = "ENG">
+						<text><![CDATA[
+Uncertainty and validation
+The response curves have not been validated. Based on expert judgement, the relations were considered adequately enough to apply here.
+
+Applicability				
+The response curves can be applied throughout the year as they contain a large range covering the entire year. Input data, measurement data or model data can therefore by consulted all year round.
+.]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Transparency">
+						<type>scalar</type>
+						<layername>"Transparency"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Tolerable transparency for the Smelt species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-31</date>
+						<references>
+							<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="70" HSI="1"/>
+							<parameter value="130" HSI="0.5"/>
+							<parameter value="200" HSI="0.25"/>
+							<parameter value="270" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="WaterTemperature">
+						<type>scalar</type>
+						<layername>"MaximumSummerWaterTemperature"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>summer maximum (june - august)</statistic>
+						<description>"Maximum summer water temperature tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="20" HSI="1"/>
+							<parameter value="23" HSI="0.5"/>
+							<parameter value="25" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen">
+						<type>scalar</type>
+						<layername>"MinimumOxygen"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>minimum</statistic>
+						<description>"Minimum oxygen tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0"/>
+							<parameter value="2" HSI="0"/>
+							<parameter value="4" HSI="0.25"/>
+							<parameter value="6" HSI="0.5"/>
+							<parameter value="8" HSI="1"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="ENG">
+			<text><![CDATA[Occurrence
+The Smelt is a species of fish in the Osmeridae family that lives in the waters of the Northern Hemisphere. A salt-water form, the anadrome smelt, is common in salt and fresh moving water. It grows in salt water and migrates inland to spawn. The freshwater form spends its entire life in fresh water, mainly the larger lakes #1. It swims in schools and prefers large open waters, such as lake IJssel.
+
+Food habitat and strategy
+Smelt larval feed on small plankton organisms. Juveniles feed on larger plankton. Adult smelts also feed on fish (smelts, small herrings and bass). The smelt itself is a major food source for many other fish and birds #1.
+
+Growth and migration
+Spawning takes place from March to June. The egg count per female can be as much as 40,000. They spawn on a substrate of sand, gravel, rocks or water plants. To prevent suffocation of the eggs the substrate must be rather solid #1.
+
+Age and mortality
+Salt water smelt may reach 30cm in length and can live for 8 years. The freshwater smelt, on the other hand, can live for 3 years and can only reach 14cm.]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="Sportvisserij Nederland" year="2006" title="" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

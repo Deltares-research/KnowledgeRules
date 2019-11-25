@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>3909</EoLpagenr>
+			<LatName>Chara spp</LatName>
+			<CommonNames>
+				<Name name="Kranswieren" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="ijsselmeergebied_doorzicht">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA["To Be Filled"]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_chara">
+						<layername>"HGI_chara"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Habitat suitability for the Chara species"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="M. Haasnoot" year="2014" title="" identification="" journal="">
+								<html></html>
+							</reference>
+							
+						</references>
+						<output>"HSI probability"</output>
+						<equation>"1/(1 + P_chara)"</equation>
+						<Parameters>
+							<valuesScalar dataname = "P_chara" type = "scalar" unit = "-">
+								<parameter min="0" max = "1"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>					
+					<FormulaBased name="P_chara_visibility">
+						<layername>"P_chara_visibility"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Likeliness of presence for the Chara species"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="M. Haasnoot" year="2014" title="" identification="" journal="">
+								<html></html>
+							</reference>
+						</references>
+						<output>"Probability"</output>
+						<equation>"1*exp(-(-3.811882503+deelgebied-2.183232932*diepte_zom+0.101857262*(diepte_zom^2)-0.109802864*diepte_zom*doorzicht-0.00058004*strijklengte))"</equation>
+						<Parameters>
+							<valuesConstant dataname = "deelgebied" type = "constant" unit = "-">
+								<parameter constantset ="MBIJ" value="1.154566403"/>
+								<parameter constantset ="MGZ" value="3.2547517"/>
+								<parameter constantset ="MHE" value="2.723574565"/>
+								<parameter constantset ="MHH" value="3.750643"/>
+								<parameter constantset ="MHRDz" value="3.692823434"/>
+								<parameter constantset ="MIJ" value="1.852459203"/>
+							</valuesConstant>
+							<valuesScalar dataname = "diepte_zom" type = "scalar" unit = "m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname = "doorzicht" type = "scalar" unit = "dm">
+								<parameter min="0" max="30"/>
+							</valuesScalar>
+							<valuesScalar dataname = "strijklengte" type = "scalar" unit = "m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="P_chara_extinction">
+						<layername>"P_chara_extinction"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Likeliness of presence for the Chara species"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="M. Haasnoot" year="2014" title="" identification="" journal="">
+								<html></html>
+							</reference>
+						</references>
+						<output>"Probability"</output>
+						<equation>"1*exp(-(0.247702657+deelgebied-1.280411065*diepte_zom+0.06854636*(diepte_zom^2)-0.278693414*diepte_zom*extinctie-0.163078252*extinctie-0.000435184*strijklengte))"</equation>
+						<Parameters>
+							<valuesConstant dataname = "deelgebied" type = "constant" unit = "-">
+								<parameter constantset ="MBIJ" value="-0.81302272"/>
+								<parameter constantset ="MGZ" value="1.998701637"/>
+								<parameter constantset ="MHE" value="0.724567841"/>
+								<parameter constantset ="MHH" value="1.733868205"/>
+								<parameter constantset ="MHRDz" value="2.214793065"/>
+								<parameter constantset ="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname = "diepte_zom" type = "scalar" unit = "m" >
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname = "extinctie" type = "scalar" unit = "m-1" >
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname = "strijklengte" type = "scalar" unit = "m" >
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<FysicalCharacteristics/>
+	<Traits/>
+	<SpeciesDescription>
+		<Description language="NL">
+			<text><![CDATA["To Be Filled"]]></text>
+		</Description>
+	</SpeciesDescription>
+	<Documentation>
+		<reference author="" year="" title="" journal="" identification="">
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

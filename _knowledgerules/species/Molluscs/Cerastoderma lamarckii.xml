@@ -103,9 +103,7 @@ Er is geen voorbeeldproject.
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -118,7 +116,7 @@ Brakwaterkokkels leven in rustig water, vooral achter de dijken of in zee ingegr
 In vergelijking tot de gewone kokkel kan de brakwaterkokkel beter tegen lage zoutgehalten, maar slechter tegen zoutgehalten hoger dan 30 promille #2.
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="" year="2012" title="http://www.natuurinformatie.nl/ (Brakwaterkokkel) " journal="" identification="26 november 2012">
 			<html><![CDATA[http://www.natuurinformatie.nl//nnm.dossiers/natuurdatabase.nl/i003565.html]]></html>

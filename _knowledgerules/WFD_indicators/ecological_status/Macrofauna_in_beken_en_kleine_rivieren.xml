@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../XMLSchema/AutecologyXML.xsd">
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
-		<Species>
-			<EoLpagenr>-999999</EoLpagenr>
-			<LatName>Chara spp</LatName>
+		<WFDindicator>
 			<CommonNames>
 				<Name name = "Macrofauna EKR" language="NL"/>
 			</CommonNames>
-			<SpecCode/>
-	</Species>
+		</WFDindicator>
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
@@ -206,13 +203,11 @@ De werking van de geselecteerde variabelen op de maatlatscore is bij alle hier b
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[TO BE FILLED]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Bal, D., H.M. Beije, M. Fellinger, R. Haveman, A.J.F.M. van Opstal en F.J. van Zadelhoff" year="2001" title="Handboek natuurdoeltypen" journal="Wageningen" identification="Rapport IKC-LNV"/>
 		<reference author="Cremers, N., A. de Swaaf, R. Portielje, J. Kranenbarg, J. Elbersen en J. Delsma" year="2005" title="KRW-verkenner (fase 1); Deel rapportage spoor Afbeelding Kennis" journal="" identification=""/>

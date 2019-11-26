@@ -251,9 +251,7 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[De milieucondities die van belang zijn voor de driehoeksmossel zijn zoet water, bodemtype, waterdiepte en watertemperatuur #2, #6.
 
@@ -267,7 +265,7 @@ In het IJsselmeer begint de jaarlijkse lengtegroei van de driehoeksmosselen in a
 
 Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen tot een verandering van het voorkomen van de driehoeksmossel leiden.]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. " journal="WL | Delft Hydraulics" identification="WL report Q4015">
 		</reference>

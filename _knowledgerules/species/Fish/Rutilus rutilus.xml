@@ -347,9 +347,7 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -367,7 +365,7 @@ Voor de blankvoorn zijn er een aantal response functies beschikbaar (uit #1). Vo
 Voor de blankvoorn zijn vooral de volgende functies van belang: % aanwezig paaisubstraat, diepte van het paaigebied, doorzicht, stroomsnelheid en vegetatiedichtheid.
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Breukelen, S. Van" year="1992" title="Habitat Geschiktheid Model: de Blankvoorn Rutilus rutilus." journal="Organisatie ter Verbetering van de Binnenvisserij." identification=""/>
 		<reference author="Sportvisserij Nederland" year="2006" title="Soortprofiel Blankvoorn (Rutilus rutilis)." journal="" identification=""/>

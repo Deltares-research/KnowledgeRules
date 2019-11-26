@@ -128,9 +128,7 @@ Geen
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -147,7 +145,7 @@ Reproductie en migratie
 Na 2 tot 3 jaar zijn de bevers volwassen #2. De bronstijd vindt plaats in de maanden januari en februari. Na een draagtijd van ongeveer 15 weken worden de jongen in de maart tot midden juli geboren. Er vindt maar één worp per jaar plaats met een gemiddeld 2 jongen per worp. De jonge bevers blijven 4-6 weken in het nest #1. Na 2 tot 3 jaar trekken de inmiddels volwassen geworden bevers uit het nest weg #2. De gemiddelde levensduur van een bever is 8-12 jaar met een maximum van 35 jaar #2. 
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Hollands., H., J.O. Reinhold" year="1999" title="HSI-modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van huidige ecologische kennis" journal="Dienst Weg- en Waterbouwkunde" identification=""/>
 		<reference author="" year="2012" title="www.zoogdiervereniging.nl (Bever)" journal="" identification="11-12-2012"/>

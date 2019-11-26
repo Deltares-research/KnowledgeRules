@@ -572,9 +572,7 @@ Er is geen voorbeeldproject beschikbaar.
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -600,7 +598,7 @@ Dosis-effect relaties
 De Dosis-effect relaties zijn opgesteld per levensvorm van de Barbeel. Hierin is onderscheid gemaakt tussen de voortplanting, larven en juveniel en adult. 
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Bakker, H.D." year="1992" title="Habitat Geschiktheid Index Model. De Barbeel Barbus barbus L." journal="Organisatie ter Verbetering van de Binnevisserij" identification="juli 1992">
 		</reference>

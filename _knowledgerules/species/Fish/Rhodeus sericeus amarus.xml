@@ -121,9 +121,7 @@ Volkerak-Zoommeer Habitat analyse (#4)
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -140,7 +138,7 @@ Leeftijd en mortaliteit
 Over de leeftijd en mortaliteit van de Bittervoorn is geen informatie beschikbaar.
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="" year="" title="" journal="http://www.minlnv.nl/natura2000" identification=""/>
 		<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="Europese natuur in Nederland; soorten van de Habitat richtlijn" journal="" identification=""/>

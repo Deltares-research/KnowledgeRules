@@ -84,9 +84,7 @@ Daarnaast is een dosis-effect relatie voor verstoring opgenomen die is overgenom
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -105,7 +103,7 @@ Leeftijd en mortaliteit
 Vrouwtjes worden gemiddeld ouder dan mannetjes (resp. 46 en 26 jaar) #1.
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="" year="" title="http://www.minlnv.nl/natura2000" journal="" identification=""/>
 		<reference author="Bouma, H. et al." year="2005" title="Zoute wateren ecotopenstelsel (ZES.1)" journal="" identification="Rapport RIKZ/2005.024"/>

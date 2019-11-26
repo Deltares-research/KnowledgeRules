@@ -1,0 +1,41 @@
+---Validation log for KnowledgeRules xmls---
+
+- Structure and number of files
+  /species
+      /Birds
+        /Phalacrocorax carbo.xml
+      /Fish
+        /Abramis brama.xml
+        /Anguilla anguilla.xml
+        /Barbus barbus.xml
+        /Lepomis macrochirus.xml
+        /Osmerus eperlanus.xml
+        /Plecoglossus_altivelis.xml
+        /Pomatoschitus microps.xml
+        /Rhodeus sericeus amarus.xml
+        /Rutilus rutilus.xml
+      /Macrofytes
+        /Chara spp.xml
+        /Draadwieren.xml
+        /Myriophyllum spicatum.xml
+        /Nuphar lutea.xml
+        /Potamogeton perfoliatus.xml
+        /Scirpus triqueter.xml
+      /Mammals
+        /Castor fiber.xml
+        /Halichoerus grypus.xml
+        /Myotis dasycneme.xml
+        /Ondatra zibethicus.xml
+        /Phocaena phocaena.xml
+      /Molluscs
+        /Cerastoderma lamarckii.xml
+        /Dreissena_polymorpha.xml
+  /WFD_indicators
+      /ecological_status
+        /Macrofauna_in_beken_en_kleine_rivieren.xml
+ Total number of XMLs : 24
+
+- Validation
+ All xmls validated succesfully!
+
+END LOG

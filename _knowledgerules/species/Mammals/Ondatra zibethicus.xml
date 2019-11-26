@@ -145,10 +145,8 @@ Geen
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
-	<Description language="NL"><text><![CDATA[
+	<ContentDescription>
+		<Description language="NL"><text><![CDATA[
 Habitat beschrijving
 Algemeen voorkomen
 De muskusrat is in Nederland ingevoerd voor de pelsfokkerij en is door ontsnapping nu de grootste woelmuissoort in Europa #1. De muskusrat komt nu in grote delen van Europa voor met uitzondering van Groot-Brittannië, Ierland, het grootste deel van Scandinavië en Zuid-Europa #2. In Nederland is de muskusrat bijna overal te vinden, met uitzondering van de Veluwe, het westelijk deel van Noord- en Zuid-Holland, Schouwen-Duivenland en Walcheren #1. 
@@ -165,7 +163,7 @@ Mortaliteit
 Zelf heeft de muskusrat in Nederland weinig natuurlijke vijanden. Echter op de jonge dieren wordt wel gejaagd, onder andere door de vos, bunzing en hermelijn en mogelijk ook snoek en snoekbaars #1. Een muskusrat wordt ongeveer 3 jaar oud. Echter, 80-90% redt de eerste winter niet #2. 
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Hollands., H., J.O. Reinhold" year="1999" title="HSI-modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van huidige ecologische kennis" journal="" identification="Dienst Weg- en Waterbouwkunde"/>
 		<reference author="" year="2012" title="www.zoogdiervereniging.nl (Muskusrat)" journal="" identification="11 december 2012">

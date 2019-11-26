@@ -168,9 +168,7 @@ Het is belangrijk om bij het berekenen van een realistische habitatgeschiktheid 
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 		<text><![CDATA[
 Habitat beschrijving
@@ -189,7 +187,7 @@ Leeftijd en mortaliteit
 De Meervleermuis wordt gemiddeld 5 tot 7 jaar oud en krijgt slechts 1 jong per jaar. De hoogst aangetoonde leeftijd is 20,5 jaar.
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Haarsma, A-J. et al." year="2006" title="Nederland, meervleermuisland. Omgaan met meervleermuizen in het landschap" journal="Brochure van VZZ, Leiden" identification=""/>
 		<reference author="Haarsma, A.-J. en Tuitert, D.A.H" year="2009" title="An overview and evaluation of methodologies for locating the summer roosts of pond bats (Myotis dasycneme) in the Netherlands" journal="Lutra 2009 52 (1): 47-64" identification=""/>

@@ -80,9 +80,7 @@ Er is geen voorbeeldproject beschikbaar.
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -97,7 +95,7 @@ Reproductie en migratie
 In de zomer van het tweede levensjaar paait de brakwatergrondel in estuaria #1. Elders kunnen ze al in hun eerste levensjaar paren #2. Vrouwtjes kunnen meerdere keren per seizoen paaien. Het mannetje van Brakwatergrondel heeft in de paaitijd een zwarte tot blauwe vlek in de eerste rugvin. De brakwatergrondel zet zijn eieren af onder of tussen stenen, schelpen of waterplanten #2. 
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="" year="" title=" www.ravon.nl (Brakwatergrondel)" journal="" identification=""/>
 		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>

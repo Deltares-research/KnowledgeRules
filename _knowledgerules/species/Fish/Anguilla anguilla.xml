@@ -146,9 +146,7 @@ Er is geen voorbeeld project beschikbaar.
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[Algemeen voorkomen
 De aal komt in geheel Europa voor. Het verspreidingsgebied strekt zich uit van IJsland, Lapland en Finland in het noorden tot de Canarische Eilanden en Noord-Afrika in het zuid-westen; de zuid-oostgrens wordt gevormd door Israël, Turkije en het gebied rond de Zwarte Zee in het Gemenebest van Onafhankelijke Staten #1.
@@ -193,7 +191,7 @@ De aalscholvers wordt beschouwd als de belangrijkste predator van aal, echter sp
 Milieu voorwaarden
 De aal heeft een bijzonder groot aanpassingsvermogen en stelt weinig eisen aan zijn leefgebied. Er is dan ook binnen het enorme verspreidingsgebied, dat zich van 71 tot 20 graden noorderbreedte over Europa en Noord-Afika uitstrekt, eigenlijk geen watertype aan te wijzen waar de Aal niet voorkomt of zou kunnen voorkomen. In ieder water waar vis kan leven en waar voedsel en schuilmogelijkheden te vinden zijn, kan de aal zich handhaven. Dit geld zowel voor zee- als binnenwater, van subtropische gebieden tot aan de Noordkaap in Scandinavië. Toch doet uiteraard ook de aal het niet onder alle omstandigheden even goed. Er zijn verschillende milieu-variabelen bekend die van invloed zijn op de geschiktheid van een habitat voor de aal #1.]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="W.J. Schouten" year="1992" title="Habitat Geschiktheid Index Model. De Aal Anguilla anguilla L." journal="Organisatie ter Verbetering van de Binnevisserij" identification="oktober 1992">
 		</reference>

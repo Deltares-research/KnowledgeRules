@@ -211,9 +211,7 @@ Niet aanwezig
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[Algemeen voorkomen
 De aalscholver (Phalacrocorax carbo) en de kuifaalscholver (Phalacrocorax aristotelis) zijn de enige vertegenwoordigers van de aalscholverfamilie in Noordwest Europa. De aalscholver is een overheersend zwarte vogel. Een duidelijke witte vlek op de kop in de broedtijd onderscheidt de continentale ondersoort (P. carbo sinensis) van de Atlantische ondersoort (P. carbo carbo), die deze plek mist. De Atlantische ondersoort broedt in de kustgebieden van IJsland, Faroer-eilanden, Noorwegen, Britse eilanden, Ierland en Noordwest-Frankrijk. De Atlantische soort is een typische rotsbroeder. De belangrijkste Europese broedgebieden van de continentale soort zijn gelegen in Nederland, Duitsland, Denemarken, Zweden, Polen, Litouwen, Estland en Wit-Rusland #1. Hier onder wordt alleen de voorkeur van de continentale aalscholver beschrijven.
@@ -239,7 +237,7 @@ In Nederland ruien de eerstejaars vogels en de oudere niet broedende aalscholver
 Leeftijd en mortaliteit
 In het eerste levens jaar is de mortaliteit onder de vrouwtjes en mannetjes 36%. In het derde levensjaar is dit gereduceerd tot 9-14% voor vrouwtjes en 7-12% voor mannetjes. De hoge sterftecijfers, ook op latere leeftijd, worden mede veroorzaakt door de vele jachtslachtoffers. De gemiddelde overleving van vliegvlugge jongen tot geslachtsrijpe aalscholvers is 30-40%. Het gemiddelde voortplantingssucces van een kolonie wordt in belangrijke mate bepaald door de ecologische kwaliteit van de visgronden, de afstand van de kolonie naar de visgronden en de weersgesteldheid tijdens het broedseizoen. Aalscholvers kunnen 19 jaar worden in de vrije natuur #1.]]></text>
 			</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="Habitatmodel Aalscholver: een model voor het analyseren van de kwaliteit van water- en moerasgebieden als broed- en foerageerhabitat van de aalscholver (Phalacrocorax carbo). Werkdocument P95-019, TNO-BSA" journal="" identification="december 1994"/>
 		<reference author="Sierdsema" year="" title="" journal="" identification=""/>

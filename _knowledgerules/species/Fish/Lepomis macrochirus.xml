@@ -418,9 +418,7 @@ Er is geen voorbeeldproject beschikbaar.
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -435,7 +433,7 @@ Milieu voorwaarden
 De soort is het meest te vinden in poelen, meren en reservoirs met lage stroomsnelheden. Volwassen dieren zijn ook te vinden in brak water. Rivieren zijn minder voordelig in verband met de stroomsnelheid, maar ook hier komen ze voor. De dieren zwemmen vaak in scholen en maken gebruik van beschutting in de vorm van waterplanten en ander materiaal #1. 
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Stuber, R.J., Gebhart,G." year="1982" title="HABITAT SUITABILITY INDEX MODELS: Bluegill, FWS/OBS-82/10.8, Western Energy and Land use Team, U.S. Fish and Wildlife Service Revised" journal="" identification="februari 1982"/>
 		<reference author="" year="2012" title="http://en.wikipedia.org/" journal="" identification="18-12-2012">

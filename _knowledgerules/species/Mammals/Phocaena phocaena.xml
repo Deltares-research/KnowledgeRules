@@ -59,9 +59,7 @@ Er is geen voorbeeldprojekt beschikbaar.
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 		<text><![CDATA[
 Habitat beschrijving
@@ -76,7 +74,8 @@ De paartijd is in de zomer (juli), waarna tussen mei en juli van het volgende ja
 
 Leeftijd en mortaliteit
 De Bruinvis kan 24 jaar oud worden maar het merendeel van de bruinvissen wordt waarschijnlijk niet ouder dan 12 jaar #1.
-]]></text></Description></SpeciesDescription>
+]]></text></Description>
+	</ContentDescription>
 	<Documentation>
 		<reference author="" year="2009" title="http://www.minlnv.nl/natura2000" journal="" identification="">
 			<html><![CDATA[https://www.synbiosys.alterra.nl/natura2000/gebiedendatabase.aspx?zoek_gebiedsnaam_n2k=bruinvis]]></html>

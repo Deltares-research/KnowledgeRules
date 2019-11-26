@@ -97,9 +97,7 @@ The response curves can be applied throughout the year as they contain a large r
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="ENG">
 			<text><![CDATA[Occurrence
 The Smelt is a species of fish in the Osmeridae family that lives in the waters of the Northern Hemisphere. A salt-water form, the anadrome smelt, is common in salt and fresh moving water. It grows in salt water and migrates inland to spawn. The freshwater form spends its entire life in fresh water, mainly the larger lakes #1. It swims in schools and prefers large open waters, such as lake IJssel.
@@ -113,7 +111,7 @@ Spawning takes place from March to June. The egg count per female can be as much
 Age and mortality
 Salt water smelt may reach 30cm in length and can live for 8 years. The freshwater smelt, on the other hand, can live for 3 years and can only reach 14cm.]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Sportvisserij Nederland" year="2006" title="" journal="" identification=""/>
 	</Documentation>

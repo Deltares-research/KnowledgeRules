@@ -329,9 +329,7 @@ Er is geen voorbeeldproject beschikbaar.
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[
 Habitat beschrijving
@@ -355,7 +353,7 @@ Milieu-factoren
 Paai vindt bij voorkeur plaats in vegetatierijke delen. Het oppervlak van een paaigebied moet minimaal 100 m^2^ groot zijn. Zuurstofconcentraties zijn met name van belang voor de eieren: bij een gehalte lager dan 3 mg/l treed 100% sterfte op. Zuurgraad is juist belang voor het paren: buiten een pH 4.4 en 10.5 vindt er geen paai plaats. Verder is de temperatuur van belang voor sterfte en voedselopname: bij watertemperaturen van 30 graden Celsius of meer treedt er sterfte op, bij een temperatuur lager dan 4 graden Celsius neemt de Baars geen voedsel meer op. 
 ]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="Van Breukelen, S." year="1992" title="Habitat Geschiktheid Index Model: Brasem Abramis brama." journal="" identification="Organisatie ter Verbetering van de Binnenvisserij. november 1992"/>
 		<reference author="" year="2012" title="http://en.wikipedia.org/ (Bluegill)" journal="" identification="18-12-2012"/>

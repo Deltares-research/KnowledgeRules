@@ -116,12 +116,11 @@
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 			<Description language="ENG">
 			<text><![CDATA[TO BE FILLED]]></text>
-		</Description></SpeciesDescription>
+		</Description>
+	</ContentDescription>
 	<Documentation>
 		<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
 		</reference>	

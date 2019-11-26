@@ -123,9 +123,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 		<Description language="NL">
 			<text><![CDATA[Habitatbeschrijving
 Aarvederkruid komt zowel in zoet als in brak voedselrijk water voor. De plant komt van nature voor in Eurazië en heeft zich daarvandaan verspreid naar Noord-Amerika waar het een invasieve soort is geworden. De plant komt over het algemeen voor op een diepte van 0,5 tot 3,5 m op een bodem van zand, leem, zavel, veen of klei. De groeiplaatsen waar ze gevonden kunnen worden zijn: kleisloten, afgravingen, duinplassen, laagveenplassen en in spoorsloten. Aarvederkruid is vrij algemeen in het westen van Nederland (maar vrij zeldzaam in Zeeland), in het noordelijk zeekleigebied, het rivierengebied en in stedelijke omgeving. Elders vrij zeldzaam tot zeldzaam (#1,#2).
@@ -151,7 +149,7 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 
 Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's doorzicht en extinctie.]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="" year="" title="" journal="" identification="">
 			<html><![CDATA[http://nl.wikipedia.org/wiki/Aarvederkruid]]></html>

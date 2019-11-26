@@ -123,9 +123,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 			</System>
 		</ModelType>
 	</Autecology>
-	<FysicalCharacteristics/>
-	<Traits/>
-	<SpeciesDescription>
+	<ContentDescription>
 	<Description language="NL">
 		<text><![CDATA[Habitatbeschrijving
 Doorgroeid fonteinkruid komt voor op zonnige plaatsen in niet te ondiep, voedselrijk, zoet of zwak brak, stilstaand of stromend, neutraal tot kalkrijk water met een bodem van zand, leem, zavel of klei. Het kan gevonden worden in plassen, vijvers, kanalen, meren, rivieren, beken, brede sloten, toevoerkanalen van gemalen en in het zoetwatergetijdengebied.
@@ -145,7 +143,7 @@ extinctie = extinctiecoefficient (1/m)
 strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)
 Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's doorzicht en extinctie.]]></text>
 		</Description>
-	</SpeciesDescription>
+	</ContentDescription>
 	<Documentation>
 		<reference author="" year="" title="" journal="" identification="">
 		<html><![CDATA[http://nl.wikipedia.org/wiki/Doorgroeid_fonteinkruid]]></html></reference>

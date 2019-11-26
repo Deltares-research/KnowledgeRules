@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+		<EoLpagenr>000000</EoLpagenr>
+		<LatName>Testus testus</LatName>
+		<CommonNames>
+			<Name name="Test name" language = "ENG"/>
+		</CommonNames>
+		<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="testsystem">
+					<Scope>
+						<SpatialScope>
+							<GeoNames name="Earth" id="6295630"/>
+						</SpatialScope>
+					</Scope>
+				<SystemDescription>
+					<Description language="ENG">
+						<text><![CDATA[Test
+TEST]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Chloride">
+						<type>scalar</type>
+						<layername>"CL"</layername>
+						<unit>"g/l"</unit>
+						<statistic>minimum</statistic>
+						<description>"Tolerable chlorine content for the Zebra mussel species"</description>
+						<author>"K.E. van de Wolfshaar, M. Haasnoot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1"/>
+							<parameter value="1" HSI="1"/>
+							<parameter value="1.1" HSI="0"/>
+							<parameter value="5" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Soil">
+						<type>categorical</type>
+						<layername>"SoilType"</layername>
+						<unit>"soil"</unit>
+						<statistic>average</statistic>
+						<description>"Average soil type tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="klei" HSI="0.466"/>
+							<parameter cat="leem" HSI="0.688"/>
+							<parameter cat="zand" HSI="0.743"/>
+							<parameter cat="veen" HSI="0.074"/>
+							<parameter cat="stortsteen" HSI="0.879"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="SiltFraction">
+						<type>range / categorical</type>
+						<layername>"SiltFraction"</layername>
+						<unit>"silt fraction / description"</unit>
+						<statistic>average</statistic>
+						<description>"Average silt content tolerable for the Zebra mossel species"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="slibarm" HSI="0.753"/>
+							<parameter rangemin="10" rangemax="25" cat="matig slibrijk" HSI="0.45"/>
+							<parameter rangemin="25" rangemax="100" cat="slibrijk" HSI="0.103"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="WaterdepthLakes">
+						<type>ranges</type>
+						<layername>"WaterdepthLakes"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth tolerable for the Zebra mossel species in Lakes"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+						</references>
+						<valuesRanges>
+							<parameter rangemin="0" rangemax="2" HSI="0.287"/>
+							<parameter rangemin="2" rangemax="5" HSI="0.76"/>
+							<parameter rangemin="5" rangemax="10" HSI="0.634"/>
+							<parameter rangemin="10" rangemax="25" HSI="0.205"/>
+							<parameter rangemin="25" rangemax="50" HSI="0.033"/>
+							<parameter rangemin="50" rangemax="999999" HSI="0"/>
+						</valuesRanges>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="ENG">
+			<text><![CDATA[Test
+	Test]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. " journal="WL | Delft Hydraulics" identification="WL report Q4015"/>
+		<reference author="Van de Wolfshaar, K.E., M. Haasnoot" year="2007" title="Toetsing dosis-effect relaties HABITAT. Pilot voor het Markermeer en de Voordelta." journal="WL | Delft Hydraulics" identification="WL-report Q4327">
+			<html><![CDATA[http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1]]></html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

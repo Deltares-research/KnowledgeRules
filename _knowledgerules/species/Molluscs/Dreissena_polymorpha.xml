@@ -5,8 +5,8 @@
 			<EoLpagenr>46470938</EoLpagenr>
 			<LatName>Dreissena polymorpha</LatName>
 			<CommonNames>
-				<Name name="Zebra mussel" language="ENG"></Name>
-				<Name name="Zebra mossel" language="NL"></Name>
+				<Name name="Zebra mussel" language="ENG"/>
+				<Name name="Zebra mossel" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -35,6 +35,9 @@ Hierbij is aanwezigheid van de driehoeksmossel in het model gezet op een habitat
 
 Toepasbaarheid
 Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></text>
+					</Description>
+					<Description language="ENG">
+						<text><![CDATA[To be filled]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -265,6 +268,9 @@ In het IJsselmeer begint de jaarlijkse lengtegroei van de driehoeksmosselen in a
 
 Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen tot een verandering van het voorkomen van de driehoeksmossel leiden.]]></text>
 		</Description>
+		<Description language="ENG">
+			<text><![CDATA[To be filled]]></text>
+		</Description>
 	</ContentDescription>
 	<Documentation>
 		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. " journal="WL | Delft Hydraulics" identification="WL report Q4015">
@@ -276,7 +282,7 @@ Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen t
 		<reference author="Noordhuis, R. en EJ. Houwing" year="2003" title="Oorzaken en gevolgen van een vermoedelijke crash met betrekking tot waterkwaliteit, slibhuishouding en natuurwaarden." journal="RIZA, Lelystad" identification="RIZA rapport 2003.016">
 		</reference>
 		<reference author="Van de Wolfshaar, K.E., M. Haasnoot" year="2007" title="Toetsing dosis-effect relaties HABITAT. Pilot voor het Markermeer en de Voordelta." journal="WL | Delft Hydraulics" identification="WL-report Q4327">
-			<html><![CDATA["http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"]]></html> 
+			<html><![CDATA["http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"]]></html>
 		</reference>
 		<reference author="Strayer, D.L." year="1991" title=" Projected distribution of the zebra mussel. Dreissana polymorpha, in North America." journal="Can. J. Fish. Aquati. Sci." identification="48:1389-1395">
 		</reference>

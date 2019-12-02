@@ -66,7 +66,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 							<reference author="" year="" title="" journal="" identification=""/>
 						</references>
 						<output>"P_potaperf"</output>
-						<equation>"1*exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte))"</equation>
+						<equation>"1/(1+exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname="deelgebied" type="constant" unit="-">
 								<parameter constantset="MBIJ" value="-0.81302272"/>
@@ -98,7 +98,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 							<reference author="" year="" title="" journal="" identification=""/>
 						</references>
 						<output>"P_potaperf"</output>
-						<equation>"1*exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte))"</equation>
+						<equation>"1/(1+exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname="deelgebied" type="constant" unit="-">
 								<parameter constantset="MBIJ" value="-0.81302272"/>

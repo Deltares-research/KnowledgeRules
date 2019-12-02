@@ -66,7 +66,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 						</references>
 						<output>"P_myrio"</output>
-						<equation>"1*exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte))"</equation>
+						<equation>"1/(1+exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname="deelgebied" type="constant" unit="-">
 								<parameter constantset="MBIJ" value="-0.81302272"/>
@@ -98,7 +98,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 						</references>
 						<output>"P_myrio"</output>
-						<equation>"1*exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte))"</equation>
+						<equation>"1/(1+exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname="deelgebied" type="constant" unit="-">
 								<parameter constantset="MBIJ" value="-0.81302272"/>

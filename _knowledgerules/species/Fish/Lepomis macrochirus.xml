@@ -39,9 +39,9 @@ Er is geen voorbeeldproject beschikbaar.
 					<FlowDiagram name="TOBEFILLED"/>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>		
-					<ResponseCurve name="Aandeel poelen tijdens een gemiddelde zomerafvoer">
+					<ResponseCurve name="Aandeel_poelen">
 						<type>scalar</type>
-						<layername>"Aandeel poelen tijdens een gemiddelde zomerafvoer"</layername>
+						<layername>"Aandeel_poelen"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Aandeel poelen tijdens een gemiddelde zomerafvoer"</description>
@@ -56,9 +56,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Aandeel beschutting in de zomer">
+					<ResponseCurve name="Aandeel_beschutting">
 						<type>scalar</type>
-						<layername>"Aandeel beschutting in de zomer"</layername>
+						<layername>"Aandeel_beschutting"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Aandeel beschutting in de zomer NB. Het gaat hier om beschutting in de vorm van boomstronken en (organisch) afval binnen poelen of de litorale zone."</description>
@@ -74,9 +74,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="0.2"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Aandeel vegetatie in de zomer">
+					<ResponseCurve name="Aandeel_vegetatie">
 						<type>scalar</type>
-						<layername>"Aandeel vegetatie in de zomer"</layername>
+						<layername>"Aandeel_vegetatie"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Aandeel vegetatie in de zomer"</description>
@@ -92,9 +92,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Aandeel oeverzone tijdens zomer stratificatie">
+					<ResponseCurve name="Aandeel_oeverzone">
 						<type>scalar</type>
-						<layername>"Aandeel oeverzone tijdens zomer stratificatie"</layername>
+						<layername>"Aandeel_oeverzone"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Aandeel oeverzone tijdens zomer stratificatie"</description>
@@ -110,9 +110,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gemiddelde troebelheid tijdens de zomer">
+					<ResponseCurve name="Troebelheid">
 						<type>scalar</type>
-						<layername>"Gemiddelde troebelheid tijdens de zomer"</layername>
+						<layername>"Troebelheid"</layername>
 						<unit>"ppm"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde troebelheid tijdens de zomer"</description>
@@ -129,9 +129,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="1000" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Max. maandelijke gem. troebelheid tijdens gemiddelde afvoer">
+					<ResponseCurve name="Max_Troebelheid_gem_afvoer">
 						<type>scalar</type>
-						<layername>"Max. maandelijke gem. troebelheid tijdens gemiddelde afvoer"</layername>
+						<layername>"Max_Troebelheid_gem_afvoer"</layername>
 						<unit>"ppm"</unit>
 						<statistic>maximum</statistic>
 						<description>"Max. maandelijke gem. troebelheid tijdens gemiddelde afvoer"</description>
@@ -146,9 +146,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="200" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="pH tijdens het groeiseizoen">
+					<ResponseCurve name="pH_groeiseizoen">
 						<type>scalar</type>
-						<layername>"pH tijdens het groeiseizoen"</layername>
+						<layername>"pH_groeiseizoen"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
 						<description>"pH tijdens het groeiseizoen"</description>
@@ -168,9 +168,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="11.0" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="min. opgeloste zuurstof in de zomer">
+					<ResponseCurve name="Min_opgelost_zuurstof">
 						<type>categorical</type>
-						<layername>"min. opgeloste zuurstof in de zomer"</layername>
+						<layername>"Min_opgeloste_zuurstof"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>minimum</statistic>
 						<description>"min. opgeloste zuurstof in de zomer"</description>
@@ -186,9 +186,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter cat="Vaak lager dan 3 " HSI="0.1"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Max. maandelijks gemiddelde saliniteit">
+					<ResponseCurve name="Max_gem_saliniteit">
 						<type>scalar</type>
-						<layername>"Max. maandelijks gemiddelde saliniteit"</layername>
+						<layername>"Max_gem_saliniteit"</layername>
 						<unit>"ppt"</unit>
 						<statistic>maximum</statistic>
 						<description>"Max. maandelijks gemiddelde saliniteit"</description>
@@ -204,9 +204,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="6" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Max. midzomer temperatuur in oeverzone en poelen">
+					<ResponseCurve name="Max_temperatuur_oeverzone_en_poelen_midzomer">
 						<type>scalar</type>
-						<layername>"Max. midzomer temperatuur in oeverzone en poelen"</layername>
+						<layername>"Max_temperatuur_oeverzone_en_poelen_midzomer"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>maximum</statistic>
 						<description>"Max. midzomer temperatuur in oeverzone en poelen"</description>
@@ -224,9 +224,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="30" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gem. weekelijkse watertemperatuur binnen poelen en oeverzone">
+					<ResponseCurve name="Gem_temperatuur_oeverzone_en_poelen">
 						<type>scalar</type>
-						<layername>"Gem. weekelijkse watertemperatuur binnen poelen en oeverzone"</layername>
+						<layername>"Gem_temperatuur_oeverzone_en_poelen"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Gem. weekelijkse watertemperatuur binnen poelen en oeverzone"</description>
@@ -245,9 +245,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="40" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Max. beginzomer temperatuur in oeverzone en poelen">
+					<ResponseCurve name="Max_temperatuur_oeverzone_en_poelen_beginzomer">
 						<type>scalar</type>
-						<layername>"Max. beginzomer temperatuur in oeverzone en poelen"</layername>
+						<layername>"Max_temperatuur_oeverzone_en_poelen_beginzomer"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>maximum</statistic>
 						<description>"Max. beginzomer temperatuur in oeverzone en poelen"</description>
@@ -265,9 +265,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="40" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Max. midzomer temperatuur in oeverzone en poelen">
+					<ResponseCurve name="Max_temperatuur_oeverzone_en_poelen_midzomer_2">
 						<type>scalar</type>
-						<layername>"Max. midzomer temperatuur in oeverzone en poelen"</layername>
+						<layername>"Max_temperatuur_oeverzone_en_poelen_midzomer"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>maximum</statistic>
 						<description>"Max. midzomer temperatuur in oeverzone en poelen"</description>
@@ -284,9 +284,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="40" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen">
+					<ResponseCurve name="Stroomsnelheid_groeiseizoen">
 						<type>scalar</type>
-						<layername>"Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen"</layername>
+						<layername>"Stroomsnelheid_groeiseizoen"</layername>
 						<unit>"cm/sec"</unit>
 						<statistic>average</statistic>
 						<description>"Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen"</description>
@@ -301,9 +301,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="40" HSI="0.1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen">
+					<ResponseCurve name="Stroomsnelheid_groeiseizoen_2">
 						<type>scalar</type>
-						<layername>"Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen"</layername>
+						<layername>"Stroomsnelheid_groeiseizoen"</layername>
 						<unit>"cm/sec"</unit>
 						<statistic>average</statistic>
 						<description>"Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen"</description>
@@ -319,9 +319,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="40" HSI="0.2"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gem. stroomsnelheid in poelen en stilstaandwater">
+					<ResponseCurve name="Stroomsnelheid">
 						<type>scalar</type>
-						<layername>"Gem. stroomsnelheid in poelen en stilstaandwater"</layername>
+						<layername>"Stroomsnelheid"</layername>
 						<unit>"cm/sec"</unit>
 						<statistic>average</statistic>
 						<description>"Gem. stroomsnelheid in poelen en stilstaandwater"</description>
@@ -341,9 +341,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="15" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gem. stroomsnelheid in poelen en stilstaandwater">
+					<ResponseCurve name="Stroomsnelheid_2">
 						<type>scalar</type>
-						<layername>"Gem. stroomsnelheid in poelen en stilstaandwater"</layername>
+						<layername>"Stroomsnelheid"</layername>
 						<unit>"cm/sec"</unit>
 						<statistic>average</statistic>
 						<description>"Gem. stroomsnelheid in poelen en stilstaandwater"</description>
@@ -379,9 +379,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="4" HSI="0.1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Daineren reservoir tijdens paai">
+					<ResponseCurve name="Draineren_reservoir_paai">
 						<type>scalar</type>
-						<layername>"Daineren reservoir tijdens paai"</layername>
+						<layername>"Draineren_reservoir_paai"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Daineren reservoir tijdens paai"</description>
@@ -398,9 +398,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="4" HSI="0.1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="samenstelling substraat">
+					<ResponseCurve name="Substraat">
 						<type>categorical</type>
-						<layername>"samenstelling substraat"</layername>
+						<layername>"Substraat"</layername>
 						<unit>"-"</unit>
 						<statistic>samenstelling substraat</statistic>
 						<description>"samenstelling substraat"</description>

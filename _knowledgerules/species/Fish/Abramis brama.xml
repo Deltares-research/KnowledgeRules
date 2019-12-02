@@ -39,11 +39,11 @@ Er is geen voorbeeldproject beschikbaar.
 					<FlowDiagram name="TOBEFILLED"/>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>		
-					<ResponseCurve name="Paaisubstraat">
+					<ResponseCurve name="Substraat_paai">
 						<type>categorical</type>
-						<layername>"Paaisubstraat"</layername>
+						<layername>"Substraat"</layername>
 						<unit>"-"</unit>
-						<statistic>Paaisubstraat</statistic>
+						<statistic>Substraat</statistic>
 						<description>"Paaisubstraat"</description>
 						<author>"Valesca Harezlak"</author>
 						<date>2013-01-16</date>
@@ -76,9 +76,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="200" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Temperatuur (paai)">
+					<ResponseCurve name="Temperatuur_paai">
 						<type>scalar</type>
-						<layername>"Temperatuur (paai)"</layername>
+						<layername>"Temperatuur"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Temperatuur (paai)"</description>
@@ -96,9 +96,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="24" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zuurstofgehalte (ei)">
+					<ResponseCurve name="Zuurstofgehalte_ei">
 						<type>scalar</type>
-						<layername>"Zuurstofgehalte (ei)"</layername>
+						<layername>"Zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>minimum</statistic>
 						<description>"Minimum zuurstofgehalte (ei)"</description>
@@ -113,9 +113,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="7.0" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Chloride (ei)">
+					<ResponseCurve name="Chloride_ei">
 						<type>scalar</type>
-						<layername>"Chloride (ei)"</layername>
+						<layername>"Chloride"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>maximum</statistic>
 						<description>"Maximum chloride (ei)"</description>
@@ -130,9 +130,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="12" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="pH (paai)">
+					<ResponseCurve name="pH_paai">
 						<type>scalar</type>
-						<layername>"pH (paai)"</layername>
+						<layername>"pH"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
 						<description>"pH (paai)"</description>
@@ -148,9 +148,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="10.5" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid (larve)">
+					<ResponseCurve name="Stroomsnelheid_larve">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid (larve)"</layername>
+						<layername>"Stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
 						<description>"Stroomsnelheid (larve)"</description>
@@ -204,7 +204,7 @@ Er is geen voorbeeldproject beschikbaar.
 					</ResponseCurve>
 					<ResponseCurve name="Sediment">
 						<type>scalar</type>
-						<layername>"Percentage zachte kalkhoudende kleibodem"</layername>
+						<layername>"PercentageKleibodem"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Percentage zachte kalkhoudende kleibodem"</description>
@@ -218,9 +218,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid (adult)">
+					<ResponseCurve name="Stroomsnelheid_adult">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid (adult)"</layername>
+						<layername>"Stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
 						<description>"Stroomsnelheid (adult)"</description>
@@ -235,9 +235,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="25" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Temperatuur (adult)">
+					<ResponseCurve name="Temperatuur_adult">
 						<type>scalar</type>
-						<layername>"Temperatuur (adult)"</layername>
+						<layername>"Temperatuur"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Temperatuur (adult)"</description>
@@ -253,9 +253,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="30" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zuurstofgehalte (adult)">
+					<ResponseCurve name="Zuurstofgehalte_adult">
 						<type>scalar</type>
-						<layername>"Zuurstofgehalte (adult)"</layername>
+						<layername>"Zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddeld zuurstofgehalte (adult)"</description>
@@ -270,7 +270,7 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="3" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zoutgehalte">
+					<ResponseCurve name="Zoutgehalte_adult">
 						<type>scalar</type>
 						<layername>"Zoutgehalte"</layername>
 						<unit>"mg/l"</unit>
@@ -288,7 +288,7 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="9" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="pH">
+					<ResponseCurve name="pH_adult">
 						<type>scalar</type>
 						<layername>"pH"</layername>
 						<unit>"-"</unit>
@@ -307,9 +307,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="10.5" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gemiddeld totaal fosfaatgehalte">
+					<ResponseCurve name="Totaalfosfaatgehalte">
 						<type>categorical</type>
-						<layername>"Gemiddeld totaal fosfaatgehalte"</layername>
+						<layername>"TotaalFosfaatgehalte"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddeld totaal fosfaatgehalte"</description>

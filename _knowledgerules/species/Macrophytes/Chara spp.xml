@@ -65,7 +65,7 @@
 							</reference>
 						</references>
 						<output>"Probability"</output>
-						<equation>"1*exp(-(-3.811882503+deelgebied-2.183232932*diepte_zom+0.101857262*(diepte_zom^2)-0.109802864*diepte_zom*doorzicht-0.00058004*strijklengte))"</equation>
+						<equation>"1/(1+exp(-(-3.811882503+deelgebied-2.183232932*diepte_zom+0.101857262*(diepte_zom^2)-0.109802864*diepte_zom*doorzicht-0.00058004*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname = "deelgebied" type = "constant" unit = "-">
 								<parameter constantset ="MBIJ" value="1.154566403"/>
@@ -99,7 +99,7 @@
 							</reference>
 						</references>
 						<output>"Probability"</output>
-						<equation>"1*exp(-(0.247702657+deelgebied-1.280411065*diepte_zom+0.06854636*(diepte_zom^2)-0.278693414*diepte_zom*extinctie-0.163078252*extinctie-0.000435184*strijklengte))"</equation>
+						<equation>"1/(1+exp(-(0.247702657+deelgebied-1.280411065*diepte_zom+0.06854636*(diepte_zom^2)-0.278693414*diepte_zom*extinctie-0.163078252*extinctie-0.000435184*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname = "deelgebied" type = "constant" unit = "-">
 								<parameter constantset ="MBIJ" value="-0.81302272"/>

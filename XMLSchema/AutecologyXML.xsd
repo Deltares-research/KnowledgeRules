@@ -301,7 +301,7 @@
 	</complexType>
 	<complexType name="CDComplexType">
 		<sequence>
-			<element name="Description" type="AutXML:DescriptionComplexType"/>
+			<element name="Description" type="AutXML:DescriptionComplexType" minOccurs="1" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
 	<complexType name="DocumentationComplexType">

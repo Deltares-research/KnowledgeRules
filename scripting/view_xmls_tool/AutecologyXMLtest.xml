@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../XMLSchema/AutecologyXML.xsd">
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 		<EoLpagenr>000000</EoLpagenr>
@@ -13,11 +13,15 @@
 	<Autecology>
 		<ModelType name="HSI">
 			<System name="testsystem">
-					<Scope>
-						<SpatialScope>
-							<GeoNames name="Earth" id="6295630"/>
-						</SpatialScope>
-					</Scope>
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Earth" id="6295630"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2019-01-01</StartDate>
+						<EndDate>2019-12-04</EndDate>
+					</TemporalScope>
+				</Scope>
 				<SystemDescription>
 					<Description language="ENG">
 						<text><![CDATA[Test
@@ -102,6 +106,40 @@ TEST]]></text>
 							<parameter rangemin="50" rangemax="999999" HSI="0"/>
 						</valuesRanges>
 					</ResponseCurve>
+					<FormulaBased name="P_chara_extinction">
+						<layername>"P_chara_extinction"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Likeliness of presence for the Chara species"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="M. Haasnoot" year="2014" title="" identification="" journal="">
+								<html></html>
+							</reference>
+						</references>
+						<output>"Probability"</output>
+						<equation>"1/(1+exp(-(0.247702657+deelgebied-1.280411065*diepte_zom+0.06854636*(diepte_zom^2)-0.278693414*diepte_zom*extinctie-0.163078252*extinctie-0.000435184*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname = "deelgebied" type = "constant" unit = "-">
+								<parameter constantset ="MBIJ" value="-0.81302272"/>
+								<parameter constantset ="MGZ" value="1.998701637"/>
+								<parameter constantset ="MHE" value="0.724567841"/>
+								<parameter constantset ="MHH" value="1.733868205"/>
+								<parameter constantset ="MHRDz" value="2.214793065"/>
+								<parameter constantset ="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname = "diepte_zom" type = "scalar" unit = "m" >
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname = "extinctie" type = "scalar" unit = "m-1" >
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname = "strijklengte" type = "scalar" unit = "m" >
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
 				</KnowledgeRules>
 			</System>
 		</ModelType>

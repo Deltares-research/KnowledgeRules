@@ -178,18 +178,20 @@
 		<attribute name="name" type="string" use="required"/>
 	</complexType>
 	<complexType name="KnowledgeRulesComplexType">
-		<choice>
-			<element name="ResponseCurve" type="AutXML:ResponseCurveComplexType" minOccurs="0" maxOccurs="unbounded">
-				<annotation>
-					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
-				</annotation>
-			</element>
-			<element name="FormulaBased" type="AutXML:FormulaBasedComplexType" minOccurs="0" maxOccurs="unbounded">
-				<annotation>
-					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
-				</annotation>
-			</element>
-		</choice>
+		<sequence>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element name="ResponseCurve" type="AutXML:ResponseCurveComplexType" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+					</annotation>
+				</element>
+				<element name="FormulaBased" type="AutXML:FormulaBasedComplexType" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+					</annotation>
+				</element>
+			</choice>
+		</sequence>
 	</complexType>
 	<complexType name="ResponseCurveComplexType">
 		<sequence>

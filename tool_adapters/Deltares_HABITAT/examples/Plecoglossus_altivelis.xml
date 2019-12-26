@@ -29,9 +29,24 @@
 				</SystemDescription>
 				<SystemFlowDiagrams>
 					<FlowDiagram name="Ayu_habitat">
-						<link from = "Main_model" to="Spawning, Egg_Incubation" label="" equation="min"/>
-						<link from = "Spawning" to="FlowVelocity, SuspendedMatter" label="" equation="min"/>
-						<link from = "Egg_incubation" to="WaterDepth, DissolvedOxygen" label="" equation="min"/>
+						<From name="Main_model">
+							<label>"Ayu habitat"</label>
+							<equation>min</equation>
+							<To>"Spawning"</To>
+							<To>"Egg_Incubation"</To>
+						</From> 
+						<From name="Spawning">
+							<label>"Spawning habitat"</label>
+							<equation>min</equation>
+							<To>"FlowVelocity"</To>
+							<To>"SuspendedMatter"</To>
+						</From>
+						<From name="Egg_incubation">
+							<label>Egg laying habitat</label>
+							<equation>min</equation>
+							<To>"WaterDepth"</To>
+							<To>"DissolvedOxygen"</To>
+						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>

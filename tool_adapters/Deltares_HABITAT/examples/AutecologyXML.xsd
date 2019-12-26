@@ -176,7 +176,7 @@
 	</complexType>
 	<complexType name="FlowDiagramComplexType">
 		<sequence>
-			<element name="link" type="AutXML:LinkComplexType" maxOccurs="unbounded">
+			<element name="From" type="AutXML:LinkFromComplexType" maxOccurs="unbounded">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
@@ -334,12 +334,20 @@
 		</sequence>
 		<attribute name="language" type="string" use="required"/>
 	</complexType>
-	<complexType name="LinkComplexType">
-		<attribute name="from" type="string" use="required"/>
-		<attribute name="to" type="string" use="required"/>
-		<attribute name="label" type="string" use="required"/>
-		<attribute name="equation" type="string" use="required"/>
+	<complexType name="LinkFromComplexType">
+		<sequence>
+			<element name="label" type="string"/>
+			<element name="equation" type="AutXML:LinkEquationSimpleType"/>
+			<element name="To" type="string" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
 	</complexType>
+	<simpleType name="LinkEquationSimpleType">
+		<restriction base="string">
+			<enumeration value="min"/>
+			<enumeration value="max"/>
+		</restriction>
+	</simpleType>
 	<complexType name="ReferenceComplexType">
 		<choice>
 			<element name="html" type="string" minOccurs="0"/>

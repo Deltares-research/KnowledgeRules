@@ -6,6 +6,7 @@
 			<LatName>Osmerus eperlanus</LatName>
 			<CommonNames>
 				<Name name = "Smelt" language = "ENG"/>
+				<Name name = "Spiering" language = "NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -34,7 +35,15 @@ The response curves can be applied throughout the year as they contain a large r
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>min</equation>
+							<To>Transparency</To>
+							<To>WaterTemperature</To>
+							<To>Oxygen</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Transparency">
@@ -99,21 +108,16 @@ The response curves can be applied throughout the year as they contain a large r
 	</Autecology>
 	<ContentDescription>
 		<Description language="ENG">
-			<text><![CDATA[Occurrence
-The Smelt is a species of fish in the Osmeridae family that lives in the waters of the Northern Hemisphere. A salt-water form, the anadrome smelt, is common in salt and fresh moving water. It grows in salt water and migrates inland to spawn. The freshwater form spends its entire life in fresh water, mainly the larger lakes #1. It swims in schools and prefers large open waters, such as lake IJssel.
-
-Food habitat and strategy
-Smelt larval feed on small plankton organisms. Juveniles feed on larger plankton. Adult smelts also feed on fish (smelts, small herrings and bass). The smelt itself is a major food source for many other fish and birds #1.
-
-Growth and migration
-Spawning takes place from March to June. The egg count per female can be as much as 40,000. They spawn on a substrate of sand, gravel, rocks or water plants. To prevent suffocation of the eggs the substrate must be rather solid #1.
-
-Age and mortality
-Salt water smelt may reach 30cm in length and can live for 8 years. The freshwater smelt, on the other hand, can live for 3 years and can only reach 14cm.]]></text>
+			<text><![CDATA[<h3 id="Smelt-Osmeruseperlanus-Occurrence">Occurrence</h3><p>The Smelt is a species of fish in the Osmeridae family that lives in the waters of the Northern Hemisphere. A salt-water form, the anadrome smelt, is common in salt and fresh moving water. It grows in salt water and migrates inland to spawn. The freshwater form spends its entire life in fresh water, mainly the larger lakes <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1">#1</a>. It swims in schools and prefers large open waters, such as lake IJssel. </p><h3 id="Smelt-Osmeruseperlanus-Foodhabitatandstrategy">Food habitat and strategy</h3><p>Smelt larval feed on small plankton organisms. Juveniles feed on larger plankton. Adult smelts also feed on fish (smelts, small herrings and bass). The smelt itself is a major food source for many other fish and birds <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1">#1</a>. </p><h3 id="Smelt-Osmeruseperlanus-Growthandmigration">Growth and migration</h3><p>Spawning takes place from March to June. The egg count per female can be as much as 40,000. They spawn on a substrate of sand, gravel, rocks or water plants. To prevent suffocation of the eggs the substrate must be rather solid <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1">#1</a>. </p><h3 id="Smelt-Osmeruseperlanus-Ageandmortality">Age and mortality</h3><p>Salt water smelt may reach 30cm in length and can live for 8 years. The freshwater smelt, on the other hand, can live for 3 years and can only reach 14cm.</p>]]></text>
+		</Description>
+		<Description language="NL">
+			<text><![CDATA["To be filled"]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>
-		<reference author="Sportvisserij Nederland" year="2006" title="" journal="" identification=""/>
+		<reference author="Sportvisserij Nederland" year="2006" title="Soortprofiel Spiering" journal="Sportvisserij Nederland" identification="">
+			<html><![CDATA[https://www.sportvisserijnederland.nl/vis-water/vissoorten/22/Spiering.html]]></html>
+		</reference>
 	</Documentation>
 	<DataSources/>
 </AutecologyXML>

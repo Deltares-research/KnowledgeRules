@@ -13,7 +13,7 @@
 	</Topic>
 	<Autecology>
 	<ModelType name="HSI">
-		<System name="voortplanting">
+		<System name="habitat_geschiktheid">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Netherlands" id="2750405"/>
@@ -29,12 +29,46 @@ Onzekerheden en validatie
 Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.
 ]]></text></Description></SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>min</equation>
+							<To>voortplanting</To>
+							<To>voedsel_beschutting</To>
+							<To>waterkwaliteit</To>
+						</From>
+						<From name="voortplanting">
+							<label>"voortplanting"</label>
+							<equation>min</equation>
+							<To>substraat_paai</To>
+							<To>waterdiepte_paai</To>
+							<To>temperatuur_paai</To>
+							<To>zuurgraad_ei</To>
+							<To>zoutgehalte_ei</To>
+						</From>
+						<From name="voedsel_beschutting">
+							<label>"voedsel_beschutting"</label>
+							<equation>min</equation>
+							<To>waterdiepete_verdeling_litoraal</To>
+							<To>vegetatie_dichtheid</To>
+							<To>doorzicht</To>
+							<To>stroomsnelheid_larve</To>
+							<To>stroomsnelheid_adult</To>
+						</From>
+						<From name="waterkwaliteit">
+							<label>"waterkwaliteit</label>
+							<equation>min</equation>
+							<To>zuurgraad_larveadult</To>
+							<To>temperatuur_larve</To>
+							<To>temperatuur_adult</To>
+							<To>zoutgehalte_adult</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>		
-					<ResponseCurve name="Aanwezigheid paaisubstraat t.o.v. hele opp.">
+					<ResponseCurve name="substraat_paai">
 						<type>range / categorical</type>
-						<layername>"Aanwezigheid paaisubstraat t.o.v. hele opp."</layername>
+						<layername>"substraat_paai"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Aanwezigheid paaisubstraat t.o.v. hele opp."</description>
@@ -49,9 +83,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter rangemin="0.5" rangemax="100" cat="3" HSI="1"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Waterdiepte geschikt voor paai">
+					<ResponseCurve name="waterdiepte_paai">
 						<type>scalar</type>
-						<layername>"Waterdiepte geschikt voor paai"</layername>
+						<layername>"waterdiepte_paai"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdiepte geschikt voor paai"</description>
@@ -68,9 +102,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="150" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gemiddelde temperatuur tijdens de paai">
+					<ResponseCurve name="temperatuur_paai">
 						<type>scalar</type>
-						<layername>"Gemiddelde temperatuur tijdens de paai"</layername>
+						<layername>"temperatuur"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde temperatuur tijdens de paai"</description>
@@ -90,9 +124,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="24" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="pH (voor paai)">
+					<ResponseCurve name="zuurgraad_ei">
 						<type>scalar</type>
-						<layername>"pH (voor paai)"</layername>
+						<layername>"zuurgraad"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
 						<description>"pH (voor paai)"</description>
@@ -109,9 +143,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="10.5" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gemiddelde saliniteit">
+					<ResponseCurve name="zoutgehalte_ei">
 						<type>scalar</type>
-						<layername>"Gemiddelde saliniteit"</layername>
+						<layername>"zoutgehalte"</layername>
 						<unit>"promille"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde saliniteit"</description>
@@ -127,38 +161,30 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="6" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-				</KnowledgeRules>
-			</System>
-		</ModelType>
-		<ModelType name="HSI">
-			<System name="larve">
-				<Scope>
-					<SpatialScope>
-						<GeoNames name="Netherlands" id="2750405"/>
-					</SpatialScope>
-					<TemporalScope>
-						<StartDate>1990-01-01</StartDate>
-						<EndDate>2010-01-01</EndDate>
-					</TemporalScope>
-				</Scope>
-				<SystemDescription>
-					<Description language="NL">
-						<text><![CDATA[
-Onzekerheden en validatie
-Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.
-]]></text>
-					</Description>
-				</SystemDescription>
-				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
-				</SystemFlowDiagrams>
-				<KnowledgeRules>		
-					<ResponseCurve name="Stroomsnelheid (larve)">
+					<ResponseCurve name="waterdiepte_verdeling_litoraal">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid (larve)"</layername>
+						<layername>"waterdiepte_verdeling"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"waterdiepte verdeling behorend tot het litoraal (.lt. 2 m diepte)"</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2011-03-08</date>
+						<references>
+							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="25" HSI="1.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="85" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="stroomsnelheid_larve">
+						<type>scalar</type>
+						<layername>"stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
-						<description>"Stroomsnelheid (larve)"</description>
+						<description>"gemiddelde stroomsnelheid in het paaigebied"</description>
 						<author>"Mijke van Oorschot"</author>
 						<date>2011-03-08</date>
 						<references>
@@ -171,12 +197,12 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="10" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Maximale temperatuur (larve)">
+					<ResponseCurve name="temperatuur_larve">
 						<type>scalar</type>
-						<layername>"Maximale temperatuur (larve)"</layername>
+						<layername>"temperatuur"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>maximum</statistic>
-						<description>"Maximale temperatuur (larve)"</description>
+						<description>"maximale temperatuur (larve)"</description>
 						<author>"Mijke van Oorschot"</author>
 						<date>2011-03-08</date>
 						<references>
@@ -189,35 +215,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="30" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-				</KnowledgeRules>
-			</System>
-		</ModelType>
-		<ModelType name = "HSI">
-			<System name="adult">
-				<Scope>
-					<SpatialScope>
-						<GeoNames name="Netherlands" id="2750405"/>
-					</SpatialScope>
-					<TemporalScope>
-						<StartDate>1990-01-01</StartDate>
-						<EndDate>2010-01-01</EndDate>
-					</TemporalScope>
-				</Scope>
-				<SystemDescription>
-					<Description language="NL">
-						<text><![CDATA[
-Onzekerheden en validatie
-Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.
-]]></text>
-					</Description>
-				</SystemDescription>
-				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
-				</SystemFlowDiagrams>
-				<KnowledgeRules>		
-					<ResponseCurve name="Vegetatie dichtheid">
+					<ResponseCurve name="vegetatie_dichtheid">
 						<type>scalar</type>
-						<layername>"Vegetatie dichtheid"</layername>
+						<layername>"vegetatie_dichtheid"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Vegetatie dichtheid (Referentie: #1, aangepast aan de hand van #3.)"</description>
@@ -234,9 +234,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="80" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Doorzicht">
+					<ResponseCurve name="doorzicht">
 						<type>scalar</type>
-						<layername>"Doorzicht"</layername>
+						<layername>"doorzicht"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Doorzicht"</description>
@@ -254,9 +254,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="600" HSI="0.5"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid (adult)">
+					<ResponseCurve name="stroomsnelheid_adult">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid (adult)"</layername>
+						<layername>"stroomsnelheid_adult"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
 						<description>"Stroomsnelheid (adult)"</description>
@@ -272,9 +272,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="90" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="pH (adult)">
+					<ResponseCurve name="zuurgraad_larveadult">
 						<type>scalar</type>
-						<layername>"pH (adult)"</layername>
+						<layername>"zuurgraad"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
 						<description>"pH (adult)"</description>
@@ -290,9 +290,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="10.5" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gemiddeld zuurstofgehalte">
+					<ResponseCurve name="zuurstofgehalte_adult">
 						<type>scalar</type>
-						<layername>"Gemiddeld zuurstofgehalte"</layername>
+						<layername>"zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddeld zuurstofgehalte"</description>
@@ -307,9 +307,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="6" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Gemiddelde temperatuur (adult)">
+					<ResponseCurve name="temperatuur_adult">
 						<type>scalar</type>
-						<layername>"Gemiddelde temperatuur (adult)"</layername>
+						<layername>"temperatuur_adult"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde temperatuur (adult)"</description>
@@ -326,9 +326,9 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 							<parameter value="30" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Saliniteit (adult)">
+					<ResponseCurve name="zoutgehalte_adult">
 						<type>scalar</type>
-						<layername>"Saliniteit (adult)"</layername>
+						<layername>"zoutgehalte_adult"</layername>
 						<unit>"promille"</unit>
 						<statistic>average</statistic>
 						<description>"Saliniteit (adult)"</description>
@@ -349,21 +349,7 @@ Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-De blankvoorn is een van de meest algemeen voorkomende vissoorten in de Nederlandse binnenwateren. Het verspreidingsgebied van de blankvoorn strekt zich uit over een groot deel van Europa en het noordelijk deel van Azië. In Europa loopt de zuidgrens noordoostelijk van de Pyreneeën, noordelijk van de Alpen en daarna weer zuidelijk over de Balkon tot diep in Siberië. Tot in het noorden van Europa kan de blankvoorn voorkomen, in het noorden van Schotland en het noordweseten van Noorwegen kom de blankvoorn niet voor. Ook in Ierland komt de blankvoorn van nature niet voor, door sportvissers is de blankvoorn hier uitgezet#1.Voor verspreiding zie figuur #4.
-Voedselhabitat en strategie
-De blankvoorn is een omnivoor met een breed voedselspectrum. Het voedsel van jonge blankvoorn bestaat uit zoöplankton, in het bijzonder watervlooien. Oudere blankvoorn heeft een aanzienlijk uitgebreider voedselpakket. Zowel dierlijk voedsel, zoals
-slakjes, driehoeksmosselen, insectenlarven, wormen en kreeftachtigen, als plantaardig materiaal, zoals algen en detritus, worden door deze vis gegeten #2. De blankvoorn kan zowel op zicht jagen waarbij afzonderlijke voedseldeeltjes aangevallen worden, als op de tast waarbij voedseldeeltjes uit het water of sediment gefiltreerd worden#1. Voor de beschikbaarheid van voedsel en beschutting is het noodzakelijk dat er waterplanten aanwezig zijn, ook het doorzicht en de stroomsnelheid zijn van belang. In het algemeen stelt de blankvoorn eisen aan de waterkwaliteit, deze zijn weergegeven bij de waterkwaliteit rekenregels.
-Reproductie en migratie
-In de paaitijd, die doorgaans in april en mei valt, maar die tot in de zomer kan doorlopen, gaat de blankvoorn op zoek naar geschikte paaiplaatsen. Deze liggen veelal dicht onder de oever in stilstaand tot zwak stromend, ondiep water met beschutting tegen golfslag. De eieren worden afgezet op ondergedoken waterplanten, maar ook oeverplanten, boomwortels, stenen en andere obstakels worden als afzetsubstraat gebruikt. Zowel larven als juvenielen blijven geruime tijd in de oeverbegroeiing. Hierdoor is de blankvoorn sterker dan brasem gebonden aan wateren met begroeiing #2. Ook is er een optimale en maximale temperatuur, pH en saliniteit voor de paai, deze zijn weergegeven in onderstaan rekenregels.
-Leeftijd en mortaliteit
-De blankvoorn bereikt in het eerste jaar een lengte van 5 tot 7 cm. Onder gemiddelde omstandigheden is de blankvoorn geslachtsrijp op een leeftijd van 3 tot 5 jaar, de mannetjes eerder dan de vrouwtjes. De lengte is dan rond 15 cm. De maximale lengte is 45 cm en de maximale leeftijd ca. 10 jaar #2.
-Response functies
-Voor de blankvoorn zijn er een aantal response functies beschikbaar (uit #1). Voor elk studiegebied zal een afweging moeten worden gemaakt welke functies worden meegenomen in het model, ze kunnen ook dienen als randvoorwaarde en hoeven dan niet gemodelleerd te worden. Een voorbeeld hiervan is de saliniteit, als de gemeten waarde nooit boven de maximale tolorantie waarde uitkomt is het niet noodzakelijk deze te modellen. Als echter verwacht wordt dat de saliniteit zal stijgen door een bepaalde maatregel is het wel relevant deze mee te nemen in de modellering.
-Voor de blankvoorn zijn vooral de volgende functies van belang: % aanwezig paaisubstraat, diepte van het paaigebied, doorzicht, stroomsnelheid en vegetatiedichtheid.
-]]></text>
+			<text><![CDATA[<h3 id="Blankvoorn-Rutilusrutilus-Roach-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De blankvoorn is een van de meest algemeen voorkomende vissoorten in de Nederlandse binnenwateren. Het verspreidingsgebied van de blankvoorn strekt zich uit over een groot deel van Europa en het noordelijk deel van Azië. In Europa loopt de zuidgrens noordoostelijk van de Pyreneeën, noordelijk van de Alpen en daarna weer zuidelijk over de Balkon tot diep in Siberië. Tot in het noorden van Europa kan de blankvoorn voorkomen, in het noorden van Schotland en het noordweseten van Noorwegen kom de blankvoorn niet voor. Ook in Ierland komt de blankvoorn van nature niet voor, door sportvissers is de blankvoorn hier uitgezet<a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-1">#1</a>.Voor verspreiding zie figuur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-4">#4</a>.</p><h3 id="Blankvoorn-Rutilusrutilus-Roach-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De blankvoorn is een omnivoor met een breed voedselspectrum. Het voedsel van jonge blankvoorn bestaat uit zoöplankton, in het bijzonder watervlooien. Oudere blankvoorn heeft een aanzienlijk uitgebreider voedselpakket. Zowel dierlijk voedsel, zoals<br>slakjes, driehoeksmosselen, insectenlarven, wormen en kreeftachtigen, als plantaardig materiaal, zoals algen en detritus, worden door deze vis gegeten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2">#2</a>. De blankvoorn kan zowel op zicht jagen waarbij afzonderlijke voedseldeeltjes aangevallen worden, als op de tast waarbij voedseldeeltjes uit het water of sediment gefiltreerd worden<a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-1">#1</a>. Voor de beschikbaarheid van voedsel en beschutting is het noodzakelijk dat er waterplanten aanwezig zijn, ook het doorzicht en de stroomsnelheid zijn van belang. In het algemeen stelt de blankvoorn eisen aan de waterkwaliteit, deze zijn weergegeven bij de waterkwaliteit rekenregels.</p><h3 id="Blankvoorn-Rutilusrutilus-Roach-Reproductieenmigratie">Reproductie en migratie</h3><p>In de paaitijd, die doorgaans in april en mei valt, maar die tot in de zomer kan doorlopen, gaat de blankvoorn op zoek naar geschikte paaiplaatsen. Deze liggen veelal dicht onder de oever in stilstaand tot zwak stromend, ondiep water met beschutting tegen golfslag. De eieren worden afgezet op ondergedoken waterplanten, maar ook oeverplanten, boomwortels, stenen en andere obstakels worden als afzetsubstraat gebruikt. Zowel larven als juvenielen blijven geruime tijd in de oeverbegroeiing. Hierdoor is de blankvoorn sterker dan brasem gebonden aan wateren met begroeiing <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2">#2</a>. Ook is er een optimale en maximale temperatuur, pH en saliniteit voor de paai, deze zijn weergegeven in onderstaan rekenregels.</p><h3 id="Blankvoorn-Rutilusrutilus-Roach-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>De blankvoorn bereikt in het eerste jaar een lengte van 5 tot 7 cm. Onder gemiddelde omstandigheden is de blankvoorn geslachtsrijp op een leeftijd van 3 tot 5 jaar, de mannetjes eerder dan de vrouwtjes. De lengte is dan rond 15 cm. De maximale lengte is 45 cm en de maximale leeftijd ca. 10 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2">#2</a>.</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

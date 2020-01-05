@@ -36,12 +36,58 @@ Er is geen voorbeeldproject beschikbaar.
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>geometric_average</equation>
+							<To>voortplanting_grindbedden</To>
+							<To>larven_en_juveniele_oeverzones</To>
+							<To>adulten_hoofdstroom</To>
+						</From>
+						<From name="voortplanting_grindbedden">
+							<label>"voortplanting_grindbedden"</label>
+							<equation>geometric_average</equation>
+							<To>substraattype_ei</To>
+							<To>percentage_modder_slib</To>
+							<To>diameter_grindbed</To>
+							<To>diepte_paai</To>
+							<To>debietfluctuatie</To>
+							<To>stroomsnelheid_paai</To>
+							<To>zuurstofgehalte_paai</To>
+							<To>temperatuur_paai</To>
+							<To>temperatuur_ei</To>
+						</From>
+						<From name="larven_en_juveniele_oeverzones">
+							<label>"larven_en_juveniele_oeverzones"</label>
+							<equation>geometric_average</equation>
+							<To>substraattype_larve</To>
+							<To>diepte_larve</To>
+							<To>stroomsnelheid_larve</To>
+							<To>beschutting_larve</To>
+							<To>zuurstofgehalte_larve</To>
+							<To>temperatuur_larve</To>
+						</From>
+						<From name="adulten_hoofdstroom">
+							<label>"adulten_hoofdstroom"</label>
+							<equation>geometric_average</equation>
+							<To>substraattype_adult</To>
+							<To>diepte_adult</To>
+							<To>diepte_index</To>
+							<To>diepte_verdeling</To>
+							<To>stroomsnelheid_adult</To>
+							<To>stroomsnelheid_index</To>
+							<To>stroomsnelheid_verdeling</To>
+							<To>beschutting_adult</To>
+							<To>zuurstofgehalte_adult</To>
+							<To>temperatuur_adult</To>
+							<To>trofiegraad</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Substraattype">
+					<ResponseCurve name="substraattype_ei">
 						<type>categorical</type>
-						<layername>"Substraattype"</layername>
+						<layername>"substraattype"</layername>
 						<unit>"Substraat"</unit>
 						<statistic>average</statistic>
 						<description>"Meest voorkomende substraattype in het paaigebied gedurende de paaitijd."</description>
@@ -60,9 +106,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="0.2"/>
 						</valuesCategorical>
 					</ResponseCurve>					
-					<ResponseCurve name="Percentage modder of slib">
+					<ResponseCurve name="percentage_modder_slib">
 						<type>scalar</type>
-						<layername>"Percentage modder of slib"</layername>
+						<layername>"percentage_modder_slib"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Percentage modder of slib (kleiner dan 0.06 mm) in het paaisubstraat gedurende de paaitijd."</description>
@@ -77,9 +123,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="30" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Diameter grindbed">
+					<ResponseCurve name="diameter_grindbed">
 						<type>scalar</type>
-						<layername>"Diameter grindbed"</layername>
+						<layername>"diameter_grindbed"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde diameter van vlakke grindbedden zonder vegetatie gedurende de paaitijd."</description>
@@ -95,9 +141,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="7" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Diepte">
+					<ResponseCurve name="diepte_paai">
 						<type>scalar</type>
-						<layername>"Diepte"</layername>
+						<layername>"diepte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde diepte van grindbedden gedurende de paaitijd."</description>
@@ -114,9 +160,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Debietfluctuatie">
+					<ResponseCurve name="debietfluctuatie">
 						<type>scalar</type>
-						<layername>"Debietfluctuatie"</layername>
+						<layername>"debietfluctuatie"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Maximale verschil in waterpeil in het paaigebied gedurende de paai en de ontwikkeling van de eieren en dooierzaklarven (tot 3 weken na paai)"</description>
@@ -132,9 +178,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="70" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid">
+					<ResponseCurve name="stroomsnelheid_paai">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid"</layername>
+						<layername>"stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde stroomsnelheid boven grindbedden in het paaigebied gemeten op 0.6 meter diepte gedurende de paaitijd."</description>
@@ -152,9 +198,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="200" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zuurstofgehalte">
+					<ResponseCurve name="zuurstofgehalte_ei">
 						<type>scalar</type>
-						<layername>"Zuurstofgehalte"</layername>
+						<layername>"zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde minimum zuurstofgehalte van het water in het paaigebied gedurende de paai en de ontwikkeling van eieren en dooierzaklarven (tot 3 weken na de paai) "</description>
@@ -170,9 +216,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="12" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Temperatuur (paai)">
+					<ResponseCurve name="temperatuur_paai">
 						<type>scalar</type>
-						<layername>"Temperatuur (paai)"</layername>
+						<layername>"temperatuur_paai"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde watertemperatuur in het paaigebied gedurende de paaitijd"</description>
@@ -190,9 +236,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="35" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Temperatuur (eieren)">
+					<ResponseCurve name="temperatuur_ei">
 						<type>scalar</type>
-						<layername>"Temperatuur (eieren)"</layername>
+						<layername>"temperatuur_ei"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde maximale watertemperatuur in het paaigebied gedurende de ontwikkeling van de eieren (tot 2 weken na de paai)."</description>
@@ -210,37 +256,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="35" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-				</KnowledgeRules>
-			</System>
-			<System name="Larven en juvenielen Barbeel (oeverzones)">
-				<Scope>
-					<SpatialScope>
-						<GeoNames name="Netherlands" id="2750405"/>
-					</SpatialScope>
-					<TemporalScope>
-						<StartDate>1990-01-01</StartDate>
-						<EndDate>1992-01-01</EndDate>
-					</TemporalScope>
-				</Scope>
-				<SystemDescription>
-					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-Deze dosis-effect relaties zijn niet gevalideerd.
-Toepasbaarheid
-Deze dosis-effect relaties zijn bepaald aan de hand van literatuur die gebaseerd op metingen afkomstig van het verspreidingsgebied van de Barbeel. Hierdoor zijn de rekenregels niet op een locatie toegespitst en dienen ze voor gebruik gekalibreerd te worden op het te onderzoeken gebied.
-Voorbeeldproject
-Er is geen voorbeeldproject beschikbaar.
-]]></text>
-					</Description>
-				</SystemDescription>
-				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
-				</SystemFlowDiagrams>
-				<KnowledgeRules>
-					<ResponseCurve name="Substraattype">
+					<ResponseCurve name="substraattype_larve">
 						<type>categorical</type>
-						<layername>"Substraattype"</layername>
+						<layername>"substraattype"</layername>
 						<unit>"Substraat"</unit>
 						<statistic>average</statistic>
 						<description>"Meest voorkomende substraattype in de ondiepe oeverzones gedurende de zomer."</description>
@@ -259,9 +277,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="0.3"/>
 						</valuesCategorical>
 					</ResponseCurve>	
-					<ResponseCurve name="Diepte">
+					<ResponseCurve name="diepte_larve">
 						<type>scalar</type>
-						<layername>"Diepte"</layername>
+						<layername>"diepte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde diepte van de oeverzoens gedurende de zomer."</description>
@@ -278,9 +296,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="4" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid">
+					<ResponseCurve name="stroomsnelheid_larve">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid"</layername>
+						<layername>"stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde stroomsnelheid in ondiepe oeverzones gedurende de zomer"</description>
@@ -296,9 +314,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="70" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Beschutting oevers">
+					<ResponseCurve name="beschutting_larve">
 						<type>scalar</type>
-						<layername>"Beschutting oevers"</layername>
+						<layername>"beschutting"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Percentage van de oever met een uitgeholde vorm (erosie-oevers) of met overhangende bomen, struiken of kruidachtige planten, of met in het water hangende wortels, gedurende de zomer."</description>
@@ -314,7 +332,7 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zuurstofgehalte">
+					<ResponseCurve name="zuurstofgehalte_larve">
 						<type>scalar</type>
 						<layername>"Zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
@@ -332,9 +350,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="11" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Watertemperatuur">
+					<ResponseCurve name="temperatuur_larve">
 						<type>scalar</type>
-						<layername>"Watertemperatuur"</layername>
+						<layername>"temperatuur"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
@@ -352,37 +370,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="35" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-				</KnowledgeRules>
-			</System>
-			<System name="Adulte Barbeel (hoofdstroom rivier)">
-				<Scope>
-					<SpatialScope>
-						<GeoNames name="Netherlands" id="2750405"/>
-					</SpatialScope>
-					<TemporalScope>
-						<StartDate>1990-01-01</StartDate>
-						<EndDate>1992-01-01</EndDate>
-					</TemporalScope>
-				</Scope>
-				<SystemDescription>
-					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-Deze dosis-effect relaties zijn niet gevalideerd.
-Toepasbaarheid
-Deze dosis-effect relaties zijn bepaald aan de hand van literatuur die gebaseerd op metingen afkomstig van het verspreidingsgebied van de Barbeel. Hierdoor zijn de rekenregels niet op een locatie toegespitst en dienen ze voor gebruik gekalibreerd te worden op het te onderzoeken gebied.
-Voorbeeldproject
-Er is geen voorbeeldproject beschikbaar.
-]]></text>
-					</Description>
-				</SystemDescription>
-				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
-				</SystemFlowDiagrams>
-				<KnowledgeRules>
-					<ResponseCurve name="Substraattype">
+					<ResponseCurve name="substraattype_adult">
 						<type>categorical</type>
-						<layername>"Substraattype"</layername>
+						<layername>"substraattype"</layername>
 						<unit>"Substraat"</unit>
 						<statistic>average</statistic>
 						<description>"Hoofdbestanddeel van het bodemsubstraat in de hoofdstroom van de rivier."</description>
@@ -400,10 +390,30 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter cat="kiezels (32-64 mm) " HSI="1.0"/>
 							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="1.0"/>
 						</valuesCategorical>
-					</ResponseCurve>	
-					<ResponseCurve name="Diepte index">
+					</ResponseCurve>
+					<ResponseCurve name="diepte_adult">
 						<type>scalar</type>
-						<layername>"Diepte index"</layername>
+						<layername>"diepte"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Gemiddelde diepte van de hoofdstroom gedurende het gehele jaar."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.0"/>
+							<parameter value="1.0" HSI="1.0"/>
+							<parameter value="2.0" HSI="1.0"/>
+							<parameter value="2.5" HSI="0.0"/>
+							<parameter value="3.0" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>	
+					<ResponseCurve name="diepte_index">
+						<type>scalar</type>
+						<layername>"diepte_index"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
 						<description>"Mate waarin afwisselend diepe en ondiepe delen aanwezig zijn in de hoofdstroom gedurende de zomer. De index wordt berekend aan de hand van de volgende formule: Diepte index = Log( % ondiep / % diep ); % ondiep = % kleiner dan 0.7 meter; % diep = % groter dan 1.5 meter."</description>
@@ -422,10 +432,10 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="2" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Verhouding dieptes">
+					<ResponseCurve name="diepte_verdeling">
 						<type>scalar</type>
-						<layername>"Verhouding dieptes"</layername>
-						<unit>"-"</unit>
+						<layername>"diepte_verdeling"</layername>
+						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Percentage van het wateroppervlak dat een diepte heeft van kleiner dan 0.7 meter of groter dan 1.5 meter."</description>
 						<author>"Marc Weeber"</author>
@@ -439,7 +449,7 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid">
+					<ResponseCurve name="stroomsnelheid_adult">
 						<type>scalar</type>
 						<layername>"Stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
@@ -458,9 +468,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="60" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Index stroomsnelheid">
+					<ResponseCurve name="stroomsnelheid_index">
 						<type>scalar</type>
-						<layername>"Index stroomsnelheid"</layername>
+						<layername>"stroomsnelheid_index"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
 						<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer. Stroomsnelheid index = log( % langzaamstromend / % snelstromend ); % langzaamstromend = % kleiner dan 20 cm/s; % snelstromend = % groter dan 40 cm/s"</description>
@@ -479,9 +489,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="2" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Verdeling stroomsnelheid">
+					<ResponseCurve name="stroomsnelheid_verdeling">
 						<type>scalar</type>
-						<layername>"Verdeling stroomsnelheid"</layername>
+						<layername>"stroomsnelheid_verdeling"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer."</description>
@@ -496,9 +506,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Beschutting oevers">
+					<ResponseCurve name="beschutting_adult">
 						<type>scalar</type>
-						<layername>"Beschutting oevers"</layername>
+						<layername>"beschutting"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Percentage van de oever met beschutting in de vorm van overhangende bomen, struiken of kruidachtige planten, in het water hangende wortels, holten en spleten tussen rotsen, onderwater liggende boomstronken, overhangende vorm van de oever (erosie-oever) of bruggen."</description>
@@ -514,9 +524,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zuurstofgehalte">
+					<ResponseCurve name="zuurstofgehalte_adult">
 						<type>scalar</type>
-						<layername>"Zuurstofgehalte"</layername>
+						<layername>"zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde minimum zuurstofgehalte in de hoofdstroom gedurende de zomer"</description>
@@ -532,9 +542,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="11" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Watertemperatuur">
+					<ResponseCurve name="temperatuur_adult">
 						<type>scalar</type>
-						<layername>"Watertemperatuur"</layername>
+						<layername>"temperatuur_adult"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
@@ -551,9 +561,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="30" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Trofiegraad">
+					<ResponseCurve name="trofiegraad">
 						<type>categorical</type>
-						<layername>"Trofiegraad"</layername>
+						<layername>"trofiegraad"</layername>
 						<unit>"Trofiegraad"</unit>
 						<statistic>average</statistic>
 						<description>"Trofiegraad van de rivier."</description>
@@ -574,28 +584,7 @@ Er is geen voorbeeldproject beschikbaar.
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-Het verspreidingsgebied van de barbeel loopt vanaf het stroomgebied van de Rhone en de Donau in het Zuiden, tot aan de rivieren de Dnieper en de Neman in het noorden en oosten van Europa. In Engeland is de barbeel alleen inheems in sommige rivieren in het zuid-oosten, maar door uitzetting komt de soort nu ook voor in stroomgebieden van de Severn, Avon, Thames, Welland en Trent. In België komt de barbeel voor in de Maas en enkele zijrivieren hiervan zoals de Ourthe, Semois, Lesse, Sambre en Ambleve. De gehele levenscyclus speelt zich af in het zoete water. #1. 
-In Nederland werd de Barbeel vroeger waargenomen in de IJssel, de Lek, de Rijn bij Arnhem en de Maas. De barbeel was talrijk in de Limburgse Maas en minder algemeen voorkomend in de Rijn, de Waal en de Geldersche IJssel. Door de bouw van stuwen en door de kanalisatie en normalisatie van de rivieren is de barbeelstand na WO-II afgenomen #1. 
-Voedselhabitat en strategie
-De barbeel is een typische bodemvis die zijn voedsel zoekt tussen de stenen en het zand gedurende de schemer en de nacht. Met de bekdraden en de dikke uitstulpbare lippen wordt het voedsel gevoeld en geproefd. De reukzin is hierbij eveneens van belang #1. 
-De barbeel is een omnivore vis met een voorkeur voor dierlijk voedsel. Het voedsel bestaat uit insektenlarven, wormen, kreeftachtigen, weekdieren en soms ook kleine vis of visbroed. Plantendelen en organisch afval worden eveneens gegeten. De jonge barbelen (0+) voeden zich met zoöplankton #1.
-Reproductie en migratie
-De barbeel is een soort die onder de kaperachtigen het meest trekt in de rivieren. Een trekkende barbeel kan zelfs een afstand van 300 km in 37 dagen afleggen in stroomopwaartse richting. In het voorjaar zoeken de vissen de hoger gelegen gedeelten in de rivier op die zij in het najaar door de grotere waterafvoer hebben moeten verlaten. In het najaar is er juist een tendens om rustiger en dieper water op te zoeken om te overwinteren. Deze migraties vinden plaats om te kunnen paaien op vlakke kiezelbeddingen met een flinke stroming. 
-De mannetjes zijn na 3 a 4 jaar geslachtsrijp en de vrouwtjes pas veel later (na 8 jaar is 50% geslachtsrijp). De paaitijd loopt van mei tot begin juli. In het voorjaar trekken volwassen barbelen stroomopwaarts. Deze trek wordt veroorzaakt door een voortdurend stijgende watertemperatuur, en mogelijk ook door een afnemend debiet. Bij een temperatuur van 14 tot 18 graden Celsius wordt er gepaaid. Dit gebeurt op een diepte van 30-40 cm op een vlakke bodem van stenen en grind met een flinke stroming. Deze grindbedden liggen doorgaans in of net stroomopwaarts van de monding van een zijriviertje. De trek naar deze gebieden gebeurt bij schemer en in de nacht. Het paaien gebeurt gedeeltelijk ook overdag. Hierbij wordt de bodem flink omgewoeld #1.
-De eieren hebben een kleverig omhulsel waardoor ze aan het grind en zand blijven plakken. Ze hebben een goudgele kleur en een diameter van 2 mm. Na 1 of 2 weken komen de eieren uit, afhankelijk van de watertemperatuur. Bij 6 tot 8 graden Celsius komen de eieren na 13-16 dagen uit. Bij 15-22 graden Celsius komen de eieren na 4 tot 7 dagen uit #1.
-De dooierzaklarven zijn lichtschuw en verbergen zich tussen de kiezelstenen voor een periode van ongeveer 10 dagen. Deze periode hangt samen met de watertemperatuur, waarbij een hogere temperatuur (20 graden Celsius) zorgt voor een kortere periode (6 dagen). Wanneer de dooierzak geresorbeerd is, zwemmen de larven vrij in het water en zijn dan niet meer lichtschuw. Ze voeden zich met zoöplankton #1.
-In de ondiepe maar goed doorstroomde oeverzones zwemmen de larven vervolgens stroomopwaarts naar rustiger en dieper water. Deze migratie vindt in de schemering en 's nachts plaats. Overdag houden de juvenielen zich schuil voor predatoren. Na ongeveer 30 dagen na de bevruchting wordt het alevin (juveniel) stadium bereikt, althans in kweekexperimenten bij een gemiddelde temperatuur van 22,6 graden Celsius #1.
-Leeftijd en mortaliteit
-De maximale leeftijd van de Barbeel is 25 jaar. De groei van de barbeel is over het algemeen langzaam. De groei van de mannetjes is trager dan van de vrouwtjes. De maximale lengte is 70 cm bij een gewicht van 3 kilo. De groeisnelheid van de barbeel verschilt per geografisch gebied. In Zuid Duitsland en in het stroomgebied van de Donau groeit de Barbeel het snelst, waardoor een maximale lengte van 1 meter bereikt kan worden. In Engeland en België is de groei trager. In Zuid- Frankrijk (Rhone-gebied) is de groei het traagst. Deze groeiverschillen hebben waarschijnlijk niet direct te maken met de voedselsituatie maar met genetische verschillen: door isolatie van bepaalde populaties zijn ondersoorten ontstaan. De groei is dichtheidsafhankelijk gebleken in de rivier de Severn in Engeland. De groei kan sterk vertraagd worden door de darmparasiet Pomphothyncus laevis. Een andere ziekte die bij barbelen voorkomt is een vorm van builenpest, veroorzaakt door de bacterie Myxobus pferifferi #1. 
-Milieu voorwaarden
-De barbeel komt voor in de zogenoemde barbeelzone van de rivieren. Deze barbeelzone bevindt zich in de middenloop van de rivieren en wordt gekenmerkt door een matige tot krachtige stroming en een schone bodem met zand, grind en keien. Het water moet er wel zuurstofrijk zijn en de temperatuur moet ongeveer 15-22 graden Celsius in de zomer bedragen. 
-n het algemeen prefereren barbelen het midden van de stroom. De grotere exemplaren komen in de diepere stroomdelen voor, de kleinere zijn meer te vinden in de ondiepere, snelstromende gedeelten. Er treedt geen schoolvorming op maar barbelen komen wel altijd voor in kleine groepen van enkele individuen #1.
-De belangrijkste redenen dat bepaalde barbeelpopulaties zijn verdwenen zijn verontreiniging van het water en fysische veranderingen in het leefmilieu. Door organische en allerlei chemische verontreiniging zijn al vele populaties uit rivieren verdwenen. De barbeel is over het algemeen zeer gevoelig voor thermische verontreiniging, evenals hoge concentraties chlorides, sulfaten, detergenten en organo-chlooor verbindingen. Verder zijn door kanalisering en bedijking stroomversnellingen en grindbedden verdwenen. Eveneens is er minder variatie in diepte en stroomsnelheid dan voorheen. Ook de bouw van onpasseerbare stuwen is nadeling: hierdoor wordt de paaimigratie naar stroomopwaarts gelegen gebieden en rekolonisatie van andere rivieren bemoeilijkt #1. 
-Dosis-effect relaties
-De Dosis-effect relaties zijn opgesteld per levensvorm van de Barbeel. Hierin is onderscheid gemaakt tussen de voortplanting, larven en juveniel en adult. 
+			<text><![CDATA[<h3 id="Barbeel-Barbusbarbus-Algemeenvoorkomen">Algemeen voorkomen</h3><p>Het verspreidingsgebied van de barbeel loopt vanaf het stroomgebied van de Rhone en de Donau in het Zuiden, tot aan de rivieren de Dnieper en de Neman in het noorden en oosten van Europa. In Engeland is de barbeel alleen inheems in sommige rivieren in het zuid-oosten, maar door uitzetting komt de soort nu ook voor in stroomgebieden van de Severn, Avon, Thames, Welland en Trent. In België komt de barbeel voor in de Maas en enkele zijrivieren hiervan zoals de Ourthe, Semois, Lesse, Sambre en Ambleve. De gehele levenscyclus speelt zich af in het zoete water. <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><p>In Nederland werd de Barbeel vroeger waargenomen in de IJssel, de Lek, de Rijn bij Arnhem en de Maas. De barbeel was talrijk in de Limburgse Maas en minder algemeen voorkomend in de Rijn, de Waal en de Geldersche IJssel. Door de bouw van stuwen en door de kanalisatie en normalisatie van de rivieren is de barbeelstand na WO-II afgenomen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><h3 id="Barbeel-Barbusbarbus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De barbeel is een typische bodemvis die zijn voedsel zoekt tussen de stenen en het zand gedurende de schemer en de nacht. Met de bekdraden en de dikke uitstulpbare lippen wordt het voedsel gevoeld en geproefd. De reukzin is hierbij eveneens van belang <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><p>De barbeel is een omnivore vis met een voorkeur voor dierlijk voedsel. Het voedsel bestaat uit insektenlarven, wormen, kreeftachtigen, weekdieren en soms ook kleine vis of visbroed. Plantendelen en organisch afval worden eveneens gegeten. De jonge barbelen (0+) voeden zich met zoöplankton <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><h3 id="Barbeel-Barbusbarbus-Reproductieenmigratie">Reproductie en migratie</h3><p>De barbeel is een soort die onder de kaperachtigen het meest trekt in de rivieren. Een trekkende barbeel kan zelfs een afstand van 300 km in 37 dagen afleggen in stroomopwaartse richting. In het voorjaar zoeken de vissen de hoger gelegen gedeelten in de rivier op die zij in het najaar door de grotere waterafvoer hebben moeten verlaten. In het najaar is er juist een tendens om rustiger en dieper water op te zoeken om te overwinteren. Deze migraties vinden plaats om te kunnen paaien op vlakke kiezelbeddingen met een flinke stroming. </p><p>De mannetjes zijn na 3 a 4 jaar geslachtsrijp en de vrouwtjes pas veel later (na 8 jaar is 50% geslachtsrijp). De paaitijd loopt van mei tot begin juli. In het voorjaar trekken volwassen barbelen stroomopwaarts. Deze trek wordt veroorzaakt door een voortdurend stijgende watertemperatuur, en mogelijk ook door een afnemend debiet. Bij een temperatuur van 14 tot 18 graden Celsius wordt er gepaaid. Dit gebeurt op een diepte van 30-40 cm op een vlakke bodem van stenen en grind met een flinke stroming. Deze grindbedden liggen doorgaans in of net stroomopwaarts van de monding van een zijriviertje. De trek naar deze gebieden gebeurt bij schemer en in de nacht. Het paaien gebeurt gedeeltelijk ook overdag. Hierbij wordt de bodem flink omgewoeld <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>De eieren hebben een kleverig omhulsel waardoor ze aan het grind en zand blijven plakken. Ze hebben een goudgele kleur en een diameter van 2 mm. Na 1 of 2 weken komen de eieren uit, afhankelijk van de watertemperatuur. Bij 6 tot 8 graden Celsius komen de eieren na 13-16 dagen uit. Bij 15-22 graden Celsius komen de eieren na 4 tot 7 dagen uit <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>De dooierzaklarven zijn lichtschuw en verbergen zich tussen de kiezelstenen voor een periode van ongeveer 10 dagen. Deze periode hangt samen met de watertemperatuur, waarbij een hogere temperatuur (20 graden Celsius) zorgt voor een kortere periode (6 dagen). Wanneer de dooierzak geresorbeerd is, zwemmen de larven vrij in het water en zijn dan niet meer lichtschuw. Ze voeden zich met zoöplankton <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>In de ondiepe maar goed doorstroomde oeverzones zwemmen de larven vervolgens stroomopwaarts naar rustiger en dieper water. Deze migratie vindt in de schemering en 's nachts plaats. Overdag houden de juvenielen zich schuil voor predatoren. Na ongeveer 30 dagen na de bevruchting wordt het alevin (juveniel) stadium bereikt, althans in kweekexperimenten bij een gemiddelde temperatuur van 22,6 graden Celsius <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><h3 id="Barbeel-Barbusbarbus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>De maximale leeftijd van de Barbeel is 25 jaar. De groei van de barbeel is over het algemeen langzaam. De groei van de mannetjes is trager dan van de vrouwtjes. De maximale lengte is 70 cm bij een gewicht van 3 kilo.   De groeisnelheid van de barbeel verschilt per geografisch gebied. In Zuid Duitsland en in het stroomgebied van de Donau groeit de Barbeel het snelst, waardoor een maximale lengte van 1 meter bereikt kan worden. In Engeland en België is de groei trager. In Zuid- Frankrijk (Rhone-gebied) is de groei het traagst. Deze groeiverschillen hebben waarschijnlijk niet direct te maken met de voedselsituatie maar met genetische verschillen: door isolatie van bepaalde populaties zijn ondersoorten ontstaan. De groei is dichtheidsafhankelijk gebleken in de rivier de Severn in Engeland. De groei kan sterk vertraagd worden door de darmparasiet Pomphothyncus laevis. Een andere ziekte die bij barbelen voorkomt is een vorm van builenpest, veroorzaakt door de bacterie Myxobus pferifferi <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><h3 id="Barbeel-Barbusbarbus-Milieuvoorwaarden">Milieu voorwaarden</h3><p>De barbeel komt voor in de zogenoemde barbeelzone van de rivieren. Deze barbeelzone bevindt zich in de middenloop van de rivieren en wordt gekenmerkt door een matige tot krachtige stroming en een schone bodem met zand, grind en keien. Het water moet er wel zuurstofrijk zijn en de temperatuur moet ongeveer 15-22 graden Celsius in de zomer bedragen. <br>n het algemeen prefereren barbelen het midden van de stroom. De grotere exemplaren komen in de diepere stroomdelen voor, de kleinere zijn meer te vinden in de ondiepere, snelstromende gedeelten. Er treedt geen schoolvorming op maar barbelen komen wel altijd voor in kleine groepen van enkele individuen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>De belangrijkste redenen dat bepaalde barbeelpopulaties zijn verdwenen zijn verontreiniging van het water en fysische veranderingen in het leefmilieu. Door organische en allerlei chemische verontreiniging zijn al vele populaties uit rivieren verdwenen. De barbeel is over het algemeen zeer gevoelig voor thermische verontreiniging, evenals hoge concentraties chlorides, sulfaten, detergenten en organo-chlooor verbindingen. Verder zijn door kanalisering en bedijking stroomversnellingen en grindbedden verdwenen. Eveneens is er minder variatie in diepte en stroomsnelheid dan voorheen. Ook de bouw van onpasseerbare stuwen is nadeling: hierdoor wordt de paaimigratie naar stroomopwaarts gelegen gebieden en rekolonisatie van andere rivieren bemoeilijkt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p>
 ]]></text>
 		</Description>
 	</ContentDescription>

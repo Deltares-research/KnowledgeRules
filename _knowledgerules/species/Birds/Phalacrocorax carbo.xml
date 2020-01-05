@@ -40,12 +40,35 @@ Niet aanwezig
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="Habitat_geschiktheid">
+							<label>"Habitat_geschiktheid</label>
+							<equation>min</equation>
+							<To>Nest_habitat</To>
+							<To>Voedsel_habitat</To>
+						</From>
+						<From name="Nest_habitat">
+							<label>"Nest_habitat"</label>
+							<equation>min</equation>
+							<To>type_moeras</To>
+							<To>rust_nest</To>
+						</From>
+						<From name="Voedsel_habitat">
+							<label>"Voedsel_habitat"</label>
+							<equation>min</equation>
+							<To>afstand_tot_moeras</To>
+							<To>waterdiepte</To>
+							<To>doorzicht</To>
+							<To>totaalfosfaatgehalte</To>
+							<To>PCB_gehalte_in_vis</To>
+							<To>rust_voedsel</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Afstand tot moeras">
+					<ResponseCurve name="afstand_tot_moeras">
 						<type>scalar</type>
-						<layername>"Afstand tot moeras"</layername>
+						<layername>"Afstand_tot_moeras"</layername>
 						<unit>"km"</unit>
 						<statistic>average</statistic>
 						<description>"Afstand openwater-moeras voor de Aalscholver"</description>
@@ -67,9 +90,9 @@ Niet aanwezig
 							<parameter value="40" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Waterdiepte">
+					<ResponseCurve name="waterdiepte">
 						<type>scalar</type>
-						<layername>"Waterdiepte"</layername>
+						<layername>"waterdiepte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdiepte voor de Aalscholver"</description>
@@ -90,9 +113,9 @@ Niet aanwezig
 							<parameter value="15" HSI="0.2"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Doorzicht">
+					<ResponseCurve name="doorzicht">
 						<type>scalar</type>
-						<layername>"Doorzicht"</layername>
+						<layername>"doorzicht"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Doorzicht voor de Aalscholver"</description>
@@ -109,9 +132,9 @@ Niet aanwezig
 							<parameter value="120" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="TotaalFosfaatgehalte">
+					<ResponseCurve name="totaalfosfaatgehalte">
 						<type>scalar</type>
-						<layername>"TotaalFosfaatgehalte"</layername>
+						<layername>"totaalfosfaatgehalte"</layername>
 						<unit>"mg/L P"</unit>
 						<statistic>average</statistic>
 						<description>"TotaalFosfaatgehalte in foerageerwateren van de Aalscholver"</description>
@@ -131,9 +154,9 @@ Niet aanwezig
 							<parameter value="0.55" HSI="0.4"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="PCB-gehalte in vis">
+					<ResponseCurve name="PCB_gehalte_in_vis">
 						<type>scalar</type>
-						<layername>"PCB-gehalte in vis"</layername>
+						<layername>"PCB_gehalte_in_vis"</layername>
 						<unit>"PCB-gehalte in vis (microgram/kilogram)"</unit>
 						<statistic>average</statistic>
 						<description>"PCB-gehalte in vis"</description>
@@ -152,9 +175,9 @@ Niet aanwezig
 							<parameter value="1000" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Rust (Nest)">
+					<ResponseCurve name="rust_nest">
 						<type>scalar</type>
-						<layername>"Rust (Nest)"</layername>
+						<layername>"rust_nest"</layername>
 						<unit>"verstoringsafstand in moerasgebieden (m)"</unit>
 						<statistic>average</statistic>
 						<description>"verstoringsafstand in moerasgebieden voor de Aalscholver"</description>
@@ -170,9 +193,9 @@ Niet aanwezig
 							<parameter value="600" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Rust (Voedsel)">
+					<ResponseCurve name="rust_voedsel">
 						<type>scalar</type>
-						<layername>"Rust (Voedsel)"</layername>
+						<layername>"rust_voedsel"</layername>
 						<unit>"verstoringsafstand op open water (m)"</unit>
 						<statistic>average</statistic>
 						<description>"verstoringsafstand in op open water voor de Aalscholver"</description>
@@ -188,7 +211,7 @@ Niet aanwezig
 							<parameter value="600" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="type moeras">
+					<ResponseCurve name="type_moeras">
 						<type>categorical</type>
 						<layername>"TypeMoeras"</layername>
 						<unit>"description"</unit>
@@ -213,29 +236,7 @@ Niet aanwezig
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[Algemeen voorkomen
-De aalscholver (Phalacrocorax carbo) en de kuifaalscholver (Phalacrocorax aristotelis) zijn de enige vertegenwoordigers van de aalscholverfamilie in Noordwest Europa. De aalscholver is een overheersend zwarte vogel. Een duidelijke witte vlek op de kop in de broedtijd onderscheidt de continentale ondersoort (P. carbo sinensis) van de Atlantische ondersoort (P. carbo carbo), die deze plek mist. De Atlantische ondersoort broedt in de kustgebieden van IJsland, Faroer-eilanden, Noorwegen, Britse eilanden, Ierland en Noordwest-Frankrijk. De Atlantische soort is een typische rotsbroeder. De belangrijkste Europese broedgebieden van de continentale soort zijn gelegen in Nederland, Duitsland, Denemarken, Zweden, Polen, Litouwen, Estland en Wit-Rusland #1. Hier onder wordt alleen de voorkeur van de continentale aalscholver beschrijven.
-
-Aalscholvers leven in dichte kolonies (100-1000 broedparen). Een kolonie vestigt zich in bomen, bij voorkeur als deze voorkomen in moerasbossen, ooibossen, vloedbossen, en rietmoerassen. Vaak nestelen meerdere paren in een boom. Het is dan ook niet verbazend dat aalscholvers slechts één meter of minder rond het nest verdedigen. Dit kan betekenen dat er 15 tot 30 nesten in een boom voorkomen. Onder optimale omstandigheden kan dit oplopen tot >50 broedparen op een ha moerasbos. Naarmate de locatie ontoegankelijker is kunnen er kleine populaties ontstaan in kleine groepen bomen tot één enkele boom. Er zijn ook gevallen bekend dat de aalscholver zijn nest op boomloze eilandjes en zandbanken aanlegt #1.
-
-Waar de aalscholver zijn nest maakt, treed al snel sterfte op van de ondergelegen vegetatie en de boom waarin genesteld wordt. Dit komt door de uitwerpselen van de aalscholver en de takken die hij voor de bouw van zijn nest van de bomen rooft. De aalscholver kolonie zit bij voorkeur in hoge bomen (>10 meter) en nestelen in rietland is weinig in trek. Nestelen op de kale bodem geschiedt alleen in grote kolonies #1.
-
-Voedselhabitat en strategie
-De aalscholver foerageert op vis in rivieren, meren en plassen. De aalscholver jaagt zijn prooi onder water en beschikt daarvoor over krachtige poten met zwemvliezen tussen de tenen. In Nederland vliegt en jaagt de aalscholver veelal in groepsverband. Het vissen in groepsverband heeft als voordeel dat de aalscholvers een vissenschool uit kunnen putten, waarna deze gemakkelijker gevangen worden. Deze groepsverbanden vissen met name in open water. Met name in troebel water blijkt het jagen in groepsverbanden een ideale techniek te zijn. Solitair vissende aalscholvers kiezen met name voor zandwinplassen en randen van meren om hun voedsel te vangen #1.
-
-De aalscholver prefereert vis van 20 tot 30 cm lang. Aalscholvers zijn niet kieskeurig en de meest voorkomende vis vormt al snel de hoofdprooi. In Nederland foerageert de aalscholver voornamelijk op bodemvissen, waaronder paling (Anguilla anguilla) en blankvoorn (Rutilus rutilus). Ook rietvoorn (Rutilus erythrophthalmus), snoekbaars (Stizostedion lucioperca), pos (Gymnocephalus cernuus), kolblei (Blicca bjoerkna), spiering (Osmerus eperlanus) en baars (Perca fluviatilis) behoren tot de prooivissen. Onder de marine vissen zijn dit de jonge haring (Clupea harengus), sprot (Sprattus sprattus) en grondels. Brasems ouder dan 2 jaar zijn niet meer door de aalscholver te verorberen door hun hoge rug. Een zeldzame aanvulling op het dieet zijn (steur)garnalen, krabben, kikkers en kuikens van andere vogels. De voedselbehoefte van de aalscholver is in de zomer ongeveer 365 gram vis per dag en in de wintermaanden tussen de 100-700 gram vis per dag. De maximale voedsel inname per dag wordt geschat op 700 gram vis per dag #1.
-
-De aalscholver kan tot op grote afstand van zijn broedgebied jagen. Er kunnen 2 tot 4 foerageervluchten per dag ondernomen worden, afhankelijk van of de vogel jongen heeft of niet. 50 km afstand is hierbij geen uitzondering. Vanaf 15-20 km worden het aantal voedselvluchten beperkt waardoor het broedsucces terugloopt #1.
-
-Het voortplantingssucces is positief gecorreleerd aan het areaal helder open water binnen 30 km van de kolonie. Dit komt omdat de aalscholver een zichtjager is. Waarden onder de 40 cm doorzicht worden als ongeschikt beschouwd voor de aalscholver. Naast algenbloei kan slibopwerveling door windwerking een nadelig effect hebben op het doorzicht. Te helder water kan een negatief effect hebben, doordat de vissen dan om predatie te voorkomen in de diepere delen zwemmen #1.
-
-Reproductie en migratie
-Het overgrote deel van de aalscholvers broed in april t/m mei. Aalscholvers produceren 1 legsel per broedseizoen en na het leggen van het ei is de broedduur 23-24 dagen. Na 40 tot 50 dagen vliegen de jongen uit, waarna ze snel onafhankelijk worden. In het tweede levens jaar kunnen de aalscholvers al geslachtsrijp zijn, na vijf jaar nemen alle aalscholvers aan de voortplanting deel. De oudere aalscholvers leggen veelal grotere legsels dan de jonge.
-
-In Nederland ruien de eerstejaars vogels en de oudere niet broedende aalscholvers in mei-juni, wat twee a 3 maanden eerder is dan de broedende vogels. In augustus-oktober verlaten het merendeel van de continentale aalscholvers de broedgebieden en trekt naar zuidelijke streken, een klein deel van de Aalscholvers overwinterd in ons land en krijgt gezelschap van Aalscholvers uit het Oostzeegebied. Het belangrijkste overwinteringsgebied ligt rondom de Middellandse Zee.
-
-Leeftijd en mortaliteit
-In het eerste levens jaar is de mortaliteit onder de vrouwtjes en mannetjes 36%. In het derde levensjaar is dit gereduceerd tot 9-14% voor vrouwtjes en 7-12% voor mannetjes. De hoge sterftecijfers, ook op latere leeftijd, worden mede veroorzaakt door de vele jachtslachtoffers. De gemiddelde overleving van vliegvlugge jongen tot geslachtsrijpe aalscholvers is 30-40%. Het gemiddelde voortplantingssucces van een kolonie wordt in belangrijke mate bepaald door de ecologische kwaliteit van de visgronden, de afstand van de kolonie naar de visgronden en de weersgesteldheid tijdens het broedseizoen. Aalscholvers kunnen 19 jaar worden in de vrije natuur #1.]]></text>
+			<text><![CDATA[<h3 id="Aalscholver-Phalacrocoraxcarbo-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De aalscholver (Phalacrocorax carbo) en de kuifaalscholver (Phalacrocorax aristotelis) zijn de enige vertegenwoordigers van de aalscholverfamilie in Noordwest Europa. De aalscholver is een overheersend zwarte vogel. Een duidelijke witte vlek op de kop in de broedtijd onderscheidt de continentale ondersoort (P. carbo sinensis) van de Atlantische ondersoort (P. carbo carbo), die deze plek mist. De Atlantische ondersoort broedt in de kustgebieden van IJsland, Faroer-eilanden, Noorwegen, Britse eilanden, Ierland en Noordwest-Frankrijk.  De Atlantische soort is een typische rotsbroeder. De belangrijkste Europese broedgebieden van de continentale soort zijn gelegen in Nederland, Duitsland, Denemarken, Zweden, Polen, Litouwen, Estland en Wit-Rusland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>. Hier onder wordt alleen de voorkeur van de continentale aalscholver beschrijven.</p><p>Aalscholvers leven in dichte kolonies (100-1000 broedparen). Een kolonie vestigt zich in bomen, bij voorkeur als deze voorkomen in moerasbossen, ooibossen, vloedbossen, en rietmoerassen. Vaak nestelen meerdere paren in een boom. Het is dan ook niet verbazend dat aalscholvers slechts één meter of minder rond het nest verdedigen. Dit kan betekenen dat er 15 tot 30 nesten in een boom voorkomen. Onder optimale omstandigheden kan dit oplopen tot &gt;50 broedparen op een ha moerasbos. Naarmate de locatie ontoegankelijker is kunnen er kleine populaties ontstaan in kleine groepen bomen tot één enkele boom. Er zijn ook gevallen bekend dat de aalscholver zijn nest op boomloze eilandjes en zandbanken aanlegt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>.</p><p>Waar de aalscholver zijn nest maakt, treed al snel sterfte op van de ondergelegen vegetatie en de boom waarin genesteld wordt. Dit komt door de uitwerpselen van de aalscholver en de takken die hij voor de bouw van zijn nest van de bomen rooft. De aalscholver kolonie zit bij voorkeur in hoge bomen (&gt;10 meter) en nestelen in rietland is weinig in trek. Nestelen op de kale bodem geschiedt alleen in grote kolonies <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>.</p><h3 id="Aalscholver-Phalacrocoraxcarbo-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De aalscholver foerageert op vis in rivieren, meren en plassen. De aalscholver jaagt zijn prooi onder water en beschikt daarvoor over krachtige poten met zwemvliezen tussen de tenen. In Nederland vliegt en jaagt de aalscholver veelal in groepsverband. Het vissen in groepsverband heeft als voordeel dat de aalscholvers een vissenschool uit kunnen putten, waarna deze gemakkelijker gevangen worden. Deze groepsverbanden vissen met name in open water. Met name in troebel water blijkt het jagen in groepsverbanden een ideale techniek te zijn. Solitair vissende aalscholvers kiezen met name voor zandwinplassen en randen van meren om hun voedsel te vangen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>.</p><p>De aalscholver prefereert vis van 20 tot 30 cm lang. Aalscholvers zijn niet kieskeurig en de meest voorkomende vis vormt al snel de hoofdprooi. In Nederland foerageert de aalscholver voornamelijk op bodemvissen, waaronder paling (Anguilla anguilla) en blankvoorn (Rutilus rutilus). Ook rietvoorn (Rutilus erythrophthalmus), snoekbaars (Stizostedion lucioperca), pos (Gymnocephalus cernuus), kolblei (Blicca bjoerkna), spiering (Osmerus eperlanus) en baars (Perca fluviatilis) behoren tot de prooivissen. Onder de marine vissen zijn dit de jonge haring (Clupea harengus), sprot (Sprattus sprattus) en grondels. Brasems ouder dan 2 jaar zijn niet meer door de aalscholver te verorberen door hun hoge rug. Een zeldzame aanvulling op het dieet zijn (steur)garnalen, krabben, kikkers en kuikens van andere vogels. De voedselbehoefte van de aalscholver is in de zomer ongeveer 365 gram vis per dag en in de wintermaanden tussen de 100-700 gram vis per dag. De maximale voedsel inname per dag wordt geschat op 700 gram vis per dag <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>. </p><p>De aalscholver kan tot op grote afstand van zijn broedgebied jagen. Er kunnen 2 tot 4 foerageervluchten per dag ondernomen worden, afhankelijk van of de vogel jongen heeft of niet. 50 km afstand is hierbij geen uitzondering. Vanaf 15-20 km worden het aantal voedselvluchten beperkt waardoor het broedsucces terugloopt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>.</p><p>Het voortplantingssucces is positief gecorreleerd aan het areaal helder open water binnen 30 km van de kolonie. Dit komt omdat de aalscholver een zichtjager is. Waarden onder de 40 cm doorzicht worden als ongeschikt beschouwd voor de aalscholver. Naast algenbloei kan slibopwerveling door windwerking een nadelig effect hebben op het doorzicht. Te helder water kan een negatief effect hebben, doordat de vissen dan om predatie te voorkomen in de diepere delen zwemmen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>.</p><h3 id="Aalscholver-Phalacrocoraxcarbo-Reproductieenmigratie">Reproductie en migratie</h3><p>Het overgrote deel van de aalscholvers broed in april t/m mei. Aalscholvers produceren 1 legsel per broedseizoen en na het leggen van het ei is de broedduur 23-24 dagen. Na 40 tot 50 dagen vliegen de jongen uit, waarna ze snel onafhankelijk worden. In het tweede levens jaar kunnen de aalscholvers al geslachtsrijp zijn, na vijf jaar nemen alle aalscholvers aan de voortplanting deel. De oudere aalscholvers leggen veelal grotere legsels dan de jonge.</p><p>In Nederland ruien de eerstejaars vogels en de oudere niet broedende aalscholvers in mei-juni, wat twee a 3 maanden eerder is dan de broedende vogels. In augustus-oktober verlaten het merendeel van de continentale aalscholvers de broedgebieden en trekt naar zuidelijke streken, een klein deel van de Aalscholvers overwinterd in ons land en krijgt gezelschap van Aalscholvers uit het Oostzeegebied. Het belangrijkste overwinteringsgebied ligt rondom de Middellandse Zee. </p><h3 id="Aalscholver-Phalacrocoraxcarbo-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>In het eerste levens jaar is de mortaliteit onder de vrouwtjes en mannetjes 36%. In het derde levensjaar is dit gereduceerd tot 9-14% voor vrouwtjes en 7-12% voor mannetjes. De hoge sterftecijfers, ook op latere leeftijd, worden mede veroorzaakt door de vele jachtslachtoffers. De gemiddelde overleving van vliegvlugge jongen tot geslachtsrijpe aalscholvers is 30-40%. Het gemiddelde voortplantingssucces van een kolonie wordt in belangrijke mate bepaald door de ecologische kwaliteit van de visgronden, de afstand van de kolonie naar de visgronden en de weersgesteldheid tijdens het broedseizoen. Aalscholvers kunnen 19 jaar worden in de vrije natuur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1">#1</a>. </p><h1 id="Aalscholver-Phalacrocoraxcarbo-Dosis-effectrelaties">Dosis-effect relaties</h1><p>In dit model wordt gebruikt gemaakt van <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visbiomassa">Visbiomassa</a>.</p>]]></text>
 			</Description>
 	</ContentDescription>
 	<Documentation>

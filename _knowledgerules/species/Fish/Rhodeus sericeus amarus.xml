@@ -37,12 +37,21 @@ Volkerak-Zoommeer Habitat analyse (#4)
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>min</equation>
+							<To>"ondergedoken_waterplanten</To>
+							<To>"oevervegetatie"</To>
+							<To>waterdiepte</To>
+							<To>zoutgehalte</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Bedekkingsgraad ondergedoken waterplanten">
+					<ResponseCurve name="ondergedoken_waterplanten">
 						<type>range / categorical</type>
-						<layername>"Bedekkingsgraad ondergedoken waterplanten"</layername>
+						<layername>"ondergedoken_waterplanten"</layername>
 						<unit>"bedekkingsgraad"</unit>
 						<statistic>average</statistic>
 						<description>"Voor deze rekenregel is in bij #4 als maat van de bedekkingsgraad gebruik gemaakt van de HGI voor ondergedoken waterplanten (Ondergedoken waterplanten)."</description>
@@ -62,9 +71,9 @@ Volkerak-Zoommeer Habitat analyse (#4)
 							<parameter rangemin="0.9" rangemax="1" cat="8" HSI="0.75"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Bedekkingsgraad oevervegetatie">
+					<ResponseCurve name="oevervegetatie">
 						<type>range / categorical</type>
-						<layername>"Bedekkingsgraad oevervegetatie"</layername>
+						<layername>"oevervegetatie"</layername>
 						<unit>"bedekkingsgraad"</unit>
 						<statistic>average</statistic>
 						<description>"Voor deze dosis-effect relatie is in bij #4 als maat van de bedekkingsgraad gebruik gemaakt van de HGI voor oevervegetatie (Oevervegetatie)."</description>
@@ -84,9 +93,9 @@ Volkerak-Zoommeer Habitat analyse (#4)
 							<parameter rangemin="0.9" rangemax="1" cat="8" HSI="1"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Waterdiepte">
+					<ResponseCurve name="waterdiepte">
 						<type>range / categorical</type>
-						<layername>"Waterdiepte"</layername>
+						<layername>"waterdiepte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdiepte voor de Bittervoorn"</description>
@@ -101,9 +110,9 @@ Volkerak-Zoommeer Habitat analyse (#4)
 							<parameter rangemin="2" rangemax="99" cat="3" HSI="0"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Zoutgehalte">
+					<ResponseCurve name="zoutgehalte">
 						<type>range / categorical</type>
-						<layername>"Zoutgehalte"</layername>
+						<layername>"zoutgehalte"</layername>
 						<unit>"gCl/l"</unit>
 						<statistic>average</statistic>
 						<description>"Zoutgehalte voor de Bittervoorn"</description>
@@ -123,24 +132,14 @@ Volkerak-Zoommeer Habitat analyse (#4)
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-De bittervoorn komt in de zoete wateren van gematigde streken in Europa voor, van Frankrijk tot aan de Oeral. In Nederland komt ze met name in het westen voor, plaatselijk in hoge aantallen. Komt voor in stilstaand of langzaam stromend water (sloten, plassen, vijvers) met een goed ontwikkelde onderwatervegetatie en een niet te weke bodem. In stromend water kan de vis in de oeverzone worden aangetroffen #2.
-
-Voedselhabitat en strategie
-De Bittervoorn eet met name plantaardig plankton #2. Daarnaast wordt spaarzaam dierlijk voedsel genuttigd, zoals vlokreeften, insectenlarven, slakjes en wormen #1
-
-Reproductie en migratie
-De Bittervoorn legt zijn eieren, april-juni, in grote zoetwatermossels van de soorten Anodonta en Unio. Het mannetje zoekt een gezonde mossel uit waar omheen hij een territorium vestigt. Wanneer er een geslachtsrijp vrouwtje voorbij zwemt, probeert hij haar te lokken. De geslachtsrijpe wijfjes zijn te herkennen aan een dunne, drie tot vier cm lange buis waarmee eitjes worden gelegd in de lichaamsholte van een mossel. De legbuis is een slap apparaat, maar door er onder druk van urine eitjes door te persen, wordt de buis in een fractie van een seconde hard, waarna het vrouwtje hem korte tijd in de instroomopening (sifo) van de mossel houdt en de eitjes afzet. Zodra de eieren zijn gedeponeerd en het wijfje is weggezwommen, stort het mannetje zijn hom over de mossel uit, dat via de instroomopening de eitjes bereikt en bevrucht. Dit gedrag wordt enige malen herhaald met verschillende vrouwtjes en bij verschillende mossels. De eitjes ontwikkelen zich tussen de kieuwen van de mossel. De larven blijven twee tot drie weken in de mossel. De mossel maakt op ook gebruik van de bittervoorn, deze laat larven los die zich op de vis hechten en zo verspreidt worden #1, #2.
-
-Leeftijd en mortaliteit
-Over de leeftijd en mortaliteit van de Bittervoorn is geen informatie beschikbaar.
-]]></text>
+			<text><![CDATA[<h3 id="Bittervoorn-Rhodeussericeusamarus-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De bittervoorn komt in de zoete wateren van gematigde streken in Europa voor, van Frankrijk tot aan de Oeral. In Nederland komt ze met name in het westen voor, plaatselijk in hoge aantallen. Komt voor in stilstaand of langzaam stromend water (sloten, plassen, vijvers) met een goed ontwikkelde onderwatervegetatie en een niet te weke bodem. In stromend water kan de vis in de oeverzone worden aangetroffen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2">#2</a>.</p><h3 id="Bittervoorn-Rhodeussericeusamarus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De Bittervoorn eet met name plantaardig plankton <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2">#2</a>. Daarnaast wordt spaarzaam dierlijk voedsel genuttigd, zoals vlokreeften, insectenlarven, slakjes en wormen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-1">#1</a></p><h3 id="Bittervoorn-Rhodeussericeusamarus-Reproductieenmigratie">Reproductie en migratie</h3><p>De Bittervoorn legt zijn eieren, april-juni, in grote zoetwatermossels van de soorten <em>Anodonta</em> en <em>Unio</em>. Het mannetje zoekt een gezonde mossel uit waar omheen hij een territorium vestigt. Wanneer er een geslachtsrijp vrouwtje voorbij zwemt, probeert hij haar te lokken. De geslachtsrijpe wijfjes zijn te herkennen aan een dunne, drie tot vier cm lange buis waarmee eitjes worden gelegd in de lichaamsholte van een mossel. De legbuis is een slap apparaat, maar door er onder druk van urine eitjes door te persen, wordt de buis in een fractie van een seconde hard, waarna het vrouwtje hem korte tijd in de instroomopening (sifo) van de mossel houdt en de eitjes afzet. Zodra de eieren zijn gedeponeerd en het wijfje is weggezwommen, stort het mannetje zijn hom over de mossel uit, dat via de instroomopening de eitjes bereikt en bevrucht. Dit gedrag wordt enige malen herhaald met verschillende vrouwtjes en bij verschillende mossels. De eitjes ontwikkelen zich tussen de kieuwen van de mossel. De larven blijven twee tot drie weken in de mossel. De mossel maakt op ook gebruik van de bittervoorn, deze laat larven los die zich op de vis hechten en zo verspreidt worden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-1">#1</a>, <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2">#2</a>.</p><h3 id="Bittervoorn-Rhodeussericeusamarus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>Over de leeftijd en mortaliteit van de Bittervoorn is geen informatie beschikbaar.</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>
 		<reference author="" year="" title="" journal="http://www.minlnv.nl/natura2000" identification=""/>
+		<reference author="M.C. de Lange en W.A.M. van Emmerik" title="Kennisdocument  bittervoorn Rhodeus amarus (Bloch, 1782)" identification="Kennisdocument 15" year="2006" journal="Sportvisserij Nederland">
+				<html><![CDATA["https://www.sportvisserijnederland.nl/files/kennisdocument_bittervoorn_4546.pdf"]]></html>
+		</reference>
 		<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="Europese natuur in Nederland; soorten van de Habitat richtlijn" journal="" identification=""/>
 		<reference author="Schouten, W.J." year="1992" title="Habitatgeschiktheid index model Bittervoorn Rhodeus sericeus amarus (Bloch, 1782)." journal="OVB, Nieuwegein" identification=""/>
 		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer." journal="WL report Q4015" identification=""/>

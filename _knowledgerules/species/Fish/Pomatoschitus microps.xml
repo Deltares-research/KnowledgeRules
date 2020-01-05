@@ -6,6 +6,7 @@
 			<LatName>Pomatoschitus microps</LatName>
 			<CommonNames>
 				<Name name= "Brakwatergrondel" language = "NL"/>
+				<Name name="Common goby" language="ENG"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -33,14 +34,24 @@ Voorbeeldproject
 Er is geen voorbeeldproject beschikbaar.
 ]]></text>
 					</Description>
+					<Description language="ENG">
+						<text><![CDATA["to be filled"]]></text>
+					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>min</equation>
+							<To>waterdiepte</To>
+							<To>zoutgehalte</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>		
-					<ResponseCurve name="Waterdiepte">
+					<ResponseCurve name="waterdiepte">
 						<type>scalar</type>
-						<layername>"Waterdiepte"</layername>
+						<layername>"waterdiepte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdiepte"</description>
@@ -57,9 +68,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="10" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zoutgehalte">
+					<ResponseCurve name="zoutgehalte">
 						<type>scalar</type>
-						<layername>"Zoutgehalte"</layername>
+						<layername>"zoutgehalte"</layername>
 						<unit>"promille"</unit>
 						<statistic>average</statistic>
 						<description>"Zoutgehalte"</description>
@@ -82,22 +93,16 @@ Er is geen voorbeeldproject beschikbaar.
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-De brakwatergrondel is een klein visje dat op waterbodems voorkomt. Het wordt circa zes centimeter lang en heeft een doorzichtig lichaam #2 en wordt gekenmerkt door twee rugvinnen en aaneengegroeide buikvinnen waarmee het zich in zwak stromend water aan de ondergrond kunnen vastzuigen #1. 
-Milieuvoorwaarden
-De brakwatergrondel is een typisch estuariene soort en komt uitsluitend in ondiepe kustwateren en estuaria voor tot een diepte van ongeveer 2 meter. Ze leven op zandige, kleiachtige of modderige bodems en zijn algemeen talrijk in ondiepe geulen (0.2 tot 2 m diepte). Brakwatergrondels kunnen sterke schommelingen in temperatuur en zoutgehalte goed verdragen. Ze leiden echter sterk onder koude winters, met als gevolg dat de aantallen sterk kunnen variëren #1. In de late herfst, als de temperatuur zakt beneden 5 a 7 graden Celsius, migreert de brakwatgrondel naar de diepere geulen om te overwinteren. Blijft de temperatuur boven 7 graden Celsius, dan treedt deze wintermigratie niet op #1. 
-Brakwatergrondels hebben een brede zouttolerantie en kan zowel in zout als zoet water leven. Als de regel bevindt de Brakwatergrondel zich in estuaria bij voorkeur in gebieden met een zoutgehalte tussen de 15 en 30 promille.
-Voedselhabitat en strategie
-De brakwatergrondel leeft van ongewervelde bodemdiertjes, waaronder kleine kreeftachtigen en wormen #2.
-Reproductie en migratie
-In de zomer van het tweede levensjaar paait de brakwatergrondel in estuaria #1. Elders kunnen ze al in hun eerste levensjaar paren #2. Vrouwtjes kunnen meerdere keren per seizoen paaien. Het mannetje van Brakwatergrondel heeft in de paaitijd een zwarte tot blauwe vlek in de eerste rugvin. De brakwatergrondel zet zijn eieren af onder of tussen stenen, schelpen of waterplanten #2. 
-]]></text>
+			<text><![CDATA[<h3 id="Brakwatergrondel-Pomatoschitusmicrops-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De brakwatergrondel is een klein visje dat op waterbodems voorkomt. Het wordt circa zes centimeter lang en heeft een doorzichtig lichaam <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2">#2</a> en wordt gekenmerkt door twee rugvinnen en aaneengegroeide buikvinnen waarmee het zich in zwak stromend water aan de ondergrond kunnen vastzuigen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1">#1</a>. </p><h3 id="Brakwatergrondel-Pomatoschitusmicrops-Milieuvoorwaarden">Milieuvoorwaarden</h3><p>De brakwatergrondel is een typisch estuariene soort en komt uitsluitend in ondiepe kustwateren en estuaria voor tot een diepte van ongeveer 2 meter. Ze leven op zandige, kleiachtige of modderige bodems en zijn algemeen talrijk in ondiepe geulen (0.2 tot 2 m diepte). Brakwatergrondels kunnen sterke schommelingen in temperatuur en zoutgehalte goed verdragen. Ze leiden echter sterk onder koude winters, met als gevolg dat de aantallen sterk kunnen variëren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1">#1</a>. In de late herfst, als de temperatuur zakt beneden 5 a 7 graden Celsius, migreert de brakwatgrondel naar de diepere geulen om te overwinteren. Blijft de temperatuur boven 7 graden Celsius, dan treedt deze wintermigratie niet op <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1">#1</a>. </p><p>Brakwatergrondels hebben een brede zouttolerantie en kan zowel in zout als zoet water leven. Als de regel bevindt de Brakwatergrondel zich in estuaria bij voorkeur in gebieden met een zoutgehalte tussen de 15 en 30 promille.</p><h3 id="Brakwatergrondel-Pomatoschitusmicrops-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De brakwatergrondel leeft van ongewervelde bodemdiertjes, waaronder kleine kreeftachtigen en wormen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2">#2</a>.</p><h3 id="Brakwatergrondel-Pomatoschitusmicrops-Reproductieenmigratie">Reproductie en migratie</h3><p>In de zomer van het tweede levensjaar paait de brakwatergrondel in estuaria <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1">#1</a>. Elders kunnen ze al in hun eerste levensjaar paren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2">#2</a>. Vrouwtjes kunnen meerdere keren per seizoen paaien. Het mannetje van Brakwatergrondel heeft in de paaitijd een zwarte tot blauwe vlek in de eerste rugvin. De brakwatergrondel zet zijn eieren af onder of tussen stenen, schelpen of waterplanten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2">#2</a>. </p>]]></text>
+		</Description>
+		<Description language="ENG">
+			<text><![CDATA["to be filled"]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>
-		<reference author="" year="" title=" www.ravon.nl (Brakwatergrondel)" journal="" identification=""/>
+		<reference author="" year="" title=" www.ravon.nl (Brakwatergrondel)" journal="" identification="">
+			<html><![CDATA[https://www.ravon.nl/Soorten/Soortinformatie/brakwatergrondel]]></html>
+		</reference>
 		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
 	</Documentation>
 	<DataSources/>

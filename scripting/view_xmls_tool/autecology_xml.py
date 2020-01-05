@@ -10,6 +10,7 @@ from lxml import etree as ET
 import pandas
 import numpy as np
 from asteval import Interpreter
+from collections import OrderedDict
 
 #static plots
 import matplotlib.pyplot as plt
@@ -143,6 +144,7 @@ class AutecologyXML(_File):
 		self.system_path = self.make_find([self.XMLlayers[x] for x in system_layers])
 		self.speciesdescription_path = self.make_find([self.XMLlayers["layer1_5"]])
 		self.systemdescription_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_2"]])
+		self.systemflowdiagram_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_3"]])
 		self.system_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_4"]])
 
 		#XML_specifics
@@ -261,6 +263,11 @@ class AutecologyXML(_File):
 		type_tag_syst = self.get_element_system(systemname)
 		type_tag_systemdescription = type_tag_syst.find(self.systemdescription_path_spec)
 		return(type_tag_systemdescription)
+
+	def get_element_systemflowdiagram(self, systemname):
+		type_tag_syst = self.get_element_system(systemname)
+		type_tag_systemflowdiagram = type_tag_syst.find(self.systemflowdiagram_path_spec)
+		return(type_tag_systemflowdiagram)
 
 	def get_element_knowledgerules(self,systemname):
 		type_tag_syst = self.get_element_system(systemname)
@@ -523,7 +530,6 @@ class AutecologyXML(_File):
 
 		return()
 		
-
 	def _read_speciesdescription(self):
 		spd_overview = [{"language" : spd.get("language"), "description" : spd.find(self.make_find(["text"])).text}\
 										 for spd in self.get_element_speciesdescription()]
@@ -533,6 +539,20 @@ class AutecologyXML(_File):
 		spd_specific = [spd for spd in self.get_element_speciesdescription() if(spd.get("language") == language)]
 		spd_specific[0].find(self.make_find(["text"])).text = text
 		return() 
+
+	def _read_systemflowdiagram(self, systemname):
+		syfd_overview = []
+		for syfd in self.get_element_systemflowdiagram(systemname):
+			flow_diagram_name = syfd.get("name")
+			from_overview = []
+			for fromlink in syfd:
+				label = fromlink.find(self.make_find(["label"])).text
+				equation = fromlink.find(self.make_find(["equation"])).text
+				to = [tolink.text for tolink in fromlink.findall(self.make_find["To"])]
+				from_overview.append([OrderedDict([("label",label),("equation",equation),("to",to)])])
+			syfd_overview.append([OrderedDict([("name",flow_diagram_name),("Links",from_overview)])])
+
+		return(syfd_overview)
 
 	def _read_systemdescription(self,systemname):
 		syd_overview = [{"language" : syd.get("language"),"description" : syd.find(self.make_find(["text"])).text}\
@@ -1183,15 +1203,15 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 		for cur_system in self.xmltest.systems:
 			self.xmltest._scan_knowledgerules(systemname = cur_system)
 			self.assertEqual(self.xmltest.systemname, "testsystem","Error occurs at system :" + cur_system)
-			self.assertEqual(self.xmltest.knowledgeRulesNr,4,"Error occurs at system :" + cur_system)
+			self.assertEqual(self.xmltest.knowledgeRulesNr,5,"Error occurs at system :" + cur_system)
 			self.assertEqual(self.xmltest.knowledgeRulesCategorie,["ResponseCurve","ResponseCurve","ResponseCurve",\
-															"ResponseCurve"],"Error occurs at system :" + cur_system) 
+															"ResponseCurve","FormulaBased"],"Error occurs at system :" + cur_system) 
 			# self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at model :" + cur_model) 
 			self.assertEqual(self.xmltest.knowledgeRulesNames,["Chloride","Soil","SiltFraction",\
-														"WaterdepthLakes"],"Error occurs at model :" + cur_system)
-			self.assertEqual(self.xmltest.knowledgeRulesStatistics,["minimum","average","average","average"],\
+														"WaterdepthLakes","P_chara_extinction"],"Error occurs at model :" + cur_system)
+			self.assertEqual(self.xmltest.knowledgeRulesStatistics,["minimum","average","average","average","none"],\
 														"Error occurs at system :" + cur_system)
-			self.assertEqual(self.xmltest.knowledgeRulesUnits,['g/l','soil','silt fraction / description','m'],\
+			self.assertEqual(self.xmltest.knowledgeRulesUnits,['g/l','soil','silt fraction / description','m','-'],\
 														"Error occurs at system :" + cur_system)
 			self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
 									in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + cur_system)

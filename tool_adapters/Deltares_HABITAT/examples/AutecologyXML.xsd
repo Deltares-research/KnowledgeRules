@@ -176,7 +176,7 @@
 	</complexType>
 	<complexType name="FlowDiagramComplexType">
 		<sequence>
-			<element name="From" type="AutXML:LinkFromComplexType" maxOccurs="unbounded">
+			<element name="From" type="AutXML:LinkFromComplexType" minOccurs="0" maxOccurs="unbounded">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
@@ -202,35 +202,35 @@
 	</complexType>
 	<complexType name="ResponseCurveComplexType">
 		<sequence>
-			<element name="type" type="AutXML:TypeSingleType" minOccurs="0"/>
-			<element name="layername" type="string" minOccurs="0"/>
-			<element name="unit" type="string" minOccurs="0"/>
-			<element name="statistic" type="string" minOccurs="0"/>
-			<element name="description" type="string" minOccurs="0"/>
-			<element name="author" type="string" minOccurs="0"/>
-			<element name="date" type="AutXML:dateType" minOccurs="0"/>
-			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="0"/>
+			<element name="type" type="AutXML:TypeSingleType" minOccurs="1" maxOccurs="1"/>
+			<element name="layername" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="unit" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="statistic" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="description" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="author" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="date" type="AutXML:dateType" minOccurs="1" maxOccurs="1"/>
+			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="1" maxOccurs="1"/>
 			<choice>
-				<element name="valuesScalar" type="AutXML:RCValuesScalarComplexType" minOccurs="0"/>
-				<element name="valuesCategorical" type="AutXML:RCValuesCategoricalComplexType" minOccurs="0"/>
-				<element name="valuesRangeCategorical" type="AutXML:RCValuesRangeCategoricalComplexType" minOccurs="0"/>
-				<element name="valuesRanges" type="AutXML:RCValuesRangesComplexType" minOccurs="0"/>
+				<element name="valuesScalar" type="AutXML:RCValuesScalarComplexType" minOccurs="1" maxOccurs="1"/>
+				<element name="valuesCategorical" type="AutXML:RCValuesCategoricalComplexType" minOccurs="1" maxOccurs="1"/>
+				<element name="valuesRangeCategorical" type="AutXML:RCValuesRangeCategoricalComplexType" minOccurs="1" maxOccurs="1"/>
+				<element name="valuesRanges" type="AutXML:RCValuesRangesComplexType" minOccurs="1" maxOccurs="1"/>
 			</choice>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
 	</complexType>
 	<complexType name="FormulaBasedComplexType">
 		<sequence>
-			<element name="layername" type="string" minOccurs="0"/>
-			<element name="unit" type="string" minOccurs="0"/>
-			<element name="statistic" type="string" minOccurs="0"/>
-			<element name="description" type="string" minOccurs="0"/>
-			<element name="author" type="string" minOccurs="0"/>
-			<element name="date" type="AutXML:dateType" minOccurs="0"/>
-			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="0"/>
-			<element name="output" type="string" minOccurs="0"/>
-			<element name="equation" type="string" minOccurs="0"/>
-			<element name="Parameters" type="AutXML:FBParametersComplexType" minOccurs="0"/>
+			<element name="layername" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="unit" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="statistic" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="description" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="author" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="date" type="AutXML:dateType" minOccurs="1" maxOccurs="1"/>
+			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="1" maxOccurs="1"/>
+			<element name="output" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="equation" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="Parameters" type="AutXML:FBParametersComplexType" minOccurs="1" maxOccurs="1"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
 	</complexType>
@@ -338,14 +338,18 @@
 		<sequence>
 			<element name="label" type="string"/>
 			<element name="equation" type="AutXML:LinkEquationSimpleType"/>
+			<element name="specific_equation" type="string" minOccurs="0"/>
 			<element name="To" type="string" maxOccurs="unbounded"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
 	</complexType>
 	<simpleType name="LinkEquationSimpleType">
 		<restriction base="string">
+			<enumeration value="average"/>
 			<enumeration value="min"/>
 			<enumeration value="max"/>
+			<enumeration value="geometric_average"/>
+			<enumeration value="specific"/>
 		</restriction>
 	</simpleType>
 	<complexType name="ReferenceComplexType">

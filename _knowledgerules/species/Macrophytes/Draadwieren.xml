@@ -51,7 +51,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 						<equation>"1 / (1+P_filam_algae)"</equation>
 						<Parameters>
 							<valuesScalar dataname="P_filam_algae" type="scalar" unit="-">
-								<parameter min="0" max="999"/>
+								<parameter min="0" max="1"/>
 							</valuesScalar>
 						</Parameters>
 					</FormulaBased>
@@ -66,7 +66,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 						</references>
 						<output>"P_filam_algae"</output>
-						<equation>"1/(1+exp(-(-1.009677173+deelgebied-1.488380475*diepte_zom+0.062599049*(diepte_zom^2)-0.019458869*diepte_zom*doorzicht-9.49*E-05*strijklengte)))"</equation>
+						<equation>"1/(1+exp(-(-1.009677173+deelgebied-1.488380475*diepte_zom+0.062599049*(diepte_zom^2)-0.019458869*diepte_zom*doorzicht-0.0000949*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname="deelgebied" type="constant" unit="-">
 								<parameter constantset="MBIJ" value="-0.81302272"/>
@@ -98,7 +98,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 						</references>
 						<output>"P_filam_algae"</output>
-						<equation>"1/(1+exp(-(-0.276884752+deelgebied-1.323829778*diepte_zom+0.058226538*(diepte_zom^2)-0.073627804*diepte_zom*extinctie-9.28E-5*strijklengte)))"</equation>
+						<equation>"1/(1+exp(-(-0.276884752+deelgebied-1.323829778*diepte_zom+0.058226538*(diepte_zom^2)-0.073627804*diepte_zom*extinctie-0.0000928*strijklengte)))"</equation>
 						<Parameters>
 							<valuesConstant dataname="deelgebied" type="constant" unit="-">
 								<parameter constantset="MBIJ" value="-0.81302272"/>

@@ -51,7 +51,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 						<equation>"1 / (1+P_myrio)"</equation>
 						<Parameters>
 							<valuesScalar dataname="P_myrio" type="scalar" unit="-">
-								<parameter min="0" max="999"/>
+								<parameter min="0" max="1"/>
 							</valuesScalar>
 						</Parameters>
 					</FormulaBased>

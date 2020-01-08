@@ -1,9 +1,10 @@
 ISSUES:
-- niet tonen eerste scherm
+V - niet tonen eerste scherm
 - geen waardes bij schuifbalk
 - niet meevergroten van beeld bij groter maken box scherm
 - niet tonen van meerdere systemen (zie vis / Barbus barbus)
-- error bij vis / Lepomis macrochirus
+V - error bij vis / Abramis brama
+- overlap textlabels bij vis / Lepomis macrochirus voor categorische data
 - error bij macrofyten / draadwieren
 - error bij macrofauna / Dreisenna polymorpha
 

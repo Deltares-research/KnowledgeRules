@@ -12,7 +12,7 @@ import view_edit_tool_API
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class UI_MainWindow(object):
-	def setupUi(self, MainWindow):
+	def setupUI(self, MainWindow):
 		MainWindow.setObjectName("MainWindow")
 		MainWindow.resize(1121, 806)
 
@@ -210,11 +210,25 @@ class UI_MainWindow(object):
 		return()		
 
 class UI_StartWindow(object):
-	
-	def setupUi(self, StartWindow):
+
+	def setupUI(self, StartWindow):
 		StartWindow.setObjectName("StartWindow")
 		StartWindow.resize(1122, 700)
-		self.label = QtWidgets.QLabel(StartWindow)
+
+		self.path = os.path.realpath(__file__)
+
+		font = QtGui.QFont()
+		font.setPointSize(10)
+		font.setBold(True)
+		font.setWeight(75)
+
+		self.groupBox = QtWidgets.QGroupBox(StartWindow)
+		self.groupBox.setGeometry(QtCore.QRect(10, 10, 1102, 690))
+		self.groupBox.setObjectName("groupBox")
+		self.boxlayout = QtWidgets.QGridLayout(self.groupBox)
+
+
+		self.label = QtWidgets.QLabel()
 		self.label.setGeometry(QtCore.QRect(290, 20, 501, 61))
 		font = QtGui.QFont()
 		font.setPointSize(16)
@@ -224,7 +238,8 @@ class UI_StartWindow(object):
 		self.label.setTextFormat(QtCore.Qt.AutoText)
 		self.label.setAlignment(QtCore.Qt.AlignCenter)
 		self.label.setObjectName("label")
-		self.label_2 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.label)
+		self.label_2 = QtWidgets.QLabel()
 		self.label_2.setGeometry(QtCore.QRect(290, 70, 501, 61))
 		font = QtGui.QFont()
 		font.setPointSize(12)
@@ -234,7 +249,8 @@ class UI_StartWindow(object):
 		self.label_2.setTextFormat(QtCore.Qt.AutoText)
 		self.label_2.setAlignment(QtCore.Qt.AlignCenter)
 		self.label_2.setObjectName("label_2")
-		self.label_3 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.label_2)
+		self.label_3 = QtWidgets.QLabel()
 		self.label_3.setGeometry(QtCore.QRect(290, 110, 501, 61))
 		font = QtGui.QFont()
 		font.setPointSize(12)
@@ -244,15 +260,19 @@ class UI_StartWindow(object):
 		self.label_3.setTextFormat(QtCore.Qt.AutoText)
 		self.label_3.setAlignment(QtCore.Qt.AlignCenter)
 		self.label_3.setObjectName("label_3")
-		self.graphicsView = QtWidgets.QGraphicsView(StartWindow)
+		self.boxlayout.addWidget(self.label_3)
+		self.graphicsView = QtWidgets.QGraphicsView()
 		self.graphicsView.setGeometry(QtCore.QRect(130, 170, 841, 421))
 		self.graphicsView.setObjectName("graphicsView")
-		self.label_4 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.graphicsView)
+		self.label_4 = QtWidgets.QLabel()
 		self.label_4.setGeometry(QtCore.QRect(160, 600, 781, 16))
 		self.label_4.setObjectName("label_4")
-		self.label_5 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.label_4)
+		self.label_5 = QtWidgets.QLabel()
 		self.label_5.setGeometry(QtCore.QRect(160, 620, 781, 16))
 		self.label_5.setObjectName("label_5")
+		self.boxlayout.addWidget(self.label_5)
 
 		self.retranslateUi(StartWindow)
 		QtCore.QMetaObject.connectSlotsByName(StartWindow)
@@ -263,28 +283,40 @@ class UI_StartWindow(object):
 		self.label.setText(_translate("StartWindow", "Autecology"))
 		self.label_2.setText(_translate("StartWindow", "Data storage"))
 		self.label_3.setText(_translate("StartWindow", "View & editting data tool"))
-		self.label_4.setText(_translate("StartWindow", "© Stichting Deltares , the tool and data supplied in the Autecology project fall under the GNU General Public License v3.0."))
-		self.label_5.setText(_translate("StartWindow", "Please contact the original author of the tool M.P. Weeber is any questions arrise (marc.weeber at deltares.nl)"))
+		self.label_4.setText(_translate("StartWindow", "© Stichting Deltares , this tool and the data fall under the GNU General Public License v3.0."))
+		self.label_5.setText(_translate("StartWindow", "Please contact the original author of the tool M.P. Weeber if any questions arrises (marc.weeber at deltares.nl)"))
+
+
+class UI_Application(object):
+
+	def start_up(self):
+		#needed to start the screens
+		self.StartUp = QtWidgets.QDialog()
+		self.StartUp.show()
+	
+	def run_startwindow(self):
+		self.ui_startwindow= UI_StartWindow()
+		self.StartWindow = QtWidgets.QDialog()
+		self.ui_startwindow.setupUI(self.StartWindow)
+		self.StartWindow.show()
 
 	def run_mainwindow(self):
-		StartWindow.close()
+		self.StartWindow.close()
 		self.ui_mainwindow= UI_MainWindow()
 		self.MainWindow = QtWidgets.QDialog()
-		self.ui_mainwindow.setupUi(self.MainWindow)
+		self.ui_mainwindow.setupUI(self.MainWindow)
 		self.MainWindow.show()
 
 
 if __name__ == "__main__":
 	import sys
 	app = QtWidgets.QApplication(sys.argv)
-	StartWindow = QtWidgets.QDialog()
-	
+
 	#Start Window
-	ui = UI_StartWindow()
-	ui.setupUi(StartWindow)
-	StartWindow.show()
-
+	ui = UI_Application()
+	ui.start_up()
+	QtCore.QTimer.singleShot(0,ui.run_startwindow)
 	QtCore.QTimer.singleShot(3000, ui.run_mainwindow)
-
+	
 	sys.exit(app.exec_())
 

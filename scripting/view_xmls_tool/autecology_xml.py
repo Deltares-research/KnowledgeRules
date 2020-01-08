@@ -233,6 +233,12 @@ class AutecologyXML(_File):
 
 
 	def find_element_by_name(self, root, name_key, name_value):
+		#finds for exact name match
+		element_list = [e for e in root if(name_value == e.get(name_key))]  
+		return(element_list)
+
+	def find_element_by_name_approximation(self, root, name_key, name_value):
+		#finds for part of name match
 		element_list = [e for e in root if(name_value in e.get(name_key))]  
 		return(element_list)
 

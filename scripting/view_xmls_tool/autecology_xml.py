@@ -613,12 +613,14 @@ class AutecologyXML(_File):
 			x_pos = np.arange(len(x_data))
 			axes.bar(x_pos, y_data, align='center', alpha=0.5)
 			if((rc_data["type"] == "categorical") or (rc_data["type"] == "ranges")):
-				axes.set_xticks(x_pos, str(x_data))
+				axes.set_xticks(x_pos)
+				axes.set_xticklabels([str(xval) for xval in x_data])
 			elif(rc_data["type"] == "range / categorical"):
 				min_range_data = np.where(min_range_data == self.XMLconvention["-Infvalue"], "-Inf", min_range_data)
 				max_range_data = np.where(max_range_data == self.XMLconvention["Infvalue"], "Inf", max_range_data) 
 				x_tick_labels = [str(b) + " - " + str(c) +"\n" + str(a) for a,b,c in zip(x_data,min_range_data,max_range_data)]
-				axes.set_xticks(x_pos, x_tick_labels)
+				axes.set_xticks(x_pos)
+				axes.set_xticklabels(x_tick_labels)
 			else:
 				raise RuntimeError("type '" + rc_data["type"] + "' not available.")
 

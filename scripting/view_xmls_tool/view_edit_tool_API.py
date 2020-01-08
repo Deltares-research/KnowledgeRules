@@ -98,6 +98,7 @@ class API:
 			obj.comboBox_2.addItem(system)
 
 		#place species information
+		print(obj.cur_language)
 		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
 		obj.textBrowser_2.setText(cur_speciestext)
 		obj.textBrowser_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
@@ -169,11 +170,16 @@ class API:
 		system_label_2 = QtWidgets.QLabel(cur_window)
 		system_label_2.setFont(font)
 		system_label_2.setObjectName("label")
-		system_label_2.setText(_translate("MainWindow", "system flow diagram:"))
+		system_label_2.setText(_translate("MainWindow", "System flow diagram:"))
 		
 		system_groupbox_1 = QtWidgets.QGroupBox(obj.scrollAreaWidgetContents)
 		system_groupbox_1.setGeometry(QtCore.QRect(0, 0, 1000, 211))
 		system_groupbox_1.setObjectName("textBrowser_2")
+
+		system_label_3 = QtWidgets.QLabel(cur_window)
+		system_label_3.setFont(font)
+		system_label_3.setObjectName("label")
+		system_label_3.setText(_translate("MainWindow", "Knowledge rules:"))
 
 		#Get number of knowledge rules and knowledge rule names
 		obj.knowledgerulenr = xml_obj.knowledgeRulesNr
@@ -184,6 +190,7 @@ class API:
 		obj.boxlayout.addWidget(system_textBrowser)
 		obj.boxlayout.addWidget(system_label_2)
 		obj.boxlayout.addWidget(system_groupbox_1)
+		obj.boxlayout.addWidget(system_label_3)
 
 		#Loop over knowledge rules and produce plot and info
 		obj.groupboxes = []
@@ -192,7 +199,7 @@ class API:
 			print(kr)
 
 			#Implement a progress bar:
-			kr_groupbox = QtWidgets.QGroupBox('system_groupbox%i' % i)
+			kr_groupbox = QtWidgets.QGroupBox('kr_groupbox%i' % i)
 			kr_groupboxlayout = QtWidgets.QGridLayout()
 			
 			font = QtGui.QFont()
@@ -200,7 +207,7 @@ class API:
 			font.setBold(True)
 			font.setWeight(75)
 
-			kr_label1 = QtWidgets.QLabel('system_label1_%i' % i)
+			kr_label1 = QtWidgets.QLabel('kr_label1_%i' % i)
 			kr_label1.setFont(font)
 			kr_label1.setObjectName("label")
 			kr_label1.setText(_translate("MainWindow", kr))
@@ -247,14 +254,14 @@ class API:
 				font.setPointSize(10)
 				font.setUnderline(True)
 				
-				kr_label1 = QtWidgets.QLabel('system_label1_%i' % i)
+				kr_label1 = QtWidgets.QLabel('kr_label1_%i' % i)
 				kr_label1.setFont(font)
 				kr_label1.setObjectName("label")
 				kr_label1.setText(_translate("MainWindow", "Equation:"))
 
 				kr_textBrowser_eq = QtWidgets.QTextBrowser()
 				kr_textBrowser_eq.setReadOnly(True)
-				kr_textBrowser_eq.setObjectName('system_eqtext_%i' % i)
+				kr_textBrowser_eq.setObjectName('kr_eqtext_%i' % i)
 				kr_textBrowser_eq.setText(fb_data["equation_text"])
 				kr_textBrowser_eq.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 				kr_textBrowser_eq.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
@@ -280,14 +287,14 @@ class API:
 			font.setPointSize(10)
 			font.setUnderline(True)
 
-			kr_label2 = QtWidgets.QLabel('system_label2_%i' % i)
+			kr_label2 = QtWidgets.QLabel('kr_label2_%i' % i)
 			kr_label2.setFont(font)
 			kr_label2.setObjectName("label")
 			kr_label2.setText(_translate("MainWindow", "Statistics:"))
 			
 			kr_textBrowser_1 = QtWidgets.QTextBrowser()
 			kr_textBrowser_1.setReadOnly(True)
-			kr_textBrowser_1.setObjectName('system_stattext_%i' % i)
+			kr_textBrowser_1.setObjectName('kr_stattext_%i' % i)
 			kr_textBrowser_1.setText(xml_obj.knowledgeRulesStatistics[i])
 			kr_textBrowser_1.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 			kr_textBrowser_1.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
@@ -299,14 +306,14 @@ class API:
 			kr_textBrowser_1.setFixedHeight(kr_textBrowser_1.document().size().height() +\
 				kr_textBrowser_1.contentsMargins().top() + kr_textBrowser_1.contentsMargins().bottom())
 
-			kr_label3 = QtWidgets.QLabel('system_label3_%i' % i)
+			kr_label3 = QtWidgets.QLabel('kr_label3_%i' % i)
 			kr_label3.setFont(font)
 			kr_label3.setObjectName("label")
 			kr_label3.setText(_translate("MainWindow", "Units:"))
 
 			kr_textBrowser_2 = QtWidgets.QTextBrowser()
 			kr_textBrowser_2.setReadOnly(True)
-			kr_textBrowser_2.setObjectName('system_unittext_%i' % i)
+			kr_textBrowser_2.setObjectName('kr_unittext_%i' % i)
 			kr_textBrowser_2.setText(xml_obj.knowledgeRulesUnits[i])
 			kr_textBrowser_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 			kr_textBrowser_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 

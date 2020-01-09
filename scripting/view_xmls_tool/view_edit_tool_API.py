@@ -101,10 +101,9 @@ class API:
 		print(obj.cur_language)
 		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
 		obj.textBrowser_2.setText(cur_speciestext)
-		obj.textBrowser_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 		obj.textBrowser_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 		obj.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-		obj.textBrowser_2.setFixedWidth(1000)
+		obj.textBrowser_2.setMinimumWidth(1000)
 		obj.textBrowser_2.setAttribute(103)
 		obj.textBrowser_2.show()
 		obj.textBrowser_2.setFixedHeight(obj.textBrowser_2.document().size().height() +\

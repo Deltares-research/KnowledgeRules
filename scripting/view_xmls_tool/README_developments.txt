@@ -1,15 +1,15 @@
 ISSUES:
 V - niet tonen eerste scherm
-- geen waardes bij schuifbalk
-- niet meevergroten van beeld bij groter maken box scherm
+V - geen waardes bij schuifbalk
+V - niet meevergroten van beeld bij groter maken box scherm
 - niet tonen van meerdere systemen (zie vis / Barbus barbus)
 V - error bij vis / Abramis brama
 - overlap textlabels bij vis / Lepomis macrochirus voor categorische data
-- error bij macrofyten / draadwieren
-- error bij macrofauna / Dreisenna polymorpha
+V - error bij macrofyten / draadwieren
+V - error bij macrofauna / Dreisenna polymorpha
 
 ISSUES regels:
-- formules macrofyten (Chara, Draadwieren, Myriophyllum, Nuphar, Potamogeton) 
+V - formules macrofyten (Chara, Draadwieren, Myriophyllum, Nuphar, Potamogeton) 
 
 Developments:
 - Tonen geografische omgevingen vanuit GeoNames

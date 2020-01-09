@@ -19,6 +19,7 @@ from matplotlib.figure import Figure
 #interactive plots
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from PyQt5 import QtCore, QtGui, QtWidgets
+from pyqt5_visualization import LabeledSlider
 
 #testing
 import unittest
@@ -418,7 +419,7 @@ class AutecologyXML(_File):
 				listparameter = True
 			else:
 				raise ValueError("Only one parametersetting can be handed as a list")
-
+		
 		more_pr = [i for i in list(parametersettings.keys()) if(not (i in fb_data_names))]
 		less_pr = [i for i in fb_data_names if(not (i in list(parametersettings.keys())))]
 		if(len(more_pr) > 0):
@@ -777,12 +778,15 @@ class AutecologyXML(_File):
 						#Add dataproviders
 						if(non_variable["type"] == "scalar"):
 							slider_label = QtWidgets.QLabel(non_variable["dataname"] +" :")
-							slider = QtWidgets.QSlider(QtCore.Qt.Horizontal)
+							min_slide = non_variable["data"]["min"].iloc[0]
+							max_slide = non_variable["data"]["max"].iloc[0]
+							stepsize_slide = float((max_slide - min_slide)/10)
+							slider = LabeledSlider(min_slide, max_slide, stepsize_slide, orientation = QtCore.Qt.Horizontal)
 							slider.setObjectName(non_variable["dataname"])
-							slider.setRange(non_variable["data"]["min"].iloc[0], non_variable["data"]["max"].iloc[0])
 							slider.setValue(parametersettings[non_variable["dataname"]])
 							slider.setTracking(True)
 							# slider.setTickPosition(QtWidgets.QSlider.TicksBothSides)
+							print(parametersettings)
 							slider.valueChanged.connect(lambda: self.on_draw(fb_data, parametersettings,["slider"]))
 
 							#add to hbox

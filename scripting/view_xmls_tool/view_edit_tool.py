@@ -15,6 +15,7 @@ class UI_MainWindow(object):
 	def setupUI(self, MainWindow):
 		MainWindow.setObjectName("MainWindow")
 		MainWindow.resize(1121, 806)
+		MainWindow.setMinimumSize(1121, 806)
 
 		self.path = os.path.realpath(__file__)
 
@@ -23,31 +24,54 @@ class UI_MainWindow(object):
 		font.setBold(True)
 		font.setWeight(75)
 
-		self.pushButton = QtWidgets.QPushButton(MainWindow)
+		self.mainlayout = QtWidgets.QGridLayout(MainWindow)
+
+		#Top button groupbox (box not shown)
+		self.groupBox_1 = QtWidgets.QGroupBox()
+		self.groupBox_1.setGeometry(QtCore.QRect(10, 5, 1081, 35))
+		self.groupBox_1.setObjectName("groupBox")
+		self.groupBox_1.setFlat(True)
+		self.boxlayout_1 = QtWidgets.QHBoxLayout(self.groupBox_1)
+		self.mainlayout.addWidget(self.groupBox_1)
+
+		self.pushButton = QtWidgets.QPushButton()
 		self.pushButton.setGeometry(QtCore.QRect(20, 10, 93, 28))
+		self.pushButton.setFixedSize(93, 28)
 		self.pushButton.setObjectName("pushButton")
 		self.pushButton.clicked.connect(self.load_file)
+		self.boxlayout_1.addWidget(self.pushButton)
 
-		self.pushButton_2 = QtWidgets.QPushButton(MainWindow)
+		self.pushButton_2 = QtWidgets.QPushButton()
 		self.pushButton_2.setGeometry(QtCore.QRect(120, 10, 93, 28))
+		self.pushButton_2.setFixedSize(93, 28)
 		self.pushButton_2.setObjectName("pushButton_2")
 		self.pushButton_2.clicked.connect(self.new_file)
+		self.boxlayout_1.addWidget(self.pushButton_2)
 
-		self.pushButton_3 = QtWidgets.QPushButton(MainWindow)
+		self.pushButton_3 = QtWidgets.QPushButton()
 		self.pushButton_3.setGeometry(QtCore.QRect(220, 10, 93, 28))
+		self.pushButton_3.setFixedSize(93, 28)
 		self.pushButton_3.setObjectName("pushButton_3")
 		self.pushButton_3.clicked.connect(self.save_file)
+		self.boxlayout_1.addWidget(self.pushButton_3)
 
-		self.pushButton_4 = QtWidgets.QPushButton(MainWindow)
+		self.spacer_1 = QtWidgets.QSpacerItem(780, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+		self.boxlayout_1.addSpacerItem(self.spacer_1)
+
+		self.pushButton_4 = QtWidgets.QPushButton()
 		self.pushButton_4.setGeometry(QtCore.QRect(1000, 10, 93, 28))
+		self.pushButton_4.setFixedSize(93, 28)
 		self.pushButton_4.setObjectName("pushButton_4")
 		self.pushButton_4.clicked.connect(self.quit)
+		self.boxlayout_1.addWidget(self.pushButton_4)
 
+		#Lower information groupbox
+		self.groupBox_2 = QtWidgets.QGroupBox()
+		self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 1081, 751))
+		self.groupBox_2.setObjectName("groupBox")
+		self.boxlayout_2 = QtWidgets.QGridLayout(self.groupBox_2)
+		self.mainlayout.addWidget(self.groupBox_2)
 
-		self.groupBox_1 = QtWidgets.QGroupBox(MainWindow)
-		self.groupBox_1.setGeometry(QtCore.QRect(10, 50, 1081, 751))
-		self.groupBox_1.setObjectName("groupBox")
-		self.boxlayout_1 = QtWidgets.QGridLayout(self.groupBox_1)
 		self.scrollLayout = QtWidgets.QVBoxLayout()
 		self.scrollAreaWidgetContents = QtWidgets.QWidget()
 		self.scrollAreaWidgetContents.setLayout(self.scrollLayout)
@@ -58,19 +82,9 @@ class UI_MainWindow(object):
 		self.scrollArea.setWidgetResizable(True)
 		self.scrollArea.setObjectName("scrollArea")
 		self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-		self.boxlayout_1.addWidget(self.scrollArea)
+		self.boxlayout_2.addWidget(self.scrollArea)
+
 		
-		#EXAMPLE
-		# self.system_scrolllayout = QtWidgets.QVBoxLayout()		
-		# self.system_scrollwidget = QtWidgets.QWidget()
-		# self.system_scrollwidget.setLayout(self.system_scrolllayout)
-		# self.system_scroll = QtWidgets.QScrollArea()
-		# self.system_scroll.setWidgetResizable(True)
-		# self.system_scroll.setWidget(self.system_scrollwidget)
-		# self.boxlayout.addWidget(self.system_scroll)
-
-
-
 		self.label = QtWidgets.QLabel()
 		self.label.setGeometry(QtCore.QRect(10, 10, 81, 21))
 		self.label.setFont(font)
@@ -80,7 +94,6 @@ class UI_MainWindow(object):
 		self.textBrowser = QtWidgets.QTextBrowser()
 		self.textBrowser.setObjectName("textBrowser")
 		self.textBrowser.setFixedSize(1030, 31)
-		# self.textBrowser.setSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
 		self.scrollLayout.addWidget(self.textBrowser)
 		
 		self.label_2 = QtWidgets.QLabel()
@@ -108,18 +121,10 @@ class UI_MainWindow(object):
 		self.label_3.setObjectName("label_3")
 		self.scrollLayout.addWidget(self.label_3)
 
-		# self.scrollArea_2 = QtWidgets.QScrollArea(self.scrollAreaWidgetContents)
-		# self.scrollArea_2.setGeometry(QtCore.QRect(10, 180, 811, 221))
-		# self.scrollArea_2.setWidgetResizable(True)
-		# self.scrollArea_2.setObjectName("scrollArea_2")
-		# self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-		# self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 809, 219))
-		# self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
-		# self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
 		self.textBrowser_2 = QtWidgets.QTextBrowser()
 		self.textBrowser_2.setGeometry(QtCore.QRect(10, 180, 900, 221))
 		self.textBrowser_2.setObjectName("textBrowser_2")
-		self.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+		self.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
 		self.scrollLayout.addWidget(self.textBrowser_2)
 
 		self.label_4 = QtWidgets.QLabel()
@@ -304,6 +309,15 @@ class UI_Application(object):
 		self.StartWindow.close()
 		self.ui_mainwindow= UI_MainWindow()
 		self.MainWindow = QtWidgets.QDialog()
+		self.MainWindow.setMinimumSize(1121, 806)
+		flags = QtCore.Qt.WindowFlags()
+		flags |= QtCore.Qt.Window
+		flags |= QtCore.Qt.CustomizeWindowHint
+		flags |= QtCore.Qt.WindowTitleHint
+		flags |= QtCore.Qt.WindowMinimizeButtonHint
+		flags |= QtCore.Qt.WindowMaximizeButtonHint
+		flags |= QtCore.Qt.WindowCloseButtonHint
+		self.MainWindow.setWindowFlags(flags)
 		self.ui_mainwindow.setupUI(self.MainWindow)
 		self.MainWindow.show()
 

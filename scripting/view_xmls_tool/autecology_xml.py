@@ -197,7 +197,7 @@ class AutecologyXML(_File):
 			if(self.systems == None):
 				raise RuntimeError('No scan loaded yet, use "_scan"')
 			else:
-				raise RuntimeError('Model not existent and not present in self.models')
+				raise RuntimeError('System not existent and not present in self.systems')
 		return()
 
 	def check_element_numbers(self,element_list, expected, operator):

@@ -10,12 +10,17 @@ import sys
 import os
 import view_edit_tool_API
 from PyQt5 import QtCore, QtGui, QtWidgets
+import autecology_xml
 
 class UI_MainWindow(object):
 	def setupUI(self, MainWindow):
-		MainWindow.setObjectName("MainWindow")
-		MainWindow.resize(1121, 806)
-		MainWindow.setMinimumSize(1121, 806)
+
+		#start build up
+		self.MainWindow = MainWindow
+
+		self.MainWindow.setObjectName("MainWindow")
+		self.MainWindow.resize(1121, 806)
+		self.MainWindow.setMinimumSize(1121, 806)
 
 		self.path = os.path.realpath(__file__)
 
@@ -24,7 +29,7 @@ class UI_MainWindow(object):
 		font.setBold(True)
 		font.setWeight(75)
 
-		self.mainlayout = QtWidgets.QGridLayout(MainWindow)
+		self.mainlayout = QtWidgets.QGridLayout(self.MainWindow)
 
 		#Top button groupbox (box not shown)
 		self.groupBox_1 = QtWidgets.QGroupBox()
@@ -150,7 +155,7 @@ class UI_MainWindow(object):
 		self.comboBox_2.setGeometry(QtCore.QRect(10, 480, 900, 22))
 		self.comboBox_2.setObjectName("comboBox_2")
 		self.scrollLayout.addWidget(self.comboBox_2)
-
+		
 		self.groupBox = QtWidgets.QGroupBox()
 		self.groupBox.setGeometry(QtCore.QRect(10, 510, 900, 231))
 		self.groupBox.setObjectName("groupBox")
@@ -165,12 +170,14 @@ class UI_MainWindow(object):
 		self.system_scroll.setWidget(self.system_scrollwidget)
 		self.boxlayout.addWidget(self.system_scroll)
 
-		self.retranslateUi(MainWindow)
-		QtCore.QMetaObject.connectSlotsByName(MainWindow)
+		self.retranslateUi()
+		QtCore.QMetaObject.connectSlotsByName(self.MainWindow)
 
-	def retranslateUi(self, MainWindow):
+
+
+	def retranslateUi(self):
 		_translate = QtCore.QCoreApplication.translate
-		MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+		self.MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
 		self.pushButton.setText(_translate("MainWindow", "Open"))
 		self.pushButton_2.setText(_translate("MainWindow", "New"))
 		self.pushButton_3.setText(_translate("MainWindow", "Save"))
@@ -184,9 +191,35 @@ class UI_MainWindow(object):
 
 
 	def load_file(self):
+		
+		#load objects
 		objAPI = view_edit_tool_API.API()
+		AutXML = autecology_xml.AutecologyXML(None)	
+		
+		#reset
+		self.cur_language = None
+		self.systemname = None
+		self.systems = None
+
+		#load and refresh data
 		self = objAPI.load_file(self)
-		objAPI.refresh_data(self)
+		(self, AutXML) = objAPI.refresh_data(self, AutXML)
+		
+		#reset connections
+		try:
+			self.comboBox.currentIndexChanged.disconnect()
+		except:
+			pass
+
+		try:
+			self.comboBox_2.currentIndexChanged.disconnect()
+		except:
+			pass
+			
+		#set connections
+		self.comboBox.currentIndexChanged.connect(lambda: objAPI.refresh_language(self, self.cur_language))
+		self.comboBox_2.currentIndexChanged.connect(lambda: objAPI.refresh_group_data(self, AutXML, self.systemname, self.groupBox))
+
 		return()
 
 	def new_file(self):
@@ -217,8 +250,11 @@ class UI_MainWindow(object):
 class UI_StartWindow(object):
 
 	def setupUI(self, StartWindow):
-		StartWindow.setObjectName("StartWindow")
-		StartWindow.resize(1122, 700)
+		
+		self.StartWindow = StartWindow
+
+		self.StartWindow.setObjectName("StartWindow")
+		self.StartWindow.resize(1122, 700)
 
 		self.path = os.path.realpath(__file__)
 
@@ -227,7 +263,7 @@ class UI_StartWindow(object):
 		font.setBold(True)
 		font.setWeight(75)
 
-		self.groupBox = QtWidgets.QGroupBox(StartWindow)
+		self.groupBox = QtWidgets.QGroupBox(self.StartWindow)
 		self.groupBox.setGeometry(QtCore.QRect(10, 10, 1102, 690))
 		self.groupBox.setObjectName("groupBox")
 		self.boxlayout = QtWidgets.QGridLayout(self.groupBox)
@@ -279,12 +315,12 @@ class UI_StartWindow(object):
 		self.label_5.setObjectName("label_5")
 		self.boxlayout.addWidget(self.label_5)
 
-		self.retranslateUi(StartWindow)
-		QtCore.QMetaObject.connectSlotsByName(StartWindow)
+		self.retranslateUi()
+		QtCore.QMetaObject.connectSlotsByName(self.StartWindow)
 
-	def retranslateUi(self, StartWindow):
+	def retranslateUi(self):
 		_translate = QtCore.QCoreApplication.translate
-		StartWindow.setWindowTitle(_translate("StartWindow", "Dialog"))
+		self.StartWindow.setWindowTitle(_translate("StartWindow", "Dialog"))
 		self.label.setText(_translate("StartWindow", "Autecology"))
 		self.label_2.setText(_translate("StartWindow", "Data storage"))
 		self.label_3.setText(_translate("StartWindow", "View & editting data tool"))

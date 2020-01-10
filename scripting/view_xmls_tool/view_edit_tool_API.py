@@ -177,8 +177,8 @@ class API:
 					system = obj.MainWindow.findChild(QtWidgets.QComboBox,obj.MainWindow.sender().objectName()).currentText()
 
 		#get system data
-		print("")
-		print(system)
+		print("Topic :" + "To be filled!")
+		print("System : " + system)
 		
 		xml_obj._scan_knowledgerules(system)
 		obj.systemname = xml_obj.systemname

@@ -7,6 +7,7 @@ V - error bij vis / Abramis brama
 - overlap textlabels bij vis / Lepomis macrochirus voor categorische data
 V - error bij macrofyten / draadwieren
 V - error bij macrofauna / Dreisenna polymorpha
+- Topics in plaats van altijd species naam (aanpassing in autecologyxml._scan() en getoonde labels + textboxes
 
 ISSUES regels:
 V - formules macrofyten (Chara, Draadwieren, Myriophyllum, Nuphar, Potamogeton) 

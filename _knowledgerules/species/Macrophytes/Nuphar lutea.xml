@@ -24,23 +24,32 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-Dit model is opgeteld aan de hand van de beschikbare literatuur. Dit model is nog niet gevalideerd aan de hand van meetgegevens #1.
-Toepasbaarheid
-Nederland, in het zoetwatergetijdegebied, gedefineerd als het verschil tussen het gemiddeld hoogwater en gemiddeld laagwater van 50-200 cm en waar het gemiddelde chloridegehalte <500 mg/l is #1.
-Voorbeeld project
--
-]]></text>
+						<text><![CDATA[<h1 id="GelePlomp-Nupharlutea-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Gele Plomp - Nuphar lutea - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd.</p><p>De dosis-effect relaties zijn samengesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Gele+Plomp+-+Nuphar+lutea#GelePlomp-Nupharlutea-1">#1</a></p><h1 id="GelePlomp-Nupharlutea-Toepasbaarheid">Toepasbaarheid</h1><p>Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Gele+Plomp+-+Nuphar+lutea#GelePlomp-Nupharlutea-1">#1</a>. </p><h1 id="GelePlomp-Nupharlutea-Voorbeeldproject">Voorbeeld project</h1><p>Er is geen voorbeeld project</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="standplaats">
+						<From name="standplaats_meren">
+							<label>"standplaats_meren"</label>
+							<equation>min</equation>
+							<To>waterdiepte</To>
+						</From>
+						<From name="standplaats_strangen">
+							<label></label>
+							<equation>min</equation>
+							<To>waterdiepte</To>
+						</From>
+						<From name="standplaats_rivieren">
+							<label>"standplaats_rivieren"</label>
+							<equation>min</equation>
+							<To>waterdiepte</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Waterdiepte">
+					<ResponseCurve name="waterdiepte">
 						<type>scalar</type>
-						<layername>"Waterdiepte"</layername>
+						<layername>"waterdiepte"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdiepte"</description>
@@ -63,9 +72,9 @@ Voorbeeld project
 							<parameter value="225" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Slibgehalte">
+					<ResponseCurve name="slibgehalte">
 						<type>scalar</type>
-						<layername>"Slibgehalte"</layername>
+						<layername>"slibgehalte"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Slibgehalte"</description>
@@ -80,9 +89,9 @@ Voorbeeld project
 							<parameter value="25" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Chloridegehalte">
+					<ResponseCurve name="chloridegehalte">
 						<type>scalar</type>
-						<layername>"Chloridegehalte"</layername>
+						<layername>"chloridegehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Chloridegehalte"</description>
@@ -97,9 +106,9 @@ Voorbeeld project
 							<parameter value="500" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Getijdeverschil">
+					<ResponseCurve name="getijdeverschil">
 						<type>scalar</type>
-						<layername>"Getijdeverschil"</layername>
+						<layername>"getijdeverschil"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Getijdeverschil"</description>
@@ -115,9 +124,9 @@ Voorbeeld project
 							<parameter value="200" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Droogvalduur">
+					<ResponseCurve name="droogvalduur">
 						<type>scalar</type>
-						<layername>"Droogvalduur"</layername>
+						<layername>"droogvalduur"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Voor deze relatie is in de studie #3 de het percentage van de tijd dat het gebied droog ligt gedurende 14 dagen gebruikt."</description>
@@ -144,19 +153,7 @@ Voorbeeld project
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen 
-
-De Driekantige bies komt verspreid voor in de deltagebieden van de grote rivieren in West-, Zuid- en Midden-Europa. In Nederland komt de Driekantige bies nagenoeg alleen voor in het zoetwatergetijdengebied van de grote rivieren. Hier is de optimale standplaats de bij eb droogvallende zand- en slikplaatsen en zacht glooiende oevers. Deze plaatsen zijn sterk in kwaliteit afgenomen, doordat de getijdewerking na het afsluiten van het Haringvliet sterk is verminderd. Eerder namen de kwaliteit van leefgebied in Nederland al af door het afsluiten van de Zuiderzee (nu het IJsselmeer) #1.
-De driekantige bies behoort tot het geslacht biezen (Scirpus) en de familie van de cypergrassen (Cyperaceae). Het is een plant met een scherp driekantige stengel, waarbij twee zijden vlak zijn en één zijde hol. De plant wordt 1 meter lang en de stengel is bij de voet 6 mm dik. Het blad is gootvormig en gekield, 6cm lang en versmalt vanaf de voet naar de top. Net als veel andere biezensoorten heeft de driekantige bies een kruipende wortelstok en deze is ongeveer 5mm dik. Hiermee kan de driekantige bies zich zelf vermeerderen. Vermeerdering met behulp van de wortelstok vindt vaker plaats dan via zaad #1.
-De driekantige bies is een pioniersoort die op een extreme standplaats voorkomt. De driekantige bies behoort tot de helofyten en zijn aangepast aan een zuurstofarm bodemmilieu. Helofyten bezitten luchtkanalen, waarmee zuurstof via de bladeren naar de wortels kan worden getransporteerd. Bij veranderende omstandigheden wordt deze soort snel verdrongen door mattenbies (Scirpus lacustris) en, wanneer de bodem sterk opslibt, door zeebies (Scirpus maritimus) #1.
-Er bestaat een bastaardkruising tussen de mattenbies of ruwe bies met driekantige bies, genaamd de bastaardbies (Scirpus x carinatus).
-Milieurandvoorwaarden
-De optimale groeiplaatsen van de driekantige bies zijn gelegen tussen het niveau van gemiddeld hoog water (GHW) en gemiddeld laag water (GLW). De soort is niet bestand tegen langdurig hoogwater en langdurige droogval. Als de driekantige bies boven het GLW voorkomt dan kunnen de optimale omstandigheden alleen aanwezig zijn in gebieden met een getijdeverschil van >(150-)170 cm. Aan de andere kant biedt een getijdeverschil kleiner dan 100 cm slechte tot geen mogelijkheden voor ontwikkeling van Driekantige bies #1.
-Het voorkomen van de driekantige bies hangt sterk samen met de hoge mate van milieudynamiek die karakteristiek is voor het zoetwatergetijdegebieden. Driekantige bies is echter slecht bestand tegen extreme omstandigheden zoals lage of hoge rivierafvoeren en bij stormvloeden #1.
-Door sedimentatie in stagnante, komt de driekantige bies niet voor in dit watertype. Hier nemen de mattenbies of ruwe bies de vegetatie over. Korte perioden van (snel) stromend water worden waarschijnlijk goed door de soort verdragen. De driekantige bies vestigt zich op uiteenlopend substraat van klei tot zand. Daarnaast komt de driekantige bies zowel op geëxponeerde locaties als luwe locaties voor.
-]]></text>
+			<text><![CDATA[<h3 id="GelePlomp-Nupharlutea-Algemeenvoorkomen">Algemeen voorkomen</h3><p>Gele plomp kan in geheel Nederland worden aangetroffen, maar vooral in laagveen- en kleigebieden. De Gele plomp wordt zelden aangetroffen in brakke wateren en rivieren. In het zomerbed van de Maas en in de benedenloop van de IJssel is de gele plomp in geringe abundantie aangetroffen. In oude rivierlopen en kleiputten die weinig in direct contact staan met de rivier komt de gele plomp wel in hoge abundantie voor <a href="https://publicwiki.deltares.nl/display/HBTHOME/Gele+Plomp+-+Nuphar+lutea#GelePlomp-Nupharlutea-1">#1</a>.</p><p>Gele plomp is een waterplant met gele bloemen die met zijn bovenste bladeren op het wateroppervlak drijft. Het is een overblijvende plant met wortelstokken. Hiermee overwintert de Gele plomp ondergronds. Tijdens de bloei bevindt zich 50% van de gele plomp bovengronds.  De maximale biomassa bereikt de gele plomp in de maanden juli-augustus. Wanneer de gele plomp de aspectbepalende soort is kan zijn bedekkingsgraad oplopen tot 30-45% <a href="https://publicwiki.deltares.nl/display/HBTHOME/Gele+Plomp+-+Nuphar+lutea#GelePlomp-Nupharlutea-1">#1</a>.  De gele plomp is een overblijvende waterplant van mesotrofe meren, plassen, oude rivierlopen, kanalen, vaarten en stadswateren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Gele+Plomp+-+Nuphar+lutea#GelePlomp-Nupharlutea-1">#1</a>. </p><p>De gele plomp wordt in ondiepe delen van wateren aangetroffen. De voorwaarde hiervoor is dat het water stilstaand en (matig) voedselrijk is. Ook mag er niet al te veel golfslag aanwezig zijn. Richting de landzijde gaat de gele plomp over in een gordel van meerjarige helofyten, zoals grote lisdodde (Typha latifolia), mattenbies ( Scripsus lacustris) en riet (Phragmites australis). De oevervegetatie kan de gele pomp verdrijven bij het ontstaan van drijftillen en verlanding. Richting de waterzijde gaat de gele plomp over in submerse vegetatie.</p><p>De watervegetaties waarin de gele plomp de overheersende soort is wordt gerekend tot de Potameto-Nupharetum associatie. Naast de gele plomp kan in meren en plassen de witte waterlelie worden aangetroffen. In langzaamstromend water juist schedefonteinkruid en doorgroeid fonteinkruid en in doorbraakkolken, kleiputten en oude rivierstrangen watergentiaan <a href="https://publicwiki.deltares.nl/display/HBTHOME/Gele+Plomp+-+Nuphar+lutea#GelePlomp-Nupharlutea-1">#1</a>.</p><h3 id="GelePlomp-Nupharlutea-Milieurandvoorwaarden">Milieurandvoorwaarden</h3><p>De gele plomp ondervindt invloed van waterstroming, waterdiepte, peildynamiek, zuurgraad, voedselrijkheid, zoutgehalte, doorzicht, substraat en windwerking. Zoals eerder vermeldt, ondervindt de gele plomp nadelige effecten van hoge stroomsnelheden, zout en golven. Waterdiepte en peildynamiek bepalen of de drijfbladeren het wateroppervlak kunnen bereiken. Doorzicht is niet bepalend voor de groei naar het wateroppervlak, doordat de initiële groei wordt gevoed vanuit de wortelstokken. De gele plomp heeft een voorkeur voor bodems met een hoog organische stofgehalte. De gele plomp kan een zomer met droogval van wateren overleven wanneer de bodem vochtig blijft, zodat de wortelstokken niet uitdrogen. Bij opeenvolgende droge zomers zal de gele plomp verdwijnen. Bij een fluctuatie van het waterpeil van gemiddeld &gt;2.5 komen de watervegetaties met gele plomp alleen optimaal voor in bekade uiterwaarden die gemiddeld minder dan 20 dagen per jaar in direct contact met de rivier staan. In wateren die meer dan &gt;40-50 dagen per jaar in direct contact met de rivier staan komen vegetaties met gele plomp in het algemeen niet voor <a href="https://publicwiki.deltares.nl/display/HBTHOME/Gele+Plomp+-+Nuphar+lutea#GelePlomp-Nupharlutea-1">#1</a>.</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

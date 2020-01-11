@@ -24,23 +24,25 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-Dit model is opgeteld aan de hand van de beschikbare literatuur. Dit model is nog niet gevalideerd aan de hand van meetgegevens #1.
-Toepasbaarheid
-Nederland, in het zoetwatergetijdegebied, gedefineerd als het verschil tussen het gemiddeld hoogwater en gemiddeld laagwater van 50-200 cm en waar het gemiddelde chloridegehalte <500 mg/l is #1.
-Voorbeeld project
--
-]]></text>
+						<text><![CDATA[<h1 id="Driekantigebies-Scirpustriqueter-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Dit model is opgeteld aan de hand van de beschikbare literatuur. Dit model is nog niet gevalideerd aan de hand van meetgegevens <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driekantige+bies+-+Scirpus+triqueter#Driekantigebies-Scirpustriqueter-1">#1</a>.</p><h1 id="Driekantigebies-Scirpustriqueter-Toepasbaarheid">Toepasbaarheid</h1><p>Nederland, in het zoetwatergetijdegebied, gedefineerd als het verschil tussen het gemiddeld hoogwater en gemiddeld laagwater van 50-200 cm en waar het gemiddelde chloridegehalte &lt;500 mg/l is <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driekantige+bies+-+Scirpus+triqueter#Driekantigebies-Scirpustriqueter-1">#1</a>.</p><h1 id="Driekantigebies-Scirpustriqueter-Voorbeeldproject">Voorbeeld project</h1><p>-</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="standplaats">
+					<From name="habitatgeschiktheid">
+						<label>"habitatgeschiktheid"</label>
+						<equation>min</equation>
+						<To>getijdeverschil</To>
+						<To>waterdiepte</To>
+						<To>slibgehalte</To>
+						<To>chloridegehalte</To>
+					</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Waterdiepte">
-						<type>scalar</type>
-						<layername>"Waterdiepte"</layername>
+					<ResponseCurve name="waterdiepte">
+						<type>ranges</type>
+						<layername>"waterdiepte"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdiepte"</description>
@@ -49,23 +51,20 @@ Voorbeeld project
 						<references>
 							<reference author="Duel, H., Specken,B." year="1994" title="" journal="" identification=""/>
 						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="25" HSI="0"/>
-							<parameter value="30" HSI="0.2"/>
-							<parameter value="50" HSI="0.4"/>
-							<parameter value="70" HSI="0.7"/>
-							<parameter value="100" HSI="1"/>
-							<parameter value="130" HSI="1"/>
-							<parameter value="150" HSI="0.5"/>
-							<parameter value="170" HSI="0.2"/>
-							<parameter value="200" HSI="0"/>
-							<parameter value="225" HSI="0"/>
-						</valuesScalar>
+						<valuesRanges>
+							<parameter rangemin="0" rangemax="30" HSI="0.0" />
+							<parameter rangemin="30" rangemax="50" HSI="0.2" />
+							<parameter rangemax="50" HSI="70" rangemin="0.4"/>
+							<parameter rangemax="70" HSI="100" rangemin="0.7"/>
+							<parameter rangemax="100" HSI="130" rangemin="1.0"/>
+							<parameter rangemax="130" HSI="150" rangemin="0.5"/>
+							<parameter rangemax="150" HSI="170" rangemin="0.2"/>
+							<parameter rangemax="170" HSI="200" rangemin="0.0"/>
+						</valuesRanges>
 					</ResponseCurve>
-					<ResponseCurve name="Slibgehalte">
+					<ResponseCurve name="slibgehalte">
 						<type>scalar</type>
-						<layername>"Slibgehalte"</layername>
+						<layername>"slibgehalte"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Slibgehalte"</description>
@@ -80,9 +79,9 @@ Voorbeeld project
 							<parameter value="25" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Chloridegehalte">
+					<ResponseCurve name="chloridegehalte">
 						<type>scalar</type>
-						<layername>"Chloridegehalte"</layername>
+						<layername>"chloridegehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Chloridegehalte"</description>
@@ -97,9 +96,9 @@ Voorbeeld project
 							<parameter value="500" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Getijdeverschil">
+					<ResponseCurve name="getijdeverschil">
 						<type>scalar</type>
-						<layername>"Getijdeverschil"</layername>
+						<layername>"getijdeverschil"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Getijdeverschil"</description>
@@ -115,48 +114,13 @@ Voorbeeld project
 							<parameter value="200" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Droogvalduur">
-						<type>scalar</type>
-						<layername>"Droogvalduur"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Voor deze relatie is in de studie #3 de het percentage van de tijd dat het gebied droog ligt gedurende 14 dagen gebruikt."</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2015-10-05</date>
-						<references>
-							<reference author="Duel, H., Specken,B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="1" HSI="0.05"/>
-							<parameter value="2" HSI="0.15"/>
-							<parameter value="3" HSI="0.25"/>
-							<parameter value="4" HSI="0.38"/>
-							<parameter value="5" HSI="1"/>
-							<parameter value="67" HSI="1"/>
-							<parameter value="75" HSI="0"/>
-							<parameter value="100" HSI="0"/>
-						</valuesScalar>
-					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
 	<ContentDescription>
 	<Description language="NL">
-		<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen 
-
-De Driekantige bies komt verspreid voor in de deltagebieden van de grote rivieren in West-, Zuid- en Midden-Europa. In Nederland komt de Driekantige bies nagenoeg alleen voor in het zoetwatergetijdengebied van de grote rivieren. Hier is de optimale standplaats de bij eb droogvallende zand- en slikplaatsen en zacht glooiende oevers. Deze plaatsen zijn sterk in kwaliteit afgenomen, doordat de getijdewerking na het afsluiten van het Haringvliet sterk is verminderd. Eerder namen de kwaliteit van leefgebied in Nederland al af door het afsluiten van de Zuiderzee (nu het IJsselmeer) #1.
-De driekantige bies behoort tot het geslacht biezen (Scirpus) en de familie van de cypergrassen (Cyperaceae). Het is een plant met een scherp driekantige stengel, waarbij twee zijden vlak zijn en één zijde hol. De plant wordt 1 meter lang en de stengel is bij de voet 6 mm dik. Het blad is gootvormig en gekield, 6cm lang en versmalt vanaf de voet naar de top. Net als veel andere biezensoorten heeft de driekantige bies een kruipende wortelstok en deze is ongeveer 5mm dik. Hiermee kan de driekantige bies zich zelf vermeerderen. Vermeerdering met behulp van de wortelstok vindt vaker plaats dan via zaad #1.
-De driekantige bies is een pioniersoort die op een extreme standplaats voorkomt. De driekantige bies behoort tot de helofyten en zijn aangepast aan een zuurstofarm bodemmilieu. Helofyten bezitten luchtkanalen, waarmee zuurstof via de bladeren naar de wortels kan worden getransporteerd. Bij veranderende omstandigheden wordt deze soort snel verdrongen door mattenbies (Scirpus lacustris) en, wanneer de bodem sterk opslibt, door zeebies (Scirpus maritimus) #1.
-Er bestaat een bastaardkruising tussen de mattenbies of ruwe bies met driekantige bies, genaamd de bastaardbies (Scirpus x carinatus).
-Milieurandvoorwaarden
-De optimale groeiplaatsen van de driekantige bies zijn gelegen tussen het niveau van gemiddeld hoog water (GHW) en gemiddeld laag water (GLW). De soort is niet bestand tegen langdurig hoogwater en langdurige droogval. Als de driekantige bies boven het GLW voorkomt dan kunnen de optimale omstandigheden alleen aanwezig zijn in gebieden met een getijdeverschil van >(150-)170 cm. Aan de andere kant biedt een getijdeverschil kleiner dan 100 cm slechte tot geen mogelijkheden voor ontwikkeling van Driekantige bies #1.
-Het voorkomen van de driekantige bies hangt sterk samen met de hoge mate van milieudynamiek die karakteristiek is voor het zoetwatergetijdegebieden. Driekantige bies is echter slecht bestand tegen extreme omstandigheden zoals lage of hoge rivierafvoeren en bij stormvloeden #1.
-Door sedimentatie in stagnante, komt de driekantige bies niet voor in dit watertype. Hier nemen de mattenbies of ruwe bies de vegetatie over. Korte perioden van (snel) stromend water worden waarschijnlijk goed door de soort verdragen. De driekantige bies vestigt zich op uiteenlopend substraat van klei tot zand. Daarnaast komt de driekantige bies zowel op geëxponeerde locaties als luwe locaties voor.
-]]></text>
+		<text><![CDATA[<h3 id="Driekantigebies-Scirpustriqueter-Algemeenvoorkomen">Algemeen voorkomen&nbsp;</h3><p><a href="http://wilde-planten.nl/" class="external-link" rel="nofollow"><br></a></p><p>De Driekantige bies komt verspreid voor in de deltagebieden van de grote rivieren in West-, Zuid- en Midden-Europa. In Nederland komt de Driekantige bies nagenoeg alleen voor in het zoetwatergetijdengebied van de grote rivieren. Hier is de optimale standplaats de bij eb droogvallende zand- en slikplaatsen en zacht glooiende oevers. Deze plaatsen zijn sterk in kwaliteit afgenomen, doordat de getijdewerking na het afsluiten van het Haringvliet sterk is verminderd. Eerder namen de kwaliteit van leefgebied in Nederland al af door het afsluiten van de Zuiderzee (nu het IJsselmeer) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driekantige+bies+-+Scirpus+triqueter#Driekantigebies-Scirpustriqueter-1">#1</a>.</p><p>De driekantige bies behoort tot het geslacht biezen (Scirpus) en de familie van de cypergrassen (Cyperaceae). Het is een plant met een scherp driekantige stengel, waarbij twee zijden vlak zijn en één zijde hol. De plant wordt 1 meter lang en de stengel is bij de voet 6 mm dik. Het blad is gootvormig en gekield, 6cm lang en versmalt vanaf de voet naar de top. Net als veel andere biezensoorten heeft de driekantige bies een kruipende wortelstok en deze is ongeveer 5mm dik. Hiermee kan de driekantige bies zich zelf vermeerderen. Vermeerdering met behulp van de wortelstok vindt vaker plaats dan via zaad <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driekantige+bies+-+Scirpus+triqueter#Driekantigebies-Scirpustriqueter-1">#1</a>.</p><p>De driekantige bies is een pioniersoort die op een extreme standplaats voorkomt. De driekantige bies behoort tot de helofyten en zijn aangepast aan een zuurstofarm bodemmilieu. Helofyten bezitten luchtkanalen, waarmee zuurstof via de bladeren naar de wortels kan worden getransporteerd. Bij veranderende omstandigheden wordt deze soort snel verdrongen door mattenbies (Scirpus lacustris) en, wanneer de bodem sterk opslibt, door zeebies (Scirpus maritimus) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driekantige+bies+-+Scirpus+triqueter#Driekantigebies-Scirpustriqueter-1">#1</a>.</p><p>Er bestaat een bastaardkruising tussen de mattenbies of ruwe bies met driekantige bies, genaamd de bastaardbies (Scirpus x carinatus).</p><h3 id="Driekantigebies-Scirpustriqueter-Milieurandvoorwaarden">Milieurandvoorwaarden</h3><p>De optimale groeiplaatsen van de driekantige bies zijn gelegen tussen het niveau van gemiddeld hoog water (GHW) en gemiddeld laag water (GLW). De soort is niet bestand tegen langdurig hoogwater en langdurige droogval. Als de driekantige bies boven het GLW voorkomt dan kunnen de optimale omstandigheden alleen aanwezig zijn in gebieden met een getijdeverschil van &gt;(150-)170 cm. Aan de andere kant biedt een getijdeverschil kleiner dan 100 cm slechte tot geen mogelijkheden voor ontwikkeling van Driekantige bies <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driekantige+bies+-+Scirpus+triqueter#Driekantigebies-Scirpustriqueter-1">#1</a>.</p><p>Het voorkomen van de driekantige bies hangt sterk samen met de hoge mate van milieudynamiek die karakteristiek is voor het zoetwatergetijdegebieden. Driekantige bies is echter slecht bestand tegen extreme omstandigheden zoals lage of hoge rivierafvoeren en bij stormvloeden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driekantige+bies+-+Scirpus+triqueter#Driekantigebies-Scirpustriqueter-1">#1</a>.</p><p>Door sedimentatie in stagnante, komt de driekantige bies niet voor in dit watertype. Hier nemen de mattenbies of ruwe bies de vegetatie over. Korte perioden van (snel) stromend water worden waarschijnlijk goed door de soort verdragen. De driekantige bies vestigt zich op uiteenlopend substraat van klei tot zand. Daarnaast komt de driekantige bies zowel op geëxponeerde locaties als luwe locaties voor.</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

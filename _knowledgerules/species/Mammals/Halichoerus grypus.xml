@@ -24,29 +24,23 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-(warning) Deze dosis-effect relaties zijn niet gevalideerd.
-
-Toepasbaarheid
-De dosis-effect relaties hier beschreven zijn geschikt voor de Waddenzee. Er is echter op dit moment weinig literatuur beschikbaar om de relaties uit te breiden. Een relatie die opgenomen zou moeten worden is dat de grijze zeehond gevoelig is voor vervuiling. Er is echter niet genoeg informatie om daar dosis-effect relaties op te baseren.
-
-Voorbeeld project
-Voor deze dosis-effect relaties is geen voorbeeldprojekt beschikbaar.
-
-Dosis-effect relaties
-Hier onder wordt de een dosis-effect relatie gegeven voor ecotopen die geschikt zijn als kraamkamer. De voortplantingsperiode in de Waddenzee valt in de winter.
-Daarnaast is een dosis-effect relatie voor verstoring opgenomen die is overgenomen van de dosis-effect relaties van de Gewone Zeehond.
-]]></text>
+						<text><![CDATA[<h1 id="Grijzezeehond-Halichoerusgrypus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Grijze zeehond - Halichoerus grypus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd.</p><h1 id="Grijzezeehond-Halichoerusgrypus-Toepasbaarheid">Toepasbaarheid</h1><p>De dosis-effect relaties hier beschreven zijn geschikt voor de Waddenzee. Er is echter op dit moment weinig literatuur beschikbaar om de relaties uit te breiden. Een relatie die opgenomen zou moeten worden is dat de grijze zeehond gevoelig is voor vervuiling. Er is echter niet genoeg informatie om daar dosis-effect relaties op te baseren.</p><h1 id="Grijzezeehond-Halichoerusgrypus-Voorbeeldproject">Voorbeeld project</h1><p>Voor deze dosis-effect relaties is geen voorbeeldprojekt beschikbaar.</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="kraamkamergeschiktheid">
+						<From name="kraamkamergeschiktheid">
+							<label>"kraamkamergeschiktheid"</label>
+							<equation>min</equation>
+							<To>ecotoop_kraamkamer</To>
+							<To>afstand_tot_scheepvaartroute</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Afstand plaat tot scheepvaartroute">
+					<ResponseCurve name="afstand_tot_scheepvaartroute">
 						<type>range / categorical</type>
-						<layername>"Afstand plaat tot scheepvaartroute"</layername>
+						<layername>"afstand_tot_scheepvaartroute"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Afstand plaat tot scheepvaartroute"</description>
@@ -60,24 +54,24 @@ Daarnaast is een dosis-effect relatie voor verstoring opgenomen die is overgenom
 							<parameter rangemin="200" rangemax="999" cat="2" HSI="0"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Ecotoop kraamkamer">
+					<ResponseCurve name="ecotoop_kraamkamer">
 						<type>categorical</type>
-						<layername>"Ecotoop kraamkamer"</layername>
+						<layername>"ecotoop_kraamkamer"</layername>
 						<unit>"Ecotoop"</unit>
 						<statistic>Ecotoop</statistic>
-						<description>"Ecotoop kraamkamer (Habitatnummer - omschrijving) NB: deze laatste twee zijn niet zeker"</description>
+						<description>"Ecotoop kraamkamer (Habitatnummer - omschrijving) op basis van ZES.1 methodiek"</description>
 						<author>"Marjolijn Haasnoot"</author>
 						<date>2009-01-01</date>
 						<references>
 							<reference author="Bouma, H. et al." year="2005" title="Zoute wateren ecotopenstelsel (ZES.1)" journal="" identification="Rapport RIKZ/2005.024"/>
 						</references>
 						<valuesCategorical>
-							<parameter cat="Z2.311 - hoogdynamisch supralitoraal laag 'droog strand', grofzand" HSI="1"/>
-							<parameter cat="Z2.312 - hoogdynamisch supralitoraal hoog 'embryonaal duin', grofzand" HSI="1"/>
-							<parameter cat="Z2.313 - hoogdynamisch supralitoraal laag 'droog strand', fijnzand" HSI="1"/>
-							<parameter cat="Z2.314 - hoogdynamisch supralitoraal hoog 'embryonaal duin', fijnzand" HSI="1"/>
-							<parameter cat="V2.313 - hoogdynamisch supralitoraal laag 'droog strand', fijnzand" HSI="0.5"/>
-							<parameter cat="V2.314 - hoogdynamisch supralitoraal hoog 'embryonaal duin', fijnzand" HSI="0.5"/>
+							<parameter cat="Z2.311" HSI="1"/>
+							<parameter cat="Z2.312" HSI="1"/>
+							<parameter cat="Z2.313" HSI="1"/>
+							<parameter cat="Z2.314" HSI="1"/>
+							<parameter cat="V2.313" HSI="0.5"/>
+							<parameter cat="V2.314" HSI="0.5"/>
 						</valuesCategorical>
 					</ResponseCurve>
 				</KnowledgeRules>
@@ -86,22 +80,7 @@ Daarnaast is een dosis-effect relatie voor verstoring opgenomen die is overgenom
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-De Grijze zeehond is binnen de zeehondenfamilie (Phocidae) een forse soort met een grote, platte kop en een relatief lange snuit. De mannetjes worden tot 2,5 meter lang en kunnen wel 350 kilo wegen. De pels van het mannetje is donker met soms lichtere vlekken, maar lijkt zwart als hij nat is. De vrouwtjes zijn lichter met donkere vlekken, hebben een kortere snuit, worden maximaal zo'n 2,3 meter lang en wegen tot 200 kilo. Jongen hebben nog geen typische 'hondekop' en lijken hierdoor op de Gewone zeehond (Phoca vitulina); ze zijn te onderscheiden aan de parallelle neusgaten, waar die van de Gewone zeehond V-vormig zijn #1.
-
-Algemeen voorkomen
-De Grijze zeehond komt voor langs de oostelijke en westelijke kusten van de Atlantische oceaan. Er worden drie populaties onderscheiden: één aan de Canadese kust, één in het oostelijke deel van de Atlantische Oceaan en een kleine in de noordelijke Oostzee. De oostatlantische populatie, waartoe ook de Nederlandse dieren behoren, komt voor van IJsland, de Britse eilanden en de Witte zee in het noorden tot Bretagne in het zuiden. De grootste kolonies leven bij IJsland, de Faeroer eilanden, Noorwegen, de noordwestkust van Schotland en Noord-Rusland. In de Waddenzee komen relatief kleine kolonies voor. De Grijze zeehond was in een ver verleden algemener in de Noordzee dan de Gewone zeehond. In de Middeleeuwen werd ze in de Waddenzee door de mens uitgeroeid. Sinds de soort in 1980 in Groot-Brittannië beter wordt beschermd, worden weer grotere aantallen in de Waddenzee waargenomen. Tegenwoordig bedraagt de Nederlandse populatie ruim 1000 dieren. Ze verblijven vooral op hoge zandplaten in het westen van de Waddenzee, zoals op de Richel (ten oosten van Vlieland), de Engelse Hoek (ten westen van Terschelling) en op de Razende Bol (ten zuiden van Texel). De soort wordt slechts sporadisch in het Deltagebied gesignaleerd #1.
-
-Voedselhabitat en strategie
-Grijze zeehonden hebben een grote actieradius: ze maken tochten van tientallen tot honderden kilometers naar foerageergebieden en tussen rustgebieden. Ze zoeken hun voedsel vaak dicht bij de zeebodem en kunnen daarbij dieper dan 100 meter duiken. De Grijze zeehond eet vis, met name Zandspiering (Ammodytidae), Kabeljauw (Gadus morhua), Wijting (Merlangius merlangus) en platvis zoals Bot (Platychthys flesus) #1.
-
-Reproductie en migratie
-De Oost-Atlantische populaties van de Grijze zeehond gebruiken als voortplantingsgebied rotskusten, grotten en kiezelstranden, of zandbanken die bij hoog water droog blijven. In de Oostzee werpen en zogen de dieren ook op ijs. Grijze zeehonden keren vaak jaren achter elkaar terug naar dezelfde rust- of voortplantingsplekken. In de voortplantingsperiode vormen de mannetjes harems waarin ze meerdere vrouwtjes houden. Na een draagtijd van 11 maanden worden de jongen geboren met een donzige vacht. Vanwege hun dikke pels kunnen de jongen in hun eerste levensdagen niet zwemmen en mag hun ligplaats dus niet onder water komen te staan. Jonge grijze zeehonden worden enkele weken op het land gezoogd, totdat ze voldoende opgevet en verhaard zijn. Aan het eind van de zoogtijd worden de vrouwtjes opnieuw bevrucht. De voortplantingsperiode verschilt per gebied: in Noord-Engeland valt ze tussen september en december, in de Oostzee in het vroege voorjaar en in de Waddenzee in de winter #1.
-
-Leeftijd en mortaliteit
-Vrouwtjes worden gemiddeld ouder dan mannetjes (resp. 46 en 26 jaar) #1.
-]]></text>
+			<text><![CDATA[<h1 id="Grijzezeehond-Halichoerusgrypus-Habitatbeschrijving">Habitat beschrijving</h1><p>De Grijze zeehond is binnen de zeehondenfamilie (<em>Phocidae</em>) een forse soort met een grote, platte kop en een relatief lange snuit. De mannetjes worden tot 2,5 meter lang en kunnen wel 350 kilo wegen. De pels van het mannetje is donker met soms lichtere vlekken, maar lijkt zwart als hij nat is. De vrouwtjes zijn lichter met donkere vlekken, hebben een kortere snuit, worden maximaal zo'n 2,3 meter lang en wegen tot 200 kilo. Jongen hebben nog geen typische 'hondekop' en lijken hierdoor op de Gewone zeehond (Phoca vitulina); ze zijn te onderscheiden aan de parallelle neusgaten, waar die van de Gewone zeehond V-vormig zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1">#1</a>.</p><h3 id="Grijzezeehond-Halichoerusgrypus-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De Grijze zeehond komt voor langs de oostelijke en westelijke kusten van de Atlantische oceaan. Er worden drie populaties onderscheiden: één aan de Canadese kust, één in het oostelijke deel van de Atlantische Oceaan en een kleine in de noordelijke Oostzee. De oostatlantische populatie, waartoe ook de Nederlandse dieren behoren, komt voor van IJsland, de Britse eilanden en de Witte zee in het noorden tot Bretagne in het zuiden. De grootste kolonies leven bij IJsland, de Faeroer eilanden, Noorwegen, de noordwestkust van Schotland en Noord-Rusland. In de Waddenzee komen relatief kleine kolonies voor. De Grijze zeehond was in een ver verleden algemener in de Noordzee dan de Gewone zeehond. In de Middeleeuwen werd ze in de Waddenzee door de mens uitgeroeid. Sinds de soort in 1980 in Groot-Brittannië beter wordt beschermd, worden weer grotere aantallen in de Waddenzee waargenomen. Tegenwoordig bedraagt de Nederlandse populatie ruim 1000 dieren. Ze verblijven vooral op hoge zandplaten in het westen van de Waddenzee, zoals op de Richel (ten oosten van Vlieland), de Engelse Hoek (ten westen van Terschelling) en op de Razende Bol (ten zuiden van Texel). De soort wordt slechts sporadisch in het Deltagebied gesignaleerd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1">#1</a>.</p><h3 id="Grijzezeehond-Halichoerusgrypus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>Grijze zeehonden hebben een grote actieradius: ze maken tochten van tientallen tot honderden kilometers naar foerageergebieden en tussen rustgebieden. Ze zoeken hun voedsel vaak dicht bij de zeebodem en kunnen daarbij dieper dan 100 meter duiken. De Grijze zeehond eet vis, met name Zandspiering (<em>Ammodytidae</em>), Kabeljauw (<em>Gadus morhua</em>), Wijting (<em>Merlangius merlangus</em>) en platvis zoals Bot (<em>Platychthys flesus</em>) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1">#1</a>.</p><h3 id="Grijzezeehond-Halichoerusgrypus-Reproductieenmigratie">Reproductie en migratie</h3><p>De Oost-Atlantische populaties van de Grijze zeehond gebruiken als voortplantingsgebied rotskusten, grotten en kiezelstranden, of zandbanken die bij hoog water droog blijven. In de Oostzee werpen en zogen de dieren ook op ijs. Grijze zeehonden keren vaak jaren achter elkaar terug naar dezelfde rust- of voortplantingsplekken. In de voortplantingsperiode vormen de mannetjes harems waarin ze meerdere vrouwtjes houden. Na een draagtijd van 11 maanden worden de jongen geboren met een donzige vacht. Vanwege hun dikke pels kunnen de jongen in hun eerste levensdagen niet zwemmen en mag hun ligplaats dus niet onder water komen te staan. Jonge grijze zeehonden worden enkele weken op het land gezoogd, totdat ze voldoende opgevet en verhaard zijn. Aan het eind van de zoogtijd worden de vrouwtjes opnieuw bevrucht. De voortplantingsperiode verschilt per gebied: in Noord-Engeland valt ze tussen september en december, in de Oostzee in het vroege voorjaar en in de Waddenzee in de winter <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1">#1</a>.</p><h3 id="Grijzezeehond-Halichoerusgrypus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>Vrouwtjes worden gemiddeld ouder dan mannetjes (resp. 46 en 26 jaar) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1">#1</a>.</p><h1 id="Grijzezeehond-Halichoerusgrypus-Dosis-effectrelaties">Dosis-effect relaties</h1><p>Hier onder wordt de een dosis-effect relatie gegeven voor ecotopen die geschikt zijn als kraamkamer. De voortplantingsperiode in de Waddenzee valt in de winter.<br>Daarnaast is een dosis-effect relatie voor verstoring opgenomen die is overgenomen van de dosis-effect relaties van de Gewone Zeehond. </p><div class="sectionColumnWrapper conf-macro output-block" data-hasbody="true" data-macro-name="section"><div class="sectionMacro"><div class="sectionMacroRow"><div class="columnMacro conf-macro output-block" style="width:50%;min-width:50%;max-width:50%;" data-hasbody="true" data-macro-name="column"><h3 id="Grijzezeehond-Halichoerusgrypus-Ecotoopkraamkamer">Ecotoop kraamkamer</h3><div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" resolved="" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal"><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" habitat nummer : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> habitat nummer </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" omschrijving : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> omschrijving </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" zoutgehalte : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> zoutgehalte </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="3" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" HGI : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> HGI </p></div></th></tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" habitat nummer : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> habitat nummer </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" omschrijving : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> omschrijving </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" zoutgehalte : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> zoutgehalte </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="3" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" HGI : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> HGI </p></div></th></tr></thead><tbody aria-live="polite" aria-relevant="all"><tr role="row"><td class="confluenceTd"><p> Z2.311 </p></td><td class="confluenceTd"><p> hoogdynamisch supralitoraal laag 'droog strand', grofzand </p></td><td class="confluenceTd"><p> zout </p></td><td class="confluenceTd"><p> 1 </p></td></tr><tr role="row"><td class="confluenceTd"><p> Z2.312 </p></td><td class="confluenceTd"><p> hoogdynamisch supralitoraal hoog 'embryonaal duin', grofzand </p></td><td class="confluenceTd"><p> zout </p></td><td class="confluenceTd"><p> 1 </p></td></tr><tr role="row"><td class="confluenceTd"><p> Z2.313 </p></td><td class="confluenceTd"><p> hoogdynamisch supralitoraal laag 'droog strand', fijnzand </p></td><td class="confluenceTd"><p> zout </p></td><td class="confluenceTd"><p> 1 </p></td></tr><tr role="row"><td class="confluenceTd"><p> Z2.314 </p></td><td class="confluenceTd"><p> hoogdynamisch supralitoraal hoog 'embryonaal duin', fijnzand </p></td><td class="confluenceTd"><p> zout </p></td><td class="confluenceTd"><p> 1 </p></td></tr><tr role="row"><td class="confluenceTd"><p> V2.313 </p></td><td class="confluenceTd"><p> hoogdynamisch supralitoraal laag 'droog strand', fijnzand </p></td><td class="confluenceTd"><p> variabel brak-zout </p></td><td class="confluenceTd"><p> 0.5 </p></td></tr><tr role="row"><td class="confluenceTd"><p> V2.314 </p></td><td class="confluenceTd"><p> hoogdynamisch supralitoraal hoog 'embryonaal duin', fijnzand </p></td><td class="confluenceTd"><p> variabel brak-zout </p></td><td class="confluenceTd"><p> 0.5 </p></td></tr></tbody></table></div><p>NB: deze laatste twee zijn niet zeker.</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

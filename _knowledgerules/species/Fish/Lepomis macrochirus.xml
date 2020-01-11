@@ -14,7 +14,7 @@
 	</Topic>
 	<Autecology>
 	<ModelType name ="HSI">
-			<System name="riverine_adult">
+			<System name="riverine_lacustrine_adult">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="North America" id="6255149"/>

@@ -24,10 +24,7 @@
 					</TemporalScope>
 				</Scope>
 				<SystemDescription>
-					<Description language="NL"><text><![CDATA[
-Onzekerheden en validatie
-Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.
-]]></text></Description></SystemDescription>
+					<Description language="NL"><text><![CDATA[<h1 id="Blankvoorn-Rutilusrutilus-Roach-Onzekerhedenenvalidatie">Onzekerheden en validatie</h1><p>Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.</p><h1 id="Blankvoorn-Rutilusrutilus-Roach-Toepassingsgebiedenvoorbeeldprojecten.">Toepassingsgebied en voorbeeldprojecten.</h1>]]></text></Description></SystemDescription>
 				<SystemFlowDiagrams>
 					<FlowDiagram name="adult">
 						<From name="habitat_geschiktheid">

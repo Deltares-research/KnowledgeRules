@@ -25,28 +25,50 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[Deze dosis-effect relaties zijn gevalideerd voor het IJsselmeer (#4) en Markermeer (#5, #7). In deze validatie is voor het IJsselmeer nog geen effecrelaties voor slibconcentraties meegenomen.
-Voor de validatie van het Markermeer zijn de effectrelaties voor slibconcentraties wel meegenomen. Echter, de slibconcentraties zijn bekend voor het jaar 2007 en de driehoeksmosselmeting is gedaan in 2004. Nieuwe driehoeksmosseldata is te verwachten in 2010/2011. Nieuwe validatie is dan 	nodig, wat waarschijnlijk leidt tot een betere predictie van het model, doordat mismatch van het model van de meetdata nu vooral plaats heeft op de plaatsen waar volgens het model slib limiterend is voor de groei van driehoeksmosselen.
-aanwezigheid goed voorspeld  = 0.69
-afwezigheid goed voorspeld    = 0.80
-aanwezigheid fout voorspeld   = 0.31
-afwezigheid fout voorspeld     = 0.20
-Hierbij is aanwezigheid van de driehoeksmossel in het model gezet op een habitatgeschiktheid van 0.5.
-
-Toepasbaarheid
-Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></text>
+						<text><![CDATA[<h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd voor het IJsselmeer (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-4">#4</a>) en Markermeer (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-5">#5</a>, <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-7">#7</a>). In deze validatie is voor het IJsselmeer nog geen effecrelaties voor slibconcentraties meegenomen.<br>Voor de validatie van het Markermeer zijn de effectrelaties voor slibconcentraties wel meegenomen. Echter, de slibconcentraties zijn bekend voor het jaar 2007 en de driehoeksmosselmeting is gedaan in 2004. Nieuwe driehoeksmosseldata is te verwachten in 2010/2011. Nieuwe validatie is dan nodig, wat waarschijnlijk leidt tot een betere predictie van het model, doordat mismatch van het model van de meetdata nu vooral plaats heeft op de plaatsen waar volgens het model slib limiterend is voor de groei van driehoeksmosselen.</p><div class="table-wrap"><table class="confluenceTable" resolved=""><thead><tr><th class="confluenceTh"><p>aanwezigheid goed voorspeld</p></th><td class="confluenceTd"><p> 0.69 </p></td></tr></thead><tbody><tr><th class="confluenceTh"><p>afwezigheid goed voorspeld</p></th><td class="confluenceTd"><p> 0.80 </p></td></tr><tr><th class="confluenceTh"><p>aanwezigheid fout voorspeld</p></th><td class="confluenceTd"><p> 0.31 </p></td></tr><tr><th class="confluenceTh"><p>afwezigheid fout voorspeld</p></th><td class="confluenceTd"><p> 0.20 </p></td></tr></tbody></table></div><p>Hierbij is aanwezigheid van de driehoeksmossel in het model gezet op een habitatgeschiktheid van 0.5.</p><h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Toepasbaarheid">Toepasbaarheid</h1><p>Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.</p><h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Voorbeeldproject">Voorbeeld project</h1><p>Volkerak-Zoommeer Habitat analyse (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-1">#1</a>).<br>Seizoensgebonden peil in het IJsselmeergebied (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-12">#12</a>)</p>]]></text>
 					</Description>
 					<Description language="ENG">
 						<text><![CDATA[To be filled]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="leefgebied_stagnante_wateren">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>min</equation>
+							<To>waterdiepte_meren</To>
+							<To>watertemperatuur</To>
+							<To>zuurgraad</To>
+							<To>zuurstofgehalte</To>
+							<To>chloridegehalte</To>
+							<To>calciumgehalte</To>
+							<To>orthofosfaatgehalte</To>
+							<To>substraattype</To>
+							<To>siltfractie</To>
+							<To>schelpen_bedekkingsgraad</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="leefgebied_stromende_wateren">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>min</equation>
+							<To>waterdiepte_rivieren</To>
+							<To>watertemperatuur</To>
+							<To>zuurgraad</To>
+							<To>zuurstofgehalte</To>
+							<To>chloridegehalte</To>
+							<To>calciumgehalte</To>
+							<To>orthofosfaatgehalte</To>
+							<To>substraattype</To>
+							<To>siltfractie</To>
+							<To>schelpen_bedekkingsgraad</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Chloride">
+					<ResponseCurve name="chloridegehalte">
 						<type>scalar</type>
-						<layername>"CL"</layername>
+						<layername>"chloridegehalte"</layername>
 						<unit>"g/l"</unit>
 						<statistic>minimum</statistic>
 						<description>"Tolerable chlorine content for the Zebra mussel species"</description>
@@ -62,9 +84,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter value="5" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="WaterTemperature">
+					<ResponseCurve name="watertemperatuur">
 						<type>scalar</type>
-						<layername>"AverageSummerWaterTemperature"</layername>
+						<layername>"watertemperatuur"</layername>
 						<unit>"degrees Celsius"</unit>
 						<statistic>summer average (june - august)</statistic>
 						<description>"Average summer water temperature tolerable for the Zebra mossel species"</description>
@@ -81,9 +103,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter value="25" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Orthofosfate">
+					<ResponseCurve name="orthofosfaatgehalte">
 						<type>scalar</type>
-						<layername>"AverageOrthofosfate"</layername>
+						<layername>"orthofosfaatgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Average orthophosphate tolerable for the Zebra mossel species"</description>
@@ -99,9 +121,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter value="0.3" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Oxygen">
+					<ResponseCurve name="zuurstofgehalte">
 						<type>scalar</type>
-						<layername>"AverageOxygen"</layername>
+						<layername>"zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Average oxygen content tolerable for the Zebra mossel species"</description>
@@ -117,9 +139,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter value="15" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Soil">
+					<ResponseCurve name="substraattype">
 						<type>categorical</type>
-						<layername>"SoilType"</layername>
+						<layername>"substraattype"</layername>
 						<unit>"soil"</unit>
 						<statistic>average</statistic>
 						<description>"Average soil type tolerable for the Zebra mossel species"</description>
@@ -136,9 +158,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter cat="stortsteen" HSI="0.879"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="SiltFraction">
+					<ResponseCurve name="silt_fractie">
 						<type>range / categorical</type>
-						<layername>"SiltFraction"</layername>
+						<layername>"siltfractie"</layername>
 						<unit>"silt fraction / description"</unit>
 						<statistic>average</statistic>
 						<description>"Average silt content tolerable for the Zebra mossel species"</description>
@@ -153,9 +175,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter rangemin="25" rangemax="100" cat="slibrijk" HSI="0.103"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Shells">
+					<ResponseCurve name="schelpen_bedekkingsgraad">
 						<type>scalar</type>
-						<layername>"ShellsContent"</layername>
+						<layername>"schelpen_bedekkingsgraad"</layername>
 						<unit>"ml/m2"</unit>
 						<statistic>average</statistic>
 						<description>"Average shell content tolerable for the Zebra mossel species"</description>
@@ -173,9 +195,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="SiltConcentration">
+					<ResponseCurve name="silt_concentratie">
 						<type>scalar</type>
-						<layername>"SiltContent"</layername>
+						<layername>"silt_concentratie"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Average silt content tolerable for the Zebra mossel species"</description>
@@ -194,9 +216,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter value="1000" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="WaterdepthLakes">
+					<ResponseCurve name="waterdiepte_meren">
 						<type>ranges</type>
-						<layername>"WaterdepthLakes"</layername>
+						<layername>"waterdiepte_meren"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdepth tolerable for the Zebra mossel species in Lakes"</description>
@@ -214,9 +236,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter rangemin="50" rangemax="999999" HSI="0"/>
 						</valuesRanges>
 					</ResponseCurve>
-					<ResponseCurve name="WaterdepthRivers">
+					<ResponseCurve name="waterdiepte_rivieren">
 						<type>ranges</type>
-						<layername>"WaterdethRivers"</layername>
+						<layername>"waterdiepte_rivieren"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Waterdepth tolerable for the Zebra mossel species in Rivers"</description>
@@ -232,9 +254,9 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter rangemin="5" rangemax="999999" HSI="0"/>
 						</valuesRanges>
 					</ResponseCurve>
-					<ResponseCurve name="FlowVelocity">
+					<ResponseCurve name="stroomsnelheid">
 						<type>scalar</type>
-						<layername>"Flowvelocity"</layername>
+						<layername>"stroomsnelheid"</layername>
 						<unit>"m/s"</unit>
 						<statistic>average</statistic>
 						<description>"Flow velocity tolerable for the Zebra mossel species"</description>
@@ -250,23 +272,73 @@ Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.]]></te
 							<parameter value="1" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
+					<ResponseCurve name="zuurgraad">
+						<type>scalar</type>
+						<layername>"zuurgraad"</layername>
+						<unit>pH</unit>
+						<statistic>average</statistic>
+						<description>Gemiddelde zuurgraad (pH)</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="Duel, H. en Specken B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="7.3" HSI="0.0"/>
+							<parameter value="7.7" HSI="1.0"/>
+							<parameter value="8.7" HSI="1.0"/>
+							<parameter value="9.0" HSI="1.0"/>
+							<parameter value="14.0" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="calciumgehalte">
+						<type>scalar</type>
+						<layername>"calciumgehalte"</layername>
+						<unit>mg/L</unit>
+						<statistic>average</statistic>
+						<description>Gemiddelde calciumgehalte (Ca mg/L)</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="Duel, H. en Specken B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="30.0" HSI="0.0"/>
+							<parameter value="40.0" HSI="1.0"/>
+							<parameter value="100.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="orthofosfaatgehalte">
+						<type>scalar</type>
+						<layername>"orthofosfaatgehalte"</layername>
+						<unit>mg/L</unit>
+						<statistic>average</statistic>
+						<description>Gemiddelde ortho-fosfaatgehalte (ortho-P mg/L)</description>
+						<author>"Mijke van Oorschot"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="Duel, H. en Specken B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.005" HSI="0.0"/>
+							<parameter value="0.02" HSI="1.0"/>
+							<parameter value="0.1" HSI="1.0"/>
+							<parameter value="0.3" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
 				</KnowledgeRules>
+		
+	
 			</System>
 		</ModelType>
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[De milieucondities die van belang zijn voor de driehoeksmossel zijn zoet water, bodemtype, waterdiepte en watertemperatuur #2, #6.
-
-Driehoeksmosselen vestigen zich op hard substraat zoals stenen en schelpen. Ze foerageren door algen te filteren uit het water. Hoge slibconcentraties in het water of op de bodem kunnen dit verhinderen en zorgen uiteindelijk voor verstikking. 
-Uit experimenten in het lab uitgevoerd naar mosselfiltratie van driehoeksmosselen onder verschillende anorganische slibconcentraties blijkt dat de filtratie van driehoeksmosselen op slib afneemt met toenemende slibconcentraties (#11). Een slibconcentratie van meer dan 1 g/L maakt de filtratie voor de 		mosselen erg lastig. Bij deze concentratie is niet alleen de filtratie op slib zelf laag, maar ook die op de groenalg (#11). Op den duur zou dit kunnen betekenen dat de mosselen weinig goed voedsel binnen krijgen (en teveel bezig zijn met het verwijderen van slib via pseudofaeces) waardoor ze niet goed groeien en misschien wel dood gaan. 
-De diepte waarop mosselen voorkomen verschilt per gebied. Er zijn waarnemingen tot 50 meter diepte gedaan ([#9). De hoogste dichtheden vinden meestal plaats op een diepte tussen de 2 en 5 m (#2). In ondieptes wordt de afwezigheid mogelijk veroorzaakt door de snelle temperatuurwisselen of door predatiedruk op mosselen of door een hoge wintersterfte als gevolg van een lange periode met zuurstofloosheid bij ijsbedekking (#8). Bij grotere dieptes (>5m) zijn temperatuur en zuurstofgehalte vaak limiterende factoren (#10).
-
-De groei en reproduktie van de driehoeksmosselen wordt beïnvloed door de watertemperatuur #2. In koude wateren (< 15 ˚C) is de periode van groei kort en is de reproduktie minimaal (Morton, 1969; Lewandowski, 1982; Strayer, 1991). Ook warme wateren hebben een negatief effect op de populatie-ontwikkeling (Walz, 1974). Sterftecijfers nemen toe bij watertemperaturen van > 26-32 ˚C (Strayer, 1991). Noordhuis en Houwing (2003) suggereren dat er mogelijk een negatief effect is van relatief warme winters. De eerste eieren en larven worden in de Poolse meren gesignaleerd bij watertemperaturen van 17-19 ˚C (Lewandowski, 1982) en in de Noord-Amerikaanse meren bij 13 ˚C (Hebert e.a., 1989).
-
-In het IJsselmeer begint de jaarlijkse lengtegroei van de driehoeksmosselen in april en eindigt in september. Uit onderzoek van Reeders (1989) is gebleken, dat bij een watertemperatuur van 5-20 ˚C de filtratiesnelheid optimaal is. Beneden de 5 ˚C neemt de filtratiesnelheid abrupt af tot een geringe waarde en bij een watertemperatuur van meer dan 20 ˚C neemt de snelheid geleidelijk af. Volgens het onderzoek van Morton (1969) vindt alleen lengtegroei plaats bij een watertemperatuur van meer dan 11 ˚C en komt bij een watertemperatuur van meer dan 30 ˚C de lengtegroei geheel tot stilstand. De driehoeksmossel is zeer gevoelig voor snelle stijgingen van de watertemperatuur. Bij bestrijding van de driehoeksmosselen in koelwatersystemen wordt daarom de thermoshock-methode gehanteerd: bij een watertemperatuur van 35 ˚C wordt in een half uur alle aangroei gedood (Jenner en Mommen, 1985). De ontwikkelingsmogelijkheden van driehoeksmosselen in de Randmeren wordt beperkt door een aantal factoren, waaronder de snelle stijging van de watertemperatuur en grote dagelijkse temperatuurschommelingen die in het voorjaar in de ondiepe en beschutte meren kunnen optreden. Door deze veranderingen wordt de voortplanting van de driehoeksmosselen volledig verstoord (Vanhemelrijk e.a., 1993).	
-
-Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen tot een verandering van het voorkomen van de driehoeksmossel leiden.]]></text>
+			<text><![CDATA[<h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De Driehoeksmossel komt voor in rivieren, meren, plassen en kanalen en hecht zich aan allerlei hardsubstraat. Driehoeksmosselen zijn in de winter stapelvoedsel voor watervogels zoald de Kuifeend <em>Aythya fuligula</em>, de Tafeleend <em>A. ferina</em>, de Topper <em>A. marila</em> en de Meerkoet <em>Fulica atra</em>.  Driehoeksmosselen zijn een doelsoort van zoete, grote stagnante wateren in het beneden rivierengebied.</p><h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Milieurandvoorwaarden">Milieurandvoorwaarden</h3><p>De milieucondities die van belang zijn voor de driehoeksmossel zijn zoet water, bodemtype, waterdiepte en watertemperatuur <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2">#2</a>, <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-6">#6</a>.</p><p>Driehoeksmosselen vestigen zich op hard substraat zoals stenen en schelpen. Ze foerageren door algen te filteren uit het water. Hoge slibconcentraties in het water of op de bodem kunnen dit verhinderen en zorgen uiteindelijk voor verstikking. <br>Uit experimenten in het lab uitgevoerd naar mosselfiltratie van driehoeksmosselen onder verschillende anorganische slibconcentraties blijkt dat de filtratie van driehoeksmosselen op slib afneemt met toenemende slibconcentraties (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-11">#11</a>). Een slibconcentratie van meer dan 1 g/L maakt de filtratie voor de mosselen erg lastig. Bij deze concentratie is niet alleen de filtratie op slib zelf laag, maar ook die op de groenalg (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-11">#11</a>). Op den duur zou dit kunnen betekenen dat de mosselen weinig goed voedsel binnen krijgen (en teveel bezig zijn met het verwijderen van slib via pseudofaeces) waardoor ze niet goed groeien en misschien wel dood gaan. <br>De diepte waarop mosselen voorkomen verschilt per gebied. Er zijn waarnemingen tot 50 meter diepte gedaan ([#9). De hoogste dichtheden vinden meestal plaats op een diepte tussen de 2 en 5 m (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2">#2</a>). In ondieptes wordt de afwezigheid mogelijk veroorzaakt door de snelle temperatuurwisselen of door predatiedruk op mosselen of door een hoge wintersterfte als gevolg van een lange periode met zuurstofloosheid bij ijsbedekking (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-8">#8</a>). Bij grotere dieptes (&gt;5m) zijn temperatuur en zuurstofgehalte vaak limiterende factoren (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-10">#10</a>).</p><p>De groei en reproduktie van de driehoeksmosselen wordt beïnvloed door de watertemperatuur <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2">#2</a>. In koude wateren (&lt; 15 ˚C) is de periode van groei kort en is de reproduktie minimaal (Morton, 1969; Lewandowski, 1982; Strayer, 1991). Ook warme wateren hebben een negatief effect op de populatie-ontwikkeling (Walz, 1974). Sterftecijfers nemen toe bij watertemperaturen van &gt; 26-32 ˚C (Strayer, 1991). Noordhuis en Houwing (2003) suggereren dat er mogelijk een negatief effect is van relatief warme winters. De eerste eieren en larven worden in de Poolse meren gesignaleerd bij watertemperaturen van 17-19 ˚C (Lewandowski, 1982) en in de Noord-Amerikaanse meren bij 13 ˚C (Hebert e.a., 1989).</p><p>In het IJsselmeer begint de jaarlijkse lengtegroei van de driehoeksmosselen in april en eindigt in september. Uit onderzoek van Reeders (1989) is gebleken, dat bij een watertemperatuur van 5-20 ˚C de filtratiesnelheid optimaal is. Beneden de 5 ˚C neemt de filtratiesnelheid abrupt af tot een geringe waarde en bij een watertemperatuur van meer dan 20 ˚C neemt de snelheid geleidelijk af. Volgens het onderzoek van Morton (1969) vindt alleen lengtegroei plaats bij een watertemperatuur van meer dan 11 ˚C en komt bij een watertemperatuur van meer dan 30 ˚C de lengtegroei geheel tot stilstand. De driehoeksmossel is zeer gevoelig voor snelle stijgingen van de watertemperatuur. Bij bestrijding van de driehoeksmosselen in koelwatersystemen wordt daarom de thermoshock-methode gehanteerd: bij een watertemperatuur van 35 ˚C wordt in een half uur alle aangroei gedood (Jenner en Mommen, 1985). De ontwikkelingsmogelijkheden van driehoeksmosselen in de Randmeren wordt beperkt door een aantal factoren, waaronder de snelle stijging van de watertemperatuur en grote dagelijkse temperatuurschommelingen die in het voorjaar in de ondiepe en beschutte meren kunnen optreden. Door deze veranderingen wordt de voortplanting van de driehoeksmosselen volledig verstoord (Vanhemelrijk e.a., 1993).</p><h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3><p>Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen tot een verandering van het voorkomen van de driehoeksmossel leiden.</p>]]></text>
 		</Description>
 		<Description language="ENG">
 			<text><![CDATA[To be filled]]></text>

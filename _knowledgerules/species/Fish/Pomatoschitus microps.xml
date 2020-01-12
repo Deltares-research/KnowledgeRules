@@ -16,7 +16,7 @@
 			<System name="adult">
 				<Scope>
 					<SpatialScope>
-						<GeoNames name="Netherlands" id="2750405"/>
+						<GeoNames name="Veerse meer" id="2745733"/>
 					</SpatialScope>
 					<TemporalScope>
 						<StartDate>2000-01-01</StartDate>

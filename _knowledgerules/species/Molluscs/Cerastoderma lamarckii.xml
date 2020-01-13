@@ -15,7 +15,7 @@
 			<System name="adult">
 				<Scope>
 					<SpatialScope>
-						<GeoNames name="Netherlands" id="2750405"/>
+						<GeoNames name="Veerse meer" id="2745733"/>
 					</SpatialScope>
 					<TemporalScope>
 						<StartDate>1990-01-01</StartDate>
@@ -24,25 +24,24 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-(warning) Het model is niet gevalideerd.
-
-Toepasbaarheid
-De rekenregels zijn samengesteld uit logistische regressie op de Westerschelde data verkregen door Ysebaert en Meire (1999)#3. Het model is opgezet voor het Veerse Meer#2.
-
-Voorbeeldproject
-Er is geen voorbeeldproject.
-]]></text>
+						<text><![CDATA[<h1 id="Brakwaterkokkel-Cerastodermalamarckii-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Brakwaterkokkel - Cerastoderma lamarckii - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Het model is niet gevalideerd.</p><h1 id="Brakwaterkokkel-Cerastodermalamarckii-Toepasbaarheid">Toepasbaarheid</h1><p>De rekenregels zijn samengesteld uit logistische regressie op de Westerschelde data verkregen door Ysebaert en Meire (1999)<a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-3">#3</a>. Het model is opgezet voor het Veerse Meer<a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-2">#2</a>. </p><h1 id="Brakwaterkokkel-Cerastodermalamarckii-Voorbeeldproject">Voorbeeldproject</h1><p>Er is geen voorbeeldproject.</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="leefgebied">
+						<From name="habitatgeschiktheid">
+							<label>"habitatgeschiktheid"</label>
+							<equation>min</equation>
+							<To>waterdiepte_winter</To>
+							<To>zoutgehalte</To>
+							<To>stroomsnelheid</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>		
-					<ResponseCurve name="Diepte winter">
+					<ResponseCurve name="waterdiepte_winter">
 						<type>scalar</type>
-						<layername>"Diepte winter"</layername>
+						<layername>"waterdiepte_winter"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Diepte winter"</description>
@@ -60,9 +59,9 @@ Er is geen voorbeeldproject.
 							<parameter value="10" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zoutgehalte">
+					<ResponseCurve name="zoutgehalte">
 						<type>scalar</type>
-						<layername>"Zoutgehalte"</layername>
+						<layername>"zoutgehalte"</layername>
 						<unit>"promille"</unit>
 						<statistic>average</statistic>
 						<description>"Zoutgehalte"</description>
@@ -80,9 +79,9 @@ Er is geen voorbeeldproject.
 							<parameter value="35" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid">
+					<ResponseCurve name="stroomsnelheid">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid"</layername>
+						<layername>"stroomsnelheid"</layername>
 						<unit>"m/s"</unit>
 						<statistic>average</statistic>
 						<description>"Stroomsnelheid"</description>
@@ -105,16 +104,7 @@ Er is geen voorbeeldproject.
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-In brak water in het Nederlands deltagebied is de brakwaterkokkel vrij algemeen. In het Waddengebied is de soort zeldzamer. Voor de afsluiting van de Zuiderzee was de soort daar talrijk aanwezig #2. De brakwaterkokkel blijft kleiner dan zijn verwant familielid, de gewone Kokkel, en heeft een “scheefgetrokken” schelp. De ribben zijn aan de achterzijde van de schelp zwak ontwikkeld.
-
-Milieurandvoorwaarden
-Brakwaterkokkels leven in rustig water, vooral achter de dijken of in zee ingegraven in het zand. De habitatgeschiktheid voor de Brakwaterkokkel neemt af bij maximale stroomsnelheden groter dan 0.5 m/s #2. De brakwaterkokkel komt voor tot tientallen meters diepte #1, maar 8 tot 10 meter is over het algemeen de maximale diepte #2. De soort kan goed met zeer hoge en zeer lage zoutgehalten omgaan, maar kan slecht tegen droogval. Doordat de soort ook in ondiep water leeft, komt de soort vooral voor buiten het effectgebied van de getijdeslag #1.
-
-In vergelijking tot de gewone kokkel kan de brakwaterkokkel beter tegen lage zoutgehalten, maar slechter tegen zoutgehalten hoger dan 30 promille #2.
-]]></text>
+			<text><![CDATA[<h3 id="Brakwaterkokkel-Cerastodermalamarckii-Algemeenvoorkomen">Algemeen voorkomen</h3><p>In brak water in het Nederlands deltagebied is de brakwaterkokkel vrij algemeen. In het Waddengebied is de soort zeldzamer. Voor de afsluiting van de Zuiderzee was de soort daar talrijk aanwezig <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-2">#2</a>. De brakwaterkokkel blijft kleiner dan zijn verwant familielid, de gewone Kokkel, en heeft een “scheefgetrokken” schelp. De ribben zijn aan de achterzijde van de schelp zwak ontwikkeld.</p><h3 id="Brakwaterkokkel-Cerastodermalamarckii-Milieurandvoorwaarden">Milieurandvoorwaarden</h3><p>Brakwaterkokkels leven in rustig water, vooral achter de dijken of in zee ingegraven in het zand. De habitatgeschiktheid voor de Brakwaterkokkel neemt af bij maximale stroomsnelheden groter dan 0.5 m/s <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-2">#2</a>. De brakwaterkokkel komt voor tot tientallen meters diepte <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-1">#1</a>, maar 8 tot 10 meter is over het algemeen de maximale diepte <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-2">#2</a>. De soort kan goed met zeer hoge en zeer lage zoutgehalten omgaan, maar kan slecht tegen droogval. Doordat de soort ook in ondiep water leeft, komt de soort vooral voor buiten het effectgebied van de getijdeslag <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-1">#1</a>.</p><p>In vergelijking tot de gewone kokkel kan de brakwaterkokkel beter tegen lage zoutgehalten, maar slechter tegen zoutgehalten hoger dan 30 promille <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwaterkokkel+-+Cerastoderma+lamarckii#Brakwaterkokkel-Cerastodermalamarckii-2">#2</a>.</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

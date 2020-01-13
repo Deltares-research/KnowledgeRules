@@ -66,9 +66,37 @@ class API:
 	def quit(self, obj):
 		sys.exit()
 
-	def refresh_data(self, obj):
+
+	def refresh_language(self, obj, override):
+		'''
+		Reload with a change of language
+		'''
 		
-		AutXML = autecology_xml.AutecologyXML(None)		
+		#don't do anything when override is none
+		if(override == None):
+			return()
+
+		#get value from combobox
+		comboxvalue = obj.MainWindow.findChild(QtWidgets.QComboBox,obj.MainWindow.sender().objectName()).currentText()
+
+		#combobox strip output
+		name, cur_language = comboxvalue.split(" | ")
+		obj.cur_language = cur_language
+
+		#replace species information
+		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
+		obj.textBrowser_2.setText(cur_speciestext)
+
+		#replace system information
+		cur_systemtext = [syd["description"] for syd in obj.systemdescription if(syd["language"] == obj.cur_language)][0]
+		obj.system_textBrowser.setText(cur_systemtext)
+
+		return()
+
+	def refresh_data(self, obj, AutXML):
+		'''
+		Load a new data file
+		'''
 
 		#Set data
 		AutXML.xmlroot = obj.xmlroot
@@ -101,10 +129,9 @@ class API:
 		print(obj.cur_language)
 		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
 		obj.textBrowser_2.setText(cur_speciestext)
-		obj.textBrowser_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 		obj.textBrowser_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 		obj.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-		obj.textBrowser_2.setFixedWidth(1000)
+		obj.textBrowser_2.setMinimumWidth(1000)
 		obj.textBrowser_2.setAttribute(103)
 		obj.textBrowser_2.show()
 		obj.textBrowser_2.setFixedHeight(obj.textBrowser_2.document().size().height() +\
@@ -119,14 +146,16 @@ class API:
 
 		#first setup
 		system = obj.systems[0]
-		self.refresh_group_data(obj, AutXML, system, obj.groupBox)
+		obj, AutXML = self.refresh_group_data(obj, AutXML, system, obj.groupBox)
 
-		#update scrollarea
-		# obj.scrollAreaWidgetContents.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.MinimumExpanding)
 
-		return()
+		return(obj, AutXML)
 
 	def refresh_group_data(self, obj, xml_obj, system, cur_window):
+		'''
+		Load system related data
+
+		'''
 
 		#clear previous layout
 		self.clearLayout(obj.boxlayout)
@@ -138,7 +167,20 @@ class API:
 		font.setWeight(75)
 		_translate = QtCore.QCoreApplication.translate
 
-		#Get system data
+		#Get system data (based on initialisation or change by combobox)
+		if(hasattr(obj.MainWindow,"sender")):
+			if(obj.MainWindow.sender().objectName() == "comboBox_2"):
+				if(system == None):
+					#connection called on initialisation
+					return()
+				else:
+					#overwrite system with the indicated value
+					system = obj.MainWindow.findChild(QtWidgets.QComboBox,obj.MainWindow.sender().objectName()).currentText()
+
+		#get system data
+		print("Topic :" + "To be filled!")
+		print("System : " + system)
+		
 		xml_obj._scan_knowledgerules(system)
 		obj.systemname = xml_obj.systemname
 		obj.systemdescription = xml_obj._read_systemdescription(system)
@@ -151,20 +193,20 @@ class API:
 		system_label_1.setObjectName("label")
 		system_label_1.setText(_translate("MainWindow", "system description:"))
 
-		system_textBrowser = QtWidgets.QTextBrowser(obj.scrollAreaWidgetContents)
-		system_textBrowser.setReadOnly(True)
-		system_textBrowser.setObjectName("textBrowser_2")
+		obj.system_textBrowser = QtWidgets.QTextBrowser(obj.scrollAreaWidgetContents)
+		obj.system_textBrowser.setReadOnly(True)
+		obj.system_textBrowser.setObjectName("textBrowser_2")
 		
 		cur_systemtext = [syd["description"] for syd in obj.systemdescription if(syd["language"] == obj.cur_language)][0]
-		system_textBrowser.setText(cur_systemtext)
-		system_textBrowser.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
-		system_textBrowser.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
-		system_textBrowser.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-		system_textBrowser.setFixedWidth(1000)
-		system_textBrowser.setAttribute(103)
-		system_textBrowser.show()
-		system_textBrowser.setFixedHeight(system_textBrowser.document().size().height() +\
-			system_textBrowser.contentsMargins().top() + system_textBrowser.contentsMargins().bottom())
+		obj.system_textBrowser.setText(cur_systemtext)
+		obj.system_textBrowser.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+		obj.system_textBrowser.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+		obj.system_textBrowser.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+		obj.system_textBrowser.setFixedWidth(1000)
+		obj.system_textBrowser.setAttribute(103)
+		obj.system_textBrowser.show()
+		obj.system_textBrowser.setFixedHeight(obj.system_textBrowser.document().size().height() +\
+			obj.system_textBrowser.contentsMargins().top() + obj.system_textBrowser.contentsMargins().bottom())
 
 		#Make system framework
 		system_label_2 = QtWidgets.QLabel(cur_window)
@@ -187,7 +229,7 @@ class API:
 		obj.knowledgerulenames = xml_obj.knowledgeRulesNames
 		
 		obj.boxlayout.addWidget(system_label_1)
-		obj.boxlayout.addWidget(system_textBrowser)
+		obj.boxlayout.addWidget(obj.system_textBrowser)
 		obj.boxlayout.addWidget(system_label_2)
 		obj.boxlayout.addWidget(system_groupbox_1)
 		obj.boxlayout.addWidget(system_label_3)
@@ -334,7 +376,7 @@ class API:
 			kr_groupbox.setLayout(kr_groupboxlayout)
 			obj.boxlayout.addWidget(kr_groupbox)
 			
-		return()
+		return(obj, xml_obj)
 
 
 

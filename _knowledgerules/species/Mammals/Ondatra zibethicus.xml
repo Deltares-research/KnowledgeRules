@@ -24,24 +24,38 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-					<text><![CDATA[
-Onzekerheid en validatie
- Deze rekenregels zijn niet gevalideerd.
-De rekenregels zijn opgesteld aan de hand van lieratuuronderzoek #1
-Toepasbaarheid
-De rekenregels zijn opgesteld om het potentieel leefgebied van de Muskusrat te bepalen en zijn toepasbaar op grote en kleinere zoete wateren die stagnant tot snelstromend zijn #1.
-Voorbeeld project
-Geen
-]]></text>
+					<text><![CDATA[<h1 id="Muskusrat-Ondatrazibethicus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Muskusrat - Ondatra zibethicus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p><p>De rekenregels zijn opgesteld aan de hand van lieratuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a></p><h1 id="Muskusrat-Ondatrazibethicus-Toepasbaarheid">Toepasbaarheid</h1><p>De rekenregels zijn opgesteld om het potentieel leefgebied van de Muskusrat te bepalen en zijn toepasbaar op grote en kleinere zoete wateren die stagnant tot snelstromend zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>.</p><h1 id="Muskusrat-Ondatrazibethicus-Voorbeeldproject">Voorbeeld project</h1><p>Geen</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="leefgebied">
+						<From name="habitatgeschiktheid">
+							<label>"habitatgeschiktheid"</label>
+							<equation>min</equation>
+							<To>oever_type_en_beheer</To>
+							<To>oevervegetatie_bedekkingsgraad</To>
+						</From>
+						<From name="oever_situatie">
+							<label>"oever_type_en_beheer"</label>
+							<equation>min</equation>
+							<To>waterbreedte</To>
+							<To>steiltalud_aanwezigheid</To>
+							<To>nestgelegenheid</To>
+							<To>oevervegetatie_beheer</To>
+							<To>oevervegetatie_bedekkingsgraad</To>
+						</From>
+						<From name="nestgelegenheid">
+							<label>"nestgelegenheid"</label>
+							<equation>max</equation>
+							<To>substraatdoorgraafbaarheid_oever</To>
+							<To>oevervegetatie_hoogte</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>		
-					<ResponseCurve name="Breedte water">
+					<ResponseCurve name="waterbreedte">
 						<type>scalar</type>
-						<layername>"Breedte water"</layername>
+						<layername>"waterbreedte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Breedte water"</description>
@@ -59,12 +73,12 @@ Geen
 							<parameter value="40" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Aanwezigheid steile oevers">
+					<ResponseCurve name="steiltalud_aanwezigheid">
 						<type>categorical</type>
-						<layername>"Aanwezigheid steile oevers"</layername>
+						<layername>"steiltalud_aanwezigheid"</layername>
 						<unit>"-"</unit>
 						<statistic>Aanwezigheid steile oevers</statistic>
-						<description>"NB. Voor de nestbouw zijn relatief steile taluds nodig, Bij wateren smaller dan 6 meter moeten de steile delen van zowel de noord- als zuidoever worden bepaald, bij bredere wateren de oevers afzonderlijk. Uitgaande van een homerange van 300 meter dient minimaal 10 meter geschikte oever aanwezig te zijn (dus 1m per 30 meter)#1</description>
+						<description>"Steil talud wordt hier beschouwt als 1:0 of 1:1 .NB. Voor de nestbouw zijn relatief steile taluds nodig, Bij wateren smaller dan 6 meter moeten de steile delen van zowel de noord- als zuidoever worden bepaald, bij bredere wateren de oevers afzonderlijk. Uitgaande van een homerange van 300 meter dient minimaal 10 meter geschikte oever aanwezig te zijn (dus 1m per 30 meter)#1</description>
 						<author>"Valesca Harezlak"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -75,9 +89,9 @@ Geen
 							<parameter cat="meer dan 1m : 30 m" HSI="1"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Oeversubstraat">
+					<ResponseCurve name="substraatdoorgraafbaarheid_oever">
 						<type>categorical</type>
-						<layername>"Oeversubstraat"</layername>
+						<layername>"substraatdoorgraafbaarheid_oever"</layername>
 						<unit>"-"</unit>
 						<statistic>Oeversubstraat</statistic>
 						<description>"Oeversubstraat"</description>
@@ -91,9 +105,9 @@ Geen
 							<parameter cat="doorgraafbaar" HSI="1"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Bedekking oevervegetatie">
+					<ResponseCurve name="oevervegetatie_bedekkingsgraad">
 						<type>scalar</type>
-						<layername>"Bedekking oevervegetatie"</layername>
+						<layername>"oevervegetatie_bedekkingsgraad"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Bedekking oevervegetatie"</description>
@@ -108,9 +122,9 @@ Geen
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Beheer oevervegetatie">
+					<ResponseCurve name="oevervegetatie_beheer">
 						<type>categorical</type>
-						<layername>"Beheer oevervegetatie"</layername>
+						<layername>"oevervegetatie_beheer"</layername>
 						<unit>"-"</unit>
 						<statistic>Beheer</statistic>
 						<description>"Door vertrapping van de burchten kunnen muskusratten niet voorkomen bij beweiding. Maaien maakt de beschutting minder"</description>
@@ -125,9 +139,9 @@ Geen
 							<parameter cat="niets doen" HSI="1"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Hoogte vegetatie">
+					<ResponseCurve name="oevervegetatie_hoogte">
 						<type>range / categorical</type>
-						<layername>"Hoogte oevervegetatie"</layername>
+						<layername>"oevervegetatie_hoogte"</layername>
 						<unit>"cm"</unit>
 						<statistic>average</statistic>
 						<description>"Als de oever niet goed doorgraafbaar is, worden er burchten gemaakt. Hiervoor dient voldoende oevervegetatie in de omgeving aanwezig te zijn #1. "</description>
@@ -138,7 +152,7 @@ Geen
 						</references>
 						<valuesRangeCategorical>
 							<parameter rangemin="0" rangemax="50" cat="1" HSI="0"/>
-							<parameter rangemin="50" rangemax="999" cat="2" HSI="1"/>
+							<parameter rangemin="50" rangemax="999999" cat="2" HSI="1"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
 				</KnowledgeRules>
@@ -146,22 +160,7 @@ Geen
 		</ModelType>
 	</Autecology>
 	<ContentDescription>
-		<Description language="NL"><text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-De muskusrat is in Nederland ingevoerd voor de pelsfokkerij en is door ontsnapping nu de grootste woelmuissoort in Europa #1. De muskusrat komt nu in grote delen van Europa voor met uitzondering van Groot-Brittannië, Ierland, het grootste deel van Scandinavië en Zuid-Europa #2. In Nederland is de muskusrat bijna overal te vinden, met uitzondering van de Veluwe, het westelijk deel van Noord- en Zuid-Holland, Schouwen-Duivenland en Walcheren #1. 
-De muskusrat heeft een sterk aanpassingsvermogen en komt voor in verschillende watertypen, zowel in afgelegen moerassen als in waterpartijen binnen verstedelijkte gebieden. De soort heeft echter een voorkeur voor stagnante wateren met relatief steile oevers en een rijke oeverbegroeiïng #1. De muskusrat is erg schuw en is meestal alleen ’s nachts waar te nemen. In het najaar trekt de muskusrat instinctief naar diepere sloten, waar de kans op opgesloten raken door ijs kleiner is. Het territorium van de muskusrat is 1 tot 5 km2 groot en weert andere muskusratten uit dit gebied #2. 
-Afhankelijk van het oeversubstraat kan de muskusrat twee typen nesten bouwen. De voorkeur heeft om een burcht (hol) in een steile oever te graven, maar wanneer oevers niet begraafbaar zijn worden er ook wel burchten gebouwd van riet- en grasstengels. De ingang van de burcht wordt onder water aangelegd. Bij kleine veranderingen in het waterpeil, wordt de ingang verplaatst en de oude ingang afgesloten. Deze burchten worden bij voorkeur op een zuidelijke geëxponeerde oever aangelegd en in mindere mate in grote wateren #1. 
-De muskusrat wordt met name in oevers met rijke oeverbegroeiing aangetroffen en bij niet al te grote wateren. Dit laatste is een gevolg van het feit dat golfslag de oever kan eroderen wat een bedreiging vormt voor de burchten van de muskusrat. In droogvallende watergangen is er slechts zelden bewoning aangetroffen. Poldersloten worden in de winter verlaten. Hiervoor kan de regel toegepast worden dat in de winter de waterdiepte > 1 meter moet zijn #1.
-Voedselhabitat en strategie
-De muskusrat is hoofdzakelijk een herbivoor. Hij foerageert in Nederland voornamelijk op wortels van riet, lisdodde, biezen, kruiden, gras en bieten #1. Daarnaast wordt er ook wel eens dierlijk voedsel gegeten, zoals weekdieren, kreeften en vis #1 en #2. Jonge muskusratten eten voornamelijk kruiden. 
-NB. 
-Reproductie en migratie
-In maart tot september vindt de voortplanting van de muskusrat plaats. De draagtijd van de zwangere vrouwtjes is 30 dagen. Er zijn soms 2 tot 3 worpen, met maximaal 6 jongen. De sterfte van de jongen in het eerste jaar ligt circa rond de 70%. De vrouwtjes die uit de eerste worp voortkomen kunnen nog aan de voortplanting van dat zelfde jaar deelnemen #1,doordat de jongen na de vijfde maand geslachtsrijp zijn #2. 
-Twee keer in het jaar trek de muskusrat erop uit. In het voorjaar gaan de mannetjes (de rammen) en de vrouwtjes (de moertjes) op zoek naar een geschikte partner ten behoeve van de voortplanting #2. In het najaar worden de jonge dieren door de ouder weggestuurd en gaan deze op zoek naar een eigen territorium #2. 
-Mortaliteit
-Zelf heeft de muskusrat in Nederland weinig natuurlijke vijanden. Echter op de jonge dieren wordt wel gejaagd, onder andere door de vos, bunzing en hermelijn en mogelijk ook snoek en snoekbaars #1. Een muskusrat wordt ongeveer 3 jaar oud. Echter, 80-90% redt de eerste winter niet #2. 
-]]></text>
+		<Description language="NL"><text><![CDATA[<h3 id="Muskusrat-Ondatrazibethicus-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De muskusrat is in Nederland ingevoerd voor de pelsfokkerij en is door ontsnapping nu de grootste woelmuissoort in Europa <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>. De muskusrat komt nu in grote delen van Europa voor met uitzondering van Groot-Brittannië, Ierland, het grootste deel van Scandinavië en Zuid-Europa <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2">#2</a>. In Nederland is de muskusrat bijna overal te vinden, met uitzondering van de Veluwe, het westelijk deel van Noord- en Zuid-Holland, Schouwen-Duivenland en Walcheren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>. </p><p>De muskusrat heeft een sterk aanpassingsvermogen en komt voor in verschillende watertypen, zowel in afgelegen moerassen als in waterpartijen binnen verstedelijkte gebieden. De soort heeft echter een voorkeur voor stagnante wateren met relatief steile oevers en een rijke oeverbegroeiïng <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>. De muskusrat is erg schuw en is meestal alleen ’s nachts waar te nemen. In het najaar trekt de muskusrat instinctief naar diepere sloten, waar de kans op opgesloten raken door ijs kleiner is. Het territorium van de muskusrat is 1 tot 5 km2 groot en weert andere muskusratten uit dit gebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2">#2</a>. </p><p>Afhankelijk van het oeversubstraat kan de muskusrat twee typen nesten bouwen. De voorkeur heeft om een burcht (hol) in een steile oever te graven, maar wanneer oevers niet begraafbaar zijn worden er ook wel burchten gebouwd van riet- en grasstengels. De ingang van de  burcht wordt onder water aangelegd. Bij kleine veranderingen in het waterpeil, wordt de ingang verplaatst en de oude ingang afgesloten. Deze burchten worden bij voorkeur op een zuidelijke geëxponeerde oever aangelegd en in mindere mate in grote wateren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>. </p><p>De muskusrat wordt met name in oevers met rijke oeverbegroeiing aangetroffen en bij niet al te grote wateren. Dit laatste is een gevolg van het feit dat golfslag de oever kan eroderen wat een bedreiging vormt voor de burchten van de muskusrat. In droogvallende watergangen is er slechts zelden bewoning aangetroffen. Poldersloten worden in de winter verlaten. Hiervoor kan de regel toegepast worden dat in de winter de waterdiepte &gt; 1 meter moet zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>.</p><h3 id="Muskusrat-Ondatrazibethicus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De muskusrat is hoofdzakelijk een herbivoor. Hij foerageert in Nederland voornamelijk op wortels van riet, lisdodde, biezen, kruiden, gras en bieten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>. Daarnaast wordt er ook wel eens dierlijk voedsel gegeten, zoals weekdieren, kreeften en vis <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a> en <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2">#2</a>. Jonge muskusratten eten voornamelijk kruiden.  </p><p>NB. </p><h3 id="Muskusrat-Ondatrazibethicus-Reproductieenmigratie">Reproductie en migratie</h3><p>In maart tot september vindt de voortplanting van de muskusrat plaats. De draagtijd van de zwangere vrouwtjes is 30 dagen. Er zijn soms 2 tot 3 worpen, met maximaal 6 jongen. De sterfte van de jongen in het eerste jaar ligt circa rond de 70%. De vrouwtjes die uit de eerste worp voortkomen kunnen nog aan de voortplanting van dat zelfde jaar deelnemen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>,doordat de jongen na de vijfde maand geslachtsrijp zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2">#2</a>.  </p><p>Twee keer in het jaar trek de muskusrat erop uit. In het voorjaar gaan de mannetjes (de rammen) en de vrouwtjes (de moertjes) op zoek naar een geschikte partner ten behoeve van de voortplanting <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2">#2</a>. In het najaar worden de jonge dieren door de ouder weggestuurd en gaan deze op zoek naar een eigen territorium <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2">#2</a>. </p><h3 id="Muskusrat-Ondatrazibethicus-Mortaliteit">Mortaliteit</h3><p>Zelf heeft de muskusrat in Nederland weinig natuurlijke vijanden. Echter op de jonge dieren wordt wel gejaagd, onder andere door de vos, bunzing en hermelijn en mogelijk ook snoek en snoekbaars <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1">#1</a>. Een muskusrat wordt ongeveer 3 jaar oud. Echter, 80-90% redt de eerste winter niet <a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2">#2</a>.    </p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET # for reading and writing *.xml files
 from collections import OrderedDict 
 
 # set location of input maps and output 
-os.chdir("d:\\Projects\\Habitat\\Marc_Project_v2\\") 
+os.chdir("d:\\Projects\\Habitat\\Marc_Project_v3\\") 
 print("Workdirectory : " + os.getcwd())
 
 InputDir = "Test_invoerfiles\\Maps\\"
@@ -20,11 +20,7 @@ OutputDir = "OutputMaps\\"
 
 kr_file = "Plecoglossus_altivelis.xml"
 system_to_model = "adult"
-structure = OrderedDict()
-structure["Main model"] = ["Spawning","Egg_Incubation"]
-structure["Spawning"] = ["FlowVelocity","SuspendedMatter"]
-structure["Egg_incubation"] = ["WaterDepth","DissolvedOxygen"]
-
+flow_diagram ="Ayu_habitat"
 
 #endregion
 
@@ -33,6 +29,7 @@ structure["Egg_incubation"] = ["WaterDepth","DissolvedOxygen"]
 #region Read XML knowledge rule file
 #1 . read the species specific information and response curves
 root = ET.parse(os.path.join(KnowledgeRuleDir,kr_file)).getroot()
+flow_diagram_overview = make_flowdiagram_dict(root,system_to_model)
 autecology_overview = make_knowledgerules_dict(root, system_to_model)
 response_curves_overview = autecology_overview["knowledgerules"]
 
@@ -44,7 +41,8 @@ print("System : " + autecology_overview["systemname"])
 
 #region Setup model structure (currently 2 layers allowed)
 #2. Setup model structure
-### !!! NEEDS TO BE AUTOMISED BASED ON FlowDiagram
+structure = get_flow_diagram_structure(flow_diagram_overview, flow_diagram)
+equations = get_flow_diagram_equations(flow_diagram_overview, flow_diagram)
 (model_list,HSI_list) = make_hyrarchical_model_structure(structure)
 #endregion
 
@@ -88,7 +86,7 @@ knowledgerules_list = run_knowledgerule_models(knowledgerules_list)
 
 #region Fill HSI models
 #7. connect submodels (current situation is that always the minimum of all HSI will be taken)
-model_list = connect_and_run_hyrarchical_structure(structure, HSI_list, knowledgerules_list)
+model_list = connect_and_run_hyrarchical_structure(structure, equations, HSI_list, knowledgerules_list)
 
 #region Export output to file
 #8. Export submodel results

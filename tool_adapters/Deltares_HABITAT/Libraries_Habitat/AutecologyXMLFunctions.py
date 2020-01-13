@@ -28,6 +28,37 @@ def make_find(element_name_list):
 	return(full_string)
 
 
+def make_flowdiagram_dict(root,systemname):
+	#1. read the species and system specific flowdiagrams
+
+	#configuration
+	modeltypename = "HSI"
+	
+	# get system type tag
+	type_tag_modeltype = root.findall(make_find(["Autecology","ModelType"]))
+	type_tag_applicable_modeltype = [f for f in type_tag_modeltype if(modeltypename in f.get("name"))]
+	type_tag_system = type_tag_applicable_modeltype[0].findall(make_find(["System"]))
+	type_tag_applicable_system = [e for e in type_tag_system if(systemname in e.get("name"))]
+	system_root = type_tag_applicable_system[0]
+
+	# get system flow diagrams type tag
+	type_tag_systemflowdiagram = system_root.find(make_find(["SystemFlowDiagrams"]))
+
+	#0. Make flow diagram structures
+	syfd_overview = []
+	for syfd in type_tag_systemflowdiagram:
+		flow_diagram_name = syfd.get("name")
+		from_overview = []
+		for fromlink in syfd:
+			fromname = fromlink.get("name")
+			label = fromlink.find(make_find(["label"])).text
+			equation = fromlink.find(make_find(["equation"])).text
+			to = [tolink.text.replace('"','') for tolink in fromlink.findall(make_find(["To"]))]
+			from_overview.append(OrderedDict([("from", fromname),("label",label),("equation",equation),("to",to)]))
+		syfd_overview.append(OrderedDict([("name",flow_diagram_name),("structure",from_overview)]))
+
+	return(syfd_overview)
+
 def make_knowledgerules_dict(root,systemname):
 	# 1 . read the species specific information and response curves
 
@@ -141,6 +172,31 @@ def make_knowledgerules_dict(root,systemname):
 	autecology_overview["knowledgerules"] = kr_dict
 	return(autecology_overview)
 
+
+def get_flow_diagram_structure(flow_diagram_overview, flow_diagram_name):
+	diagram = [struct["structure"] for struct in flow_diagram_overview if(struct["name"] == flow_diagram_name)]
+	if(len(diagram) == 0):
+		_AutecologyXMLLogger.Error("No flow diagram structure found with the name :" + flow_diagram_name + ".")
+		return()
+	else:
+		structure = OrderedDict()
+		for fromlink in diagram[0]:
+			structure[fromlink["from"]] = fromlink["to"]
+
+	return(structure)
+
+def get_flow_diagram_equations(flow_diagram_overview,flow_diagram_name):
+	diagram = [struct["structure"] for struct in flow_diagram_overview if(struct["name"] == flow_diagram_name)]
+	if(len(diagram) == 0):
+		_AutecologyXMLLogger.Error("No flow diagram structure found with the name :" + flow_diagram_name + ".")
+		return()
+	else:
+		equations = OrderedDict()
+		for fromlink in diagram[0]:
+			equations[fromlink["from"]] = fromlink["equation"]
+
+	return(equations)
+
 def make_hyrarchical_model_structure(structure):
 	#2. Setup model structure
 	### !!! NEEDS TO BE AUTOMISED BASED ON FlowDiagram
@@ -190,7 +246,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 						model_list[nr].Activities.Add(knowledgerules_list[nr2])
 
 			else:
-				_AutecologyXMLLogger.Warn("Current responsecurve type is not yet available :" +\
+				_AutecologyXMLLogger.Error("Current responsecurve type is not yet available :" +\
 						autecology_dict["knowledgerules"][knwlrl2]["type"])
 
 		elif(knwlrl_categorie2 == "FormulaBased"):
@@ -200,7 +256,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 			knowledgerules_list[nr2].Formulas.Clear()
 
 		else:
-			_AutecologyXMLLogger.Warn("Current knowledge rule categorie is not yet available :" +\
+			_AutecologyXMLLogger.Error("Current knowledge rule categorie is not yet available :" +\
 						knwlrl_categorie2)
 
 	return(knowledgerules_list)
@@ -263,7 +319,7 @@ def run_knowledgerule_models(knowledgerules_list):
 		knowledgerules_list[nr4].OutputGridCoverages[0].Name = knwlrl4.Name + "_hsi"
 	return(knowledgerules_list)
 
-def connect_and_run_hyrarchical_structure(structure, HSI_list, knowledgerules_list):
+def connect_and_run_hyrarchical_structure(structure, equations, HSI_list, knowledgerules_list):
 	#7. connect submodels (current situation is that always the minimum of all HSI will be taken)
 	HSI_equation = []
 	for nr5, revhsimodel5 in enumerate(reversed(HSI_list)):
@@ -286,8 +342,14 @@ def connect_and_run_hyrarchical_structure(structure, HSI_list, knowledgerules_li
 						LinkMaps(knwlrl5, knwlrl5.Name + "_hsi", revhsimodel5, "Grid_" + str(countnr))
 					countnr = countnr + 1
 
-		#FOR NOW GIVE EQUATION FOR CALCULATING HSI MANUALLY. BEST IMPLEMENTATION IS AS FORMULA BASED KNOWLEDGE RULE.
-		HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "min("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
+		if(equations[origin_model_name] == "min"):
+			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "min("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
+		elif(equations[origin_model_name] == "max"):
+			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "max("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
+		else:
+			_AutecologyXML.Warn("Current equation for HSI model structure is not yet available :" +\
+						equations[origin_model_name])
+		
 		revhsimodel5.Formulas.Add(HSI_equation[nr5])
 		RunModel(revhsimodel5, True)
 

@@ -24,13 +24,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language ="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-Deze dosis-effect relaties zijn gevalideerd op het Markermeer.
-
-Toepasbaarheid
-Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)
-.]]></text>
+						<text><![CDATA[<h1 id="Aarvederkruid-Myriophyllumspicatum-Dosis-effectrelaties">Dosis-effect relaties</h1><p>Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-3">#3</a>). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect waterplanten hebben op dit lichtklimaat, leidde in het <a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow">NMIJ project</a> tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-5">#5</a>). In (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-6">#6</a>) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van aarvederkruid in de Macromij benadering en in de nieuwe mixed model benadering.</p><p>De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.</p><p>Doorzicht:<br> P_myrio = 1*exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte))</p><p>Extinctie:<br> P_myrio = 1*exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte))</p><p>HGI myrio = 1 / (1+P_myrio)</p><p>deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br> diepte_zom = de gemiddelde waterdiepte in de zomer (m)<br> doorzicht = secchi diepte (m)<br> extinctie = extinctiecoefficient (1/m)<br> strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p><p>Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's <a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a> en <a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a>.</p><h1 id="Aarvederkruid-Myriophyllumspicatum-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Aarvederkruid-Myriophyllumspicatum-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -51,7 +45,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 						<equation>"1 / (1+P_myrio)"</equation>
 						<Parameters>
 							<valuesScalar dataname="P_myrio" type="scalar" unit="-">
-								<parameter min="0" max="999"/>
+								<parameter min="0" max="1"/>
 							</valuesScalar>
 						</Parameters>
 					</FormulaBased>
@@ -125,29 +119,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[Habitatbeschrijving
-Aarvederkruid komt zowel in zoet als in brak voedselrijk water voor. De plant komt van nature voor in Eurazië en heeft zich daarvandaan verspreid naar Noord-Amerika waar het een invasieve soort is geworden. De plant komt over het algemeen voor op een diepte van 0,5 tot 3,5 m op een bodem van zand, leem, zavel, veen of klei. De groeiplaatsen waar ze gevonden kunnen worden zijn: kleisloten, afgravingen, duinplassen, laagveenplassen en in spoorsloten. Aarvederkruid is vrij algemeen in het westen van Nederland (maar vrij zeldzaam in Zeeland), in het noordelijk zeekleigebied, het rivierengebied en in stedelijke omgeving. Elders vrij zeldzaam tot zeldzaam (#1,#2).
-
-Dosis-effect relaties
-Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (#3). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect waterplanten hebben op dit lichtklimaat, leidde in het NMIJ project tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (#5). In (#6) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van aarvederkruid in de Macromij benadering en in de nieuwe mixed model benadering.
-
-De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.
-
-Doorzicht:
-P_myrio = 1*exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte))
-
-Extinctie:
-P_myrio = 1*exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte))
-
-HGI myrio = 1 / (1+P_myrio)
-
-deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )
-diepte_zom = de gemiddelde waterdiepte in de zomer (m)
-doorzicht = secchi diepte (m)
-extinctie = extinctiecoefficient (1/m)
-strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)
-
-Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's doorzicht en extinctie.]]></text>
+			<text><![CDATA[<h1 id="Aarvederkruid-Myriophyllumspicatum-Habitatbeschrijving">Habitatbeschrijving</h1><p>Aarvederkruid komt zowel in zoet als in brak voedselrijk water voor. De plant komt van nature voor in Eurazië en heeft zich daarvandaan verspreid naar Noord-Amerika waar het een invasieve soort is geworden. De plant komt over het algemeen voor op een diepte van 0,5 tot 3,5 m op een bodem van zand, leem, zavel, veen of klei. De groeiplaatsen waar ze gevonden kunnen worden zijn: kleisloten, afgravingen, duinplassen, laagveenplassen en in spoorsloten. Aarvederkruid is vrij algemeen in het westen van Nederland (maar vrij zeldzaam in Zeeland), in het noordelijk zeekleigebied, het rivierengebied en in stedelijke omgeving. Elders vrij zeldzaam tot zeldzaam (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-1">#1</a>,<a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-2">#2</a>).</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

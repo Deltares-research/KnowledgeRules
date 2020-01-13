@@ -24,13 +24,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-Deze dosis-effect relaties zijn gevalideerd op het Markermeer.
-
-Toepasbaarheid
-Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)
-.]]></text>
+						<text><![CDATA[<h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Dosis-effectrelaties">Dosis-effect relaties</h1><p>Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-3">#3</a>). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect van waterplanten op dit lichtklimaat, leidde in het <a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow">NMIJ project</a> tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-5">#5</a>). In (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-6">#6</a>) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van doorgroeid fonteinkruid in de Macromij benadering en in de nieuwe mixed model benadering.</p><p>De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.</p><p>Doorzicht:<br> P_potaperf = 1*exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte)))</p><p>Extinctie:<br> P_potaperf =1*exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte)))</p><p>HGI Potaperf = 1 / (1+P_potaperf)</p><p>deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br> diepte_zom = de gemiddelde waterdiepte in de zomer (m)<br> doorzicht = secchi diepte (m)<br> extinctie = extinctiecoefficient (1/m)<br> strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p><p>Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's <a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a> en <a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a>.</p><h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -51,7 +45,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 						<equation>"1 / (1+P_potaperf)"</equation>
 						<Parameters>
 							<valuesScalar dataname="P_potaperf" type="scalar" unit="-">
-								<parameter min="0" max="999"/>
+								<parameter min="0" max="1"/>
 							</valuesScalar>
 						</Parameters>
 					</FormulaBased>
@@ -125,23 +119,7 @@ Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aan
 	</Autecology>
 	<ContentDescription>
 	<Description language="NL">
-		<text><![CDATA[Habitatbeschrijving
-Doorgroeid fonteinkruid komt voor op zonnige plaatsen in niet te ondiep, voedselrijk, zoet of zwak brak, stilstaand of stromend, neutraal tot kalkrijk water met een bodem van zand, leem, zavel of klei. Het kan gevonden worden in plassen, vijvers, kanalen, meren, rivieren, beken, brede sloten, toevoerkanalen van gemalen en in het zoetwatergetijdengebied.
-Doorgroeid fonteinkruid is plaatselijk algemeen in en langs het IJsselmeer en het Veluwemeer. Plaatselijk vrij algemeen in laagveengebieden, in het rivierengebied, in het noordoosten van het land en op Wieringen. Elders zeldzaam en zeer zeldzaam in Zuid-Limburg (alleen in het Maasdal). Het komt niet voor in het grootste deel van Zeeland en op de Waddeneilanden (#2).
-Dosis-effect relaties
-Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (#3). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect van waterplanten op dit lichtklimaat, leidde in het NMIJ project tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (#5). In (#6) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van doorgroeid fonteinkruid in de Macromij benadering en in de nieuwe mixed model benadering.
-De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.
-Doorzicht:
-P_potaperf = 1*exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte)))
-Extinctie:
-P_potaperf =1*exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte)))
-HGI Potaperf = 1 / (1+P_potaperf)
-deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )
-diepte_zom = de gemiddelde waterdiepte in de zomer (m)
-doorzicht = secchi diepte (m)
-extinctie = extinctiecoefficient (1/m)
-strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)
-Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's doorzicht en extinctie.]]></text>
+		<text><![CDATA[<h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Habitatbeschrijving">Habitatbeschrijving</h1><p>Doorgroeid fonteinkruid komt voor op zonnige plaatsen in niet te ondiep, voedselrijk, zoet of zwak brak, stilstaand of stromend, neutraal tot kalkrijk water met een bodem van zand, leem, zavel of klei. Het kan gevonden worden in plassen, vijvers, kanalen, meren, rivieren, beken, brede sloten, toevoerkanalen van gemalen en in het zoetwatergetijdengebied.<br> Doorgroeid fonteinkruid is plaatselijk algemeen in en langs het IJsselmeer en het Veluwemeer. Plaatselijk vrij algemeen in laagveengebieden, in het rivierengebied, in het noordoosten van het land en op Wieringen. Elders zeldzaam en zeer zeldzaam in Zuid-Limburg (alleen in het Maasdal). Het komt niet voor in het grootste deel van Zeeland en op de Waddeneilanden (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-2">#2</a>).</p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

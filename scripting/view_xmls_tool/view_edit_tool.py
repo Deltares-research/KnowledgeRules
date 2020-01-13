@@ -10,11 +10,17 @@ import sys
 import os
 import view_edit_tool_API
 from PyQt5 import QtCore, QtGui, QtWidgets
+import autecology_xml
 
 class UI_MainWindow(object):
-	def setupUi(self, MainWindow):
-		MainWindow.setObjectName("MainWindow")
-		MainWindow.resize(1121, 806)
+	def setupUI(self, MainWindow):
+
+		#start build up
+		self.MainWindow = MainWindow
+
+		self.MainWindow.setObjectName("MainWindow")
+		self.MainWindow.resize(1121, 806)
+		self.MainWindow.setMinimumSize(1121, 806)
 
 		self.path = os.path.realpath(__file__)
 
@@ -23,31 +29,54 @@ class UI_MainWindow(object):
 		font.setBold(True)
 		font.setWeight(75)
 
-		self.pushButton = QtWidgets.QPushButton(MainWindow)
+		self.mainlayout = QtWidgets.QGridLayout(self.MainWindow)
+
+		#Top button groupbox (box not shown)
+		self.groupBox_1 = QtWidgets.QGroupBox()
+		self.groupBox_1.setGeometry(QtCore.QRect(10, 5, 1081, 35))
+		self.groupBox_1.setObjectName("groupBox")
+		self.groupBox_1.setFlat(True)
+		self.boxlayout_1 = QtWidgets.QHBoxLayout(self.groupBox_1)
+		self.mainlayout.addWidget(self.groupBox_1)
+
+		self.pushButton = QtWidgets.QPushButton()
 		self.pushButton.setGeometry(QtCore.QRect(20, 10, 93, 28))
+		self.pushButton.setFixedSize(93, 28)
 		self.pushButton.setObjectName("pushButton")
 		self.pushButton.clicked.connect(self.load_file)
+		self.boxlayout_1.addWidget(self.pushButton)
 
-		self.pushButton_2 = QtWidgets.QPushButton(MainWindow)
+		self.pushButton_2 = QtWidgets.QPushButton()
 		self.pushButton_2.setGeometry(QtCore.QRect(120, 10, 93, 28))
+		self.pushButton_2.setFixedSize(93, 28)
 		self.pushButton_2.setObjectName("pushButton_2")
 		self.pushButton_2.clicked.connect(self.new_file)
+		self.boxlayout_1.addWidget(self.pushButton_2)
 
-		self.pushButton_3 = QtWidgets.QPushButton(MainWindow)
+		self.pushButton_3 = QtWidgets.QPushButton()
 		self.pushButton_3.setGeometry(QtCore.QRect(220, 10, 93, 28))
+		self.pushButton_3.setFixedSize(93, 28)
 		self.pushButton_3.setObjectName("pushButton_3")
 		self.pushButton_3.clicked.connect(self.save_file)
+		self.boxlayout_1.addWidget(self.pushButton_3)
 
-		self.pushButton_4 = QtWidgets.QPushButton(MainWindow)
+		self.spacer_1 = QtWidgets.QSpacerItem(780, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+		self.boxlayout_1.addSpacerItem(self.spacer_1)
+
+		self.pushButton_4 = QtWidgets.QPushButton()
 		self.pushButton_4.setGeometry(QtCore.QRect(1000, 10, 93, 28))
+		self.pushButton_4.setFixedSize(93, 28)
 		self.pushButton_4.setObjectName("pushButton_4")
 		self.pushButton_4.clicked.connect(self.quit)
+		self.boxlayout_1.addWidget(self.pushButton_4)
 
+		#Lower information groupbox
+		self.groupBox_2 = QtWidgets.QGroupBox()
+		self.groupBox_2.setGeometry(QtCore.QRect(10, 50, 1081, 751))
+		self.groupBox_2.setObjectName("groupBox")
+		self.boxlayout_2 = QtWidgets.QGridLayout(self.groupBox_2)
+		self.mainlayout.addWidget(self.groupBox_2)
 
-		self.groupBox_1 = QtWidgets.QGroupBox(MainWindow)
-		self.groupBox_1.setGeometry(QtCore.QRect(10, 50, 1081, 751))
-		self.groupBox_1.setObjectName("groupBox")
-		self.boxlayout_1 = QtWidgets.QGridLayout(self.groupBox_1)
 		self.scrollLayout = QtWidgets.QVBoxLayout()
 		self.scrollAreaWidgetContents = QtWidgets.QWidget()
 		self.scrollAreaWidgetContents.setLayout(self.scrollLayout)
@@ -58,19 +87,9 @@ class UI_MainWindow(object):
 		self.scrollArea.setWidgetResizable(True)
 		self.scrollArea.setObjectName("scrollArea")
 		self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-		self.boxlayout_1.addWidget(self.scrollArea)
+		self.boxlayout_2.addWidget(self.scrollArea)
+
 		
-		#EXAMPLE
-		# self.system_scrolllayout = QtWidgets.QVBoxLayout()		
-		# self.system_scrollwidget = QtWidgets.QWidget()
-		# self.system_scrollwidget.setLayout(self.system_scrolllayout)
-		# self.system_scroll = QtWidgets.QScrollArea()
-		# self.system_scroll.setWidgetResizable(True)
-		# self.system_scroll.setWidget(self.system_scrollwidget)
-		# self.boxlayout.addWidget(self.system_scroll)
-
-
-
 		self.label = QtWidgets.QLabel()
 		self.label.setGeometry(QtCore.QRect(10, 10, 81, 21))
 		self.label.setFont(font)
@@ -80,7 +99,6 @@ class UI_MainWindow(object):
 		self.textBrowser = QtWidgets.QTextBrowser()
 		self.textBrowser.setObjectName("textBrowser")
 		self.textBrowser.setFixedSize(1030, 31)
-		# self.textBrowser.setSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
 		self.scrollLayout.addWidget(self.textBrowser)
 		
 		self.label_2 = QtWidgets.QLabel()
@@ -108,18 +126,10 @@ class UI_MainWindow(object):
 		self.label_3.setObjectName("label_3")
 		self.scrollLayout.addWidget(self.label_3)
 
-		# self.scrollArea_2 = QtWidgets.QScrollArea(self.scrollAreaWidgetContents)
-		# self.scrollArea_2.setGeometry(QtCore.QRect(10, 180, 811, 221))
-		# self.scrollArea_2.setWidgetResizable(True)
-		# self.scrollArea_2.setObjectName("scrollArea_2")
-		# self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-		# self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 809, 219))
-		# self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
-		# self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
 		self.textBrowser_2 = QtWidgets.QTextBrowser()
 		self.textBrowser_2.setGeometry(QtCore.QRect(10, 180, 900, 221))
 		self.textBrowser_2.setObjectName("textBrowser_2")
-		self.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+		self.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
 		self.scrollLayout.addWidget(self.textBrowser_2)
 
 		self.label_4 = QtWidgets.QLabel()
@@ -145,7 +155,7 @@ class UI_MainWindow(object):
 		self.comboBox_2.setGeometry(QtCore.QRect(10, 480, 900, 22))
 		self.comboBox_2.setObjectName("comboBox_2")
 		self.scrollLayout.addWidget(self.comboBox_2)
-
+		
 		self.groupBox = QtWidgets.QGroupBox()
 		self.groupBox.setGeometry(QtCore.QRect(10, 510, 900, 231))
 		self.groupBox.setObjectName("groupBox")
@@ -160,12 +170,14 @@ class UI_MainWindow(object):
 		self.system_scroll.setWidget(self.system_scrollwidget)
 		self.boxlayout.addWidget(self.system_scroll)
 
-		self.retranslateUi(MainWindow)
-		QtCore.QMetaObject.connectSlotsByName(MainWindow)
+		self.retranslateUi()
+		QtCore.QMetaObject.connectSlotsByName(self.MainWindow)
 
-	def retranslateUi(self, MainWindow):
+
+
+	def retranslateUi(self):
 		_translate = QtCore.QCoreApplication.translate
-		MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+		self.MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
 		self.pushButton.setText(_translate("MainWindow", "Open"))
 		self.pushButton_2.setText(_translate("MainWindow", "New"))
 		self.pushButton_3.setText(_translate("MainWindow", "Save"))
@@ -179,9 +191,35 @@ class UI_MainWindow(object):
 
 
 	def load_file(self):
+		
+		#load objects
 		objAPI = view_edit_tool_API.API()
+		AutXML = autecology_xml.AutecologyXML(None)	
+		
+		#reset
+		self.cur_language = None
+		self.systemname = None
+		self.systems = None
+
+		#load and refresh data
 		self = objAPI.load_file(self)
-		objAPI.refresh_data(self)
+		(self, AutXML) = objAPI.refresh_data(self, AutXML)
+		
+		#reset connections
+		try:
+			self.comboBox.currentIndexChanged.disconnect()
+		except:
+			pass
+
+		try:
+			self.comboBox_2.currentIndexChanged.disconnect()
+		except:
+			pass
+			
+		#set connections
+		self.comboBox.currentIndexChanged.connect(lambda: objAPI.refresh_language(self, self.cur_language))
+		self.comboBox_2.currentIndexChanged.connect(lambda: objAPI.refresh_group_data(self, AutXML, self.systemname, self.groupBox))
+
 		return()
 
 	def new_file(self):
@@ -210,11 +248,28 @@ class UI_MainWindow(object):
 		return()		
 
 class UI_StartWindow(object):
-	
-	def setupUi(self, StartWindow):
-		StartWindow.setObjectName("StartWindow")
-		StartWindow.resize(1122, 700)
-		self.label = QtWidgets.QLabel(StartWindow)
+
+	def setupUI(self, StartWindow):
+		
+		self.StartWindow = StartWindow
+
+		self.StartWindow.setObjectName("StartWindow")
+		self.StartWindow.resize(1122, 700)
+
+		self.path = os.path.realpath(__file__)
+
+		font = QtGui.QFont()
+		font.setPointSize(10)
+		font.setBold(True)
+		font.setWeight(75)
+
+		self.groupBox = QtWidgets.QGroupBox(self.StartWindow)
+		self.groupBox.setGeometry(QtCore.QRect(10, 10, 1102, 690))
+		self.groupBox.setObjectName("groupBox")
+		self.boxlayout = QtWidgets.QGridLayout(self.groupBox)
+
+
+		self.label = QtWidgets.QLabel()
 		self.label.setGeometry(QtCore.QRect(290, 20, 501, 61))
 		font = QtGui.QFont()
 		font.setPointSize(16)
@@ -224,7 +279,8 @@ class UI_StartWindow(object):
 		self.label.setTextFormat(QtCore.Qt.AutoText)
 		self.label.setAlignment(QtCore.Qt.AlignCenter)
 		self.label.setObjectName("label")
-		self.label_2 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.label)
+		self.label_2 = QtWidgets.QLabel()
 		self.label_2.setGeometry(QtCore.QRect(290, 70, 501, 61))
 		font = QtGui.QFont()
 		font.setPointSize(12)
@@ -234,7 +290,8 @@ class UI_StartWindow(object):
 		self.label_2.setTextFormat(QtCore.Qt.AutoText)
 		self.label_2.setAlignment(QtCore.Qt.AlignCenter)
 		self.label_2.setObjectName("label_2")
-		self.label_3 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.label_2)
+		self.label_3 = QtWidgets.QLabel()
 		self.label_3.setGeometry(QtCore.QRect(290, 110, 501, 61))
 		font = QtGui.QFont()
 		font.setPointSize(12)
@@ -244,47 +301,72 @@ class UI_StartWindow(object):
 		self.label_3.setTextFormat(QtCore.Qt.AutoText)
 		self.label_3.setAlignment(QtCore.Qt.AlignCenter)
 		self.label_3.setObjectName("label_3")
-		self.graphicsView = QtWidgets.QGraphicsView(StartWindow)
+		self.boxlayout.addWidget(self.label_3)
+		self.graphicsView = QtWidgets.QGraphicsView()
 		self.graphicsView.setGeometry(QtCore.QRect(130, 170, 841, 421))
 		self.graphicsView.setObjectName("graphicsView")
-		self.label_4 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.graphicsView)
+		self.label_4 = QtWidgets.QLabel()
 		self.label_4.setGeometry(QtCore.QRect(160, 600, 781, 16))
 		self.label_4.setObjectName("label_4")
-		self.label_5 = QtWidgets.QLabel(StartWindow)
+		self.boxlayout.addWidget(self.label_4)
+		self.label_5 = QtWidgets.QLabel()
 		self.label_5.setGeometry(QtCore.QRect(160, 620, 781, 16))
 		self.label_5.setObjectName("label_5")
+		self.boxlayout.addWidget(self.label_5)
 
-		self.retranslateUi(StartWindow)
-		QtCore.QMetaObject.connectSlotsByName(StartWindow)
+		self.retranslateUi()
+		QtCore.QMetaObject.connectSlotsByName(self.StartWindow)
 
-	def retranslateUi(self, StartWindow):
+	def retranslateUi(self):
 		_translate = QtCore.QCoreApplication.translate
-		StartWindow.setWindowTitle(_translate("StartWindow", "Dialog"))
+		self.StartWindow.setWindowTitle(_translate("StartWindow", "Dialog"))
 		self.label.setText(_translate("StartWindow", "Autecology"))
 		self.label_2.setText(_translate("StartWindow", "Data storage"))
 		self.label_3.setText(_translate("StartWindow", "View & editting data tool"))
-		self.label_4.setText(_translate("StartWindow", "© Stichting Deltares , the tool and data supplied in the Autecology project fall under the GNU General Public License v3.0."))
-		self.label_5.setText(_translate("StartWindow", "Please contact the original author of the tool M.P. Weeber is any questions arrise (marc.weeber at deltares.nl)"))
+		self.label_4.setText(_translate("StartWindow", "© Stichting Deltares , this tool and the data fall under the GNU General Public License v3.0."))
+		self.label_5.setText(_translate("StartWindow", "Please contact the original author of the tool M.P. Weeber if any questions arrises (marc.weeber at deltares.nl)"))
+
+
+class UI_Application(object):
+
+	def start_up(self):
+		#needed to start the screens
+		self.StartUp = QtWidgets.QDialog()
+		self.StartUp.show()
+	
+	def run_startwindow(self):
+		self.ui_startwindow= UI_StartWindow()
+		self.StartWindow = QtWidgets.QDialog()
+		self.ui_startwindow.setupUI(self.StartWindow)
+		self.StartWindow.show()
 
 	def run_mainwindow(self):
-		StartWindow.close()
+		self.StartWindow.close()
 		self.ui_mainwindow= UI_MainWindow()
 		self.MainWindow = QtWidgets.QDialog()
-		self.ui_mainwindow.setupUi(self.MainWindow)
+		self.MainWindow.setMinimumSize(1121, 806)
+		flags = QtCore.Qt.WindowFlags()
+		flags |= QtCore.Qt.Window
+		flags |= QtCore.Qt.CustomizeWindowHint
+		flags |= QtCore.Qt.WindowTitleHint
+		flags |= QtCore.Qt.WindowMinimizeButtonHint
+		flags |= QtCore.Qt.WindowMaximizeButtonHint
+		flags |= QtCore.Qt.WindowCloseButtonHint
+		self.MainWindow.setWindowFlags(flags)
+		self.ui_mainwindow.setupUI(self.MainWindow)
 		self.MainWindow.show()
 
 
 if __name__ == "__main__":
 	import sys
 	app = QtWidgets.QApplication(sys.argv)
-	StartWindow = QtWidgets.QDialog()
-	
+
 	#Start Window
-	ui = UI_StartWindow()
-	ui.setupUi(StartWindow)
-	StartWindow.show()
-
+	ui = UI_Application()
+	ui.start_up()
+	QtCore.QTimer.singleShot(0,ui.run_startwindow)
 	QtCore.QTimer.singleShot(3000, ui.run_mainwindow)
-
+	
 	sys.exit(app.exec_())
 

@@ -36,12 +36,48 @@ Er is geen voorbeeldproject beschikbaar.
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="Habitat_geschiktheid">
+							<label>"Habitat_geschiktheid"</label>
+							<equation>geometric_average</equation>
+							<To>Voorplanting</To>
+							<To>Voedsel_Beschutting</To>
+							<To>Waterkwaliteit</To>
+						</From>
+						<From name="Voortplanting">
+							<label>"Voortplanting"</label>
+							<equation>min</equation>
+							<To>substraat_paai</To>
+							<To>diepte</To>
+							<To>temperatuur_paai</To>
+							<To>zuurstofgehalte_ei</To>
+							<To>chloridegehalte_ei</To>
+							<To>pH_ei</To>
+							<To>stroomsnelheid_larve</To>
+						</From>
+						<From name="Voedsel_Beschutting">
+							<label>"Voedsel_Beschutting"</label>
+							<equation>min</equation>
+							<To>waterplanten</To>
+							<To>zichtdiepte</To>
+							<To>sediment</To>
+							<To>stroomsnelheid_adult</To>
+						</From>
+						<From name="Waterkwaliteit">
+							<label>"Waterkwaliteit"</label>
+							<equation>min</equation>
+							<To>temperatuur_adult</To>
+							<To>zuurstofgehalte_adult</To>
+							<To>chloridegehalte_adult</To>
+							<To>pH_adult</To>
+							<To>trofie</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>		
-					<ResponseCurve name="Substraat_paai">
+					<ResponseCurve name="substraat_paai">
 						<type>categorical</type>
-						<layername>"Substraat"</layername>
+						<layername>"substraat"</layername>
 						<unit>"-"</unit>
 						<statistic>Substraat</statistic>
 						<description>"Paaisubstraat"</description>
@@ -57,9 +93,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter cat="groter dan 0.5" HSI="1"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Diepte">
+					<ResponseCurve name="diepte">
 						<type>scalar</type>
-						<layername>"Diepte"</layername>
+						<layername>"diepte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Diepte"</description>
@@ -76,9 +112,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="200" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Temperatuur_paai">
+					<ResponseCurve name="temperatuur_paai">
 						<type>scalar</type>
-						<layername>"Temperatuur"</layername>
+						<layername>"temperatuur"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Temperatuur (paai)"</description>
@@ -96,9 +132,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="24" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zuurstofgehalte_ei">
+					<ResponseCurve name="zuurstofgehalte_ei">
 						<type>scalar</type>
-						<layername>"Zuurstofgehalte"</layername>
+						<layername>"zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>minimum</statistic>
 						<description>"Minimum zuurstofgehalte (ei)"</description>
@@ -113,9 +149,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="7.0" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Chloride_ei">
+					<ResponseCurve name="chloridegehalte_ei">
 						<type>scalar</type>
-						<layername>"Chloride"</layername>
+						<layername>"chloridegehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>maximum</statistic>
 						<description>"Maximum chloride (ei)"</description>
@@ -148,9 +184,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="10.5" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid_larve">
+					<ResponseCurve name="stroomsnelheid_larve">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid"</layername>
+						<layername>"stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
 						<description>"Stroomsnelheid (larve)"</description>
@@ -165,9 +201,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="10" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Waterplanten">
+					<ResponseCurve name="waterplanten">
 						<type>scalar</type>
-						<layername>"Waterplanten"</layername>
+						<layername>"waterplanten"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
 						<description>"Bedekking van waterplanten"</description>
@@ -184,9 +220,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="0.3"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zichtdiepte">
+					<ResponseCurve name="zichtdiepte">
 						<type>scalar</type>
-						<layername>"Zichtdiepte"</layername>
+						<layername>"zichtdiepte"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Zichtdiepte"</description>
@@ -202,7 +238,7 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="3" HSI="0.3"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Sediment">
+					<ResponseCurve name="sediment">
 						<type>scalar</type>
 						<layername>"PercentageKleibodem"</layername>
 						<unit>"%"</unit>
@@ -218,9 +254,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="100" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Stroomsnelheid_adult">
+					<ResponseCurve name="stroomsnelheid_adult">
 						<type>scalar</type>
-						<layername>"Stroomsnelheid"</layername>
+						<layername>"stroomsnelheid"</layername>
 						<unit>"cm/s"</unit>
 						<statistic>average</statistic>
 						<description>"Stroomsnelheid (adult)"</description>
@@ -235,9 +271,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="25" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Temperatuur_adult">
+					<ResponseCurve name="temperatuur_adult">
 						<type>scalar</type>
-						<layername>"Temperatuur"</layername>
+						<layername>"temperatuur"</layername>
 						<unit>"graden Celsius"</unit>
 						<statistic>average</statistic>
 						<description>"Temperatuur (adult)"</description>
@@ -253,9 +289,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="30" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zuurstofgehalte_adult">
+					<ResponseCurve name="zuurstofgehalte_adult">
 						<type>scalar</type>
-						<layername>"Zuurstofgehalte"</layername>
+						<layername>"zuurstofgehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>average</statistic>
 						<description>"Gemiddeld zuurstofgehalte (adult)"</description>
@@ -270,9 +306,9 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="3" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Zoutgehalte_adult">
+					<ResponseCurve name="chloridegehalte_adult">
 						<type>scalar</type>
-						<layername>"Zoutgehalte"</layername>
+						<layername>"chloridegehalte"</layername>
 						<unit>"mg/l"</unit>
 						<statistic>maximum</statistic>
 						<description>"Maximum chloridegehalte"</description>
@@ -307,7 +343,7 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="10.5" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Totaalfosfaatgehalte">
+					<ResponseCurve name="trofie">
 						<type>categorical</type>
 						<layername>"TotaalFosfaatgehalte"</layername>
 						<unit>"-"</unit>
@@ -331,26 +367,7 @@ Er is geen voorbeeldproject beschikbaar.
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-De Brasem komt in het grootste deel van Europa voor. Aan de zuidkant wordt het verspreidingsgebied begrensd door de Alpen en de Pyreneeën. In het noorden van Schotland en in noordelijk Scandinavië is de brasem niet aanwezig. Van nature strekt het verspreidingsgebied zich in het oosten uit tot aan de Oeral maar is door uitzettingen uitgebreid tot in Siberië. In het oosten van zijn verspreidingsgebied komen populaties voor die in zout water leven en alleen voor de paai naar brak tot zoet water trekken. In Nederland komt Brasem zowel in zoet als in brak water voor. In brak water zijn de dichtheden lager dan in zoet water. Brasem prefereert voedselrijke meren, kanalen en langzaam stromende wateren met een modderige bodem. In kleine stromende rivieren komt brasem slechts in lage dichtheden voor. In grote rivieren zoals Rijn, Elbe, Donau en Wolga komt de brasem vooral in de midden-en benedenrivier voor. In snelstromende rivieren komt Brasem alleen in de delta voor #1.
-In het Nederlandse binnenwater is de brasem een zeer algemeen voorkomende vissoort. Onder sportvissers is de brasem erg populair, maar voor de beroepsvisserij, door zijn geringe waarde, niet. De brasem is een typische vis voor eutrofe en hypertrofe wateren met weinig ondergedoken waterplanten en een continue blauwalgenbloei. In eutrofe en hypertrofe wateren kan brasem meer dan de helft van de visbiomassa uitmaken, vaak zijn de dichtheden hoog en is de individuele groei slecht. Een biomassa van 350 kg/ha is geen uitzondering. We spreken in dergelijke situaties van verbrasemde wateren. Verondersteld wordt dat brasem in voedselrijke wateren via voedselconcurrentie onder andere de productie van aal kan beperken #1.
-De brasem wordt gekenmerkt door zijn hoge rug en afgeplatte flanken. De hoogte van de vis bedraagt 30-40% van de lengte. De kop is klein in verhouding tot de rest van het lichaam. De brasem heeft een kleine, onderstandige uitstulpbare bek. De bovenkant van de kop en de rug is donkergrijs gekleurd, vaak met een zwarte glans. De flanken zijn bij jonge vis zilvergrijs, bij oudere vis zijn de flanken meer geelbruin of bronskleurig. De buik is bijna wit. De borst en buikvinnen zijn lichtgrijs de overige vinnen zijn donkergrijs. De aarsvin is opvallend lang #1.
-De groei is afhankelijk van de temperatuur en het voedselaanbod. Een slechte groei treedt op als dichtheden erg hoog worden en er sterke voedselconcurrentie gaat plaatsvinden. Men vermoedt dat de groei meer wordt gereguleerd door dichtheidsafhankelijke processen dan door de temperatuur. Onder optimale omstandigheden kan brasem zeer snel groeien, na 2 jaar kan een lengte van 20 cm en na 8 jaar een lengte van 50 cm bereikt worden. In Nederland wordt de groei genoemd als 2-jarige brasem een lengte van 12 cm heeft en 8-jarige vis een lengte van 40 cm haalt. De maximale lengte is 80 cm, het maximale gewicht is ongeveer 10 kg #1. Men vermoet dat in een aantal kleine Nederlandse wateren het aanbod van muggenlarven en wormen in de bodem de beperkende factor voor de groei van oudere Brasem is. In andere Europese wateren lijkt een hoge dichtheid aan muggenlarven een voorwaarde te zijn voor een snelle groei. Het uitdunnen van de Brasemstand heeft tot gevolg dat de voedselsituatie kan verbeteren en de groeisnelheid dientengevolge hoger wordt.
-Voedselhabitat en strategie
-Over het algemeen foerageert jonge vis vooral in de oeverzone, oudere vis komt meer op diepere delen voor. Alleen in zeer voedselarme wateren foerageren volwassen brasems voornamelijk in de oeverzone. Het grootste deel van zijn leven brengt de Brasem in scholen door. Schoolvorming begint al in het larf-stadium in ondiep water. In het voorjaar trekken de scholen naar de paaigebieden. Na de paai splitsen de scholen zich op kleinere groepen die bestaan uit exemplaren van ongeveer dezelfde lengte en leeftijd. Alleen zeer oude brasem leeft niet meer in een school maar in groepen van hooguit enkele exemplaren of solitair. Na de paai is volwassen brasem vooral in het open water te vinden #1.
-Larven voeden zich in eerste instantie met fyto- en zoöplankton. Na 10-11 dagen bestaat het dieet hoofdzakelijk uit zoöplankton. Vanaf een lengte van 2 cm komen ook kleine muggenlarven in het dieet voor. Vanaf een jaar of twee heeft de brasem een voorkeur voor bodemorganismen. Het dieet bestaat dan uit muggenlarven en larven van andere insecten die op relatief ondiepe plaatsen bemachtigd worden. Brasem van drie jaar en ouder zoekt meestal voedsel op diepere plaatsen. Naast muggenlarven bestaat het dieet uit Tubifex, slakken en mosseltjes. Bij het voedsel zoeken in de bodem kan veel dood organisch materiaal als voedsel opgenomen worden. Het gewicht van detritus kan 80-90% van de totale inhoud van het maag-darm kanaal uitmaken. Ook plantaardig materiaal en plankton staat bij volwassen brasems op het menu #1. 
-Een groot aantal vissoorten waaronder andere cypriniden zoals kolblei, blankvoorn en karper maar ook aal en pos kunnen als voedselconcurrent van brasem optreden. De grootste concurrentie met blankvoorn en karper treedt op als de jonge vis bij de bodem gaat foerageren. Oudere vis heeft vaak een meer specifieke voedselkeuze waardoor alleen in weinig gedifferentieerde wateren er in deze fase nog sterke voedselconcurrentie op kan treden #1 . 
-Reproductie en migratie
-Paai vindt over het algemeen plaats in de periode eind april tot midden juni. De temperatuur is bepalend voor het tijdstip waarop de paai begint. De paai vindt bij voorkeur plaats bij rustig weer in de avond in ondiepe, niet of weinig stromende, met oever- of ondergedoken waterplanten begroeide oevers. In brak water voorkomende brasem trekt meestal naar zoet water om te paaien.
-Tijdens de paai is de brasem in grote scholen geconcentreerd. Op de paaiplaatsen zijn meestal meer mannetjes dan vrouwtjes aanwezig omdat mannetjes langer paairijp blijven. Grote mannetjes hebben op de paaiplaats een territorium van ongeveer 5 m2. Uit dit territorium worden andere mannetjes verdreven. Vrouwtjes worden naar het territorium gelokt door snel heen en weer te zwemmen. Onder optimale omstandigheden duurt de paai zo'n 2-3 dagen. Onder minder gunstige omstandigheden wordt de paaiperiode verlengd of wordt er meerdere malen per jaar gepaaid. Door herhaaldelijk te paaien wordt het risico dart de eieren door ongunstige omstandigheden verloren gaan gespreid. De paai stopt bij een plotselinge temperatuurdaling. Het wijfje legt 150.000-300.000 eieren per kilogram lichaamsgewicht. De leeftijd en de lengte van de paaitijd hebben invloed op het aantal eieren dat afgezet wordt #1. 
-De kleverige eieren zijn lichtgeel van kleur en hebben een diameter van 1.5-2 mm. De incubatietijd van de eieren duurt, afhankelijk van de temperatuur, 3-12 dagen. Bij uitkomst is de larve ongeveer 4 mm lang. In eerste instantie blijven de larven aan waterplanten hangen en teren ze in op de dooierzak. Daarna beginnen de laren zelfstandig voedsel op te nemen. Brasem van 20 mm begint op de bodem naar voedsel te zoeken en trekt weg uit de zeer ondiepe oeverzone. Bij een lengte van 9 tot 14 cm krijgt de Brasem zijn definitieve lichaamsvorm #1.
-Op 6-7 jarige leeftijd wordt Brasem geslachtsrijp. Voor het bereiken van de geslachtsrijpheid is de lengte van minder groot belang dan de leeftijd. Zowel bij een lengte va 14 cm als 35 cm kan brasem geslachtsrijp worden. In oudere leeftijdsgroepen zijn meer vrouwtjes dan mannetjes aanwezig doordat mannetjes een hogere sterftesnelheid hebben. Brasem wordt ongeveer 15 jaar oud #1.
-Leeftijd en mortaliteit
-De overleving tot het vrijzwemmende stadium is meestal slechts 1% of minder. Zowel eieren als pas uitgekomen larven zijn erg gevoelig voor predatie door van allerlei ongewervelden zoals slakken en platwormen, maar ook door vissen en amfibieën. 1- en 2-jarige brasems worden door roofvissen zoals snoek, snoekbaars, baars en aal gegeten. Snoek kleiner dan 45 cm eet veel jonge brasem en kan hierdoor de aanwas van nieuwe jaarklassen brasem limiteren. Ook snoekbaars kan een grote invloed op de groei en jaarklassterkte van Brasem hebben. De Brasem maakt over het algemeen slechts een gering deel uit van het dieet van predatoren. Alleen als er geen andere prooidieren beschikbaar zijn, is het aandeel brasem in het dieet van predatoren groot. De maximale lengte waarbij brasem nog gevoelig is voor predatie is afhankelijk van de lengte van de predatoren, maar over het algemeen is voor Brasem groter dan 20 cm de kans om te sterven door predatie zeer gering. Door zijn hoge lichaamsvorm is de Brasem moeilijk door predatoren in te slikken #1. 
-Milieu-factoren
-Paai vindt bij voorkeur plaats in vegetatierijke delen. Het oppervlak van een paaigebied moet minimaal 100 m^2^ groot zijn. Zuurstofconcentraties zijn met name van belang voor de eieren: bij een gehalte lager dan 3 mg/l treed 100% sterfte op. Zuurgraad is juist belang voor het paren: buiten een pH 4.4 en 10.5 vindt er geen paai plaats. Verder is de temperatuur van belang voor sterfte en voedselopname: bij watertemperaturen van 30 graden Celsius of meer treedt er sterfte op, bij een temperatuur lager dan 4 graden Celsius neemt de Baars geen voedsel meer op. 
+			<text><![CDATA[<h3 id="Brasem-Abramisbrama-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De Brasem komt in het grootste deel van Europa voor. Aan de zuidkant wordt het verspreidingsgebied begrensd door de Alpen en de Pyreneeën. In het noorden van Schotland en in noordelijk Scandinavië is de brasem niet aanwezig. Van nature strekt het verspreidingsgebied zich in het oosten uit tot aan de Oeral maar is door uitzettingen uitgebreid tot in Siberië. In het oosten van zijn verspreidingsgebied komen populaties voor die in zout water leven en alleen voor de paai naar brak tot zoet water trekken. In Nederland komt Brasem zowel in zoet als in brak water voor. In brak water zijn de dichtheden lager dan in zoet water. Brasem prefereert voedselrijke meren, kanalen en langzaam stromende wateren met een modderige bodem. In kleine stromende rivieren komt brasem slechts in lage dichtheden voor. In grote rivieren zoals Rijn, Elbe, Donau en Wolga komt de brasem vooral in de midden-en benedenrivier voor. In snelstromende rivieren komt Brasem alleen in de delta voor <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>.</p><p>In het Nederlandse binnenwater is de brasem een zeer algemeen voorkomende vissoort. Onder sportvissers is de brasem erg populair, maar voor de beroepsvisserij, door zijn geringe waarde, niet. De brasem is een typische vis voor eutrofe en hypertrofe wateren met weinig ondergedoken waterplanten en een continue blauwalgenbloei. In eutrofe en hypertrofe wateren kan brasem meer dan de helft van de visbiomassa uitmaken, vaak zijn de dichtheden hoog en is de individuele groei slecht. Een biomassa van 350 kg/ha is geen uitzondering. We spreken in dergelijke situaties van verbrasemde wateren. Verondersteld wordt dat brasem in voedselrijke wateren via voedselconcurrentie onder andere de productie van aal kan beperken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>.</p><p>De brasem wordt gekenmerkt door zijn hoge rug en afgeplatte flanken. De hoogte van de vis bedraagt 30-40% van de lengte. De kop is klein in verhouding tot de rest van het lichaam. De brasem heeft een kleine, onderstandige uitstulpbare bek. De bovenkant van de kop en de rug is donkergrijs gekleurd, vaak met een zwarte glans. De flanken zijn bij jonge vis zilvergrijs, bij oudere vis zijn de flanken meer geelbruin of bronskleurig. De buik is bijna wit. De borst en buikvinnen zijn lichtgrijs de overige vinnen zijn donkergrijs. De aarsvin is opvallend lang <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>.</p><p>De groei is afhankelijk van de temperatuur en het voedselaanbod. Een slechte groei treedt op als dichtheden erg hoog worden en er sterke voedselconcurrentie gaat plaatsvinden. Men vermoedt dat de groei meer wordt gereguleerd door dichtheidsafhankelijke processen dan door de temperatuur. Onder optimale omstandigheden kan brasem zeer snel groeien, na 2 jaar kan een lengte van 20 cm en na 8 jaar een lengte van 50 cm bereikt worden. In Nederland wordt de groei genoemd als 2-jarige brasem een lengte van 12 cm heeft en 8-jarige vis een lengte van 40 cm haalt. De maximale lengte is 80 cm, het maximale gewicht is ongeveer 10 kg <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>.  Men vermoet dat in een aantal kleine Nederlandse wateren het aanbod van muggenlarven en wormen in de bodem de beperkende factor voor de groei van oudere Brasem is. In andere Europese wateren lijkt een hoge dichtheid aan muggenlarven een voorwaarde te zijn voor een snelle groei. Het uitdunnen van de Brasemstand heeft tot gevolg dat de voedselsituatie kan verbeteren en de groeisnelheid dientengevolge hoger wordt.</p><h3 id="Brasem-Abramisbrama-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>Over het algemeen foerageert jonge vis vooral in de oeverzone, oudere vis komt meer op diepere delen voor. Alleen in zeer voedselarme wateren foerageren volwassen brasems voornamelijk in de oeverzone. Het grootste deel van zijn leven brengt de Brasem in scholen door. Schoolvorming begint al in het larf-stadium in ondiep water. In het voorjaar trekken de scholen naar de paaigebieden. Na de paai splitsen de scholen zich op kleinere groepen die bestaan uit exemplaren van ongeveer dezelfde lengte en leeftijd. Alleen zeer oude brasem leeft niet meer in een school maar in groepen van hooguit enkele exemplaren of solitair. Na de paai is volwassen brasem vooral in het open water te vinden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>.</p><p>Larven voeden zich in eerste instantie met fyto- en zoöplankton. Na 10-11 dagen bestaat het dieet hoofdzakelijk uit zoöplankton. Vanaf een lengte van 2 cm komen ook kleine muggenlarven in het dieet voor. Vanaf een jaar of twee heeft de brasem een voorkeur voor bodemorganismen. Het dieet bestaat dan uit muggenlarven en larven van andere insecten die op relatief ondiepe plaatsen bemachtigd worden. Brasem van drie jaar en ouder zoekt meestal voedsel op diepere plaatsen. Naast muggenlarven bestaat het dieet uit Tubifex, slakken en mosseltjes. Bij het voedsel zoeken in de bodem kan veel dood organisch materiaal als voedsel opgenomen worden. Het gewicht van detritus kan 80-90% van de totale inhoud van het maag-darm kanaal uitmaken. Ook plantaardig materiaal en plankton staat bij volwassen brasems op het menu <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>. </p><p>Een groot aantal vissoorten waaronder andere cypriniden zoals kolblei, blankvoorn en karper maar ook aal en pos kunnen als voedselconcurrent van brasem optreden. De grootste concurrentie met blankvoorn en karper treedt op als de jonge vis bij de bodem gaat foerageren. Oudere vis heeft vaak een meer specifieke voedselkeuze waardoor alleen in weinig gedifferentieerde wateren er in deze fase nog sterke voedselconcurrentie op kan treden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a> . </p><h3 id="Brasem-Abramisbrama-Reproductieenmigratie">Reproductie en migratie</h3><p>Paai vindt over het algemeen plaats in de periode eind april tot midden juni. De temperatuur is bepalend voor het tijdstip waarop de paai begint. De paai vindt bij voorkeur plaats bij rustig weer in de avond in ondiepe, niet of weinig stromende, met oever- of ondergedoken waterplanten begroeide oevers. In brak water voorkomende brasem trekt meestal naar zoet water om te paaien.</p><p>Tijdens de paai is de brasem in grote scholen geconcentreerd. Op de paaiplaatsen zijn meestal meer mannetjes dan vrouwtjes aanwezig omdat mannetjes langer paairijp blijven. Grote mannetjes hebben op de paaiplaats een territorium van ongeveer 5 m2. Uit dit territorium worden andere mannetjes verdreven. Vrouwtjes worden naar het territorium gelokt door snel heen en weer te zwemmen. Onder optimale omstandigheden duurt de paai zo'n 2-3 dagen. Onder minder gunstige omstandigheden wordt de paaiperiode verlengd of wordt er meerdere malen per jaar gepaaid. Door herhaaldelijk te paaien wordt het risico dart de eieren door ongunstige omstandigheden verloren gaan gespreid. De paai stopt bij een plotselinge temperatuurdaling. Het wijfje legt 150.000-300.000 eieren per kilogram lichaamsgewicht. De leeftijd en de lengte van de paaitijd hebben invloed op het aantal eieren dat afgezet wordt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>. </p><p>De kleverige eieren zijn lichtgeel van kleur en hebben een diameter van 1.5-2 mm. De incubatietijd van de eieren duurt, afhankelijk van de temperatuur, 3-12 dagen. Bij uitkomst is de larve ongeveer 4 mm lang. In eerste instantie blijven de larven aan waterplanten hangen en teren ze in op de dooierzak. Daarna beginnen de laren zelfstandig voedsel op te nemen. Brasem van 20 mm begint op de bodem naar voedsel te zoeken en trekt weg uit de zeer ondiepe oeverzone. Bij een lengte van 9 tot 14 cm krijgt de Brasem zijn definitieve lichaamsvorm <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>.</p><p>Op 6-7 jarige leeftijd wordt Brasem geslachtsrijp. Voor het bereiken van de geslachtsrijpheid is de lengte van minder groot belang dan de leeftijd. Zowel bij een lengte va 14 cm als 35 cm kan brasem geslachtsrijp worden. In oudere leeftijdsgroepen zijn meer vrouwtjes dan mannetjes aanwezig doordat mannetjes een hogere sterftesnelheid hebben. Brasem wordt ongeveer 15 jaar oud <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>.</p><h3 id="Brasem-Abramisbrama-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>De overleving tot het vrijzwemmende stadium is meestal slechts 1% of minder. Zowel eieren als pas uitgekomen larven zijn erg gevoelig voor predatie door van allerlei ongewervelden zoals slakken en platwormen, maar ook door vissen en amfibieën. 1- en 2-jarige brasems worden door roofvissen zoals snoek, snoekbaars, baars en aal gegeten. Snoek kleiner dan 45 cm eet veel jonge brasem en kan hierdoor de aanwas van nieuwe jaarklassen brasem limiteren. Ook snoekbaars kan een grote invloed op de groei en jaarklassterkte van Brasem hebben. De Brasem maakt over het algemeen slechts een gering deel uit van het dieet van predatoren. Alleen als er geen andere prooidieren beschikbaar zijn, is het aandeel brasem in het dieet van predatoren groot. De maximale lengte waarbij brasem nog gevoelig is voor predatie is afhankelijk van de lengte van de predatoren, maar over het algemeen is voor Brasem groter dan 20 cm de kans om te sterven door predatie zeer gering. Door zijn hoge lichaamsvorm is de Brasem moeilijk door predatoren in te slikken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Brasem+-+Abramis+brama#Brasem-Abramisbrama-1">#1</a>. </p><h3 id="Brasem-Abramisbrama-Milieu-factoren">Milieu-factoren</h3><p>Paai vindt bij voorkeur plaats in vegetatierijke delen. Het oppervlak van een paaigebied moet minimaal 100 m^2^ groot zijn. Zuurstofconcentraties zijn met name van belang voor de eieren: bij een gehalte lager dan 3 mg/l treed 100% sterfte op. Zuurgraad is juist belang voor het paren: buiten een pH 4.4 en 10.5 vindt er geen paai plaats. Verder is de temperatuur van belang voor sterfte en voedselopname: bij watertemperaturen van 30 graden Celsius of meer treedt er sterfte op, bij een temperatuur lager dan 4 graden Celsius neemt de Baars geen voedsel meer op. </p>
 ]]></text>
 		</Description>
 	</ContentDescription>

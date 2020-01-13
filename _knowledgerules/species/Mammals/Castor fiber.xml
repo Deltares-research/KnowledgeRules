@@ -25,24 +25,37 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
-Onzekerheid en validatie
-Deze rekenregels zijn niet gevalideerd.
-De rekenregels zijn opgesteld aan de hand van literatuuronderzoek #1
-Toepasbaarheid
-De rekenregels zijn opgesteld om het potentieel leefgebied van de bever te bepalen en zijn toepasbaar op grote en kleinere zoete wateren.
-Voorbeeld project
-Geen
-]]></text>
+						<text><![CDATA[<h1 id="Bever-Castorfiber-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Bever - Castor fiber - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p><p>De rekenregels zijn opgesteld aan de hand van literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a></p><h1 id="Bever-Castorfiber-Toepasbaarheid">Toepasbaarheid</h1><p>De rekenregels zijn opgesteld om het potentieel leefgebied van de bever te bepalen en zijn toepasbaar op grote en kleinere zoete wateren.</p><h1 id="Bever-Castorfiber-Voorbeeldproject">Voorbeeld project</h1><p>Geen</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="adult">
+						<From name="habitatgeschiktheid">
+							<label>"habitatgeschiktheid"</label>
+							<equation>min</equation>
+							<To>oever_dimensies</To>
+							<To>oever_type</To>
+							<To>potentieel_leefgebied</To>
+						</From>
+						<From name="oever_dimensies">
+							<label>"oever_dimensies"</label>
+							<equation>min</equation>
+							<To>lengte_steil_talud</To>
+							<To>waterdiepte</To>
+						</From>
+						<From name="oever_type">
+							<label>"oever_type"</label>
+							<equation>min</equation>
+							<To>lengte_natuurlijke_oever</To>
+							<To>houtige_vegetatie_verdeling</To>
+							<To>afstand_water_bomen</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
-				<KnowledgeRules>		
-					<ResponseCurve name="Lengte natuurlijke oever">
+				<KnowledgeRules>
+					<ResponseCurve name="lengte_natuurlijke_oever">
 						<type>scalar</type>
-						<layername>"Lengte natuurlijke oever"</layername>
+						<layername>"lengte_natuurlijke_oever"</layername>
 						<unit>"km"</unit>
 						<statistic>average</statistic>
 						<description>"Lengte natuurlijke oever NB. Het gaat hier om aan eengesloten natuurlijke oever lengte. Dit is ongeacht van het type beplanting."</description>
@@ -58,12 +71,12 @@ Geen
 							<parameter value="999" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Taludvorm">
+					<ResponseCurve name="lengte_steil_talud">
 						<type>categorical</type>
-						<layername>"Taludvorm"</layername>
+						<layername>"lengte_steil_talud"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
-						<description>"Taludvorm"</description>
+						<description>"Lengte steil talud (1:0 of 1:1)"</description>
 						<author>"Valesca Harezlak"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -74,9 +87,9 @@ Geen
 							<parameter cat="15 m steil talud afwezig" HSI="0"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Waterdiepte">
+					<ResponseCurve name="waterdiepte">
 						<type>range / categorical</type>
-						<layername>"Waterdiepte"</layername>
+						<layername>"waterdiepte"</layername>
 						<unit>"m"</unit>
 						<statistic>minimum</statistic>
 						<description>"Waterdiepte"</description>
@@ -90,12 +103,12 @@ Geen
 							<parameter rangemin="50" rangemax="999" cat="2" HSI="1"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Houtige vegetatie">
+					<ResponseCurve name="houtige_vegetatie_verdeling">
 						<type>range / categorical</type>
-						<layername>"Waterdiepte"</layername>
+						<layername>"houtige_vegetatie_verdeling"</layername>
 						<unit>"%"</unit>
 						<statistic>minimum</statistic>
-						<description>"Waterdiepte"</description>
+						<description>"Houtige vegetatie verdeling"</description>
 						<author>"Valesca Harezlak"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -106,9 +119,9 @@ Geen
 							<parameter rangemin="20" rangemax="100" cat="2" HSI="1"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Afstand water-bomen">
+					<ResponseCurve name="afstand_water_bomen">
 						<type>scalar</type>
-						<layername>"Afstand water-bomen"</layername>
+						<layername>"afstand_water_bomen"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
 						<description>"Afstand water-bomen"</description>
@@ -124,26 +137,45 @@ Geen
 							<parameter value="999" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
+					<ResponseCurve name="potentieel_leefgebied">
+						<type>categorical</type>
+						<layername>deelgebieden_VanWijngaarden</layername>
+						<unit>"categorie"</unit>
+						<statistic>none</statistic>
+						<description>"Beschrijving van potentiel leefgebied aan de hand van de deelgebieden, zoals samengesteld door Van Wijngaarden (1966) voor Flevoland"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="1" HSI="0.0"/>
+							<parameter cat="2" HSI="0.0"/>
+							<parameter cat="3" HSI="0.0"/>
+							<parameter cat="4" HSI="0.0"/>
+							<parameter cat="5" HSI="0.0"/>
+							<parameter cat="6" HSI="1.0"/>
+							<parameter cat="7" HSI="1.0"/>
+							<parameter cat="8" HSI="1.0"/>
+							<parameter cat="9" HSI="1.0"/>
+							<parameter cat="10" HSI="1.0"/>
+							<parameter cat="11" HSI="1.0"/>
+							<parameter cat="12" HSI="1.0"/>
+							<parameter cat="13" HSI="1.0"/>
+							<parameter cat="14" HSI="1.0"/>
+							<parameter cat="15" HSI="1.0"/>
+							<parameter cat="16" HSI="1.0"/>
+							<parameter cat="17" HSI="0.0"/>
+							<parameter cat="18" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
 	<ContentDescription>
 		<Description language="NL">
-			<text><![CDATA[
-Habitat beschrijving
-Algemeen voorkomen
-De bever komt, door zijn vermogen het woongebied aan zijn eisen aan te passen, in allerlei gebieden voor, van toendra tot halfwoestijn. De bever is het grootste knaagdier van Nederland en vroeger kwam de bever in groten getale in ons land voor. Door aantasting van de natuurlijke vegetatie en overbejaging is de soort uit het grootste deel van Europa verdwenen. Tussen 1988 en 1991 zijn er bevers uitgezet in de Brabantse Biesbosch en sindsdien is de bever weer in ons land te vinden #1.
-De bever komt alleen voor in zoete watersystemen (meren, plassen, beken en rivieren) en mijden zout water. Met betrekking tot de terrestrische vegetatie, zijn bevers vaak te vinden nabijn polders, het rivieren landschap en de hoge zandgronden #1.
-De bever is een sociaal dier. Ze leven in familiegroepen die bestaan uit een ouderpaar, de pas geboren jongen en de eenjarige jongen #1. De dieren graven holen in steile oevers en leggen burchten aan. Van beide dient de ingang zich onder het wateroppervlak te bevinden. Hierdoor kan de bever zowel langs steile als vlakke oevers leven. Voor een brucht dient het voorkeurstalud steil te zijn (tot 1:1), zodat de bever in de oever (onder de waterspiegel) een burchtingang kan bouwen. Te steile oeverwanden kunnen er echter toe leiden dat de bever niet uit het water kan komen. Niet-natuurvriendelijke oevers met bijvoorbeeld een damwand zijn daardoor niet geschikt voor de bever. In watersystemen met sterke peilfluctuaties leggen de dieren een dam aan. Verder beschermt de burcht de bever tegen lage temperaturen #1. 
-Het water dient als vluchtroute en als opslagplaats voor wintervoorraad. Het water wordt niet gebruikt om voedsel te zoeken, dit gebeurt langs de oever. In het oevergebied dienen zowel voedsel in de vorm van houtige gewassen en kruiden in ruime mate aanwezig te zijn als dat er bomen voor komen (bouwmateriaal). Bevers komen zelden verder dan 6 meter van het water #1. 
-Om een goede ingang te hebben tot de burcht, dient de waterdiepte minimaal 50 cm bedragen. Als het water te ondiep is voor de bevers, kunnen ze het door middel van het bouwen van een dam het waterpeil beïnvloeden. De bever heeft een aaneengesloten oeverlengte van 8-20 kilometer natuurlijke oever nodig. Hierbij maakt het type beplanting in mindere mate uit. Bevers vermijden wateren die in de zomer droogvallen of in de winter kunnen bevriezen #1. 
-Voor een beverpaar is minimaal 40 meter aan houtige structuren vereist #1. De totale lengte van houtige structuren aan de waterkant bepaald het aantal beverparen dat er kan voorkomen en de lengte van de oever dat het paartje bezet #1. Een bever paar heeft een territorium van gemiddeld 3 km oever met houtige vegetatie en onder goede omstandigheden wordt er een dichtheid van 2.2 burchten per km bereikt #1. Een meer wordt meestal bewoond door één familie. De dichtheid van die houttige vegetatie dient tot 6 meter van de oever minimaal 20% te bedragen. In de Biesbosch gebruikt een beverpaar gemiddeld 5.5-7.5 km oever met wilgen. Een levensvatbare populatie bestaat uit minimaal 30 dieren. Zandige en stenige oevers worden gemeden #1. Bevers zijn verstoringgevoelig. Van fluisterboten is bekend dat deze de bever niet verstoren, echter bij gepraat of motorgeluiden passeren de bevers niet of onderwater #1. 
-Voedselhabitat en strategie
-De soort is een uitgesproken planteneter, waarbij de voedselkeuze bepaald wordt door het aanbod. ’s Winters wordt met name (wilgen)bast gegeten en wortelstokken van waterlelie en gele plomp. In het algemeen worden zachte houtsoorten geprefereerd. ‘Zomers eten bevers veel kruiden en grassen #1. 
-Reproductie en migratie
-Na 2 tot 3 jaar zijn de bevers volwassen #2. De bronstijd vindt plaats in de maanden januari en februari. Na een draagtijd van ongeveer 15 weken worden de jongen in de maart tot midden juli geboren. Er vindt maar één worp per jaar plaats met een gemiddeld 2 jongen per worp. De jonge bevers blijven 4-6 weken in het nest #1. Na 2 tot 3 jaar trekken de inmiddels volwassen geworden bevers uit het nest weg #2. De gemiddelde levensduur van een bever is 8-12 jaar met een maximum van 35 jaar #2. 
-]]></text>
+			<text><![CDATA[<h3 id="Bever-Castorfiber-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De bever komt, door zijn vermogen het woongebied aan zijn eisen aan te passen, in allerlei gebieden voor, van toendra tot halfwoestijn. De bever is het grootste knaagdier van Nederland en vroeger kwam de bever in groten getale in ons land voor. Door aantasting van de natuurlijke vegetatie en overbejaging is de soort uit het grootste deel van Europa verdwenen. Tussen 1988 en 1991 zijn er bevers uitgezet in de Brabantse Biesbosch en sindsdien is de  bever weer in ons land te vinden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>.</p><p>De bever komt alleen voor in zoete watersystemen (meren, plassen, beken en rivieren) en mijden zout water. Met betrekking tot de terrestrische vegetatie, zijn bevers vaak te vinden nabijn polders, het rivieren landschap en de hoge zandgronden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>.</p><p>De bever is een sociaal dier. Ze leven in familiegroepen die bestaan uit een ouderpaar, de pas geboren jongen en de eenjarige jongen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. De dieren graven holen in steile oevers en leggen burchten aan. Van beide dient de ingang zich onder het wateroppervlak te bevinden. Hierdoor kan de bever zowel langs steile als vlakke oevers leven. Voor een brucht dient het voorkeurstalud steil te zijn (tot 1:1), zodat de bever in de oever (onder de waterspiegel) een burchtingang kan bouwen. Te steile oeverwanden kunnen er echter toe leiden dat de bever niet uit het water kan komen. Niet-natuurvriendelijke oevers met bijvoorbeeld een damwand zijn daardoor niet geschikt voor de bever. In watersystemen met sterke peilfluctuaties leggen de dieren een dam aan. Verder beschermt de burcht de bever tegen lage temperaturen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><p>Het water dient als vluchtroute en als opslagplaats voor wintervoorraad. Het water wordt niet gebruikt om voedsel te zoeken, dit gebeurt langs de oever. In het oevergebied dienen zowel  voedsel in de vorm van houtige gewassen en kruiden in ruime mate aanwezig te zijn als dat er bomen voor komen (bouwmateriaal). Bevers komen zelden verder dan 6 meter van het water  <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><p>Om een goede ingang te hebben tot de burcht, dient de waterdiepte minimaal 50 cm bedragen. Als het water te ondiep is voor de bevers, kunnen ze het door middel van het bouwen van een dam het waterpeil beïnvloeden. De bever heeft een aaneengesloten oeverlengte van 8-20 kilometer natuurlijke oever nodig. Hierbij maakt het type beplanting in mindere mate uit. Bevers vermijden wateren die in de zomer droogvallen of in de winter kunnen bevriezen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><p>Voor een beverpaar is minimaal 40 meter aan houtige structuren vereist <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. De totale lengte van houtige structuren aan de waterkant bepaald het aantal beverparen dat er kan voorkomen en de lengte van de oever dat het paartje bezet <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Een bever paar heeft een territorium van gemiddeld 3 km oever met houtige vegetatie en onder goede omstandigheden wordt er een dichtheid van 2.2 burchten per km bereikt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Een meer wordt meestal bewoond door één familie. De dichtheid van die houttige vegetatie dient tot 6 meter van de oever minimaal 20% te bedragen. In de Biesbosch gebruikt een beverpaar gemiddeld 5.5-7.5 km oever met wilgen. Een levensvatbare populatie bestaat uit minimaal 30 dieren. Zandige en stenige oevers worden gemeden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Bevers zijn verstoringgevoelig. Van fluisterboten is bekend dat deze de bever niet verstoren, echter bij gepraat of motorgeluiden passeren de bevers niet of onderwater <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>.  </p><h3 id="Bever-Castorfiber-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De soort is een uitgesproken planteneter, waarbij de voedselkeuze bepaald wordt door het aanbod. ’s Winters wordt met name (wilgen)bast gegeten en wortelstokken van waterlelie en gele plomp. In het algemeen worden zachte houtsoorten geprefereerd. ‘Zomers eten bevers veel kruiden en grassen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><h3 id="Bever-Castorfiber-Reproductieenmigratie">Reproductie en migratie</h3><p>Na 2 tot 3 jaar zijn de bevers volwassen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2">#2</a>. De bronstijd vindt plaats in de maanden januari en februari. Na een draagtijd van ongeveer 15 weken worden de jongen in de maart tot midden juli geboren. Er vindt maar één worp per jaar plaats met een gemiddeld 2 jongen per worp. De jonge bevers blijven 4-6 weken in het nest <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Na 2 tot 3 jaar trekken de inmiddels volwassen geworden bevers uit het nest weg <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2">#2</a>. De gemiddelde levensduur van een bever is 8-12 jaar met een maximum van 35 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2">#2</a>. </p>]]></text>
 		</Description>
 	</ContentDescription>
 	<Documentation>

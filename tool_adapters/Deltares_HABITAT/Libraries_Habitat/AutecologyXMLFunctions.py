@@ -38,7 +38,7 @@ def make_flowdiagram_dict(root,systemname):
 	type_tag_modeltype = root.findall(make_find(["Autecology","ModelType"]))
 	type_tag_applicable_modeltype = [f for f in type_tag_modeltype if(modeltypename in f.get("name"))]
 	type_tag_system = type_tag_applicable_modeltype[0].findall(make_find(["System"]))
-	type_tag_applicable_system = [e for e in type_tag_system if(systemname in e.get('name'))]
+	type_tag_applicable_system = [e for e in type_tag_system if(systemname in e.get("name"))]
 	system_root = type_tag_applicable_system[0]
 
 	# get system flow diagrams type tag
@@ -246,8 +246,8 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 						model_list[nr].Activities.Add(knowledgerules_list[nr2])
 
 			else:
-				_AutecologyXMLLogger.Warn("Current responsecurve type is not yet available :" +\
-						autecology_dict["knowledgerules"][knwlrl2]["type"])
+				_AutecologyXMLLogger.Error("Current responsecurve type is not yet available :" +\
+						response_curves_overview[knwlrl2]["type"])
 
 		elif(knwlrl_categorie2 == "FormulaBased"):
 			knowledgerules_list.append(CreateModel(HabitatModelType.FormuleBased))
@@ -256,7 +256,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 			knowledgerules_list[nr2].Formulas.Clear()
 
 		else:
-			_AutecologyXMLLogger.Warn("Current knowledge rule categorie is not yet available :" +\
+			_AutecologyXMLLogger.Error("Current knowledge rule categorie is not yet available :" +\
 						knwlrl_categorie2)
 
 	return(knowledgerules_list)

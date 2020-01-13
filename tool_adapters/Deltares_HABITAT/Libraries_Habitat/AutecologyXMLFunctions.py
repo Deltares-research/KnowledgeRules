@@ -247,7 +247,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 
 			else:
 				_AutecologyXMLLogger.Error("Current responsecurve type is not yet available :" +\
-						response_curves_overview[knwlrl2]["type"])
+						autecology_dict["knowledgerules"][knwlrl2]["type"])
 
 		elif(knwlrl_categorie2 == "FormulaBased"):
 			knowledgerules_list.append(CreateModel(HabitatModelType.FormuleBased))

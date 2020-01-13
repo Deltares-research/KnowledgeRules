@@ -126,6 +126,7 @@ class API:
 			obj.comboBox_2.addItem(system)
 
 		#place species information
+		print(obj.cur_language)
 		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
 		obj.textBrowser_2.setText(cur_speciestext)
 		obj.textBrowser_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 

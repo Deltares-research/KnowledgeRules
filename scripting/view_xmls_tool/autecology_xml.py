@@ -141,8 +141,9 @@ class AutecologyXML(_File):
 		self.xmlns = "{" + self.xmlns + "}"
 		species_layers = ["layer1_1","layer1_1_1_alt1"]
 		self.species_path = self.make_find([self.XMLlayers[x] for x in species_layers])
-		system_layers = ["layer1_2_alt1","layer1_2_1","layer1_2_1_1"]
-		self.system_path = self.make_find([self.XMLlayers[x] for x in system_layers])
+		modeltype_layers = ["layer1_2_alt1","layer1_2_1"]
+		self.modeltype_path = self.make_find([self.XMLlayers[x] for x in modeltype_layers])
+		self.system_path = self.make_find([self.XMLlayers["layer1_2_1_1"]])
 		self.speciesdescription_path = self.make_find([self.XMLlayers["layer1_5"]])
 		self.systemdescription_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_2"]])
 		self.systemflowdiagram_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_3"]])
@@ -192,10 +193,18 @@ class AutecologyXML(_File):
 			raise RuntimeError('No xml loaded yet, use "_readxml"')
 		return()
 
+	def check_modeltype_name(self,modeltypename):
+		if(modeltypename not in self.modeltypes):
+			if(self.modeltypes == None):
+				raise RuntimeError('No scan loaded yet, use "_scan"')
+			else:
+				raise RuntimeError('System not existent and not present in self.modeltypes')
+		return()
+
 	def check_system_name(self,systemname):
 		if(systemname not in self.systems):
 			if(self.systems == None):
-				raise RuntimeError('No scan loaded yet, use "_scan"')
+				raise RuntimeError('No scan loaded yet, use "_scan_model"')
 			else:
 				raise RuntimeError('System not existent and not present in self.systems')
 		return()
@@ -252,46 +261,67 @@ class AutecologyXML(_File):
 		type_tag_sd = self.xmlroot.find(self.speciesdescription_path)
 		return(type_tag_sd)
 
-	def get_element_systems(self):
+	def get_element_modeltypes(self):
 		self.check_xml_present()
-		type_tag_sys = self.xmlroot.findall(self.system_path)
+		type_tag_mod = self.xmlroot.findall(self.modeltype_path)
+		return(type_tag_mod)
+
+	def get_element_modeltype(self,modeltypename):
+		self.check_modeltype_name(modeltypename)
+		type_tag_mod = self.get_element_modeltypes()
+		type_tag_mod_list = self.find_element_by_name(type_tag_mod,\
+							self.XMLconvention["modeltypekey"],modeltypename)
+		self.check_element_numbers(type_tag_mod_list, expected = 1, operator = "eq")
+		type_tag_modt = type_tag_mod_list[0]
+		return(type_tag_modt)
+
+	def get_element_systems(self, modeltypename):
+		self.check_xml_present()
+		type_tag_modt = self.get_element_modeltype(modeltypename)
+		type_tag_sys = type_tag_modt.findall(self.system_path)
 		return(type_tag_sys)
 
-	def get_element_system(self, systemname):
+	def get_element_system(self, modeltypename, systemname):
 		self.check_system_name(systemname)
-		type_tag_sys = self.get_element_systems()
+		type_tag_sys = self.get_element_systems(modeltypename)
 		type_tag_sys_list = self.find_element_by_name(type_tag_sys,\
 							self.XMLconvention["systemkey"],systemname)
 		self.check_element_numbers(type_tag_sys_list, expected = 1, operator = "eq")
 		type_tag_syst = type_tag_sys_list[0]
 		return(type_tag_syst)
 
-	def get_element_systemdescription(self, systemname):
-		type_tag_syst = self.get_element_system(systemname)
+	def get_element_systemdescription(self, modeltypename, systemname):
+		type_tag_syst = self.get_element_system(modeltypename, systemname)
 		type_tag_systemdescription = type_tag_syst.find(self.systemdescription_path_spec)
 		return(type_tag_systemdescription)
 
-	def get_element_systemflowdiagram(self, systemname):
-		type_tag_syst = self.get_element_system(systemname)
+	def get_element_systemflowdiagram(self, modeltypename, systemname):
+		type_tag_syst = self.get_element_system(modeltypename, systemname)
 		type_tag_systemflowdiagram = type_tag_syst.find(self.systemflowdiagram_path_spec)
 		return(type_tag_systemflowdiagram)
 
-	def get_element_knowledgerules(self,systemname):
-		type_tag_syst = self.get_element_system(systemname)
+	def get_element_knowledgerules(self,modeltypename, systemname):
+		type_tag_syst = self.get_element_system(modeltypename, systemname)
 		type_tag_krs = type_tag_syst.find(self.system_path_spec)
 		return(type_tag_krs)
 
-	def get_element_response_curve(self,systemname,rcname):
-		type_tag_krs = self.get_element_knowledgerules(systemname)
+	def get_element_response_curve(self, modeltypename, systemname, rcname):
+		type_tag_krs = self.get_element_knowledgerules(modeltypename, systemname)
 		type_tag_rcs = type_tag_krs.findall(self.make_find([self.XMLconvention["rc"]]))
 		type_tag_rc_list = self.find_element_by_name(type_tag_rcs,\
 							self.XMLconvention["rckey"],rcname)
+		
+		#check whether response curve exists or exists multiple times
+		if(len(type_tag_rc_list) == 0):
+			raise ValueError("There is no repsponse curve named " + str(rcname) + " in ModelType " + str(modeltypename) +\
+				" and System " + str(systemname) + " .")
+
 		self.check_element_numbers(type_tag_rc_list, expected = 1, operator = "eq")
 		type_tag_rc = type_tag_rc_list[0]
 		return(type_tag_rc)
 
-	def get_element_formula_based(self,systemname,fbname):
-		type_tag_krs = self.get_element_knowledgerules(systemname)
+	def get_element_formula_based(self, modeltypename, systemname, fbname):
+		type_tag_krs = self.get_element_knowledgerules(modeltypename, systemname)
 		type_tag_fbs = type_tag_krs.findall(self.make_find([self.XMLconvention["fb"]]))
 		type_tag_fb_list = self.find_element_by_name(type_tag_fbs,\
 							self.XMLconvention["fbkey"],fbname)
@@ -495,21 +525,28 @@ class AutecologyXML(_File):
 
 	def _scan(self):
 
+		#THIS NEEDS TO BE SPECIFIED TO TOPICS
+
 		#Find species
 		species_root =  self.get_element_species()
 		self.latinname = species_root.find(self.make_find(['LatName'])).text
 		self.commonnames = [{"name" : cn.get("name"), "language" : cn.get("language")}\
 								 for cn in species_root.find(self.make_find(['CommonNames']))]
 
-		#Find knowledge rules available
-		type_tag_sys = self.get_element_systems()
+		type_tag_mod = self.get_element_modeltypes()
+		modeltypes_available = [e.get(self.XMLconvention["modeltypekey"]) for e in type_tag_mod]
+		self.modeltypes = modeltypes_available
+
+
+	def _scan_modeltype(self, modeltypename):							 
+		type_tag_sys = self.get_element_systems(modeltypename)
 		systems_available = [e.get(self.XMLconvention["systemkey"]) for e in type_tag_sys]
 		self.systems = systems_available
 
 		
-	def _scan_knowledgerules(self,systemname):
+	def _scan_knowledgerules(self, modeltypename, systemname):
 
-		krs_root = self.get_element_knowledgerules(systemname)
+		krs_root = self.get_element_knowledgerules(modeltypename, systemname)
 		
 		#Store data
 		self.systemname = systemname
@@ -547,27 +584,27 @@ class AutecologyXML(_File):
 		spd_specific[0].find(self.make_find(["text"])).text = text
 		return() 
 
-	def _read_systemflowdiagram(self, systemname):
+	def _read_systemflowdiagrams(self, modeltypename, systemname):
 		syfd_overview = []
-		for syfd in self.get_element_systemflowdiagram(systemname):
+		for syfd in self.get_element_systemflowdiagram(modeltypename, systemname):
 			flow_diagram_name = syfd.get("name")
 			from_overview = []
 			for fromlink in syfd:
 				label = fromlink.find(self.make_find(["label"])).text
 				equation = fromlink.find(self.make_find(["equation"])).text
-				to = [tolink.text for tolink in fromlink.findall(self.make_find["To"])]
-				from_overview.append([OrderedDict([("label",label),("equation",equation),("to",to)])])
-			syfd_overview.append([OrderedDict([("name",flow_diagram_name),("Links",from_overview)])])
+				to = [tolink.text.replace('"','') for tolink in fromlink.findall(self.make_find(["To"]))]
+				from_overview.append(OrderedDict([("label",label),("equation",equation),("to",to)]))
+			syfd_overview.append(OrderedDict([("name",flow_diagram_name),("Links",from_overview)]))
 
 		return(syfd_overview)
 
-	def _read_systemdescription(self,systemname):
+	def _read_systemdescription(self, modeltypename, systemname):
 		syd_overview = [{"language" : syd.get("language"),"description" : syd.find(self.make_find(["text"])).text}\
-										 for syd in self.get_element_systemdescription(systemname)]
+										 for syd in self.get_element_systemdescription(modeltypename, systemname)]
 		return(syd_overview)
 
-	def _write_systemdescription(self,systemname, language, text):
-		syd_specific = [syd for syd in self.get_element_systemdescription(systemname) if(syd.get("language") == language)]
+	def _write_systemdescription(self, modeltypename, systemname, language, text):
+		syd_specific = [syd for syd in self.get_element_systemdescription(modeltypename, systemname) if(syd.get("language") == language)]
 		syd_specific[0].find(self.make_find(["text"])).text = text
 		return()
 
@@ -1095,7 +1132,13 @@ class TestAutecologyXML_any(unittest.TestCase):
 		self.assertTrue(len(self.xmltest.commonnames[0].keys()),2)
 		self.assertTrue(list(self.xmltest.commonnames[0].keys())[0],"language")
 		self.assertTrue(list(self.xmltest.commonnames[0].keys())[1],"name")
+		self.assertTrue(isinstance(self.xmltest.modeltypes,list))
+		
+	def test_scan_modeltype(self):
+		self.xmltest._scan()
+		self.xmltest._scan_modeltype(self.xmltest.modeltypes[0])
 		self.assertTrue(isinstance(self.xmltest.systems,list))
+
 
 	def test__read_speciesdescription(self):
 		spd_overview = self.xmltest._read_speciesdescription()
@@ -1111,18 +1154,21 @@ class TestAutecologyXML_any(unittest.TestCase):
 
 	def test_scan_knowledgerules(self):
 		self.xmltest._scan()
-		#test per system
-		for cur_system in self.xmltest.systems:
-			self.xmltest._scan_knowledgerules(systemname = cur_system)
-			self.assertTrue(isinstance(self.xmltest.systemname, str),"Error occurs at system :" + cur_system)
-			self.assertTrue(isinstance(self.xmltest.knowledgeRulesNr,int),"Error occurs at system :" + cur_system)
-			self.assertTrue(isinstance(self.xmltest.knowledgeRulesCategorie,list),"Error occurs at system :" + cur_system) 
-			self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at system :" + cur_system) 
-			self.assertTrue(isinstance(self.xmltest.knowledgeRulesNames,list),"Error occurs at system :" + cur_system)
-			self.assertTrue(isinstance(self.xmltest.knowledgeRulesStatistics,list),"Error occurs at system :" + cur_system)
-			self.assertTrue(isinstance(self.xmltest.knowledgeRulesUnits,list),"Error occurs at system :" + cur_system)
-			self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
-									in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + cur_system)
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
+				self.assertTrue(isinstance(self.xmltest.systemname, str),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesNr,int),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesCategorie,list),"Error occurs at system :" + cur_system) 
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at system :" + cur_system) 
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesNames,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesStatistics,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesUnits,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
+										in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + cur_system)
 		
 
 	def test_read_systemdescription(self):
@@ -1130,54 +1176,63 @@ class TestAutecologyXML_any(unittest.TestCase):
 		newtext = '''TestNew
 TESTNEW'''
 		self.xmltest._scan()
-		#test per system
-		for cur_system in self.xmltest.systems:
-			syd_overview = self.xmltest._read_systemdescription(systemname = cur_system)
-			sys_text = [sys["description"] for sys in syd_overview if(sys["language"] == test_language)][0]
-			self.assertTrue(isinstance(sys_text,str),"Error occurs at system :" + cur_system +\
-														", with language : " + test_language)
-			self.xmltest._write_systemdescription(systemname = cur_system, language = test_language, text = newtext)
-			syd_overview2 = self.xmltest._read_systemdescription(systemname = cur_system)
-			sys_text2 = [sys2["description"] for sys2 in syd_overview2 if(sys2["language"] == test_language)][0]
-			self.assertTrue(isinstance(sys_text2,str),"Error occurs at system :" + cur_system)		
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				syd_overview = self.xmltest._read_systemdescription(modeltypename = cur_modeltype, systemname = cur_system)
+				sys_text = [sys["description"] for sys in syd_overview if(sys["language"] == test_language)][0]
+				self.assertTrue(isinstance(sys_text,str),"Error occurs at system :" + cur_system +\
+															", with language : " + test_language)
+				self.xmltest._write_systemdescription(modeltypename = cur_modeltype, systemname = cur_system, language = test_language, text = newtext)
+				syd_overview2 = self.xmltest._read_systemdescription(modeltypename = cur_modeltype, systemname = cur_system)
+				sys_text2 = [sys2["description"] for sys2 in syd_overview2 if(sys2["language"] == test_language)][0]
+				self.assertTrue(isinstance(sys_text2,str),"Error occurs at system :" + cur_system)		
 
 	def test_get_response_curve(self):
 		self.xmltest._scan()
-		#test per system
-		for cur_system in self.xmltest.systems:
-			self.xmltest._scan_knowledgerules(systemname = cur_system)
-			allrc = self.xmltest.knowledgeRulesNames
-			alltypes = self.xmltest.knowledgeRulesCategorie
-			for cur_rc, cur_type in zip(allrc,alltypes):
-				if(cur_type == "ResponseCurve"):
-					rc_tag = self.xmltest.get_element_response_curve(systemname = cur_system, rcname = cur_rc)	
-					self.assertTrue(isinstance(rc_tag,Element))
-					rc_data = self.xmltest.get_data_response_curve_data(rc_tag)
-					self.assertTrue(isinstance(rc_data, dict))
-					self.assertTrue(self.xmltest.XMLconvention["rc_dict_datatable"] in rc_data)
-					self.assertTrue(isinstance(rc_data[self.xmltest.XMLconvention["rc_dict_datatable"]],pandas.core.frame.DataFrame))
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
+				allrc = self.xmltest.knowledgeRulesNames
+				alltypes = self.xmltest.knowledgeRulesCategorie
+				for cur_rc, cur_type in zip(allrc,alltypes):
+					if(cur_type == "ResponseCurve"):
+						rc_tag = self.xmltest.get_element_response_curve(modeltypename = cur_modeltype, systemname = cur_system, rcname = cur_rc)	
+						self.assertTrue(isinstance(rc_tag,Element))
+						rc_data = self.xmltest.get_data_response_curve_data(rc_tag)
+						self.assertTrue(isinstance(rc_data, dict))
+						self.assertTrue(self.xmltest.XMLconvention["rc_dict_datatable"] in rc_data)
+						self.assertTrue(isinstance(rc_data[self.xmltest.XMLconvention["rc_dict_datatable"]],pandas.core.frame.DataFrame))
 
 	def test_plot_response_curve(self):
 		self.xmltest._scan()
-		#test per model
-		for cur_system in self.xmltest.systems:
-			self.xmltest._scan_knowledgerules(systemname = cur_system)
-			allrc = self.xmltest.knowledgeRulesNames
-			alltypes = self.xmltest.knowledgeRulesCategorie
-			for cur_rc, cur_type in zip(allrc,alltypes):
-				if(cur_type == "ResponseCurve"):
-					rc_tag = self.xmltest.get_element_response_curve(systemname = cur_system, rcname = cur_rc)	
-					rc_data = self.xmltest.get_data_response_curve_data(rc_tag)
-					fig, axes = self.xmltest.visualize_rc(rc_data)
-					self.assertTrue(np.array_equal(fig.get_size_inches()*fig.dpi, np.asarray([500.0,400.0]))) #size in dpi
-					self.assertTrue(isinstance(axes.get_title(),str))
-					self.assertTrue(isinstance(axes.get_ylabel(),str))
-					self.assertTrue(isinstance(axes.get_xlabel(),str))
-					self.assertTrue(len(axes.get_xticks()) > 2)
-					self.assertTrue(len(axes.get_yticks()) > 2)
-					#TEST NUMBER OF SUBPLOTS
-					#TEST PLOT TYPES
-					#TEST AXES TICK MARKS CONTENT
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
+				allrc = self.xmltest.knowledgeRulesNames
+				alltypes = self.xmltest.knowledgeRulesCategorie
+				for cur_rc, cur_type in zip(allrc,alltypes):
+					if(cur_type == "ResponseCurve"):
+						rc_tag = self.xmltest.get_element_response_curve(modeltypename = cur_modeltype, systemname = cur_system, rcname = cur_rc)	
+						rc_data = self.xmltest.get_data_response_curve_data(rc_tag)
+						fig, axes = self.xmltest.visualize_rc(rc_data)
+						self.assertTrue(np.array_equal(fig.get_size_inches()*fig.dpi, np.asarray([500.0,400.0]))) #size in dpi
+						self.assertTrue(isinstance(axes.get_title(),str))
+						self.assertTrue(isinstance(axes.get_ylabel(),str))
+						self.assertTrue(isinstance(axes.get_xlabel(),str))
+						self.assertTrue(len(axes.get_xticks()) > 2)
+						self.assertTrue(len(axes.get_yticks()) > 2)
+						#TEST NUMBER OF SUBPLOTS
+						#TEST PLOT TYPES
+						#TEST AXES TICK MARKS CONTENT
 
 class TestAutecologyXML_testxml(unittest.TestCase):
 
@@ -1199,6 +1254,11 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 		self.assertEqual(self.xmltest.latinname, "Testus testus")
 		self.assertEqual(self.xmltest.commonnames[0]["language"], "ENG")
 		self.assertEqual(self.xmltest.commonnames[0]["name"], "Test name")
+		self.assertEqual(self.xmltest.modeltypes, ["HSI"])
+
+	def test_scan_modeltype(self):
+		self.xmltest._scan()
+		self.xmltest._scan_modeltype(self.xmltest.modeltypes[0])
 		self.assertEqual(self.xmltest.systems, ["testsystem"])
 
 	def test__read_speciesdescription(self):
@@ -1209,22 +1269,23 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 
 	def test_scan_knowledgerules(self):
 		self.xmltest._scan()
-		#test per system
-		for cur_system in self.xmltest.systems:
-			self.xmltest._scan_knowledgerules(systemname = cur_system)
-			self.assertEqual(self.xmltest.systemname, "testsystem","Error occurs at system :" + cur_system)
-			self.assertEqual(self.xmltest.knowledgeRulesNr,5,"Error occurs at system :" + cur_system)
-			self.assertEqual(self.xmltest.knowledgeRulesCategorie,["ResponseCurve","ResponseCurve","ResponseCurve",\
-															"ResponseCurve","FormulaBased"],"Error occurs at system :" + cur_system) 
-			# self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at model :" + cur_model) 
-			self.assertEqual(self.xmltest.knowledgeRulesNames,["Chloride","Soil","SiltFraction",\
-														"WaterdepthLakes","P_chara_extinction"],"Error occurs at model :" + cur_system)
-			self.assertEqual(self.xmltest.knowledgeRulesStatistics,["minimum","average","average","average","none"],\
-														"Error occurs at system :" + cur_system)
-			self.assertEqual(self.xmltest.knowledgeRulesUnits,['g/l','soil','silt fraction / description','m','-'],\
-														"Error occurs at system :" + cur_system)
-			self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
-									in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + cur_system)
+		self.xmltest._scan_modeltype(self.xmltest.modeltypes[0])
+		
+		#test first system
+		self.xmltest._scan_knowledgerules(modeltypename = self.xmltest.modeltypes[0], systemname = self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.systemname, "testsystem","Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesNr,5,"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesCategorie,["ResponseCurve","ResponseCurve","ResponseCurve",\
+														"ResponseCurve","FormulaBased"],"Error occurs at system :" + self.xmltest.systems[0]) 
+		# self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at model :" + cur_model) 
+		self.assertEqual(self.xmltest.knowledgeRulesNames,["Chloride","Soil","SiltFraction",\
+													"WaterdepthLakes","P_chara_extinction"],"Error occurs at model :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesStatistics,["minimum","average","average","average","none"],\
+													"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesUnits,['g/l','soil','silt fraction / description','m','-'],\
+													"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
+								in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + self.xmltest.systems[0])
 	
 	def test_read_write_systemdescription(self):
 		test_language = "ENG"
@@ -1233,13 +1294,13 @@ TEST'''
 		newtext = '''TestNew
 TESTNEW'''
 		self.xmltest._scan()
-		#test per model
-		for cur_system in self.xmltest.systems:
-			syd_overview = self.xmltest._read_systemdescription(systemname = cur_system)
-			self.assertEqual(syd_overview[0]["description"],testtext,"Error occurs at system :" + cur_system)	
-			self.xmltest._write_systemdescription(systemname = cur_system, language = test_language, text = newtext)
-			syd_overview2 = self.xmltest._read_systemdescription(systemname = cur_system)
-			self.assertEqual(syd_overview2[0]["description"],newtext,"Error occurs at system :" + cur_system)	
+		self.xmltest._scan_modeltype(self.xmltest.modeltypes[0])
+		#test first system
+		syd_overview = self.xmltest._read_systemdescription(modeltypename = self.xmltest.modeltypes[0], systemname = self.xmltest.systems[0])
+		self.assertEqual(syd_overview[0]["description"],testtext,"Error occurs at system :" + self.xmltest.systems[0])	
+		self.xmltest._write_systemdescription(modeltypename = self.xmltest.modeltypes[0], systemname = self.xmltest.systems[0], language = test_language, text = newtext)
+		syd_overview2 = self.xmltest._read_systemdescription(modeltypename = self.xmltest.modeltypes[0], systemname = self.xmltest.systems[0])
+		self.assertEqual(syd_overview2[0]["description"],newtext,"Error occurs at system :" + self.xmltest.systems[0])	
 			
 
 

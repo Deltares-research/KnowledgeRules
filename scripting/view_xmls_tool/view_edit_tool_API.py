@@ -98,12 +98,17 @@ class API:
 		Load a new data file
 		'''
 
+		#Default
+		obj.cur_modeltype = "HSI"
+
+
 		#reset
 		obj.systemdescription = None
 
 		#Set data
 		AutXML.xmlroot = obj.xmlroot
 		AutXML._scan()
+		AutXML._scan_modeltype(obj.cur_modeltype)
 		obj.specieslatname = AutXML.latinname
 		obj.speciescommonname = AutXML.commonnames
 		obj.systems = AutXML.systems
@@ -149,12 +154,13 @@ class API:
 		obj.comboBox_2.update()
 
 		#first setup
+		modeltype = obj.cur_modeltype
 		system = obj.systems[0]
-		obj, AutXML = self.refresh_group_data(obj, AutXML, system, obj.groupBox)
+		obj, AutXML = self.refresh_group_data(obj, AutXML, modeltype, system, obj.groupBox)
 
 		return(obj, AutXML)
 
-	def refresh_group_data(self, obj, xml_obj, system, cur_window):
+	def refresh_group_data(self, obj, xml_obj, modeltype, system, cur_window):
 		'''
 		Load system related data
 
@@ -184,9 +190,9 @@ class API:
 		print("Topic :" + "To be filled!")
 		print("System : " + system)
 		
-		xml_obj._scan_knowledgerules(system)
+		xml_obj._scan_knowledgerules(modeltype, system)
 		obj.systemname = xml_obj.systemname
-		obj.systemdescription = xml_obj._read_systemdescription(system)
+		obj.systemdescription = xml_obj._read_systemdescription(modeltype, system)
 
 
 		#Make system description
@@ -264,7 +270,7 @@ class API:
 
 				rc_pixmap_widget = QtWidgets.QWidget(kr_groupbox)
 				rc_pixmap_layout = QtWidgets.QVBoxLayout(rc_pixmap_widget)
-				rc_tag = xml_obj.get_element_response_curve(systemname = system, rcname = kr)
+				rc_tag = xml_obj.get_element_response_curve(modeltypename = modeltype, systemname = system, rcname = kr)
 				rc_data = xml_obj.get_data_response_curve_data(rc_tag)		
 				rc_fig, rc_axes = xml_obj.visualize_rc(rc_data)
 
@@ -279,7 +285,7 @@ class API:
 
 			elif(obj.knowledgerulecat[i] == xml_obj.XMLconvention["fb"]):
 				
-				fb_tag = xml_obj.get_element_formula_based(systemname = system, fbname = kr)
+				fb_tag = xml_obj.get_element_formula_based(modeltypename = modeltype, systemname = system, fbname = kr)
 				fb_data = xml_obj.get_data_formula_based_data(fb_tag)
 				fb_settings, fb_list = xml_obj.make_fb_first_parametersettings(fb_data)
 				fb_result = xml_obj.calculate_fb(fb_data, parametersettings = fb_settings, variableparameter = fb_list)

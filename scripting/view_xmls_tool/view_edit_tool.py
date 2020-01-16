@@ -191,20 +191,7 @@ class UI_MainWindow(object):
 
 
 	def load_file(self):
-		
-		#load objects
-		objAPI = view_edit_tool_API.API()
-		AutXML = autecology_xml.AutecologyXML(None)	
-		
-		#reset
-		self.cur_language = None
-		self.systemname = None
-		self.systems = None
 
-		#load and refresh data
-		self = objAPI.load_file(self)
-		(self, AutXML) = objAPI.refresh_data(self, AutXML)
-		
 		#reset connections
 		try:
 			self.comboBox.currentIndexChanged.disconnect()
@@ -215,7 +202,20 @@ class UI_MainWindow(object):
 			self.comboBox_2.currentIndexChanged.disconnect()
 		except:
 			pass
-			
+
+		#reset
+		self.systemname = None
+		self.systems = None
+		self.cur_language = None
+		
+		#load objects
+		objAPI = view_edit_tool_API.API()
+		AutXML = autecology_xml.AutecologyXML(None)	
+
+		#load and refresh data
+		self = objAPI.load_file(self)
+		(self, AutXML) = objAPI.refresh_data(self, AutXML)
+		
 		#set connections
 		self.comboBox.currentIndexChanged.connect(lambda: objAPI.refresh_language(self, self.cur_language))
 		self.comboBox_2.currentIndexChanged.connect(lambda: objAPI.refresh_group_data(self, AutXML, self.systemname, self.groupBox))

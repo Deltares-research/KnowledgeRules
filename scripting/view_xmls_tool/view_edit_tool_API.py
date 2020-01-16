@@ -82,7 +82,7 @@ class API:
 		#combobox strip output
 		name, cur_language = comboxvalue.split(" | ")
 		obj.cur_language = cur_language
-
+		
 		#replace species information
 		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
 		obj.textBrowser_2.setText(cur_speciestext)
@@ -98,12 +98,16 @@ class API:
 		Load a new data file
 		'''
 
+		#reset
+		obj.systemdescription = None
+
 		#Set data
 		AutXML.xmlroot = obj.xmlroot
 		AutXML._scan()
 		obj.specieslatname = AutXML.latinname
 		obj.speciescommonname = AutXML.commonnames
 		obj.systems = AutXML.systems
+		
 
 		#clear old items
 		obj.comboBox.clear() 
@@ -147,7 +151,6 @@ class API:
 		#first setup
 		system = obj.systems[0]
 		obj, AutXML = self.refresh_group_data(obj, AutXML, system, obj.groupBox)
-
 
 		return(obj, AutXML)
 

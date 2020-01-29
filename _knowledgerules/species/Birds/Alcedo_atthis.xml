@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45516493</EoLpagenr>
+			<LatName>Alcedo atthis</LatName>
+			<CommonNames>
+				<Name name= "IJsvogel" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt in holten in de bodem.</p><p>Het voedsel wordt onder water gezocht.</p><p>De bepalende factor van voorkomen is de aanwezigheid van schoon water, liefst stromend, en steile oevers en/of grote wortelkluiten.</p><h1 id="IJsvogel-Alcedoatthis-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./IJsvogel - Alcedo atthis - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p><p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>.</p><h1 id="IJsvogel-Alcedoatthis-Toepassingsgebied">Toepassingsgebied</h1><p>Vaarten, kanalen, rivieren en vergelijkbare wateren op de hoge zandgronden in Nederland dienen als uitgangspunt voor dit model <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>. Beken vormen geen onderdeel van dit model.</p><h1 id="IJsvogel-Alcedoatthis-Voorbeeldproject">Voorbeeld project</h1><p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>feeding_area</To>
+							<To>breeding_area_general</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>bank_slope_angle</To>
+							<To>vertical_bank_characteristics</To>
+							<To>vertical_bank_density</To>
+						</From>
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>surfacewater_characteristics</To>
+							<To>water_clearity</To>
+							<To>feedingplace_characteristics</To>
+						</From>
+						<From name="breeding_area_general">
+							<label>"breeding_area_general"</label>
+							<equation>min</equation>
+							<To>hydrodynamics</To>
+							<To>vertical_bank_distance_to_water</To>
+						</From>
+						<From name="bank_characteristics">
+							<label>"vertical_bank_characteristics"</label>
+							<equation>geometric_average</equation>
+							<To>bank_substrate</To>
+							<To>vertical_bank_length</To>
+							<To>vertical_bank_height</To>
+						</From>
+						<From name="surfacewater_characteristics">
+							<label>"surfacewater_characteristics"</label>
+							<equation>average</equation>
+							<To>surfacewater_open_area</To>
+							<To>surfacewater_width</To>
+							<To>surfacewater_waterdepth</To>
+						</From>
+						<From name="feedingplace_characteristics">
+							<label>"feedingplace_characteristics"</label>
+							<equation>average</equation>
+							<To>embankment_treecoverage</To>
+							<To>embankment_sittingplace</To>
+						</From>
+						<From name="hydrodynamics">
+							<label>"hydrodynamics"</label>
+							<equation>average</equation>
+							<To>waterlevel_fluctuation</To>
+							<To>flooding_period</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="bank_slope_angle">
+						<type>scalar</type>
+						<layername>"bank_slope_angle"</layername>
+						<unit>"degrees of slope"</unit>
+						<statistic>average</statistic>
+						<description>"Slope of the enbankment in degrees"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							<reference author="M.P. Weeber" title="interpretation" identification="added in 2020-01-29" year="2020" journal=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="20.0" HSI="0.0"/>
+							<parameter value="70.0" HSI="1.0"/>
+							<parameter value="90.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="bank_substrate">
+						<type>categorical</type>
+						<layername>"substrate"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Substrate in the enbankment expressed in categories"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="Sand" HSI="0.7"/>
+							<parameter cat="Sand with clay content" HSI="1.0"/>
+							<parameter cat="Sandy clay" HSI="0.7"/>
+							<parameter cat="Clay" HSI="0.3"/>
+							<parameter cat="Peat" HSI="0.3"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="vertical_bank_length">
+						<type>scalar</type>
+						<layername>"vertical_bank_length"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Vertical_embankment length in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="1.5" HSI="0.5"/>
+							<parameter value="2.0" HSI="0.8"/>
+							<parameter value="5.0" HSI="1.0"/>
+							<parameter value="10.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="vertical_bank_height">
+						<type>scalar</type>
+						<layername>"height"</layername>
+						<unit>"m"</unit>
+						<statistic>measured from average waterlevel</statistic>
+						<description>"Vertical embankment height measured from average waterlevel in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.0"/>
+							<parameter value="2.0" HSI="1.0"/>
+							<parameter value="3.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="vertical_bank_density">
+						<type>range / categorical</type>
+						<layername>vertical_bank_density</layername>
+						<unit>nr of vertical river banks per km embankment</unit>
+						<statistic>average</statistic>
+						<description>Number of vertical embankments per km of embankment</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="0" HSI="0.0"/>
+							<parameter rangemin="0" rangemax="0.5" cat="0 - 0.5" HSI="0.5"/>
+							<parameter rangemin="0.5" rangemax="1.0" cat="0.5 - 1.0" HSI="0.8"/>
+							<parameter rangemin="1.0" rangemax="999999" cat="> 1.0" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="surfacewater_open_area">
+						<type>scalar</type>
+						<layername>"surfacewater_open_area"</layername>
+						<unit>"Ha"</unit>
+						<statistic>within one kilometer</statistic>
+						<description>"Open area of surface water in Hectares within one kilometer"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.4"/>
+							<parameter value="1.0" HSI="1.0"/>
+							<parameter value="2.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="surfacewater_width">
+						<type>scalar</type>
+						<layername>"surfacewater_width"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of surface water in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="1.0" HSI="0.0"/>
+							<parameter value="2.0" HSI="1.0"/>
+							<parameter value="3.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="surfacewater_waterdepth">
+						<type>scalar</type>
+						<layername>"surfacewater_waterdepth"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth of surface water in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.1" HSI="0.5"/>
+							<parameter value="0.3" HSI="1.0"/>
+							<parameter value="0.5" HSI="1.0"/>
+							<parameter value="2.0" HSI="0.5"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="water_clarity">
+						<type>scalar</type>
+						<layername>"water_clarity"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterclarity (light penetration sight depth) in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							<reference author="M.P. Weeber" title="interpretation" identification="added in 2020-01-29" year="2020" journal=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.1" HSI="0.0"/>
+							<parameter value="0.2" HSI="0.7"/>
+							<parameter value="0.4" HSI="1.0"/>
+							<parameter value="1.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="embankment_treecoverage">
+						<type>categorical</type>
+						<layername>"treecoverage"</layername>
+						<unit>"categorie"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of trees (overhanging branches) on embankment"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="1.0"/>
+							<parameter cat="absent" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="embankment_sittingplace">
+						<type>categorical</type>
+						<layername>"sittingplace"</layername>
+						<unit>"categorie"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of sitting places above water for birds on embankment"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="1.0"/>
+							<parameter cat="absent" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="waterlevel_fluctuation">
+						<type>range / categorical</type>
+						<layername>waterlevel_fluctuation</layername>
+						<unit>cm per day</unit>
+						<statistic>average</statistic>
+						<description>Waterlevel fluctuation in cm per day</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="1.0"/>
+							<parameter rangemin="10" rangemax="25" cat="10 - 25" HSI="0.5"/>
+							<parameter rangemin="25" rangemax="999999" cat= "> 10" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="flooding_period">
+						<type>range / categorical</type>
+						<layername>"overstromingen_periode"</layername>
+						<unit>maand / categorie"</unit>
+						<statistic>average</statistic>
+						<description>"Periode van overstromingen zowel in maand nummer als categorie"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
+							<parameter rangemin="0" rangemax="3" cat="October - February" HSI="1.0"/> 
+							<parameter rangemin="3" rangemax="9" cat="March - August" HSI="0.1"/>							
+							<parameter rangemin="9" rangemax="12" cat="October - February" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="IJsvogel-Alcedoatthis-Algemeenvoorkomen(leef-enbroedgebied)">Algemeen voorkomen (leef- en broedgebied)</h3><p>De ijsvogel is in Nederland voornamelijk te vinden op de hoge zandgronden in het oosten en het zuiden. Ze komen voor in het rivierengebied, de Veluwezoom, Midden Nederland, maar zijn ook aangetroffen langs de binnenduinrand <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>. </p><p>In de broedtijd worden ze hoofdzakelijk langs zoete wateren aangetroffen. Hier broeden ze langs beken, kleine rivieren, kanalen, vaarten, (fort-) grachten, vijvers, plassen en afgravingen. Het nest wordt gegraven in steile oevers in de wortelkluiten van omgevallen bomen of in zandwallen. Bij voorkeur wordt het nest op een halve meter boven de oever gebouwd met een voorkeurshoogte van de steilwand van 2 meter of hoger. Voor de steilwand is er een voorkeur voor leemhoudend zand. Sterke peilfluctuaties kunnen potentiële broedplaatsen in oevers ongeschikt maken. Hoewel de aanwezigheid van bomen in het broedgebied niet noodzakelijk is, zijn uitkijkposten boven of bij het water in de vorm van takken of riet dat wel <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>. </p><h3 id="IJsvogel-Alcedoatthis-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>Voor het foerageergebied, dat vaak overlapt met het broedgebied, is het nodig dat er een gemiddelde minimale waterdiepte van 10 cm aanwezig is. Er bestaat een voorkeur voor de iets diepere wateren (&gt; 20 – 30 cm). Echt diepe wateren zijn minder geschikt. Het dieet van de ijsvogel bestaat hoofdzakelijk uit kleine zoetwatervissen, maar ook waterinsecten behoren hier toe. In het zoute water worden zoutwatervis en aasgarnalen gegeten. Minder vaak worden kreeftachtigen, mollusken, landinsecten of amfibieën gegeten. Maar over het algemeen kan gesteld worden dat in het foerageergebied een ruime hoeveelheid kleine vis van ca. 7 cm lang aanwezig dient te zijn. Binnen een straal van 5 km tot het nest wordt er gefoerageerd <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>. </p><p>Samenhangend met het dieet van de ijsvogel, lijkt deze vogel een voorkeur te hebben voor snelstromende wateren die helder zijn, echter, de ijsvogel wordt ook langs stagnant en relatief troebel water aangetroffen. Zandige waterbodems (inherent aan het voorkomen van de ijsvogel op de hoge zandgronden) hebben over het algemeen helder water, maar met loss worden deze echter snel troebel. Verder kan een snelle waterafvoer (resuspensie) ook voor vertroebeling zorgen <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>. </p><h3 id="IJsvogel-Alcedoatthis-Reproductieenmigratie">Reproductie en migratie</h3><p>De broedperiode is tussen februari en augustus. Hierbij zijn twee broedsels de standaard. Gemiddeld worden er 6 tot 7 eieren gelegd in één legsel, die na 19 tot 21 dagen uitgebroed zijn. De jongen kunnen na 23 tot 27 dagen vliegen en enkele dagen hierna zijn ze al onafhankelijk <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>. </p><p>De migratie vindt plaats van mei tot september. Hierbij blijven de vogels binnen Nederland of trekken naar aangrenzend westelijk Europa. In februari- maart raken de broedplaatsen weer bezet <a href="https://publicwiki.deltares.nl/display/HBTHOME/IJsvogel+-+Alcedo+atthis#IJsvogel-Alcedoatthis-1">#1</a>.</p>]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

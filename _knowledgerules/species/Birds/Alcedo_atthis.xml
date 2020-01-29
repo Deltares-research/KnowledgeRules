@@ -57,7 +57,7 @@
 							<To>hydrodynamics</To>
 							<To>vertical_bank_distance_to_water</To>
 						</From>
-						<From name="bank_characteristics">
+						<From name="vertical_bank_characteristics">
 							<label>"vertical_bank_characteristics"</label>
 							<equation>geometric_average</equation>
 							<To>bank_substrate</To>

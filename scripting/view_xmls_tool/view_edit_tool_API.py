@@ -83,9 +83,9 @@ class API:
 		name, cur_language = comboxvalue.split(" | ")
 		obj.cur_language = cur_language
 		
-		#replace species information
-		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
-		obj.textBrowser_2.setText(cur_speciestext)
+		#replace content information
+		cur_contenttext = [con["description"] for spd in obj.contentdescription if(con["language"] == obj.cur_language)][0]
+		obj.textBrowser_2.setText(cur_contenttext)
 
 		#replace system information
 		cur_systemtext = [syd["description"] for syd in obj.systemdescription if(syd["language"] == obj.cur_language)][0]
@@ -109,24 +109,37 @@ class API:
 		AutXML.xmlroot = obj.xmlroot
 		AutXML._scan()
 		AutXML._scan_modeltype(obj.cur_modeltype)
-		obj.specieslatname = AutXML.latinname
-		obj.speciescommonname = AutXML.commonnames
+		
 		obj.systems = AutXML.systems
 		
+		if(AutXML.topic_name == AutXML.XMLconvention["topic_species"]):
+			#get names
+			obj.topic_name = AutXML.topic_name + " : " + AutXML.latinname
+			obj.commonnames = AutXML.commonnames
+			obj.subjectlink = AutXML.EoL_Link
+		
+		elif(AutXML.topic_name == AutXML.XMLconvention["topic_wfdind"]):
+			#get names
+			obj.topic_name = AutXML.topic_name
+			obj.commonnames = AutXML.commonnames
+			obj.subjectlink = None
+
+		else:
+			raise ValueError("The topic '" + AutXML.topic_name + "'has not yet been enabled in the viewer.")
 
 		#clear old items
 		obj.comboBox.clear() 
 		obj.comboBox_2.clear() 
 
 		#retrieve data
-		obj.speciesdescription = AutXML._read_speciesdescription()
+		obj.contentdescription = AutXML._read_contentdescription()
 
-		#place species name
-		obj.textBrowser.setText(obj.specieslatname)
+		#place topic name
+		obj.textBrowser.setText(obj.topic_name)
 		obj.textBrowser.setFixedWidth(1000)
 
 		# obj.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Expanding)
-		for nr, cn in enumerate(obj.speciescommonname):
+		for nr, cn in enumerate(obj.commonnames):
 			if(nr == 0):
 				obj.cur_language = cn["language"]
 			obj.comboBox.addItem(cn["name"] + " | " + cn["language"])
@@ -134,10 +147,10 @@ class API:
 		for system in obj.systems:
 			obj.comboBox_2.addItem(system)
 
-		#place species information
+		#place content information
 		print(obj.cur_language)
-		cur_speciestext = [spd["description"] for spd in obj.speciesdescription if(spd["language"] == obj.cur_language)][0]
-		obj.textBrowser_2.setText(cur_speciestext)
+		cur_contenttext = [con["description"] for con in obj.contentdescription if(con["language"] == obj.cur_language)][0]
+		obj.textBrowser_2.setText(cur_contenttext)
 		obj.textBrowser_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 		obj.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
 		obj.textBrowser_2.setMinimumWidth(1000)
@@ -187,7 +200,7 @@ class API:
 					system = obj.MainWindow.findChild(QtWidgets.QComboBox,obj.MainWindow.sender().objectName()).currentText()
 
 		#get system data
-		print("Topic :" + "To be filled!")
+		print("Topic :" + xml_obj.topic_name)
 		print("System : " + system)
 		
 		xml_obj._scan_knowledgerules(modeltype, system)

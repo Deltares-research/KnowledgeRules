@@ -107,12 +107,25 @@ class AutecologyXML(_File):
 		self.xmlns = "http://www.wldelft.nl/fews"
 
 		#scan
+		self.topic_name = None
+		self.EoL_ID = None
+		self.EoL_Link = None 
 		self.latinname = None
 		self.commonnames = None
+		self.modeltypes = None
+
+		#scan_modeltype
 		self.systems = None
 
-		#scan_model
+		#scan_system
 		self.systemname = None
+		self.spatial_scope = None
+		self.temporal_scope = None
+		self.geonames_names = None 
+		self.geonames_ids = None
+		self.geonames_links = None
+		self.StartDate = None
+		self.EndDate = None
 		self.knowledgeRulesNr = None
 		self.knowledgeRulesCategorie = None
 		self.knowledgeRulesDict = None
@@ -123,7 +136,6 @@ class AutecologyXML(_File):
 		self.XMLlayers = {}
 		self.XMLlayers["layer1"] = "AutecologyXML"
 		self.XMLlayers["layer1_1"] = "Topic"
-		self.XMLlayers["layer1_1_1_alt1"] = "Species"
 		self.XMLlayers["layer1_2_alt1"] = "Autecology"
 		self.XMLlayers["layer1_2_1"] = "ModelType"
 		self.XMLlayers["layer1_2_1_1"] = "System"
@@ -139,18 +151,21 @@ class AutecologyXML(_File):
 
 		#XML paths
 		self.xmlns = "{" + self.xmlns + "}"
-		species_layers = ["layer1_1","layer1_1_1_alt1"]
-		self.species_path = self.make_find([self.XMLlayers[x] for x in species_layers])
+		topic_layers = ["layer1_1"]
+		self.topic_path = self.make_find([self.XMLlayers[x] for x in topic_layers])
 		modeltype_layers = ["layer1_2_alt1","layer1_2_1"]
 		self.modeltype_path = self.make_find([self.XMLlayers[x] for x in modeltype_layers])
 		self.system_path = self.make_find([self.XMLlayers["layer1_2_1_1"]])
-		self.speciesdescription_path = self.make_find([self.XMLlayers["layer1_5"]])
+		self.contentdescription_path = self.make_find([self.XMLlayers["layer1_5"]])
+		self.systemscope_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_1"]])
 		self.systemdescription_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_2"]])
 		self.systemflowdiagram_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_3"]])
 		self.system_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_4"]])
 
 		#XML_specifics
 		self.XMLconvention = {}
+		self.XMLconvention["topic_species"] = "Species"
+		self.XMLconvention["topic_wfdind"] = "WFDindicator"
 		self.XMLconvention["modeltypekey"] = "name"
 		self.XMLconvention["systemkey"] = "name"
 		self.XMLconvention["rc"] = "ResponseCurve"
@@ -159,13 +174,19 @@ class AutecologyXML(_File):
 		self.XMLconvention["fbkey"] = "name"
 		self.XMLconvention["-Infvalue"] = -999999.0
 		self.XMLconvention["Infvalue"] = 999999.0
+		self.XMLconvention["EoL_ID"] = "EoLpagenr"
+		self.XMLconvention["GeoNames_ID"] = "GeoNames"
 
 		#Code specifics
 		self.XMLconvention["rc_dict_datatable"] = "rule"
 		self.XMLconvention["fb_result"] = "result_calculation"
 
-
 		self.XMLconvention["allowed_knowledgeRulesNames"] = [self.XMLconvention["rc"],self.XMLconvention["fb"]]
+
+
+		#External specifics
+		self.XMLconvention["EoL_Link_ID"] = "https://eol.org/pages/"
+		self.XMLconvention["GeoNames_Link_ID"] = "https://www.geonames.org/"
 
 
 		if((self.fullname is not None) and (self.name_ext == "xml")):
@@ -252,14 +273,15 @@ class AutecologyXML(_File):
 		element_list = [e for e in root if(name_value in e.get(name_key))]  
 		return(element_list)
 
-	def get_element_species(self):
+	def get_element_topics(self):
 		self.check_xml_present()
-		type_tag_species = self.xmlroot.find(self.species_path)
-		return(type_tag_species)
+		type_tag_topic = self.xmlroot.find(self.topic_path)
+		topic_elements = [topic for topic in type_tag_topic]
+		return(topic_elements)
 
-	def get_element_speciesdescription(self):
-		type_tag_sd = self.xmlroot.find(self.speciesdescription_path)
-		return(type_tag_sd)
+	def get_element_contentdescription(self):
+		type_tag_cd = self.xmlroot.find(self.contentdescription_path)
+		return(type_tag_cd)
 
 	def get_element_modeltypes(self):
 		self.check_xml_present()
@@ -289,6 +311,11 @@ class AutecologyXML(_File):
 		self.check_element_numbers(type_tag_sys_list, expected = 1, operator = "eq")
 		type_tag_syst = type_tag_sys_list[0]
 		return(type_tag_syst)
+
+	def get_element_scope(self, modeltypename, systemname):
+		type_tag_syst = self.get_element_system(modeltypename, systemname)
+		type_tag_scope = type_tag_syst.find(self.systemscope_path_spec)
+		return(type_tag_scope)
 
 	def get_element_systemdescription(self, modeltypename, systemname):
 		type_tag_syst = self.get_element_system(modeltypename, systemname)
@@ -525,25 +552,75 @@ class AutecologyXML(_File):
 
 	def _scan(self):
 
-		#THIS NEEDS TO BE SPECIFIED TO TOPICS
+		#Get all topics
+		topics = self.get_element_topics()
+		topic_names =  list(child.tag.replace(self.xmlns,"") for child in topics)
 
-		#Find species
-		species_root =  self.get_element_species()
-		self.latinname = species_root.find(self.make_find(['LatName'])).text
-		self.commonnames = [{"name" : cn.get("name"), "language" : cn.get("language")}\
-								 for cn in species_root.find(self.make_find(['CommonNames']))]
+		#Check if only one topic
+		if(len(topics) != 1):
+			raise ValueError("Only one topic element allowed.")
 
+		#get only element
+		topic = topics[0]
+		topic_name = topic_names[0]
+
+		if(topic_name == self.XMLconvention["topic_species"]):
+			self.topic_name = self.XMLconvention["topic_species"]
+			self.EoL_ID = topic.find(self.make_find([self.XMLconvention["EoL_ID"]])).text
+			self.EoL_Link = self.XMLconvention["EoL_Link_ID"] + self.EoL_ID 
+			self.latinname = topic.find(self.make_find(['LatName'])).text
+			self.commonnames = [{"name" : cn.get("name"), "language" : cn.get("language")}\
+								 for cn in topic.find(self.make_find(['CommonNames']))]
+	
+		elif(topic_name == self.XMLconvention["topic_wfdind"]):
+			self.topic_name = self.XMLconvention["topic_wfdind"]
+			self.commonnames = [{"name" : cn.get("name"), "language" : cn.get("language")}\
+								 for cn in topic.find(self.make_find(['CommonNames']))]
+		
+		else:
+			raise ValueError("Topic element is not yet available for interpretation : " + topic_name)
+		
+		#get modeltypes
 		type_tag_mod = self.get_element_modeltypes()
 		modeltypes_available = [e.get(self.XMLconvention["modeltypekey"]) for e in type_tag_mod]
 		self.modeltypes = modeltypes_available
 
+		return()
 
 	def _scan_modeltype(self, modeltypename):							 
 		type_tag_sys = self.get_element_systems(modeltypename)
 		systems_available = [e.get(self.XMLconvention["systemkey"]) for e in type_tag_sys]
 		self.systems = systems_available
 
+		return()
+
+	def _scan_system(self, modeltypename, systemname):
+
+		#get systemname
+		self.systemname = systemname
+
+		#get scope
+		self._scan_scope(modeltypename, systemname)
+
+
+
+		return()
+
+	def _scan_scope(self, modeltypename, systemname):
+		self.spatial_scope = self._read_spatial_scope(modeltypename, systemname)
+		self.temporal_scope = self._read_temporal_scope(modeltypename , systemname)
+
+		#get spatial scope
+		self.geonames_names = [ss["name"] for ss in self.spatial_scope] 
+		self.geonames_ids = [ss["GeoNames_id"] for ss in self.spatial_scope]
+		self.geonames_links = [XMLconvention["GeoNames_Link_ID"] + str(gid) for gid in self.geonames_ids]
+
+		#get temporal scope
+		self.StartDate = self.temporal_scope["StartDate"]
+		self.EndDate = self.temporal_scope["EndDate"]
 		
+		return()
+
 	def _scan_knowledgerules(self, modeltypename, systemname):
 
 		krs_root = self.get_element_knowledgerules(modeltypename, systemname)
@@ -573,30 +650,90 @@ class AutecologyXML(_File):
 		self.knowledgeRulesUnits = [value["unit"].replace('"','') for key, value in self.knowledgeRulesDict["rules"].items()]
 
 		return()
-		
-	def _read_speciesdescription(self):
-		spd_overview = [{"language" : spd.get("language"), "description" : spd.find(self.make_find(["text"])).text}\
-										 for spd in self.get_element_speciesdescription()]
-		return(spd_overview)
 
-	def _write_speciesdescription(self, language, text):
-		spd_specific = [spd for spd in self.get_element_speciesdescription() if(spd.get("language") == language)]
-		spd_specific[0].find(self.make_find(["text"])).text = text
-		return() 
-
-	def _read_systemflowdiagrams(self, modeltypename, systemname):
+	def _scan_systemflowdiagrams(self, modeltypename, systemname):
 		syfd_overview = []
 		for syfd in self.get_element_systemflowdiagram(modeltypename, systemname):
 			flow_diagram_name = syfd.get("name")
 			from_overview = []
 			for fromlink in syfd:
+				name = fromlink.get("name")
 				label = fromlink.find(self.make_find(["label"])).text
 				equation = fromlink.find(self.make_find(["equation"])).text
 				to = [tolink.text.replace('"','') for tolink in fromlink.findall(self.make_find(["To"]))]
-				from_overview.append(OrderedDict([("label",label),("equation",equation),("to",to)]))
-			syfd_overview.append(OrderedDict([("name",flow_diagram_name),("Links",from_overview)]))
+				from_overview.append(OrderedDict([("From_name",name),("label",label),("equation",equation),("To_names",to)]))
+			syfd_overview.append(OrderedDict([("diagram_name",flow_diagram_name),("Links",from_overview)]))
 
-		return(syfd_overview)
+		#Store data
+		self.flowdiagrams = [diagram["diagram_name"] for diagram in syfd_overview]
+		self.flowdiagrams_lists = syfd_overview
+
+		return()
+
+	def _read_contentdescription(self):
+		con_overview = [{"language" : con.get("language"), "description" : con.find(self.make_find(["text"])).text}\
+										 for con in self.get_element_contentdescription()]
+		return(con_overview)
+
+	def _write_contentdescription(self, language, text):
+		con_specific = [con for con in self.get_element_contentdescription() if(con.get("language") == language)]
+		con_specific[0].find(self.make_find(["text"])).text = text
+		return() 
+
+
+
+	def _read_spatial_scope(self, modeltypename, systemname):
+		scope_element = self.get_element_scope(modeltypename,systemname)
+		
+		#get scopes of relevance
+		spatial_scope_element = scope_element.find(self.make_find(["SpatialScope"]))
+		temporal_scope_element = scope_element.find(self.make_find(["TemporalScope"]))
+
+		#extract spatial scope data
+		spatial_scope = [{"name" : sp_scope.get("name"), "GeoNames_id" : sp_scope.get("id")}\
+							for sp_scope in spatial_scope_element]
+		return(spatial_scope)
+		
+
+	def _read_temporal_scope(self, modeltypename, systemname):
+		scope_element = self.get_element_scope(modeltypename,systemname)
+		
+		#get scopes of relevance
+		temporal_scope_element = scope_element.find(self.make_find(["TemporalScope"]))
+
+		#extract temporal scope data
+		startdate = temporal_scope_element.find(self.make_find(["StartDate"])).text
+		enddate = temporal_scope_element.find(self.make_find(["EndDate"])).text
+		temporal_scope = {"startdate" : startdate, "enddate" : enddate}
+
+		return(temporal_scope)
+
+	def _read_systemflowdiagram(self, modeltypename, systemname, diagramname):
+		syfd_elements = self.get_element_systemflowdiagram(modeltypename, systemname)
+		flow_diagram_names = [syfd.get("name") for syfd in syfd_elements]
+
+		if(not(diagramname in flow_diagram_names)):
+			raise RuntimeError("Flowdiagram '" + str(diagramname) + "' not available in modeltype '" +\
+				str(modeltypename) + "' with system '" + str(systemname) + "' .")
+			return()
+
+		if(len([i for i, e in enumerate(flow_diagram_names) if e == diagramname]) != 1):
+			raise RuntimeError("Flowdiagram '" + str(diagramname) + "' might occur multiple times in modeltype '" +\
+				str(modeltypename) + "' with system '" + str(systemname) + "' .")
+			return()
+
+		syfd = syfd_elements[flow_diagram_names.index(diagramname)]
+		flowdiagram_name = syfd.get("name")
+		from_overview = []
+		for fromlink in syfd:
+			name = fromlink.get("name")
+			label = fromlink.find(self.make_find(["label"])).text
+			equation = fromlink.find(self.make_find(["equation"])).text
+			to = [tolink.text.replace('"','') for tolink in fromlink.findall(self.make_find(["To"]))]
+			from_overview.append(OrderedDict([("From_name",name),("label",label),("equation",equation),("To_names",to)]))
+		flowdiagram = OrderedDict([("diagram_name",flowdiagram_name),("Links",from_overview)])
+		
+		return(flowdiagram)
 
 	def _read_systemdescription(self, modeltypename, systemname):
 		syd_overview = [{"language" : syd.get("language"),"description" : syd.find(self.make_find(["text"])).text}\
@@ -1059,6 +1196,58 @@ class AutecologyXML(_File):
 
 		return(SubWindow)
 
+
+	def visualise_flowdiagram(self, flowdiagram):
+		'''
+		Visualisation performed by blockdiag.
+		See documentation here:
+		http://blockdiag.com/en/blockdiag
+		See GitHub repository here:
+		https://github.com/blockdiag/blockdiag
+		'''
+
+
+		#graph = pydot.Dot(graph_type='graph')
+		source = ""
+		source = source + "blockdiag { "
+		source = source + "node_width = 300;"
+		#source = source + "node_width = 40;"
+		source = source + "span_width = 150;"
+		#source = source + "span_width = 40;"
+
+		source = source + "default_fontsize = 15;"
+
+		for links_from in flow_diagram['Links']:
+			from_name = links_from["From_name"]
+
+			#add from link
+			source = source + from_name + " [label = '" + links_from["label"] + "', shape = roundedbox];"
+			
+			for nr, link_to in enumerate(links_from["To_names"]):
+				to_name = link_to
+			#	edge = pydot.Edge(from_name,to_name)
+			#	graph.add_edge(edge)
+				if(nr == 0):
+					source = source + from_name + " -> " + to_name + " [label = '" + links_from['equation'] + "', fontsize = 11];"
+				else:
+					source = source + from_name + " -> " + to_name + ";"
+
+		source = source + "}" 
+
+		#graph.write_png('example1_graph.png')
+		tree = parser.parse_string(source)
+		diagram = builder.ScreenNodeBuilder.build(tree)
+		draw = drawer.DiagramDraw("SVG", diagram, filename = "flowdiagram.svg")
+		#draw = drawer.DiagramDraw("PNG", diagram, filename = "flowdiagram.png")
+
+		draw.draw()
+		draw.save()
+
+
+
+		return()
+
+
 	def show_interactive_plot(self, SubWindow):
 
 		class mainwindow(QtWidgets.QMainWindow):
@@ -1140,8 +1329,8 @@ class TestAutecologyXML_any(unittest.TestCase):
 		self.assertTrue(isinstance(self.xmltest.systems,list))
 
 
-	def test__read_speciesdescription(self):
-		spd_overview = self.xmltest._read_speciesdescription()
+	def test__read_contentdescription(self):
+		spd_overview = self.xmltest._read_contentdescription()
 		self.assertTrue(isinstance(spd_overview,list))
 		self.assertTrue(isinstance(spd_overview[0],dict))
 		self.assertTrue(len(spd_overview[0].keys()),2)
@@ -1261,8 +1450,8 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 		self.xmltest._scan_modeltype(self.xmltest.modeltypes[0])
 		self.assertEqual(self.xmltest.systems, ["testsystem"])
 
-	def test__read_speciesdescription(self):
-		spd_overview = self.xmltest._read_speciesdescription()
+	def test__read_contentdescription(self):
+		spd_overview = self.xmltest._read_contentdescription()
 		testtext = '''Test
 	Test'''
 		self.assertEqual(spd_overview[0]["description"],testtext)

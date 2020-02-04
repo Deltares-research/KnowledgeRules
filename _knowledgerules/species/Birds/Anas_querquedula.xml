@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45510570</EoLpagenr>
+			<LatName>Anas querquedula</LatName>
+			<CommonNames>
+				<Name name="Zomertaling" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1978-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op het wateroppervlak, waterkant en bodem.</p>
+
+<p>Het voedsel wordt gezocht op het wateroppervlak, waterkant, bodem en onder water.</p>
+
+<p>De bepalende factoren van voorkomen zijn de aanwezigheid van ondiep (open) water en nat grasland.</p>
+
+<h1 id="Zomertaling-Anasquerquedula-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Zomertaling - Anas querquedula - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zomertaling+-+Anas+querquedula#Zomertaling-Anasquerquedula-1">#1</a>.</p>
+
+<h1 id="Zomertaling-Anasquerquedula-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Nederland</p>
+
+<h1 id="Zomertaling-Anasquerquedula-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>living_area</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>bank_slope_angle</To>
+							<To>bank_vegetation</To>
+							<To>cow_density</To>
+							<To>management</To>
+							<To>flooding</To>
+						</From>
+						<From name="living_area">
+							<label>"living_area"</label>
+							<equation>min</equation>
+							<To>stream_velocity</To>
+							<To>water_characteristics</To>
+							<To>chloride_content</To>
+							<To>vegetation</To>
+						</From>
+						<From name="bank_vegetation">
+							<label>"bank_vegetation"</label>
+							<equation>geometric_average</equation>
+							<To>width_bank_vegetation</To>
+							<To>height_vegetation</To>
+						</From>
+						<From name="management">
+							<label>"management"</label>
+							<equation>average</equation>
+							<To>mow_timing</To>
+							<To>groundwaterlevel</To>
+						</From>
+						<From name="water_characteristics">
+							<label>"water_characteristics"</label>
+							<equation>average</equation>
+							<To>surfacewater_open_area</To>
+							<To>surfacewater_shallow_area</To>
+						</From>
+						<From name="vegetation">
+							<label>"vegetation"</label>
+							<equation>average</equation>
+							<To>bank_vegetation_and_floating_plants</To>
+							<To>vegetation_types</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="surfacewater_open_area">
+						<type>range / categorical</type>
+						<layername>surfacewater_open_area</layername>
+						<unit>percentage of open water</unit>
+						<statistic>average</statistic>
+						<description>Percentage of open water</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="0"/>
+							<parameter rangemin="10" rangemax="30" cat="10 - 30" HSI="0.7"/>
+							<parameter rangemin="30" rangemax="70" cat="30 - 70" HSI="1"/>
+							<parameter rangemin="70" rangemax="100" cat="70 - 100" HSI="0.2"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="bank_slope_angle">
+						<type>range / categorical</type>
+						<layername>bank_slope_angle</layername>
+						<unit>degrees of slope</unit>
+						<statistic>average</statistic>
+						<description>Slope of the embankment in degrees</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="1"/>
+							<parameter rangemin="10" rangemax="180" cat="10 - 180" HSI="0.2"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="stream_velocity">
+						<type>categorical</type>
+						<layername>"stream_velocity"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Stream velocity of the water"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="absent" HSI="1.0"/>
+							<parameter cat="weak" HSI="1.0"/>
+							<parameter cat="intermediate" HSI="0.5"/>
+							<parameter cat="fast" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="surfacewater_shallow_area">
+						<type>scalar</type>
+						<layername>"surfacewater_shallow_area"</layername>
+						<unit>"ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area of shallow surface water in ha"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="2" HSI="0.5"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="20" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="groundwaterlevel">
+						<type>scalar</type>
+						<layername>"groundwaterlevel"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Groundwaterlevel in centimeters compared to field level"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							<reference author="M.P. Weeber" title="interpretation" identification="added in 2020-01-29" year="2020" journal=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="-40" HSI="0.0"/>
+							<parameter value="-30" HSI="0.5"/>
+							<parameter value="-10" HSI="1.0"/>
+							<parameter value="17.5" HSI="1.0"/>
+							<parameter value="50" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="flooding_period">
+						<type>range / categorical</type>
+						<layername>"overstromingen_periode"</layername>
+						<unit>maand / categorie"</unit>
+						<statistic>average</statistic>
+						<description>"Periode van overstromingen zowel in maand nummer als categorie"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/>
+							<parameter rangemin="0" rangemax="3" cat="August - March" HSI="1.0"/>
+							<parameter rangemin="3" rangemax="9" cat="April - Juli" HSI="0.0"/>
+							<parameter rangemin="9" rangemax="12" cat="August - March" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="chloride_content">
+						<type>range / categorical</type>
+						<layername>chloride_content</layername>
+						<unit>mg/l</unit>
+						<statistic>average</statistic>
+						<description>Chloride concentratration in mg/l</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="300" cat="0 - 300" HSI="1"/>
+							<parameter rangemin="300" rangemax="99999" cat="300 - 99999" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="bank_vegetation_and_floating_plants">
+						<type>categorical</type>
+						<layername>"bank_vegetation_and_floating_plants"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of bank vegetation and floating plants"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="much presence" HSI="1.0"/>
+							<parameter cat="little presence" HSI="0.5"/>
+							<parameter cat="absent" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="width_bank_vegetation">
+						<type>scalar</type>
+						<layername>"width_bank_vegetation"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of bank vegetation in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="2" HSI="0.5"/>
+							<parameter value="5" HSI="1.0"/>
+							<parameter value="10" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="height_vegetation">
+						<type>scalar</type>
+						<layername>"height_vegetation"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Width of vegetation in centimeters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="0.8"/>
+							<parameter value="20" HSI="1.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="vegetation_types">
+						<type>categorical</type>
+						<layername>"vegetation_types"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Type of vegetation"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="grass" HSI="1.0"/>
+							<parameter cat="sedge/rush" HSI="1.0"/>
+							<parameter cat="reed" HSI="0.5"/>
+							<parameter cat="reed-rough" HSI="0.2"/>
+							<parameter cat="bush/forest" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="cow_density">
+						<type>scalar</type>
+						<layername>"cow_density"</layername>
+						<unit>"number/ha"</unit>
+						<statistic>average</statistic>
+						<description>"Number of cows per hectare"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="3" HSI="0.0"/>
+							<parameter value="5" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="mow_timing">
+						<type>categorical</type>
+						<layername>"mow_timing"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Timing of mowing"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="till June 15" HSI="0.0"/>
+							<parameter cat="June 15 till Juli 1" HSI="0.7"/>
+							<parameter cat="after Juli 1" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>					
+				</KnowledgeRules>
+				
+				
+				
+				
+				
+				
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Zomertaling-Anasquerquedula-Algemeenvoorkomen(broed-enfoerageergebied)">Algemeen voorkomen (broed- en foerageergebied)</h3>
+
+<p>De zomertaling overwinterdt in de Sahel en broed in Nederland in laag-Nederland, inclusief het rivierengebied. De belangrijkste regio’s zijn de veengebieden in Noord-Holland, Utrecht en Zuid-Holland en het Rivierengebied. In het zuiden, midden en oosten van Nederland, op de kalk- en voedselarme zandgronden, komt de zomertaling niet voor in oppervlakte wateren kleiner dan 2.5 hectaren. Mogelijk is de aanwezigheid van meerdere kleine wateren bij elkaar in laag Nederland doorslaggevend. In akkerbouwgebieden, waar de sloten smal zijn, ontbreekt de zomertaling geheel. Mogelijk hangt dit samen met smalle sloten, steile oevers en een achterland dat ongeschikt is om te dienen als broedgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zomertaling+-+Anas+querquedula#Zomertaling-Anasquerquedula-1">#1</a>.</p>
+
+<p>Het ideale broedhabitat wordt gevormd door waterrijke rietlanden met ondiepe plassen en een grote diversiteit aan verlandingsituaties. Bosachtige omgevingen worden gemeden. Ook op zilte biotopen zoals schorren wordt gebroed. Daarbij komt de zomertaling alleen voor in stilstaand of zwakstromend water met een rijke oevervegetatie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zomertaling+-+Anas+querquedula#Zomertaling-Anasquerquedula-1">#1</a>.</p>
+
+<p>Wanneer de zomertaling in een moeras broedt, zal dit gebied grenzen aan grazige vegetaties. In het rivierenland wordt gekozen voor oude rivierarmen, strangen, wielen, kleiputten en plaatselijk in grienden. De zomertaling is vooral in het broedseizoen een uiterst schuwe vogel en zeer verstoringsgevoelig. Het foerageergebied en het broedgebied zijn niet gescheiden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zomertaling+-+Anas+querquedula#Zomertaling-Anasquerquedula-1">#1</a>. </p>
+
+<p>Voor het vrouwtje van de zomertaling moet het na het foerageren mogelijk zijn om ongezien het water uit te klimmen en het nest weer op te zoeken. Dit om predatie van het nest te voorkomen. Dit maakt ook de uittreedhoogte van belang. Beschotting langs wateren maakt deze uittreedhoogte hoger en heeft daarom een negatief effect. </p>
+
+
+<h3 id="Zomertaling-Anasquerquedula-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De zomertaling heeft voorkeur voor sloten met een waterdiepte van 30 cm of minder, waar het voedsel wordt gezocht. De zomertaling eet plantaardig en dierlijk voedsel dat uit de bovenste waterlagen wordt verzamelt. Dit slobbert hij op of hij pakt het al zwemmend met de kop onderwater. Het dierlijke voedsel bestaat uit insecten en hun larven, molluscen, crustaceeën, wormen, kikkervisjes en kleine visjes. Het plantaardige voedsel bestaat uit stengels, bladeren, wortels, wortelknollen en zaden van diverse soorten waterplanten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zomertaling+-+Anas+querquedula#Zomertaling-Anasquerquedula-1">#1</a>.   </p>
+
+<h3 id="Zomertaling-Anasquerquedula-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De 6 tot 13 eieren worden vanaf half april tot begin juli gelegd en komen na 21 tot 23 dagen uit. Na mei en tot eind augustus worden de jongen waargenomen. Vanaf augustus verlaten de zomertalingen Nederland en na eind september is de hoofdmoot weg uit Nederland. In maart komen de vogels weer terug naar Nederland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zomertaling+-+Anas+querquedula#Zomertaling-Anasquerquedula-1">#1</a>.   </p>
+
+<h3 id="Zomertaling-Anasquerquedula-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>Een overstroming leidt tot het mislukken van broedsels. Doordat zomertalingen verstopt in de vegetatie broeden, kan door maaien van de vegetatie zowel het nest als het zomertaling vrouwtje worden getroffen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zomertaling+-+Anas+querquedula#Zomertaling-Anasquerquedula-1">#1</a>. </p>
+]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

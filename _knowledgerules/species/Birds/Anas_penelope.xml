@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45510553</EoLpagenr>
+			<LatName>Anas penelope</LatName>
+			<CommonNames>
+				<Name name= "Smient" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="feeding_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Veerse meer" id="2745733"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op de bodem, maar mogelijk ook op het wateroppervlak of aan de waterkant.</p>
+
+<p>Het voedsel wordt gezocht op de bodem, op het wateroppervlak en in de waterkant .</p>
+
+<p>De bepalende factor van voorkomen is de aanwezigheid van ondiep open water.</p>
+
+
+<h1 id="Smient-Anaspenelope-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Smient - Anas penelope - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<h1 id="Smient-Anaspenelope-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Het Veerse Meer. </p>
+
+<h1 id="Smient-Anaspenelope-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="feeding_area">
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>waterdepth_summer</To>
+							<To>waterdepth_winter</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="waterdepth_summer">
+						<type>scalar</type>
+						<layername>"waterdepth_summer"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in the summer period"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.01" HSI="1.0"/>
+							<parameter value="2.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth_winter">
+						<type>scalar</type>
+						<layername>"waterdepth_winter"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in the winter period"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="1.0"/>
+							<parameter value="0.2" HSI="1.0"/>
+							<parameter value="0.4" HSI="0.0"/>
+							<parameter value="1.0" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Smient-Anaspenelope-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>In Nederland is de Smient hoofdzakelijk in de winter talrijk aanwezig. Ruim 40% van de Noordwest-Europese populatie overwintert in Nederland. Smienten broeden bij meren in IJsland, Schotland, Noord-Engeland en in de brede arctische en subarctische gordel die van Noorwegen via Azië tot de Bering straat loopt. In Nederland broeden slechts enkele paartjes Smienten. In het najaar begeven ze zich vooral op zoutmoerassen langs de kust <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2">#2</a>.</p>
+
+
+
+<h3 id="Smient-Anaspenelope-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Smienten zijn bijna helemaal vegetarisch, maar de vrouwtjes eten ook grote aantallen muggen tijdens het broedseizoen. Die leveren meer en betere eiwitten dan planten, iets dat hen in het broedseizoen in goede conditie houdt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-1">#1</a>. In de winter komen ze in groten getale grazend voor op graslanden in het Europese binnenland. De smienten die in September in het Veerse Meer arriveren doen zich vooral tegoed aan macrofyten zoals Zeesla en Zeegras. 's Avonds trekken groepen Smienten naar omliggende landbouwgronden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2">#2</a>.</p>
+
+<p>Smienten foerageren voornamelijk in ondiep water (&lt;20 cm), waarbij het Zeesla of Zeegras grondelend wordt bemachtigd. Aan het einde van het jaar is er meer energierijk eten nodig om te overleven en schakelt de soort over op landbouwgrassen. Net als Meerkoeten grazen ze ook op het droogvallende en afstervend Zeesla op de droogvallende platen in het najaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2">#2</a>.</p>]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="http://www.vogelbescherming.nl/vogels_kijken/vogelgids" title="Smient" year="2012" journal="" identification="23 november 2012">
+			<html><![CDATA[https://www.vogelbescherming.nl/ontdek-vogels/kennis-over-vogels/vogelgids/vogel/Smient]]></html>
+		</reference>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

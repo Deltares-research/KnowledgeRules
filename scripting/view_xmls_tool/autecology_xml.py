@@ -21,6 +21,10 @@ from matplotlib.backends.backend_qt5agg import FigureCanvas
 from PyQt5 import QtCore, QtGui, QtWidgets
 from pyqt5_visualization import LabeledSlider
 
+#flowdiagram plots
+from blockdiag import parser, builder, drawer
+import matplotlib.image as mpimg
+
 #testing
 import unittest
 
@@ -144,7 +148,7 @@ class AutecologyXML(_File):
 		self.XMLlayers["layer1_2_1_1_3"] = "SystemFlowDiagrams"
 		self.XMLlayers["layer1_2_1_1_4"] = "KnowledgeRules"
 #		self.XMLlayers["layer1_3"] = "FysicalCharacteristics"			#Not implemented (yet?)
-#		self.XMLlayers["layer1_4"] = "Traits"			                #Not implemented (yet?)
+#		self.XMLlayers["layer1_4"] = "Traits"				            #Not implemented (yet?)
 		self.XMLlayers["layer1_5"] = "ContentDescription"
 		self.XMLlayers["layer1_6"] = "Documentation"
 		self.XMLlayers["layer1_7"] = "DataSources"
@@ -590,6 +594,7 @@ class AutecologyXML(_File):
 	def _scan_modeltype(self, modeltypename):							 
 		type_tag_sys = self.get_element_systems(modeltypename)
 		systems_available = [e.get(self.XMLconvention["systemkey"]) for e in type_tag_sys]
+		self.modeltypename = modeltypename
 		self.systems = systems_available
 
 		return()
@@ -601,8 +606,8 @@ class AutecologyXML(_File):
 
 		#get scope
 		self._scan_scope(modeltypename, systemname)
-
-
+		self._scan_systemflowdiagrams(modeltypename, systemname)
+		self._scan_knowledgerules(modeltypename , systemname)
 
 		return()
 
@@ -613,7 +618,7 @@ class AutecologyXML(_File):
 		#get spatial scope
 		self.geonames_names = [ss["name"] for ss in self.spatial_scope] 
 		self.geonames_ids = [ss["GeoNames_id"] for ss in self.spatial_scope]
-		self.geonames_links = [XMLconvention["GeoNames_Link_ID"] + str(gid) for gid in self.geonames_ids]
+		self.geonames_links = [self.XMLconvention["GeoNames_Link_ID"] + str(gid) for gid in self.geonames_ids]
 
 		#get temporal scope
 		self.StartDate = self.temporal_scope["StartDate"]
@@ -666,7 +671,7 @@ class AutecologyXML(_File):
 
 		#Store data
 		self.flowdiagrams = [diagram["diagram_name"] for diagram in syfd_overview]
-		self.flowdiagrams_lists = syfd_overview
+		self.flowdiagrams_list = syfd_overview
 
 		return()
 
@@ -704,7 +709,7 @@ class AutecologyXML(_File):
 		#extract temporal scope data
 		startdate = temporal_scope_element.find(self.make_find(["StartDate"])).text
 		enddate = temporal_scope_element.find(self.make_find(["EndDate"])).text
-		temporal_scope = {"startdate" : startdate, "enddate" : enddate}
+		temporal_scope = {"StartDate" : startdate, "EndDate" : enddate}
 
 		return(temporal_scope)
 
@@ -1197,7 +1202,7 @@ class AutecologyXML(_File):
 		return(SubWindow)
 
 
-	def visualise_flowdiagram(self, flowdiagram):
+	def create_flowdiagram_image(self, flowdiagram, output = None):
 		'''
 		Visualisation performed by blockdiag.
 		See documentation here:
@@ -1205,30 +1210,33 @@ class AutecologyXML(_File):
 		See GitHub repository here:
 		https://github.com/blockdiag/blockdiag
 		'''
+		
+		svg_str = None
 
-
-		#graph = pydot.Dot(graph_type='graph')
 		source = ""
+		#figure size settings
+		#source = source + "blockdiag::"
+
 		source = source + "blockdiag { "
-		source = source + "node_width = 300;"
+		source = source + "node_width = 180;"
 		#source = source + "node_width = 40;"
-		source = source + "span_width = 150;"
+		source = source + "span_width = 120;"
 		#source = source + "span_width = 40;"
 
-		source = source + "default_fontsize = 15;"
+		source = source + "default_fontsize = 10;"
 
-		for links_from in flow_diagram['Links']:
-			from_name = links_from["From_name"]
+		for links_from in flowdiagram['Links']:
+			from_name = links_from["From_name"].replace('"','')
 
 			#add from link
 			source = source + from_name + " [label = '" + links_from["label"] + "', shape = roundedbox];"
 			
 			for nr, link_to in enumerate(links_from["To_names"]):
-				to_name = link_to
+				to_name = link_to.replace('"','')
 			#	edge = pydot.Edge(from_name,to_name)
 			#	graph.add_edge(edge)
 				if(nr == 0):
-					source = source + from_name + " -> " + to_name + " [label = '" + links_from['equation'] + "', fontsize = 11];"
+					source = source + from_name + " -> " + to_name + " [label = '" + links_from['equation'] + "', fontsize = 8];"
 				else:
 					source = source + from_name + " -> " + to_name + ";"
 
@@ -1237,18 +1245,100 @@ class AutecologyXML(_File):
 		#graph.write_png('example1_graph.png')
 		tree = parser.parse_string(source)
 		diagram = builder.ScreenNodeBuilder.build(tree)
-		draw = drawer.DiagramDraw("SVG", diagram, filename = "flowdiagram.svg")
-		#draw = drawer.DiagramDraw("PNG", diagram, filename = "flowdiagram.png")
+		if(output == None):
+			draw = drawer.DiagramDraw("SVG", diagram, filename = None)
+			draw.draw()
+			svg_str = draw.save()
+		else:
+			draw = drawer.DiagramDraw("SVG", diagram, filename = output)
+			draw.draw()
+			draw.save()
 
-		draw.draw()
-		draw.save()
+		return(svg_str)
 
 
+	def visualize_flowdiagram_image(self, svg_str):
+		#MAKE IMAGE RESIZABLE 
+		#https://stackoverflow.com/questions/24106903/resizing-qpixmap-while-maintaining-aspect-ratio/42278156#42278156
 
-		return()
+
+		#make the plot
+		class SubWindow(QtWidgets.QWidget):
+			def __init__(self, parent=None):
+				super(SubWindow,self).__init__(parent)
+				self.SubWindow_layout = QtWidgets.QGridLayout()
+
+				self.create_plot_frame(svg_str)
+
+				self.setLayout(self.SubWindow_layout)
+
+			# def closeEvent(self, event):
+			# 	event.ignore()
+
+			def clearLayout(self,cur_layout):
+				def deleteItems(cur_layout):
+					if cur_layout is not None:
+						while cur_layout.count():
+							item = cur_layout.takeAt(0)
+							widget = item.widget()
+							if widget is not None:
+								widget.deleteLater()
+							else:
+								deleteItems(item.layout())
+				deleteItems(cur_layout)
+
+			def make_frame(self, svg_str):
+
+				#initilize the class to get XMLconvention
+				init_Aut = AutecologyXML(None)
+
+				#rebuild the frame based on selected variable
+				self.box = QtWidgets.QGroupBox()
+				self.vbox = QtWidgets.QGridLayout()
+			
+				pm_box = QtWidgets.QGroupBox()
+				self.pm_box_layout = QtWidgets.QGridLayout()
+
+				pm_pixmap_widget = QtWidgets.QWidget(pm_box)
+				pm_pixmap_layout = QtWidgets.QGridLayout(pm_pixmap_widget)
+
+				#make plot
+				svg_bytes = bytearray(svg_str, encoding='utf-8')
+				svgWidget = QtGui.QImage.fromData(svg_bytes)
+				image = QtGui.QPixmap.fromImage(svgWidget)
+				svgWidget.scaled(0, 0, QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
+				image.scaled(0, 0, QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
+				
+				#add plot to widget
+				self.label = QtWidgets.QLabel()
+				self.label.setPixmap(image)
+				self.pm_box_layout.addWidget(self.label)
+				pm_box.setLayout(self.pm_box_layout)
+
+				self.vbox.addWidget(pm_box)
+				
+				self.box.setLayout(self.vbox)
+				self.main_frame_layout.addWidget(self.box)
+
+				return()
 
 
-	def show_interactive_plot(self, SubWindow):
+	
+			def create_plot_frame(self, svg_str):
+			
+				self.main_frame = QtWidgets.QWidget()
+				self.main_frame_layout = QtWidgets.QGridLayout(self.main_frame)
+
+				#make frame based on settings
+				self.make_frame(svg_str)
+
+				self.SubWindow_layout.addWidget(self.main_frame)
+
+				return()
+
+		return(SubWindow)
+
+	def show_PyQt_plot(self, SubWindow):
 
 		class mainwindow(QtWidgets.QMainWindow):
 			def __init__(self, parent=None):

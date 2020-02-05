@@ -17,6 +17,7 @@ from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+import sip
 
 
 # # from PyQtWebEngine import QtWebEngineWidgets
@@ -93,6 +94,40 @@ class API:
 
 		return()
 
+	def refresh_flowdiagram(self, obj, xml_obj, modeltypename, systemname, override):
+		'''
+		Reload with a change of flow diagram
+		'''
+
+		#dont on anyting when overrride is none
+		if(override == None):
+			return()
+
+		#get value from combobox
+		comboboxvalue = obj.MainWindow.findChild(QtWidgets.QComboBox, obj.MainWindow.sender().objectName()).currentText()
+
+		#delete widget
+		obj.system_groupbox_1_layout.removeWidget(obj.fd_subframe_ready)
+		sip.delete(obj.fd_subframe_ready)
+
+		#retrieve flowdiagram
+		fd_data = xml_obj._read_systemflowdiagram(modeltypename, systemname, comboboxvalue)
+		fd_svg = xml_obj.create_flowdiagram_image(fd_data, output = None)
+		fd_subframe = xml_obj.visualize_flowdiagram_image(fd_svg)
+
+		obj.fd_subframe_ready = fd_subframe()
+
+		#replace flow diagram image
+		# self.clearLayout(obj.system_groupbox_1_layout)
+		# obj.system_groupbox_1_layout = QtWidgets.QGridLayout()
+		# obj.system_groupbox_1_layout.addWidget(obj.comboBox_3)
+		obj.system_groupbox_1_layout.addWidget(obj.fd_subframe_ready)
+		obj.fd_subframe_ready.update()
+		obj.fd_subframe_ready.repaint()
+
+		return()
+
+
 	def refresh_data(self, obj, AutXML):
 		'''
 		Load a new data file
@@ -129,7 +164,8 @@ class API:
 
 		#clear old items
 		obj.comboBox.clear() 
-		obj.comboBox_2.clear() 
+		obj.comboBox_2.clear()
+		obj.comboBox_3.clear() 
 
 		#retrieve data
 		obj.contentdescription = AutXML._read_contentdescription()
@@ -203,7 +239,9 @@ class API:
 		print("Topic :" + xml_obj.topic_name)
 		print("System : " + system)
 		
-		xml_obj._scan_knowledgerules(modeltype, system)
+		xml_obj._scan_system(modeltype, system)
+
+		obj.modeltypename = xml_obj.modeltypename
 		obj.systemname = xml_obj.systemname
 		obj.systemdescription = xml_obj._read_systemdescription(modeltype, system)
 
@@ -213,7 +251,7 @@ class API:
 		system_label_1 = QtWidgets.QLabel(cur_window)
 		system_label_1.setFont(font)
 		system_label_1.setObjectName("label")
-		system_label_1.setText(_translate("MainWindow", "system description:"))
+		system_label_1.setText(_translate("MainWindow", "System description:"))
 
 		obj.system_textBrowser = QtWidgets.QTextBrowser(obj.scrollAreaWidgetContents)
 		obj.system_textBrowser.setReadOnly(True)
@@ -235,10 +273,26 @@ class API:
 		system_label_2.setFont(font)
 		system_label_2.setObjectName("label")
 		system_label_2.setText(_translate("MainWindow", "System flow diagram:"))
-		
-		system_groupbox_1 = QtWidgets.QGroupBox(obj.scrollAreaWidgetContents)
-		system_groupbox_1.setGeometry(QtCore.QRect(0, 0, 1000, 211))
-		system_groupbox_1.setObjectName("textBrowser_2")
+
+		obj.system_groupbox_1 = QtWidgets.QGroupBox(obj.scrollAreaWidgetContents)
+		obj.system_groupbox_1.setGeometry(QtCore.QRect(0, 0, 1000, 211))
+		obj.system_groupbox_1.setObjectName("flow diagram")
+		obj.system_groupbox_1_layout = QtWidgets.QGridLayout()
+
+		for fdname in xml_obj.flowdiagrams:
+			obj.comboBox_3.addItem(fdname)
+
+		obj.cur_flowdiagram = xml_obj.flowdiagrams[0]
+
+		fd_data = xml_obj._read_systemflowdiagram(modeltype, system, obj.cur_flowdiagram)
+		fd_svg = xml_obj.create_flowdiagram_image(fd_data, output = None)
+		fd_subframe = xml_obj.visualize_flowdiagram_image(fd_svg)
+		obj.fd_subframe_ready = fd_subframe()
+		obj.fd_subframe_ready.repaint()
+		obj.system_groupbox_1_layout.addWidget(obj.comboBox_3)
+		obj.system_groupbox_1_layout.addWidget(obj.fd_subframe_ready)
+		obj.system_groupbox_1.setLayout(obj.system_groupbox_1_layout)
+
 
 		system_label_3 = QtWidgets.QLabel(cur_window)
 		system_label_3.setFont(font)
@@ -253,7 +307,7 @@ class API:
 		obj.boxlayout.addWidget(system_label_1)
 		obj.boxlayout.addWidget(obj.system_textBrowser)
 		obj.boxlayout.addWidget(system_label_2)
-		obj.boxlayout.addWidget(system_groupbox_1)
+		obj.boxlayout.addWidget(obj.system_groupbox_1)
 		obj.boxlayout.addWidget(system_label_3)
 
 		#Loop over knowledge rules and produce plot and info
@@ -302,7 +356,6 @@ class API:
 				fb_data = xml_obj.get_data_formula_based_data(fb_tag)
 				fb_settings, fb_list = xml_obj.make_fb_first_parametersettings(fb_data)
 				fb_result = xml_obj.calculate_fb(fb_data, parametersettings = fb_settings, variableparameter = fb_list)
-				print(fb_result)
 				fb_subframe = xml_obj.visualize_fb_dynamic(fb_data,fb_result)
 
 				

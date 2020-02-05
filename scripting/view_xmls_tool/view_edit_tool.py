@@ -162,6 +162,12 @@ class UI_MainWindow(object):
 		self.boxlayout = QtWidgets.QGridLayout(self.groupBox)
 		self.scrollLayout.addWidget(self.groupBox)
 
+
+		self.comboBox_3 = QtWidgets.QComboBox()
+		self.comboBox_3.setGeometry(QtCore.QRect(0, 0, 100, 22))
+		self.comboBox_3.setObjectName("comboBox_3")
+
+
 		self.system_scrolllayout = QtWidgets.QVBoxLayout()		
 		self.system_scrollwidget = QtWidgets.QWidget()
 		self.system_scrollwidget.setLayout(self.system_scrolllayout)
@@ -203,10 +209,17 @@ class UI_MainWindow(object):
 		except:
 			pass
 
+		try:
+			self.comboBox_3.currentIndexChanged.disconnect()
+		except:
+			pass
+
+
 		#reset
 		self.systemname = None
 		self.systems = None
 		self.cur_language = None
+		self.cur_flowdiagram = None
 		
 		#load objects
 		objAPI = view_edit_tool_API.API()
@@ -215,10 +228,11 @@ class UI_MainWindow(object):
 		#load and refresh data
 		self = objAPI.load_file(self)
 		(self, AutXML) = objAPI.refresh_data(self, AutXML)
-		
+
 		#set connections
 		self.comboBox.currentIndexChanged.connect(lambda: objAPI.refresh_language(self, self.cur_language))
-		self.comboBox_2.currentIndexChanged.connect(lambda: objAPI.refresh_group_data(self, AutXML, self.systemname, self.groupBox))
+		self.comboBox_2.currentIndexChanged.connect(lambda: objAPI.refresh_group_data(self, AutXML, self.modeltypename, self.systemname, self.groupBox))
+		self.comboBox_3.currentIndexChanged.connect(lambda: objAPI.refresh_flowdiagram(self, AutXML, self.modeltypename, self.systemname, self.cur_flowdiagram))
 
 		return()
 

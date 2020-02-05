@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45511177</EoLpagenr>
+			<LatName>Emberiza schoeniclus</LatName>
+			<CommonNames>
+				<Name name= "Rietgors" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1972-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op de bodem en in de kruidlaag.</p>
+
+<p>Het voedsel wordt gezocht in de lage struiklaag, bodem, kruidlaag en lucht.</p>
+
+<p>De bepalende factor van voorkomen is de aanwezigheid van riet en rietruigten en/of natte struwelen en struiken .</p>
+
+
+<h1 id="Rietgors-Emberizaschoeniclus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Rietgors - Emberiza schoeniclus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rietgors+-+Emberiza+schoeniclus#Rietgors-Emberizaschoeniclus-1">#1</a>.</p>
+
+<h1 id="Rietgors-Emberizaschoeniclus-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Nederland</p>
+
+<h1 id="Rietgors-Emberizaschoeniclus-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>breeding_area_general</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>waterlevel_in_swamp_vegetation</To>
+							<To>flooding_period</To>
+							<To>vegetation_height</To>
+						</From>
+						<From name="breeding_area_general">
+							<label>"breeding_area_general"</label>
+							<equation>min</equation>
+							<To>bank_slope_angle</To>
+							<To>tree_characteristics</To>
+							<To>vegetation_characteristics</To>
+						</From>
+						<From name="vegetation_height">
+							<label>"vegetation_height"</label>
+							<equation>average</equation>
+							<To>height_of_herbs</To>
+							<To>height_of_reeds</To>
+						</From>
+						<From name="tree_characteristics">
+							<label>"tree_characteristics"</label>
+							<equation>average</equation>
+							<To>succession_stadium</To>
+							<To>tree_coverage</To>
+						</From>
+						<From name="vegetation_characteristics">
+							<label>"vegetation_characteristics"</label>
+							<equation>average</equation>
+							<To>width_of_bank_vegetation</To>
+							<To>area_of_swamp</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="bank_slope_angle">
+						<type>scalar</type>
+						<layername>"bank_slope_angle"</layername>
+						<unit>"degrees of slope"</unit>
+						<statistic>average</statistic>
+						<description>"Slope of the embankment in degrees"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="1.0"/>
+							<parameter value="20.0" HSI="0.8"/>
+							<parameter value="45.0" HSI="0.0"/>
+							<parameter value="60.0" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="waterlevel_in_swamp_vegetation">
+						<type>range / categorical</type>
+						<layername>waterlevel_in_swamp_vegetation</layername>
+						<unit>cm</unit>
+						<statistic>average</statistic>
+						<description>Waterlevel in the swamp vegetations</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="-999999" rangemax="-10" cat="till -10" HSI="0.0"/>
+							<parameter rangemin="-10" rangemax="0" cat="-10 - 0" HSI="0.3"/>
+							<parameter rangemin="0" rangemax="1" cat="0 - 1" HSI="0.8"/>
+							<parameter rangemin="1" rangemax="8" cat="1 - 8" HSI="1.0"/>
+							<parameter rangemin="8" rangemax="999999" cat="> 8" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="flooding_period">
+						<type>range / categorical</type>
+						<layername>"flooding_period"</layername>
+						<unit>month / category"</unit>
+						<statistic>average</statistic>
+						<description>"Period of flooding"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
+							<parameter rangemin="0" rangemax="3" cat="September - April" HSI="1.0"/> 
+							<parameter rangemin="4" rangemax="8" cat="April - August" HSI="0.0"/>							
+							<parameter rangemin="9" rangemax="12" cat="September - April" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="height_of_herbs">
+						<type>range / categorical</type>
+						<layername>height_of_herbs</layername>
+						<unit>cm</unit>
+						<statistic>average</statistic>
+						<description>Height of ground covering herbs</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="0.0"/>
+							<parameter rangemin="10" rangemax="40" cat="10 - 40" HSI="1.0"/>
+							<parameter rangemin="40" rangemax="999999" cat="> 40" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="succession_stadium">
+						<type>categorical</type>
+						<layername>"succession_stadium"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Types of succession stadia"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="reed in water" HSI="0.1"/>
+							<parameter cat="reed with dry spots" HSI="0.6"/>
+							<parameter cat="moist pure reed" HSI="0.8"/>
+							<parameter cat="sedge - rietland" HSI="1.0"/>
+							<parameter cat="rietland with bush opslag" HSI="1.0"/>
+							<parameter cat="rietruigte with bush opslag" HSI="1.0"/>
+							<parameter cat="rietruigte with swamp forest" HSI="0.2"/>
+							<parameter cat="swamp forest with open places" HSI="0.1"/>
+							<parameter cat="swamp forest" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="height_of_reeds">
+						<type>range / categorical</type>
+						<layername>height_of_reeds</layername>
+						<unit>m</unit>
+						<statistic>average</statistic>
+						<description>Height of reed vegetation</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="61" rangemax="90" cat="61 - 90" HSI="0.0"/>
+							<parameter rangemin="91" rangemax="120" cat="91 - 120" HSI="1.0"/>
+							<parameter rangemin="121" rangemax="150" cat="121 - 150" HSI="1.0"/>
+							<parameter rangemin="151" rangemax="180" cat="151 - 180" HSI="1.0"/>
+							<parameter rangemin="181" rangemax="210" cat="181 - 210" HSI="1.0"/>
+							<parameter rangemin="211" rangemax="240" cat="211 - 240" HSI="1.0"/>
+							<parameter rangemin="241" rangemax="999999" cat="> 240" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="width_of_bank_vegetation">
+						<type>scalar</type>
+						<layername>"width_of_bank_vegetation"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of vegation at the embankment in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.0"/>
+							<parameter value="1" HSI="0.3"/>
+							<parameter value="2" HSI="0.7"/>
+							<parameter value="3" HSI="1.0"/>
+							<parameter value="5" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="tree_coverage">
+						<type>scalar</type>
+						<layername>"tree_coverage"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by trees in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.8"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="20" HSI="0.7"/>
+							<parameter value="40" HSI="0.5"/>
+							<parameter value="50" HSI="0.3"/>
+							<parameter value="60" HSI="0.0"/>
+							<parameter value="70" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="area_of_marshland">
+						<type>scalar</type>
+						<layername>"area_of_marshland"</layername>
+						<unit>"ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area of marshland in hectares"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="0.1" HSI="0.5"/>
+							<parameter value="1" HSI="1.0"/>
+							<parameter value="2" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Rietgors-Emberizaschoeniclus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De rietgors komt in een groot aantal habitats voor. Er bestaat echter een voorkeur voor moerassig terrein met veel riet, rietruigte en opslag van struiken. Daarnaast zijn rietgorzen te vinden in vochtige en natte vegetaties zonder riet, zoals ruige hooilanden, zeggenmoerassen, grienden, graanvelden, koolzaadvelden, hoogveen, ruigtekruiden en heidevelden. Smalle riet en ruigtestroken gelegen langs kanalen, vaarten en sloten worden ook voor de broed gebruikt. Als het broed habitat grenst aan akkergebieden met granen of koolzaad heeft dit een sterke voorkeur, doordat de rietgors dit als foerageergebied gebruikt. Het broeden van de rietgors in droger habitat is in Nederland niet aan de orde <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rietgors+-+Emberiza+schoeniclus#Rietgors-Emberizaschoeniclus-1">#1</a>. </p>
+
+<p>Het nest van de rietgors wordt op of nabij de bodem gebouwd. Hierdoor kan de soort overlast ondervinden van peilfluctuaties en overstromingen. De vogel heeft de voorkeur voor zoet tot brak water. Wilgen, riet en kruiden worden gebruikt om rond te foerageren. Hierbij is het van belang dat de kruiden tussen de 10 en 40 cm hoog zijn. Na het uitvliegen verplaatsen de rietgorzen zich met hun jongen naar de voedselrijke delen van deze gebieden. Tijdens het broedseizoen wordt er meestal 30 tot 100 meter van het nest gefoerageerd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rietgors+-+Emberiza+schoeniclus#Rietgors-Emberizaschoeniclus-1">#1</a>.</p>
+
+<h3 id="Rietgors-Emberizaschoeniclus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>In het voorjaar schakelt de rietgors over van plantaardig voedsel, zoals zaden, naar invertebraten. In het broedseizoen worden dan ook hoofdzakelijk invertebraten gegeten en aan de jongen gevoerd. Na het broedseizoen schakelen de jongen zelf over op plantaardig materiaal <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rietgors+-+Emberiza+schoeniclus#Rietgors-Emberizaschoeniclus-1">#1</a>.   </p>
+
+<h3 id="Rietgors-Emberizaschoeniclus-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De broedperiode duurt van maart tot en met augustus. Het merendeel van de populatie heeft twee legsels per broedperiode, een enkele keer, en ongebruikelijk voor Nederlandse rietgorzen, zijn er drie legsels per broedperiode. Er worden 4 tot 5 eieren gelegd, die na 12 tot 15 dagen uitkomen. De jongen zijn na 10 tot 12 dagen vliegvlug, het nest wordt echter al 3 tot 5 dagen ervoor verlaten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rietgors+-+Emberiza+schoeniclus#Rietgors-Emberizaschoeniclus-1">#1</a>. </p>
+
+<p>De <em>soort</em> rietgors is het gehele jaar in Nederland aanwezig. Echter, de rietgorzen die in Nederland broeden, trekken in september en oktober naar het zuiden en keren in maart tot en met mei terug in Nederland. Rietgorzen die noordelijk van Nederland broeden, komen in september en oktober naar Nederland toe, en keren in maart tot en met mei weer terug naar hun broedgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rietgors+-+Emberiza+schoeniclus#Rietgors-Emberizaschoeniclus-1">#1</a>. </p>
+
+<h3 id="Rietgors-Emberizaschoeniclus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

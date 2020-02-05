@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45509333</EoLpagenr>
+			<LatName>Chlidonias niger</LatName>
+			<CommonNames>
+				<Name name= "Zwarte stern" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1979-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op het wateroppervlak en aan de waterkant.</p>
+
+<p>Het voedsel wordt gezocht op de onder water, aan het wateroppervlak, aan de waterkant, in de kruilaag en in de stuiklaag.</p>
+
+<p>De bepalende factor van voorkomen is de aanwezigheid van ondiep open water, eilandjes en/of drijvende waterplanten en grote insecten, .</p>
+
+
+
+<h1 id="Zwartestern-Chlidoniasniger-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Zwarte stern - Chlidonias niger - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+
+<h1 id="Zwartestern-Chlidoniasniger-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Deze rekenregels zijn opgesteld voor de zwarte nabij Rijkswateren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
+
+<h1 id="Zwartestern-Chlidoniasniger-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>feeding_area</To>
+							<To>breeding_area_general</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>location</To>
+							<To>daily_waterlevel_fluctuation</To>
+							<To>flooding_period</To>
+						</From>
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>average</equation>
+							<To>surfacewater_area</To>
+							<To>meadow_distance</To>
+							<To>feedingplace_characteristics</To>
+						</From>
+						<From name="breeding_area_general">
+							<label>"breeding_area_general"</label>
+							<equation>average</equation>
+							<To>surfacewater_width</To>
+							<To>enclosure_landscape</To>
+							<To>area_of_marshland</To>
+						</From>
+						<From name="location">
+							<label>"location"</label>
+							<equation>average</equation>
+							<To>nesting_location</To>
+							<To>locations_with_emers_plants</To>
+						</From>
+						<From name="nesting_location">
+							<label>"nesting_location"</label>
+							<equation>min</equation>
+							<To>nesting_places</To>
+							<To>height_above_watersurface</To>
+							<To>surfacewater_waterdepth</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="surfacewater_area">
+						<type>scalar</type>
+						<layername>"surfacewater_area"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Amount of surface water within 3 kilometers in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="0.7"/>
+							<parameter value="25" HSI="1.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="surfacewater_width">
+						<type>scalar</type>
+						<layername>"surfacewater_width"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of surface water in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="1" HSI="0.8"/>
+							<parameter value="25" HSI="1.0"/>
+							<parameter value="100" HSI="0.4"/>
+							<parameter value="200" HSI="0.0"/>
+							<parameter value="250" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="nesting_places">
+						<type>categorical</type>
+						<layername>"nesting_places"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Types of nesting places"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="bank" HSI="0.3"/>
+							<parameter cat="(wire) algae" HSI="0.5"/>
+							<parameter cat="vegatation patches in water" HSI="1.0"/>
+							<parameter cat="mudbanks" HSI="0.8"/>
+							<parameter cat="floating rhizomes" HSI="0.8"/>
+							<parameter cat="krabbescheer" HSI="1.0"/>
+							<parameter cat="rafts" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="height_above_watersurface">
+						<type>range / categorical</type>
+						<layername>height_above_waterlevel</layername>
+						<unit>cm</unit>
+						<statistic>average</statistic>
+						<description>Heigth of rafts above the watersurface</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="2" cat="0 - 2" HSI="1.0"/>
+							<parameter rangemin="2" rangemax="3" cat="2 - 3" HSI="0.7"/>
+							<parameter rangemin="3" rangemax="999999" cat="> 3" HSI="0.1"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="daily_waterlevel_fluctuation">
+						<type>range / categorical</type>
+						<layername>daily_waterlevel_fluctuation</layername>
+						<unit>cm/day</unit>
+						<statistic>average</statistic>
+						<description>Daily fluctuation of the waterlevel</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="2" rangemax="3" cat="2 - 3" HSI="0.7"/>
+							<parameter rangemin="3" rangemax="999999" cat="> 3" HSI="0.1"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="flooding_period">
+						<type>range / categorical</type>
+						<layername>"flooding_period"</layername>
+						<unit>month / category"</unit>
+						<statistic>average</statistic>
+						<description>"Period of flooding"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
+							<parameter rangemin="0" rangemax="4" cat="till April" HSI="1.0"/> 
+							<parameter rangemin="5" rangemax="6" cat="till June" HSI="0.6"/>							
+							<parameter rangemin="7" rangemax="7" cat="till Juli" HSI="0.1"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="locations_with_emers_plants">
+						<type>categorical</type>
+						<layername>"locations_with_emers_plants"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of locations with a coverage with emerse plants of mere than 50%"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="1.0"/>
+							<parameter cat="absent" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="enclosure_landscape">
+						<type>categorical</type>
+						<layername>"enclosure_landscape"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Enclosure of the landscape (bosopslag)"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="1.0"/>
+							<parameter cat="absent" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="area_of_marshland">
+						<type>scalar</type>
+						<layername>"area_of_marshland"</layername>
+						<unit>"ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area of marshland within 3 kilometers in hectares"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="25" HSI="0.5"/>
+							<parameter value="200" HSI="1.0"/>
+							<parameter value="250" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="meadow_distance">
+						<type>categorical</type>
+						<layername>"meadow_distance"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of meadows within 3 kilometers"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="0.0"/>
+							<parameter cat="absent" HSI="0.8"/>
+						</valuesCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Zwartestern-Chlidoniasniger-Algemeenvoorkomen(Broedhabitat)">Algemeen voorkomen (Broedhabitat)</h3>
+
+<p>De zwarte stern is een koloniebroeder en broedt in laagveen moerassen, laagveengraslanden en moerassen in rivierkleigebieden. Kleine aantallen komen nog voor in vennen en hoogvenen. In de Rijkswateren worden de zwarte sterns vooral aangetroffen in de uiterwaarden van de grote rivieren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+
+<p>De nesten worden gebouwd daar waar veel drijvende vegetatie te vinden is, zoals middelgrote moerassen, dode rivierarmen, poelen, maar ook in sloten. De zwarte stern maakt vaak zijn nesten op krabbescheer (Straiotes aloides). Echter ook ander drijvend plantenmateriaal wordt geaccepteerd voor de nestbouw, zoals drijvende wortelstokken van waterlelie, gele plomp, lisdodde, algenmatten, lage oevervegetatie of drijvend materiaal als planken en boomstammen. In het rivierengebied wordt er met name gebroed op zogenoemde nestvlotjes. Verder heeft de zwarte stern, omdat hij verstoringsgevoelig is, een voorkeur voor een leefomgeving met hoge bedekking van drijvende watervegetatie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+
+<p>Peilfluctuatie moet beperkt zijn om het wegspoelen van nesten te voorkomen, om deze reden moeten overstromingen van nesten tijdens het broedseizoen voorkomen worden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+
+<h3 id="Zwartestern-Chlidoniasniger-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Over het algemeen foerageert de Zwarte stern bij de broedplaats, maar afstanden tot zo'n 3 km van de broedplaats zijn mogelijk. De zwarte stern prefereert gebieden met veel grote insecten, kleine vis en amfibieën. De mogelijkheid om te kunnen variëren in prooi is van belang <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+
+<h3 id="Zwartestern-Chlidoniasniger-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De kolonies zijn aanwezig van eind april tot eind juli - begin augustus. Het leggen van eieren start in het algemeen vanaf 10 mei en het legsel bestaat uit 3 eieren. Na 19 tot 23 dagen zijn deze uitgebroed en na 16 tot 25 dagen zijn de jongen vliegvlug <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
+
+<p>Vanaf juli trekt de zwarte stern naar de kust van tropisch Afrika. Vanaf eind april komen de vogels terug <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
+
+<h3 id="Zwartestern-Chlidoniasniger-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>Bij gevaar verlaten de jongen de nesten. Zij schuilen dan in de nabijgelegen vegetatie. Dag-actieve predatoren maken nauwelijks kans, echter nacht-actieve predatoren kunnen een sterke invloed hebben op het nest succes <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
+]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

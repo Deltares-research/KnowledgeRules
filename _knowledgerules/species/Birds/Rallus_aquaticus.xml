@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45513903</EoLpagenr>
+			<LatName>Rallus aquaticus</LatName>
+			<CommonNames>
+				<Name name= "Waterral" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1968-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op het wateroppervlak, waterkant en bodem.</p>
+
+<p>Het voedsel wordt gezocht op het wateroppervlak, waterkant en onder water.</p>
+
+<p>De bepalende factor van voorkomen is de aanwezigheid van natte rietruigten en overjarig rietland.</p>
+
+<h1 id="Waterral-Rallusaquaticus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Waterral - Rallus aquaticus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterral+-+Rallus+aquaticus#Waterral-Rallusaquaticus-1">#1</a>.</p>
+
+<h1 id="Waterral-Rallusaquaticus-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Nederland </p>
+
+<h1 id="Waterral-Rallusaquaticus-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>living_area_general</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>waterlevel_fluctuation</To>
+							<To>flooding_period</To>
+							<To>waterlevel_in_helophyte_zone</To>
+						</From>
+						<From name="living_area_general">
+						<label>"living_area_general"</label>
+							<equation>min</equation>
+							<To>small_shallow_ponds</To>
+							<To>flow_velocity</To>
+							<To>spatial_characteristics</To>
+							<To>vegetation_presence</To>
+							<To>swamp_characteristics</To>
+							<To>bank_slope_angle</To>
+						</From>
+						<From name="spatial_characteristics">
+							<label>"spatial_characteristics"</label>
+							<equation>average</equation>
+							<To>micro_relief_swamp</To>
+							<To>length_vegetation_boundaries</To>
+						</From>
+						<From name="vegetation_presence">
+							<label>"vegetation_presence"</label>
+							<equation>average</equation>
+							<To>helophyte_coverage</To>
+							<To>width_bank_vegetation</To>
+						</From>
+						<From name="swamp_characteristics">
+							<label>"swamp_characteristics"</label>
+							<equation>average</equation>
+							<To>area_of_swamp</To>
+							<To>succession_stadium</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="small_shallow_ponds">
+						<type>categorical</type>
+						<layername>"small_shallow_ponds"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of ponds of several aquare meters with a depth of at least 10 centimeters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="1.0"/>
+							<parameter cat="absent" HSI="0.3"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="flow_velocity">
+						<type>categorical</type>
+						<layername>"flow_velocity"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Flow velocity of the water"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="stagnant, weakly flowing" HSI="1.0"/>
+							<parameter cat="flowing" HSI="0.4"/>
+							<parameter cat="fast flowing" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>					
+					<ResponseCurve name="waterlevel_in_helophyte_zone">
+						<type>range / categorical</type>
+						<layername>waterlevel_in_helophyte_zone</layername>
+						<unit>cm</unit>
+						<statistic>average</statistic>
+						<description>Daily level fluctuation in the helophyte zone in centimeters</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="0" HSI="0.2"/>
+							<parameter rangemin="1" rangemax="5" cat="1 - 5" HSI="0.6"/>
+							<parameter rangemin="5" rangemax="15" cat="5 - 15" HSI="1.0"/>
+							<parameter rangemin="15" rangemax="999999" cat="> 15" HSI="0.2"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="micro_relief_swamp">
+						<type>categorical</type>
+						<layername>"micro_relief_swamp"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of micro relief in the swamp vegetations"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="much" HSI="1.0"/>
+							<parameter cat="little" HSI="0.3"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="length_vegetation_boundaries">
+						<type>range / categorical</type>
+						<layername>length_vegetation_boundaries</layername>
+						<unit>m/25ha</unit>
+						<statistic>average</statistic>
+						<description>Length of the vegetation boundaries in meters per 25 hectares</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="2000" cat="0 - 2000" HSI="0.2"/>
+							<parameter rangemin="2000" rangemax="3000" cat="2000 - 3000" HSI="0.7"/>
+							<parameter rangemin="3000" rangemax="4500" cat="3000 - 4500" HSI="1.0"/>
+							<parameter rangemin="4500" rangemax="999999" cat="> 4500" HSI="0.7"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="helophyte_coverage">
+						<type>scalar</type>
+						<layername>"helophyte_coverage"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage of helophytes in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							<reference author="M.P. Weeber" title="interpretation" identification="added in 2020-01-29" year="2020" journal=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="25" HSI="0.5"/>
+							<parameter value="75" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="width_bank_vegetation">
+						<type>scalar</type>
+						<layername>"width_bank_vegetation"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of bank vegetation in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="area_of_swamp">
+						<type>scalar</type>
+						<layername>"area_of_swamp"</layername>
+						<unit>"ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area of swamp landscape in hectares"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="1" HSI="0.7"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="succession_stadium">
+						<type>categorical</type>
+						<layername>"succession_stadium"</layername>
+						<unit>"categoricy"</unit>
+						<statistic>average</statistic>
+						<description>"Stadium of succession"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="water reed land" HSI="0.2"/>
+							<parameter cat="water reed land with dry spots" HSI="0.5"/>
+							<parameter cat="wet reed land" HSI="0.8"/>
+							<parameter cat="wet reed land with opslag 10 - 30%" HSI="1.0"/>
+							<parameter cat="wet reed land with opslag > 30%" HSI="0.8"/>
+							<parameter cat="struweel with reed" HSI="0.5"/>
+							<parameter cat="broekbos" HSI="0.2"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="bank_slope_angle">
+						<type>scalar</type>
+						<layername>"bank_slope_angle"</layername>
+						<unit>"degrees of slope"</unit>
+						<statistic>average</statistic>
+						<description>"Slope of the enbankment in degrees"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							<reference author="M.P. Weeber" title="interpretation" identification="added in 2020-01-29" year="2020" journal=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="20.0" HSI="0.0"/>
+							<parameter value="70.0" HSI="1.0"/>
+							<parameter value="90.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="bank_slope_angle">
+						<type>range / categorical</type>
+						<layername>bank_slope_angle</layername>
+						<unit>degrees of slope</unit>
+						<statistic>average</statistic>
+						<description>Slope of the enbankment in degrees</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="5" cat="0 - 5" HSI="1.0"/>
+							<parameter rangemin="5" rangemax="180" cat="> 5" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Waterral-Rallusaquaticus-Algemeenvoorkomen(broedhabitatRijkswateren)">Algemeen voorkomen (broedhabitat Rijkswateren)</h3>
+
+<p>De waterral komt in Nederland onder andere voor in de meeste Rijkswateren, waar verschillende vegetatietypen van rietland en broekbos elkaar afwisselen. De voorkeur van de waterral voor deze locaties komt voor uit de voorkeur voor mineraal- en/of humusrijke bodemsubstraten, een lage waterstand en begroeiing van overstaande helofyten. Van de moerassige oeverzone is het van belang dat deze beschutting biedt, plasjes en poeltjes bevat en relatief vlak is. De stroming van het water en de zoutconcentratie is van weinig belang. De waterral foerageert naast zijn nestgebied. Het ontbreken van geleidelijke moerassige oeverzones van minimaal 0.5 hectaren maakt de meeste kanalen en vaarten ongeschikt als broedgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterral+-+Rallus+aquaticus#Waterral-Rallusaquaticus-1">#1</a>.</p>
+
+
+<h3 id="Waterral-Rallusaquaticus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De waterral is een echte alleseter, hij eet weekdieren, ringwormen, geleedpotigen, kleine vissen, amfibieën, kleine vogels en zoogdieren, aas en vruchtzaden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterral+-+Rallus+aquaticus#Waterral-Rallusaquaticus-1">#1</a>.  </p>
+
+<h3 id="Waterral-Rallusaquaticus-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De broed begint in eind maart - april en loopt tot juli - begin augustus. Er worden 5 tot 11 eieren gelegd die na 19 tot 23 dagen uitkomen. De jongen zijn  na 7 tot 8 weken vliegvlug en onafhankelijk na 55 tot 60 dagen. Bij het mislukken van een legsel of als de jongen van het eerste legsel 4 weken oud zijn, wordt er nog wel eens een tweede legsel gelegd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterral+-+Rallus+aquaticus#Waterral-Rallusaquaticus-1">#1</a>. </p>
+
+<p>De jongen vertrekken in juli-augustus uit het broedgebied, de volwassenen volgen in september-oktober. De overwintering vindt plaats in  West-Frankrijk en Engeland. Eind februari- begin maart keren de vogels terug <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterral+-+Rallus+aquaticus#Waterral-Rallusaquaticus-1">#1</a>.</p>
+
+
+<h3 id="Waterral-Rallusaquaticus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>Met voldoende dekking en voldoende hoge waterstanden is de invloed van predatoren op het nest nihil. Daalt het waterniveau echter dan kan de predatie toenemen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterral+-+Rallus+aquaticus#Waterral-Rallusaquaticus-1">#1</a>. </p>
+]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

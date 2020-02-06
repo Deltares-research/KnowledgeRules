@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45509128</EoLpagenr>
+			<LatName>Gallinula chloropus</LatName>
+			<CommonNames>
+				<Name name= "Waterhoen" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1974-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op het wateroppervlak, waterkant, struiklaag en in de kroon (&gt; 6 m).</p>
+
+<p>Het voedsel wordt gezocht onder water, op het wateroppervlak, in de waterkant en op de bodem.</p>
+
+<p>De bepalende factor van voorkomen is de aanwezigheid van ondiep water.</p>
+
+<h1 id="Waterhoen-Gallinulachloropus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Waterhoen - Gallinula chloropus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterhoen+-+Gallinula+chloropus#Waterhoen-Gallinulachloropus-1">#1</a>.</p>
+
+<h1 id="Waterhoen-Gallinulachloropus-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Nederland </p>
+
+<h1 id="Waterhoen-Gallinulachloropus-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>living_area_general</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>waterlevel_fluctuation</To>
+							<To>flooding_period</To>
+						</From>
+						<From name="living_area_general">
+							<label>"living_area_general"</label>
+							<equation>min</equation>
+							<To>waterdepth_in_swamp_vegetation</To>
+							<To>chloride_content</To>
+							<To>swamp_characteristics</To>
+							<To>bank_vegetation_characteristics</To>
+							<To>bank_vegetation_type</To>
+							<To>embankment_treecoverage</To>
+						</From>
+						<From name="swamp_characteristics">
+							<label>"swamp_characteristics"</label>
+							<equation>average</equation>
+							<To>bank_substrate</To>
+							<To>area_water_compared_to_swamp</To>
+							<To>area_of_swamp</To>
+						</From>
+						<From name="bank_vegetation_characteristics">
+							<label>"bank_vegetation_characteristics"</label>
+							<equation>average</equation>
+							<To>width_of_bank_vegetation</To>
+							<To>length_of_bank_vegetation</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="waterlevel_fluctuation">
+						<type>range / categorical</type>
+						<layername>waterlevel_fluctuation</layername>
+						<unit>cm/day</unit>
+						<statistic>average</statistic>
+						<description>Fluctuation of the waterlevel in cm/day</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="1.0"/>
+							<parameter rangemin="10" rangemax="25" cat="10 - 25" HSI="0.5"/>
+							<parameter rangemin="25" rangemax="999999" cat="> 25" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth_in_swamp_vegetation">
+						<type>range / categorical</type>
+						<layername>waterdepth_in_swamp_vegetation</layername>
+						<unit>cm</unit>
+						<statistic>average</statistic>
+						<description>Waterdepth in the swamp vegetations</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="20" cat="0 - 20" HSI="0.0"/>
+							<parameter rangemin="20" rangemax="60" cat="20 - 60" HSI="1.0"/>
+							<parameter rangemin="60" rangemax="90" cat="60 - 90" HSI="0.6"/>
+							<parameter rangemin="90" rangemax="999999" cat="> 90" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="flooding_period">
+						<type>range / categorical</type>
+						<layername>"flooding_period"</layername>
+						<unit>month / category"</unit>
+						<statistic>average</statistic>
+						<description>"Period of flooding"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
+							<parameter rangemin="0" rangemax="2" cat="August - February" HSI="1.0"/> 
+							<parameter rangemin="3" rangemax="7" cat="March - August" HSI="0.0"/>							
+							<parameter rangemin="8" rangemax="12" cat="August - February" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="chloride_content">
+						<type>scalar</type>
+						<layername>"chloride_content"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Chloride concentration in mg/l"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="1.0"/>
+							<parameter value="300" HSI="1.0"/>
+							<parameter value="10000" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="area_water_compared_to_swamp">
+						<type>scalar</type>
+						<layername>"area_water_compared_to_swamp"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Area of water compared to area of swamp vegetation in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="25" HSI="1.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="62.5" HSI="0.7"/>
+							<parameter value="80" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="width_of_bank_vegetation">
+						<type>scalar</type>
+						<layername>"width_of_bank_vegetation"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of vegetation at the embankment in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="1" HSI="0.4"/>
+							<parameter value="2" HSI="1.0"/>
+							<parameter value="5" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="width_of_bank_vegetation">
+						<type>scalar</type>
+						<layername>"width_of_bank_vegetation"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of vegetation at the embankment in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="1" HSI="0.4"/>
+							<parameter value="2" HSI="1.0"/>
+							<parameter value="5" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="length_of_bank_vegetation">
+						<type>scalar</type>
+						<layername>"length_of_bank_vegetation"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Length of vegetation at the embankment in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="bank_vegetation_type">
+						<type>categorical</type>
+						<layername>"bank_vegetation_type"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Type of bank vegetation"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="Emergents" HSI="1.0"/>
+							<parameter cat="Overhanging branches" HSI="1.0"/>
+							<parameter cat="other types" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="embankment_treecoverage">
+						<type>categorical</type>
+						<layername>"treecoverage"</layername>
+						<unit>"categorie"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of trees (overhanging branches) on embankment"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="0.2"/>
+							<parameter cat="absent" HSI="0.5"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="area_of_swamp">
+						<type>scalar</type>
+						<layername>"area_of_swamp"</layername>
+						<unit>"ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area of swamp in hectares"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="1" HSI="1.0"/>
+							<parameter value="10" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Waterhoen-Gallinulachloropus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>Overal waar water voorkomt, vindt men in Nederland de waterhoen, waarbij zoete wateren de voorkeur hebben. De soort komt met name voor in stilstaande, ondiepe en langzaamstromende wateren, waarbij onder het nest er wel enige diepte dient te zijn (20 – 91 cm diep), mogelijk om predatie te voorkomen. Verder heeft de waterhoen voorkeur voor eutroof, kleinschalig en waterrijk gebied. De soort neemt genoegen met kleine wateroppervlaktes als er broedgelegenheid in de vorm van vegetatie beschikbaar is. In grote wateren heeft komt de waterhoen het meeste in de landwaarts gelegen successiezones voor, waarbij eenzijdige riet- en/of lisdoddezones worden gemeden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterhoen+-+Gallinula+chloropus#Waterhoen-Gallinulachloropus-1">#1</a>. </p>
+
+<h3 id="Waterhoen-Gallinulachloropus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De waterhoen foerageert op zowel plataardig als dierlijk voedsel, bestaand uit allerlei evertebraten, zaden, vruchten, kikkertjes, aas. De soort foerageert zowel zwemmend als lopend over drijfbladeren of land <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterhoen+-+Gallinula+chloropus#Waterhoen-Gallinulachloropus-1">#1</a>.</p>
+
+<h3 id="Waterhoen-Gallinulachloropus-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>Dichte vegetaties hebben de voorkeur als nestgelegenheid omdat de waterhoen zich hier goed beschut voelt. Overstromingen kunnen ervoor zorgen dat er nesten verloren gaan. De waterhoen broedt in half april- half juli, waarbij het legsel varieert tussen de 5 tot 11 eieren. De eieren worden in 19 tot 22 dagen uitgebroed. Na 35 dagen zijn de jongen vliegvlug. De familie blijft een lange tijd samen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterhoen+-+Gallinula+chloropus#Waterhoen-Gallinulachloropus-1">#1</a>. </p>
+
+<h3 id="Waterhoen-Gallinulachloropus-Mortaliteit">Mortaliteit</h3>
+<p>De populatie aan waterhoenen kan een klap krijgen wanneer er in Nederland strenge winters zijn. De soort overwintert namelijk in Nederland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Waterhoen+-+Gallinula+chloropus#Waterhoen-Gallinulachloropus-1">#1</a>.</p>
+]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

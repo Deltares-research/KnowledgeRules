@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45510608</EoLpagenr>
+			<LatName>Mergus albellus</LatName>
+			<CommonNames>
+				<Name name= "Nonnetje" language="NL"/>
+				<Name name= "Smew" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="feeding_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1974-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Nonnetje-Mergusalbellus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Nonnetje - Mergus albellus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<h1 id="Nonnetje-Mergusalbellus-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Zowel zoete en zoute wateren.</p>
+
+<h1 id="Nonnetje-Mergusalbellus-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig.</p>]]></text>
+					</Description>
+					<Description language="ENG">
+						<text><![CDATA[<h1 id="Smew(Mergusalbellus)-Uncertaintyandvalidation">Uncertainty and validation</h1>
+<p><img class="emoticon emoticon-warning" src="./Smew (Mergus albellus) - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> These dose-effect relations have not been validated.</p>
+
+
+
+<h1 id="Smew(Mergusalbellus)-Areaofapplication">Area of application</h1>
+<p>Large fresh and salt waters</p>
+
+<h1 id="Smew(Mergusalbellus)-Exemplaryproject">Exemplary project</h1>
+<p>Not available. </p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="feeding_area">
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>food_presence</To>
+							<To>resting_area</To>
+						</From>
+						<From name="food_presence">
+							<label>"food_presence"</label>
+							<equation>min</equation>
+							<To>waterdepth_open_water</To>
+							<To>transparency_winter</To>
+							<To>totalphosporus_concentration</To>
+							<To>PCB_presence_water_fish</To>
+							<To>disturbance_distance</To>
+						</From>
+						<From name="resting_area">
+							<label>"resting_area"</label>
+							<equation>min</equation>
+							<To>waterdepth_resting_area</To>
+							<To>disturbance_distance</To>
+							<To>wind_fetch</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="totalphosporus_concentration">
+						<type>range / categorical</type>
+						<layername>"totalphosporus_concentration"</layername>
+						<unit>"mg P/l"</unit>
+						<statistic>average</statistic>
+						<description>"Total phosporus concentration in milligrams P per liter"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0.0" rangemax="0.020" cat="0.0 - 0.020" HSI="0.0"/>
+							<parameter rangemin="0.020" rangemax="0.050" cat="0.020 - 0.050" HSI="0.2"/>
+							<parameter rangemin="0.050" rangemax="0.100" cat="0.050 - 0.100" HSI="0.4"/>
+							<parameter rangemin="0.100" rangemax="0.150" cat="0.100 - 0.150" HSI="0.6"/>
+							<parameter rangemin="0.150" rangemax="0.200" cat="0.150 - 0.200" HSI="0.8"/>
+							<parameter rangemin="0.200" rangemax="0.500" cat="0.200 - 0.500" HSI="1.0"/>
+							<parameter rangemin="0.500" rangemax="1.000" cat="0.500 - 1.000" HSI="0.4"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth_open_water">
+						<type>range / categorical</type>
+						<layername>"waterdepth_open_water"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in the open water in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0.0" rangemax="2.0" cat="0.0 - 2.0" HSI="1.0"/>
+							<parameter rangemin="2.0" rangemax="4.0" cat="2.0 - 4.0" HSI="1.0"/>
+							<parameter rangemin="4.0" rangemax="5.0" cat="4.0 - 5.0" HSI="0.5"/>
+							<parameter rangemin="5.0" rangemax="999999" cat="> 5.0" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth_resting_area">
+						<type>range / categorical</type>
+						<layername>"waterdepth_resting_area"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in the resting area in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0.0" rangemax="2.0" cat="0.0 - 2.0" HSI="1.0"/>
+							<parameter rangemin="2.0" rangemax="4.0" cat="2.0 - 4.0" HSI="0.5"/>
+							<parameter rangemin="4.0" rangemax="999999" cat="> 4.0" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="transparency_winter">
+						<type>range / categorical</type>
+						<layername>"transparency_winter"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Transparency of water during the winter period expressed in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="50" cat="0 - 50" HSI="0.3"/>
+							<parameter rangemin="50" rangemax="100" cat="50 - 100" HSI="0.5"/>
+							<parameter rangemin="100" rangemax="999999" cat=" > 100" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="disturbance_distance">
+						<type>range / categorical</type>
+						<layername>"disturbance_distance"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Disturbance distance in "</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0.0" rangemax="200.0" cat="0.0 - 200.0" HSI="0.0"/>
+							<parameter rangemin="200.0" rangemax="300.0" cat="200.0 - 300.0" HSI="0.5"/>
+							<parameter rangemin="300.0" rangemax="999999" cat="> 300.0" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="PCB_presence_fish">
+						<type>scalar</type>
+						<layername>"PCB_presence_fish"</layername>
+						<unit>"mg/kg"</unit>
+						<statistic>average</statistic>
+						<description>"Total - PCB presence in fish (European Eel : Anguilla anguilla) expressed in mg/kg"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="1.0"/>
+							<parameter value="2.2" HSI="1.0"/>
+							<parameter value="5.5" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="wind_fetch">
+						<type>range / categorical</type>
+						<layername>"wind_fetch"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Wind fetch in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="100" cat="0 - 100" HSI="1.0"/>
+							<parameter rangemin="100" rangemax="200" cat="100 - 200" HSI="0.6"/>
+							<parameter rangemin="200" rangemax="300" cat="200 - 300" HSI="0.2"/>
+							<parameter rangemin="300" rangemax="999999" cat="> 300" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Nonnetje-Mergusalbellus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>Het Nonnetje is een wintergast, die afhankelijk is van visrijke zoete of zoute wateren. Vooral het Markermeer en in mindere mate het zuidelijk deel van IJsselmeer zijn belangrijk. Bij strenge vorst verblijven grote aantallen langs de grote rivieren en in het Deltagebied. Elders in het land komen kleinere aantallen voor op verschillende meren, plassen en vennen, beken en kanalen. De nachtelijke slaapplaatsen bestaan uit ongestoorde, beschutte wateren, zoals de Oostvaardersplassen, het Kinselmeer en de Gouwzee <a href="https://publicwiki.deltares.nl/display/HBTHOME/Nonnetje+-+Mergus+albellus#Nonnetje-Mergusalbellus-2">#2</a>.</p>
+
+<h3 id="Nonnetje-Mergusalbellus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Het Nonnetje duikt (tot 4 m) overdag naar voedsel. 's Winters en in het vroege voorjaar foerageert hij voornamelijk op kleine vis; de rest van jaar ook waterinsecten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Nonnetje+-+Mergus+albellus#Nonnetje-Mergusalbellus-1">#1</a>.</p>
+
+<h3 id="Nonnetje-Mergusalbellus-Reproductieenmigratie">Reproductie en migratie</h3>
+]]></text>
+		</Description>
+		<Description language="ENG">
+			<text><![CDATA[<h3 id="Smew(Mergusalbellus)-Occurrence">Occurrence</h3>
+<p>The Common Merganser is a fish-eater and winter guest that lives on large fresh and salt water. <br>
+In winter, it can be found on the IJsselmeer and the neighbouring Wadden Sea. The Common Merganser also lives in river basins, the Delta region, the Biesbosch and the Noordzee and in various inland fresh waters. During severe frost, it spreads more south, which enhances the importance of the river basins and the Delta region <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-2">#2</a>.</p>
+
+
+<h3 id="Smew(Mergusalbellus)-Foodhabitatandstrategy">Food habitat and strategy</h3>
+<p>The Common Merganser feeds on fish, it prefers to forage in shallow water, diving to a depth of 4 metres <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-2">#2</a>,<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-1">#1</a>. </p>
+
+
+<h3 id="Smew(Mergusalbellus)-Breedingandmigration">Breeding and migration</h3>
+<p>The Common Merganser mainly breeds in Fenno-Scandinavia. It does not breed in The Netherlands.  </p>
+]]></text>
+		</Description>			
+	</ContentDescription>
+	<Documentation>
+		<reference author="http://www.soortenbank.nl" title="Nonnetje" identification="" year="2020" journal="">
+			<html><![CDATA[http://www.soortenbank.nl/soorten.php?soortengroep=vogels&id=77&menuentry=soorten]]></html>
+		</reference>
+		<reference author="http://www.synbiosys.alterra.nl/natura2000/" title="" identification="" year="2020" journal="">
+			<html><![CDATA[http://www.synbiosys.alterra.nl/natura2000/]]></html>
+		</reference>
+		<reference author="Duel, H en Specken, B." year="1994" title="Habitatmodel Nonnetje: een model voor het bepalen van de kwaliteit van water- en moerasgebieden als overwinteringshabitat voor het Nonnetje(Mergus albellus)." journal="TNO-BSA Werkdocument" identification="1994"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

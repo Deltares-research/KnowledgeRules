@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45509177</EoLpagenr>
+			<LatName>Gallinago gallinago</LatName>
+			<CommonNames>
+				<Name name= "Watersnip" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1979-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op de bodem.</p>
+
+<p>Het voedsel wordt gezocht op het wateroppervlak, aan de waterkant, op de bodem en onder water.</p>
+
+<p>De bepalende factor van voorkomen is de aanwezigheid van natte open pioniervegetaties.</p>
+
+<h1 id="Watersnip-Gallinagogallinago-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Watersnip - Gallinago gallinago - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watersnip+-+Gallinago+gallinago#Watersnip-Gallinagogallinago-1">#1</a>.</p>
+
+<h1 id="Watersnip-Gallinagogallinago-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Alleen toepasbaar op broedgebied nabij Rijkswateren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watersnip+-+Gallinago+gallinago#Watersnip-Gallinagogallinago-1">#1</a>.</p>
+
+<h1 id="Watersnip-Gallinagogallinago-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>feeding_area</To>
+							<To>living_area</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>flooding_period</To>
+							<To>vegetation_height</To>
+							<To>cow_density</To>
+							<To>mow_timing</To>
+						</From>
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>spatial_characteristics</To>
+							<To>soil_characteristics</To>
+							<To>feed_density</To>
+						</From>
+						<From name="living_area">
+							<label>"living_area"</label>
+							<equation>min</equation>
+							<To>physical_characteristics</To>
+							<To>chloride_content</To>
+							<To>vegetation_characteristics</To>
+						</From>
+						<From name="spatial_characteristics">
+							<label>"spatial_characteristics"</label>
+							<equation>average</equation>
+							<To>slik_banks</To>
+							<To>shallow_water</To>
+						</From>
+						<From name="soil_characteristics">
+							<label>"soil_characteristics"</label>
+							<equation>average</equation>
+							<To>water_storage_capacity</To>
+							<To>soiltype</To>
+						</From>
+						<From name="physical_characteristics">
+							<label>"physical_characteristics"</label>
+							<equation>average</equation>
+							<To>bank_slope_angle</To>
+							<To>groundwater_level</To>
+						</From>
+						<From name="vegetation_characteristics">
+							<label>"vegetation_characteristics"</label>
+							<equation>average</equation>
+							<To>area_grasland-zegge_vegetation</To>
+							<To>vegetation_types</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="silk_banks">
+						<type>categorical</type>
+						<layername>"silk_banks"</layername>
+						<unit>"categorie"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of silk embankments"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="1.0"/>
+							<parameter cat="absent" HSI="0.5"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="bank_slope_angle">
+						<type>range / categorical</type>
+						<layername>bank_slope_angle</layername>
+						<unit>degrees of slope</unit>
+						<statistic>average</statistic>
+						<description>Slope of the enbankment in degrees</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="5" cat="0 - 5" HSI="1.0"/>
+							<parameter rangemin="5" rangemax="180" cat="> 5" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="water_storage_capacity">
+						<type>categorical</type>
+						<layername>"water_storage_capacity"</layername>
+						<unit>"categorie"</unit>
+						<statistic>average</statistic>
+						<description>"Capacity of the soil to hold water"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="high" HSI="1.0"/>
+							<parameter cat="medium" HSI="0.5"/>
+							<parameter cat="low" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="soiltype">
+						<type>categorical</type>
+						<layername>"soiltype"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Soiltype"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="Peat" HSI="1.0"/>
+							<parameter cat="Clay" HSI="0.7"/>
+							<parameter cat="Sand" HSI="0.5"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="shallow_water">
+						<type>scalar</type>
+						<layername>"shallow_water"</layername>
+						<unit>"Ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area of surface water less than 15 cm deep in hectares"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="1" HSI="0.5"/>
+							<parameter value="9" HSI="1.0"/>
+							<parameter value="20" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="groundwater_level">
+						<type>scalar</type>
+						<layername>"groundwater_level"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Level op the groundwater compared to field level"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="-40" HSI="0.0"/>
+							<parameter value="-30" HSI="0.5"/>
+							<parameter value="-10" HSI="1.0"/>
+							<parameter value="20" HSI="1.0"/>
+							<parameter value="30" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="flooding_period">
+						<type>range / categorical</type>
+						<layername>"flooding_period"</layername>
+						<unit>month / category"</unit>
+						<statistic>average</statistic>
+						<description>"Period of flooding"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
+							<parameter rangemin="0" rangemax="3" cat="August - March" HSI="1.0"/> 
+							<parameter rangemin="4" rangemax="7" cat="April - july" HSI="0.0"/>							
+							<parameter rangemin="8" rangemax="12" cat="August - March" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="chloride_content">
+						<type>range / categorical</type>
+						<layername>"chloride_content"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Chloride concentration in mg/l"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="300" cat="0 - 300" HSI="1.0"/> 							
+							<parameter rangemin="300" rangemax="999999" cat="> 300" HSI="1.0"/> 
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="area_grasland-zegge_vegetation">
+						<type>scalar</type>
+						<layername>"area_grasland-zegge_vegetation"</layername>
+						<unit>"ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area with grasland or zeggevegetation in hectares"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="0.4"/>
+							<parameter value="100" HSI="1.0"/>
+							<parameter value="150" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="vegetation_types">
+						<type>categorical</type>
+						<layername>"vegetation_types"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Vegetation types"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="grass" HSI="1.0"/>
+							<parameter cat="zeggen" HSI="1.0."/>
+							<parameter cat="russen" HSI="1.0"/>
+							<parameter cat="riet" HSI="0.2"/>
+							<parameter cat="riet-ruigten" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="vegetation_height">
+						<type>scalar</type>
+						<layername>"vegetation_height"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Height of the vegetation in centimeters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="feed_density">
+						<type>scalar</type>
+						<layername>"feed_density"</layername>
+						<unit>"gr/m2"</unit>
+						<statistic>average</statistic>
+						<description>"Feed density within a 1000 meters in grams per square meter"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="1.0"/>
+							<parameter value="30" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="cow_density">
+						<type>scalar</type>
+						<layername>"cow_density"</layername>
+						<unit>"n/ha"</unit>
+						<statistic>average</statistic>
+						<description>"Number of cows per hectare"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="3" HSI="0.0"/>
+							<parameter value="5" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="mow_timing">
+						<type>categorical</type>
+						<layername>"mow_timing"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Timing of mowing (date)"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="till 15/6" HSI="0.0"/>
+							<parameter cat="15/6 till 1/7" HSI="0.7"/>
+							<parameter cat="after 1/7" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Watersnip-Gallinagogallinago-Algemeenvoorkomen(leef-enbroedhabitat)">Algemeen voorkomen (leef- en broedhabitat)</h3>
+<p>De watersnip staat in Nederland vooral bekend als een weidevogel. In het algemeen heeft hij echter de voorkeur voor moerassen, natte terreinen met toegang tot ondiep zoet water. De watersnip komt alleen daar voor waar veel bodemleven onder het bodemoppervlak aanwezig is, waarbij de bodem niet te hard mag zijn omdat de watersnip zijn dunne, lange snavel gebruikt om in de grond te wroeten, op zoek naar eten. Dit zijn doorgaans toegankelijke organische bodems met afwisselende stukken vegetatie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watersnip+-+Gallinago+gallinago#Watersnip-Gallinagogallinago-1">#1</a>. </p>
+
+<p>De watersnip heeft een voorkeur om in zeggevelden omsloten door hoge vegetatie te broeden, maar er wordt ook gebroed op vochtige hooilanden op veengrond. Deze graslanden vertonen een oneffen oppervlak met veel pollen en bulten en worden laat beweid of gemaaid. Hierdoor blijft broeden in mei mogelijk. Hoge vegetatie is voor de watersnip ook van belang om roofdieren te kunnen detecteren; hiervoor wordt vaak in het gebied een uitkijkpost van 1 meter of hoger gebruikt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watersnip+-+Gallinago+gallinago#Watersnip-Gallinagogallinago-1">#1</a>.</p>
+
+<h3 id="Watersnip-Gallinagogallinago-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De watersnip foerageert vooral op de tast naar allerlei invertebraten. In het algemeen zijn dit insecten (larf en adult) en keverachtigen, maar ook libellen, mollusken, spinnen en kikkers staan op het menu. Ook regenwormen kunnen een belangrijk deel van het dieet vormen. Als plantaardig voedsel worden zaden gegeten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watersnip+-+Gallinago+gallinago#Watersnip-Gallinagogallinago-1">#1</a>. </p>
+
+<h3 id="Watersnip-Gallinagogallinago-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>Broeden start in het eerste deel van april en duurt tot het eerste deel van juli. Er worden 2 tot 5 eieren gelegd. De broed duurt 18 tot 20 dagen. Vanaf eind mei worden de ouders met jongen gezien. Na het uitkomen wordt de familie opgedeeld over de twee ouders. Na 19 tot 20 dagen kunnen de jongen vliegen. De najaarstrek vindt plaats in augustus-november. Hierbij trekt de soort naar Noord-Afrika. In maart-april vindt de voorjaarstrek plaats naar Nederland.  In augustus en oktober zijn er ruiende watersnippen uit de noordelijke en oostelijke streken waar te nemen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watersnip+-+Gallinago+gallinago#Watersnip-Gallinagogallinago-1">#1</a>.</p>
+]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

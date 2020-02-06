@@ -69,7 +69,6 @@
 							<equation>average</equation>
 							<To>surfacewater_area</To>
 							<To>meadow_distance</To>
-							<To>feedingplace_characteristics</To>
 						</From>
 						<From name="breeding_area_general">
 							<label>"breeding_area_general"</label>
@@ -89,7 +88,6 @@
 							<equation>min</equation>
 							<To>nesting_places</To>
 							<To>height_above_watersurface</To>
-							<To>surfacewater_waterdepth</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
@@ -146,7 +144,7 @@
 						<valuesCategorical>
 							<parameter cat="bank" HSI="0.3"/>
 							<parameter cat="(wire) algae" HSI="0.5"/>
-							<parameter cat="vegatation patches in water" HSI="1.0"/>
+							<parameter cat="vegetation patches in water" HSI="1.0"/>
 							<parameter cat="mudbanks" HSI="0.8"/>
 							<parameter cat="floating rhizomes" HSI="0.8"/>
 							<parameter cat="krabbescheer" HSI="1.0"/>

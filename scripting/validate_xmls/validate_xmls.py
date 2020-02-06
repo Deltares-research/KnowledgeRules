@@ -5,6 +5,11 @@ and write a log on findings
 
 import os
 from lxml import etree
+import sys
+
+sys.path.append('..\\..\\scripting\\view_xmls_tool')
+
+from autecology_xml import AutecologyXML
 
 #INITIALISE
 
@@ -69,6 +74,108 @@ for level1_dir in level1_dirs :
 					validation_log.append(["Not valid : " + path_xml_file])
 			except:
 				validation_log.append(["Not valid : " + path_xml_file])
+				continue
+
+			#load the xml file
+			try:
+				xmltest = AutecologyXML(filename = path_xml_file)
+				xmltest._readxml()
+				xmltest._scan()
+			except:
+				validation_log.append(["XML could not be read with AutecologyXML : " + path_xml_file]) 
+				continue
+
+			#CHECK languages Names and descriptions
+			cur_species_commonnames = xmltest.commonnames
+			cur_species_commonname_LANG = [line["language"] for line in cur_species_commonnames].sort()
+			cur_species_descriptions = xmltest._read_contentdescription()
+			cur_species_description_LANG = [line["language"] for line in cur_species_descriptions].sort()
+
+			if(cur_species_commonname_LANG != cur_species_description_LANG):
+				miss_common_name = (set(cur_species_description_LANG).difference(cur_species_commonname_LANG))
+				miss_species_description =  (set(cur_species_commonname_LANG).difference(cur_species_description_LANG))
+				if(len(miss_common_name) != 0):
+					validation_log.append(["Missing language in SpeciesDescription :" +  miss_species_description +". File : " + path_xml_file])
+				elif(len(miss_species_description) != 0):
+					validation_log.append(["Missing language in CommonNames :", miss_common_name +". File : " + path_xml_file])
+				else:
+					validation_log.append(["Someting wrong between languages SpeciesDescription and CommonNames, please investigate : " + path_xml_file])
+			
+
+			for cur_modeltype in xmltest.modeltypes:
+				#check scan of XML modeltypes
+				try:
+					xmltest._scan_modeltype(cur_modeltype)
+				except:
+					validation_log.append(["XML ModelType could not be scanned with AutecologyXML. File : " + path_xml_file +\
+										   " with ModelType " + str(cur_modeltype)]) 
+					continue
+
+				for cur_system in xmltest.systems:
+					try:
+						xmltest._scan_knowledgerules(cur_modeltype, cur_system)
+					except:
+						validation_log.append(["XML Knowledgerules could not be scanned with AutecologyXML. File : " + path_xml_file +\
+										   " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)]) 
+						continue
+
+					#check if languages are correct
+					cur_system_description = xmltest._read_systemdescription(cur_modeltype, cur_system)
+					cur_system_description_LANG = [line["language"] for line in cur_system_description].sort()
+
+					if(cur_species_commonname_LANG != cur_species_description_LANG):
+						miss_common_name = (set(cur_system_description_LANG).difference(cur_species_commonname_LANG))
+						miss_system_description =  (set(cur_species_commonname_LANG).difference(cur_system_description_LANG))
+						if(len(miss_common_name) != 0):
+							validation_log.append(["Missing language in SystemDescription :" +  miss_system_description +". File : " + path_xml_file +\
+												  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
+						elif(len(miss_species_description) != 0):
+							validation_log.append(["Missing language in CommonNames and SpeciesDescription :", miss_common_name +". File : " + path_xml_file +\
+												  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
+						else:
+							validation_log.append(["Someting wrong between languages SpeciesDescription, CommonNames and SystemDescription, please investigate. File : " + path_xml_file +\
+												  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
+					
+	
+	
+	
+					#check if no reoccuring names for knowledge rules
+					if(len(xmltest.knowledgeRulesNames) != len(set(xmltest.knowledgeRulesNames))):
+						seen = set()
+						not_uniq = []
+						for name in xmltest.knowledgeRulesNames:
+								if(not name in seen):
+									seen.add(name)
+								else:
+									not_uniq.append(name)	
+						
+						validation_log.append(["Duplicated Knowledge rule names in ResponseCurve, FormulaBased or other :" +  not_uniq +". File : " + path_xml_file +\
+											  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
+						
+					#check if the flow diagram is correct
+					xmltest._scan_systemflowdiagrams(cur_modeltype,cur_system)
+					if(len(xmltest.flowdiagrams) > 0 ):
+						for cur_flowdiagram in xmltest.flowdiagrams:
+							flowdiagram_dict = xmltest._read_systemflowdiagram(cur_modeltype, cur_system, cur_flowdiagram)
+							flowdiagram_links = flowdiagram_dict["Links"]
+
+							#check if To in flowdiagram or knowledge rule names
+							for nr_fl, flow_link in enumerate(flowdiagram_links):
+								#possible to links
+								pos_from_links = [x["From_name"] for x in flowdiagram_links[nr_fl:]]
+								pos_to_names = pos_from_links + xmltest.knowledgeRulesNames
+
+								#check if valid (all to links are possible)
+								if(not(set(flow_link["To_names"]).issubset(set(pos_to_names)))):
+									not_present = set(flow_link["To_names"]) - set(pos_to_names)
+									validation_log.append(["Following flowdiagram element is not valid, check the To links : From = " +  flow_link["From_name"] +\
+											  "; To's invalid = " + str(not_present) + ". File : " + path_xml_file +\
+											  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
+
+					else:
+						validation_log.append(["No flowdiagrams present :" +  not_uniq +". File : " + path_xml_file +\
+											  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
+
 
 log.append([" Total number of XMLs : " + str(nr_xmls)])
 log.append([""])

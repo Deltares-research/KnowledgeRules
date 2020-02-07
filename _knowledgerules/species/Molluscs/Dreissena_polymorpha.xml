@@ -43,8 +43,8 @@
 							<To>chloridegehalte</To>
 							<To>calciumgehalte</To>
 							<To>orthofosfaatgehalte</To>
-							<To>substraattype</To>
-							<To>siltfractie</To>
+							<To>substraat_type</To>
+							<To>silt_fractie</To>
 							<To>schelpen_bedekkingsgraad</To>
 						</From>
 					</FlowDiagram>
@@ -59,8 +59,8 @@
 							<To>chloridegehalte</To>
 							<To>calciumgehalte</To>
 							<To>orthofosfaatgehalte</To>
-							<To>substraattype</To>
-							<To>siltfractie</To>
+							<To>substraat_type</To>
+							<To>silt_fractie</To>
 							<To>schelpen_bedekkingsgraad</To>
 						</From>
 					</FlowDiagram>
@@ -139,9 +139,9 @@
 							<parameter value="15" HSI="1"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="substraattype">
+					<ResponseCurve name="substraat_type">
 						<type>categorical</type>
-						<layername>"substraattype"</layername>
+						<layername>"substraat_type"</layername>
 						<unit>"soil"</unit>
 						<statistic>average</statistic>
 						<description>"Average soil type tolerable for the Zebra mossel species"</description>
@@ -160,7 +160,7 @@
 					</ResponseCurve>
 					<ResponseCurve name="silt_fractie">
 						<type>range / categorical</type>
-						<layername>"siltfractie"</layername>
+						<layername>"silt_fractie"</layername>
 						<unit>"silt fraction / description"</unit>
 						<statistic>average</statistic>
 						<description>"Average silt content tolerable for the Zebra mossel species"</description>

@@ -40,7 +40,7 @@ Er is geen voorbeeldproject beschikbaar.
 						<From name="Habitat_geschiktheid">
 							<label>"Habitat_geschiktheid"</label>
 							<equation>geometric_average</equation>
-							<To>Voorplanting</To>
+							<To>Voortplanting</To>
 							<To>Voedsel_Beschutting</To>
 							<To>Waterkwaliteit</To>
 						</From>
@@ -166,12 +166,12 @@ Er is geen voorbeeldproject beschikbaar.
 							<parameter value="12" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="pH_paai">
+					<ResponseCurve name="pH_ei">
 						<type>scalar</type>
 						<layername>"pH"</layername>
 						<unit>"-"</unit>
 						<statistic>average</statistic>
-						<description>"pH (paai)"</description>
+						<description>"pH (ei)"</description>
 						<author>"Valesca Harezlak"</author>
 						<date>2013-01-16</date>
 						<references>

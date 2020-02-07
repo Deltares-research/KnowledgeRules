@@ -136,7 +136,7 @@ Er is geen voorbeeldproject beschikbaar.
 							<label>"reproductie"</label>
 							<equation>geometric_average</equation>
 							<To>temperatuur_embryo</To>
-							<To>drianage_embryo</To>
+							<To>drainage_embryo</To>
 							<To>substraattype_embryo</To>
 						</From>
 					</FlowDiagram>

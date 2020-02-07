@@ -85,7 +85,7 @@
 							<label>"vegetation_characteristics"</label>
 							<equation>average</equation>
 							<To>width_of_bank_vegetation</To>
-							<To>area_of_swamp</To>
+							<To>area_of_marshland</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>

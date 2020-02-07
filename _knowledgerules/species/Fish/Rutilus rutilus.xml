@@ -46,7 +46,7 @@
 						<From name="voedsel_beschutting">
 							<label>"voedsel_beschutting"</label>
 							<equation>min</equation>
-							<To>waterdiepete_verdeling_litoraal</To>
+							<To>waterdiepte_verdeling_litoraal</To>
 							<To>vegetatie_dichtheid</To>
 							<To>doorzicht</To>
 							<To>stroomsnelheid_larve</To>

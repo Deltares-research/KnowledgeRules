@@ -48,7 +48,7 @@
 							<label>"feeding_area"</label>
 							<equation>min</equation>
 							<To>surfacewater_characteristics</To>
-							<To>water_clearity</To>
+							<To>water_clarity</To>
 							<To>feedingplace_characteristics</To>
 						</From>
 						<From name="breeding_area_general">
@@ -74,8 +74,8 @@
 						<From name="feedingplace_characteristics">
 							<label>"feedingplace_characteristics"</label>
 							<equation>average</equation>
-							<To>embankment_treecoverage</To>
-							<To>embankment_sittingplace</To>
+							<To>bank_treecoverage</To>
+							<To>bank_sittingplace</To>
 						</From>
 						<From name="hydrodynamics">
 							<label>"hydrodynamics"</label>
@@ -129,7 +129,7 @@
 						<layername>"vertical_bank_length"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
-						<description>"Vertical_embankment length in meters"</description>
+						<description>"Vertical bank length in meters"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -148,7 +148,7 @@
 						<layername>"height"</layername>
 						<unit>"m"</unit>
 						<statistic>measured from average waterlevel</statistic>
-						<description>"Vertical embankment height measured from average waterlevel in meters"</description>
+						<description>"Vertical bank height measured from average waterlevel in meters"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -164,9 +164,9 @@
 					<ResponseCurve name="vertical_bank_density">
 						<type>range / categorical</type>
 						<layername>vertical_bank_density</layername>
-						<unit>nr of vertical river banks per km embankment</unit>
+						<unit>nr of vertical shoreline banks per km bank</unit>
 						<statistic>average</statistic>
-						<description>Number of vertical embankments per km of embankment</description>
+						<description>Number of vertical shoreline banks per km of bank</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -177,6 +177,23 @@
 							<parameter rangemin="0" rangemax="0.5" cat="0 - 0.5" HSI="0.5"/>
 							<parameter rangemin="0.5" rangemax="1.0" cat="0.5 - 1.0" HSI="0.8"/>
 							<parameter rangemin="1.0" rangemax="999999" cat="> 1.0" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="vertical_bank_distance_to_water">
+						<type>range / categorical</type>
+						<layername>vertical_bank_distance_to_water</layername>
+						<unit>m</unit>
+						<statistic>average</statistic>
+						<description>Distance of vertical banks to water in meters and categories</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="1.0"/>
+							<parameter rangemin="10" rangemax="200" cat="10 - 200" HSI="0.2"/>
+							<parameter rangemin="200" rangemax="999999" cat="> 200" HSI="0.0"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
 					<ResponseCurve name="surfacewater_open_area">
@@ -254,12 +271,12 @@
 							<parameter value="1.0" HSI="1.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="embankment_treecoverage">
+					<ResponseCurve name="bank_treecoverage">
 						<type>categorical</type>
 						<layername>"treecoverage"</layername>
 						<unit>"categorie"</unit>
 						<statistic>average</statistic>
-						<description>"Presence of trees (overhanging branches) on embankment"</description>
+						<description>"Presence of trees (overhanging branches) on bank"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -270,12 +287,12 @@
 							<parameter cat="absent" HSI="0.0"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="embankment_sittingplace">
+					<ResponseCurve name="bank_sittingplace">
 						<type>categorical</type>
 						<layername>"sittingplace"</layername>
 						<unit>"categorie"</unit>
 						<statistic>average</statistic>
-						<description>"Presence of sitting places above water for birds on embankment"</description>
+						<description>"Presence of sitting places above water for birds on bank"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>

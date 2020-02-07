@@ -35,7 +35,7 @@
 							<To>oever_type_en_beheer</To>
 							<To>oevervegetatie_bedekkingsgraad</To>
 						</From>
-						<From name="oever_situatie">
+						<From name="oever_type_en_beheer">
 							<label>"oever_type_en_beheer"</label>
 							<equation>min</equation>
 							<To>waterbreedte</To>

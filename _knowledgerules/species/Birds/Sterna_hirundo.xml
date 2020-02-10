@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45509327</EoLpagenr>
+			<LatName>Sterna hirundo</LatName>
+			<CommonNames>
+				<Name name= "Visdief" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1972-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Visdief-Sternahirundo-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Visdief - Sterna hirundo - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visdief+-+Sterna+hirundo#Visdief-Sternahirundo-1">#1</a>.</p>
+
+<h1 id="Visdief-Sternahirundo-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Nederland, zonder onderscheid tussen kolonies in zoute en zoete wateren omdat de uiteindelijke vestigingsvoorwaarden voor kolonies in zoute en zoete milieus gelijk zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visdief+-+Sterna+hirundo#Visdief-Sternahirundo-1">#1</a>. </p>
+
+<h1 id="Visdief-Sternahirundo-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="breeding_area">
+						<From name="breeding_area">
+							<label>"breeding_area"</label>
+							<equation>min</equation>
+							<To>nesting_area</To>
+							<To>feeding_area</To>
+						</From>
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>predation_characteristics</To>
+							<To>spatial_characteristics</To>
+							<To>flooding_period</To>
+						</From>
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>surfacewater_open_area</To>
+							<To>sediment_quality</To>
+						</From>
+						<From name="predation_characteristics">
+							<label>"predation_characteristics"</label>
+							<equation>average</equation>
+							<To>distance_to_main_land</To>
+							<To>ground_predators</To>
+						</From>
+						<From name="spatial_characteristics">
+							<label>"spatial_characteristics"</label>
+							<equation>average</equation>
+							<To>spatial_structure</To>
+							<To>area_sparse_overgrown</To>
+						</From>
+						<From name="spatial_structure">
+							<label>"spatial_structure"</label>
+							<equation>average</equation>
+							<To>bank_slope_angle</To>
+							<To>structure_sandbars_islands</To>
+							<To>soiltype_bank_island</To>
+							<To>coverage_vegetation_structural_elements</To>
+							<To>width_sparse_overgrown_banks</To>
+							<To>forest_high_vegetation</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="surfacewater_open_area">
+						<type>scalar</type>
+						<layername>"surfacewater_open_area"</layername>
+						<unit>"km2"</unit>
+						<statistic>within one kilometer</statistic>
+						<description>"Open area of surface water in square kilometers within fifteen kilometer"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="0.5"/>
+							<parameter value="20" HSI="1.0"/>
+							<parameter value="40" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="distance_to_main_land">
+						<type>range / categorical</type>
+						<layername>distance_to_main_land</layername>
+						<unit>m</unit>
+						<statistic>average</statistic>
+						<description>Distance from the island to the main land in meters</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="50" cat="0 - 50" HSI="0.4"/>
+							<parameter rangemin="50" rangemax="300" cat="50 - 300" HSI="0.7"/>
+							<parameter rangemin="300" rangemax="999999" cat="> 300" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="bank_slope_angle">
+						<type>scalar</type>
+						<layername>"bank_slope_angle"</layername>
+						<unit>"degrees of slope"</unit>
+						<statistic>average</statistic>
+						<description>"Slope of the enbankment in degrees"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="10" HSI="0.8"/>
+							<parameter value="30" HSI="0.0"/>
+							<parameter value="50" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="structure_sandbars_islands">
+						<type>categorical</type>
+						<layername>"structure_sandbars_islands"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Structure of the sandbars/islands"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="low herb vegetation" HSI="1.0"/>
+							<parameter cat="high herb vegetation" HSI="0.4"/>
+							<parameter cat="gravel/sand/rocks" HSI="1.0"/>
+							<parameter cat="bare sand" HSI="0.2"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="soiltype_bank_island">
+						<type>categorical</type>
+						<layername>"soiltype_bank_island"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Soiltype of the bank/island"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="sandy" HSI="1.0"/>
+							<parameter cat="clayy" HSI="0.2"/>
+							<parameter cat="peaty" HSI="0.5"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="sediment_quality">
+						<type>categorical</type>
+						<layername>"sediment_quality"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Sediment_quality PCB's/dioxin-like"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="class 1 and 2" HSI="1.0"/>
+							<parameter cat="class 3 and 4" HSI="0.6"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="flooding_period">
+						<type>range / categorical</type>
+						<layername>"overstromingen_periode"</layername>
+						<unit>category"</unit>
+						<statistic>average</statistic>
+						<description>"Period of flooding"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
+							<parameter rangemin="0" rangemax="4" cat="October - April" HSI="1.0"/> 
+							<parameter rangemin="5" rangemax="9" cat="May - September" HSI="0.0"/>							
+							<parameter rangemin="10" rangemax="12" cat="October - April" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="coverage_vegetation_structural_elements">
+						<type>scalar</type>
+						<layername>"coverage_vegetation_structural_elements"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage vegetation or structural elements in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="0.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="30" HSI="1.0"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="width_sparse_overgrown_banks">
+						<type>scalar</type>
+						<layername>"width_sparse_overgrown_banks"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Width of sparse overgrown banks in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="100" HSI="0.5"/>
+							<parameter value="300" HSI="1.0"/>
+							<parameter value="500" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="forest_high_vegetation">
+						<type>categorical</type>
+						<layername>"forest_high_vegetation"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of forest or high vegetation"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="0.0"/>
+							<parameter cat="absent" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="area_sparse_overgrown">
+						<type>scalar</type>
+						<layername>"area_sparse_overgrown"</layername>
+						<unit>"ha"</unit>
+						<statistic>average</statistic>
+						<description>"Area of sparse overgrown banks/islands in hectares"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.5" HSI="1.0"/>
+							<parameter value="2.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="ground_predators">
+						<type>categorical</type>
+						<layername>"ground_predators"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of ground predators"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="present" HSI="0.3"/>
+							<parameter cat="absent" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Visdief-Sternahirundo-Algemeenvoorkomen(leef-enbroedgebied)">Algemeen voorkomen (leef- en broedgebied)</h3>
+
+<p>De visdief broedt zowel in zoete als zoute wateren. Dit doen zij in kolonies, alleen in het binnenland broeden ze soms solitair of in kleinere kolonies. Predatie druk, risico van overstroming en mate van begroeiing zijn de belangrijkste factoren die het broedgebied uiteindelijk bepalen.Vegetatie biedt bescherming tegen zon, weersomstandigheden en predatie. Tevens dient het als herkenningspunt. Een te hoge vegetatie krijgt echter een negatieve rol, doordat broedende visdieven zo het zicht op predatoren en elkaar verliezen maar er ook verstrengeld in kunnen raken. In het rivierengebied broed de visdief daar waar de uiterwaarden het waterrijkst zijn. Maar ook minder natuurlijke locaties, zoals daken van industriecomplexen, opspuitterreinen en akkers worden gebruikt als broedgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visdief+-+Sterna+hirundo#Visdief-Sternahirundo-1">#1</a>.</p>
+
+<p>De nesten dienen droog te blijven tijdens peilfluctuatie. Waterdiepte heeft effect op de hoeveelheid vis die beschikbaar is en de bescherming van het nest tegen predatoren. Voor foerageren is het van belang dat het water helder is en voldoende vis bevat <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visdief+-+Sterna+hirundo#Visdief-Sternahirundo-1">#1</a>. </p>
+
+
+<h3 id="Visdief-Sternahirundo-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>In zoute wateren wordt voornamelijk aan het wateroppervlak op in scholen levende kleine jonge vis , zoals haring, sprot en zandspiering, gejaagd. Daarnaast vormen garnaalachtigen en krabbetjes een aanvulling op het dieet. In het binnenland wordt veel op visjes, zoals stekelbaars en zoetwaterbaars, maar ook op kikkervisjes, insecten en insectenlarven gejaagd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visdief+-+Sterna+hirundo#Visdief-Sternahirundo-1">#1</a>. </p>
+
+<h3 id="Visdief-Sternahirundo-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De kolonies zijn aanwezig van de tweede helft van april tot en met half augustus. De eieren worden gelegd in de eerste helft van mei, variërend van 2 tot 3 eieren per nest. De broedduur is ongeveer 22 tot 26 dagen en na 22 tot 28 dagen bereiken de kuikens het vliegvlugge stadium en start de dispersie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visdief+-+Sterna+hirundo#Visdief-Sternahirundo-1">#1</a> . </p>
+
+<p>In augustus vindt de wintertrek plaats naar de West Afrikaanse kust van Mauritanië tot Nigeria. Vanaf eind maart – begin april zijn de visdieven weer in ons land te vinden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Visdief+-+Sterna+hirundo#Visdief-Sternahirundo-1">#1</a>.</p>
+]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

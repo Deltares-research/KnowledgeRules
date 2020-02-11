@@ -87,21 +87,20 @@ for level1_dir in level1_dirs :
 
 			#CHECK languages Names and descriptions
 			cur_species_commonnames = xmltest.commonnames
-			cur_species_commonname_LANG = [line["language"] for line in cur_species_commonnames].sort()
+			cur_species_commonname_LANG = sorted([line["language"] for line in cur_species_commonnames])
 			cur_species_descriptions = xmltest._read_contentdescription()
-			cur_species_description_LANG = [line["language"] for line in cur_species_descriptions].sort()
+			cur_species_description_LANG = sorted([line["language"] for line in cur_species_descriptions])
 
 			if(cur_species_commonname_LANG != cur_species_description_LANG):
 				miss_common_name = (set(cur_species_description_LANG).difference(cur_species_commonname_LANG))
 				miss_species_description =  (set(cur_species_commonname_LANG).difference(cur_species_description_LANG))
 				if(len(miss_common_name) != 0):
-					validation_log.append(["Missing language in SpeciesDescription :" +  miss_species_description +". File : " + path_xml_file])
+					validation_log.append(["Missing language in SpeciesDescription :" +  str(miss_common_name) +". File : " + path_xml_file])
 				elif(len(miss_species_description) != 0):
-					validation_log.append(["Missing language in CommonNames :", miss_common_name +". File : " + path_xml_file])
+					validation_log.append(["Missing language in CommonNames :", str(miss_species_description) +". File : " + path_xml_file])
 				else:
 					validation_log.append(["Someting wrong between languages SpeciesDescription and CommonNames, please investigate : " + path_xml_file])
 			
-
 			for cur_modeltype in xmltest.modeltypes:
 				#check scan of XML modeltypes
 				try:
@@ -121,24 +120,21 @@ for level1_dir in level1_dirs :
 
 					#check if languages are correct
 					cur_system_description = xmltest._read_systemdescription(cur_modeltype, cur_system)
-					cur_system_description_LANG = [line["language"] for line in cur_system_description].sort()
+					cur_system_description_LANG = sorted([line["language"] for line in cur_system_description])
 
-					if(cur_species_commonname_LANG != cur_species_description_LANG):
+					if(cur_species_commonname_LANG != cur_system_description_LANG):
 						miss_common_name = (set(cur_system_description_LANG).difference(cur_species_commonname_LANG))
 						miss_system_description =  (set(cur_species_commonname_LANG).difference(cur_system_description_LANG))
 						if(len(miss_common_name) != 0):
-							validation_log.append(["Missing language in SystemDescription :" +  miss_system_description +". File : " + path_xml_file +\
+							validation_log.append(["Missing language in SystemDescription :" +  str(miss_common_name) +". File : " + path_xml_file +\
 												  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
-						elif(len(miss_species_description) != 0):
-							validation_log.append(["Missing language in CommonNames and SpeciesDescription :", miss_common_name +". File : " + path_xml_file +\
+						elif(len(miss_system_description) != 0):
+							validation_log.append(["Missing language in CommonNames and/or SpeciesDescription : " +  str(miss_system_description) +". File : " + path_xml_file +\
 												  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
 						else:
 							validation_log.append(["Someting wrong between languages SpeciesDescription, CommonNames and SystemDescription, please investigate. File : " + path_xml_file +\
 												  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
 					
-	
-	
-	
 					#check if no reoccuring names for knowledge rules
 					if(len(xmltest.knowledgeRulesNames) != len(set(xmltest.knowledgeRulesNames))):
 						seen = set()
@@ -149,7 +145,7 @@ for level1_dir in level1_dirs :
 								else:
 									not_uniq.append(name)	
 						
-						validation_log.append(["Duplicated Knowledge rule names in ResponseCurve, FormulaBased or other :" +  not_uniq +". File : " + path_xml_file +\
+						validation_log.append(["Duplicated Knowledge rule names in ResponseCurve, FormulaBased or other :" +  str(not_uniq) +". File : " + path_xml_file +\
 											  " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)])
 						
 					#check if the flow diagram is correct

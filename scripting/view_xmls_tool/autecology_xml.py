@@ -634,7 +634,7 @@ class AutecologyXML(_File):
 		self.systemname = systemname
 		self.knowledgeRulesNr = len(list(child for child in krs_root)) 
 		self.knowledgeRulesCategorie = list(child.tag.replace(self.xmlns,"") for child in krs_root)
-
+		self.knowledgeRulesNames = list(child.get('name') for child in krs_root)
 
 		#Make dictonary of knowledge rules
 		rule_overview = {}
@@ -648,9 +648,8 @@ class AutecologyXML(_File):
 				raise RuntimeError("type '" + str(self.knowledgeRulesCategorie[nr]) + "' not available in methods for data extraction.")
 			rule_overview["rules"][child.get('name')] = rule_dict
 		
-		#Store data		
-		self.knowledgeRulesDict = rule_overview
-		self.knowledgeRulesNames = [value["name"].replace('"','') for key, value in self.knowledgeRulesDict["rules"].items()]
+		#Store data
+		self.knowledgeRulesDict = rule_overview		
 		self.knowledgeRulesStatistics = [value["statistic"].replace('"','') for key, value in self.knowledgeRulesDict["rules"].items()]
 		self.knowledgeRulesUnits = [value["unit"].replace('"','') for key, value in self.knowledgeRulesDict["rules"].items()]
 
@@ -1419,7 +1418,7 @@ class TestAutecologyXML_any(unittest.TestCase):
 		self.assertTrue(isinstance(self.xmltest.systems,list))
 
 
-	def test__read_contentdescription(self):
+	def test_read_contentdescription(self):
 		spd_overview = self.xmltest._read_contentdescription()
 		self.assertTrue(isinstance(spd_overview,list))
 		self.assertTrue(isinstance(spd_overview[0],dict))
@@ -1613,7 +1612,7 @@ if __name__ == '__main__':
 # print(xmltest.knowledgeRulesCategorie)
 # print(xmltest.knowledgeRulesStatistics)
 
-# print(xmltest._read_speciesdescription())
+# print(xmltest._read_contentdescription())
 # print(xmltest._read_modeldescription("adult"))
 
 #This is an example.

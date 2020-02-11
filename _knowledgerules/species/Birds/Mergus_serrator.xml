@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45510609</EoLpagenr>
+			<LatName>Mergus serrator</LatName>
+			<CommonNames>
+				<Name name= "Middelste zaagbek" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="feeding_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Veerse meer" id="2745733"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1995-01-01</StartDate>
+						<EndDate>2002-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<p>Het nest wordt gemaakt op de bodem, in holten in de bodem of bomen en het wateroppervlak.</p>
+
+<p>Het voedsel wordt gezocht onderwater.</p>
+
+<p>De bepalende factor van voorkomen is de aanwezigheid van open water.</p>
+
+<h1 id="Middelstezaagbek-Mergusserrator-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Middelste zaagbek - Mergus serrator - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<h1 id="Middelstezaagbek-Mergusserrator-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>De rekenregels zijn opgesteld voor het Veerse Meer <a href="https://publicwiki.deltares.nl/display/HBTHOME/Middelste+zaagbek+-+Mergus+serrator#Middelstezaagbek-Mergusserrator-1">#1</a>.</p>
+
+<h1 id="Middelstezaagbek-Mergusserrator-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="feeding_area">
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>transparency</To>
+							<To>waterdepth</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="transparency">
+						<type>scalar</type>
+						<layername>"transparency"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Transparency of the water expressed in meters of visuability"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.0"/>
+							<parameter value="2.0" HSI="1.0"/>
+							<parameter value="4.0" HSI="1.0"/>
+							<parameter value="6.0" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth">
+						<type>scalar</type>
+						<layername>"waterdepth"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.0"/>
+							<parameter value="1.0" HSI="1.0"/>
+							<parameter value="3.5" HSI="1.0"/>
+							<parameter value="7.0" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Middelstezaagbek-Mergusserrator-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+
+<p>De Middelste Zaagbek komt als broedvogel maar zeer beperkt voor in Nederland. Echter, als doortrekker en wintergast is deze vogel talrijk van half september tot eind april, vooral langs de kust. Het Deltagebied, met name het Grevelingenmeer en het Veerse Meer zijn belangrijke overwinteringsgebieden in Nederland. De aantallen in de Zeeuwse delta worden niet zozeer beïnvloed door vorst, maar door het voedselaanbod. De Middelste Zaagbekken arriveren in het Veerse Meer in oktober, alwaar ze de hoogste aantallen bereiken in december/januari en zijn daar rond april meestal weer verdwenen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Middelste+zaagbek+-+Mergus+serrator#Middelstezaagbek-Mergusserrator-1">#1</a></p>
+
+<h3 id="Middelstezaagbek-Mergusserrator-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+<p>De Middelste Zaagbek is een zichtjager en foerageert dan ook overdag. Vaak gebeurt dit in groepen die vele tientallen tot enkele honderden exemplaren kunnen omvatten. De vlak op het water liggende vogel spiedt met ondergedoken kop in de diepte en duikt zodra er een vis wordt waargenomen. Tijdens de achtervolging onder water worden zoveel mogelijk kleine prooien gevangen en reeds onderwater ingeslikt. Grotere prooien worden eerst naar het wateroppervlak gebracht alvorens te worden opgegeten. De Middelste Zaagbek is dus afhankelijk van de helderheid van het water, maar vanwege dat de Middelste Zaagbek in groepen jaagt zijn ze beter in staat om bij troebel water te foerageren dan bijvoorbeeld de Fuut. De Middelste Zaagbek heeft een voorkeur voor ondiep water (&lt;3.5 meter) om te foerageren. Mannetjes kunnen dieper komen dan vrouwtjes <a href="https://publicwiki.deltares.nl/display/HBTHOME/Middelste+zaagbek+-+Mergus+serrator#Middelstezaagbek-Mergusserrator-1">#1</a>.</p>
+
+<p>Er is weinig bekend over de prooikeuze. Waarschijnlijk wordt deze voornamelijk bepaald door het aanbod. In het Grevelingenmeer bestaat het dieet van de Middelste Zaagbek voornamelijk uit grondelachtigen. Waarschijnlijk bestaat het dieet in het Veerse Meer uit zowel stekelbaarzen als grondelachtigen. Per dag eten ze ongeveer 300 gram vis. Naast vis worden ook wel insecten, kreeftachtigen, wormen en schelpdieren gegeten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Middelste+zaagbek+-+Mergus+serrator#Middelstezaagbek-Mergusserrator-1">#1</a>.</p>
+
+<h3 id="Middelstezaagbek-Mergusserrator-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De reproductie vindt plaats in Scandinavië, IJsland, Ierland, Schotland, Noord-Rusland, Baltische staten, Noord-Polen, Noord-Duitsland en Denemarken. Overzomerende vogels kunnen bij ons regelmatig worden waargenomen. Sinds 1977 worden er ook broedplaatsen van de Middelste Zaagbek in Nederland aangetroffen. Nu worden er jaarlijks broedgevallen in het Deltagebied vastgesteld. Niet alleen in de Grevelingen, maar ook in het Haringvliet en af en toe in het Veerse Meer. De meeste broedgevallen zijn gebaseerd op waarnemingen van wijfjes met jongen die voor het grootste deel moeten zijn uitgekomen tussen de laatste week van juni en de eerste week van juli <a href="https://publicwiki.deltares.nl/display/HBTHOME/Middelste+zaagbek+-+Mergus+serrator#Middelstezaagbek-Mergusserrator-2">#2</a>.</p>
+]]></text>
+			</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+		<reference author="http://www.ivnvechtplassen.org" title="Middelste Zaagbek" year="2020" journal="" identification="">
+			<html><![CDATA[http://www.ivnvechtplassen.org/ivn_vogels_winter/Middelste_Zaagbek_Mergus-serrator.html]]></html>
+		</reference>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

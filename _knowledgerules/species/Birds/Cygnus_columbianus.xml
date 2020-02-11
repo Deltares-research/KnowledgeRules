@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45510545</EoLpagenr>
+			<LatName>Cygnus columbianus</LatName>
+			<CommonNames>
+				<Name name= "Kleine zwaan" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="feeding_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1977-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Kleinezwaan-Cygnuscolumbianus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Kleine zwaan - Cygnus columbianus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+zwaan+-+Cygnus+columbianus#Kleinezwaan-Cygnuscolumbianus-1">#1</a>.</p>
+
+<h1 id="Kleinezwaan-Cygnuscolumbianus-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Deze rekenregels zijn opgesteld om het voedselhabitat van de Kleine zwaan te bepalen en zijn van toepassing in de wintermaanden op water- en moerasgebieden, met zoet ( &lt; 1000 mg/L gem. chloridegehalte) en stagnant water (&lt; 0.1 m/s gem. stroomsnelheid). Het analyseren van het voedselaanbod van drassige graslanden, akkers en brak-en zoutwatergebieden is hiermee niet mogelijk <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+zwaan+-+Cygnus+columbianus#Kleinezwaan-Cygnuscolumbianus-1">#1</a>. </p>
+
+<h1 id="Kleinezwaan-Cygnuscolumbianus-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="feeding_area">
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>tuber_biomass</To>
+							<To>biomass_above_ground_sago_pondweed</To>
+							<To>coverage_sago_pondweed</To>
+							<To>waterdepth</To>
+							<To>waterlevel_fluctuation</To>
+							<To>disturbance_distance</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="tuber_biomass">
+						<type>scalar</type>
+						<layername>"tuber_biomass"</layername>
+						<unit>"g/m2"</unit>
+						<statistic>average</statistic>
+						<description>"Biomass of tubers in grams per square meter"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="1.75" HSI="0.0"/>
+							<parameter value="12.5" HSI="1.0"/>
+							<parameter value="14" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="biomass_above_ground_sago_pondweed">
+						<type>scalar</type>
+						<layername>"biomass_above_ground_sago_pondweed"</layername>
+						<unit>"g/m2"</unit>
+						<statistic>average</statistic>
+						<description>"Above ground biomass of sago pondweed in grams per square meter"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="9.5" HSI="0.0"/>
+							<parameter value="67.5" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="coverage_sago_pondweed">
+						<type>scalar</type>
+						<layername>"coverage_sago_pondweed"</layername>
+						<unit>"g/m2"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage of sago pondweed in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="0.0"/>
+							<parameter value="70" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth">
+						<type>range / categorical</type>
+						<layername>"waterdepth"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0.0" rangemax="0.5" cat="0.0 - 0.5" HSI="1.0"/>
+							<parameter rangemin="0.5" rangemax="1.0" cat="0.5 - 1.0" HSI="0.8"/>
+							<parameter rangemin="1.0" rangemax="999999" cat="> 1.0" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="waterlevel_fluctuation">
+						<type>range / categorical</type>
+						<layername>"waterlevel_fluctuation"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Fluctuation of the waterlevel expressed in centimeters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="1.0"/>
+							<parameter rangemin="10" rangemax="25" cat="10 - 25" HSI="0.5"/>
+							<parameter rangemin="25" rangemax="999999" cat=" > 25" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="disturbance_distance">
+						<type>range / categorical</type>
+						<layername>"disturbance_distance"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Disturbance distance in meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0.0" rangemax="200.0" cat="0.0 - 200.0" HSI="1.0"/>
+							<parameter rangemin="200.0" rangemax="300.0" cat="200.0 - 300.0" HSI="0.5"/>
+							<parameter rangemin="300.0" rangemax="999999" cat="> 300.0" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Kleinezwaan-Cygnuscolumbianus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De kleine zwaan (Cygnus columbianus) trekt in de winter van Rusland en Siberië naar West-Europa. In de toendragebieden van Europees-Rusland en Siberië vindt de broed van de  kleine zwaan plaats. Dit gebeurt in natte grasrijke en met veel poelen en meertjes bedekte gebieden. Als overwinteringsgebied kiest de kleine zwaan voor ondiepe wateroppervlaktes in combinatie met natte of ondiep geïnundeerde graslanden. Door het korte broedseizoen in het noorden zijn de eieren en jongen erg kwetsbaar voor slechte weersomstandigheden. Tijdens de trek pleisteren de Kleine zwanen in meren, plassen en rivieren en soms ook bij (ondiepe) kust wateren. De trek vindt plaats via het Oostzeegebied. In West-Europa overwinteren de vogels. Dit gebeurt voornamelijk in Nederland, Groot-Brittannië en Ierland. Ook Denemarken, Duitsland, België en Frankrijk worden in de winter door de kleine zwaan bezocht. In zeer koude winters concentreren de dieren zich in Groot-Brittannië en Ierland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+zwaan+-+Cygnus+columbianus#Kleinezwaan-Cygnuscolumbianus-1">#1</a>. </p>
+
+<p>In Nederland zijn de belangrijke concentratie gebieden van de kleine zwaan het IJsselmeergebied, het Deltagebied, Noordwest-Overijssel, Zuid-frieslad, het Lauwersmeergebied, het rivierengebied en Texel. De Randmeren en het Lauwersmeer worden vooral door de kleine zwaan bevolkt in het begin van de winter als er nog velden met fonteinkruiden aanwezig zijn. In Nederland overwintert ongeveer 50 % van de Noordwest-Europese winterpopulatie. De dichtheid waarin de kleine zwaan kan voorkomen varieert van 75 tot 200 individuen per 100 ha ondiep water begroeid met waterplanten. Het percentage jonge kleine zwanen varieert in Nederland van 12 tot 16%. Beschutte wateren hebben de hoogste dichtheid kleine zwanen  <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+zwaan+-+Cygnus+columbianus#Kleinezwaan-Cygnuscolumbianus-1">#1</a>. </p>
+
+<h3 id="Kleinezwaan-Cygnuscolumbianus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De kleine zwaan overwinterd in ons land van oktober tot maart, waarbij verschillende voedselbronnen worden aangesproken. In het algemeen foerageert de kleine zwaan op de bladeren, stengels, wortels en knollen van waterplanten, zoals fonteinkruiden, zannichellia, zeegras, hoornblad en slijkgras. Ook worden wortels van oeverplanten, zoals biezen en rietgras gegeten. In Nederland foerageert de kleine zwaan bij voorkeur op overwinteringsknolletjes van de schedefonteinkruid. De kleine zwaan foerageert op waterplanten in ondiep water met een maximum van 1 m diepte. Op een waterdiepte van 15 - 50 cm foerageren ze met de trappelmethode. Tot op 1 meter diepte kunnen ze grondelend waterplanten bereiken. De dichtheid van de knolletjes is hierbij van invloed op de geschiktheid voor de kleine zwaan. De voedingswaarde van deze knolletjes is vele malen groter dan gras en dit lijkt effect te hebben op de vruchtbaarheid van het volgende jaar. Kleine zwanen eten ook geregeld de zaden van allerlei planten, maar ook dierlijk voedsel wordt echter zelden gegeten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+zwaan+-+Cygnus+columbianus#Kleinezwaan-Cygnuscolumbianus-1">#1</a>.  </p>
+
+<p>In meren kunnen schommelingen in het waterpeil (verhoging in de wintermaanden) nadelig zijn doordat grote delen van het waterplanten areaal dan niet te bereiken is. Echter, in de uiterwaarden werkt het voordelig doordat een belangrijk deel van het grasland dan onderwater komt en hierdoor foerageerbaar is voor de kleine zwaan <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+zwaan+-+Cygnus+columbianus#Kleinezwaan-Cygnuscolumbianus-1">#1</a>.</p>
+
+<h3 id="Kleinezwaan-Cygnuscolumbianus-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De kleine zwaan broed in de toendragebieden van Europees-Rusland en Siberië <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+zwaan+-+Cygnus+columbianus#Kleinezwaan-Cygnuscolumbianus-1">#1</a>. Hier zijn geen rekenregels over opgenomen. </p>
+]]></text>
+		</Description>	
+	</ContentDescription>
+	<Documentation>
+		<reference author="Duel, H en Specken, B." year="1994" title="Habitatmodel Kleine Zwaan: een model voor het bepalen van de kwaliteit van zoetwatergebieden als voedselgebied voor overwinterende kleine zwanen (Cygnus columbianus)." journal="TNO-BSA Werkdocument" identification="1994"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

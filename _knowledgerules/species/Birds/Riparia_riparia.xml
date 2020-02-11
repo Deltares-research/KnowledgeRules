@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45511451</EoLpagenr>
+			<LatName>Riparia riparia</LatName>
+			<CommonNames>
+				<Name name= "Oeverzwaluw" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="nesting_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1974-01-01</StartDate>
+						<EndDate>1995-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Oeverzwaluw-Ripariariparia-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Oeverzwaluw - Riparia riparia - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+
+<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>.</p>
+
+<h1 id="Oeverzwaluw-Ripariariparia-Toepassingsgebied">Toepassingsgebied</h1>
+
+<p>Deze rekenregels zijn opgesteld om het nestgebied van de oeverzwaluw te bepalen. Ze zijn van toepassing natuurlijke steilranden op de oevers van kleine en grote rivieren en grote laaglandbeken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>. </p>
+
+<h1 id="Oeverzwaluw-Ripariariparia-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Niet aanwezig</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="nesting_area">
+						<From name="nesting_area">
+							<label>"nesting_area"</label>
+							<equation>min</equation>
+							<To>surface_steep_wall</To>
+							<To>exposure</To>
+							<To>presence_open_space</To>
+							<To>distance_to_feeding_area</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="surface_steep_wall">
+						<type>range / categorical</type>
+						<layername>"surface_steep_wall"</layername>
+						<unit>"m2"</unit>
+						<statistic>average</statistic>
+						<description>"Surface area of the steep wall in square meters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="15" cat="0 - 15" HSI="0.0"/>
+							<parameter rangemin="15" rangemax="20" cat="15 - 20" HSI="0.2"/>
+							<parameter rangemin="20" rangemax="25" cat="20 - 25" HSI="0.4"/>
+							<parameter rangemin="25" rangemax="30" cat="25 - 30" HSI="0.8"/>
+							<parameter rangemin="30" rangemax="999999" cat="> 30" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="exposure">
+						<type>categorical</type>
+						<layername>"exposure"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Direction of exposure of the steep wall"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="north" HSI="1.0"/>
+							<parameter cat="south" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="presence_open_space">
+						<type>scalar</type>
+						<layername>"presence_open_space"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Distance from steep wall to ascending vegetation"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="100" HSI="0.0"/>
+							<parameter value="250" HSI="1.0"/>
+							<parameter value="300" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="distance_to_feeding_area">
+						<type>scalar</type>
+						<layername>"distance_to_feeding_area"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Distance from nesting area to feeding area"</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="2000" HSI="1.0"/>
+							<parameter value="6000" HSI="0.0"/>
+							<parameter value="10000" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Oeverzwaluw-Ripariariparia-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De oeverzwaluw is een trekvogel tussen Europa en West-Midden Afrika. In de winter trekt de vogel naar de Sahel en de regenwouden. In de zomer wordt de soort in Nederland in de nabijheid van steile oeverwanden en water aangetroffen, waar hij broedt. Het natuurlijke habitat waarin de oeverzwaluw nestelt is zeer dynamisch, namelijk de namelijk de afkalvende oevers van beken, rivieren en meren, maar ook steile oeverwallen, stuifduinen en rivierduinen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>. De oevers zijn in de natuurlijke situatie continu aan erosie onderhevig. Dit houdt in dat van jaar tot jaar de omstandigheden waarin de oeverzwaluwen broeden sterk kunnen verschillen, doordat steiloevers op de ene plaats instorten als gevolg van de hydrodynamiek en op andere plaatsen nieuw worden gevormd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>.</p>
+
+<p>Door de schommeling in geschikte broedplaatsen moeten oeverzwaluwen vaak opzoek naar nieuwe locaties om een nest te bouwen. Is een bepaalde broedplaats echter eenmaal ontdekt en bewoond geweest, dan zal deze elk jaar opnieuw bewoond worden, mits de geschiktheid niet afneemt. Hebben ze echter een goed nest gevonden dan keert 2/3 van de oudere vogels terug na overwintering. Hierbij komen de meeste kolonies voor in zandbodems en in mindere mate in kleibodems. Dit waarschijnlijk doordat kleioeverwallen in mindere mate voorkomen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>. </p>
+
+<p>De eisen die de oeverzwaluw aan zijn wand stelt is dat deze minimaal 10 meter breed is en 1.5 meter hoog, zuid- tot west geëxposeerd is, uit de oorspronkelijke bodem voorkomt, loodrecht is (de bovenrand mag overhellen) en onbegroeid is. De oeverzwaluw graaft 40 tot 150 cm diepe nestgangen in steile aarden of losse stenen wanden. Vooral steilwanden die recent zijn ontstaan hebben de voorkeur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>.</p>
+
+<p>De oeverzwaluw is een echte koloniebroeder. De aanwezigheid en geschiktheid van deze wanden bepaald de omvang van de broedkolonie. Het gemiddelde aantal broedparen per kolonie bedraagt in Nederland in rivier- en beekoevers 25 tot 35 broedparen, maar in afgravingen kan dit oplopen tot 250 tot 300 broedparen. De gemiddelde nestdichtheid in een steilwand is 5.5 nesten per m2 <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>.</p>
+
+<p>Als gevolg van egalisatie-werkzaamheden en oevervededigingswerken zijn de natuurlijke broedplaatsen van de oeverzwaluw grotendeels verdwenen of ongeschikt geworden. Echter zijn er veel artificiële broedplaatsen ontstaan als gevolg van klei- en zandwinning in de uiterwaarden, gronddepots en afgravingen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>. </p>
+
+<h3 id="Oeverzwaluw-Ripariariparia-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De oeverzwaluw is een echte insecteneter. Hij vangt zijn prooi tijdens zijn vlucht. Een kolonie is dan ook bijna altijd gevestigd op locaties met veel open terrein in de omgeving. De weersgesteldheid en het insectenaanbod bepaalt de inspanning die de oeverzwaluw levert om zijn voedsel te vinden. De voedselgebieden zijn veelal binnen een afstand van 250 meter tot een maximum afstand van 2000 meter te vinden. In het algemeen wordt er boven water gefoerageerd, maar ook natte graslanden, moerassen en riet kan dienst doen als foerageergebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>. </p>
+
+<h3 id="Oeverzwaluw-Ripariariparia-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>In Nederland worden er in het algemeen 2 legsels per broedseizoen groot gebracht, waarbij het eerste legsel in begin juni wordt gelegd en de tweede in midden juli. Het eerste legsel bevat doorgaans meer eieren dan het tweede, namelijk 4 tot 5 eieren tegen 3 tot 4 eieren. Na het leggen is de broedduur van de eieren ongeveer 15 dagen. De jongen vliegen gemiddeld 18 dagen na uitkomen uit. Na één jaar zijn de vogels al geslachtsrijp. Bij de verstoring van een legsel kan er een vervolglegsel worden gelegd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>.</p>
+
+<p>In het voorjaar en de nazomer slapen de zwaluwen tijdens de trek in rietmoerassen.  Over de grootte van deze moerasgebieden en de mate van rust die de oeverzwaluwen hier nodig hebben is weinig bekend <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>.</p>
+
+<h3 id="Oeverzwaluw-Ripariariparia-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>De oeverzwaluwen hebben een broedsucces van 0.5 tot 0.8 vliegvlugge jong per ei, uitgaande van een gemiddelde legselgrootte van 4 tot 6 eieren. De sterfte cijfers verschillen sterk per land, in Zweden is dit 55 tot 60% in het eerste levensjaar en volwassen-stadium en in Groot-Brittanië is dit 60 tot 80 % in het eerste levensjaar en 70 tot 90% bij volwassen oeverzwaluwen. Een oeverzwaluw kan 9 jaar oud worden, maar de gemiddelde levensverwachting ligt rond de 1.5 tot 2 jaar. Weersgesteldheid in het voorjaar en de zomer hebben invloed op het broedsucces. Koel en nat weer vermindert dit succes doordat  zomerhoogwaters de steilwanden kunnen doen instorten en nestholen onderwater zetten. Echter, de rivierdynamiek biedt ook weer kansen voor het ontstaan van nieuwe steilranden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>.</p>
+
+<p>De belangrijkste predatoren van de oeverzwaluw zijn de boomvalk (Falco subbuteo), sperwer (Accipiter nisus), torenvalk (Falco tinnuculus) en Vlaamse gaai (Garrulus glandrius). Deze vogels jagen allen op oeverzwaluwen tijdens hun vlucht, de uitzondering hierop is de Vlaamse gaai die zich vooral tegoed doet aan de jonge vogels die voor de nestingang zitten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>. Er zijn aanwijzingen voor dat ook predatie door de das (Meles Meles) het broedsucces van de oeverzwaluw-kolonie kan beïnvloeden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Oeverzwaluw+-+Riparia+riparia#Oeverzwaluw-Ripariariparia-1">#1</a>. </p>
+
+<p>Nat en koel weer kan het broedsucces verminderen en  </p>]]></text>
+		</Description>			
+	</ContentDescription>
+	<Documentation>
+		<reference author="Duel, H en Specken, B." year="1995" title="Habitatmodel Oeverzwaluw: een model voor het bepalen van de kwaliteit van oevers van rivieren als broedhabitat voor de oeverzwaluw (Riperia riperia)." journal="TNO-BSA Werkdocument" identification="januari 1995"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

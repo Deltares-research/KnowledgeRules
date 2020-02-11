@@ -63,25 +63,24 @@
 						<From name="living_area_general">
 							<label>"living_area_general"</label>
 							<equation>min</equation>
-							<To>waterdepth_in_swamp_vegetation</To>
+							<To>waterdepth_in_marshland_vegetation</To>
 							<To>chloride_content</To>
-							<To>swamp_characteristics</To>
+							<To>marhsland_characteristics</To>
 							<To>bank_vegetation_characteristics</To>
 							<To>bank_vegetation_type</To>
-							<To>embankment_treecoverage</To>
+							<To>bank_treecoverage</To>
 						</From>
-						<From name="swamp_characteristics">
-							<label>"swamp_characteristics"</label>
+						<From name="marhsland_characteristics">
+							<label>"marhsland_characteristics"</label>
 							<equation>average</equation>
-							<To>bank_substrate</To>
-							<To>area_water_compared_to_swamp</To>
-							<To>area_of_swamp</To>
+							<To>area_water_compared_to_marhsland</To>
+							<To>marshland_area</To>
 						</From>
 						<From name="bank_vegetation_characteristics">
 							<label>"bank_vegetation_characteristics"</label>
 							<equation>average</equation>
-							<To>width_of_bank_vegetation</To>
-							<To>length_of_bank_vegetation</To>
+							<To>bank_vegetation_width</To>
+							<To>bank_vegetation_length</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
@@ -103,12 +102,12 @@
 							<parameter rangemin="25" rangemax="999999" cat="> 25" HSI="0.0"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="waterdepth_in_swamp_vegetation">
+					<ResponseCurve name="waterdepth_in_marshland_vegetation">
 						<type>range / categorical</type>
-						<layername>waterdepth_in_swamp_vegetation</layername>
+						<layername>waterdepth_in_marhsland_vegetation</layername>
 						<unit>cm</unit>
 						<statistic>average</statistic>
-						<description>Waterdepth in the swamp vegetations</description>
+						<description>Waterdepth in the marshland vegetations</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -156,12 +155,12 @@
 							<parameter value="10000" HSI="0.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="area_water_compared_to_swamp">
+					<ResponseCurve name="area_water_compared_to_marhsland">
 						<type>scalar</type>
 						<layername>"area_water_compared_to_swamp"</layername>
 						<unit>"%"</unit>
 						<statistic>average</statistic>
-						<description>"Area of water compared to area of swamp vegetation in percent"</description>
+						<description>"Area of water compared to area of marhsland vegetation in percent"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -175,12 +174,12 @@
 							<parameter value="80" HSI="0.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="width_of_bank_vegetation">
+					<ResponseCurve name="bankvegetation_width">
 						<type>scalar</type>
-						<layername>"width_of_bank_vegetation"</layername>
+						<layername>"bankvegetation_width"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
-						<description>"Width of vegetation at the embankment in meters"</description>
+						<description>"Width of vegetation at the bank in meters"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -193,12 +192,12 @@
 							<parameter value="5" HSI="1.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="width_of_bank_vegetation">
+					<ResponseCurve name="bank_vegetation_width">
 						<type>scalar</type>
-						<layername>"width_of_bank_vegetation"</layername>
+						<layername>"bank_vegetation_width"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
-						<description>"Width of vegetation at the embankment in meters"</description>
+						<description>"Width of vegetation at the bank in meters"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -211,12 +210,12 @@
 							<parameter value="5" HSI="1.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="length_of_bank_vegetation">
+					<ResponseCurve name="bank_vegetation_length">
 						<type>scalar</type>
-						<layername>"length_of_bank_vegetation"</layername>
+						<layername>"bank_vegetation_length"</layername>
 						<unit>"m"</unit>
 						<statistic>average</statistic>
-						<description>"Length of vegetation at the embankment in meters"</description>
+						<description>"Length of vegetation at the bank in meters"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -245,12 +244,12 @@
 							<parameter cat="other types" HSI="0.0"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="embankment_treecoverage">
+					<ResponseCurve name="bank_treecoverage">
 						<type>categorical</type>
 						<layername>"treecoverage"</layername>
 						<unit>"categorie"</unit>
 						<statistic>average</statistic>
-						<description>"Presence of trees (overhanging branches) on embankment"</description>
+						<description>"Presence of trees (overhanging branches) on bank"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -261,12 +260,12 @@
 							<parameter cat="absent" HSI="0.5"/>
 						</valuesCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="area_of_swamp">
+					<ResponseCurve name="marshland_area">
 						<type>scalar</type>
-						<layername>"area_of_swamp"</layername>
+						<layername>"marshland_area"</layername>
 						<unit>"ha"</unit>
 						<statistic>average</statistic>
-						<description>"Area of swamp in hectares"</description>
+						<description>"Area of marhsland in hectares"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>

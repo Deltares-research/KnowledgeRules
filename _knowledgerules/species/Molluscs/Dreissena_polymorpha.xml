@@ -103,24 +103,6 @@
 							<parameter value="25" HSI="0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="orthofosfaatgehalte">
-						<type>scalar</type>
-						<layername>"orthofosfaatgehalte"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Average orthophosphate tolerable for the Zebra mossel species"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.01" HSI="1"/>
-							<parameter value="0.1" HSI="1"/>
-							<parameter value="0.3" HSI="0"/>
-						</valuesScalar>
-					</ResponseCurve>
 					<ResponseCurve name="zuurstofgehalte">
 						<type>scalar</type>
 						<layername>"zuurstofgehalte"</layername>

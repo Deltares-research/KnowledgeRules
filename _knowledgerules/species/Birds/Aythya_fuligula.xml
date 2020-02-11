@@ -53,7 +53,7 @@
 							<To>"surfacewater_area"</To>
 							<To>"waterdepth"</To>
 							<To>"aquaticplants_coverage"</To>
-							<To>"orthophosfate_concentration"</To>
+							<To>"orthophosphate_concentration"</To>
 							<To>"PCB_concentration"</To>
 							<To>"DDE_concentration"</To>
 							<To>"HCB_concentration"</To>
@@ -65,13 +65,19 @@
 						<From name="wintering_habitat">
 							<label>"wintering_habitat"</label>
 							<equation>min</equation>
-							<To>mussel_density</To>
+							<To>mussel_food_abundance</To>
 							<To>waterdepth</To>
 							<To>"PCB_concentration"</To>
 							<To>"DDE_concentration"</To>
 							<To>"HCB_concentration"</To>
 							<To>"mercury_concentration"</To>
 							<To>"cadmium_concentration"</To>
+						</From>
+						<From name="mussel_food_abundance">
+							<label>"mussel_food_abundance"</label>
+							<equation>average</equation>
+							<To>"mussel_density"</To>
+							<To>"mussel_average_weight"</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
@@ -299,6 +305,42 @@
 							<parameter rangemin="2.0" rangemax="7.5" cat="2.0 - 7.5" HSI="0.5"/>
 							<parameter rangemin="7.5" rangemax="999999" cat=".gt. 0.0" HSI="0.0"/>						
 						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="mussel_density">
+						<type>scalar</type>
+						<layername>"mussel_density"</layername>
+						<unit>"individuals per m2"</unit>
+						<statistic>average</statistic>
+						<description>"Number of individuals per m2 required for feeding, for example of Dreissena polymorpha"</description>
+						<author>"K.E. van de Wolfshaar"</author>
+						<date>2011-04-12</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="200.0" HSI="0.0"/>
+							<parameter value="2000.0" HSI="1.0"/>
+							<parameter value="3000.0" HSI="1.0"/>		
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="mussel_average_weight">
+						<type>scalar</type>
+						<layername>"mussel_average_weight"</layername>
+						<unit>"gram fresh weight per individual"</unit>
+						<statistic>average</statistic>
+						<description>"Gram fresh weight of mussles per individual, for example of Dreissena polymorpha"</description>
+						<author>"K.E. van de Wolfshaar"</author>
+						<date>2011-04-12</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.05" HSI="0.0"/>
+							<parameter value="0.5" HSI="1.0"/>
+							<parameter value="1.0" HSI="1.0"/>
+						</valuesScalar>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>

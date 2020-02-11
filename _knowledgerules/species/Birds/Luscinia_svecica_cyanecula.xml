@@ -115,7 +115,7 @@
 							<parameter value="1.0" HSI="0.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="overstromingen_periode">
+					<ResponseCurve name="overstroming_periode">
 						<type>range / categorical</type>
 						<layername>"overstromingen_periode"</layername>
 						<unit>maand / categorie"</unit>

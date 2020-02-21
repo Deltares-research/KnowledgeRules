@@ -1,0 +1,124 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46559156</EoLpagenr>
+			<LatName>Halichoerus grypus</LatName>
+			<CommonNames>
+				<Name name="Grijze zeehond" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2000-01-01</StartDate>
+						<EndDate>2009-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>&lt;h1 id="Grijzezeehond-Halichoerusgrypus-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Grijze zeehond - Halichoerus grypus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze dosis-effect relaties zijn niet gevalideerd.&lt;/p&gt;&lt;h1 id="Grijzezeehond-Halichoerusgrypus-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;De dosis-effect relaties hier beschreven zijn geschikt voor de Waddenzee. Er is echter op dit moment weinig literatuur beschikbaar om de relaties uit te breiden. Een relatie die opgenomen zou moeten worden is dat de grijze zeehond gevoelig is voor vervuiling. Er is echter niet genoeg informatie om daar dosis-effect relaties op te baseren.&lt;/p&gt;&lt;h1 id="Grijzezeehond-Halichoerusgrypus-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Voor deze dosis-effect relaties is geen voorbeeldprojekt beschikbaar.&lt;/p&gt;</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="kraamkamergeschiktheid">
+						<From name="kraamkamergeschiktheid">
+							<label>"kraamkamergeschiktheid"</label>
+							<equation>min</equation>
+							<To>ecotoop_kraamkamer</To>
+							<To>afstand_tot_scheepvaartroute</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="afstand_tot_scheepvaartroute">
+						<inputLayers>
+							<layer name="afstand_tot_scheepvaartroute">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>afstand_tot_scheepvaartroute</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Afstand plaat tot scheepvaartroute"</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Marjolijn Haasnoot" year="2009" title="Habitatregels: Gewone zeehond - Phoca vitulina" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="200" input_cat="1" output="1" output_cat=""/>
+								<parameter rangemin_input="200" rangemax_input="999" input_cat="2" output="0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_afstand_tot_scheepvaartroute">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_afstand_tot_scheepvaartroute</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="ecotoop_kraamkamer">
+						<inputLayers>
+							<layer name="ecotoop_kraamkamer">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>ecotoop_kraamkamer</layer_filename>
+								<unit>"Ecotoop"</unit>
+								<statistic>Ecotoop</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Ecotoop kraamkamer (Habitatnummer - omschrijving) op basis van ZES.1 methodiek"</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Bouma, H. et al." year="2005" title="Zoute wateren ecotopenstelsel (ZES.1)" journal="" identification="Rapport RIKZ/2005.024"/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="Z2.311" output="1" output_cat=""/>
+								<parameter input="2" input_cat="Z2.312" output="1" output_cat=""/>
+								<parameter input="3" input_cat="Z2.313" output="1" output_cat=""/>
+								<parameter input="4" input_cat="Z2.314" output="1" output_cat=""/>
+								<parameter input="5" input_cat="V2.313" output="0.5" output_cat=""/>
+								<parameter input="6" input_cat="V2.314" output="0.5" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_ecotoop_kraamkamer">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_ecotoop_kraamkamer</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h1 id="Grijzezeehond-Halichoerusgrypus-Habitatbeschrijving"&gt;Habitat beschrijving&lt;/h1&gt;&lt;p&gt;De Grijze zeehond is binnen de zeehondenfamilie (&lt;em&gt;Phocidae&lt;/em&gt;) een forse soort met een grote, platte kop en een relatief lange snuit. De mannetjes worden tot 2,5 meter lang en kunnen wel 350 kilo wegen. De pels van het mannetje is donker met soms lichtere vlekken, maar lijkt zwart als hij nat is. De vrouwtjes zijn lichter met donkere vlekken, hebben een kortere snuit, worden maximaal zo'n 2,3 meter lang en wegen tot 200 kilo. Jongen hebben nog geen typische 'hondekop' en lijken hierdoor op de Gewone zeehond (Phoca vitulina); ze zijn te onderscheiden aan de parallelle neusgaten, waar die van de Gewone zeehond V-vormig zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Grijzezeehond-Halichoerusgrypus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De Grijze zeehond komt voor langs de oostelijke en westelijke kusten van de Atlantische oceaan. Er worden drie populaties onderscheiden: één aan de Canadese kust, één in het oostelijke deel van de Atlantische Oceaan en een kleine in de noordelijke Oostzee. De oostatlantische populatie, waartoe ook de Nederlandse dieren behoren, komt voor van IJsland, de Britse eilanden en de Witte zee in het noorden tot Bretagne in het zuiden. De grootste kolonies leven bij IJsland, de Faeroer eilanden, Noorwegen, de noordwestkust van Schotland en Noord-Rusland. In de Waddenzee komen relatief kleine kolonies voor. De Grijze zeehond was in een ver verleden algemener in de Noordzee dan de Gewone zeehond. In de Middeleeuwen werd ze in de Waddenzee door de mens uitgeroeid. Sinds de soort in 1980 in Groot-Brittannië beter wordt beschermd, worden weer grotere aantallen in de Waddenzee waargenomen. Tegenwoordig bedraagt de Nederlandse populatie ruim 1000 dieren. Ze verblijven vooral op hoge zandplaten in het westen van de Waddenzee, zoals op de Richel (ten oosten van Vlieland), de Engelse Hoek (ten westen van Terschelling) en op de Razende Bol (ten zuiden van Texel). De soort wordt slechts sporadisch in het Deltagebied gesignaleerd &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Grijzezeehond-Halichoerusgrypus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;Grijze zeehonden hebben een grote actieradius: ze maken tochten van tientallen tot honderden kilometers naar foerageergebieden en tussen rustgebieden. Ze zoeken hun voedsel vaak dicht bij de zeebodem en kunnen daarbij dieper dan 100 meter duiken. De Grijze zeehond eet vis, met name Zandspiering (&lt;em&gt;Ammodytidae&lt;/em&gt;), Kabeljauw (&lt;em&gt;Gadus morhua&lt;/em&gt;), Wijting (&lt;em&gt;Merlangius merlangus&lt;/em&gt;) en platvis zoals Bot (&lt;em&gt;Platychthys flesus&lt;/em&gt;) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Grijzezeehond-Halichoerusgrypus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;De Oost-Atlantische populaties van de Grijze zeehond gebruiken als voortplantingsgebied rotskusten, grotten en kiezelstranden, of zandbanken die bij hoog water droog blijven. In de Oostzee werpen en zogen de dieren ook op ijs. Grijze zeehonden keren vaak jaren achter elkaar terug naar dezelfde rust- of voortplantingsplekken. In de voortplantingsperiode vormen de mannetjes harems waarin ze meerdere vrouwtjes houden. Na een draagtijd van 11 maanden worden de jongen geboren met een donzige vacht. Vanwege hun dikke pels kunnen de jongen in hun eerste levensdagen niet zwemmen en mag hun ligplaats dus niet onder water komen te staan. Jonge grijze zeehonden worden enkele weken op het land gezoogd, totdat ze voldoende opgevet en verhaard zijn. Aan het eind van de zoogtijd worden de vrouwtjes opnieuw bevrucht. De voortplantingsperiode verschilt per gebied: in Noord-Engeland valt ze tussen september en december, in de Oostzee in het vroege voorjaar en in de Waddenzee in de winter &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Grijzezeehond-Halichoerusgrypus-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;Vrouwtjes worden gemiddeld ouder dan mannetjes (resp. 46 en 26 jaar) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grijze+zeehond+-+Halichoerus+grypus#Grijzezeehond-Halichoerusgrypus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="Grijzezeehond-Halichoerusgrypus-Dosis-effectrelaties"&gt;Dosis-effect relaties&lt;/h1&gt;&lt;p&gt;Hier onder wordt de een dosis-effect relatie gegeven voor ecotopen die geschikt zijn als kraamkamer. De voortplantingsperiode in de Waddenzee valt in de winter.&lt;br&gt;Daarnaast is een dosis-effect relatie voor verstoring opgenomen die is overgenomen van de dosis-effect relaties van de Gewone Zeehond. &lt;/p&gt;&lt;div class="sectionColumnWrapper conf-macro output-block" data-hasbody="true" data-macro-name="section"&gt;&lt;div class="sectionMacro"&gt;&lt;div class="sectionMacroRow"&gt;&lt;div class="columnMacro conf-macro output-block" style="width:50%;min-width:50%;max-width:50%;" data-hasbody="true" data-macro-name="column"&gt;&lt;h3 id="Grijzezeehond-Halichoerusgrypus-Ecotoopkraamkamer"&gt;Ecotoop kraamkamer&lt;/h3&gt;&lt;div class="table-wrap"&gt;&lt;table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" resolved="" style="padding: 0px;"&gt;&lt;thead class="tableFloatingHeaderOriginal"&gt;&lt;tr role="row" class="tablesorter-headerRow"&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" habitat nummer : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; habitat nummer &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" omschrijving : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; omschrijving &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" zoutgehalte : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; zoutgehalte &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="3" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" HGI : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; HGI &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;thead class="tableFloatingHeader" style="display: none;"&gt;&lt;tr role="row" class="tablesorter-headerRow"&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" habitat nummer : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; habitat nummer &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" omschrijving : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; omschrijving &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" zoutgehalte : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; zoutgehalte &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="3" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" HGI : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; HGI &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody aria-live="polite" aria-relevant="all"&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Z2.311 &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; hoogdynamisch supralitoraal laag 'droog strand', grofzand &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; zout &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 1 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Z2.312 &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; hoogdynamisch supralitoraal hoog 'embryonaal duin', grofzand &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; zout &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 1 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Z2.313 &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; hoogdynamisch supralitoraal laag 'droog strand', fijnzand &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; zout &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 1 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Z2.314 &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; hoogdynamisch supralitoraal hoog 'embryonaal duin', fijnzand &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; zout &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 1 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; V2.313 &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; hoogdynamisch supralitoraal laag 'droog strand', fijnzand &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; variabel brak-zout &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 0.5 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; V2.314 &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; hoogdynamisch supralitoraal hoog 'embryonaal duin', fijnzand &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; variabel brak-zout &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 0.5 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;p&gt;NB: deze laatste twee zijn niet zeker.&lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="" year="" title="http://www.minlnv.nl/natura2000" journal="" identification=""/>
+		<reference author="Bouma, H. et al." year="2005" title="Zoute wateren ecotopenstelsel (ZES.1)" journal="" identification="Rapport RIKZ/2005.024"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

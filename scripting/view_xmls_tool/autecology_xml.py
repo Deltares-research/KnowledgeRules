@@ -760,7 +760,7 @@ class AutecologyXML(_File):
 		self.systemname = systemname
 		self.knowledgeRulesNr = len(list(child for child in krs_root)) 
 		self.knowledgeRulesCategorie = list(child.tag.replace(self.xmlns,"") for child in krs_root)
-
+		self.knowledgeRulesNames = list(child.get('name') for child in krs_root)
 
 		#Make dictonary of knowledge rules
 		rule_overview = {}
@@ -1574,7 +1574,6 @@ class TestAutecologyXML_any(unittest.TestCase):
 		self.xmltest._scan_modeltype(self.xmltest.modeltypes[0])
 		self.assertTrue(isinstance(self.xmltest.systems,list))
 
-
 	def test__read_topicdescription(self):
 		spd_overview = self.xmltest._read_topicdescription()
 		self.assertTrue(isinstance(spd_overview,list))
@@ -1907,7 +1906,7 @@ if __name__ == '__main__':
 # print(xmltest.knowledgeRulesCategorie)
 # print(xmltest.knowledgeRulesStatistics)
 
-# print(xmltest._read_speciesdescription())
+# print(xmltest._read_contentdescription())
 # print(xmltest._read_modeldescription("adult"))
 
 #This is an example.

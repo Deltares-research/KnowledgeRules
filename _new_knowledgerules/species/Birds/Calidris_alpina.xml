@@ -1,0 +1,206 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45509239</EoLpagenr>
+			<LatName>Calidris alpina</LatName>
+			<CommonNames>
+				<Name name="Bonte strandloper" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="feeding_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Veerse meer" id="2745733"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>&lt;p&gt;Het nest wordt gemaakt op de bodem.&lt;/p&gt;&lt;p&gt;Het voedsel wordt gezocht op het wateroppervlak, de waterkant, onder water en op de bodem.&lt;/p&gt;&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van zoute-zilte ruigten en graslanden.&lt;/p&gt;&lt;h1 id="BonteStrandloper-Calidrisalpina-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Bonte Strandloper - Calidris alpina - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;h1 id="BonteStrandloper-Calidrisalpina-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;&lt;p&gt;Het Veerse meer. &lt;/p&gt;&lt;h1 id="BonteStrandloper-Calidrisalpina-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Een voorbeeldproject is niet beschikbaar&lt;/p&gt;</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="voedselgebied">
+						<From name="voedselgebied">
+							<label>"voedselgebied"</label>
+							<equation>min</equation>
+							<To>voedselgebied_waterdiepte</To>
+							<To>hoogwatervluchtplaatsen</To>
+						</From>
+						<From name="voedselgebied_waterdiepte">
+							<label>"voedselgebied_waterdiepte"</label>
+							<equation>min</equation>
+							<To>waterdiepte_zomer</To>
+							<To>waterdiepte_winter</To>
+						</From>
+						<From name="hoogwatervluchtplaatsen">
+							<label>"hoogwatervluchtplaatsen"</label>
+							<equation>min</equation>
+							<To>vluchtplaats_waterdiepte_winter</To>
+							<To>vegetatie_bedekkingsgraad</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="waterdiepte_zomer">
+						<inputLayers>
+							<layer name="waterdiepte_zomer">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte_zomer</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdiepte over de zomerperiode"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="0.1" output="1.0"/>
+								<parameter input="1.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte_zomer">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte_zomer</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="waterdiepte_winter">
+						<inputLayers>
+							<layer name="waterdiepte_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte_winter</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdiepte over de winterperiode"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="0.03" output="1.0"/>
+								<parameter input="0.05" output="0.0"/>
+								<parameter input="0.1" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="vluchtplaats_waterdiepte_winter">
+						<inputLayers>
+							<layer name="vluchtplaats_waterdiepte_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>vluchtplaats_waterdiepte_winter</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdiepte over de winterperiode voor de hoogwater vluchtplaats"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="-1.0" output="1.0"/>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="0.05" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_vluchtplaats_waterdiepte_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_vluchtplaats_waterdiepte_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="vegetatie_bedekkingsgraad">
+						<inputLayers>
+							<layer name="vegetatie_bedekkingsgraad">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>vegetatie_bedekkingsgraad</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Vegetatie bedekkingsgraad voor hoogwater vluchtplaats"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="0.5" output="0.0"/>
+								<parameter input="1.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_vegetatie_bedekkingsgraad">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_vegetatie_bedekkingsgraad</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="BonteStrandloper-Calidrisalpina-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De Bonte Strandloper is een kleine en compacte steltloper, die het gehele jaar in Nederland gezien kan worden. Binnen Europa is de Bonte Strandloper op de meeste plekken de talrijkste strandloper. Bijna 30% van de Europese bonte strandlopers overwintert in Nederland. De boven delen van deze vogel zijn in de zomer bruin, de borst witgestreept en de buik is zwart. In de winter is de Bonte Strandloper grijsbruin van boven en wit van onderen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bonte+Strandloper+-+Calidris+alpina#BonteStrandloper-Calidrisalpina-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;In het Veerse Meer is de bonte strandloper een overwinteraar. In oktober/november bereikt de strandloper hier de hoogste aantallen en doet zich tegoed aan de bodemdieren op de drooggevallen platen.  De bonte strandlopers komen vooral voor op de in het Veerse Meer drooggevallen slikken van de Middelplaten, Haringvreter en Kwistenburg &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bonte+Strandloper+-+Calidris+alpina#BonteStrandloper-Calidrisalpina-2"&gt;#2&lt;/a&gt;. Op het Wad kunnen met name tijdens de voor- en najaarstrek en gedurende de winter reusachtige groepen gezien worden welke van en naar de hoogwatervluchtplaatsen trekken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bonte+Strandloper+-+Calidris+alpina#BonteStrandloper-Calidrisalpina-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;&lt;h3 id="BonteStrandloper-Calidrisalpina-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;Het voedsel van de Bonte Strandloper bestaat uit allerlei zeediertjes die opgepikt worden terwijl de vogel in ondiep water staat. Ze gaan maximaal 3 tot 5 cm het water in &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bonte+Strandloper+-+Calidris+alpina#BonteStrandloper-Calidrisalpina-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="BonteStrandloper-Calidrisalpina-Milieuvoorwaarden"&gt;Milieu voorwaarden&lt;/h3&gt;&lt;p&gt;Hoogwatervluchtplaatsen zijn belangrijk voor de bonte strandloper. De gebieden die geschikt zijn als hoogwatervluchtplaats moeten tijdens de herfst- en winterperiode, wanneer de kans op stormen het grootst is, droog staan of geringe hoeveelheid water hebben. Niet alle droogvallende platen in de winter zijn geschikt als hoogwaterplaats. De eilanden Haringvreter, Schutteplaat, Mosselplaat en Aardbeieneiland in het Veerse Meer zijn bijvoorbeeld begroeid met bomen. Hierdoor zijn ze ongeschikt als hoogwatervluchtplaats voor de Bonte Strandloper &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bonte+Strandloper+-+Calidris+alpina#BonteStrandloper-Calidrisalpina-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="http://www.soortenbank.nl" title="Bonte standloper" identification="" year="2019" journal="">
+			<html>http://www.soortenbank.nl/soorten.php?soortengroep=vogels&amp;id=167&amp;menuentry=soorten</html>
+		</reference>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

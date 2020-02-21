@@ -1,0 +1,156 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45509131</EoLpagenr>
+			<LatName>Fulica atra</LatName>
+			<CommonNames>
+				<Name name="Meerkoet" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="feeding_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Veerse meer" id="2745733"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>&lt;p&gt;Het nest wordt gemaakt op het wateroppervlak of aan de waterkant.&lt;/p&gt;
+
+&lt;p&gt;Het voedsel wordt onder water gezocht.&lt;/p&gt;
+
+&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van open water.&lt;/p&gt;
+
+&lt;h1 id="Meerkoet-Fuliaatra-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
+
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Meerkoet - Fulia atra - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
+
+&lt;h1 id="Meerkoet-Fuliaatra-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;
+
+&lt;p&gt;Opgesteld voor het Veerse Meer.&lt;/p&gt;
+
+&lt;h1 id="Meerkoet-Fuliaatra-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
+
+&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="feeding_area">
+						<From name="feeding_area">
+							<label>"feeding_area"</label>
+							<equation>min</equation>
+							<To>waterdepth_summer</To>
+							<To>waterdepth_winter</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="waterdepth_summer">
+						<inputLayers>
+							<layer name="waterdepth_summer">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in the summer period"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="0.01" output="1.0"/>
+								<parameter input="2.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_summer">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_summer</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth_winter">
+						<inputLayers>
+							<layer name="waterdepth_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdepth_winter</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in the winter period"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="0.8" output="1.0"/>
+								<parameter input="1.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Meerkoet-Fuliaatra-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
+&lt;p&gt;De Meerkoet behoort tot de familie van de ‘rallen’. Dit zijn kleine tot middelgrote, vaak zeer verborgen levende moerasbewoners en deze luidruchtige vogels zijn overwegend ’s nachts actief. De veruit bekendste rallen, zoals de Meerkoet en het Waterhoen, zijn hier eigenlijk een uitzondering op en zijn uitstekend overdag waar te nemen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Meerkoet+-+Fulia+atra#Meerkoet-Fuliaatra-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Waar voldoende water is, daar leven meerkoeten. Er is geen park, kanaal of sloot zonder een paartje meerkoeten, hoewel de aantallen in Laag-Nederland het grootst zijn.  Van oorsprong zijn meerkoeten echte moerasvogels, met poten die bijzonder geschikt zijn om te lopen op drijvende vegetatie (kraggen) en wortels van riet- en lismoerassen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Meerkoet+-+Fulia+atra#Meerkoet-Fuliaatra-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;De meerkoet is de meest algemene watervogel in het Veerse Meer. Het Veerse Meer is van international betekenis voor deze soort en overschrijdt de 1%- norm. Deze vogel is in dit meer het hele jaar in aanzienlijke hoeveelheden te vinden. De hoogste aantallen worden echter aangetroffen van september tot en met november. Het meerkoetenbestand in het Veerse Meer is aanzienlijk toegenomen na de afsluiting als gevolg van de ontwikkeling van de zeeslavelden. &lt;br&gt;
+&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Meerkoet+-+Fulia+atra#Meerkoet-Fuliaatra-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="Meerkoet-Fuliaatra-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
+
+&lt;p&gt;Meerkoeten eten vooral waterplanten, maar zeker wanneer er jongen zijn worden ook allerlei waterdieren gegeten en gevoerd die beter aansluiten op de energiebehoefte van dat moment. Wanneer waterplanten het hoofdvoedsel zijn, houdt de meerkoet zich in het Veerse Meer voornamelijk op nabij de zeeslavelden.  Meerkoeten duiken tot op een diepte van ongeveer 1 meter naar zeesla. Echter, in de herfst foerageren ze ook op drooggevallen en afstervende Zeesla &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Meerkoet+-+Fulia+atra#Meerkoet-Fuliaatra-1"&gt;#1&lt;/a&gt;. Bij het duiken wordt de lucht tussen de veren vandaan geperst, waarna de duik met uigestrekte hals recht naar beneden gaat. In de winter (december/januari), als de voorraad Zeesla opraakt, grazen meerkoeten vaak in grote groepen op het land en kunnen dan plaatselijke schade veroorzaken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Meerkoet+-+Fulia+atra#Meerkoet-Fuliaatra-1"&gt;#1&lt;/a&gt; en &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Meerkoet+-+Fulia+atra#Meerkoet-Fuliaatra-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="Meerkoet-Fuliaatra-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
+
+&lt;p&gt;In het broedseizoen zijn de zwarte vogels echte kemphanen. Het territorium wordt onder het slaken van een schelle strijdkreet met snavel en poten verdedigd tegen buurkoeten, waarbij het er fel aan toegaat &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Meerkoet+-+Fulia+atra#Meerkoet-Fuliaatra-2"&gt;#2&lt;/a&gt;&lt;/p&gt;
+</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="http://www.vogelbescherming.nl/vogels_kijken/vogelgids" title="Smient" year="2012" journal="" identification="23 november 2012">
+			<html>https://www.vogelbescherming.nl/ontdek-vogels/kennis-over-vogels/vogelgids/vogel/Smient</html>
+		</reference>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

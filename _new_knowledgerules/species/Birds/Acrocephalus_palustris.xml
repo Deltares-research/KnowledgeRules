@@ -1,0 +1,398 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45515425</EoLpagenr>
+			<LatName>Acrocephalus palustris</LatName>
+			<CommonNames>
+				<Name name="Bosrietzanger" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>&lt;p&gt;Het nest wordt gemaakt op de kruilaag of de lage struiklaag.&lt;/p&gt;&lt;p&gt;Het voedsel wordt gezocht op de kruilaag of de lage struiklaag.&lt;/p&gt;&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van vochtige open struwelen.&lt;/p&gt;&lt;h1 id="Bosrietzanger-Acrocephaluspalustris-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Bosrietzanger - Acrocephalus palustris - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;p&gt;Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bosrietzanger+-+Acrocephalus+palustris#Bosrietzanger-Acrocephaluspalustris-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="Bosrietzanger-Acrocephaluspalustris-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;&lt;p&gt;Nederland.&lt;/p&gt;&lt;h1 id="Bosrietzanger-Acrocephaluspalustris-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="nesting_area">
+						<From name="broedgebied">
+							<label>"broedgebied"</label>
+							<equation>min</equation>
+							<To>nesthabitat</To>
+							<To>broedgebied_algemeen</To>
+						</From>
+						<From name="nesthabitat">
+							<label>"nesthabitat"</label>
+							<equation>min</equation>
+							<To>taludvorm</To>
+							<To>grondwaterstand</To>
+							<To>overstroming_periode</To>
+							<To>kruidenvegetatie</To>
+						</From>
+						<From name="broedgebied_algemeen">
+							<label>"leefgebied_algemeen"</label>
+							<equation>average</equation>
+							<To>oevervegetatie</To>
+							<To>vegetatie_successiestadia</To>
+						</From>
+						<From name="kruidenvegetatie">
+							<label>"kruidenvegetatie"</label>
+							<equation>average</equation>
+							<To>kruidenvegetatie_hoogte</To>
+							<To>kruidenvegetatie_stengeldichtheid</To>
+						</From>
+						<From name="oevervegetatie">
+							<label>"oevervegetatie"</label>
+							<equation>average</equation>
+							<To>oevervegetatie_breedte</To>
+							<To>oevervegetatie_areaal</To>
+							<To>oevervegetatie_struikendichtheid</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="taludvorm">
+						<inputLayers>
+							<layer name="taludvorm">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>taludvorm</layer_filename>
+								<unit>"hellingsgraden"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Taludvorm in hellingsgraden"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="20.0" output="0.8"/>
+								<parameter input="60.0" output="0.0"/>
+								<parameter input="80.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_taludvorm">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_taludvorm</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="grondwaterstand">
+						<inputLayers>
+							<layer name="grondwaterstand">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>grondwaterstand</layer_filename>
+								<unit>"m / categorie"</unit>
+								<statistic>average tijdens broedperiode</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Grondwaterstand tijdens broedperiode in meter en categorieën"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="-999999" rangemax_input="-0.2" input_cat="lager dan -20 cm" output="0.4" output_cat=""/>
+								<parameter rangemin_input="-0.2" rangemax_input="0.0" input_cat="-20 cm tot maaiveld" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0.0" rangemax_input="1" input_cat="hoger dan maaiveld" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_grondwaterstand">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_grondwaterstand</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="overstromingen_periode">
+						<inputLayers>
+							<layer name="overstromingen_periode">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>overstromingen_periode</layer_filename>
+								<unit>maand / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Periode van overstromingen zowel in maand nummer als categorie"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0" input_cat="geen" output="0.0" output_cat=""/>
+								<parameter rangemin_input="4" rangemax_input="8" input_cat="mei tot augustus" output="0.0" output_cat=""/>
+								<parameter rangemin_input="9" rangemax_input="12" input_cat="september tot april" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="4" input_cat="september tot april" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_overstromingen_periode">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_overstromingen_periode</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="oevervegetatie_breedte">
+						<inputLayers>
+							<layer name="oevervegetatie_breedte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie_breedte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Breedte van oevervegetatie in meter"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="1" output="0.8"/>
+								<parameter input="2" output="1.0"/>
+								<parameter input="5" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie_breedte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie_breedte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="oevervegetatie_areaal">
+						<inputLayers>
+							<layer name="oevervegetatie_areaal">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie_areaal</layer_filename>
+								<unit>"Ha"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Areaal oevervegetatie in Hectaren"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="0.125" output="1.0"/>
+								<parameter input="1.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie_areaal">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie_areaal</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="vegetatie_successiestadia">
+						<inputLayers>
+							<layer name="vegetatie_successiestadia">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>vegetatie_successiestadia</layer_filename>
+								<unit>"cat"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Successiestadia van het moeras-rietlandschap in categorieën"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="waterriet" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="waterriet met droge plekken" output="0.0" output_cat=""/>
+								<parameter input="3" input_cat="vochtig open rietland" output="0.2" output_cat=""/>
+								<parameter input="4" input_cat="riet met verspreide boom/struikopslag" output="0.8" output_cat=""/>
+								<parameter input="5" input_cat="rietruigte" output="1.0" output_cat=""/>
+								<parameter input="6" input_cat="ruigtekruiden droog-vochtig" output="1.0" output_cat=""/>
+								<parameter input="7" input_cat="rietruigte met bosopslag" output="1.0" output_cat=""/>
+								<parameter input="8" input_cat="moerasbos met openplekken" output="0.7" output_cat=""/>
+								<parameter input="9" input_cat="moerabos vrijwel gesloten" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_vegetatie_successiestadia">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_vegetatie_successiestadia</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="kruidenvegetatie_hoogte">
+						<inputLayers>
+							<layer name="kruidenvegetatie_hoogte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>kruidenvegetatie_hoogte</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Hoogte van de kruidenvegetatie in cm"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="50.0" output="0.0"/>
+								<parameter input="60.0" output="1.0"/>
+								<parameter input="100.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_kruidenvegetatie_hoogte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_kruidenvegetatie_hoogte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="kruidenvegetatie_stengeldichtheid">
+						<inputLayers>
+							<layer name="kruidenvegetatie_stengeldichtheid">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>kruidenvegetatie_stengeldichtheid</layer_filename>
+								<unit>"aantal per m2"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Stengeldichtheid van ruigtekruiden in aantal per m2"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="20.0" output="1.0"/>
+								<parameter input="50.0" output="1.0"/>
+								<parameter input="200.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_kruidenvegetatie_stengeldichtheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_kruidenvegetatie_stengeldichtheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="oevervegetatie_struikendichtheid">
+						<inputLayers>
+							<layer name="oevervegetatie_struikendichtheid">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie_struikendichtheid</layer_filename>
+								<unit>"aantal per 100 m / categorieën"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Struiken dichtheid van de oever uitgedrukt in aantal per 100 meter en categorieën"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="0 tot 1" output="0.5" output_cat=""/>
+								<parameter rangemin_input="2" rangemax_input="3" input_cat="2 tot 3" output="1.0" output_cat=""/>
+								<parameter rangemin_input="3" rangemax_input="999999" input_cat="meer dan 3" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie_struikendichtheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie_struikendichtheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Bosrietzanger-Acrocephaluspalustris-Algemeenvoorkomen(leef-enbroedgebied)"&gt;Algemeen voorkomen (leef- en broedgebied)&lt;/h3&gt;&lt;p&gt;De bosrietzanger komt voor in zoetwatergebieden en broedt voornamelijk in drogere delen van moerassen. Daarnaast komt hij relatief veel voor in droge biotopen buiten de moerassen. Het broedgebied bestaat uit dichte, vochtige ruigten met kruiden, veelal met struikopslag, zoals  de verruigde delen van rietmoerassen, spoorbermen, kanaalbermen, wegbermen, dijktaluds, verruigde opspuittereinen, broekbossen, grienden, en open populierenbossen met een dichte ondergroei van kruiden. De overkoepelende voorwaarde is dat er resten voorkomen van opgaande, overjarige kruiden. Deze structuren zijn 80 tot 180 cm hoog, liggen in een open landschap dat wordt afgewisseld met struiken en bomen. De planten brandnetel, riet (gemend met brandnetel), moerasspirea, koninginnekruid en wilgeroosje hebben de voorkeur. Rivieroevers met een grote opslag van hoge ruigtekruiden vormen een ideale broedlocatie. Een te grote dichtheid van de vegetatie heeft een negatieve invloed op de nest mogelijkheid. De gemiddelde afstand tussen nestlocatie en foerageergebied bedraagt 30 meter &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bosrietzanger+-+Acrocephalus+palustris#Bosrietzanger-Acrocephaluspalustris-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Bosrietzanger-Acrocephaluspalustris-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De bosrietzanger eet uitsluitend kleine invertebraten, zoals insecten, spinnen en slakken. Deze bejaagd hij in hoge kruiden, struiken en in bosjes en bomen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bosrietzanger+-+Acrocephalus+palustris#Bosrietzanger-Acrocephaluspalustris-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Bosrietzanger-Acrocephaluspalustris-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;Het broedseizoen loopt van eind mei tot eind augustus. Er wordt één broedsel per jaar gelegd. De eieren worden vanaf eind mei tot ver in juni gelegd. Dit zijn 3 tot 6 eieren die na 12 tot 14 dagen uitkomen. Hierna zijn de jongen na 9 tot 11 dagen vliegvlug en na 15 tot 19 dagen onafhankelijk &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bosrietzanger+-+Acrocephalus+palustris#Bosrietzanger-Acrocephaluspalustris-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;In juli en augustus trekken de bosrietzangers naar Zuidelijk Afrika. De jongen vertrekken pas in augustus. Rond eind april komt de hoofdmoot weer in de broedgebieden aan &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bosrietzanger+-+Acrocephalus+palustris#Bosrietzanger-Acrocephaluspalustris-1"&gt;#1&lt;/a&gt;.    &lt;/p&gt;&lt;h3 id="Bosrietzanger-Acrocephaluspalustris-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;Predatie heeft, door de locatie keuze van de bosrietzanger, weinig invloed op het nestsucces. Een groter effect heeft echter de koekoek, die zijn eieren in de nesten van de bosrietzanger legt en het opkomen van de jongen van de bosrietzanger verkleint. Nesten van de bosrietzanger in open vegetaties lopen een minder groot risico op koekoekseieren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bosrietzanger+-+Acrocephalus+palustris#Bosrietzanger-Acrocephaluspalustris-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

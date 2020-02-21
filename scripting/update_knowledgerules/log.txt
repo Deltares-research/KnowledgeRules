@@ -1,0 +1,97 @@
+---Update log for KnowledgeRules xmls---
+
+- Structure and number of files
+  /Habitats
+      /Vegetation_associations
+  /species
+      /Birds
+        /Acrocephalus_palustris.xml
+Done : ../../_knowledgerules/species\Birds\Acrocephalus_palustris.xml
+        /Alcedo_atthis.xml
+Done : ../../_knowledgerules/species\Birds\Alcedo_atthis.xml
+        /Anas_clypeata.xml
+Done : ../../_knowledgerules/species\Birds\Anas_clypeata.xml
+        /Anas_penelope.xml
+Done : ../../_knowledgerules/species\Birds\Anas_penelope.xml
+        /Anas_querquedula.xml
+Done : ../../_knowledgerules/species\Birds\Anas_querquedula.xml
+        /Bucephala_clangula.xml
+Done : ../../_knowledgerules/species\Birds\Bucephala_clangula.xml
+        /Calidris_alpina.xml
+Done : ../../_knowledgerules/species\Birds\Calidris_alpina.xml
+        /Charadrius_dubius.xml
+Done : ../../_knowledgerules/species\Birds\Charadrius_dubius.xml
+        /Chlidonias_niger.xml
+Done : ../../_knowledgerules/species\Birds\Chlidonias_niger.xml
+        /Emberiza_schoeniclus.xml
+Done : ../../_knowledgerules/species\Birds\Emberiza_schoeniclus.xml
+        /Fulica_atra.xml
+Done : ../../_knowledgerules/species\Birds\Fulica_atra.xml
+        /Gallinago_gallinago.xml
+Done : ../../_knowledgerules/species\Birds\Gallinago_gallinago.xml
+        /Gallinula_chloropus.xml
+Done : ../../_knowledgerules/species\Birds\Gallinula_chloropus.xml
+        /Luscinia_svecica_cyanecula.xml
+Done : ../../_knowledgerules/species\Birds\Luscinia_svecica_cyanecula.xml
+        /Mergus_albellus.xml
+Done : ../../_knowledgerules/species\Birds\Mergus_albellus.xml
+        /Mergus_merganser.xml
+Done : ../../_knowledgerules/species\Birds\Mergus_merganser.xml
+        /Panurus_biarmicus.xml
+Done : ../../_knowledgerules/species\Birds\Panurus_biarmicus.xml
+        /Phalacrocorax carbo.xml
+Done : ../../_knowledgerules/species\Birds\Phalacrocorax carbo.xml
+        /Rallus_aquaticus.xml
+Done : ../../_knowledgerules/species\Birds\Rallus_aquaticus.xml
+      /Fish
+        /Abramis brama.xml
+Done : ../../_knowledgerules/species\Fish\Abramis brama.xml
+        /Anguilla anguilla.xml
+Done : ../../_knowledgerules/species\Fish\Anguilla anguilla.xml
+        /Barbus barbus.xml
+Done : ../../_knowledgerules/species\Fish\Barbus barbus.xml
+        /Lepomis macrochirus.xml
+Done : ../../_knowledgerules/species\Fish\Lepomis macrochirus.xml
+        /Osmerus eperlanus.xml
+Done : ../../_knowledgerules/species\Fish\Osmerus eperlanus.xml
+        /Plecoglossus_altivelis.xml
+Done : ../../_knowledgerules/species\Fish\Plecoglossus_altivelis.xml
+        /Pomatoschitus microps.xml
+Done : ../../_knowledgerules/species\Fish\Pomatoschitus microps.xml
+        /Rhodeus sericeus amarus.xml
+Done : ../../_knowledgerules/species\Fish\Rhodeus sericeus amarus.xml
+        /Rutilus rutilus.xml
+Done : ../../_knowledgerules/species\Fish\Rutilus rutilus.xml
+      /leeg
+      /Macrophytes
+        /Draadwieren.xml
+Done : ../../_knowledgerules/species\Macrophytes\Draadwieren.xml
+        /Myriophyllum spicatum.xml
+Done : ../../_knowledgerules/species\Macrophytes\Myriophyllum spicatum.xml
+        /Nuphar lutea.xml
+Done : ../../_knowledgerules/species\Macrophytes\Nuphar lutea.xml
+        /Potamogeton perfoliatus.xml
+Done : ../../_knowledgerules/species\Macrophytes\Potamogeton perfoliatus.xml
+        /Scirpus triqueter.xml
+Done : ../../_knowledgerules/species\Macrophytes\Scirpus triqueter.xml
+      /Mammals
+        /Castor fiber.xml
+Done : ../../_knowledgerules/species\Mammals\Castor fiber.xml
+        /Halichoerus grypus.xml
+Done : ../../_knowledgerules/species\Mammals\Halichoerus grypus.xml
+        /Myotis dasycneme.xml
+Done : ../../_knowledgerules/species\Mammals\Myotis dasycneme.xml
+        /Ondatra zibethicus.xml
+Done : ../../_knowledgerules/species\Mammals\Ondatra zibethicus.xml
+        /Phocaena phocaena.xml
+Done : ../../_knowledgerules/species\Mammals\Phocaena phocaena.xml
+      /Molluscs
+        /Cerastoderma lamarckii.xml
+Done : ../../_knowledgerules/species\Molluscs\Cerastoderma lamarckii.xml
+  /WFD_indicators
+      /ecological_status
+        /Macrofauna_in_beken_en_kleine_rivieren.xml
+Done : ../../_knowledgerules/WFD_indicators\ecological_status\Macrofauna_in_beken_en_kleine_rivieren.xml
+ Total number of XMLs : 40
+
+END LOG

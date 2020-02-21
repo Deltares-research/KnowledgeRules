@@ -1,0 +1,366 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>7011685</EoLpagenr>
+			<LatName>Luscinia svecica cyanecula</LatName>
+			<CommonNames>
+				<Name name="Baardmannetje" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>&lt;p&gt;Het nest wordt gemaakt op de bodem, in de kruilaag of de lage struiklaag.&lt;/p&gt;&lt;p&gt;Het voedsel wordt gezocht op de bodem, in de kruilaag, de lage struiklaag en in de lucht.&lt;/p&gt;&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van natte ruigten met struiken.&lt;/p&gt;&lt;h1 id="Blauwborst-Lusciniasvecicacyanecula-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Blauwborst - Luscinia svecica cyanecula - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;h1 id="Blauwborst-Lusciniasvecicacyanecula-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;&lt;p&gt;Moerassen Nederland.&lt;/p&gt;&lt;h1 id="Blauwborst-Lusciniasvecicacyanecula-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Niet aanwezig.&lt;/p&gt;</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="leefgebied">
+						<From name="broedgebied">
+							<label>"broedgebied"</label>
+							<equation>min</equation>
+							<To>nesthabitat</To>
+							<To>voedselgebied</To>
+							<To>leefgebied_algemeen</To>
+						</From>
+						<From name="nesthabitat">
+							<label>"nesthabitat"</label>
+							<equation>min</equation>
+							<To>taludvorm</To>
+							<To>waterpeil</To>
+							<To>overstroming_periode</To>
+						</From>
+						<From name="voedselgebied">
+							<label>"voedselgebied"</label>
+							<equation>average</equation>
+							<To>"openplekken_op_bodem"</To>
+							<To>"broedhabitat_afstand_tot_slikken"</To>
+						</From>
+						<From name="leefgebied_algemeen">
+							<label>"leefgebied_algemeen"</label>
+							<equation>average</equation>
+							<To>"moerasland_areaal"</To>
+							<To>moerasland_breedte</To>
+							<To>vegetatie_successiestadia</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="openplekken_op_bodem">
+						<inputLayers>
+							<layer name="openplekken_op_bodem">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>openplekken_op_bodem</layer_filename>
+								<unit>"categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Aanwezigheid van open plekken op de (slikkige) bodem"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="aanwezig" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="afwezig" output="0.2" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_openplekken_op_bodem">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_openplekken_op_bodem</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="taludvorm">
+						<inputLayers>
+							<layer name="taludvorm">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>taludvorm</layer_filename>
+								<unit>"hellingsgraden"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Taludvorm in hellingsgraden"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="20.0" output="0.8"/>
+								<parameter input="45.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_taludvorm">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_taludvorm</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="waterpeil">
+						<inputLayers>
+							<layer name="waterpeil">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterpeil</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterpeil ten opzichte van N.A.P. in m"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="-1.0" output="0.0"/>
+								<parameter input="-0.6" output="0.5"/>
+								<parameter input="-0.5" output="1.0"/>
+								<parameter input="0.1" output="1.0"/>
+								<parameter input="0.2" output="0.5"/>
+								<parameter input="0.3" output="0.2"/>
+								<parameter input="0.5" output="0.0"/>
+								<parameter input="1.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterpeil">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterpeil</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="overstromingen_periode">
+						<inputLayers>
+							<layer name="overstromingen_periode">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>overstromingen_periode</layer_filename>
+								<unit>maand / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Periode van overstromingen zowel in maand nummer als categorie"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="2" rangemax_input="3" input_cat="tot in maart" output="1.0" output_cat=""/>
+								<parameter rangemin_input="3" rangemax_input="4" input_cat="tot in april" output="0.5" output_cat=""/>
+								<parameter rangemin_input="4" rangemax_input="9" input_cat="tot na april" output="0.2" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="0" input_cat="geen" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_overstromingen_periode">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_overstromingen_periode</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="moerasland_areaal">
+						<inputLayers>
+							<layer name="moerasland_areaal">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>moerasland_areaal</layer_filename>
+								<unit>"Ha"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Areaal moerasland in hectare"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="5.0" output="0.4"/>
+								<parameter input="100.0" output="1.0"/>
+								<parameter input="200.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_moerasland_areaal">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_moerasland_areaal</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="moerasland_breedte">
+						<inputLayers>
+							<layer name="moerasland_breedte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>moerasland_breedte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Breedte van moerasland in meter"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="5" output="0.2"/>
+								<parameter input="10" output="0.8"/>
+								<parameter input="25" output="1.0"/>
+								<parameter input="30" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_moerasland_breedte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_moerasland_breedte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="vegetatie_successiestadia">
+						<inputLayers>
+							<layer name="vegetatie_successiestadia">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>vegetatie_successiestadia</layer_filename>
+								<unit>"cat"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Successiestadia van het moeras-rietlandschap in categorieën"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="waterriet" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="waterriet met droge plekken" output="0.2" output_cat=""/>
+								<parameter input="3" input_cat="vochtig open rietland" output="0.4" output_cat=""/>
+								<parameter input="4" input_cat="riet met verspreide boom/struikopslag" output="0.8" output_cat=""/>
+								<parameter input="5" input_cat="rietruigte met opslag" output="1.0" output_cat=""/>
+								<parameter input="6" input_cat="rietruigte met moerasbos" output="0.8" output_cat=""/>
+								<parameter input="7" input_cat="moerasbos met openplekken" output="0.5" output_cat=""/>
+								<parameter input="8" input_cat="moerabos vrijwel gesloten" output="0.1" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_vegetatie_successiestadia">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_vegetatie_successiestadia</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="broedhabitat_afstand_tot_slikken">
+						<inputLayers>
+							<layer name="broedhabitat_afstand_tot_slikken">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>broedhabitat_afstand_tot_slikken</layer_filename>
+								<unit>"m / cat"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Afstand broedhabitat tot open, slikkige stukken in m en categorieën"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="1.0" input_cat="ïn broedhabitat" output="1.0" output_cat=""/>
+								<parameter rangemin_input="1.0" rangemax_input="25.0" input_cat="0 - 25 m buiten" output="0.5" output_cat=""/>
+								<parameter rangemin_input="25.0" rangemax_input="999999" input_cat="&gt; 25 m buiten" output="0.2" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_broedhabitat_afstand_tot_slikken">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_broedhabitat_afstand_tot_slikken</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Blauwborst-Lusciniasvecicacyanecula-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De Blauwborst is gebonden aan vochtige gebieden met plaatselijk dichte, struikrijke vegetatie, zoals moerassen, vennen, rivieren, beken, kanalen en sloten, voormalige getijdengebieden, natte heidegebieden, hoogveengebieden, maar ook akkergebieden (koolzaad), braakliggende terreinen en spoorbanen. Een slikkige oever of anderzijds kale bodem biedt goede foerageermogelijkheden, terwijl plaatselijk dichte vegetatie dienst doet als nestgelegenheid en als zangpost. De laatste decennia heeft de soort zich sterk uitgebreid en broedde vanaf de jaren tachtig in alle delen van Nederland &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwborst+-+Luscinia+svecica+cyanecula#Blauwborst-Lusciniasvecicacyanecula-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Blauwborst-Lusciniasvecicacyanecula-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De Blauwborst eet voornamelijk ongewervelden, maar eet ook bessen en zaden. Hij foerageert op de grond of laag in vegetatie &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwborst+-+Luscinia+svecica+cyanecula#Blauwborst-Lusciniasvecicacyanecula-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Blauwborst-Lusciniasvecicacyanecula-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;De grootste aantallen broeden in Nederland in verruigd rietland met opslag van wilg en/of vlier &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwborst+-+Luscinia+svecica+cyanecula#Blauwborst-Lusciniasvecicacyanecula-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Blauwborst-Lusciniasvecicacyanecula-Beheer"&gt;Beheer&lt;/h3&gt;&lt;p&gt;Omdat de soort bij voorkeur in verruigd rietland broed dient er geen beheer toegepast te worden. Er dient niets gedaan te worden zolang het stadium met riet, rietruigte en wat oplsag aanwezig is. Als er te veel bosopslag voorkomt dan dient dit verwijdert te worden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwborst+-+Luscinia+svecica+cyanecula#Blauwborst-Lusciniasvecicacyanecula-3"&gt;#3&lt;/a&gt;.&lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="http://www.soortenbank.nl" title="Blauwborst" identification="" year="2019" journal="">
+			<html>http://www.soortenbank.nl/soorten.php?soortengroep=vogels&amp;id=305&amp;menuentry=soorten</html>
+		</reference>
+		<reference author="https://www.synbiosys.alterra.nl/natura2000/" title="" identification="" year="2019" journal="">
+			<html>https://www.synbiosys.alterra.nl/natura2000/gebiedendatabase.aspx?zoek_gebiedsnaam_n2k=blauwborst</html>
+		</reference>
+		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

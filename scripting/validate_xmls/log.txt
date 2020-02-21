@@ -1,9 +1,30 @@
 ---Validation log for KnowledgeRules xmls---
 
 - Structure and number of files
+  /Habitats
+      /Vegetation_associations
+        /Vegetationtypes_Northen_Delta.xml
   /species
       /Birds
+        /Acrocephalus_palustris.xml
+        /Alcedo_atthis.xml
+        /Anas_clypeata.xml
+        /Anas_penelope.xml
+        /Anas_querquedula.xml
+        /Bucephala_clangula.xml
+        /Calidris_alpina.xml
+        /Charadrius_dubius.xml
+        /Chlidonias_niger.xml
+        /Emberiza_schoeniclus.xml
+        /Fulica_atra.xml
+        /Gallinago_gallinago.xml
+        /Gallinula_chloropus.xml
+        /Luscinia_svecica_cyanecula.xml
+        /Mergus_albellus.xml
+        /Mergus_merganser.xml
+        /Panurus_biarmicus.xml
         /Phalacrocorax carbo.xml
+        /Rallus_aquaticus.xml
       /Fish
         /Abramis brama.xml
         /Anguilla anguilla.xml
@@ -14,7 +35,8 @@
         /Pomatoschitus microps.xml
         /Rhodeus sericeus amarus.xml
         /Rutilus rutilus.xml
-      /Macrofytes
+      /leeg
+      /Macrophytes
         /Chara spp.xml
         /Draadwieren.xml
         /Myriophyllum spicatum.xml
@@ -33,9 +55,28 @@
   /WFD_indicators
       /ecological_status
         /Macrofauna_in_beken_en_kleine_rivieren.xml
- Total number of XMLs : 24
+ Total number of XMLs : 43
 
 - Validation
- All xmls validated succesfully!
+Not valid : ../../_new_knowledgerules/Habitats\Vegetation_associations\Vegetationtypes_Northen_Delta.xml
+XML could not be read with AutecologyXML : ../../_new_knowledgerules/Habitats\Vegetation_associations\Vegetationtypes_Northen_Delta.xml
+Following flowdiagram element is not valid, check the To links : From = nesthabitat; To's invalid = {'overstroming_periode'}. File : ../../_new_knowledgerules/species\Birds\Acrocephalus_palustris.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = feeding_area; To's invalid = {'water_clearity'}. File : ../../_new_knowledgerules/species\Birds\Alcedo_atthis.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = breeding_area_general; To's invalid = {'vertical_bank_distance_to_water'}. File : ../../_new_knowledgerules/species\Birds\Alcedo_atthis.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = nesting_area; To's invalid = {'flooding'}. File : ../../_new_knowledgerules/species\Birds\Anas_clypeata.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = nesting_area; To's invalid = {'flooding'}. File : ../../_new_knowledgerules/species\Birds\Anas_querquedula.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = vegetation_characteristics; To's invalid = {'area_of_swamp'}. File : ../../_new_knowledgerules/species\Birds\Emberiza_schoeniclus.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = spatial_characteristics; To's invalid = {'slik_banks'}. File : ../../_new_knowledgerules/species\Birds\Gallinago_gallinago.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = swamp_characteristics; To's invalid = {'bank_substrate'}. File : ../../_new_knowledgerules/species\Birds\Gallinula_chloropus.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = nesthabitat; To's invalid = {'overstroming_periode'}. File : ../../_new_knowledgerules/species\Birds\Luscinia_svecica_cyanecula.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = food_presence; To's invalid = {'PCB_presence_water_fish'}. File : ../../_new_knowledgerules/species\Birds\Mergus_albellus.xml with ModelType HSI and System feeding_area
+Following flowdiagram element is not valid, check the To links : From = nesting_area; To's invalid = {'waterlevel_fluctuation', 'flooding_period'}. File : ../../_new_knowledgerules/species\Birds\Rallus_aquaticus.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = Habitat_geschiktheid; To's invalid = {'Voorplanting'}. File : ../../_new_knowledgerules/species\Fish\Abramis brama.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = Voortplanting; To's invalid = {'pH_ei'}. File : ../../_new_knowledgerules/species\Fish\Abramis brama.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = voortplanting_grindbedden; To's invalid = {'zuurstofgehalte_paai'}. File : ../../_new_knowledgerules/species\Fish\Barbus barbus.xml with ModelType HSI and System Voortplanting Barbeel (grindbedden)
+Following flowdiagram element is not valid, check the To links : From = reproductie; To's invalid = {'drianage_embryo'}. File : ../../_new_knowledgerules/species\Fish\Lepomis macrochirus.xml with ModelType HSI and System riverine_lacustrine_adult
+Following flowdiagram element is not valid, check the To links : From = Main_model; To's invalid = {'Egg_Incubation'}. File : ../../_new_knowledgerules/species\Fish\Plecoglossus_altivelis.xml with ModelType HSI and System adult
+Following flowdiagram element is not valid, check the To links : From = voedsel_beschutting; To's invalid = {'waterdiepete_verdeling_litoraal'}. File : ../../_new_knowledgerules/species\Fish\Rutilus rutilus.xml with ModelType HSI and System habitat_geschiktheid
+Following flowdiagram element is not valid, check the To links : From = habitatgeschiktheid; To's invalid = {'oever_type_en_beheer'}. File : ../../_new_knowledgerules/species\Mammals\Ondatra zibethicus.xml with ModelType HSI and System adult
 
 END LOG

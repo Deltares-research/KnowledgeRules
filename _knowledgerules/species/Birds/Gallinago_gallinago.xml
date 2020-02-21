@@ -80,7 +80,7 @@
 						<From name="spatial_characteristics">
 							<label>"spatial_characteristics"</label>
 							<equation>average</equation>
-							<To>slik_banks</To>
+							<To>bank_bay_mud</To>
 							<To>shallow_water</To>
 						</From>
 						<From name="soil_characteristics">
@@ -98,18 +98,18 @@
 						<From name="vegetation_characteristics">
 							<label>"vegetation_characteristics"</label>
 							<equation>average</equation>
-							<To>area_grasland-zegge_vegetation</To>
+							<To>area_grasland_zegge_vegetation</To>
 							<To>vegetation_types</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="silk_banks">
+					<ResponseCurve name="bank_bay_mud">
 						<type>categorical</type>
-						<layername>"silk_banks"</layername>
+						<layername>"bank_bay_mud"</layername>
 						<unit>"categorie"</unit>
 						<statistic>average</statistic>
-						<description>"Presence of silk embankments"</description>
+						<description>"Presence of bay mud banks"</description>
 						<author>"Marc Weeber"</author>
 						<date>2013-01-15</date>
 						<references>
@@ -241,9 +241,9 @@
 							<parameter rangemin="300" rangemax="999999" cat="> 300" HSI="1.0"/> 
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="area_grasland-zegge_vegetation">
+					<ResponseCurve name="area_grasland_zegge_vegetation">
 						<type>scalar</type>
-						<layername>"area_grasland-zegge_vegetation"</layername>
+						<layername>"area_grasland_zegge_vegetation"</layername>
 						<unit>"ha"</unit>
 						<statistic>average</statistic>
 						<description>"Area with grasland or zeggevegetation in hectares"</description>
@@ -272,7 +272,7 @@
 						</references>
 						<valuesCategorical>
 							<parameter cat="grass" HSI="1.0"/>
-							<parameter cat="zeggen" HSI="1.0."/>
+							<parameter cat="zeggen" HSI="1.0"/>
 							<parameter cat="russen" HSI="1.0"/>
 							<parameter cat="riet" HSI="0.2"/>
 							<parameter cat="riet-ruigten" HSI="0.0"/>

@@ -1,0 +1,215 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>994386</EoLpagenr>
+			<LatName>Plecoglossus altivelis</LatName>
+			<CommonNames>
+				<Name name="Ayu" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Japan" id="1861060"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2000-01-01</StartDate>
+						<EndDate>2019-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="ENG">
+						<text>TO BE FILLED</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="Ayu_habitat">
+						<From name="Main_model">
+							<label>"Ayu habitat"</label>
+							<equation>min</equation>
+							<To>"Spawning"</To>
+							<To>"Egg_Incubation"</To>
+						</From>
+						<From name="Spawning">
+							<label>"Spawning habitat"</label>
+							<equation>min</equation>
+							<To>"FlowVelocity"</To>
+							<To>"SuspendedMatter"</To>
+						</From>
+						<From name="Egg_incubation">
+							<label>Egg laying habitat</label>
+							<equation>min</equation>
+							<To>"WaterDepth"</To>
+							<To>"DissolvedOxygen"</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="DissolvedOxygen">
+						<inputLayers>
+							<layer name="DissolvedOxygen">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>DissolvedOxygen</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum tolerable dissolved oxygen level for the Ayu fish species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="5" output="0"/>
+								<parameter input="7" output="1"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_DissolvedOxygen">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_DissolvedOxygen</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="FlowVelocity">
+						<inputLayers>
+							<layer name="FlowVelocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>FlowVelocity</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum tolerable flow velocity for the Ayu fish species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="0.4" output="1"/>
+								<parameter input="3" output="0"/>
+								<parameter input="5" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_FlowVelocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_FlowVelocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="SuspendedMatter">
+						<inputLayers>
+							<layer name="SuspendedMatter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>SuspendedMatter</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Tolerable suspended matter for the Ayu fish species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="21" output="1"/>
+								<parameter input="125" output="0"/>
+								<parameter input="150" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_SuspendedMatter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_SuspendedMatter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="WaterDepth">
+						<inputLayers>
+							<layer name="WaterDepth">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>WaterDepth</layer_filename>
+								<unit>"m"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Tolerable water depth for the Ayu fish species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.13" output="1"/>
+								<parameter input="1" output="1"/>
+								<parameter input="25" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_WaterDepth">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_WaterDepth</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="ENG">
+			<text>TO BE FILLED</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

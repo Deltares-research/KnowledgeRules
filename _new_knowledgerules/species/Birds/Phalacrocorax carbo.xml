@@ -1,0 +1,383 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45511373</EoLpagenr>
+			<LatName>Phalacrocorax carbo</LatName>
+			<CommonNames>
+				<Name name="Aalscholver" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>
+Onzekerheid en validatie
+(warning) Deze rekenregels zijn niet gevalideerd.
+
+Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek #1.
+
+Toepassingsgebied
+Deze rekenregels zijn opgesteld voor de aalscholver en zijn van toepassing in de zomermaanden op moerasgebieden en uiterwaarden als nesthabitat en wateren als voedselhabitat #1.
+
+Voorbeeld project
+Niet aanwezig
+.</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="adult">
+						<From name="Habitat_geschiktheid">
+							<label>"Habitat_geschiktheid</label>
+							<equation>min</equation>
+							<To>Nest_habitat</To>
+							<To>Voedsel_habitat</To>
+						</From>
+						<From name="Nest_habitat">
+							<label>"Nest_habitat"</label>
+							<equation>min</equation>
+							<To>type_moeras</To>
+							<To>rust_nest</To>
+						</From>
+						<From name="Voedsel_habitat">
+							<label>"Voedsel_habitat"</label>
+							<equation>min</equation>
+							<To>afstand_tot_moeras</To>
+							<To>waterdiepte</To>
+							<To>doorzicht</To>
+							<To>totaalfosfaatgehalte</To>
+							<To>PCB_gehalte_in_vis</To>
+							<To>rust_voedsel</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="afstand_tot_moeras">
+						<inputLayers>
+							<layer name="afstand_tot_moeras">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>afstand_tot_moeras</layer_filename>
+								<unit>"km"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Afstand openwater-moeras voor de Aalscholver"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="1" output="1"/>
+								<parameter input="12.5" output="1"/>
+								<parameter input="15" output="0.8"/>
+								<parameter input="17.5" output="0.8"/>
+								<parameter input="20" output="0.5"/>
+								<parameter input="22.5" output="0.5"/>
+								<parameter input="25" output="0.2"/>
+								<parameter input="30" output="0.2"/>
+								<parameter input="32.5" output="0"/>
+								<parameter input="40" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_afstand_tot_moeras">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_afstand_tot_moeras</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="waterdiepte">
+						<inputLayers>
+							<layer name="waterdiepte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdiepte voor de Aalscholver"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.75" output="0"/>
+								<parameter input="1" output="0.4"/>
+								<parameter input="2" output="1"/>
+								<parameter input="5" output="1"/>
+								<parameter input="6" output="0.6"/>
+								<parameter input="9" output="0.6"/>
+								<parameter input="10" output="0.2"/>
+								<parameter input="15" output="0.2"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="doorzicht">
+						<inputLayers>
+							<layer name="doorzicht">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>doorzicht</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Doorzicht voor de Aalscholver"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="40" output="0"/>
+								<parameter input="60" output="0.8"/>
+								<parameter input="100" output="1"/>
+								<parameter input="120" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_doorzicht">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_doorzicht</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="totaalfosfaatgehalte">
+						<inputLayers>
+							<layer name="totaalfosfaatgehalte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>totaalfosfaatgehalte</layer_filename>
+								<unit>"mg/L P"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"TotaalFosfaatgehalte in foerageerwateren van de Aalscholver"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.02" output="0.2"/>
+								<parameter input="0.05" output="0.3"/>
+								<parameter input="0.10" output="0.5"/>
+								<parameter input="0.15" output="0.7"/>
+								<parameter input="0.20" output="1"/>
+								<parameter input="0.50" output="1"/>
+								<parameter input="0.55" output="0.4"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_totaalfosfaatgehalte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_totaalfosfaatgehalte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="PCB_gehalte_in_vis">
+						<inputLayers>
+							<layer name="PCB_gehalte_in_vis">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>PCB_gehalte_in_vis</layer_filename>
+								<unit>"PCB-gehalte in vis (microgram/kilogram)"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"PCB-gehalte in vis"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="22.5" output="1"/>
+								<parameter input="25" output="0.8"/>
+								<parameter input="50" output="0.5"/>
+								<parameter input="225" output="0.5"/>
+								<parameter input="900" output="0.2"/>
+								<parameter input="1000" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_PCB_gehalte_in_vis">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_PCB_gehalte_in_vis</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="rust_nest">
+						<inputLayers>
+							<layer name="rust_nest">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>rust_nest</layer_filename>
+								<unit>"verstoringsafstand in moerasgebieden (m)"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"verstoringsafstand in moerasgebieden voor de Aalscholver"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="300" output="0"/>
+								<parameter input="400" output="1"/>
+								<parameter input="600" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_rust_nest">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_rust_nest</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="rust_voedsel">
+						<inputLayers>
+							<layer name="rust_voedsel">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>rust_voedsel</layer_filename>
+								<unit>"verstoringsafstand op open water (m)"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"verstoringsafstand in op open water voor de Aalscholver"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="100" output="0"/>
+								<parameter input="250" output="1"/>
+								<parameter input="600" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_rust_voedsel">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_rust_voedsel</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="type_moeras">
+						<inputLayers>
+							<layer name="type_moeras">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>type_moeras</layer_filename>
+								<unit>"description"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"HSI per type moeras voor de Aalscholver"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="bos" output="1" output_cat=""/>
+								<parameter input="2" input_cat="struweel" output="0.4" output_cat=""/>
+								<parameter input="3" input_cat="riet" output="0.2" output_cat=""/>
+								<parameter input="4" input_cat="overig" output="0" output_cat=""/>
+								<parameter input="5" input_cat="6" output="0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_type_moeras">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_type_moeras</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Aalscholver-Phalacrocoraxcarbo-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De aalscholver (Phalacrocorax carbo) en de kuifaalscholver (Phalacrocorax aristotelis) zijn de enige vertegenwoordigers van de aalscholverfamilie in Noordwest Europa. De aalscholver is een overheersend zwarte vogel. Een duidelijke witte vlek op de kop in de broedtijd onderscheidt de continentale ondersoort (P. carbo sinensis) van de Atlantische ondersoort (P. carbo carbo), die deze plek mist. De Atlantische ondersoort broedt in de kustgebieden van IJsland, Faroer-eilanden, Noorwegen, Britse eilanden, Ierland en Noordwest-Frankrijk.  De Atlantische soort is een typische rotsbroeder. De belangrijkste Europese broedgebieden van de continentale soort zijn gelegen in Nederland, Duitsland, Denemarken, Zweden, Polen, Litouwen, Estland en Wit-Rusland &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;. Hier onder wordt alleen de voorkeur van de continentale aalscholver beschrijven.&lt;/p&gt;&lt;p&gt;Aalscholvers leven in dichte kolonies (100-1000 broedparen). Een kolonie vestigt zich in bomen, bij voorkeur als deze voorkomen in moerasbossen, ooibossen, vloedbossen, en rietmoerassen. Vaak nestelen meerdere paren in een boom. Het is dan ook niet verbazend dat aalscholvers slechts één meter of minder rond het nest verdedigen. Dit kan betekenen dat er 15 tot 30 nesten in een boom voorkomen. Onder optimale omstandigheden kan dit oplopen tot &amp;gt;50 broedparen op een ha moerasbos. Naarmate de locatie ontoegankelijker is kunnen er kleine populaties ontstaan in kleine groepen bomen tot één enkele boom. Er zijn ook gevallen bekend dat de aalscholver zijn nest op boomloze eilandjes en zandbanken aanlegt &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Waar de aalscholver zijn nest maakt, treed al snel sterfte op van de ondergelegen vegetatie en de boom waarin genesteld wordt. Dit komt door de uitwerpselen van de aalscholver en de takken die hij voor de bouw van zijn nest van de bomen rooft. De aalscholver kolonie zit bij voorkeur in hoge bomen (&amp;gt;10 meter) en nestelen in rietland is weinig in trek. Nestelen op de kale bodem geschiedt alleen in grote kolonies &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Aalscholver-Phalacrocoraxcarbo-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De aalscholver foerageert op vis in rivieren, meren en plassen. De aalscholver jaagt zijn prooi onder water en beschikt daarvoor over krachtige poten met zwemvliezen tussen de tenen. In Nederland vliegt en jaagt de aalscholver veelal in groepsverband. Het vissen in groepsverband heeft als voordeel dat de aalscholvers een vissenschool uit kunnen putten, waarna deze gemakkelijker gevangen worden. Deze groepsverbanden vissen met name in open water. Met name in troebel water blijkt het jagen in groepsverbanden een ideale techniek te zijn. Solitair vissende aalscholvers kiezen met name voor zandwinplassen en randen van meren om hun voedsel te vangen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De aalscholver prefereert vis van 20 tot 30 cm lang. Aalscholvers zijn niet kieskeurig en de meest voorkomende vis vormt al snel de hoofdprooi. In Nederland foerageert de aalscholver voornamelijk op bodemvissen, waaronder paling (Anguilla anguilla) en blankvoorn (Rutilus rutilus). Ook rietvoorn (Rutilus erythrophthalmus), snoekbaars (Stizostedion lucioperca), pos (Gymnocephalus cernuus), kolblei (Blicca bjoerkna), spiering (Osmerus eperlanus) en baars (Perca fluviatilis) behoren tot de prooivissen. Onder de marine vissen zijn dit de jonge haring (Clupea harengus), sprot (Sprattus sprattus) en grondels. Brasems ouder dan 2 jaar zijn niet meer door de aalscholver te verorberen door hun hoge rug. Een zeldzame aanvulling op het dieet zijn (steur)garnalen, krabben, kikkers en kuikens van andere vogels. De voedselbehoefte van de aalscholver is in de zomer ongeveer 365 gram vis per dag en in de wintermaanden tussen de 100-700 gram vis per dag. De maximale voedsel inname per dag wordt geschat op 700 gram vis per dag &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;De aalscholver kan tot op grote afstand van zijn broedgebied jagen. Er kunnen 2 tot 4 foerageervluchten per dag ondernomen worden, afhankelijk van of de vogel jongen heeft of niet. 50 km afstand is hierbij geen uitzondering. Vanaf 15-20 km worden het aantal voedselvluchten beperkt waardoor het broedsucces terugloopt &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Het voortplantingssucces is positief gecorreleerd aan het areaal helder open water binnen 30 km van de kolonie. Dit komt omdat de aalscholver een zichtjager is. Waarden onder de 40 cm doorzicht worden als ongeschikt beschouwd voor de aalscholver. Naast algenbloei kan slibopwerveling door windwerking een nadelig effect hebben op het doorzicht. Te helder water kan een negatief effect hebben, doordat de vissen dan om predatie te voorkomen in de diepere delen zwemmen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Aalscholver-Phalacrocoraxcarbo-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;Het overgrote deel van de aalscholvers broed in april t/m mei. Aalscholvers produceren 1 legsel per broedseizoen en na het leggen van het ei is de broedduur 23-24 dagen. Na 40 tot 50 dagen vliegen de jongen uit, waarna ze snel onafhankelijk worden. In het tweede levens jaar kunnen de aalscholvers al geslachtsrijp zijn, na vijf jaar nemen alle aalscholvers aan de voortplanting deel. De oudere aalscholvers leggen veelal grotere legsels dan de jonge.&lt;/p&gt;&lt;p&gt;In Nederland ruien de eerstejaars vogels en de oudere niet broedende aalscholvers in mei-juni, wat twee a 3 maanden eerder is dan de broedende vogels. In augustus-oktober verlaten het merendeel van de continentale aalscholvers de broedgebieden en trekt naar zuidelijke streken, een klein deel van de Aalscholvers overwinterd in ons land en krijgt gezelschap van Aalscholvers uit het Oostzeegebied. Het belangrijkste overwinteringsgebied ligt rondom de Middellandse Zee. &lt;/p&gt;&lt;h3 id="Aalscholver-Phalacrocoraxcarbo-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;In het eerste levens jaar is de mortaliteit onder de vrouwtjes en mannetjes 36%. In het derde levensjaar is dit gereduceerd tot 9-14% voor vrouwtjes en 7-12% voor mannetjes. De hoge sterftecijfers, ook op latere leeftijd, worden mede veroorzaakt door de vele jachtslachtoffers. De gemiddelde overleving van vliegvlugge jongen tot geslachtsrijpe aalscholvers is 30-40%. Het gemiddelde voortplantingssucces van een kolonie wordt in belangrijke mate bepaald door de ecologische kwaliteit van de visgronden, de afstand van de kolonie naar de visgronden en de weersgesteldheid tijdens het broedseizoen. Aalscholvers kunnen 19 jaar worden in de vrije natuur &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aalscholver+-+Phalacrocorax+carbo#Aalscholver-Phalacrocoraxcarbo-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h1 id="Aalscholver-Phalacrocoraxcarbo-Dosis-effectrelaties"&gt;Dosis-effect relaties&lt;/h1&gt;&lt;p&gt;In dit model wordt gebruikt gemaakt van &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Visbiomassa"&gt;Visbiomassa&lt;/a&gt;.&lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="Duel, H.,Specken,B.,Denneman,W." year="1994" title="Habitatmodel Aalscholver: een model voor het analyseren van de kwaliteit van water- en moerasgebieden als broed- en foerageerhabitat van de aalscholver (Phalacrocorax carbo). Werkdocument P95-019, TNO-BSA" journal="" identification="december 1994"/>
+		<reference author="Sierdsema" year="" title="" journal="" identification=""/>
+		<reference author="Duel, Hanson,J.M., Legget, W.C." year="1982" title="Emperical prediction of fish biomass and yield." journal="Can. J. Fish. Aquatic. Sc 39: 257-263" identification=""/>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

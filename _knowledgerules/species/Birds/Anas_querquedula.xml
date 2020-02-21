@@ -61,7 +61,7 @@
 							<To>bank_vegetation</To>
 							<To>cow_density</To>
 							<To>management</To>
-							<To>flooding</To>
+							<To>flooding_period</To>
 						</From>
 						<From name="living_area">
 							<label>"living_area"</label>
@@ -330,12 +330,6 @@
 						</valuesCategorical>
 					</ResponseCurve>					
 				</KnowledgeRules>
-				
-				
-				
-				
-				
-				
 			</System>
 		</ModelType>
 	</Autecology>

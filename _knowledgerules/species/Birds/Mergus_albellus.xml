@@ -65,7 +65,7 @@
 							<To>waterdepth_open_water</To>
 							<To>transparency_winter</To>
 							<To>totalphosporus_concentration</To>
-							<To>PCB_presence_water_fish</To>
+							<To>PCB_presence_fish</To>
 							<To>disturbance_distance</To>
 						</From>
 						<From name="resting_area">

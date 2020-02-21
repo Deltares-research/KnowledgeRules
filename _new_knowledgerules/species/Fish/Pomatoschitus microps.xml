@@ -1,0 +1,142 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46575290</EoLpagenr>
+			<LatName>Pomatoschitus microps</LatName>
+			<CommonNames>
+				<Name name="Brakwatergrondel" language="NL"/>
+				<Name name="Common goby" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Veerse meer" id="2745733"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2000-01-01</StartDate>
+						<EndDate>2002-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>
+Onzekerheid en validatie
+De dosis-effect relaties zijn niet gevalideerd.
+Toepasbaarheid
+De reponse functies zijn toepasbaar voor het Veerse Meer #1
+Voorbeeldproject
+Er is geen voorbeeldproject beschikbaar.
+</text>
+					</Description>
+					<Description language="ENG">
+						<text>"to be filled"</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="adult">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>min</equation>
+							<To>waterdiepte</To>
+							<To>zoutgehalte</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="waterdiepte">
+						<inputLayers>
+							<layer name="waterdiepte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdiepte"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.5" output="0"/>
+								<parameter input="1" output="1"/>
+								<parameter input="5" output="1"/>
+								<parameter input="10" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="zoutgehalte">
+						<inputLayers>
+							<layer name="zoutgehalte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zoutgehalte</layer_filename>
+								<unit>"promille"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Zoutgehalte"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="10" output="0"/>
+								<parameter input="15" output="1"/>
+								<parameter input="30" output="1"/>
+								<parameter input="35" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zoutgehalte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zoutgehalte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Brakwatergrondel-Pomatoschitusmicrops-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De brakwatergrondel is een klein visje dat op waterbodems voorkomt. Het wordt circa zes centimeter lang en heeft een doorzichtig lichaam &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2"&gt;#2&lt;/a&gt; en wordt gekenmerkt door twee rugvinnen en aaneengegroeide buikvinnen waarmee het zich in zwak stromend water aan de ondergrond kunnen vastzuigen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Brakwatergrondel-Pomatoschitusmicrops-Milieuvoorwaarden"&gt;Milieuvoorwaarden&lt;/h3&gt;&lt;p&gt;De brakwatergrondel is een typisch estuariene soort en komt uitsluitend in ondiepe kustwateren en estuaria voor tot een diepte van ongeveer 2 meter. Ze leven op zandige, kleiachtige of modderige bodems en zijn algemeen talrijk in ondiepe geulen (0.2 tot 2 m diepte). Brakwatergrondels kunnen sterke schommelingen in temperatuur en zoutgehalte goed verdragen. Ze leiden echter sterk onder koude winters, met als gevolg dat de aantallen sterk kunnen variëren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1"&gt;#1&lt;/a&gt;. In de late herfst, als de temperatuur zakt beneden 5 a 7 graden Celsius, migreert de brakwatgrondel naar de diepere geulen om te overwinteren. Blijft de temperatuur boven 7 graden Celsius, dan treedt deze wintermigratie niet op &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;Brakwatergrondels hebben een brede zouttolerantie en kan zowel in zout als zoet water leven. Als de regel bevindt de Brakwatergrondel zich in estuaria bij voorkeur in gebieden met een zoutgehalte tussen de 15 en 30 promille.&lt;/p&gt;&lt;h3 id="Brakwatergrondel-Pomatoschitusmicrops-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De brakwatergrondel leeft van ongewervelde bodemdiertjes, waaronder kleine kreeftachtigen en wormen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Brakwatergrondel-Pomatoschitusmicrops-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;In de zomer van het tweede levensjaar paait de brakwatergrondel in estuaria &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-1"&gt;#1&lt;/a&gt;. Elders kunnen ze al in hun eerste levensjaar paren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2"&gt;#2&lt;/a&gt;. Vrouwtjes kunnen meerdere keren per seizoen paaien. Het mannetje van Brakwatergrondel heeft in de paaitijd een zwarte tot blauwe vlek in de eerste rugvin. De brakwatergrondel zet zijn eieren af onder of tussen stenen, schelpen of waterplanten &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brakwatergrondel+-+Pomatoschitus+microps#Brakwatergrondel-Pomatoschitusmicrops-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;</text>
+		</Description>
+		<Description language="ENG">
+			<text>"to be filled"</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="" year="" title=" www.ravon.nl (Brakwatergrondel)" journal="" identification="">
+			<html>https://www.ravon.nl/Soorten/Soortinformatie/brakwatergrondel</html>
+		</reference>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

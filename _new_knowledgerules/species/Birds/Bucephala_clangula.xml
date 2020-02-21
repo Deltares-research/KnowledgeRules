@@ -1,0 +1,126 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>45510601</EoLpagenr>
+			<LatName>Bucephala clangula</LatName>
+			<CommonNames>
+				<Name name="Brilduiker" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="feeding_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Veerse meer" id="2745733"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>1994-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>&lt;p&gt;Het nest wordt gemaakt in holten is een boomstam en in holten in de bodem en boomstronken. &lt;/p&gt;&lt;p&gt;Het voedsel wordt onder water gezocht.&lt;/p&gt;&lt;p&gt;De bepalende factoren van voorkomen is de aanwezigheid van open water en boom holten of nestkasten.&lt;/p&gt;&lt;h1 id="Brilduiker-Bucephalaclangula-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Brilduiker - Bucephala clangula - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;h1 id="Brilduiker-Bucephalaclangula-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;&lt;p&gt;Het Veerse Meer.&lt;/p&gt;&lt;h1 id="Brilduiker-Bucephalaclangula-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="voedselgebied">
+						<From name="voedselgebied">
+							<label>"voedselgebied"</label>
+							<equation>min</equation>
+							<To>waterdiepte_winter</To>
+							<To>schelpdieren_aanwezigheid</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="waterdiepte_winter">
+						<inputLayers>
+							<layer name="waterdiepte_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte_winter</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdiepte over de winterperiode"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="0.5" output="0.0"/>
+								<parameter input="1.0" output="1.0"/>
+								<parameter input="5.0" output="1.0"/>
+								<parameter input="10.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="schelpdieren_aanwezigheid">
+						<inputLayers>
+							<layer name="schelpdieren_aanwezigheid">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>schelpdieren_aanwezigheid</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Aanwezigheid van schelpdieren uitgedrukt in Habitat Geschiktheid Index (HSI)"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="1.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_schelpdieren_aanwezigheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_schelpdieren_aanwezigheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Brilduiker-Bucephalaclangula-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De brilduiker is in Nederland een zeldzame broedvogel, maar is een vrij talrijk voorkomende wintergast (oktober-april). Buiten broedtijd trekt de Brilduiker vaak naar zout water. Bij vorst vertrekt hij vaak naar de Waddenzee en het Deltagebied &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brilduiker+-+Bucephala+clangula#Brilduiker-Bucephalaclangula-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;De mannetjes hebben een donkergroene kop met een witte vlek tussen oog en snavel. De vrouwtjes hebben een bruine kop, zonder zo'n karakteristieke 'bril'. Omdat beide geslachten een punthoofd hebben, zou 'Punthoofdeend' een betere naam zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brilduiker+-+Bucephala+clangula#Brilduiker-Bucephalaclangula-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Brilduiker-Bucephalaclangula-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De brilduiker is een tastjager en foerageert op schelpdieren en kleine kreeftachtigen in en op de waterbodem. De Brilduiker is een macro-zoobenthoseter die leeft van schelpdieren en kleine kreeftachtigen (garnalen, vlokreeften) maar ook wormen, vis en insecten larven. Brilduikers foerageren overdag, waaraan ze dan ongeveer 70% van hun tijd besteden. Ze slikken hun prooi meestal onder water in &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brilduiker+-+Bucephala+clangula#Brilduiker-Bucephalaclangula-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De Brilduiker heeft de voorkeur om te foerageren in gebieden met een waterdiepte van 1 tot 5 meter. In het Veerse Meer foerageren ze niet in de ondiepe (&amp;lt;50 cm) gebieden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brilduiker+-+Bucephala+clangula#Brilduiker-Bucephalaclangula-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Brilduiker-Bucephalaclangula-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;In broedtijd bevindt de brilduiker zich op zoet water bij bosrijke omgeving in Scandinavië tot Duitsland (broedt in nestkasten en boomholten, vaak in de holen van de Zwarte Specht) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Brilduiker+-+Bucephala+clangula#Brilduiker-Bucephalaclangula-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="http://www.vogelbescherming.nl/vogels_kijken/vogelgids" title="Brilduiker" year="2012" journal="" identification="22 november 2012">
+			<html>https://www.vogelbescherming.nl/ontdek-vogels/kennis-over-vogels/vogelgids/vogel/brilduiker</html>
+		</reference>
+		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

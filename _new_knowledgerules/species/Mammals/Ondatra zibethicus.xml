@@ -1,0 +1,275 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>313678</EoLpagenr>
+			<LatName>Ondatra zibethicus</LatName>
+			<CommonNames>
+				<Name name="Muskusrat" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1999-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>&lt;h1 id="Muskusrat-Ondatrazibethicus-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Muskusrat - Ondatra zibethicus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;p&gt;De rekenregels zijn opgesteld aan de hand van lieratuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;&lt;/p&gt;&lt;h1 id="Muskusrat-Ondatrazibethicus-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;De rekenregels zijn opgesteld om het potentieel leefgebied van de Muskusrat te bepalen en zijn toepasbaar op grote en kleinere zoete wateren die stagnant tot snelstromend zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="Muskusrat-Ondatrazibethicus-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Geen&lt;/p&gt;</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="leefgebied">
+						<From name="habitatgeschiktheid">
+							<label>"habitatgeschiktheid"</label>
+							<equation>min</equation>
+							<To>oever_type_en_beheer</To>
+							<To>oevervegetatie_bedekkingsgraad</To>
+						</From>
+						<From name="oever_situatie">
+							<label>"oever_type_en_beheer"</label>
+							<equation>min</equation>
+							<To>waterbreedte</To>
+							<To>steiltalud_aanwezigheid</To>
+							<To>nestgelegenheid</To>
+							<To>oevervegetatie_beheer</To>
+							<To>oevervegetatie_bedekkingsgraad</To>
+						</From>
+						<From name="nestgelegenheid">
+							<label>"nestgelegenheid"</label>
+							<equation>max</equation>
+							<To>substraatdoorgraafbaarheid_oever</To>
+							<To>oevervegetatie_hoogte</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="waterbreedte">
+						<inputLayers>
+							<layer name="waterbreedte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterbreedte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Breedte water"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="6" output="0.5"/>
+								<parameter input="7" output="1"/>
+								<parameter input="30" output="1"/>
+								<parameter input="35" output="0"/>
+								<parameter input="40" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterbreedte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterbreedte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="steiltalud_aanwezigheid">
+						<inputLayers>
+							<layer name="steiltalud_aanwezigheid">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>steiltalud_aanwezigheid</layer_filename>
+								<unit>"-"</unit>
+								<statistic>Aanwezigheid steile oevers</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Steil talud wordt hier beschouwt als 1:0 of 1:1 .NB. Voor de nestbouw zijn relatief steile taluds nodig, Bij wateren smaller dan 6 meter moeten de steile delen van zowel de noord- als zuidoever worden bepaald, bij bredere wateren de oevers afzonderlijk. Uitgaande van een homerange van 300 meter dient minimaal 10 meter geschikte oever aanwezig te zijn (dus 1m per 30 meter)#1</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="minder dan 1m : 30 m" output="0.7" output_cat=""/>
+								<parameter input="2" input_cat="meer dan 1m : 30 m" output="1" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_steiltalud_aanwezigheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_steiltalud_aanwezigheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="substraatdoorgraafbaarheid_oever">
+						<inputLayers>
+							<layer name="substraatdoorgraafbaarheid_oever">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>substraatdoorgraafbaarheid_oever</layer_filename>
+								<unit>"-"</unit>
+								<statistic>Oeversubstraat</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Oeversubstraat"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="ondoorgraafbaar" output="0.5" output_cat=""/>
+								<parameter input="2" input_cat="doorgraafbaar" output="1" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substraatdoorgraafbaarheid_oever">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_substraatdoorgraafbaarheid_oever</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="oevervegetatie_bedekkingsgraad">
+						<inputLayers>
+							<layer name="oevervegetatie_bedekkingsgraad">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie_bedekkingsgraad</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Bedekking oevervegetatie"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="50" output="0.5"/>
+								<parameter input="100" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie_bedekkingsgraad">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie_bedekkingsgraad</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="oevervegetatie_beheer">
+						<inputLayers>
+							<layer name="oevervegetatie_beheer">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie_beheer</layer_filename>
+								<unit>"-"</unit>
+								<statistic>Beheer</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Door vertrapping van de burchten kunnen muskusratten niet voorkomen bij beweiding. Maaien maakt de beschutting minder"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="beweiden" output="0" output_cat=""/>
+								<parameter input="2" input_cat="maaien" output="0.6" output_cat=""/>
+								<parameter input="3" input_cat="niets doen" output="1" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie_beheer">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie_beheer</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="oevervegetatie_hoogte">
+						<inputLayers>
+							<layer name="oevervegetatie_hoogte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie_hoogte</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Als de oever niet goed doorgraafbaar is, worden er burchten gemaakt. Hiervoor dient voldoende oevervegetatie in de omgeving aanwezig te zijn #1. "</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="50" input_cat="1" output="0" output_cat=""/>
+								<parameter rangemin_input="50" rangemax_input="999999" input_cat="2" output="1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie_hoogte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie_hoogte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Muskusrat-Ondatrazibethicus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De muskusrat is in Nederland ingevoerd voor de pelsfokkerij en is door ontsnapping nu de grootste woelmuissoort in Europa &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;. De muskusrat komt nu in grote delen van Europa voor met uitzondering van Groot-Brittannië, Ierland, het grootste deel van Scandinavië en Zuid-Europa &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2"&gt;#2&lt;/a&gt;. In Nederland is de muskusrat bijna overal te vinden, met uitzondering van de Veluwe, het westelijk deel van Noord- en Zuid-Holland, Schouwen-Duivenland en Walcheren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;De muskusrat heeft een sterk aanpassingsvermogen en komt voor in verschillende watertypen, zowel in afgelegen moerassen als in waterpartijen binnen verstedelijkte gebieden. De soort heeft echter een voorkeur voor stagnante wateren met relatief steile oevers en een rijke oeverbegroeiïng &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;. De muskusrat is erg schuw en is meestal alleen ’s nachts waar te nemen. In het najaar trekt de muskusrat instinctief naar diepere sloten, waar de kans op opgesloten raken door ijs kleiner is. Het territorium van de muskusrat is 1 tot 5 km2 groot en weert andere muskusratten uit dit gebied &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;Afhankelijk van het oeversubstraat kan de muskusrat twee typen nesten bouwen. De voorkeur heeft om een burcht (hol) in een steile oever te graven, maar wanneer oevers niet begraafbaar zijn worden er ook wel burchten gebouwd van riet- en grasstengels. De ingang van de  burcht wordt onder water aangelegd. Bij kleine veranderingen in het waterpeil, wordt de ingang verplaatst en de oude ingang afgesloten. Deze burchten worden bij voorkeur op een zuidelijke geëxponeerde oever aangelegd en in mindere mate in grote wateren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;De muskusrat wordt met name in oevers met rijke oeverbegroeiing aangetroffen en bij niet al te grote wateren. Dit laatste is een gevolg van het feit dat golfslag de oever kan eroderen wat een bedreiging vormt voor de burchten van de muskusrat. In droogvallende watergangen is er slechts zelden bewoning aangetroffen. Poldersloten worden in de winter verlaten. Hiervoor kan de regel toegepast worden dat in de winter de waterdiepte &amp;gt; 1 meter moet zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Muskusrat-Ondatrazibethicus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De muskusrat is hoofdzakelijk een herbivoor. Hij foerageert in Nederland voornamelijk op wortels van riet, lisdodde, biezen, kruiden, gras en bieten &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;. Daarnaast wordt er ook wel eens dierlijk voedsel gegeten, zoals weekdieren, kreeften en vis &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt; en &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2"&gt;#2&lt;/a&gt;. Jonge muskusratten eten voornamelijk kruiden.  &lt;/p&gt;&lt;p&gt;NB. &lt;/p&gt;&lt;h3 id="Muskusrat-Ondatrazibethicus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;In maart tot september vindt de voortplanting van de muskusrat plaats. De draagtijd van de zwangere vrouwtjes is 30 dagen. Er zijn soms 2 tot 3 worpen, met maximaal 6 jongen. De sterfte van de jongen in het eerste jaar ligt circa rond de 70%. De vrouwtjes die uit de eerste worp voortkomen kunnen nog aan de voortplanting van dat zelfde jaar deelnemen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;,doordat de jongen na de vijfde maand geslachtsrijp zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2"&gt;#2&lt;/a&gt;.  &lt;/p&gt;&lt;p&gt;Twee keer in het jaar trek de muskusrat erop uit. In het voorjaar gaan de mannetjes (de rammen) en de vrouwtjes (de moertjes) op zoek naar een geschikte partner ten behoeve van de voortplanting &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2"&gt;#2&lt;/a&gt;. In het najaar worden de jonge dieren door de ouder weggestuurd en gaan deze op zoek naar een eigen territorium &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Muskusrat-Ondatrazibethicus-Mortaliteit"&gt;Mortaliteit&lt;/h3&gt;&lt;p&gt;Zelf heeft de muskusrat in Nederland weinig natuurlijke vijanden. Echter op de jonge dieren wordt wel gejaagd, onder andere door de vos, bunzing en hermelijn en mogelijk ook snoek en snoekbaars &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-1"&gt;#1&lt;/a&gt;. Een muskusrat wordt ongeveer 3 jaar oud. Echter, 80-90% redt de eerste winter niet &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Muskusrat+-+Ondatra+zibethicus#Muskusrat-Ondatrazibethicus-2"&gt;#2&lt;/a&gt;.    &lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="Hollands., H., J.O. Reinhold" year="1999" title="HSI-modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van huidige ecologische kennis" journal="" identification="Dienst Weg- en Waterbouwkunde"/>
+		<reference author="" year="2012" title="www.zoogdiervereniging.nl (Muskusrat)" journal="" identification="11 december 2012">
+			<html>www.zoogdiervereniging.nl/zoogdiersoorten/muskusrat</html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

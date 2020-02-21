@@ -1,0 +1,878 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>207661</EoLpagenr>
+			<LatName>Lepomis macrochirus</LatName>
+			<CommonNames>
+				<Name name="Blauwkeel Zonnebaars" language="NL"/>
+				<Name name="Bluegill" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="riverine_lacustrine_adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="North America" id="6255149"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>
+Onzekerheid en validatie
+ Deze dosis-effect relaties zijn niet gevalideerd.
+Toepasbaarheid
+Amerika
+Voorbeeld project
+Er is geen voorbeeldproject beschikbaar.
+</text>
+					</Description>
+					<Description language="ENG">
+						<text>"To be filled"</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="rivieren">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>specific</equation>
+							<specific_equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie * overig)^(1/6)"</specific_equation>
+							<To>voedsel</To>
+							<To>beschutting</To>
+							<To>waterkwaliteit</To>
+							<To>reproductie</To>
+							<To>overig</To>
+						</From>
+						<From name="voedsel">
+							<label>"voedsel"</label>
+							<equation>geometric_average</equation>
+							<To>poelen_verdeling</To>
+							<To>beschutting_verdeling</To>
+							<To>vegetatie_verdeling</To>
+						</From>
+						<From name="beschutting">
+							<label>"beschutting"</label>
+							<equation>average</equation>
+							<To>beschutting_verdeling</To>
+							<To>vegetatie_verdeling</To>
+						</From>
+						<From name="waterkwaliteit">
+							<label>"waterkwaliteit"</label>
+							<equation>specific</equation>
+							<specific_equation>"(troebelheid + zuurgraad + (zuurstofgehalte * 2) + saliniteit + ((temperatuur_adult * temperatuur_larve * temperatuur_juveniel)^(1/3) * 2)) / 7"</specific_equation>
+							<To>troebelheid</To>
+							<To>zuurgraad</To>
+							<To>zuurstofgehalte</To>
+							<To>temperatuur_adult</To>
+							<To>temperatuur_larve</To>
+							<To>temperatuur_juveniel</To>
+							<To>saliniteit</To>
+						</From>
+						<From name="reproductie">
+							<label>"reproductie"</label>
+							<equation>geometric_average</equation>
+							<To>temperatuur_embryo</To>
+							<To>stroomsnelheid_embryo</To>
+							<To>substraattype_embryo</To>
+						</From>
+						<From name="overig">
+							<label>"overig"</label>
+							<equation>average</equation>
+							<To>stroomsnelheid_fase</To>
+							<To>stroomgradient</To>
+						</From>
+						<From name="stroomsnelheid_fase">
+							<label>"stroomsnelheid_fase"</label>
+							<equation>average</equation>
+							<To>stroomsnelheid_adult</To>
+							<To>stroomsnelheid_larve</To>
+							<To>stroomsnelheid_juveniel</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="meren">
+						<From name="habitat_geschiktheid">
+							<label>"habitat_geschiktheid"</label>
+							<equation>specific</equation>
+							<specific_equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie * overig)^(1/6)"</specific_equation>
+							<To>voedsel</To>
+							<To>beschutting</To>
+							<To>waterkwaliteit</To>
+							<To>reproductie</To>
+						</From>
+						<From name="voedsel">
+							<label>"voedsel"</label>
+							<equation>geometric_average</equation>
+							<To>beschutting_verdeling</To>
+							<To>vegetatie_verdeling</To>
+							<To>totaal_opgeloste_vastestof</To>
+							<To>zuurgraad</To>
+						</From>
+						<From name="beschutting">
+							<label>"beschutting"</label>
+							<equation>average</equation>
+							<To>beschutting_verdeling</To>
+							<To>vegetatie_verdeling</To>
+							<To>oeverzone_verdeling</To>
+						</From>
+						<From name="waterkwaliteit">
+							<label>"waterkwaliteit"</label>
+							<equation>specific</equation>
+							<specific_equation>"(troebelheid + zuurgraad + (zuurstofgehalte * 2) + saliniteit + ((temperatuur_adult * temperatuur_larve * temperatuur_juveniel)^(1/3) * 2)) / 7"</specific_equation>
+							<To>troebelheid</To>
+							<To>zuurgraad</To>
+							<To>zuurstofgehalte</To>
+							<To>temperatuur_adult</To>
+							<To>temperatuur_larve</To>
+							<To>temperatuur_juveniel</To>
+							<To>saliniteit</To>
+						</From>
+						<From name="reproductie">
+							<label>"reproductie"</label>
+							<equation>geometric_average</equation>
+							<To>temperatuur_embryo</To>
+							<To>drianage_embryo</To>
+							<To>substraattype_embryo</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="poelen_verdeling">
+						<inputLayers>
+							<layer name="poelen_verdeling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>poelen_verdeling</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Aandeel poelen tijdens een gemiddelde zomerafvoer"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="60" output="1"/>
+								<parameter input="100" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_poelen_verdeling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_poelen_verdeling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="beschutting_verdeling">
+						<inputLayers>
+							<layer name="beschutting_verdeling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>beschutting_verdeling</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Aandeel beschutting in de zomer NB. Het gaat hier om beschutting in de vorm van boomstronken en (organisch) afval binnen poelen of de litorale zone."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.2"/>
+								<parameter input="20" output="1"/>
+								<parameter input="60" output="1"/>
+								<parameter input="100" output="0.2"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_beschutting_verdeling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_beschutting_verdeling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="vegetatie_verdeling">
+						<inputLayers>
+							<layer name="vegetatie_verdeling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>vegetatie_verdeling</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Aandeel vegetatie in de zomer (aquatische vegetatie, sumbmers, stengels, fijne bladeren) "</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="15" output="1"/>
+								<parameter input="30" output="1"/>
+								<parameter input="100" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_vegetatie_verdeling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_vegetatie_verdeling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="oeverzone_verdeling">
+						<inputLayers>
+							<layer name="oeverzone_verdeling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oeverzone_verdeling</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Aandeel oeverzone tijdens zomer stratificatie"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="20" output="1"/>
+								<parameter input="60" output="1"/>
+								<parameter input="100" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oeverzone_verdeling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oeverzone_verdeling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="totaal_opgeloste_vastestof">
+						<inputLayers>
+							<layer name="totaal_opgeloste_vastestof">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>totaal_opgeloste_vastestof</layer_filename>
+								<unit>"ppm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde troebelheid tijdens de zomer (SI waarden moeten met 0.2 omlaag als de ionische concentratie van sulfaatchloride hoger is dan die van carbonaat-bicarbonaat)"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="100" output="1"/>
+								<parameter input="350" output="1"/>
+								<parameter input="600" output="0.5"/>
+								<parameter input="1000" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_totaal_opgeloste_vastestof">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_totaal_opgeloste_vastestof</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="troebelheid">
+						<inputLayers>
+							<layer name="troebelheid">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>troebelheid</layer_filename>
+								<unit>"ppm"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Max. maandelijke gem. troebelheid tijdens gemiddelde afvoer of zomerstratificatie"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="50" output="0"/>
+								<parameter input="200" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_troebelheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_troebelheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="zuurgraad">
+						<inputLayers>
+							<layer name="zuurgraad">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurgraad</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>ranges</type>
+							<description>"pH tijdens het groeiseizoen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesRanges>
+								<parameter rangemin_input="-999999" rangemax_input="5.0" output="0.0"/>
+								<parameter rangemin_input="5.0" rangemax_input="6.0" output="0.2"/>
+								<parameter rangemin_input="6.0" rangemax_input="6.5" output="0.5"/>
+								<parameter rangemin_input="6.5" rangemax_input="8.5" output="1.0"/>
+								<parameter rangemin_input="8.5" rangemax_input="9.0" output="0.5"/>
+								<parameter rangemin_input="9.0" rangemax_input="10.0" output="0.2"/>
+								<parameter rangemin_input="10.0" rangemax_input="999999" output="0.0"/>
+							</valuesRanges>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurgraad">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurgraad</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="zuurstofgehalte">
+						<inputLayers>
+							<layer name="zuurstofgehalte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurstofgehalte</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"min. opgeloste zuurstof in de zomer"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="Zelden lager dan 5 " output="1" output_cat=""/>
+								<parameter input="2" input_cat="Vaak tussen 3 en 5 " output="0.7" output_cat=""/>
+								<parameter input="3" input_cat="Vaak tussen 1.5 en 3 " output="0.4" output_cat=""/>
+								<parameter input="4" input_cat="Vaak lager dan 3 " output="0.1" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurstofgehalte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurstofgehalte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="saliniteit">
+						<inputLayers>
+							<layer name="saliniteit">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>saliniteit</layer_filename>
+								<unit>"ppt"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Max. maandelijks gemiddelde saliniteit tijdens groeiseizoen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="2" output="1"/>
+								<parameter input="5.5" output="0"/>
+								<parameter input="6" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_saliniteit">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_saliniteit</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="temperatuur_adult">
+						<inputLayers>
+							<layer name="temperatuur_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_adult</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Max. midzomer temperatuur in oeverzone en poelen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="10" output="0"/>
+								<parameter input="15" output="0.2"/>
+								<parameter input="20" output="0.6"/>
+								<parameter input="23" output="0.9"/>
+								<parameter input="27" output="1"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="temperatuur_embryo">
+						<inputLayers>
+							<layer name="temperatuur_embryo">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_embryo</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gem. weekelijkse watertemperatuur binnen poelen en oeverzone"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="10" output="0"/>
+								<parameter input="18" output="0"/>
+								<parameter input="22" output="1"/>
+								<parameter input="27" output="1"/>
+								<parameter input="34" output="0.5"/>
+								<parameter input="37" output="0"/>
+								<parameter input="40" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_embryo">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_embryo</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="temperatuur_larve">
+						<inputLayers>
+							<layer name="temperatuur_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_larve</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Max. beginzomer temperatuur in oeverzone en poelen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="10" output="0"/>
+								<parameter input="11" output="0"/>
+								<parameter input="25" output="1"/>
+								<parameter input="32" output="1"/>
+								<parameter input="34" output="0"/>
+								<parameter input="40" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="temperatuur_juveniel">
+						<inputLayers>
+							<layer name="temperatuur_juveniel">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_juveniel</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Max. midzomer temperatuur in oeverzone en poelen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="10" output="0"/>
+								<parameter input="24" output="0.5"/>
+								<parameter input="30" output="1"/>
+								<parameter input="38" output="0"/>
+								<parameter input="40" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_juveniel">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_juveniel</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="stroomsnelheid_adult">
+						<inputLayers>
+							<layer name="stroomsnelheid_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_adult</layer_filename>
+								<unit>"cm/sec"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="9" output="1"/>
+								<parameter input="40" output="0.1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="stroomsnelheid_embryo">
+						<inputLayers>
+							<layer name="stroomsnelheid_embryo">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_embryo</layer_filename>
+								<unit>"cm/sec"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gem. stroomsnelheid in poelen en stilstaande wateren tijdens groeiseizoen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="9" output="1"/>
+								<parameter input="30" output="0.2"/>
+								<parameter input="40" output="0.2"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_embryo">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_embryo</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="stroomsnelheid_larve">
+						<inputLayers>
+							<layer name="stroomsnelheid_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_larve</layer_filename>
+								<unit>"cm/sec"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gem. stroomsnelheid in poelen en stilstaandwater"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="4.5" output="1"/>
+								<parameter input="5" output="0.6"/>
+								<parameter input="6" output="0.4"/>
+								<parameter input="8" output="0.2"/>
+								<parameter input="10" output="0.1"/>
+								<parameter input="12" output="0"/>
+								<parameter input="15" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="stroomsnelheid_juveniel">
+						<inputLayers>
+							<layer name="stroomsnelheid_juveniel">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_juveniel</layer_filename>
+								<unit>"cm/sec"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gem. stroomsnelheid in poelen en stilstaandwater"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="4.5" output="1"/>
+								<parameter input="15.5" output="0"/>
+								<parameter input="20" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_juveniel">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_juveniel</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="stroomgradient">
+						<inputLayers>
+							<layer name="stroomgradient">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomgradient</layer_filename>
+								<unit>"m/km"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Stroomgradient"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="0.5" output="1"/>
+								<parameter input="1.5" output="0.6"/>
+								<parameter input="2" output="0.4"/>
+								<parameter input="3" output="0.2"/>
+								<parameter input="4" output="0.1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomgradient">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomgradient</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="drainage_embryo">
+						<inputLayers>
+							<layer name="drainage_embryo">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>drainage_embryo</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Daineren reservoir tijdens paai"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="0.8" output="1"/>
+								<parameter input="2" output="0.5"/>
+								<parameter input="3" output="0.2"/>
+								<parameter input="4" output="0.1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_drainage_embryo">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_drainage_embryo</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="substraattype_embryo">
+						<inputLayers>
+							<layer name="substraattype_embryo">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>substraattype_embryo</layer_filename>
+								<unit>"-"</unit>
+								<statistic>samenstelling substraat</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"samenstelling substraat"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="Fijn substraat en grind aanwezig" output="1" output_cat=""/>
+								<parameter input="2" input_cat="Fijn substraat en grind zeldzaam aanwezig" output="0.7" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substraattype_embryo">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_substraattype_embryo</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="BlauwkeelZonnebaars-Lepomismacrochirus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De blauwkeel zonnebaars, in het engels Bluegill, is een soort die oorspronkelijk afkomstig is uit Lake Champlain, de zuidelijke Ontario regio, de Great Lakes tot Minnesota en zuid tot aan Noord Oost Mexico en de Carolinas. De soort is echter breed geïntroduceerd buiten zijn natuurlijk leefgebied. Er bestaan drie ondersoorten namelijk L. m. macrochirus (Noord centraal Verenigde Staten), L. m. speciosus (Texas en Noord Mexico) en L. m. purpurascens (staten aan de Atlantische zee en staten ronde de Golf van Mexico) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwkeel+Zonnebaars+-+Lepomis+macrochirus#BlauwkeelZonnebaars-Lepomismacrochirus-1"&gt;#1&lt;/a&gt;. De soort is familie van de in Nederland geïntroduceerde zonnebaars (Lepomis gibbosus) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwkeel+Zonnebaars+-+Lepomis+macrochirus#BlauwkeelZonnebaars-Lepomismacrochirus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De blauwkeel zonnebaars is te herkennen aan een zwarte stip achter de kieuwen, boven de basis van de dorsale vin. Meestal heeft de soort 5 tot 9 verticale lijnen over de zijkant van zijn lijf lopen, echter deze zijn niet altijd goed te onderscheiden. De soort heeft een gele buik en in paartijd is deze bij de mannetjes fel oranje &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwkeel+Zonnebaars+-+Lepomis+macrochirus#BlauwkeelZonnebaars-Lepomismacrochirus-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="BlauwkeelZonnebaars-Lepomismacrochirus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;Het dieet van de blauwkeel zonnebaars bestaat uit waterinsecten en crustaceen. Jonge blauwkeel zonnebaars foerageren op rotiferen en watervlooien &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwkeel+Zonnebaars+-+Lepomis+macrochirus#BlauwkeelZonnebaars-Lepomismacrochirus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="BlauwkeelZonnebaars-Lepomismacrochirus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;De blauwkeel zonnebaars staat er om bekend een goede voortplanter te zijn, waarbij het voortplantingsseizoen loopt van lente tot zomer. Voortplanten gebeurt bij 17 graden Celsius tot 31 graden Celsius, echter de piek zit bij 24 tot 27 graden Celsius. Voor de voortplanting wordt fijn zand en kiezels geprefereerd &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwkeel+Zonnebaars+-+Lepomis+macrochirus#BlauwkeelZonnebaars-Lepomismacrochirus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="BlauwkeelZonnebaars-Lepomismacrochirus-Milieuvoorwaarden"&gt;Milieu voorwaarden&lt;/h3&gt;&lt;p&gt;De soort is het meest te vinden in poelen, meren en reservoirs met lage stroomsnelheden. Volwassen dieren zijn ook te vinden in brak water. Rivieren zijn minder voordelig in verband met de stroomsnelheid, maar ook hier komen ze voor. De dieren zwemmen vaak in scholen en maken gebruik van beschutting in de vorm van waterplanten en ander materiaal &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blauwkeel+Zonnebaars+-+Lepomis+macrochirus#BlauwkeelZonnebaars-Lepomismacrochirus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;</text>
+		</Description>
+		<Description language="ENG">
+			<text>"TO be filled"</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="Stuber, R.J., Gebhart,G." year="1982" title="HABITAT SUITABILITY INDEX MODELS: Bluegill, FWS/OBS-82/10.8, Western Energy and Land use Team, U.S. Fish and Wildlife Service Revised" journal="" identification="februari 1982"/>
+		<reference author="" year="2012" title="http://en.wikipedia.org/" journal="" identification="18-12-2012">
+			<html>https://en.wikipedia.org/wiki/Bluegill</html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

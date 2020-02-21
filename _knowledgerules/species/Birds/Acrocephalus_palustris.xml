@@ -101,9 +101,9 @@
 							<parameter rangemin="0.0" rangemax="1" cat="hoger dan maaiveld" HSI="0.0"/> 							
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="overstromingen_periode">
+					<ResponseCurve name="overstroming_periode">
 						<type>range / categorical</type>
-						<layername>"overstromingen_periode"</layername>
+						<layername>"overstroming_periode"</layername>
 						<unit>maand / categorie"</unit>
 						<statistic>average</statistic>
 						<description>"Periode van overstromingen zowel in maand nummer als categorie"</description>

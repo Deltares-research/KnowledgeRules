@@ -29,127 +29,304 @@ TEST]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="Test">
+						<From name="testtest">
+							<label>"testtest"</label>
+							<equation>average</equation>
+							<To>chloride_concentration</To>
+							<To>soil_type</To>
+							<To>silt_fraction</To>
+							<To>"waterdepth_lakes"</To>
+							<To>"vegetation_extinction"</To>
+							<To>vegetation_types</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Chloride">
-						<type>scalar</type>
-						<layername>"CL"</layername>
-						<unit>"g/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Tolerable chlorine content for the Zebra mussel species"</description>
-						<author>"K.E. van de Wolfshaar, M. Haasnoot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="1" HSI="1"/>
-							<parameter value="1.1" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-						</valuesScalar>
-					</ResponseCurve>
-					<ResponseCurve name="Soil">
-						<type>categorical</type>
-						<layername>"SoilType"</layername>
-						<unit>"soil"</unit>
-						<statistic>average</statistic>
-						<description>"Average soil type tolerable for the Zebra mossel species"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="klei" HSI="0.466"/>
-							<parameter cat="leem" HSI="0.688"/>
-							<parameter cat="zand" HSI="0.743"/>
-							<parameter cat="veen" HSI="0.074"/>
-							<parameter cat="stortsteen" HSI="0.879"/>
-						</valuesCategorical>
-					</ResponseCurve>
-					<ResponseCurve name="SiltFraction">
-						<type>range / categorical</type>
-						<layername>"SiltFraction"</layername>
-						<unit>"silt fraction / description"</unit>
-						<statistic>average</statistic>
-						<description>"Average silt content tolerable for the Zebra mossel species"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="10" cat="slibarm" HSI="0.753"/>
-							<parameter rangemin="10" rangemax="25" cat="matig slibrijk" HSI="0.45"/>
-							<parameter rangemin="25" rangemax="100" cat="slibrijk" HSI="0.103"/>
-						</valuesRangeCategorical>
-					</ResponseCurve>
-					<ResponseCurve name="WaterdepthLakes">
-						<type>ranges</type>
-						<layername>"WaterdepthLakes"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth tolerable for the Zebra mossel species in Lakes"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
-						</references>
-						<valuesRanges>
-							<parameter rangemin="0" rangemax="2" HSI="0.287"/>
-							<parameter rangemin="2" rangemax="5" HSI="0.76"/>
-							<parameter rangemin="5" rangemax="10" HSI="0.634"/>
-							<parameter rangemin="10" rangemax="25" HSI="0.205"/>
-							<parameter rangemin="25" rangemax="50" HSI="0.033"/>
-							<parameter rangemin="50" rangemax="999999" HSI="0"/>
-						</valuesRanges>
-					</ResponseCurve>
-					<FormulaBased name="P_chara_extinction">
-						<layername>"P_chara_extinction"</layername>
-						<unit>"-"</unit>
-						<statistic>none</statistic>
-						<description>"Likeliness of presence for the Chara species"</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="M. Haasnoot" year="2014" title="" identification="" journal="">
-								<html></html>
-							</reference>
-						</references>
-						<output>"Probability"</output>
-						<equation>"1/(1+exp(-(0.247702657+deelgebied-1.280411065*diepte_zom+0.06854636*(diepte_zom^2)-0.278693414*diepte_zom*extinctie-0.163078252*extinctie-0.000435184*strijklengte)))"</equation>
-						<Parameters>
-							<valuesConstant dataname = "deelgebied" type = "constant" unit = "-">
-								<parameter constantset ="MBIJ" value="-0.81302272"/>
-								<parameter constantset ="MGZ" value="1.998701637"/>
-								<parameter constantset ="MHE" value="0.724567841"/>
-								<parameter constantset ="MHH" value="1.733868205"/>
-								<parameter constantset ="MHRDz" value="2.214793065"/>
-								<parameter constantset ="MIJ" value="1.45711916"/>
-							</valuesConstant>
-							<valuesScalar dataname = "diepte_zom" type = "scalar" unit = "m" >
-								<parameter min="0" max="3.5"/>
+					<ResponseCurve name="chloride_concentration">
+						<inputLayers>
+							<layer name="chloride_concentration">
+								<parameter_cat>"Salinity"</parameter_cat>
+								<layer_filename>"chloride_concentration"</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>maximum</statistic>
+								<description>"Chloride concentration measured in water in mg per liter"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Tolerable chlorine content for a specific species"</description>
+							<author>"K.E. van de Wolfshaar, M. Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="1" output="1"/>
+								<parameter input="1.1" output="0"/>
+								<parameter input="5" output="0"/>
 							</valuesScalar>
-							<valuesScalar dataname = "extinctie" type = "scalar" unit = "m-1" >
-								<parameter min="0" max="10"/>
-							</valuesScalar>
-							<valuesScalar dataname = "strijklengte" type = "scalar" unit = "m" >
-								<parameter min="0" max="50000"/>
-							</valuesScalar>
-						</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_chloride_concentration">
+								<parameter_cat>"HSI"</parameter_cat>
+								<layer_filename>HSI_chloride_concentration</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on chloride"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="soil_type">
+						<inputLayers>
+							<layer name="soil_type">
+								<parameter_cat>"Waterbed soil"</parameter_cat>
+								<layer_filename>soil_type</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>"Average soil type of waterbed soil in categories"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Average soil type tolerable for the specific species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input= "1"  input_cat="klei" output ="0.466" output_cat=""/>
+								<parameter input= "2" input_cat="leem" output="0.688" output_cat=""/>
+								<parameter input= "3" input_cat="zand" output="0.743" output_cat=""/>
+								<parameter input= "4" input_cat="veen" output="0.074" output_cat=""/>
+								<parameter input= "5" input_cat="stortsteen" output="0.879" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_soil_type">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>"HSI_soil_type"</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on soil type"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="silt_fraction">
+						<inputLayers>
+							<layer name="silt_fraction">
+								<parameter_cat>"Waterbed soil"</parameter_cat>
+								<layer_filename>"silt_fraction"</layer_filename>
+								<unit>"fraction / description"</unit>
+								<statistic>average</statistic>
+								<description>"Average silt content in waterbed soil"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Average silt content tolerable for the specific species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="10" input_cat="slibarm" output="0.753" output_cat=""/>
+								<parameter rangemin_input="10" rangemax_input="25" input_cat="matig slibrijk" output="0.45" output_cat=""/>
+								<parameter rangemin_input="25" rangemax_input="100" input_cat="slibrijk" output="0.103" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_silt_fraction">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_silt_fraction</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on silt fraction"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="waterdepth_lakes">
+						<inputLayers>
+							<layer name="waterdepth_lakes">
+								<parameter_cat>"Waterdepth"</parameter_cat>
+								<layer_filename>"waterdepth_lakes"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>"Waterdepth in lakes in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>ranges</type>
+							<description>"Waterdepth tolerable for the specific species in Lakes in meters"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesRanges>
+								<parameter rangemin_input="0" rangemax_input="2" output="0.287"/>
+								<parameter rangemin_input="2" rangemax_input="5" output="0.76"/>
+								<parameter rangemin_input="5" rangemax_input="10" output="0.634"/>
+								<parameter rangemin_input="10" rangemax_input="25" output="0.205"/>
+								<parameter rangemin_input="25" rangemax_input="50" output="0.033"/>
+								<parameter rangemin_input="50" rangemax_input="999999" output="0"/>
+							</valuesRanges>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_lakes">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_in_lakes</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>HSI based on waterdepth in lakes</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<FormulaBased name="vegetation_extinction">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>categories</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+							<layer name="extinction">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>extinction</layer_filename>
+								<unit>Kd</unit>
+								<statistic>"average"</statistic>
+								<description>"Extinction in the water column in Kd"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
+							</layer>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculation of presence of specific vegetation species based on environmental characteristics among which extinction"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>	
+							</references>
+							<equation>"1/(1+exp(-(0.247702657+subarea-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
+							<Parameters>
+								<valuesConstant layername = "subarea" type="constant">
+									<parameter input = "1" input_cat ="MBIJ" output="81302272"/>
+									<parameter input = "2" input_cat ="MGZ" output="1.998701637"/>
+									<parameter input = "3" input_cat ="MHE" output="0.724567841"/>
+									<parameter input = "4" input_cat ="MHH" output="1.733868205"/>
+									<parameter input = "5" input_cat ="MHRDz" output="2.214793065"/>
+									<parameter input = "6" input_cat ="MIJ" output="1.45711916"/>
+								</valuesConstant>
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+								<valuesScalar layername = "extinction" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+								<valuesScalar layername = "fetch" type="scalar">
+									<parameter min_input="0" max_input="50000"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="P_vegetation">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"P_vegetation"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>average</statistic>
+								<description>"Likeliness of presence for a specific vegetation species"</description>
+							</layer>
+						</outputLayers>
 					</FormulaBased>
+					<MultipleReclassification name="vegetation_types">
+						<inputLayers>
+							<layer name="veg_A">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_A_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type A</description>
+							</layer>
+							<layer name="veg_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_B_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type B</description>
+							</layer>
+							<layer name="chloride_concentration">
+								<parameter_cat>"salinity"</parameter_cat>
+								<layer_filename>"chloride_concentration"</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>average</statistic>
+								<description>Chloride concentration in surface water</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Reclassification of vegetation bank waterlevel boundaries and salinity to vegetation types"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<Parameters>
+								<valuesRangeCategorical layername="veg_A" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="1" output_cat="Scirpetum lacustris"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="2" output_cat="Scripetum tabemaemontani"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="3" output_cat="Kaal slik"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_B" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="4" output_cat="Scirpetum maritimi"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="5" output_cat="Haloscirpetum maritime"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="7" output_cat="Spartinetum townsendii"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="chloride_concentration" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="1" output_cat="Scirpetum lacustris"/>
+									<parameter rangemin_input="200" rangemax_input="3000" input_cat="200 - 3,000" output="2" output_cat="Scripetum tabemaemontani"/>
+									<parameter rangemin_input="3000" rangemax_input="22000" input_cat="3,000 - 22,000" output="3" output_cat="Kaal slik"/>
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="4" output_cat="Scripetum maritimi"/>
+									<parameter rangemin_input="200" rangemax_input="10000" input_cat="200 - 10,000" output="5" output_cat="Haloscirpetum maritime"/>
+									<parameter rangemin_input="8000" rangemax_input="22000" input_cat="8,000 - 22,000" output="6" output_cat="Spartinetum townsendii"/>
+								</valuesRangeCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="vegetation_types">
+								<parameter_cat>"Vegetation"</parameter_cat>						
+								<layer_filename>"vegetation_types"</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>"Vegetation types according to ..."</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="ENG">
 			<text><![CDATA[Test
 	Test]]></text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. " journal="WL | Delft Hydraulics" identification="WL report Q4015"/>
 		<reference author="Van de Wolfshaar, K.E., M. Haasnoot" year="2007" title="Toetsing dosis-effect relaties HABITAT. Pilot voor het Markermeer en de Voordelta." journal="WL | Delft Hydraulics" identification="WL-report Q4327">

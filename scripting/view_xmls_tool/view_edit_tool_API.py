@@ -85,13 +85,17 @@ class API:
 		obj.cur_language = cur_language
 		
 		#replace content information
-		cur_contenttext = [con["description"] for spd in obj.contentdescription if(con["language"] == obj.cur_language)][0]
+		cur_contenttext = [td["description"] for td in obj.topicdescription if(td["language"] == obj.cur_language)][0]
 		obj.textBrowser_2.setText(cur_contenttext)
+		obj.textBrowser_2.setFixedHeight(obj.textBrowser_2.document().size().height() +\
+			obj.textBrowser_2.contentsMargins().top() + obj.textBrowser_2.contentsMargins().bottom())
 
 		#replace system information
 		cur_systemtext = [syd["description"] for syd in obj.systemdescription if(syd["language"] == obj.cur_language)][0]
 		obj.system_textBrowser.setText(cur_systemtext)
-
+		obj.system_textBrowser.setFixedHeight(obj.system_textBrowser.document().size().height() +\
+			obj.system_textBrowser.contentsMargins().top() + obj.system_textBrowser.contentsMargins().bottom())
+		
 		return()
 
 	def refresh_flowdiagram(self, obj, xml_obj, modeltypename, systemname, override):
@@ -168,7 +172,7 @@ class API:
 		obj.comboBox_3.clear() 
 
 		#retrieve data
-		obj.contentdescription = AutXML._read_contentdescription()
+		obj.topicdescription = AutXML._read_topicdescription()
 
 		#place topic name
 		obj.textBrowser.setText(obj.topic_name)
@@ -185,7 +189,7 @@ class API:
 
 		#place content information
 		print(obj.cur_language)
-		cur_contenttext = [con["description"] for con in obj.contentdescription if(con["language"] == obj.cur_language)][0]
+		cur_contenttext = [td["description"] for td in obj.topicdescription if(td["language"] == obj.cur_language)][0]
 		obj.textBrowser_2.setText(cur_contenttext)
 		obj.textBrowser_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 		obj.textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -412,7 +416,7 @@ class API:
 			kr_textBrowser_1 = QtWidgets.QTextBrowser()
 			kr_textBrowser_1.setReadOnly(True)
 			kr_textBrowser_1.setObjectName('kr_stattext_%i' % i)
-			kr_textBrowser_1.setText(xml_obj.knowledgeRulesStatistics[i])
+			kr_textBrowser_1.setText(xml_obj.knowledgeRulesOutputStatistics[i][0])
 			kr_textBrowser_1.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 			kr_textBrowser_1.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 			kr_textBrowser_1.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -431,7 +435,7 @@ class API:
 			kr_textBrowser_2 = QtWidgets.QTextBrowser()
 			kr_textBrowser_2.setReadOnly(True)
 			kr_textBrowser_2.setObjectName('kr_unittext_%i' % i)
-			kr_textBrowser_2.setText(xml_obj.knowledgeRulesUnits[i])
+			kr_textBrowser_2.setText(xml_obj.knowledgeRulesOutputUnits[i][0])
 			kr_textBrowser_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 			kr_textBrowser_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
 			kr_textBrowser_2.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)

@@ -7,7 +7,7 @@ xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes
 xmltest._readxml()
 print(type(xmltest.xmlroot))
 xmltest._scan()
-testext = xmltest._read_speciesdescription()
+testext = xmltest._read_topicdescription()
 print(type(testext))
 xmltest._scan_modeltype("HSI")
 xmltest._scan_knowledgerules(modeltypename = "HSI", systemname = "ijsselmeergebied_doorzicht")
@@ -30,8 +30,10 @@ fb_list = {'doorzicht' : [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]}
 fb_settings, fb_list = xmltest.make_fb_first_parametersettings(fb_data)
 fb_result = xmltest.calculate_fb(fb_data, fb_settings, variableparameter = fb_list)
 
+fb_result
+
 fig, axes = xmltest.visualize_fb_static(fb_data, fb_result)
 frame = xmltest.visualize_fb_dynamic(fb_data,fb_result)
-xmltest.show_interactive_plot(frame)
+xmltest.show_PyQt_plot(frame)
 
 

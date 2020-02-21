@@ -14,7 +14,7 @@
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
 			</element>
-			<element name="ContentDescription" type="AutXML:CDComplexType" minOccurs="0">
+			<element name="TopicDescription" type="AutXML:CDComplexType" minOccurs="0">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
@@ -39,6 +39,11 @@
 				</annotation>
 			</element>
 			<element name="WFDindicator" type="AutXML:WFDIComplexType">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="Habitats" type="AutXML:HabitatsComplexType">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
@@ -72,6 +77,15 @@
 		</sequence>
 	</complexType>
 	<complexType name="WFDIComplexType">
+		<sequence>
+			<element name="CommonNames" type="AutXML:CommonNamesComplexType">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="HabitatsComplexType">
 		<sequence>
 			<element name="CommonNames" type="AutXML:CommonNamesComplexType">
 				<annotation>
@@ -197,42 +211,71 @@
 						<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 					</annotation>
 				</element>
+				<element name="MultipleReclassification" type="AutXML:MultipleReclassificationComplexType" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+					</annotation>
+				</element>
 			</choice>
 		</sequence>
 	</complexType>
 	<complexType name="ResponseCurveComplexType">
 		<sequence>
-			<element name="type" type="AutXML:TypeSingleType" minOccurs="1" maxOccurs="1"/>
-			<element name="layername" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="unit" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="statistic" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="description" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="author" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="date" type="AutXML:dateType" minOccurs="1" maxOccurs="1"/>
-			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="1" maxOccurs="1"/>
-			<choice>
-				<element name="valuesScalar" type="AutXML:RCValuesScalarComplexType" minOccurs="1" maxOccurs="1"/>
-				<element name="valuesCategorical" type="AutXML:RCValuesCategoricalComplexType" minOccurs="1" maxOccurs="1"/>
-				<element name="valuesRangeCategorical" type="AutXML:RCValuesRangeCategoricalComplexType" minOccurs="1" maxOccurs="1"/>
-				<element name="valuesRanges" type="AutXML:RCValuesRangesComplexType" minOccurs="1" maxOccurs="1"/>
-			</choice>
+			<element name="inputLayers" type="AutXML:inputLayersSingleComplexType"/>
+			<element name="Content" type="AutXML:ResponseCurveContentComplexType"/>
+			<element name="outputLayers" type="AutXML:outputLayersSingleComplexType"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
 	</complexType>
 	<complexType name="FormulaBasedComplexType">
 		<sequence>
-			<element name="layername" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="unit" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="statistic" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="description" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="author" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="date" type="AutXML:dateType" minOccurs="1" maxOccurs="1"/>
-			<element name="references" type="AutXML:ReferencesComplexType" minOccurs="1" maxOccurs="1"/>
-			<element name="output" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="equation" type="string" minOccurs="1" maxOccurs="1"/>
-			<element name="Parameters" type="AutXML:FBParametersComplexType" minOccurs="1" maxOccurs="1"/>
+			<element name="inputLayers" type="AutXML:inputLayersMultipleComplexType"/>
+			<element name="Content" type="AutXML:FormulaBasedContentComplexType"/>
+			<element name="outputLayers" type="AutXML:outputLayersSingleComplexType"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	<complexType name="MultipleReclassificationComplexType">
+		<sequence>
+			<element name="inputLayers" type="AutXML:inputLayersMultipleComplexType"/>
+			<element name="Content" type="AutXML:MultipleReclassificationContentComplexType"/>
+			<element name="outputLayers" type="AutXML:outputLayersSingleComplexType"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+	</complexType>
+	<complexType name="ResponseCurveContentComplexType">
+		<sequence>
+			<element name="type" type="AutXML:TypeSingleType"/>
+			<element name="description" type="string"/>
+			<element name="author" type="string"/>
+			<element name="date" type="AutXML:dateType"/>
+			<element name="references" type="AutXML:ReferencesComplexType"/>
+			<choice>
+				<element name="valuesScalar" type="AutXML:RCValuesScalarComplexType"/>
+				<element name="valuesCategorical" type="AutXML:RCValuesCategoricalComplexType"/>
+				<element name="valuesRangeCategorical" type="AutXML:RCValuesRangeCategoricalComplexType"/>
+				<element name="valuesRanges" type="AutXML:RCValuesRangesComplexType"/>
+			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="FormulaBasedContentComplexType">
+		<sequence>
+			<element name="description" type="string"/>
+			<element name="author" type="string"/>
+			<element name="date" type="AutXML:dateType"/>
+			<element name="references" type="AutXML:ReferencesComplexType"/>
+			<element name="equation" type="string"/>
+			<element name="Parameters" type="AutXML:FBParametersComplexType"/>
+		</sequence>
+	</complexType>
+	<complexType name="MultipleReclassificationContentComplexType">
+		<sequence>
+			<element name="description" type="string"/>
+			<element name="author" type="string"/>
+			<element name="date" type="AutXML:dateType"/>
+			<element name="references" type="AutXML:ReferencesComplexType"/>
+			<element name="Parameters" type="AutXML:MRParametersComplexType"/>
+		</sequence>
 	</complexType>
 	<complexType name="ReferencesComplexType">
 		<sequence>
@@ -243,6 +286,11 @@
 		<sequence>
 			<element name="valuesConstant" type="AutXML:FBConstantValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="valuesScalar" type="AutXML:FBScalarValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="MRParametersComplexType">
+		<sequence>
+			<element name="valuesRangeCategorical" type="AutXML:MRValuesRangeCategoricalComplexType" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
 	<complexType name="RCValuesScalarComplexType">
@@ -269,44 +317,78 @@
 		<sequence>
 			<element name="parameter" type="AutXML:ParameterConstantFBComplexType" maxOccurs="unbounded"/>
 		</sequence>
-		<attribute name="dataname" type="string" use="required"/>
+		<attribute name="layername" type="string" use="required"/>
 		<attribute name="type" type="string" use="required" fixed="constant"/>
-		<attribute name="unit" type="string" use="required"/>
 	</complexType>
 	<complexType name="FBScalarValuesComplexType">
 		<sequence>
 			<element name="parameter" type="AutXML:ParameterScalarFBComplexType" maxOccurs="unbounded"/>
 		</sequence>
-		<attribute name="dataname" type="string" use="required"/>
+		<attribute name="layername" type="string" use="required"/>
 		<attribute name="type" type="string" use="required" fixed="scalar"/>
-		<attribute name="unit" type="string" use="required"/>
+	</complexType>
+	<complexType name="MRValuesRangeCategoricalComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterRangeCategoricalRCComplexType" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="layername" type="string" use="required"/>
+		<attribute name="type" type="string" use="required" fixed="range / categorical"/>
 	</complexType>
 	<complexType name="ParameterConstantFBComplexType">
-		<attribute name="constantset" type="string" use="required"/>
-		<attribute name="value" type="string" use="required"/>
+		<attribute name="input" type="string" use="required"/>
+		<attribute name="input_cat" type="string" use="required"/>
+		<attribute name="output" type="string" use="required"/>
 	</complexType>
 	<complexType name="ParameterScalarFBComplexType">
-		<attribute name="min" type="string" use="required"/>
-		<attribute name="max" type="string" use="required"/>
+		<attribute name="min_input" type="string" use="required"/>
+		<attribute name="max_input" type="string" use="required"/>
 	</complexType>
 	<complexType name="ParameterScalarRCComplexType">
-		<attribute name="value" type="string" use="required"/>
-		<attribute name="HSI" type="string" use="required"/>
+		<attribute name="input" type="string" use="required"/>
+		<attribute name="output" type="string" use="required"/>
 	</complexType>
 	<complexType name="ParameterCategoricalRCComplexType">
-		<attribute name="cat" type="string" use="required"/>
-		<attribute name="HSI" type="string" use="required"/>
+		<attribute name="input" type="string" use="required"/>
+		<attribute name="input_cat" type="string" use="required"/>
+		<attribute name="output" type="string" use="required"/>
+		<attribute name="output_cat" type="string" use="required"/>
 	</complexType>
 	<complexType name="ParameterRangeCategoricalRCComplexType">
-		<attribute name="rangemin" type="string" use="required"/>
-		<attribute name="rangemax" type="string" use="required"/>
-		<attribute name="cat" type="string" use="required"/>
-		<attribute name="HSI" type="string" use="required"/>
+		<attribute name="rangemin_input" type="string" use="required"/>
+		<attribute name="rangemax_input" type="string" use="required"/>
+		<attribute name="input_cat" type="string" use="required"/>
+		<attribute name="output" type="string" use="required"/>
+		<attribute name="output_cat" type="string" use="required"/>
 	</complexType>
 	<complexType name="ParameterRangesRCComplexType">
-		<attribute name="rangemin" type="string" use="required"/>
-		<attribute name="rangemax" type="string" use="required"/>
-		<attribute name="HSI" type="string" use="required"/>
+		<attribute name="rangemin_input" type="string" use="required"/>
+		<attribute name="rangemax_input" type="string" use="required"/>
+		<attribute name="output" type="string" use="required"/>
+	</complexType>
+	<complexType name="inputLayersSingleComplexType">
+		<sequence>
+			<element name="layer" type="AutXML:layerComplexType"/>
+		</sequence>
+	</complexType>
+	<complexType name="inputLayersMultipleComplexType">
+		<sequence>
+			<element name="layer" type="AutXML:layerComplexType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="outputLayersSingleComplexType">
+		<sequence>
+			<element name="layer" type="AutXML:layerComplexType"/>
+		</sequence>
+	</complexType>
+	<complexType name="layerComplexType">
+		<sequence>
+			<element name="parameter_cat" type="string"/>
+			<element name="layer_filename" type="string"/>
+			<element name="unit" type="string"/>
+			<element name="statistic" type="string"/>
+			<element name="description" type="string"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
 	</complexType>
 	<complexType name="CDComplexType">
 		<sequence>

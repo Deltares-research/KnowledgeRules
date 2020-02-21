@@ -149,7 +149,7 @@ class AutecologyXML(_File):
 		self.XMLlayers["layer1_2_1_1_4"] = "KnowledgeRules"
 #		self.XMLlayers["layer1_3"] = "FysicalCharacteristics"			#Not implemented (yet?)
 #		self.XMLlayers["layer1_4"] = "Traits"				            #Not implemented (yet?)
-		self.XMLlayers["layer1_5"] = "ContentDescription"
+		self.XMLlayers["layer1_5"] = "TopicDescription"
 		self.XMLlayers["layer1_6"] = "Documentation"
 		self.XMLlayers["layer1_7"] = "DataSources"
 
@@ -160,7 +160,7 @@ class AutecologyXML(_File):
 		modeltype_layers = ["layer1_2_alt1","layer1_2_1"]
 		self.modeltype_path = self.make_find([self.XMLlayers[x] for x in modeltype_layers])
 		self.system_path = self.make_find([self.XMLlayers["layer1_2_1_1"]])
-		self.contentdescription_path = self.make_find([self.XMLlayers["layer1_5"]])
+		self.topicdescription_path = self.make_find([self.XMLlayers["layer1_5"]])
 		self.systemscope_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_1"]])
 		self.systemdescription_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_2"]])
 		self.systemflowdiagram_path_spec = self.make_find([self.XMLlayers["layer1_2_1_1_3"]])
@@ -176,6 +176,8 @@ class AutecologyXML(_File):
 		self.XMLconvention["rckey"] = "name"
 		self.XMLconvention["fb"] = "FormulaBased"
 		self.XMLconvention["fbkey"] = "name"
+		self.XMLconvention["mr"] = "MultipleReclassification"
+		self.XMLconvention["mrkey"] = "name"
 		self.XMLconvention["-Infvalue"] = -999999.0
 		self.XMLconvention["Infvalue"] = 999999.0
 		self.XMLconvention["EoL_ID"] = "EoLpagenr"
@@ -185,7 +187,8 @@ class AutecologyXML(_File):
 		self.XMLconvention["rc_dict_datatable"] = "rule"
 		self.XMLconvention["fb_result"] = "result_calculation"
 
-		self.XMLconvention["allowed_knowledgeRulesNames"] = [self.XMLconvention["rc"],self.XMLconvention["fb"]]
+		self.XMLconvention["allowed_knowledgeRulesNames"] = [self.XMLconvention["rc"],self.XMLconvention["fb"],\
+															self.XMLconvention["mr"]]
 
 
 		#External specifics
@@ -196,21 +199,44 @@ class AutecologyXML(_File):
 		if((self.fullname is not None) and (self.name_ext == "xml")):
 			self._readxml()
 
+
+	def prettyPrint(self, someRootNode):
+		#Pretty printing with Tabs (as in XMLSpy)
+		#https://stackoverflow.com/questions/44164300/change-tab-spacing-in-python-lxml-prettyprint
+		lines = ET.tostring(someRootNode, encoding="utf-8", pretty_print=True).decode("utf-8").split("\n")
+		for i in range(len(lines)):
+			line = lines[i]
+			outLine = ""
+			for j in range(0, len(line), 2):
+				if line[j:j + 2] == "  ":
+					outLine += "\t"
+				else:
+					outLine += line[j:]
+					break
+			lines[i] = outLine
+		return("\n".join(lines))
+
+
 	def _readxml(self):
-		self.xmlparse = ET.parse(self.fullname)
+		parser = ET.XMLParser(remove_blank_text=True)
+		self.xmlparse = ET.parse(self.fullname, parser)
 		self.xmlroot = self.xmlparse.getroot()
 		
 		self.namespaces = dict([
-	    	node for _, node in ET.iterparse(
-	        	self.fullname, events=['start-ns'])])
+			node for _, node in ET.iterparse(
+				self.fullname, events=['start-ns'])])
 		for k,v in self.namespaces.copy().items():
 			if k == '':
 				self.namespaces[self.xmlns] = v
 		return()
 
 	def _writexml(self,filename):
-		xmltext = ET.ElementTree(self.xmlroot)
-		xmltext.write(filename)
+		#xmltext = ET.ElementTree(self.xmlroot)
+		f = open(filename, 'w', encoding = 'utf-8')
+		xmltext = self.prettyPrint(self.xmlroot)
+		f.write(xmltext)
+		f.close
+		
 		return()
 
 	def check_xml_present(self):
@@ -283,8 +309,8 @@ class AutecologyXML(_File):
 		topic_elements = [topic for topic in type_tag_topic]
 		return(topic_elements)
 
-	def get_element_contentdescription(self):
-		type_tag_cd = self.xmlroot.find(self.contentdescription_path)
+	def get_element_topicdescription(self):
+		type_tag_cd = self.xmlroot.find(self.topicdescription_path)
 		return(type_tag_cd)
 
 	def get_element_modeltypes(self):
@@ -360,38 +386,79 @@ class AutecologyXML(_File):
 		type_tag_fb = type_tag_fb_list[0]
 		return(type_tag_fb)
 
+	def get_element_multiple_reclassification(self, modeltypename, systemname, mrname):
+		type_tag_krs = self.get_element_knowledgerules(modeltypename, systemname)
+		type_tag_mrs = type_tag_krs.findall(self.make_find([self.XMLconvention["mr"]]))
+		type_tag_mr_list = self.find_element_by_name(type_tag_mrs,\
+							self.XMLconvention["mrkey"],mrname)
+		self.check_element_numbers(type_tag_mr_list, expected = 1, operator = "eq")
+		type_tag_mr = type_tag_mr_list[0]
+		return(type_tag_mr)
+
+	def get_data_layer(self,layer_element):
+
+		layer_dict = {}
+		layer_dict["layername"] = layer_element.get('name').replace('"','')
+		layer_dict["parameter_cat"] = layer_element.find(self.make_find(['parameter_cat'])).text.replace('"','')
+		layer_dict["layer_filename"] = layer_element.find(self.make_find(['layer_filename'])).text.replace('"','')
+		layer_dict["unit"] = layer_element.find(self.make_find(['unit'])).text.replace('"','')
+		layer_dict["statistic"] = layer_element.find(self.make_find(['statistic'])).text.replace('"','')
+		layer_dict["description"] = layer_element.find(self.make_find(['description'])).text.replace('"','')
+
+		return(layer_dict)
+
+	def get_data_layers(self,sp_kr_element,element_find):
+		layers = OrderedDict()	
+		for input_layer in sp_kr_element.findall(element_find):
+			layer_dict = self.get_data_layer(input_layer)
+			layers[layer_dict["layername"]] = layer_dict
+
+		return(layers)
+
 	def get_data_response_curve_data(self, rc_element):
-		rule_dict = {}
+
+		rule_dict = {}		
+		
+		#give details
 		rule_dict["name"] = rc_element.get('name')
 		rule_dict["KnowledgeruleCategorie"] = self.XMLconvention["rc"]
-		rule_dict["type"] = rc_element.find(self.make_find(['type'])).text
-		rule_dict["layername"] = rc_element.find(self.make_find(['layername'])).text
-		rule_dict["unit"] = rc_element.find(self.make_find(['unit'])).text
-		rule_dict["statistic"] = rc_element.find(self.make_find(['statistic'])).text
+		
+		#get input layers
+		find_inputLayers = self.make_find(["inputLayers","layer"])
+		rule_dict["inputLayers"] = self.get_data_layers(rc_element, find_inputLayers) 
 
+		#get output layers
+		find_outputLayers = self.make_find(["outputLayers","layer"])
+		rule_dict["outputLayers"] = self.get_data_layers(rc_element, find_outputLayers) 
+
+		#get content
+		rule_dict["type"] = rc_element.find(self.make_find(['Content','type'])).text
 		parameter_list = []
 		if(rule_dict["type"] == "scalar"):
-			find_scalar = self.make_find(["valuesScalar","parameter"])
+			find_scalar = self.make_find(["Content","valuesScalar","parameter"])
 			column_names = rc_element.findall(find_scalar)[0].keys()
 			for parameter in rc_element.findall(find_scalar):
-				parameter_list.append([float(parameter.get("value")),float(parameter.get("HSI"))])
+				parameter_list.append([float(parameter.get("input")),float(parameter.get("output"))])
 		elif(rule_dict["type"] == "categorical"):
-			find_categorical = self.make_find(["valuesCategorical","parameter"])
+			find_categorical = self.make_find(["Content","valuesCategorical","parameter"])
 			column_names = rc_element.findall(find_categorical)[0].keys()
 			for parameter in rc_element.findall(find_categorical):
-				parameter_list.append([str(parameter.get("cat")),float(parameter.get("HSI"))])
+				parameter_list.append([int(parameter.get("input")),str(parameter.get("input_cat")),\
+					float(parameter.get("output")),str(parameter.get("output_cat"))])
 		elif(rule_dict["type"] == "ranges"):
-			find_ranges = self.make_find(["valuesRanges","parameter"])
+			find_ranges = self.make_find(["Content","valuesRanges","parameter"])
 			column_names = rc_element.findall(find_ranges)[0].keys()
 			for parameter in rc_element.findall(find_ranges):
-				parameter_list.append([float(parameter.get("rangemin")),float(parameter.get("rangemax")),float(parameter.get("HSI"))])
+				parameter_list.append([float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),\
+					float(parameter.get("output"))])
 		elif(rule_dict["type"] == "range / categorical"):
-			find_rangecategorical = self.make_find(["valuesRangeCategorical","parameter"])
+			find_rangecategorical = self.make_find(["Content","valuesRangeCategorical","parameter"])
 			column_names = rc_element.findall(find_rangecategorical)[0].keys()
 			for parameter in rc_element.findall(find_rangecategorical):
-				parameter_list.append([float(parameter.get("rangemin")),float(parameter.get("rangemax")),str(parameter.get("cat")),float(parameter.get("HSI"))])
+				parameter_list.append([float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),\
+					str(parameter.get("input_cat")),float(parameter.get("output")),str(parameter.get("output_cat"))])
 		else:
-			raise RuntimeError("type "+ rule_dict["type"] + " is not available.")
+			raise RuntimeError("type "+ rule_dict["type"] + " is not available in " + self.XMLconvention["rc"] +".")
 
 		rule_dict["rule"] = pandas.DataFrame(parameter_list, columns = column_names)
 		return(rule_dict)
@@ -400,36 +467,94 @@ class AutecologyXML(_File):
 		ToFormula = Interpreter()
 
 		rule_dict = {}
+
+		#give details
 		rule_dict["name"] = fb_element.get('name').replace('"','')
 		rule_dict["KnowledgeruleCategorie"] = self.XMLconvention["fb"]
-		# rule_dict["type"] = rc_element.find('type').text
-		rule_dict["layername"] = fb_element.find(self.make_find(['layername'])).text.replace('"','')
-		rule_dict["unit"] = fb_element.find(self.make_find(['unit'])).text.replace('"','')
-		rule_dict["statistic"] = fb_element.find(self.make_find(['statistic'])).text.replace('"','')
-		rule_dict["output"] = fb_element.find(self.make_find(['output'])).text.replace('"','')
-		rule_dict["equation_text"] = fb_element.find(self.make_find(['equation'])).text.replace('"','').replace('^','**')
-		# rule_dict["equation"] = ToFormula(rule_dict["equation_text"])
+		
+		#get input layers
+		find_inputLayers = self.make_find(["inputLayers","layer"])
+		rule_dict["inputLayers"] = self.get_data_layers(fb_element, find_inputLayers) 
 
+		#get output layers
+		find_outputLayers = self.make_find(["outputLayers","layer"])
+		rule_dict["outputLayers"] = self.get_data_layers(fb_element, find_outputLayers) 
+
+		#get content
+		rule_dict["equation_text"] = fb_element.find(self.make_find(['Content','equation'])).text.replace('"','').replace('^','**')
+		
 		rule_dict["parameters"] = [] 
-		#Get the number of values under Parameteers
-		fb_values_tags = fb_element.findall(self.make_find(["Parameters","valuesScalar"])) + \
-						fb_element.findall(self.make_find(["Parameters","valuesConstant"])) 
+		#Get the number of values under Parameters
+		fb_values_tags = fb_element.findall(self.make_find(["Content","Parameters","valuesScalar"])) + \
+						fb_element.findall(self.make_find(["Content","Parameters","valuesConstant"])) 
 		for values in fb_values_tags:
 			parameter_dict = {}
-			parameter_dict["dataname"] = values.get("dataname")
+			parameter_dict["layername"] = values.get("layername")
 			parameter_dict["type"] = values.get("type")
-			parameter_dict["unit"] = values.get("unit")
+
+			if(not(parameter_dict["layername"] in rule_dict["inputLayers"])):
+				raise RuntimeError("Used layer "+ str(parameter_dict["layername"]) + " in "+ self.XMLconvention["fb"] +" "+\
+					  str(rule_dict["name"]) + "is not in inputlayers.")
+
+			parameter_dict["unit"] = rule_dict["inputLayers"][parameter_dict["layername"]]["unit"]
 
 			#Get data per Values, assess the type and store it.
 			parameter_list = []
 			if(parameter_dict["type"] == "constant"):
 				for parameter in values.findall(self.make_find(["parameter"])):
-					parameter_list.append([str(parameter.get("constantset")), float(parameter.get("value"))])
+					parameter_list.append([int(parameter.get("input")),str(parameter.get("input_cat")), float(parameter.get("output"))])
 			elif(parameter_dict["type"] == "scalar"):
 				for parameter in values.findall(self.make_find(["parameter"])):
-					parameter_list.append([float(parameter.get("min")), float(parameter.get("max"))])
+					parameter_list.append([float(parameter.get("min_input")), float(parameter.get("max_input"))])
 			else:
-				raise RuntimeError("type "+ parameter_dict["type"] + " is not available.")
+				raise RuntimeError("type "+ parameter_dict["type"] + " is not available in " + self.XMLconvention["fb"] +".")
+
+			column_names = values.findall(self.make_find(["parameter"]))[0].keys()
+			parameter_dict["data"] = pandas.DataFrame(parameter_list, columns = column_names)
+			rule_dict["parameters"].append(parameter_dict)
+
+		return(rule_dict)
+
+	def get_data_multiple_reclassification_data(self, mr_element):
+		ToFormula = Interpreter()
+
+		rule_dict = {}
+
+		#give details
+		rule_dict["name"] = mr_element.get('name').replace('"','')
+		rule_dict["KnowledgeruleCategorie"] = self.XMLconvention["fb"]
+		
+		#get input layers
+		find_inputLayers = self.make_find(["inputLayers","layer"])
+		rule_dict["inputLayers"] = self.get_data_layers(mr_element, find_inputLayers) 
+
+		#get output layers
+		find_outputLayers = self.make_find(["outputLayers","layer"])
+		rule_dict["outputLayers"] = self.get_data_layers(mr_element, find_outputLayers) 
+
+		#get content
+		rule_dict["parameters"] = [] 
+		#Get the number of values under Parameters
+		mr_values_tags = mr_element.findall(self.make_find(["Content","Parameters","valuesRangeCategorical"]))
+		for values in mr_values_tags:
+			parameter_dict = {}
+			parameter_dict["layername"] = values.get("layername")
+			parameter_dict["type"] = "range / categorical"
+
+			if(not(parameter_dict["layername"] in rule_dict["inputLayers"])):
+				raise RuntimeError("Used layer "+ str(parameter_dict["layername"]) + " in " + self.XMLconvention["fb"] + " " +\
+					  str(rule_dict["name"]) + " is not in inputlayers.")
+
+			parameter_dict["unit"] = rule_dict["inputLayers"][parameter_dict["layername"]]["unit"]
+
+			#Get data per Values, assess the type and store it.
+			parameter_list = []
+			if(parameter_dict["type"] == "range / categorical"):
+				for parameter in values.findall(self.make_find(["parameter"])):
+					parameter_list.append([float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),str(parameter.get("input_cat")),\
+						float(parameter.get("output")),str(parameter.get("output_cat"))])
+			else:
+				raise RuntimeError("type "+ parameter_dict["type"] + " is not available in "+ self.XMLconvention["mr"] +".")
 
 			column_names = values.findall(self.make_find(["parameter"]))[0].keys()
 			parameter_dict["data"] = pandas.DataFrame(parameter_list, columns = column_names)
@@ -438,25 +563,26 @@ class AutecologyXML(_File):
 		return(rule_dict)
 
 
+
 	def make_fb_first_parametersettings(self, fb_data):
 		parametersettings = {}
 		for i, var in enumerate(fb_data["parameters"]):
 			if(var["type"] == "scalar"):
-				min_var = var["data"]["min"].iloc[0]
+				min_var = var["data"]["min_input"].iloc[0]
 				if(i == 0):
-					max_var = var["data"]["max"].iloc[0]
+					max_var = var["data"]["max_input"].iloc[0]
 					stepsize = (max_var-min_var)/10
-					variableparameter = {var["dataname"] : list(np.arange(min_var,max_var,stepsize))}
+					variableparameter = {var["layername"] : list(np.arange(min_var,max_var,stepsize))}
 				
-				parametersettings[var["dataname"]] = min_var
+				parametersettings[var["layername"]] = min_var
 
 			elif(var["type"] == "constant"):
-				first_convar_value = var["data"]["value"].iloc[0]
+				first_convar_value = var["data"]["output"].iloc[0]
 				if(i == 0):
-					convar_value = var["data"]["value"].tolist()						
-					variableparameter = {var["dataname"] : convar_value}
+					convar_value = var["data"]["output"].tolist()						
+					variableparameter = {var["layername"] : convar_value}
 
-				parametersettings[var["dataname"]] = first_convar_value
+				parametersettings[var["layername"]] = first_convar_value
 
 			else:
 				raise ValueError(" type of knowledge rule is not enabled :" + str(var["type"]))
@@ -471,7 +597,7 @@ class AutecologyXML(_File):
 		ToFormula = Interpreter()
 		
 		#check if parametersettings is complete
-		fb_data_names = [value["dataname"] for value in fb_data["parameters"]]
+		fb_data_names = [value["layername"] for value in fb_data["parameters"]]
 		
 		if(not(variableparameter == None)):
 			if(len(list(variableparameter.keys())) == 1):
@@ -550,7 +676,7 @@ class AutecologyXML(_File):
 		variable = pset[variable_key]
 		pset.pop(variable_key, None)
 
-		[variable_dict] = [value for value in fb_data["parameters"] if(value["dataname"] == variable_key)]
+		[variable_dict] = [value for value in fb_data["parameters"] if(value["layername"] == variable_key)]
 
 		return(result, variable, variable_dict)
 
@@ -644,6 +770,8 @@ class AutecologyXML(_File):
 				rule_dict = self.get_data_response_curve_data(child)
 			elif(self.knowledgeRulesCategorie[nr] == self.XMLconvention["fb"]):
 				rule_dict = self.get_data_formula_based_data(child)
+			elif(self.knowledgeRulesCategorie[nr] == self.XMLconvention["mr"]):
+				rule_dict = self.get_data_multiple_reclassification_data(child)
 			else:
 				raise RuntimeError("type '" + str(self.knowledgeRulesCategorie[nr]) + "' not available in methods for data extraction.")
 			rule_overview["rules"][child.get('name')] = rule_dict
@@ -651,8 +779,13 @@ class AutecologyXML(_File):
 		#Store data		
 		self.knowledgeRulesDict = rule_overview
 		self.knowledgeRulesNames = [value["name"].replace('"','') for key, value in self.knowledgeRulesDict["rules"].items()]
-		self.knowledgeRulesStatistics = [value["statistic"].replace('"','') for key, value in self.knowledgeRulesDict["rules"].items()]
-		self.knowledgeRulesUnits = [value["unit"].replace('"','') for key, value in self.knowledgeRulesDict["rules"].items()]
+		
+		self.knowledgeRulesInputLayernames = [[key2 for key2, layer in value["inputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
+		self.knowledgeRulesInputStatistics = [[layer["statistic"] for key2, layer in value["inputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
+		self.knowledgeRulesInputUnits = [[layer["unit"] for key2, layer in value["inputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
+		self.knowledgeRulesOutputLayernames = [[key2 for key2, layer in value["outputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
+		self.knowledgeRulesOutputStatistics = [[layer["statistic"] for key2, layer in value["outputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
+		self.knowledgeRulesOutputUnits = [[layer["unit"] for key2, layer in value["outputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
 
 		return()
 
@@ -675,13 +808,13 @@ class AutecologyXML(_File):
 
 		return()
 
-	def _read_contentdescription(self):
+	def _read_topicdescription(self):
 		con_overview = [{"language" : con.get("language"), "description" : con.find(self.make_find(["text"])).text}\
-										 for con in self.get_element_contentdescription()]
+										 for con in self.get_element_topicdescription()]
 		return(con_overview)
 
-	def _write_contentdescription(self, language, text):
-		con_specific = [con for con in self.get_element_contentdescription() if(con.get("language") == language)]
+	def _write_topicdescription(self, language, text):
+		con_specific = [con for con in self.get_element_topicdescription() if(con.get("language") == language)]
 		con_specific[0].find(self.make_find(["text"])).text = text
 		return() 
 
@@ -760,40 +893,59 @@ class AutecologyXML(_File):
 
 		#collect the data
 		data = rc_data["rule"]
-		x_label = rc_data["name"] + " ("+ rc_data["unit"] +")"
-		if(rc_data["type"] == "scalar" or rc_data["type"] == "categorical"):
-			y_cname = data.columns[1]
-			x_cname = data.columns[0]
+		input_layer = list(rc_data["inputLayers"].items())[0][1] 
+		output_layer = list(rc_data["outputLayers"].items())[0][1]
 
-			x_data = data[x_cname].to_numpy()
+		x_label = input_layer["layername"] +" (" + input_layer["unit"] + ")"
+		y_label = output_layer["layername"] +" (" + output_layer["unit"] + ")"
+		title = rc_data["name"]
+
+		if(rc_data["type"] == "scalar"):
+			x_cname_value = data.columns[0]
+			y_cname_value = data.columns[1]
+			
+			x_data = data[x_cname_value].to_numpy()
+			y_data = data[y_cname_value].to_numpy()
 		
-		elif(rc_data["type"] == "ranges"):
-			minr_cname = data.columns[0]
-			maxr_cname = data.columns[1]
-			y_cname = data.columns[2]
+		
+		elif(rc_data["type"] == "categorical"):
+			x_cname_value = data.columns[0]
+			x_cname_cat = data.columns[1]
+			y_cname_value = data.columns[2]
+			y_cname_cat = data.columns[3]
 
-			min_range_data = data[minr_cname].to_numpy()
-			max_range_data = data[maxr_cname].to_numpy()
+			x_data = data[x_cname_cat].to_numpy()
+			y_data = data[y_cname_value].to_numpy()
+
+		elif(rc_data["type"] == "ranges"):
+			x_minr_cname = data.columns[0]
+			x_maxr_cname = data.columns[1]
+			y_cname_value = data.columns[2]
+
+			min_range_data = data[x_minr_cname].to_numpy()
+			max_range_data = data[x_maxr_cname].to_numpy()
 
 			min_range_data = np.where(min_range_data == self.XMLconvention["-Infvalue"], "-Inf", min_range_data)
 			max_range_data = np.where(max_range_data == self.XMLconvention["Infvalue"], "Inf", max_range_data) 
 
 			x_data = np.asarray([str(a) + " - " + str(b) for a,b in zip(min_range_data,max_range_data)])
+			y_data = data[y_cname_value].to_numpy()
 
 		elif(rc_data["type"] == "range / categorical"):
-			minr_cname = data.columns[0]
-			maxr_cname = data.columns[1]
-			y_cname = data.columns[3]
-			x_cname = data.columns[2]
-			
-			min_range_data = data[minr_cname].to_numpy()
-			max_range_data = data[maxr_cname].to_numpy()
-			x_data = data[x_cname].to_numpy()
+			x_minr_cname = data.columns[0]
+			x_maxr_cname = data.columns[1]
+			x_cname_cat = data.columns[2]
+			y_cname_value = data.columns[3]
+			y_cname_cat = data.columns[4]
+
+			min_range_data = data[x_minr_cname].to_numpy()
+			max_range_data = data[x_maxr_cname].to_numpy()
+			x_data = data[x_cname_cat].to_numpy()
+			y_data = data[y_cname_value].to_numpy()
 		
 		else:
 			raise RuntimeError("type '" + rc_data["type"] + "' not available.")
 
-		y_data = data[y_cname].to_numpy()
 		offset_y = (np.max(y_data) - np.min(y_data)) / 10
 		
 		#Set up a canvas
@@ -812,7 +964,7 @@ class AutecologyXML(_File):
 			y_data = np.append(y_data,y_data[-1])
 
 			axes.plot(x_data,y_data,'-',lw=2)
-			axes.set_xlim(np.min(data[x_cname].to_numpy()) - offset_x, np.max(data[x_cname].to_numpy()) + offset_x)
+			axes.set_xlim(np.min(data[x_cname_value].to_numpy()) - offset_x, np.max(data[x_cname_value].to_numpy()) + offset_x)
 		
 		elif((rc_data["type"] == "categorical") or (rc_data["type"] == "ranges") or\
 			 (rc_data["type"] == "range / categorical")):
@@ -831,10 +983,11 @@ class AutecologyXML(_File):
 				raise RuntimeError("type '" + rc_data["type"] + "' not available.")
 
 		
-		axes.set_ylim(np.min(data[y_cname].to_numpy()) -offset_y,np.max(data[y_cname].to_numpy()) + offset_y)
-		axes.set_ylabel(y_cname +" (0.0 - 1.0)", fontsize=11)
+		axes.set_ylim(np.min(data[y_cname_value].to_numpy()) -offset_y,np.max(data[y_cname_value].to_numpy()) + offset_y)
+		
+		axes.set_ylabel(y_label, fontsize=11)
 		axes.set_xlabel(x_label, fontsize=11)
-		axes.set_title(rc_data["name"], fontsize=13, weight=551)
+		axes.set_title(title, fontsize=13, weight=551)
 		fig.set_tight_layout(True)
 		
 		#Make canvas manager
@@ -848,6 +1001,9 @@ class AutecologyXML(_File):
 	def visualize_fb_static(self, fb_data, parametersettings):
 		#check if results is there
 		
+		output_layer = list(fb_data["outputLayers"].items())[0][1]
+		y_label = output_layer["layername"] +" (" + output_layer["unit"] + ")"
+
 		result, variable, variable_dict = AutecologyXML.get_fb_variable_and_result(self, fb_data, parametersettings)
 
 		#make plot based on data
@@ -856,7 +1012,7 @@ class AutecologyXML(_File):
 		y_data = np.asarray(result)
 		offset_y = (np.max(y_data) - np.min(y_data)) / 10
 		
-		x_label = variable_dict["dataname"] + " ("+ variable_dict["unit"] +")"
+		x_label = variable_dict["layername"] + " ("+ variable_dict["unit"] +")"
 		
 		#Set up a canvas
 		width=5; height=4; dpi=100
@@ -866,7 +1022,7 @@ class AutecologyXML(_File):
 		axes.plot(x_data,y_data,'-',lw=2)
 		axes.set_xlim(np.min(x_data) - offset_x, np.max(x_data) + offset_x)
 		axes.set_ylim(np.min(y_data) -offset_y,np.max(y_data) + offset_y)
-		axes.set_ylabel(fb_data["output"] +" (" + fb_data["unit"] + ")", fontsize=11)
+		axes.set_ylabel(y_label, fontsize=11)
 		axes.set_xlabel(x_label, fontsize=11)
 		axes.set_title(fb_data["name"], fontsize=13, weight=551)
 		fig.set_tight_layout(True)
@@ -943,26 +1099,26 @@ class AutecologyXML(_File):
 				comboBox = QtWidgets.QComboBox()
 				comboBox.setObjectName("variable_box")
 				comboBox.setMinimumWidth(200)
-				comboBox.addItem(variable_dict["dataname"])
+				comboBox.addItem(variable_dict["layername"])
 				
 				#setup the layout
 				sbox = QtWidgets.QVBoxLayout()
 
 				for i, non_variable in enumerate(fb_data["parameters"]):
-					if(non_variable["dataname"] == init_Aut.XMLconvention["fb_result"] or non_variable["dataname"] == variable_dict["dataname"]):
+					if(non_variable["layername"] == init_Aut.XMLconvention["fb_result"] or non_variable["layername"] == variable_dict["layername"]):
 						pass
 					else:
-						comboBox.addItem(non_variable["dataname"])
+						comboBox.addItem(non_variable["layername"])
 
 						#Add dataproviders
 						if(non_variable["type"] == "scalar"):
-							slider_label = QtWidgets.QLabel(non_variable["dataname"] +" :")
-							min_slide = non_variable["data"]["min"].iloc[0]
-							max_slide = non_variable["data"]["max"].iloc[0]
+							slider_label = QtWidgets.QLabel(non_variable["layername"] +" :")
+							min_slide = non_variable["data"]["min_input"].iloc[0]
+							max_slide = non_variable["data"]["max_input"].iloc[0]
 							stepsize_slide = float((max_slide - min_slide)/10)
 							slider = LabeledSlider(min_slide, max_slide, stepsize_slide, orientation = QtCore.Qt.Horizontal)
-							slider.setObjectName(non_variable["dataname"])
-							slider.setValue(parametersettings[non_variable["dataname"]])
+							slider.setObjectName(non_variable["layername"])
+							slider.setValue(parametersettings[non_variable["layername"]])
 							slider.setTracking(True)
 							# slider.setTickPosition(QtWidgets.QSlider.TicksBothSides)
 							print(parametersettings)
@@ -975,15 +1131,15 @@ class AutecologyXML(_File):
 
 						elif(non_variable["type"] == "constant"):
 							
-							constant_box_label = QtWidgets.QLabel(non_variable["dataname"] + " :")
+							constant_box_label = QtWidgets.QLabel(non_variable["layername"] + " :")
 							constant_box = QtWidgets.QHBoxLayout()
-							constant_box.setObjectName(non_variable["dataname"])
+							constant_box.setObjectName(non_variable["layername"])
 							
 							for index, row_var in non_variable["data"].iterrows():
-								tick_label = QtWidgets.QLabel(row_var["constantset"] +" :")
+								tick_label = QtWidgets.QLabel(row_var["input_cat"] +" :")
 								tickbox = QtWidgets.QCheckBox()
-								tickbox.setObjectName(row_var["constantset"])
-								if(row_var["value"] == parametersettings[non_variable["dataname"]]):
+								tickbox.setObjectName(row_var["input_cat"])
+								if(row_var["output"] == parametersettings[non_variable["layername"]]):
 									tickbox.setCheckState(QtCore.Qt.Checked)
 									tickbox.setEnabled(False)
 								else:
@@ -1047,29 +1203,29 @@ class AutecologyXML(_File):
 				result, variable, variable_dict = AutecologyXML.get_fb_variable_and_result(self, fb_data, parametersettings)
 				
 				#update combobox
-				index = self.findChild(QtWidgets.QComboBox,"variable_box").findText(variable_dict["dataname"], QtCore.Qt.MatchFixedString)
+				index = self.findChild(QtWidgets.QComboBox,"variable_box").findText(variable_dict["layername"], QtCore.Qt.MatchFixedString)
 				if(index >= 0):
 					self.findChild(QtWidgets.QComboBox,"variable_box").setCurrentIndex(index)
 
 				for i, non_variable in enumerate(fb_data["parameters"]):
-					if(non_variable["dataname"] == init_Aut.XMLconvention["fb_result"] or non_variable["dataname"] == variable_dict["dataname"]):
+					if(non_variable["layername"] == init_Aut.XMLconvention["fb_result"] or non_variable["layername"] == variable_dict["layername"]):
 						pass
 					else:
 						
 						#Add dataproviders
 						if(non_variable["type"] == "scalar"):
 							
-							 self.findChild(QtWidgets.QSlider,non_variable["dataname"]).setValue(parametersettings[non_variable["dataname"]])
+							 self.findChild(QtWidgets.QSlider,non_variable["layername"]).setValue(parametersettings[non_variable["layername"]])
 							
 						elif(non_variable["type"] == "constant"):
 							
 							for index, row_var in non_variable["data"].iterrows():
-								if(row_var["value"] == parametersettings[non_variable["dataname"]]):
-									self.findChild(QtWidgets.QCheckBox,row_var["constantset"]).setCheckState(QtCore.Qt.Checked)
-									self.findChild(QtWidgets.QCheckBox,row_var["constantset"]).setEnabled(False)
+								if(row_var["output"] == parametersettings[non_variable["layername"]]):
+									self.findChild(QtWidgets.QCheckBox,row_var["input_cat"]).setCheckState(QtCore.Qt.Checked)
+									self.findChild(QtWidgets.QCheckBox,row_var["input_cat"]).setEnabled(False)
 								else:
-									self.findChild(QtWidgets.QCheckBox,row_var["constantset"]).setCheckState(QtCore.Qt.Unchecked)
-									self.findChild(QtWidgets.QCheckBox,row_var["constantset"]).setEnabled(True)
+									self.findChild(QtWidgets.QCheckBox,row_var["input_cat"]).setCheckState(QtCore.Qt.Unchecked)
+									self.findChild(QtWidgets.QCheckBox,row_var["input_cat"]).setEnabled(True)
 
 						else:
 							raise ValueError("unsuported widgets")
@@ -1113,33 +1269,33 @@ class AutecologyXML(_File):
 
 				#remove current results and make fb_list
 				parametersettings.pop(init_Aut.XMLconvention["fb_result"], None)
-				fb_list = {variable_dict["dataname"] : variable}
+				fb_list = {variable_dict["layername"] : variable}
 				
 				if(list_settings[0] == "combobox"):
 					new_variable = self.findChild(QtWidgets.QComboBox,self.sender().objectName()).currentText()
 
-					if(new_variable != variable_dict["dataname"]):
+					if(new_variable != variable_dict["layername"]):
 						#Remove old variable
-						parametersettings.pop(variable_dict["dataname"], None)
+						parametersettings.pop(variable_dict["layername"], None)
 
 						#Fill previous
 						if(variable_dict["type"] == "scalar"): 
-							parametersettings[variable_dict["dataname"]] = variable_dict["data"]["min"].iloc[0]
+							parametersettings[variable_dict["layername"]] = variable_dict["data"]["min_input"].iloc[0]
 						elif(variable_dict["type"] == "constant"):
-							parametersettings[variable_dict["dataname"]] = variable_dict["data"]["value"].iloc[0]
+							parametersettings[variable_dict["layername"]] = variable_dict["data"]["output"].iloc[0]
 						else:
 							raise ValueError("this type is not supported")
 						
-						[newvariable_dict] = [var for var in fb_data["parameters"] if(var["dataname"] == new_variable)]
+						[newvariable_dict] = [var for var in fb_data["parameters"] if(var["layername"] == new_variable)]
 
 						if(newvariable_dict["type"] == "scalar"):
-							min_range = newvariable_dict["data"]["min"].iloc[0]
-							max_range = newvariable_dict["data"]["max"].iloc[0]
+							min_range = newvariable_dict["data"]["min_input"].iloc[0]
+							max_range = newvariable_dict["data"]["max_input"].iloc[0]
 							step_range = (max_range - min_range) / 10
-							fb_list = {newvariable_dict["dataname"] : [number for number in np.arange(min_range, max_range, step_range)]}
+							fb_list = {newvariable_dict["layername"] : [number for number in np.arange(min_range, max_range, step_range)]}
 
 						elif(newvariable_dict["type"] == "constant"):
-							fb_list = {newvariable_dict["dataname"] : newvariable_dict["data"]["value"].tolist()}
+							fb_list = {newvariable_dict["layername"] : newvariable_dict["data"]["output"].tolist()}
 						
 						else:
 							raise ValueError("this type is not supported")
@@ -1152,8 +1308,8 @@ class AutecologyXML(_File):
 					parametersettings[self.sender().objectName()] = self.sender().value()
 
 				elif(list_settings[0] == "tickbox"):
-					[constant_dict] = [var for var in fb_data["parameters"] if(var["dataname"] == list_settings[1])]
-					newvalue_const = float(constant_dict["data"][constant_dict["data"]["constantset"] == self.sender().objectName()]["value"])
+					[constant_dict] = [var for var in fb_data["parameters"] if(var["layername"] == list_settings[1])]
+					newvalue_const = float(constant_dict["data"][constant_dict["data"]["input_cat"] == self.sender().objectName()]["output"])
 					parametersettings[list_settings[1]] = newvalue_const					
 				else:
 					raise ValueError("unavailable command")
@@ -1419,8 +1575,8 @@ class TestAutecologyXML_any(unittest.TestCase):
 		self.assertTrue(isinstance(self.xmltest.systems,list))
 
 
-	def test__read_contentdescription(self):
-		spd_overview = self.xmltest._read_contentdescription()
+	def test__read_topicdescription(self):
+		spd_overview = self.xmltest._read_topicdescription()
 		self.assertTrue(isinstance(spd_overview,list))
 		self.assertTrue(isinstance(spd_overview[0],dict))
 		self.assertTrue(len(spd_overview[0].keys()),2)
@@ -1444,8 +1600,12 @@ class TestAutecologyXML_any(unittest.TestCase):
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesCategorie,list),"Error occurs at system :" + cur_system) 
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at system :" + cur_system) 
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesNames,list),"Error occurs at system :" + cur_system)
-				self.assertTrue(isinstance(self.xmltest.knowledgeRulesStatistics,list),"Error occurs at system :" + cur_system)
-				self.assertTrue(isinstance(self.xmltest.knowledgeRulesUnits,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesInputLayernames,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesInputStatistics,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesInputUnits,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesOutputLayernames,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesOutputStatistics,list),"Error occurs at system :" + cur_system)
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesOutputUnits,list),"Error occurs at system :" + cur_system)
 				self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
 										in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + cur_system)
 		
@@ -1499,7 +1659,7 @@ TESTNEW'''
 				allrc = self.xmltest.knowledgeRulesNames
 				alltypes = self.xmltest.knowledgeRulesCategorie
 				for cur_rc, cur_type in zip(allrc,alltypes):
-					if(cur_type == "ResponseCurve"):
+					if(cur_type == self.xmltest.XMLconvention["rc"]):
 						rc_tag = self.xmltest.get_element_response_curve(modeltypename = cur_modeltype, systemname = cur_system, rcname = cur_rc)	
 						rc_data = self.xmltest.get_data_response_curve_data(rc_tag)
 						fig, axes = self.xmltest.visualize_rc(rc_data)
@@ -1512,6 +1672,105 @@ TESTNEW'''
 						#TEST NUMBER OF SUBPLOTS
 						#TEST PLOT TYPES
 						#TEST AXES TICK MARKS CONTENT
+
+
+	def test_get_formula_based(self):
+		self.xmltest._scan()
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
+				allrc = self.xmltest.knowledgeRulesNames
+				alltypes = self.xmltest.knowledgeRulesCategorie
+				for cur_fb, cur_type in zip(allrc,alltypes):
+					if(cur_type == self.xmltest.XMLconvention["fb"]):
+						fb_tag = self.xmltest.get_element_formula_based(modeltypename = cur_modeltype, systemname = cur_system, fbname = cur_fb)	
+						self.assertTrue(isinstance(fb_tag,Element))
+						fb_data = self.xmltest.get_data_formula_based_data(fb_tag)
+						self.assertTrue(isinstance(fb_data, dict))
+						
+						#TO BE UPDATED
+						
+						#self.assertTrue(self.xmltest.XMLconvention["fb_dict_datatable"] in fb_data)
+						#self.assertTrue(isinstance(fb_data[self.xmltest.XMLconvention["fb_dict_datatable"]],pandas.core.frame.DataFrame))
+
+	def test_plot_formula_based(self):
+		self.xmltest._scan()
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
+				allrc = self.xmltest.knowledgeRulesNames
+				alltypes = self.xmltest.knowledgeRulesCategorie
+				for cur_fb, cur_type in zip(allrc,alltypes):
+					if(cur_type == self.xmltest.XMLconvention["fb"]):
+						fb_tag = self.xmltest.get_element_formula_based(modeltypename = cur_modeltype, systemname = cur_system, fbname = cur_fb)	
+						fb_data = self.xmltest.get_data_formula_based_data(fb_tag)
+						
+						#TESTS STILL NEEDED
+
+						#fig, axes = self.xmltest.visualize_rc(rc_data)
+						#self.assertTrue(np.array_equal(fig.get_size_inches()*fig.dpi, np.asarray([500.0,400.0]))) #size in dpi
+						#self.assertTrue(isinstance(axes.get_title(),str))
+						#self.assertTrue(isinstance(axes.get_ylabel(),str))
+						#self.assertTrue(isinstance(axes.get_xlabel(),str))
+						#self.assertTrue(len(axes.get_xticks()) > 2)
+						#self.assertTrue(len(axes.get_yticks()) > 2)
+						#TEST NUMBER OF SUBPLOTS
+						#TEST PLOT TYPES
+						#TEST AXES TICK MARKS CONTENT
+
+	def test_get_multiple_reclassification(self):
+		self.xmltest._scan()
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
+				allrc = self.xmltest.knowledgeRulesNames
+				alltypes = self.xmltest.knowledgeRulesCategorie
+				for cur_mr, cur_type in zip(allrc,alltypes):
+					if(cur_type == self.xmltest.XMLconvention["mr"]):
+						mr_tag = self.xmltest.get_element_multiple_reclassification(modeltypename = cur_modeltype, systemname = cur_system, mrname = cur_mr)	
+						self.assertTrue(isinstance(mr_tag,Element))
+						mr_data = self.xmltest.get_data_multiple_reclassification_data(mr_tag)
+						self.assertTrue(isinstance(mr_data, dict))
+						#self.assertTrue(self.xmltest.XMLconvention["mr_dict_datatable"] in mr_data)
+						#self.assertTrue(isinstance(mr_data[self.xmltest.XMLconvention["mr_dict_datatable"]],pandas.core.frame.DataFrame))
+
+	def test_plot_multiple_reclassification(self):
+		self.xmltest._scan()
+		#test per modeltype
+		for cur_modeltype in self.xmltest.modeltypes:
+			self.xmltest._scan_modeltype(cur_modeltype)
+			#test per system
+			for cur_system in self.xmltest.systems:
+				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
+				allrc = self.xmltest.knowledgeRulesNames
+				alltypes = self.xmltest.knowledgeRulesCategorie
+				for cur_mr, cur_type in zip(allrc,alltypes):
+					if(cur_type == self.xmltest.XMLconvention["mr"]):
+						mr_tag = self.xmltest.get_element_multiple_reclassification(modeltypename = cur_modeltype, systemname = cur_system, mrname = cur_mr)	
+						mr_data = self.xmltest.get_data_multiple_reclassification_data(mr_tag)
+
+						#TESTS STILL NEEDED
+
+						#fig, axes = self.xmltest.visualize_rc(rc_data)
+						#self.assertTrue(np.array_equal(fig.get_size_inches()*fig.dpi, np.asarray([500.0,400.0]))) #size in dpi
+						#self.assertTrue(isinstance(axes.get_title(),str))
+						#self.assertTrue(isinstance(axes.get_ylabel(),str))
+						#self.assertTrue(isinstance(axes.get_xlabel(),str))
+						#self.assertTrue(len(axes.get_xticks()) > 2)
+						#self.assertTrue(len(axes.get_yticks()) > 2)
+						#TEST NUMBER OF SUBPLOTS
+						#TEST PLOT TYPES
+						#TEST AXES TICK MARKS CONTENT
+
 
 class TestAutecologyXML_testxml(unittest.TestCase):
 
@@ -1540,8 +1799,8 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 		self.xmltest._scan_modeltype(self.xmltest.modeltypes[0])
 		self.assertEqual(self.xmltest.systems, ["testsystem"])
 
-	def test__read_contentdescription(self):
-		spd_overview = self.xmltest._read_contentdescription()
+	def test__read_topicdescription(self):
+		spd_overview = self.xmltest._read_topicdescription()
 		testtext = '''Test
 	Test'''
 		self.assertEqual(spd_overview[0]["description"],testtext)
@@ -1553,16 +1812,31 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 		#test first system
 		self.xmltest._scan_knowledgerules(modeltypename = self.xmltest.modeltypes[0], systemname = self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.systemname, "testsystem","Error occurs at system :" + self.xmltest.systems[0])
-		self.assertEqual(self.xmltest.knowledgeRulesNr,5,"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesNr,6,"Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesCategorie,["ResponseCurve","ResponseCurve","ResponseCurve",\
-														"ResponseCurve","FormulaBased"],"Error occurs at system :" + self.xmltest.systems[0]) 
+														"ResponseCurve","FormulaBased","MultipleReclassification"],"Error occurs at system :" + self.xmltest.systems[0]) 
 		# self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at model :" + cur_model) 
-		self.assertEqual(self.xmltest.knowledgeRulesNames,["Chloride","Soil","SiltFraction",\
-													"WaterdepthLakes","P_chara_extinction"],"Error occurs at model :" + self.xmltest.systems[0])
-		self.assertEqual(self.xmltest.knowledgeRulesStatistics,["minimum","average","average","average","none"],\
+		self.assertEqual(self.xmltest.knowledgeRulesNames,["chloride_concentration","soil_type","silt_fraction",\
+													"waterdepth_lakes","vegetation_extinction","vegetation_types"],"Error occurs at model :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesInputLayernames,[["chloride_concentration"],["soil_type"],["silt_fraction"],["waterdepth_lakes"],\
+													["subarea","extinction","waterdepth_summer","fetch"],["veg_A","veg_B","chloride_concentration"]],\
 													"Error occurs at system :" + self.xmltest.systems[0])
-		self.assertEqual(self.xmltest.knowledgeRulesUnits,['g/l','soil','silt fraction / description','m','-'],\
+		self.assertEqual(self.xmltest.knowledgeRulesInputStatistics,[["maximum"],["average"],["average"],["average"],\
+													["constant","average","average","average"],["average","average","average"]],\
 													"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesInputUnits,[['mg/l'],['categories'],['fraction / description'],['m'],\
+													['categories','Kd','m','m'],['boolean','boolean','mg/L']],\
+													"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesOutputLayernames,[["HSI_chloride_concentration"],["HSI_soil_type"],["HSI_silt_fraction"],["HSI_waterdepth_lakes"],\
+													["P_vegetation"],["vegetation_types"]],\
+													"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesOutputStatistics,[["average"],["average"],["average"],["average"],\
+													["average"],["average"]],\
+													"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesOutputUnits,[['factor'],['factor'],['factor'],['factor'],\
+													['factor'],['categories']],\
+													"Error occurs at system :" + self.xmltest.systems[0])
+		
 		self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
 								in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + self.xmltest.systems[0])
 	
@@ -1591,6 +1865,26 @@ TESTNEW'''
 	def test_plot_response_curve(self):
 		pass
 		#TO BE FILLED
+
+
+	def test_get_formula_based(self):
+		pass
+		#TO BE FILLED
+
+
+	def test_plot_formula_based(self):
+		pass
+		#TO BE FILLED
+
+	def test_get_multiple_reclassification(self):
+		pass
+		#TO BE FILLED
+
+
+	def test_plot_multiple_reclassification(self):
+		pass
+		#TO BE FILLED
+
 
 
 def _run_unittests():

@@ -14,7 +14,8 @@ from autecology_xml import AutecologyXML
 #INITIALISE
 
 #path to "_knowledgerules"dir
-path_kr_dir = "../../_knowledgerules/"
+#path_kr_dir = "../../_knowledgerules/"
+path_kr_dir = "../../_new_knowledgerules/"
 
 #path to XSD schema
 path_xsd = "../../XMLSchema/AutecologyXML.xsd"
@@ -88,7 +89,7 @@ for level1_dir in level1_dirs :
 			#CHECK languages Names and descriptions
 			cur_species_commonnames = xmltest.commonnames
 			cur_species_commonname_LANG = [line["language"] for line in cur_species_commonnames].sort()
-			cur_species_descriptions = xmltest._read_contentdescription()
+			cur_species_descriptions = xmltest._read_topicdescription()
 			cur_species_description_LANG = [line["language"] for line in cur_species_descriptions].sort()
 
 			if(cur_species_commonname_LANG != cur_species_description_LANG):

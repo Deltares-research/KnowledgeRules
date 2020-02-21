@@ -15,7 +15,7 @@ print(xmltest.flowdiagrams)
 print(xmltest.flowdiagrams_list)
 
 #Create a specific flow diagram
-flowdiagram = xmltest._read_systemflowdiagram(modeltypename = "HSI", systemname = "adult", diagramname ="leefgebied_stagnante_wateren" )
+flowdiagram = xmltest._read_systemflowdiagram(modeltypename = "HSI", systemname = "adult", diagramname ="livingarea_stagnant_waters" )
 svg_str = xmltest.create_flowdiagram_image(flowdiagram, output = None)
 
 #show in PyQt

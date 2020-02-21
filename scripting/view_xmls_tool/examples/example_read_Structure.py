@@ -6,10 +6,11 @@ from matplotlib import pyplot as plt
 
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Birds/Phalacrocorax carbo.xml")
 xmltest = AutecologyXML(filename = "../../../tool_adapters/Deltares_Habitat/examples/Plecoglossus_altivelis.xml")
+
 xmltest._readxml()
 print(type(xmltest.xmlroot))
 xmltest._scan()
-testext = xmltest._read_speciesdescription()
+testext = xmltest._read_topicdescription()
 print(type(testext))
 xmltest._scan_modeltype("HSI")
 #xmltest._scan_knowledgerules(systemname = "adult")

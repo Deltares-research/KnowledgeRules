@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45509333</EoLpagenr>
 			<LatName>Chlidonias niger</LatName>
 			<CommonNames>
-				<Name name= "Zwarte stern" language="NL"/>
+				<Name name="Zwarte stern" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -25,27 +23,27 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<p>Het nest wordt gemaakt op het wateroppervlak en aan de waterkant.</p>
+						<text>&lt;p&gt;Het nest wordt gemaakt op het wateroppervlak en aan de waterkant.&lt;/p&gt;
 
-<p>Het voedsel wordt gezocht op de onder water, aan het wateroppervlak, aan de waterkant, in de kruilaag en in de stuiklaag.</p>
+&lt;p&gt;Het voedsel wordt gezocht op de onder water, aan het wateroppervlak, aan de waterkant, in de kruilaag en in de stuiklaag.&lt;/p&gt;
 
-<p>De bepalende factor van voorkomen is de aanwezigheid van ondiep open water, eilandjes en/of drijvende waterplanten en grote insecten, .</p>
+&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van ondiep open water, eilandjes en/of drijvende waterplanten en grote insecten, .&lt;/p&gt;
 
 
 
-<h1 id="Zwartestern-Chlidoniasniger-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+&lt;h1 id="Zwartestern-Chlidoniasniger-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Zwarte stern - Chlidonias niger - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Zwarte stern - Chlidonias niger - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+&lt;p&gt;Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h1 id="Zwartestern-Chlidoniasniger-Toepassingsgebied">Toepassingsgebied</h1>
+&lt;h1 id="Zwartestern-Chlidoniasniger-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;
 
-<p>Deze rekenregels zijn opgesteld voor de zwarte nabij Rijkswateren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
+&lt;p&gt;Deze rekenregels zijn opgesteld voor de zwarte nabij Rijkswateren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<h1 id="Zwartestern-Chlidoniasniger-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Zwartestern-Chlidoniasniger-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Niet aanwezig</p>]]></text>
+&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -93,211 +91,381 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="surfacewater_area">
-						<type>scalar</type>
-						<layername>"surfacewater_area"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Amount of surface water within 3 kilometers in percent"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="5" HSI="0.7"/>
-							<parameter value="25" HSI="1.0"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="100" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="surfacewater_area">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>surfacewater_area</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Amount of surface water within 3 kilometers in percent"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="5" output="0.7"/>
+								<parameter input="25" output="1.0"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="100" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_surfacewater_area">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_surfacewater_area</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="surfacewater_width">
-						<type>scalar</type>
-						<layername>"surfacewater_width"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Width of surface water in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="1" HSI="0.8"/>
-							<parameter value="25" HSI="1.0"/>
-							<parameter value="100" HSI="0.4"/>
-							<parameter value="200" HSI="0.0"/>
-							<parameter value="250" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="surfacewater_width">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>surfacewater_width</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Width of surface water in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="1" output="0.8"/>
+								<parameter input="25" output="1.0"/>
+								<parameter input="100" output="0.4"/>
+								<parameter input="200" output="0.0"/>
+								<parameter input="250" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_surfacewater_width">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_surfacewater_width</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="nesting_places">
-						<type>categorical</type>
-						<layername>"nesting_places"</layername>
-						<unit>"categorical"</unit>
-						<statistic>average</statistic>
-						<description>"Types of nesting places"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="bank" HSI="0.3"/>
-							<parameter cat="(wire) algae" HSI="0.5"/>
-							<parameter cat="vegetation patches in water" HSI="1.0"/>
-							<parameter cat="mudbanks" HSI="0.8"/>
-							<parameter cat="floating rhizomes" HSI="0.8"/>
-							<parameter cat="krabbescheer" HSI="1.0"/>
-							<parameter cat="rafts" HSI="1.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="nesting_places">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>nesting_places</layer_filename>
+								<unit>"categorical"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Types of nesting places"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="bank" output="0.3" output_cat=""/>
+								<parameter input="2" input_cat="(wire) algae" output="0.5" output_cat=""/>
+								<parameter input="3" input_cat="vegetation patches in water" output="1.0" output_cat=""/>
+								<parameter input="4" input_cat="mudbanks" output="0.8" output_cat=""/>
+								<parameter input="5" input_cat="floating rhizomes" output="0.8" output_cat=""/>
+								<parameter input="6" input_cat="krabbescheer" output="1.0" output_cat=""/>
+								<parameter input="7" input_cat="rafts" output="1.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_nesting_places">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_nesting_places</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="height_above_watersurface">
-						<type>range / categorical</type>
-						<layername>height_above_waterlevel</layername>
-						<unit>cm</unit>
-						<statistic>average</statistic>
-						<description>Heigth of rafts above the watersurface</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="2" cat="0 - 2" HSI="1.0"/>
-							<parameter rangemin="2" rangemax="3" cat="2 - 3" HSI="0.7"/>
-							<parameter rangemin="3" rangemax="999999" cat="> 3" HSI="0.1"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="height_above_watersurface">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>height_above_watersurface</layer_filename>
+								<unit>cm</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Heigth of rafts above the watersurface</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="2" input_cat="0 - 2" output="1.0" output_cat=""/>
+								<parameter rangemin_input="2" rangemax_input="3" input_cat="2 - 3" output="0.7" output_cat=""/>
+								<parameter rangemin_input="3" rangemax_input="999999" input_cat="&gt; 3" output="0.1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_height_above_watersurface">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_height_above_watersurface</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="daily_waterlevel_fluctuation">
-						<type>range / categorical</type>
-						<layername>daily_waterlevel_fluctuation</layername>
-						<unit>cm/day</unit>
-						<statistic>average</statistic>
-						<description>Daily fluctuation of the waterlevel</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="2" rangemax="3" cat="2 - 3" HSI="0.7"/>
-							<parameter rangemin="3" rangemax="999999" cat="> 3" HSI="0.1"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="daily_waterlevel_fluctuation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>daily_waterlevel_fluctuation</layer_filename>
+								<unit>cm/day</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Daily fluctuation of the waterlevel</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="2" rangemax_input="3" input_cat="2 - 3" output="0.7" output_cat=""/>
+								<parameter rangemin_input="3" rangemax_input="999999" input_cat="&gt; 3" output="0.1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_daily_waterlevel_fluctuation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_daily_waterlevel_fluctuation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="flooding_period">
-						<type>range / categorical</type>
-						<layername>"flooding_period"</layername>
-						<unit>month / category"</unit>
-						<statistic>average</statistic>
-						<description>"Period of flooding"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
-							<parameter rangemin="0" rangemax="4" cat="till April" HSI="1.0"/> 
-							<parameter rangemin="5" rangemax="6" cat="till June" HSI="0.6"/>							
-							<parameter rangemin="7" rangemax="7" cat="till Juli" HSI="0.1"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="flooding_period">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>flooding_period</layer_filename>
+								<unit>month / category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Period of flooding"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0" input_cat="None" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="4" input_cat="till April" output="1.0" output_cat=""/>
+								<parameter rangemin_input="5" rangemax_input="6" input_cat="till June" output="0.6" output_cat=""/>
+								<parameter rangemin_input="7" rangemax_input="7" input_cat="till Juli" output="0.1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_flooding_period">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_flooding_period</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="locations_with_emers_plants">
-						<type>categorical</type>
-						<layername>"locations_with_emers_plants"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Presence of locations with a coverage with emerse plants of mere than 50%"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="present" HSI="1.0"/>
-							<parameter cat="absent" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="locations_with_emers_plants">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>locations_with_emers_plants</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of locations with a coverage with emerse plants of mere than 50%"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="present" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="absent" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_locations_with_emers_plants">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_locations_with_emers_plants</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="enclosure_landscape">
-						<type>categorical</type>
-						<layername>"enclosure_landscape"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Enclosure of the landscape (bosopslag)"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="present" HSI="1.0"/>
-							<parameter cat="absent" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="enclosure_landscape">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>enclosure_landscape</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Enclosure of the landscape (bosopslag)"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="present" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="absent" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_enclosure_landscape">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_enclosure_landscape</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="area_of_marshland">
-						<type>scalar</type>
-						<layername>"area_of_marshland"</layername>
-						<unit>"ha"</unit>
-						<statistic>average</statistic>
-						<description>"Area of marshland within 3 kilometers in hectares"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="25" HSI="0.5"/>
-							<parameter value="200" HSI="1.0"/>
-							<parameter value="250" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="area_of_marshland">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>area_of_marshland</layer_filename>
+								<unit>"ha"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Area of marshland within 3 kilometers in hectares"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="25" output="0.5"/>
+								<parameter input="200" output="1.0"/>
+								<parameter input="250" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_area_of_marshland">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_area_of_marshland</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="meadow_distance">
-						<type>categorical</type>
-						<layername>"meadow_distance"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Presence of meadows within 3 kilometers"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="present" HSI="0.0"/>
-							<parameter cat="absent" HSI="0.8"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="meadow_distance">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>meadow_distance</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of meadows within 3 kilometers"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="present" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="absent" output="0.8" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_meadow_distance">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_meadow_distance</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Zwartestern-Chlidoniasniger-Algemeenvoorkomen(Broedhabitat)">Algemeen voorkomen (Broedhabitat)</h3>
+			<text>&lt;h3 id="Zwartestern-Chlidoniasniger-Algemeenvoorkomen(Broedhabitat)"&gt;Algemeen voorkomen (Broedhabitat)&lt;/h3&gt;
 
-<p>De zwarte stern is een koloniebroeder en broedt in laagveen moerassen, laagveengraslanden en moerassen in rivierkleigebieden. Kleine aantallen komen nog voor in vennen en hoogvenen. In de Rijkswateren worden de zwarte sterns vooral aangetroffen in de uiterwaarden van de grote rivieren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+&lt;p&gt;De zwarte stern is een koloniebroeder en broedt in laagveen moerassen, laagveengraslanden en moerassen in rivierkleigebieden. Kleine aantallen komen nog voor in vennen en hoogvenen. In de Rijkswateren worden de zwarte sterns vooral aangetroffen in de uiterwaarden van de grote rivieren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>De nesten worden gebouwd daar waar veel drijvende vegetatie te vinden is, zoals middelgrote moerassen, dode rivierarmen, poelen, maar ook in sloten. De zwarte stern maakt vaak zijn nesten op krabbescheer (Straiotes aloides). Echter ook ander drijvend plantenmateriaal wordt geaccepteerd voor de nestbouw, zoals drijvende wortelstokken van waterlelie, gele plomp, lisdodde, algenmatten, lage oevervegetatie of drijvend materiaal als planken en boomstammen. In het rivierengebied wordt er met name gebroed op zogenoemde nestvlotjes. Verder heeft de zwarte stern, omdat hij verstoringsgevoelig is, een voorkeur voor een leefomgeving met hoge bedekking van drijvende watervegetatie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+&lt;p&gt;De nesten worden gebouwd daar waar veel drijvende vegetatie te vinden is, zoals middelgrote moerassen, dode rivierarmen, poelen, maar ook in sloten. De zwarte stern maakt vaak zijn nesten op krabbescheer (Straiotes aloides). Echter ook ander drijvend plantenmateriaal wordt geaccepteerd voor de nestbouw, zoals drijvende wortelstokken van waterlelie, gele plomp, lisdodde, algenmatten, lage oevervegetatie of drijvend materiaal als planken en boomstammen. In het rivierengebied wordt er met name gebroed op zogenoemde nestvlotjes. Verder heeft de zwarte stern, omdat hij verstoringsgevoelig is, een voorkeur voor een leefomgeving met hoge bedekking van drijvende watervegetatie &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>Peilfluctuatie moet beperkt zijn om het wegspoelen van nesten te voorkomen, om deze reden moeten overstromingen van nesten tijdens het broedseizoen voorkomen worden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+&lt;p&gt;Peilfluctuatie moet beperkt zijn om het wegspoelen van nesten te voorkomen, om deze reden moeten overstromingen van nesten tijdens het broedseizoen voorkomen worden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Zwartestern-Chlidoniasniger-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Zwartestern-Chlidoniasniger-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Over het algemeen foerageert de Zwarte stern bij de broedplaats, maar afstanden tot zo'n 3 km van de broedplaats zijn mogelijk. De zwarte stern prefereert gebieden met veel grote insecten, kleine vis en amfibieën. De mogelijkheid om te kunnen variëren in prooi is van belang <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>.</p>
+&lt;p&gt;Over het algemeen foerageert de Zwarte stern bij de broedplaats, maar afstanden tot zo'n 3 km van de broedplaats zijn mogelijk. De zwarte stern prefereert gebieden met veel grote insecten, kleine vis en amfibieën. De mogelijkheid om te kunnen variëren in prooi is van belang &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Zwartestern-Chlidoniasniger-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Zwartestern-Chlidoniasniger-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>De kolonies zijn aanwezig van eind april tot eind juli - begin augustus. Het leggen van eieren start in het algemeen vanaf 10 mei en het legsel bestaat uit 3 eieren. Na 19 tot 23 dagen zijn deze uitgebroed en na 16 tot 25 dagen zijn de jongen vliegvlug <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
+&lt;p&gt;De kolonies zijn aanwezig van eind april tot eind juli - begin augustus. Het leggen van eieren start in het algemeen vanaf 10 mei en het legsel bestaat uit 3 eieren. Na 19 tot 23 dagen zijn deze uitgebroed en na 16 tot 25 dagen zijn de jongen vliegvlug &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>Vanaf juli trekt de zwarte stern naar de kust van tropisch Afrika. Vanaf eind april komen de vogels terug <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
+&lt;p&gt;Vanaf juli trekt de zwarte stern naar de kust van tropisch Afrika. Vanaf eind april komen de vogels terug &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<h3 id="Zwartestern-Chlidoniasniger-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Zwartestern-Chlidoniasniger-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>Bij gevaar verlaten de jongen de nesten. Zij schuilen dan in de nabijgelegen vegetatie. Dag-actieve predatoren maken nauwelijks kans, echter nacht-actieve predatoren kunnen een sterke invloed hebben op het nest succes <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1">#1</a>. </p>
-]]></text>
-			</Description>
-	</ContentDescription>
+&lt;p&gt;Bij gevaar verlaten de jongen de nesten. Zij schuilen dan in de nabijgelegen vegetatie. Dag-actieve predatoren maken nauwelijks kans, echter nacht-actieve predatoren kunnen een sterke invloed hebben op het nest succes &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zwarte+stern+-+Chlidonias+niger#Zwartestern-Chlidoniasniger-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
+</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
 		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>

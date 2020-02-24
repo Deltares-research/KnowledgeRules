@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45510608</EoLpagenr>
 			<LatName>Mergus albellus</LatName>
 			<CommonNames>
-				<Name name= "Nonnetje" language="NL"/>
-				<Name name= "Smew" language="ENG"/>
+				<Name name="Nonnetje" language="NL"/>
+				<Name name="Smew" language="ENG"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -26,29 +24,29 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Nonnetje-Mergusalbellus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Nonnetje-Mergusalbellus-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Nonnetje - Mergus albellus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Nonnetje - Mergus albellus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<h1 id="Nonnetje-Mergusalbellus-Toepassingsgebied">Toepassingsgebied</h1>
+&lt;h1 id="Nonnetje-Mergusalbellus-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;
 
-<p>Zowel zoete en zoute wateren.</p>
+&lt;p&gt;Zowel zoete en zoute wateren.&lt;/p&gt;
 
-<h1 id="Nonnetje-Mergusalbellus-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Nonnetje-Mergusalbellus-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Niet aanwezig.</p>]]></text>
+&lt;p&gt;Niet aanwezig.&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
-						<text><![CDATA[<h1 id="Smew(Mergusalbellus)-Uncertaintyandvalidation">Uncertainty and validation</h1>
-<p><img class="emoticon emoticon-warning" src="./Smew (Mergus albellus) - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> These dose-effect relations have not been validated.</p>
+						<text>&lt;h1 id="Smew(Mergusalbellus)-Uncertaintyandvalidation"&gt;Uncertainty and validation&lt;/h1&gt;
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Smew (Mergus albellus) - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; These dose-effect relations have not been validated.&lt;/p&gt;
 
 
 
-<h1 id="Smew(Mergusalbellus)-Areaofapplication">Area of application</h1>
-<p>Large fresh and salt waters</p>
+&lt;h1 id="Smew(Mergusalbellus)-Areaofapplication"&gt;Area of application&lt;/h1&gt;
+&lt;p&gt;Large fresh and salt waters&lt;/p&gt;
 
-<h1 id="Smew(Mergusalbellus)-Exemplaryproject">Exemplary project</h1>
-<p>Not available. </p>]]></text>
+&lt;h1 id="Smew(Mergusalbellus)-Exemplaryproject"&gt;Exemplary project&lt;/h1&gt;
+&lt;p&gt;Not available. &lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -79,168 +77,287 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="totalphosporus_concentration">
-						<type>range / categorical</type>
-						<layername>"totalphosporus_concentration"</layername>
-						<unit>"mg P/l"</unit>
-						<statistic>average</statistic>
-						<description>"Total phosporus concentration in milligrams P per liter"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="0.020" cat="0.0 - 0.020" HSI="0.0"/>
-							<parameter rangemin="0.020" rangemax="0.050" cat="0.020 - 0.050" HSI="0.2"/>
-							<parameter rangemin="0.050" rangemax="0.100" cat="0.050 - 0.100" HSI="0.4"/>
-							<parameter rangemin="0.100" rangemax="0.150" cat="0.100 - 0.150" HSI="0.6"/>
-							<parameter rangemin="0.150" rangemax="0.200" cat="0.150 - 0.200" HSI="0.8"/>
-							<parameter rangemin="0.200" rangemax="0.500" cat="0.200 - 0.500" HSI="1.0"/>
-							<parameter rangemin="0.500" rangemax="1.000" cat="0.500 - 1.000" HSI="0.4"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="totalphosporus_concentration">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>totalphosporus_concentration</layer_filename>
+								<unit>"mg P/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Total phosporus concentration in milligrams P per liter"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="0.020" input_cat="0.0 - 0.020" output="0.0" output_cat=""/>
+								<parameter rangemin_input="0.020" rangemax_input="0.050" input_cat="0.020 - 0.050" output="0.2" output_cat=""/>
+								<parameter rangemin_input="0.050" rangemax_input="0.100" input_cat="0.050 - 0.100" output="0.4" output_cat=""/>
+								<parameter rangemin_input="0.100" rangemax_input="0.150" input_cat="0.100 - 0.150" output="0.6" output_cat=""/>
+								<parameter rangemin_input="0.150" rangemax_input="0.200" input_cat="0.150 - 0.200" output="0.8" output_cat=""/>
+								<parameter rangemin_input="0.200" rangemax_input="0.500" input_cat="0.200 - 0.500" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0.500" rangemax_input="1.000" input_cat="0.500 - 1.000" output="0.4" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_totalphosporus_concentration">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_totalphosporus_concentration</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth_open_water">
-						<type>range / categorical</type>
-						<layername>"waterdepth_open_water"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in the open water in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="2.0" cat="0.0 - 2.0" HSI="1.0"/>
-							<parameter rangemin="2.0" rangemax="4.0" cat="2.0 - 4.0" HSI="1.0"/>
-							<parameter rangemin="4.0" rangemax="5.0" cat="4.0 - 5.0" HSI="0.5"/>
-							<parameter rangemin="5.0" rangemax="999999" cat="> 5.0" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="waterdepth_open_water">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdepth_open_water</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Waterdepth in the open water in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="2.0" input_cat="0.0 - 2.0" output="1.0" output_cat=""/>
+								<parameter rangemin_input="2.0" rangemax_input="4.0" input_cat="2.0 - 4.0" output="1.0" output_cat=""/>
+								<parameter rangemin_input="4.0" rangemax_input="5.0" input_cat="4.0 - 5.0" output="0.5" output_cat=""/>
+								<parameter rangemin_input="5.0" rangemax_input="999999" input_cat="&gt; 5.0" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_open_water">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_open_water</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth_resting_area">
-						<type>range / categorical</type>
-						<layername>"waterdepth_resting_area"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in the resting area in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="2.0" cat="0.0 - 2.0" HSI="1.0"/>
-							<parameter rangemin="2.0" rangemax="4.0" cat="2.0 - 4.0" HSI="0.5"/>
-							<parameter rangemin="4.0" rangemax="999999" cat="> 4.0" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="waterdepth_resting_area">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdepth_resting_area</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Waterdepth in the resting area in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="2.0" input_cat="0.0 - 2.0" output="1.0" output_cat=""/>
+								<parameter rangemin_input="2.0" rangemax_input="4.0" input_cat="2.0 - 4.0" output="0.5" output_cat=""/>
+								<parameter rangemin_input="4.0" rangemax_input="999999" input_cat="&gt; 4.0" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_resting_area">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_resting_area</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="transparency_winter">
-						<type>range / categorical</type>
-						<layername>"transparency_winter"</layername>
-						<unit>"cm"</unit>
-						<statistic>average</statistic>
-						<description>"Transparency of water during the winter period expressed in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="50" cat="0 - 50" HSI="0.3"/>
-							<parameter rangemin="50" rangemax="100" cat="50 - 100" HSI="0.5"/>
-							<parameter rangemin="100" rangemax="999999" cat=" > 100" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="transparency_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>transparency_winter</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Transparency of water during the winter period expressed in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="50" input_cat="0 - 50" output="0.3" output_cat=""/>
+								<parameter rangemin_input="50" rangemax_input="100" input_cat="50 - 100" output="0.5" output_cat=""/>
+								<parameter rangemin_input="100" rangemax_input="999999" input_cat=" &gt; 100" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_transparency_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_transparency_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="disturbance_distance">
-						<type>range / categorical</type>
-						<layername>"disturbance_distance"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Disturbance distance in "</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="200.0" cat="0.0 - 200.0" HSI="0.0"/>
-							<parameter rangemin="200.0" rangemax="300.0" cat="200.0 - 300.0" HSI="0.5"/>
-							<parameter rangemin="300.0" rangemax="999999" cat="> 300.0" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="disturbance_distance">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>disturbance_distance</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Disturbance distance in "</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="200.0" input_cat="0.0 - 200.0" output="0.0" output_cat=""/>
+								<parameter rangemin_input="200.0" rangemax_input="300.0" input_cat="200.0 - 300.0" output="0.5" output_cat=""/>
+								<parameter rangemin_input="300.0" rangemax_input="999999" input_cat="&gt; 300.0" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_disturbance_distance">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_disturbance_distance</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="PCB_presence_fish">
-						<type>scalar</type>
-						<layername>"PCB_presence_fish"</layername>
-						<unit>"mg/kg"</unit>
-						<statistic>average</statistic>
-						<description>"Total - PCB presence in fish (European Eel : Anguilla anguilla) expressed in mg/kg"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="1.0"/>
-							<parameter value="2.2" HSI="1.0"/>
-							<parameter value="5.5" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="PCB_presence_fish">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>PCB_presence_fish</layer_filename>
+								<unit>"mg/kg"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Total - PCB presence in fish (European Eel : Anguilla anguilla) expressed in mg/kg"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="2.2" output="1.0"/>
+								<parameter input="5.5" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_PCB_presence_fish">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_PCB_presence_fish</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="wind_fetch">
-						<type>range / categorical</type>
-						<layername>"wind_fetch"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Wind fetch in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="100" cat="0 - 100" HSI="1.0"/>
-							<parameter rangemin="100" rangemax="200" cat="100 - 200" HSI="0.6"/>
-							<parameter rangemin="200" rangemax="300" cat="200 - 300" HSI="0.2"/>
-							<parameter rangemin="300" rangemax="999999" cat="> 300" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="wind_fetch">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>wind_fetch</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Wind fetch in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="100" input_cat="0 - 100" output="1.0" output_cat=""/>
+								<parameter rangemin_input="100" rangemax_input="200" input_cat="100 - 200" output="0.6" output_cat=""/>
+								<parameter rangemin_input="200" rangemax_input="300" input_cat="200 - 300" output="0.2" output_cat=""/>
+								<parameter rangemin_input="300" rangemax_input="999999" input_cat="&gt; 300" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_wind_fetch">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_wind_fetch</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Nonnetje-Mergusalbellus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Nonnetje-Mergusalbellus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>Het Nonnetje is een wintergast, die afhankelijk is van visrijke zoete of zoute wateren. Vooral het Markermeer en in mindere mate het zuidelijk deel van IJsselmeer zijn belangrijk. Bij strenge vorst verblijven grote aantallen langs de grote rivieren en in het Deltagebied. Elders in het land komen kleinere aantallen voor op verschillende meren, plassen en vennen, beken en kanalen. De nachtelijke slaapplaatsen bestaan uit ongestoorde, beschutte wateren, zoals de Oostvaardersplassen, het Kinselmeer en de Gouwzee <a href="https://publicwiki.deltares.nl/display/HBTHOME/Nonnetje+-+Mergus+albellus#Nonnetje-Mergusalbellus-2">#2</a>.</p>
+&lt;p&gt;Het Nonnetje is een wintergast, die afhankelijk is van visrijke zoete of zoute wateren. Vooral het Markermeer en in mindere mate het zuidelijk deel van IJsselmeer zijn belangrijk. Bij strenge vorst verblijven grote aantallen langs de grote rivieren en in het Deltagebied. Elders in het land komen kleinere aantallen voor op verschillende meren, plassen en vennen, beken en kanalen. De nachtelijke slaapplaatsen bestaan uit ongestoorde, beschutte wateren, zoals de Oostvaardersplassen, het Kinselmeer en de Gouwzee &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Nonnetje+-+Mergus+albellus#Nonnetje-Mergusalbellus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Nonnetje-Mergusalbellus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Nonnetje-Mergusalbellus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Het Nonnetje duikt (tot 4 m) overdag naar voedsel. 's Winters en in het vroege voorjaar foerageert hij voornamelijk op kleine vis; de rest van jaar ook waterinsecten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Nonnetje+-+Mergus+albellus#Nonnetje-Mergusalbellus-1">#1</a>.</p>
+&lt;p&gt;Het Nonnetje duikt (tot 4 m) overdag naar voedsel. 's Winters en in het vroege voorjaar foerageert hij voornamelijk op kleine vis; de rest van jaar ook waterinsecten &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Nonnetje+-+Mergus+albellus#Nonnetje-Mergusalbellus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Nonnetje-Mergusalbellus-Reproductieenmigratie">Reproductie en migratie</h3>
-]]></text>
+&lt;h3 id="Nonnetje-Mergusalbellus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
+</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA[<h3 id="Smew(Mergusalbellus)-Occurrence">Occurrence</h3>
-<p>The Common Merganser is a fish-eater and winter guest that lives on large fresh and salt water. <br>
-In winter, it can be found on the IJsselmeer and the neighbouring Wadden Sea. The Common Merganser also lives in river basins, the Delta region, the Biesbosch and the Noordzee and in various inland fresh waters. During severe frost, it spreads more south, which enhances the importance of the river basins and the Delta region <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-2">#2</a>.</p>
+			<text>&lt;h3 id="Smew(Mergusalbellus)-Occurrence"&gt;Occurrence&lt;/h3&gt;
+&lt;p&gt;The Common Merganser is a fish-eater and winter guest that lives on large fresh and salt water. &lt;br&gt;
+In winter, it can be found on the IJsselmeer and the neighbouring Wadden Sea. The Common Merganser also lives in river basins, the Delta region, the Biesbosch and the Noordzee and in various inland fresh waters. During severe frost, it spreads more south, which enhances the importance of the river basins and the Delta region &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
 
-<h3 id="Smew(Mergusalbellus)-Foodhabitatandstrategy">Food habitat and strategy</h3>
-<p>The Common Merganser feeds on fish, it prefers to forage in shallow water, diving to a depth of 4 metres <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-2">#2</a>,<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-1">#1</a>. </p>
+&lt;h3 id="Smew(Mergusalbellus)-Foodhabitatandstrategy"&gt;Food habitat and strategy&lt;/h3&gt;
+&lt;p&gt;The Common Merganser feeds on fish, it prefers to forage in shallow water, diving to a depth of 4 metres &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-2"&gt;#2&lt;/a&gt;,&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722967#Smew(Mergusalbellus)-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
 
-<h3 id="Smew(Mergusalbellus)-Breedingandmigration">Breeding and migration</h3>
-<p>The Common Merganser mainly breeds in Fenno-Scandinavia. It does not breed in The Netherlands.  </p>
-]]></text>
-		</Description>			
-	</ContentDescription>
+&lt;h3 id="Smew(Mergusalbellus)-Breedingandmigration"&gt;Breeding and migration&lt;/h3&gt;
+&lt;p&gt;The Common Merganser mainly breeds in Fenno-Scandinavia. It does not breed in The Netherlands.  &lt;/p&gt;
+</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="http://www.soortenbank.nl" title="Nonnetje" identification="" year="2020" journal="">
-			<html><![CDATA[http://www.soortenbank.nl/soorten.php?soortengroep=vogels&id=77&menuentry=soorten]]></html>
+			<html>http://www.soortenbank.nl/soorten.php?soortengroep=vogels&amp;id=77&amp;menuentry=soorten</html>
 		</reference>
 		<reference author="http://www.synbiosys.alterra.nl/natura2000/" title="" identification="" year="2020" journal="">
-			<html><![CDATA[http://www.synbiosys.alterra.nl/natura2000/]]></html>
+			<html>http://www.synbiosys.alterra.nl/natura2000/</html>
 		</reference>
 		<reference author="Duel, H en Specken, B." year="1994" title="Habitatmodel Nonnetje: een model voor het bepalen van de kwaliteit van water- en moerasgebieden als overwinteringshabitat voor het Nonnetje(Mergus albellus)." journal="TNO-BSA Werkdocument" identification="1994"/>
 	</Documentation>

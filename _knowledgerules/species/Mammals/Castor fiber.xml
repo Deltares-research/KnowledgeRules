@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -21,11 +20,10 @@
 						<StartDate>1990-01-01</StartDate>
 						<EndDate>1999-01-01</EndDate>
 					</TemporalScope>
-
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Bever-Castorfiber-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Bever - Castor fiber - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p><p>De rekenregels zijn opgesteld aan de hand van literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a></p><h1 id="Bever-Castorfiber-Toepasbaarheid">Toepasbaarheid</h1><p>De rekenregels zijn opgesteld om het potentieel leefgebied van de bever te bepalen en zijn toepasbaar op grote en kleinere zoete wateren.</p><h1 id="Bever-Castorfiber-Voorbeeldproject">Voorbeeld project</h1><p>Geen</p>]]></text>
+						<text>&lt;h1 id="Bever-Castorfiber-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Bever - Castor fiber - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;p&gt;De rekenregels zijn opgesteld aan de hand van literatuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;&lt;/p&gt;&lt;h1 id="Bever-Castorfiber-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;De rekenregels zijn opgesteld om het potentieel leefgebied van de bever te bepalen en zijn toepasbaar op grote en kleinere zoete wateren.&lt;/p&gt;&lt;h1 id="Bever-Castorfiber-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Geen&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -54,130 +52,232 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="lengte_natuurlijke_oever">
-						<type>scalar</type>
-						<layername>"lengte_natuurlijke_oever"</layername>
-						<unit>"km"</unit>
-						<statistic>average</statistic>
-						<description>"Lengte natuurlijke oever NB. Het gaat hier om aan eengesloten natuurlijke oever lengte. Dit is ongeacht van het type beplanting."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="8" HSI="0"/>
-							<parameter value="15" HSI="1"/>
-							<parameter value="999" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="lengte_natuurlijke_oever">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>lengte_natuurlijke_oever</layer_filename>
+								<unit>"km"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Lengte natuurlijke oever NB. Het gaat hier om aan eengesloten natuurlijke oever lengte. Dit is ongeacht van het type beplanting."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="8" output="0"/>
+								<parameter input="15" output="1"/>
+								<parameter input="999" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_lengte_natuurlijke_oever">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_lengte_natuurlijke_oever</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="lengte_steil_talud">
-						<type>categorical</type>
-						<layername>"lengte_steil_talud"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"Lengte steil talud (1:0 of 1:1)"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="15 m steil talud aanwezig " HSI="1"/>
-							<parameter cat="15 m steil talud afwezig" HSI="0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="lengte_steil_talud">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>lengte_steil_talud</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Lengte steil talud (1:0 of 1:1)"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="15 m steil talud aanwezig " output="1" output_cat=""/>
+								<parameter input="2" input_cat="15 m steil talud afwezig" output="0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_lengte_steil_talud">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_lengte_steil_talud</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte">
-						<type>range / categorical</type>
-						<layername>"waterdiepte"</layername>
-						<unit>"m"</unit>
-						<statistic>minimum</statistic>
-						<description>"Waterdiepte"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="50" cat="1" HSI="0"/>
-							<parameter rangemin="50" rangemax="999" cat="2" HSI="1"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="waterdiepte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Waterdiepte"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="50" input_cat="1" output="0" output_cat=""/>
+								<parameter rangemin_input="50" rangemax_input="999" input_cat="2" output="1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="houtige_vegetatie_verdeling">
-						<type>range / categorical</type>
-						<layername>"houtige_vegetatie_verdeling"</layername>
-						<unit>"%"</unit>
-						<statistic>minimum</statistic>
-						<description>"Houtige vegetatie verdeling"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="20" cat="1" HSI="0"/>
-							<parameter rangemin="20" rangemax="100" cat="2" HSI="1"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="houtige_vegetatie_verdeling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>houtige_vegetatie_verdeling</layer_filename>
+								<unit>"%"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Houtige vegetatie verdeling"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="20" input_cat="1" output="0" output_cat=""/>
+								<parameter rangemin_input="20" rangemax_input="100" input_cat="2" output="1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_houtige_vegetatie_verdeling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_houtige_vegetatie_verdeling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="afstand_water_bomen">
-						<type>scalar</type>
-						<layername>"afstand_water_bomen"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Afstand water-bomen"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="6" HSI="1"/>
-							<parameter value="10" HSI="0"/>
-							<parameter value="999" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="afstand_water_bomen">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>afstand_water_bomen</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Afstand water-bomen"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="6" output="1"/>
+								<parameter input="10" output="0"/>
+								<parameter input="999" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_afstand_water_bomen">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_afstand_water_bomen</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="potentieel_leefgebied">
-						<type>categorical</type>
-						<layername>deelgebieden_VanWijngaarden</layername>
-						<unit>"categorie"</unit>
-						<statistic>none</statistic>
-						<description>"Beschrijving van potentiel leefgebied aan de hand van de deelgebieden, zoals samengesteld door Van Wijngaarden (1966) voor Flevoland"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="1" HSI="0.0"/>
-							<parameter cat="2" HSI="0.0"/>
-							<parameter cat="3" HSI="0.0"/>
-							<parameter cat="4" HSI="0.0"/>
-							<parameter cat="5" HSI="0.0"/>
-							<parameter cat="6" HSI="1.0"/>
-							<parameter cat="7" HSI="1.0"/>
-							<parameter cat="8" HSI="1.0"/>
-							<parameter cat="9" HSI="1.0"/>
-							<parameter cat="10" HSI="1.0"/>
-							<parameter cat="11" HSI="1.0"/>
-							<parameter cat="12" HSI="1.0"/>
-							<parameter cat="13" HSI="1.0"/>
-							<parameter cat="14" HSI="1.0"/>
-							<parameter cat="15" HSI="1.0"/>
-							<parameter cat="16" HSI="1.0"/>
-							<parameter cat="17" HSI="0.0"/>
-							<parameter cat="18" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="potentieel_leefgebied">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>potentieel_leefgebied</layer_filename>
+								<unit>"categorie"</unit>
+								<statistic>none</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Beschrijving van potentiel leefgebied aan de hand van de deelgebieden, zoals samengesteld door Van Wijngaarden (1966) voor Flevoland"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="1" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="2" output="0.0" output_cat=""/>
+								<parameter input="3" input_cat="3" output="0.0" output_cat=""/>
+								<parameter input="4" input_cat="4" output="0.0" output_cat=""/>
+								<parameter input="5" input_cat="5" output="0.0" output_cat=""/>
+								<parameter input="6" input_cat="6" output="1.0" output_cat=""/>
+								<parameter input="7" input_cat="7" output="1.0" output_cat=""/>
+								<parameter input="8" input_cat="8" output="1.0" output_cat=""/>
+								<parameter input="9" input_cat="9" output="1.0" output_cat=""/>
+								<parameter input="10" input_cat="10" output="1.0" output_cat=""/>
+								<parameter input="11" input_cat="11" output="1.0" output_cat=""/>
+								<parameter input="12" input_cat="12" output="1.0" output_cat=""/>
+								<parameter input="13" input_cat="13" output="1.0" output_cat=""/>
+								<parameter input="14" input_cat="14" output="1.0" output_cat=""/>
+								<parameter input="15" input_cat="15" output="1.0" output_cat=""/>
+								<parameter input="16" input_cat="16" output="1.0" output_cat=""/>
+								<parameter input="17" input_cat="17" output="0.0" output_cat=""/>
+								<parameter input="18" input_cat="18" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_potentieel_leefgebied">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_potentieel_leefgebied</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Bever-Castorfiber-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De bever komt, door zijn vermogen het woongebied aan zijn eisen aan te passen, in allerlei gebieden voor, van toendra tot halfwoestijn. De bever is het grootste knaagdier van Nederland en vroeger kwam de bever in groten getale in ons land voor. Door aantasting van de natuurlijke vegetatie en overbejaging is de soort uit het grootste deel van Europa verdwenen. Tussen 1988 en 1991 zijn er bevers uitgezet in de Brabantse Biesbosch en sindsdien is de  bever weer in ons land te vinden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>.</p><p>De bever komt alleen voor in zoete watersystemen (meren, plassen, beken en rivieren) en mijden zout water. Met betrekking tot de terrestrische vegetatie, zijn bevers vaak te vinden nabijn polders, het rivieren landschap en de hoge zandgronden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>.</p><p>De bever is een sociaal dier. Ze leven in familiegroepen die bestaan uit een ouderpaar, de pas geboren jongen en de eenjarige jongen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. De dieren graven holen in steile oevers en leggen burchten aan. Van beide dient de ingang zich onder het wateroppervlak te bevinden. Hierdoor kan de bever zowel langs steile als vlakke oevers leven. Voor een brucht dient het voorkeurstalud steil te zijn (tot 1:1), zodat de bever in de oever (onder de waterspiegel) een burchtingang kan bouwen. Te steile oeverwanden kunnen er echter toe leiden dat de bever niet uit het water kan komen. Niet-natuurvriendelijke oevers met bijvoorbeeld een damwand zijn daardoor niet geschikt voor de bever. In watersystemen met sterke peilfluctuaties leggen de dieren een dam aan. Verder beschermt de burcht de bever tegen lage temperaturen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><p>Het water dient als vluchtroute en als opslagplaats voor wintervoorraad. Het water wordt niet gebruikt om voedsel te zoeken, dit gebeurt langs de oever. In het oevergebied dienen zowel  voedsel in de vorm van houtige gewassen en kruiden in ruime mate aanwezig te zijn als dat er bomen voor komen (bouwmateriaal). Bevers komen zelden verder dan 6 meter van het water  <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><p>Om een goede ingang te hebben tot de burcht, dient de waterdiepte minimaal 50 cm bedragen. Als het water te ondiep is voor de bevers, kunnen ze het door middel van het bouwen van een dam het waterpeil beïnvloeden. De bever heeft een aaneengesloten oeverlengte van 8-20 kilometer natuurlijke oever nodig. Hierbij maakt het type beplanting in mindere mate uit. Bevers vermijden wateren die in de zomer droogvallen of in de winter kunnen bevriezen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><p>Voor een beverpaar is minimaal 40 meter aan houtige structuren vereist <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. De totale lengte van houtige structuren aan de waterkant bepaald het aantal beverparen dat er kan voorkomen en de lengte van de oever dat het paartje bezet <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Een bever paar heeft een territorium van gemiddeld 3 km oever met houtige vegetatie en onder goede omstandigheden wordt er een dichtheid van 2.2 burchten per km bereikt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Een meer wordt meestal bewoond door één familie. De dichtheid van die houttige vegetatie dient tot 6 meter van de oever minimaal 20% te bedragen. In de Biesbosch gebruikt een beverpaar gemiddeld 5.5-7.5 km oever met wilgen. Een levensvatbare populatie bestaat uit minimaal 30 dieren. Zandige en stenige oevers worden gemeden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Bevers zijn verstoringgevoelig. Van fluisterboten is bekend dat deze de bever niet verstoren, echter bij gepraat of motorgeluiden passeren de bevers niet of onderwater <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>.  </p><h3 id="Bever-Castorfiber-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De soort is een uitgesproken planteneter, waarbij de voedselkeuze bepaald wordt door het aanbod. ’s Winters wordt met name (wilgen)bast gegeten en wortelstokken van waterlelie en gele plomp. In het algemeen worden zachte houtsoorten geprefereerd. ‘Zomers eten bevers veel kruiden en grassen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. </p><h3 id="Bever-Castorfiber-Reproductieenmigratie">Reproductie en migratie</h3><p>Na 2 tot 3 jaar zijn de bevers volwassen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2">#2</a>. De bronstijd vindt plaats in de maanden januari en februari. Na een draagtijd van ongeveer 15 weken worden de jongen in de maart tot midden juli geboren. Er vindt maar één worp per jaar plaats met een gemiddeld 2 jongen per worp. De jonge bevers blijven 4-6 weken in het nest <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1">#1</a>. Na 2 tot 3 jaar trekken de inmiddels volwassen geworden bevers uit het nest weg <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2">#2</a>. De gemiddelde levensduur van een bever is 8-12 jaar met een maximum van 35 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2">#2</a>. </p>]]></text>
+			<text>&lt;h3 id="Bever-Castorfiber-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De bever komt, door zijn vermogen het woongebied aan zijn eisen aan te passen, in allerlei gebieden voor, van toendra tot halfwoestijn. De bever is het grootste knaagdier van Nederland en vroeger kwam de bever in groten getale in ons land voor. Door aantasting van de natuurlijke vegetatie en overbejaging is de soort uit het grootste deel van Europa verdwenen. Tussen 1988 en 1991 zijn er bevers uitgezet in de Brabantse Biesbosch en sindsdien is de  bever weer in ons land te vinden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De bever komt alleen voor in zoete watersystemen (meren, plassen, beken en rivieren) en mijden zout water. Met betrekking tot de terrestrische vegetatie, zijn bevers vaak te vinden nabijn polders, het rivieren landschap en de hoge zandgronden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De bever is een sociaal dier. Ze leven in familiegroepen die bestaan uit een ouderpaar, de pas geboren jongen en de eenjarige jongen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. De dieren graven holen in steile oevers en leggen burchten aan. Van beide dient de ingang zich onder het wateroppervlak te bevinden. Hierdoor kan de bever zowel langs steile als vlakke oevers leven. Voor een brucht dient het voorkeurstalud steil te zijn (tot 1:1), zodat de bever in de oever (onder de waterspiegel) een burchtingang kan bouwen. Te steile oeverwanden kunnen er echter toe leiden dat de bever niet uit het water kan komen. Niet-natuurvriendelijke oevers met bijvoorbeeld een damwand zijn daardoor niet geschikt voor de bever. In watersystemen met sterke peilfluctuaties leggen de dieren een dam aan. Verder beschermt de burcht de bever tegen lage temperaturen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;Het water dient als vluchtroute en als opslagplaats voor wintervoorraad. Het water wordt niet gebruikt om voedsel te zoeken, dit gebeurt langs de oever. In het oevergebied dienen zowel  voedsel in de vorm van houtige gewassen en kruiden in ruime mate aanwezig te zijn als dat er bomen voor komen (bouwmateriaal). Bevers komen zelden verder dan 6 meter van het water  &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;Om een goede ingang te hebben tot de burcht, dient de waterdiepte minimaal 50 cm bedragen. Als het water te ondiep is voor de bevers, kunnen ze het door middel van het bouwen van een dam het waterpeil beïnvloeden. De bever heeft een aaneengesloten oeverlengte van 8-20 kilometer natuurlijke oever nodig. Hierbij maakt het type beplanting in mindere mate uit. Bevers vermijden wateren die in de zomer droogvallen of in de winter kunnen bevriezen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;Voor een beverpaar is minimaal 40 meter aan houtige structuren vereist &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. De totale lengte van houtige structuren aan de waterkant bepaald het aantal beverparen dat er kan voorkomen en de lengte van de oever dat het paartje bezet &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. Een bever paar heeft een territorium van gemiddeld 3 km oever met houtige vegetatie en onder goede omstandigheden wordt er een dichtheid van 2.2 burchten per km bereikt &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. Een meer wordt meestal bewoond door één familie. De dichtheid van die houttige vegetatie dient tot 6 meter van de oever minimaal 20% te bedragen. In de Biesbosch gebruikt een beverpaar gemiddeld 5.5-7.5 km oever met wilgen. Een levensvatbare populatie bestaat uit minimaal 30 dieren. Zandige en stenige oevers worden gemeden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. Bevers zijn verstoringgevoelig. Van fluisterboten is bekend dat deze de bever niet verstoren, echter bij gepraat of motorgeluiden passeren de bevers niet of onderwater &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;&lt;h3 id="Bever-Castorfiber-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De soort is een uitgesproken planteneter, waarbij de voedselkeuze bepaald wordt door het aanbod. ’s Winters wordt met name (wilgen)bast gegeten en wortelstokken van waterlelie en gele plomp. In het algemeen worden zachte houtsoorten geprefereerd. ‘Zomers eten bevers veel kruiden en grassen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Bever-Castorfiber-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;Na 2 tot 3 jaar zijn de bevers volwassen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2"&gt;#2&lt;/a&gt;. De bronstijd vindt plaats in de maanden januari en februari. Na een draagtijd van ongeveer 15 weken worden de jongen in de maart tot midden juli geboren. Er vindt maar één worp per jaar plaats met een gemiddeld 2 jongen per worp. De jonge bevers blijven 4-6 weken in het nest &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-1"&gt;#1&lt;/a&gt;. Na 2 tot 3 jaar trekken de inmiddels volwassen geworden bevers uit het nest weg &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2"&gt;#2&lt;/a&gt;. De gemiddelde levensduur van een bever is 8-12 jaar met een maximum van 35 jaar &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bever+-+Castor+fiber#Bever-Castorfiber-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Hollands., H., J.O. Reinhold" year="1999" title="HSI-modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van huidige ecologische kennis" journal="Dienst Weg- en Waterbouwkunde" identification=""/>
 		<reference author="" year="2012" title="www.zoogdiervereniging.nl (Bever)" journal="" identification="11-12-2012"/>

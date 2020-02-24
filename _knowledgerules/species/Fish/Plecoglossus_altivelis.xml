@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -24,7 +23,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="ENG">
-						<text><![CDATA[TO BE FILLED]]></text>
+						<text>TO BE FILLED</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -105,553 +104,995 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="WaterDepthSpawning">
-						<type>scalar</type>
-						<layername>"Mean_waterdepth_spawning"</layername>
-						<unit>"m"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable waterdepth for spawning P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.09" HSI="0"/>
-							<parameter value="0.13" HSI="1"/>
-							<parameter value="0.55" HSI="1"/>
-							<parameter value="0.61" HSI="0"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="WaterDepthSpawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>WaterDepthSpawning</layer_filename>
+								<unit>"m"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable waterdepth for spawning P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.09" output="0"/>
+								<parameter input="0.13" output="1"/>
+								<parameter input="0.55" output="1"/>
+								<parameter input="0.61" output="0"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_WaterDepthSpawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_WaterDepthSpawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocitySpawning">
-						<type>scalar</type>
-						<layername>"Mean_flow_velocity_spawning"</layername>
-						<unit>"m/s"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable flow velocity for spawning P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.2" HSI="1"/>
-							<parameter value="0.4" HSI="1"/>
-							<parameter value="3" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="FlowVelocitySpawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>FlowVelocitySpawning</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable flow velocity for spawning P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="0.4" output="1"/>
+								<parameter input="3" output="0"/>
+								<parameter input="5" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_FlowVelocitySpawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_FlowVelocitySpawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureSpawning">
-						<type>scalar</type>
-						<layername>"Mean_temperature_spawning"</layername>
-						<unit>"degrees celsius"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable temperature for spawning P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="13" HSI="0"/>
-							<parameter value="14" HSI="1"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="26" HSI="0"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="TemperatureSpawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>TemperatureSpawning</layer_filename>
+								<unit>"degrees celsius"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable temperature for spawning P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="13" output="0"/>
+								<parameter input="14" output="1"/>
+								<parameter input="25" output="1"/>
+								<parameter input="26" output="0"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_TemperatureSpawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_TemperatureSpawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenSpawning">
-						<type>scalar</type>
-						<layername>"Min_dissolved_oxygen_spawning"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum tolerable dissolve oxygen concentration for spawning P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-							<parameter value="7" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="DissolvedOxygenSpawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>DissolvedOxygenSpawning</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum tolerable dissolve oxygen concentration for spawning P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="5" output="0"/>
+								<parameter input="7" output="1"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_DissolvedOxygenSpawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_DissolvedOxygenSpawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedMatterSpawning">
-						<type>scalar</type>
-						<layername>"Max_suspended_sediment_spawning"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum tolerable dissolve oxygen concentration for spawning P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="21" HSI="1"/>
-							<parameter value="125" HSI="0"/>
-							<parameter value="300" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="SuspendedMatterSpawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>SuspendedMatterSpawning</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum tolerable dissolve oxygen concentration for spawning P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="21" output="1"/>
+								<parameter input="125" output="0"/>
+								<parameter input="300" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_SuspendedMatterSpawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_SuspendedMatterSpawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthEgg">
-						<type>scalar</type>
-						<layername>"Min_waterdepth_egg"</layername>
-						<unit>"m"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum tolerable water depth for egg incubation of P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.13" HSI="1"/>
-							<parameter value="1" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="WaterDepthEgg">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>WaterDepthEgg</layer_filename>
+								<unit>"m"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum tolerable water depth for egg incubation of P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.13" output="1"/>
+								<parameter input="1" output="1"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_WaterDepthEgg">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_WaterDepthEgg</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMaxEgg">
-						<type>scalar</type>
-						<layername>"Max_flow_velocity_egg"</layername>
-						<unit>"m/s"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum tolerable water depth for egg incubation of P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="0.2" HSI="1"/>
-							<parameter value="0.4" HSI="1"/>
-							<parameter value="3" HSI="0"/>
-							<parameter value="10" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="FlowVelocityMaxEgg">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>FlowVelocityMaxEgg</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum tolerable water depth for egg incubation of P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="0.4" output="1"/>
+								<parameter input="3" output="0"/>
+								<parameter input="10" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_FlowVelocityMaxEgg">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_FlowVelocityMaxEgg</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMinEgg">
-						<type>scalar</type>
-						<layername>"Min_flow_velocity_egg"</layername>
-						<unit>"m/s"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum tolerable flow velocity for egg incubation of P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.2" HSI="1"/>
-							<parameter value="0.4" HSI="1"/>
-							<parameter value="3" HSI="1"/>
-							<parameter value="5" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="FlowVelocityMinEgg">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>FlowVelocityMinEgg</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum tolerable flow velocity for egg incubation of P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="0.4" output="1"/>
+								<parameter input="3" output="1"/>
+								<parameter input="5" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_FlowVelocityMinEgg">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_FlowVelocityMinEgg</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureEgg">
-						<type>scalar</type>
-						<layername>"Mean_temperature_egg"</layername>
-						<unit>"degrees celcius"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean temperature for egg incubation of P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="9" HSI="0"/>
-							<parameter value="13" HSI="1"/>
-							<parameter value="18" HSI="1"/>
-							<parameter value="21" HSI="1"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="TemperatureEgg">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>TemperatureEgg</layer_filename>
+								<unit>"degrees celcius"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean temperature for egg incubation of P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="9" output="0"/>
+								<parameter input="13" output="1"/>
+								<parameter input="18" output="1"/>
+								<parameter input="21" output="1"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_TemperatureEgg">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_TemperatureEgg</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenEgg">
-						<type>scalar</type>
-						<layername>"Min_dissolved_oxygen_egg"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum dissolved oxygen concentration for egg incubation of P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-							<parameter value="7" HSI="1"/>
-							<parameter value="15" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="DissolvedOxygenEgg">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>DissolvedOxygenEgg</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum dissolved oxygen concentration for egg incubation of P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="5" output="0"/>
+								<parameter input="7" output="1"/>
+								<parameter input="15" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_DissolvedOxygenEgg">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_DissolvedOxygenEgg</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedSedimentEgg">
-						<type>scalar</type>
-						<layername>"Max_suspended_sediment_egg"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum suspended sediment concentration for egg incubation of P. altivelis</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="21" HSI="1"/>
-							<parameter value="125" HSI="0"/>
-							<parameter value="300" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="SuspendedSedimentEgg">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>SuspendedSedimentEgg</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum suspended sediment concentration for egg incubation of P. altivelis</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="21" output="1"/>
+								<parameter input="125" output="0"/>
+								<parameter input="300" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_SuspendedSedimentEgg">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_SuspendedSedimentEgg</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthDescending">
-						<type>scalar</type>
-						<layername>"Mean_waterdepth_descending"</layername>
-						<unit>"m"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable water depth for descending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.1" HSI="1"/>
-							<parameter value="1" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="WaterDepthDescending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>WaterDepthDescending</layer_filename>
+								<unit>"m"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable water depth for descending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.1" output="1"/>
+								<parameter input="1" output="1"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_WaterDepthDescending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_WaterDepthDescending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureDescending">
-						<type>scalar</type>
-						<layername>"Mean_temperature_descending"</layername>
-						<unit>"degrees celcius"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean temperature for descending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="8" HSI="0"/>
-							<parameter value="11" HSI="1"/>
-							<parameter value="22" HSI="1"/>
-							<parameter value="23" HSI="0"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="TemperatureDescending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>TemperatureDescending</layer_filename>
+								<unit>"degrees celcius"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean temperature for descending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="8" output="0"/>
+								<parameter input="11" output="1"/>
+								<parameter input="22" output="1"/>
+								<parameter input="23" output="0"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_TemperatureDescending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_TemperatureDescending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenDescending">
-						<type>scalar</type>
-						<layername>"Min_dissolved_oxygen_descending"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum dissolved oxygen concentration for descending  of P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-							<parameter value="7" HSI="1"/>
-							<parameter value="15" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="DissolvedOxygenDescending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>DissolvedOxygenDescending</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum dissolved oxygen concentration for descending  of P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="5" output="0"/>
+								<parameter input="7" output="1"/>
+								<parameter input="15" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_DissolvedOxygenDescending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_DissolvedOxygenDescending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedSedimentDescending">
-						<type>scalar</type>
-						<layername>"Max_suspended_sediment_descending"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum suspended sediment concentration for descending  of P. altivelis</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="13" HSI="1"/>
-							<parameter value="24" HSI="0"/>
-							<parameter value="300" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="SuspendedSedimentDescending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>SuspendedSedimentDescending</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum suspended sediment concentration for descending  of P. altivelis</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="13" output="1"/>
+								<parameter input="24" output="0"/>
+								<parameter input="300" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_SuspendedSedimentDescending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_SuspendedSedimentDescending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthAscending">
-						<type>scalar</type>
-						<layername>"Mean_waterdepth_ascending"</layername>
-						<unit>"m"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable waterdepth for ascending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.3" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="WaterDepthAscending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>WaterDepthAscending</layer_filename>
+								<unit>"m"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable waterdepth for ascending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.3" output="1"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_WaterDepthAscending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_WaterDepthAscending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMeanAscending">
-						<type>scalar</type>
-						<layername>"Mean_flow_velocity_ascending"</layername>
-						<unit>"m/s"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable flow velocity for ascending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.2" HSI="1"/>
-							<parameter value="0.6" HSI="1"/>
-							<parameter value="3" HSI="0"/>
-							<parameter value="10" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="FlowVelocityMeanAscending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>FlowVelocityMeanAscending</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable flow velocity for ascending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="0.6" output="1"/>
+								<parameter input="3" output="0"/>
+								<parameter input="10" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_FlowVelocityMeanAscending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_FlowVelocityMeanAscending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMaxAscending">
-						<type>scalar</type>
-						<layername>"Max_flow_velocity_ascending"</layername>
-						<unit>"m/s"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum tolerable flow velocity for ascending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="0.2" HSI="1"/>
-							<parameter value="0.6" HSI="1"/>
-							<parameter value="3" HSI="0"/>
-							<parameter value="10" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="FlowVelocityMaxAscending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>FlowVelocityMaxAscending</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum tolerable flow velocity for ascending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="0.6" output="1"/>
+								<parameter input="3" output="0"/>
+								<parameter input="10" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_FlowVelocityMaxAscending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_FlowVelocityMaxAscending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureAscending">
-						<type>scalar</type>
-						<layername>"Mean_temperature_ascending"</layername>
-						<unit>"degrees celsius"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable temperature for ascending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="8" HSI="0"/>
-							<parameter value="11" HSI="1"/>
-							<parameter value="22" HSI="1"/>
-							<parameter value="23" HSI="0"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="TemperatureAscending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>TemperatureAscending</layer_filename>
+								<unit>"degrees celsius"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable temperature for ascending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="8" output="0"/>
+								<parameter input="11" output="1"/>
+								<parameter input="22" output="1"/>
+								<parameter input="23" output="0"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_TemperatureAscending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_TemperatureAscending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenAscending">
-						<type>scalar</type>
-						<layername>"Min_dissolved_oxygen_ascending"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum tolerable dissolve oxygen concentration for ascending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-							<parameter value="7" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="DissolvedOxygenAscending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>DissolvedOxygenAscending</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum tolerable dissolve oxygen concentration for ascending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="5" output="0"/>
+								<parameter input="7" output="1"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_DissolvedOxygenAscending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_DissolvedOxygenAscending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedMatterAscending">
-						<type>scalar</type>
-						<layername>"Max_suspended_sediment_ascending"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum tolerable suspended sediment concentration for ascending P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="47" HSI="1"/>
-							<parameter value="125" HSI="0"/>
-							<parameter value="300" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="SuspendedMatterAscending">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>SuspendedMatterAscending</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum tolerable suspended sediment concentration for ascending P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="47" output="1"/>
+								<parameter input="125" output="0"/>
+								<parameter input="300" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_SuspendedMatterAscending">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_SuspendedMatterAscending</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthFeeding">
-						<type>scalar</type>
-						<layername>"Mean_waterdepth_feeding"</layername>
-						<unit>"m"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable waterdepth for feeding P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.09" HSI="0"/>
-							<parameter value="0.13" HSI="1"/>
-							<parameter value="0.55" HSI="1"/>
-							<parameter value="0.61" HSI="0"/>
-							<parameter value="15" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="WaterDepthFeeding">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>WaterDepthFeeding</layer_filename>
+								<unit>"m"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable waterdepth for feeding P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.09" output="0"/>
+								<parameter input="0.13" output="1"/>
+								<parameter input="0.55" output="1"/>
+								<parameter input="0.61" output="0"/>
+								<parameter input="15" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_WaterDepthFeeding">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_WaterDepthFeeding</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityFeeding">
-						<type>scalar</type>
-						<layername>"Mean_flow_velocity_feeding"</layername>
-						<unit>"m/s"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable flow velocity for feeding P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.2" HSI="1"/>
-							<parameter value="0.5" HSI="1"/>
-							<parameter value="3" HSI="0"/>
-							<parameter value="10" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="FlowVelocityFeeding">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>FlowVelocityFeeding</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable flow velocity for feeding P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="0.5" output="1"/>
+								<parameter input="3" output="0"/>
+								<parameter input="10" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_FlowVelocityFeeding">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_FlowVelocityFeeding</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureFeeding">
-						<type>scalar</type>
-						<layername>"Mean_temperature_feeding"</layername>
-						<unit>"degrees celsius"</unit>
-						<statistic>mean</statistic>
-						<description>"Mean tolerable temperature for feeding P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="13" HSI="0"/>
-							<parameter value="14" HSI="1"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="26" HSI="0"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="TemperatureFeeding">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>TemperatureFeeding</layer_filename>
+								<unit>"degrees celsius"</unit>
+								<statistic>mean</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mean tolerable temperature for feeding P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="13" output="0"/>
+								<parameter input="14" output="1"/>
+								<parameter input="25" output="1"/>
+								<parameter input="26" output="0"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_TemperatureFeeding">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_TemperatureFeeding</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenFeeding">
-						<type>scalar</type>
-						<layername>"Min_dissolved_oxygen_feeding"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum tolerable dissolve oxygen concentration for feeding P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-							<parameter value="7" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="DissolvedOxygenFeeding">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>DissolvedOxygenFeeding</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum tolerable dissolve oxygen concentration for feeding P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="5" output="0"/>
+								<parameter input="7" output="1"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_DissolvedOxygenFeeding">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_DissolvedOxygenFeeding</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedSedimentFeeding">
-						<type>scalar</type>
-						<layername>"Max_suspended_sediment_feeding"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum tolerable suspended sediment concentration for feeding P. altivelis"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2019-06-20</date>
-						<references>
-							<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-								<html/>
-							</reference>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="47" HSI="1"/>
-							<parameter value="125" HSI="0"/>
-							<parameter value="300" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="SuspendedSedimentFeeding">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>SuspendedSedimentFeeding</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum tolerable suspended sediment concentration for feeding P. altivelis"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2019-06-20</date>
+							<references>
+								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+									<html/>
+								</reference>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="47" output="1"/>
+								<parameter input="125" output="0"/>
+								<parameter input="300" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_SuspendedSedimentFeeding">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_SuspendedSedimentFeeding</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="ENG">
-			<text><![CDATA[TO BE FILLED]]></text>
+			<text>TO BE FILLED</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
 		</reference>

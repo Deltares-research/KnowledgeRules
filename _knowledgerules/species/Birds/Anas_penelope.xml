@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45510553</EoLpagenr>
 			<LatName>Anas penelope</LatName>
 			<CommonNames>
-				<Name name= "Smient" language="NL"/>
+				<Name name="Smient" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -25,24 +23,24 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<p>Het nest wordt gemaakt op de bodem, maar mogelijk ook op het wateroppervlak of aan de waterkant.</p>
+						<text>&lt;p&gt;Het nest wordt gemaakt op de bodem, maar mogelijk ook op het wateroppervlak of aan de waterkant.&lt;/p&gt;
 
-<p>Het voedsel wordt gezocht op de bodem, op het wateroppervlak en in de waterkant .</p>
+&lt;p&gt;Het voedsel wordt gezocht op de bodem, op het wateroppervlak en in de waterkant .&lt;/p&gt;
 
-<p>De bepalende factor van voorkomen is de aanwezigheid van ondiep open water.</p>
+&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van ondiep open water.&lt;/p&gt;
 
 
-<h1 id="Smient-Anaspenelope-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+&lt;h1 id="Smient-Anaspenelope-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Smient - Anas penelope - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Smient - Anas penelope - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<h1 id="Smient-Anaspenelope-Toepassingsgebied">Toepassingsgebied</h1>
+&lt;h1 id="Smient-Anaspenelope-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;
 
-<p>Het Veerse Meer. </p>
+&lt;p&gt;Het Veerse Meer. &lt;/p&gt;
 
-<h1 id="Smient-Anaspenelope-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Smient-Anaspenelope-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Niet aanwezig</p>]]></text>
+&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -57,62 +55,96 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="waterdepth_summer">
-						<type>scalar</type>
-						<layername>"waterdepth_summer"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in the summer period"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="0.0"/>
-							<parameter value="0.01" HSI="1.0"/>
-							<parameter value="2.0" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="waterdepth_summer">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in the summer period"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="0.01" output="1.0"/>
+								<parameter input="2.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_summer">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_summer</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth_winter">
-						<type>scalar</type>
-						<layername>"waterdepth_winter"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in the winter period"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="1.0"/>
-							<parameter value="0.2" HSI="1.0"/>
-							<parameter value="0.4" HSI="0.0"/>
-							<parameter value="1.0" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="waterdepth_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdepth_winter</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in the winter period"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="0.2" output="1.0"/>
+								<parameter input="0.4" output="0.0"/>
+								<parameter input="1.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Smient-Anaspenelope-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Smient-Anaspenelope-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>In Nederland is de Smient hoofdzakelijk in de winter talrijk aanwezig. Ruim 40% van de Noordwest-Europese populatie overwintert in Nederland. Smienten broeden bij meren in IJsland, Schotland, Noord-Engeland en in de brede arctische en subarctische gordel die van Noorwegen via Azië tot de Bering straat loopt. In Nederland broeden slechts enkele paartjes Smienten. In het najaar begeven ze zich vooral op zoutmoerassen langs de kust <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2">#2</a>.</p>
+&lt;p&gt;In Nederland is de Smient hoofdzakelijk in de winter talrijk aanwezig. Ruim 40% van de Noordwest-Europese populatie overwintert in Nederland. Smienten broeden bij meren in IJsland, Schotland, Noord-Engeland en in de brede arctische en subarctische gordel die van Noorwegen via Azië tot de Bering straat loopt. In Nederland broeden slechts enkele paartjes Smienten. In het najaar begeven ze zich vooral op zoutmoerassen langs de kust &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
 
 
-<h3 id="Smient-Anaspenelope-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Smient-Anaspenelope-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Smienten zijn bijna helemaal vegetarisch, maar de vrouwtjes eten ook grote aantallen muggen tijdens het broedseizoen. Die leveren meer en betere eiwitten dan planten, iets dat hen in het broedseizoen in goede conditie houdt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-1">#1</a>. In de winter komen ze in groten getale grazend voor op graslanden in het Europese binnenland. De smienten die in September in het Veerse Meer arriveren doen zich vooral tegoed aan macrofyten zoals Zeesla en Zeegras. 's Avonds trekken groepen Smienten naar omliggende landbouwgronden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2">#2</a>.</p>
+&lt;p&gt;Smienten zijn bijna helemaal vegetarisch, maar de vrouwtjes eten ook grote aantallen muggen tijdens het broedseizoen. Die leveren meer en betere eiwitten dan planten, iets dat hen in het broedseizoen in goede conditie houdt &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-1"&gt;#1&lt;/a&gt;. In de winter komen ze in groten getale grazend voor op graslanden in het Europese binnenland. De smienten die in September in het Veerse Meer arriveren doen zich vooral tegoed aan macrofyten zoals Zeesla en Zeegras. 's Avonds trekken groepen Smienten naar omliggende landbouwgronden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<p>Smienten foerageren voornamelijk in ondiep water (&lt;20 cm), waarbij het Zeesla of Zeegras grondelend wordt bemachtigd. Aan het einde van het jaar is er meer energierijk eten nodig om te overleven en schakelt de soort over op landbouwgrassen. Net als Meerkoeten grazen ze ook op het droogvallende en afstervend Zeesla op de droogvallende platen in het najaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2">#2</a>.</p>]]></text>
-			</Description>
-	</ContentDescription>
+&lt;p&gt;Smienten foerageren voornamelijk in ondiep water (&amp;lt;20 cm), waarbij het Zeesla of Zeegras grondelend wordt bemachtigd. Aan het einde van het jaar is er meer energierijk eten nodig om te overleven en schakelt de soort over op landbouwgrassen. Net als Meerkoeten grazen ze ook op het droogvallende en afstervend Zeesla op de droogvallende platen in het najaar &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Smient+-+Anas+penelope#Smient-Anaspenelope-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="http://www.vogelbescherming.nl/vogels_kijken/vogelgids" title="Smient" year="2012" journal="" identification="23 november 2012">
-			<html><![CDATA[https://www.vogelbescherming.nl/ontdek-vogels/kennis-over-vogels/vogelgids/vogel/Smient]]></html>
+			<html>https://www.vogelbescherming.nl/ontdek-vogels/kennis-over-vogels/vogelgids/vogel/Smient</html>
 		</reference>
 		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>
 		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure" journal="" identification="november 2002"/>

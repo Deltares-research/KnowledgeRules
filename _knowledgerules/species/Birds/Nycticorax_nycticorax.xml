@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45511338</EoLpagenr>
 			<LatName>Nycticorax nycticorax</LatName>
 			<CommonNames>
-				<Name name= "Kwak" language="NL"/>
+				<Name name="Kwak" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -25,19 +23,19 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Kwak-Nycticoraxnycticorax-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Kwak-Nycticoraxnycticorax-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Kwak - Nycticorax nycticorax - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Kwak - Nycticorax nycticorax - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>.</p>
+&lt;p&gt;Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h1 id="Kwak-Nycticoraxnycticorax-Toepassingsgebied">Toepassingsgebied</h1>
+&lt;h1 id="Kwak-Nycticoraxnycticorax-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;
 
-<p>Deze rekenregels zijn opgesteld voor de kwak en zijn van toepassing in de zomermaanden op water-en moerasgebieden als broedgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. </p>
+&lt;p&gt;Deze rekenregels zijn opgesteld voor de kwak en zijn van toepassing in de zomermaanden op water-en moerasgebieden als broedgebied &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<h1 id="Kwak-Nycticoraxnycticorax-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Kwak-Nycticoraxnycticorax-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Niet aanwezig</p>]]></text>
+&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -65,119 +63,187 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="swamp_vegetation">
-						<type>categorical</type>
-						<layername>"swamp_vegetation"</layername>
-						<unit>"categorical"</unit>
-						<statistic>average</statistic>
-						<description>"Type of swamp vegetation"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="Forest with bushes as undergrowth" HSI="1.0"/>
-							<parameter cat="Forest without bushes as undergrowth" HSI="0.6"/>
-							<parameter cat="Struweel" HSI="0.6"/>
-							<parameter cat="Reed" HSI="0.2"/>
-							<parameter cat="Others" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="swamp_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>swamp_vegetation</layer_filename>
+								<unit>"categorical"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Type of swamp vegetation"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="Forest with bushes as undergrowth" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="Forest without bushes as undergrowth" output="0.6" output_cat=""/>
+								<parameter input="3" input_cat="Struweel" output="0.6" output_cat=""/>
+								<parameter input="4" input_cat="Reed" output="0.2" output_cat=""/>
+								<parameter input="5" input_cat="Others" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_swamp_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_swamp_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="disturbance_distance">
-						<type>scalar</type>
-						<layername>"disturbance_distance"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Disturbance distance in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="250" HSI="0.0"/>
-							<parameter value="400" HSI="1.0"/>
-							<parameter value="500" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="disturbance_distance">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>disturbance_distance</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Disturbance distance in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="250" output="0.0"/>
+								<parameter input="400" output="1.0"/>
+								<parameter input="500" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_disturbance_distance">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_disturbance_distance</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DDE_presence_fish">
-						<type>range / categorical</type>
-						<layername>"DDE_presence_fish"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"DDE presence in fish expressed in mg/kg"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.15" cat="0.00 - 0.15" HSI="1.0"/>
-							<parameter rangemin="0.15" rangemax="0.40" cat="0.15 - 0.40" HSI="0.5"/>
-							<parameter rangemin="0.40" rangemax="999999" cat="> 0.40" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="DDE_presence_fish">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>DDE_presence_fish</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"DDE presence in fish expressed in mg/kg"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.15" input_cat="0.00 - 0.15" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0.15" rangemax_input="0.40" input_cat="0.15 - 0.40" output="0.5" output_cat=""/>
+								<parameter rangemin_input="0.40" rangemax_input="999999" input_cat="&gt; 0.40" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_DDE_presence_fish">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_DDE_presence_fish</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="PCB_presence_fish">
-						<type>range / categorical</type>
-						<layername>"PCB_presence_fish"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Total - PCB presence in fish expressed in mg/kg"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.035" cat="0.000 - 0.035" HSI="1.0"/>
-							<parameter rangemin="0.035" rangemax="0.070" cat="0.035 - 0.070" HSI="0.8"/>
-							<parameter rangemin="0.070" rangemax="0.140" cat="0.070 - 0.140" HSI="0.4"/>
-							<parameter rangemin="0.140" rangemax="999999" cat="> 0.140" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="PCB_presence_fish">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>PCB_presence_fish</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Total - PCB presence in fish expressed in mg/kg"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1995" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.035" input_cat="0.000 - 0.035" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0.035" rangemax_input="0.070" input_cat="0.035 - 0.070" output="0.8" output_cat=""/>
+								<parameter rangemin_input="0.070" rangemax_input="0.140" input_cat="0.070 - 0.140" output="0.4" output_cat=""/>
+								<parameter rangemin_input="0.140" rangemax_input="999999" input_cat="&gt; 0.140" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_PCB_presence_fish">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_PCB_presence_fish</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Kwak-Nycticoraxnycticorax-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Kwak-Nycticoraxnycticorax-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De kwak komt wijdverspreid en in alle werelddelen voor. De uitzondering vormt Australië. De kwak heeft 4 ondersoorten. In Europa komt alleen de ondersoort  Nycticorax nyticorax als broedvogel voor. De kwak behoort tot de familie van de reigers en de roerdompen (Ardeidae). De soort wordt het beste omschreven als een middelgrote reiger met korte poten, waarbij de volwassen kwak te herkennen is aan een zwarte rug en schedelkap, de lange afhangende witte kuif, de lichte onderdelen, de rode ogen en de forse snavel. De West-Europese kwakken overwinteren in West-Afrika <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. </p>
+&lt;p&gt;De kwak komt wijdverspreid en in alle werelddelen voor. De uitzondering vormt Australië. De kwak heeft 4 ondersoorten. In Europa komt alleen de ondersoort  Nycticorax nyticorax als broedvogel voor. De kwak behoort tot de familie van de reigers en de roerdompen (Ardeidae). De soort wordt het beste omschreven als een middelgrote reiger met korte poten, waarbij de volwassen kwak te herkennen is aan een zwarte rug en schedelkap, de lange afhangende witte kuif, de lichte onderdelen, de rode ogen en de forse snavel. De West-Europese kwakken overwinteren in West-Afrika &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>De kwak is een echte nachtvogel, die zich overdag in het riet, struiken, of bomen verschuilt. In de avond schemering vliegen de dieren naar het foerageergebied en voor zonsopkomst keren de vogels terug op het nest. Hierop is de uitzondering als de kwak jongen te verzorgen heeft. Dan is de kwak ook in de ochtend en de namiddag actief op zoek naar voedsel <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>.</p>
+&lt;p&gt;De kwak is een echte nachtvogel, die zich overdag in het riet, struiken, of bomen verschuilt. In de avond schemering vliegen de dieren naar het foerageergebied en voor zonsopkomst keren de vogels terug op het nest. Hierop is de uitzondering als de kwak jongen te verzorgen heeft. Dan is de kwak ook in de ochtend en de namiddag actief op zoek naar voedsel &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>De kwak broed vooral in kolonies, vaak met andere reigerachtigen zoals de kleine reiger (Egretta garzetta), grote zilverreiger (E. alba), blauwe reiger (Ardea cinerea) en ralreiger (Ardeola ralloides) en soms ook met aalscholvers (Phalacrocorax carbo) en lepelaars (Platalea leucrodia). Kwakken broeden in overstromingsgebieden en delta’s van grote rivieren, de beboste oevers van meren en plassen en in waterrijke moerasgebieden. Hier broeden ze vooral in rivierbegeleidende wilgen- en populieren bossen (ooibossen) en in moerasbossen en rietmoerassen met veel opslag van elzen en wilgen. Het minimale oppervlak van dit bos voor de vestiging van de kwak wordt geschat op 1 ha. Echter voor een kolonie van 50 broedparen is in het rivierengebied een ooibosgebied van 200 ha nodig. Deze gebieden dienen moeilijk bereikbaar te zijn, omdat de kwak zeer  verstoringsgevoelig is  <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. </p>
+&lt;p&gt;De kwak broed vooral in kolonies, vaak met andere reigerachtigen zoals de kleine reiger (Egretta garzetta), grote zilverreiger (E. alba), blauwe reiger (Ardea cinerea) en ralreiger (Ardeola ralloides) en soms ook met aalscholvers (Phalacrocorax carbo) en lepelaars (Platalea leucrodia). Kwakken broeden in overstromingsgebieden en delta’s van grote rivieren, de beboste oevers van meren en plassen en in waterrijke moerasgebieden. Hier broeden ze vooral in rivierbegeleidende wilgen- en populieren bossen (ooibossen) en in moerasbossen en rietmoerassen met veel opslag van elzen en wilgen. Het minimale oppervlak van dit bos voor de vestiging van de kwak wordt geschat op 1 ha. Echter voor een kolonie van 50 broedparen is in het rivierengebied een ooibosgebied van 200 ha nodig. Deze gebieden dienen moeilijk bereikbaar te zijn, omdat de kwak zeer  verstoringsgevoelig is  &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>Door de verborgen en onopvallende leefwijze zijn de broedparen moeilijk waar te nemen. Bij voorkeur bouwen de kwakken hun nestplaats in hoge bomen, zoals populieren (Populus  spec.), wilgen met name schietwilg (Salix alba) en elzen (Alnus spec.). Waar de hoge bomen afwezig zijn kunnen de nesten gebouwd worden in wilgenstruwelen en bij afwezigheid hiervan in rietmoerassen. De dichtheid van de vegetatie en niet zozeer de vegetatietype is een zeer belangrijke factor voor het voorkomen van de kwak <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>.</p>
+&lt;p&gt;Door de verborgen en onopvallende leefwijze zijn de broedparen moeilijk waar te nemen. Bij voorkeur bouwen de kwakken hun nestplaats in hoge bomen, zoals populieren (Populus  spec.), wilgen met name schietwilg (Salix alba) en elzen (Alnus spec.). Waar de hoge bomen afwezig zijn kunnen de nesten gebouwd worden in wilgenstruwelen en bij afwezigheid hiervan in rietmoerassen. De dichtheid van de vegetatie en niet zozeer de vegetatietype is een zeer belangrijke factor voor het voorkomen van de kwak &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>Binnen Europa zijn de broedgebieden erg verbrokkeld. Kwakken broeden voornamelijk in warme gematigde en subtropische zones <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. De belangrijkste broedgebieden liggen momenteel in Midden-, Oost- en Zuid-Europa. In west-Europa trekt het broedgebied zich uit tot een gemiddelde temperatuur van 17 graden Celsius in de maand juli <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. </p>
+&lt;p&gt;Binnen Europa zijn de broedgebieden erg verbrokkeld. Kwakken broeden voornamelijk in warme gematigde en subtropische zones &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. De belangrijkste broedgebieden liggen momenteel in Midden-, Oost- en Zuid-Europa. In west-Europa trekt het broedgebied zich uit tot een gemiddelde temperatuur van 17 graden Celsius in de maand juli &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<h3 id="Kwak-Nycticoraxnycticorax-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Kwak-Nycticoraxnycticorax-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>De kwakken foerageren onder de dekking van een dichte oevervegetatie in ondiep water of vanaf boven het water hangende takken in dieper water <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. De voorwaarde is hier echter wel dat ondiepe waterplanten afwezig of schaars zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. De kwak hanteert verschillende methoden om zijn voedsel te bemachtigen. In het algemeen foerageert de kwak in het water, zij het als een standbeeld staand of door het water wadend. Daarnaast kunnen de kwakken ook vanaf over het water hangende takken op vissen jagen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. Voor de waadmethode heeft de kwak een voorkeur voor water dat niet dieper is dan 10 cm. In een diepte van 10 tot 20 cm kan de kwak met de standbeeld methode uit de voeten. Ook is de bodem van belang, modderige bodems en veenbodems zijn niet geschikt voor de waadtechniek van de kwak. De soort heeft dan ook een voorkeur voor stevigere bodems. Daarnaast is de kwak een zichtjager en is de helderheid van het water van belang. De foerageergebieden kunnen in de directe omgeving van de kolonies langs ondiepe oevers van meren, plassen, sloten, poelen, getijdewateren en kreken en soms ondergelopen graslanden zijn, maar de gebieden kunnen ook op enige afstand van de nestplaats liggen tot een maximum van ongeveer 10 km <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>.</p>
+&lt;p&gt;De kwakken foerageren onder de dekking van een dichte oevervegetatie in ondiep water of vanaf boven het water hangende takken in dieper water &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. De voorwaarde is hier echter wel dat ondiepe waterplanten afwezig of schaars zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. De kwak hanteert verschillende methoden om zijn voedsel te bemachtigen. In het algemeen foerageert de kwak in het water, zij het als een standbeeld staand of door het water wadend. Daarnaast kunnen de kwakken ook vanaf over het water hangende takken op vissen jagen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. Voor de waadmethode heeft de kwak een voorkeur voor water dat niet dieper is dan 10 cm. In een diepte van 10 tot 20 cm kan de kwak met de standbeeld methode uit de voeten. Ook is de bodem van belang, modderige bodems en veenbodems zijn niet geschikt voor de waadtechniek van de kwak. De soort heeft dan ook een voorkeur voor stevigere bodems. Daarnaast is de kwak een zichtjager en is de helderheid van het water van belang. De foerageergebieden kunnen in de directe omgeving van de kolonies langs ondiepe oevers van meren, plassen, sloten, poelen, getijdewateren en kreken en soms ondergelopen graslanden zijn, maar de gebieden kunnen ook op enige afstand van de nestplaats liggen tot een maximum van ongeveer 10 km &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>Als het op voedsel aankomt zijn de kwakken echte opportunisten. Het dieet bestaat voornamelijk uit vissen en amfibieën en in mindere mate uit kleine zoogdieren, insecten, wormen, spinnen, slakken en mossels. Aan vissen eet de kwak ondermeer snoek (Esox lucius), karper (Cyperinus carpio), alver (Albernus albernus), blankvoorn (Rutilus rutilus), kopvoorn (Leuciscus cephalus), rietvoorn (Scardinus erythrophtalmus), aal (Anguilla anguilla) en zeelt (Tinca tinca). De grootte van de prooi is maximaal 20 cm. Aan amfibieën worden kikkers (Rana spec.) en salamanders (Triturus spec.) gegeten. Aan aquatische insecten worden zowel de larven als adulte exemplaren gegeten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. De verhoudingen van het dieet zijn ongeveer 75% vis, 5% amfibieën en 20% overige organismen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. De voedselbehoefte van een volwassen kwak in broedseizoen is 147 gram drooggewicht per dag. Hiervan wordt 67 gram drooggewicht in de nachtelijke uren gevangen. Vandaar dat de kwak er tijdens het broedseizoen ook overdag op uit moet <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. </p>
+&lt;p&gt;Als het op voedsel aankomt zijn de kwakken echte opportunisten. Het dieet bestaat voornamelijk uit vissen en amfibieën en in mindere mate uit kleine zoogdieren, insecten, wormen, spinnen, slakken en mossels. Aan vissen eet de kwak ondermeer snoek (Esox lucius), karper (Cyperinus carpio), alver (Albernus albernus), blankvoorn (Rutilus rutilus), kopvoorn (Leuciscus cephalus), rietvoorn (Scardinus erythrophtalmus), aal (Anguilla anguilla) en zeelt (Tinca tinca). De grootte van de prooi is maximaal 20 cm. Aan amfibieën worden kikkers (Rana spec.) en salamanders (Triturus spec.) gegeten. Aan aquatische insecten worden zowel de larven als adulte exemplaren gegeten &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. De verhoudingen van het dieet zijn ongeveer 75% vis, 5% amfibieën en 20% overige organismen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. De voedselbehoefte van een volwassen kwak in broedseizoen is 147 gram drooggewicht per dag. Hiervan wordt 67 gram drooggewicht in de nachtelijke uren gevangen. Vandaar dat de kwak er tijdens het broedseizoen ook overdag op uit moet &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>Vooral rond het foerageergebied is de kwak zeer gevoelig voor verstoring. Hierin is de kwak meer zichtbaar. In de onvindbare nesten van de kwak is deze gevoeligheid minder van belang omdat ze zich hier beter kunnen verschuilen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>.</p>
+&lt;p&gt;Vooral rond het foerageergebied is de kwak zeer gevoelig voor verstoring. Hierin is de kwak meer zichtbaar. In de onvindbare nesten van de kwak is deze gevoeligheid minder van belang omdat ze zich hier beter kunnen verschuilen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Kwak-Nycticoraxnycticorax-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Kwak-Nycticoraxnycticorax-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>Nederland bevat de meest noordelijk gelegen broedgebieden van Europa <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. Er zijn broedgevallen waargenomen in de Biesbosch, Nieuwkoopse Plassen, het Vechtplassengebied, het plassengbeid Noordwest-Overijssel en de Oostvaardersplassen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. Vanaf de 2e helft van april tot midden juni worden de eieren gelegd. Het uitbroeden van deze eieren duurt 21 tot 22 dagen vanaf het leggen van het eerste ei.  Het legsel bestaat uit 2 tot 5 eieren en gewoonlijk is er maar één legsel per broedseizoen. 80 tot 90 procent van het legsel komt succesvol uit. Na een jaar is de kwak al volwassen, maar broeden begint pas vanaf 2 of 3 jarige leeftijd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. </p>
+&lt;p&gt;Nederland bevat de meest noordelijk gelegen broedgebieden van Europa &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. Er zijn broedgevallen waargenomen in de Biesbosch, Nieuwkoopse Plassen, het Vechtplassengebied, het plassengbeid Noordwest-Overijssel en de Oostvaardersplassen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. Vanaf de 2e helft van april tot midden juni worden de eieren gelegd. Het uitbroeden van deze eieren duurt 21 tot 22 dagen vanaf het leggen van het eerste ei.  Het legsel bestaat uit 2 tot 5 eieren en gewoonlijk is er maar één legsel per broedseizoen. 80 tot 90 procent van het legsel komt succesvol uit. Na een jaar is de kwak al volwassen, maar broeden begint pas vanaf 2 of 3 jarige leeftijd &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>De trek naar de overwinteringsgebieden vindt plaats in de periode september-oktober. In West-Afrika, ten zuiden van de Sahara, overwinteren de Westeuropese kwakken. Slechts zelfzaam blijven er paren in West-Europa overwinteren. In april-mei keren de volwassen exemplaren terug in de broedgebieden. De onvolwassen vogels blijven mogelijk in de overwinteringsgebieden achter of zwerven rond <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>.  </p>
+&lt;p&gt;De trek naar de overwinteringsgebieden vindt plaats in de periode september-oktober. In West-Afrika, ten zuiden van de Sahara, overwinteren de Westeuropese kwakken. Slechts zelfzaam blijven er paren in West-Europa overwinteren. In april-mei keren de volwassen exemplaren terug in de broedgebieden. De onvolwassen vogels blijven mogelijk in de overwinteringsgebieden achter of zwerven rond &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;
 
-<h3 id="Kwak-Nycticoraxnycticorax-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Kwak-Nycticoraxnycticorax-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>Door biotoop vernietiging, namelijk door het droogleggen van meren, plassen en moerasgebieden, was de kwak mogelijk in Nederland uitgeroeid. Ook door de afsluiting van het Haringvliet is er veel biotoop, met name in de Biesbosch, voor de kwak verloren gegaan. Sindsdien worden er echter weer meer broedparen waargenomen. Voor een stabiele populatie dienen er gemiddeld 2.0 tot 2.5 vliegvlugge jongen per nest te worden geboren. De gemiddelde overleving van deze jongen tot de geslachtsrijpheid is ongeveer 25 procent. Het sterftecijfer van volwassen is ook ongeveer 25 procent. De gemiddelde levensduur van een kwak wordt geschat op 2 jaar, maar dit wordt erg omlaag gebracht door het sterfte percentage. In de vrije natuur kunnen kwakken 21 jaar oud worden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. </p>
+&lt;p&gt;Door biotoop vernietiging, namelijk door het droogleggen van meren, plassen en moerasgebieden, was de kwak mogelijk in Nederland uitgeroeid. Ook door de afsluiting van het Haringvliet is er veel biotoop, met name in de Biesbosch, voor de kwak verloren gegaan. Sindsdien worden er echter weer meer broedparen waargenomen. Voor een stabiele populatie dienen er gemiddeld 2.0 tot 2.5 vliegvlugge jongen per nest te worden geboren. De gemiddelde overleving van deze jongen tot de geslachtsrijpheid is ongeveer 25 procent. Het sterftecijfer van volwassen is ook ongeveer 25 procent. De gemiddelde levensduur van een kwak wordt geschat op 2 jaar, maar dit wordt erg omlaag gebracht door het sterfte percentage. In de vrije natuur kunnen kwakken 21 jaar oud worden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>Zomerhoogwaters zijn een bedreiging voor de broed van de kwak, er zijn gevallen bekend dat zomerhoogwaters nesten wegspoelde en dat de nestjongen verdronken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1">#1</a>. Ook watervervuiling, zoals door PCB’s, DDE en andere organische vervuilingen, kan een negatief effect hebben op het broedsucces van de kwak. </p>
+&lt;p&gt;Zomerhoogwaters zijn een bedreiging voor de broed van de kwak, er zijn gevallen bekend dat zomerhoogwaters nesten wegspoelde en dat de nestjongen verdronken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kwak+-+Nycticorax+nycticorax#Kwak-Nycticoraxnycticorax-1"&gt;#1&lt;/a&gt;. Ook watervervuiling, zoals door PCB’s, DDE en andere organische vervuilingen, kan een negatief effect hebben op het broedsucces van de kwak. &lt;/p&gt;
 
-<p>Er is weinig bekend over de natuurlijke vijanden van de kwak. Er zijn echter wel waarnemingen van de plundering van nesten door roofvogels, zoals de bruine kiekendief (Circus aeruginosus) en de visarend (Pandion haliaetus). Deze hebben het zowel op de nestjongen als op de eieren voorzien.</p>
-]]></text>
-		</Description>		
-	</ContentDescription>
+&lt;p&gt;Er is weinig bekend over de natuurlijke vijanden van de kwak. Er zijn echter wel waarnemingen van de plundering van nesten door roofvogels, zoals de bruine kiekendief (Circus aeruginosus) en de visarend (Pandion haliaetus). Deze hebben het zowel op de nestjongen als op de eieren voorzien.&lt;/p&gt;
+</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Duel, H en Specken, B." year="1995" title="Habitatmodel Kwak: een model voor het analyseren van de kwaliteit van water- en moerasgebieden als broedhabitat voor de kwak(Nycticorax nycticorax)." journal="TNO-BSA Werkdocument" identification="1995"/>
 	</Documentation>

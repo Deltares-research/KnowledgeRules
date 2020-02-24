@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>1115942</EoLpagenr>
 			<LatName>Potamogeton perfoliatus</LatName>
 			<CommonNames>
-				<Name name = "Doorgroeid fonteinkruid" language = "NL"/>
+				<Name name="Doorgroeid fonteinkruid" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -16,7 +15,7 @@
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
-					</SpatialScope>	
+					</SpatialScope>
 					<TemporalScope>
 						<StartDate>1990-01-01</StartDate>
 						<EndDate>1992-01-01</EndDate>
@@ -24,7 +23,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Dosis-effectrelaties">Dosis-effect relaties</h1><p>Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-3">#3</a>). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect van waterplanten op dit lichtklimaat, leidde in het <a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow">NMIJ project</a> tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-5">#5</a>). In (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-6">#6</a>) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van doorgroeid fonteinkruid in de Macromij benadering en in de nieuwe mixed model benadering.</p><p>De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.</p><p>Doorzicht:<br> P_potaperf = 1*exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte)))</p><p>Extinctie:<br> P_potaperf =1*exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte)))</p><p>HGI Potaperf = 1 / (1+P_potaperf)</p><p>deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br> diepte_zom = de gemiddelde waterdiepte in de zomer (m)<br> doorzicht = secchi diepte (m)<br> extinctie = extinctiecoefficient (1/m)<br> strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p><p>Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's <a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a> en <a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a>.</p><h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
+						<text>&lt;h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Dosis-effectrelaties"&gt;Dosis-effect relaties&lt;/h1&gt;&lt;p&gt;Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-3"&gt;#3&lt;/a&gt;). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect van waterplanten op dit lichtklimaat, leidde in het &lt;a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow"&gt;NMIJ project&lt;/a&gt; tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-5"&gt;#5&lt;/a&gt;). In (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-6"&gt;#6&lt;/a&gt;) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van doorgroeid fonteinkruid in de Macromij benadering en in de nieuwe mixed model benadering.&lt;/p&gt;&lt;p&gt;De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.&lt;/p&gt;&lt;p&gt;Doorzicht:&lt;br&gt; P_potaperf = 1*exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte)))&lt;/p&gt;&lt;p&gt;Extinctie:&lt;br&gt; P_potaperf =1*exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte)))&lt;/p&gt;&lt;p&gt;HGI Potaperf = 1 / (1+P_potaperf)&lt;/p&gt;&lt;p&gt;deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )&lt;br&gt; diepte_zom = de gemiddelde waterdiepte in de zomer (m)&lt;br&gt; doorzicht = secchi diepte (m)&lt;br&gt; extinctie = extinctiecoefficient (1/m)&lt;br&gt; strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)&lt;/p&gt;&lt;p&gt;Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's &lt;a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow"&gt;doorzicht&lt;/a&gt; en &lt;a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow"&gt;extinctie&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;Deze dosis-effect relaties zijn gevalideerd op het Markermeer.&lt;/p&gt;&lt;h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -32,101 +31,193 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<FormulaBased name="HGI_Potaperf">
-						<layername>"HGI_Potaperf"</layername>
-						<unit>"-"</unit>
-						<statistic>none</statistic>
-						<description>"Berekening HGI"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2014-10-02</date>
-						<references>
-							<reference author="" year="" title="" journal="" identification=""/>
-						</references>
-						<output>"HGI_Potaperf"</output>
-						<equation>"1 / (1+P_potaperf)"</equation>
-						<Parameters>
-							<valuesScalar dataname="P_potaperf" type="scalar" unit="-">
-								<parameter min="0" max="1"/>
-							</valuesScalar>
-						</Parameters>
+						<inputLayers>
+							<layer name="P_potaperf">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>P_potaperf</layer_filename>
+								<unit>-</unit>
+								<statistic>none</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Berekening HGI"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2014-10-02</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<equation>"1 / (1+P_potaperf)"</equation>
+							<Parameters>
+								<valuesScalar layername="P_potaperf" type="scalar">
+									<parameter min_input="0" max_input="1"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_P_potaperf">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_P_potaperf</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="Effect_doorzicht">
-						<layername>"Effect_doorzicht"</layername>
-						<unit>"-"</unit>
-						<statistic>none</statistic>
-						<description>"Effect van doorzicht op Doorgroeid fonteinkruid"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2014-10-02</date>
-						<references>
-							<reference author="" year="" title="" journal="" identification=""/>
-						</references>
-						<output>"P_potaperf"</output>
-						<equation>"1/(1+exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte)))"</equation>
-						<Parameters>
-							<valuesConstant dataname="deelgebied" type="constant" unit="-">
-								<parameter constantset="MBIJ" value="-0.81302272"/>
-								<parameter constantset="MGZ" value="1.998701637"/>
-								<parameter constantset="MHE" value="0.724567841"/>
-								<parameter constantset="MHH" value="1.733868205"/>
-								<parameter constantset="MHRDz" value="2.214793065"/>
-								<parameter constantset="MIJ" value="1.45711916"/>
-							</valuesConstant>
-							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
-								<parameter min="0" max="3.5"/>
-							</valuesScalar>
-							<valuesScalar dataname="doorzicht" type="scalar" unit="m">
-								<parameter min="0" max="3.5"/>
-							</valuesScalar>
-							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
-								<parameter min="0" max="50000"/>
-							</valuesScalar>
-						</Parameters>
+						<inputLayers>
+							<layer name="deelgebied">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>deelgebied</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+							<layer name="diepte_zom">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diepte_zom</layer_filename>
+								<unit>m</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+							<layer name="doorzicht">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>doorzicht</layer_filename>
+								<unit>m</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+							<layer name="strijklengte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>strijklengte</layer_filename>
+								<unit>m</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Effect van doorzicht op Doorgroeid fonteinkruid"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2014-10-02</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<equation>"1/(1+exp(-(-1.77171897+deelgebied-0.833080681*diepte_zom-0.068992489*(diepte_zom^2)+1.090394941*diepte_zom*doorzicht-4.99E-05*strijklengte)))"</equation>
+							<Parameters>
+								<valuesConstant layername="deelgebied" type="constant">
+									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>
+									<parameter input="2" input_cat="MGZ" output="1.998701637"/>
+									<parameter input="3" input_cat="MHE" output="0.724567841"/>
+									<parameter input="4" input_cat="MHH" output="1.733868205"/>
+									<parameter input="5" input_cat="MHRDz" output="2.214793065"/>
+									<parameter input="6" input_cat="MIJ" output="1.45711916"/>
+								</valuesConstant>
+								<valuesScalar layername="diepte_zom" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+								<valuesScalar layername="doorzicht" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+								<valuesScalar layername="strijklengte" type="scalar">
+									<parameter min_input="0" max_input="50000"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_strijklengte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_strijklengte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="Effect_extinctie">
-						<layername>"Effect_extinctie"</layername>
-						<unit>"-"</unit>
-						<statistic>none</statistic>
-						<description>"Effect van extinctie op Doorgroeid fonteinkruid"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2014-10-02</date>
-						<references>
-							<reference author="" year="" title="" journal="" identification=""/>
-						</references>
-						<output>"P_potaperf"</output>
-						<equation>"1/(1+exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte)))"</equation>
-						<Parameters>
-							<valuesConstant dataname="deelgebied" type="constant" unit="-">
-								<parameter constantset="MBIJ" value="-0.81302272"/>
-								<parameter constantset="MGZ" value="1.998701637"/>
-								<parameter constantset="MHE" value="0.724567841"/>
-								<parameter constantset="MHH" value="1.733868205"/>
-								<parameter constantset="MHRDz" value="2.214793065"/>
-								<parameter constantset="MIJ" value="1.45711916"/>
-							</valuesConstant>
-							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
-								<parameter min="0" max="3.5"/>
-							</valuesScalar>
-							<valuesScalar dataname="extinctie" type="scalar" unit="m-1">
-								<parameter min="0" max="10"/>
-							</valuesScalar>
-							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
-								<parameter min="0" max="50000"/>
-							</valuesScalar>
-						</Parameters>
+						<inputLayers>
+							<layer name="deelgebied">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>deelgebied</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+							<layer name="diepte_zom">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diepte_zom</layer_filename>
+								<unit>m</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+							<layer name="extinctie">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>extinctie</layer_filename>
+								<unit>m-1</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+							<layer name="strijklengte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>strijklengte</layer_filename>
+								<unit>m</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Effect van extinctie op Doorgroeid fonteinkruid"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2014-10-02</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<equation>"1/(1+exp(-(-3.506559179+deelgebied+0.389347751*diepte_zom-0.051858918*(diepte_zom^2)-0.254177061*diepte_zom*extinctie+0.358088013*extinctie-6.16E-5*strijklengte)))"</equation>
+							<Parameters>
+								<valuesConstant layername="deelgebied" type="constant">
+									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>
+									<parameter input="2" input_cat="MGZ" output="1.998701637"/>
+									<parameter input="3" input_cat="MHE" output="0.724567841"/>
+									<parameter input="4" input_cat="MHH" output="1.733868205"/>
+									<parameter input="5" input_cat="MHRDz" output="2.214793065"/>
+									<parameter input="6" input_cat="MIJ" output="1.45711916"/>
+								</valuesConstant>
+								<valuesScalar layername="diepte_zom" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+								<valuesScalar layername="extinctie" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+								<valuesScalar layername="strijklengte" type="scalar">
+									<parameter min_input="0" max_input="50000"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_strijklengte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_strijklengte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</FormulaBased>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
-	<Description language="NL">
-		<text><![CDATA[<h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Habitatbeschrijving">Habitatbeschrijving</h1><p>Doorgroeid fonteinkruid komt voor op zonnige plaatsen in niet te ondiep, voedselrijk, zoet of zwak brak, stilstaand of stromend, neutraal tot kalkrijk water met een bodem van zand, leem, zavel of klei. Het kan gevonden worden in plassen, vijvers, kanalen, meren, rivieren, beken, brede sloten, toevoerkanalen van gemalen en in het zoetwatergetijdengebied.<br> Doorgroeid fonteinkruid is plaatselijk algemeen in en langs het IJsselmeer en het Veluwemeer. Plaatselijk vrij algemeen in laagveengebieden, in het rivierengebied, in het noordoosten van het land en op Wieringen. Elders zeldzaam en zeer zeldzaam in Zuid-Limburg (alleen in het Maasdal). Het komt niet voor in het grootste deel van Zeeland en op de Waddeneilanden (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-2">#2</a>).</p>]]></text>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h1 id="Doorgroeidfonteinkruid-Potamogetonperfoliatus-Habitatbeschrijving"&gt;Habitatbeschrijving&lt;/h1&gt;&lt;p&gt;Doorgroeid fonteinkruid komt voor op zonnige plaatsen in niet te ondiep, voedselrijk, zoet of zwak brak, stilstaand of stromend, neutraal tot kalkrijk water met een bodem van zand, leem, zavel of klei. Het kan gevonden worden in plassen, vijvers, kanalen, meren, rivieren, beken, brede sloten, toevoerkanalen van gemalen en in het zoetwatergetijdengebied.&lt;br&gt; Doorgroeid fonteinkruid is plaatselijk algemeen in en langs het IJsselmeer en het Veluwemeer. Plaatselijk vrij algemeen in laagveengebieden, in het rivierengebied, in het noordoosten van het land en op Wieringen. Elders zeldzaam en zeer zeldzaam in Zuid-Limburg (alleen in het Maasdal). Het komt niet voor in het grootste deel van Zeeland en op de Waddeneilanden (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-2"&gt;#2&lt;/a&gt;).&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="" year="" title="" journal="" identification="">
-		<html><![CDATA[http://nl.wikipedia.org/wiki/Doorgroeid_fonteinkruid]]></html></reference>
+			<html>http://nl.wikipedia.org/wiki/Doorgroeid_fonteinkruid</html>
+		</reference>
 		<reference author="" year="" title="" journal="" identification="">
-		<html><![CDATA[http://wilde-planten.nl/doorgroeid%20fonteinkruid]]></html></reference>
+			<html>http://wilde-planten.nl/doorgroeid%20fonteinkruid</html>
+		</reference>
 		<reference author="Van den Berg M.S., W. Joosse and H. Coops" year="2003" title="A statistical model predicting the occurrence and dynamics of submerged macrophytes in shallow lakes in the Netherlands." journal="Hydrobiologia 611:623" identification=""/>
 		<reference author="Scheffer, M." year="1998" title="Ecology of Shallow Lakes." journal="" identification=""/>
 		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>

@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>46581656</EoLpagenr>
 			<LatName>Rutilus rutilus</LatName>
 			<CommonNames>
-				<Name name = "Blankvoorn" language = "NL"/>
+				<Name name="Blankvoorn" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
 	</Topic>
 	<Autecology>
-	<ModelType name="HSI">
-		<System name="habitat_geschiktheid">
+		<ModelType name="HSI">
+			<System name="habitat_geschiktheid">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Netherlands" id="2750405"/>
@@ -24,7 +22,10 @@
 					</TemporalScope>
 				</Scope>
 				<SystemDescription>
-					<Description language="NL"><text><![CDATA[<h1 id="Blankvoorn-Rutilusrutilus-Roach-Onzekerhedenenvalidatie">Onzekerheden en validatie</h1><p>Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.</p><h1 id="Blankvoorn-Rutilusrutilus-Roach-Toepassingsgebiedenvoorbeeldprojecten.">Toepassingsgebied en voorbeeldprojecten.</h1>]]></text></Description></SystemDescription>
+					<Description language="NL">
+						<text>&lt;h1 id="Blankvoorn-Rutilusrutilus-Roach-Onzekerhedenenvalidatie"&gt;Onzekerheden en validatie&lt;/h1&gt;&lt;p&gt;Deze rekenregels zijn gereviewed door een expert (link). De rekenregels zijn nog niet gevalideerd.&lt;/p&gt;&lt;h1 id="Blankvoorn-Rutilusrutilus-Roach-Toepassingsgebiedenvoorbeeldprojecten."&gt;Toepassingsgebied en voorbeeldprojecten.&lt;/h1&gt;</text>
+					</Description>
+				</SystemDescription>
 				<SystemFlowDiagrams>
 					<FlowDiagram name="adult">
 						<From name="habitat_geschiktheid">
@@ -62,293 +63,548 @@
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
-				<KnowledgeRules>		
+				<KnowledgeRules>
 					<ResponseCurve name="substraat_paai">
-						<type>range / categorical</type>
-						<layername>"substraat_paai"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Aanwezigheid paaisubstraat t.o.v. hele opp."</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.1" cat="1" HSI="0.2"/>
-							<parameter rangemin="0.1" rangemax="0.5" cat="2" HSI="0.8"/>
-							<parameter rangemin="0.5" rangemax="100" cat="3" HSI="1"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="substraat_paai">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>substraat_paai</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Aanwezigheid paaisubstraat t.o.v. hele opp."</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.1" input_cat="1" output="0.2" output_cat=""/>
+								<parameter rangemin_input="0.1" rangemax_input="0.5" input_cat="2" output="0.8" output_cat=""/>
+								<parameter rangemin_input="0.5" rangemax_input="100" input_cat="3" output="1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substraat_paai">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_substraat_paai</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte_paai">
-						<type>scalar</type>
-						<layername>"waterdiepte_paai"</layername>
-						<unit>"cm"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdiepte geschikt voor paai"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="10" HSI="0"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="50" HSI="1"/>
-							<parameter value="150" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="waterdiepte_paai">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte_paai</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdiepte geschikt voor paai"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="10" output="0"/>
+								<parameter input="20" output="1"/>
+								<parameter input="50" output="1"/>
+								<parameter input="150" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte_paai">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte_paai</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_paai">
-						<type>scalar</type>
-						<layername>"temperatuur"</layername>
-						<unit>"graden Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde temperatuur tijdens de paai"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="4.5" HSI="0"/>
-							<parameter value="5.5" HSI="0.2"/>
-							<parameter value="8" HSI="0.8"/>
-							<parameter value="11" HSI="1"/>
-							<parameter value="16" HSI="1"/>
-							<parameter value="20" HSI="0.8"/>
-							<parameter value="22" HSI="0.2"/>
-							<parameter value="24" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="temperatuur_paai">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_paai</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde temperatuur tijdens de paai"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="4.5" output="0"/>
+								<parameter input="5.5" output="0.2"/>
+								<parameter input="8" output="0.8"/>
+								<parameter input="11" output="1"/>
+								<parameter input="16" output="1"/>
+								<parameter input="20" output="0.8"/>
+								<parameter input="22" output="0.2"/>
+								<parameter input="24" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_paai">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_paai</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurgraad_ei">
-						<type>scalar</type>
-						<layername>"zuurgraad"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"pH (voor paai)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="5.0" HSI="0"/>
-							<parameter value="5.5" HSI="0.6"/>
-							<parameter value="7" HSI="1"/>
-							<parameter value="9" HSI="1"/>
-							<parameter value="10.5" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zuurgraad_ei">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurgraad_ei</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"pH (voor paai)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="5.0" output="0"/>
+								<parameter input="5.5" output="0.6"/>
+								<parameter input="7" output="1"/>
+								<parameter input="9" output="1"/>
+								<parameter input="10.5" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurgraad_ei">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurgraad_ei</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zoutgehalte_ei">
-						<type>scalar</type>
-						<layername>"zoutgehalte"</layername>
-						<unit>"promille"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde saliniteit"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="3" HSI="0.8"/>
-							<parameter value="5" HSI="0.5"/>
-							<parameter value="6" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zoutgehalte_ei">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zoutgehalte_ei</layer_filename>
+								<unit>"promille"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde saliniteit"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="3" output="0.8"/>
+								<parameter input="5" output="0.5"/>
+								<parameter input="6" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zoutgehalte_ei">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zoutgehalte_ei</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte_verdeling_litoraal">
-						<type>scalar</type>
-						<layername>"waterdiepte_verdeling"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"waterdiepte verdeling behorend tot het litoraal (.lt. 2 m diepte)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="25" HSI="1.0"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="85" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="waterdiepte_verdeling_litoraal">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte_verdeling_litoraal</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"waterdiepte verdeling behorend tot het litoraal (.lt. 2 m diepte)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="25" output="1.0"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="85" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte_verdeling_litoraal">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte_verdeling_litoraal</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_larve">
-						<type>scalar</type>
-						<layername>"stroomsnelheid"</layername>
-						<unit>"cm/s"</unit>
-						<statistic>average</statistic>
-						<description>"gemiddelde stroomsnelheid in het paaigebied"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.8"/>
-							<parameter value="1" HSI="1"/>
-							<parameter value="5" HSI="1"/>
-							<parameter value="10" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="stroomsnelheid_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_larve</layer_filename>
+								<unit>"cm/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"gemiddelde stroomsnelheid in het paaigebied"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.8"/>
+								<parameter input="1" output="1"/>
+								<parameter input="5" output="1"/>
+								<parameter input="10" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_larve">
-						<type>scalar</type>
-						<layername>"temperatuur"</layername>
-						<unit>"graden Celsius"</unit>
-						<statistic>maximum</statistic>
-						<description>"maximale temperatuur (larve)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="15" HSI="0"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="temperatuur_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_larve</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"maximale temperatuur (larve)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="15" output="0"/>
+								<parameter input="20" output="1"/>
+								<parameter input="25" output="1"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="vegetatie_dichtheid">
-						<type>scalar</type>
-						<layername>"vegetatie_dichtheid"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Vegetatie dichtheid (Referentie: #1, aangepast aan de hand van #3.)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.2"/>
-							<parameter value="26" HSI="1"/>
-							<parameter value="35" HSI="1"/>
-							<parameter value="50" HSI="1"/>
-							<parameter value="80" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="vegetatie_dichtheid">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>vegetatie_dichtheid</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Vegetatie dichtheid (Referentie: #1, aangepast aan de hand van #3.)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.2"/>
+								<parameter input="26" output="1"/>
+								<parameter input="35" output="1"/>
+								<parameter input="50" output="1"/>
+								<parameter input="80" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_vegetatie_dichtheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_vegetatie_dichtheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="doorzicht">
-						<type>scalar</type>
-						<layername>"doorzicht"</layername>
-						<unit>"cm"</unit>
-						<statistic>average</statistic>
-						<description>"Doorzicht"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="50" HSI="1"/>
-							<parameter value="200" HSI="1"/>
-							<parameter value="500" HSI="0.5"/>
-							<parameter value="600" HSI="0.5"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="doorzicht">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>doorzicht</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Doorzicht"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="25" output="1"/>
+								<parameter input="50" output="1"/>
+								<parameter input="200" output="1"/>
+								<parameter input="500" output="0.5"/>
+								<parameter input="600" output="0.5"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_doorzicht">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_doorzicht</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_adult">
-						<type>scalar</type>
-						<layername>"stroomsnelheid_adult"</layername>
-						<unit>"cm/s"</unit>
-						<statistic>average</statistic>
-						<description>"Stroomsnelheid (adult)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="60" HSI="1"/>
-							<parameter value="90" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="stroomsnelheid_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_adult</layer_filename>
+								<unit>"cm/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Stroomsnelheid (adult)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="20" output="1"/>
+								<parameter input="60" output="1"/>
+								<parameter input="90" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurgraad_larveadult">
-						<type>scalar</type>
-						<layername>"zuurgraad"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"pH (adult)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="4.5" HSI="0"/>
-							<parameter value="5.5" HSI="1"/>
-							<parameter value="9" HSI="1"/>
-							<parameter value="10.5" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zuurgraad_larveadult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurgraad_larveadult</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"pH (adult)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="4.5" output="0"/>
+								<parameter input="5.5" output="1"/>
+								<parameter input="9" output="1"/>
+								<parameter input="10.5" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurgraad_larveadult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurgraad_larveadult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurstofgehalte_adult">
-						<type>scalar</type>
-						<layername>"zuurstofgehalte"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddeld zuurstofgehalte"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="1" HSI="0"/>
-							<parameter value="5" HSI="1"/>
-							<parameter value="6" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zuurstofgehalte_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurstofgehalte_adult</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddeld zuurstofgehalte"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="1" output="0"/>
+								<parameter input="5" output="1"/>
+								<parameter input="6" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurstofgehalte_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurstofgehalte_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_adult">
-						<type>scalar</type>
-						<layername>"temperatuur_adult"</layername>
-						<unit>"graden Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde temperatuur (adult)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="10" HSI="0"/>
-							<parameter value="12" HSI="0.5"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="temperatuur_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_adult</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde temperatuur (adult)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="10" output="0"/>
+								<parameter input="12" output="0.5"/>
+								<parameter input="20" output="1"/>
+								<parameter input="25" output="1"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zoutgehalte_adult">
-						<type>scalar</type>
-						<layername>"zoutgehalte_adult"</layername>
-						<unit>"promille"</unit>
-						<statistic>average</statistic>
-						<description>"Saliniteit (adult)"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-08</date>
-						<references>
-							<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="5" HSI="0.7"/>
-							<parameter value="12" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zoutgehalte_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zoutgehalte_adult</layer_filename>
+								<unit>"promille"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Saliniteit (adult)"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-08</date>
+							<references>
+								<reference author="Breukelen, S. Van" year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="5" output="0.7"/>
+								<parameter input="12" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zoutgehalte_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zoutgehalte_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Blankvoorn-Rutilusrutilus-Roach-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De blankvoorn is een van de meest algemeen voorkomende vissoorten in de Nederlandse binnenwateren. Het verspreidingsgebied van de blankvoorn strekt zich uit over een groot deel van Europa en het noordelijk deel van Azië. In Europa loopt de zuidgrens noordoostelijk van de Pyreneeën, noordelijk van de Alpen en daarna weer zuidelijk over de Balkon tot diep in Siberië. Tot in het noorden van Europa kan de blankvoorn voorkomen, in het noorden van Schotland en het noordweseten van Noorwegen kom de blankvoorn niet voor. Ook in Ierland komt de blankvoorn van nature niet voor, door sportvissers is de blankvoorn hier uitgezet<a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-1">#1</a>.Voor verspreiding zie figuur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-4">#4</a>.</p><h3 id="Blankvoorn-Rutilusrutilus-Roach-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De blankvoorn is een omnivoor met een breed voedselspectrum. Het voedsel van jonge blankvoorn bestaat uit zoöplankton, in het bijzonder watervlooien. Oudere blankvoorn heeft een aanzienlijk uitgebreider voedselpakket. Zowel dierlijk voedsel, zoals<br>slakjes, driehoeksmosselen, insectenlarven, wormen en kreeftachtigen, als plantaardig materiaal, zoals algen en detritus, worden door deze vis gegeten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2">#2</a>. De blankvoorn kan zowel op zicht jagen waarbij afzonderlijke voedseldeeltjes aangevallen worden, als op de tast waarbij voedseldeeltjes uit het water of sediment gefiltreerd worden<a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-1">#1</a>. Voor de beschikbaarheid van voedsel en beschutting is het noodzakelijk dat er waterplanten aanwezig zijn, ook het doorzicht en de stroomsnelheid zijn van belang. In het algemeen stelt de blankvoorn eisen aan de waterkwaliteit, deze zijn weergegeven bij de waterkwaliteit rekenregels.</p><h3 id="Blankvoorn-Rutilusrutilus-Roach-Reproductieenmigratie">Reproductie en migratie</h3><p>In de paaitijd, die doorgaans in april en mei valt, maar die tot in de zomer kan doorlopen, gaat de blankvoorn op zoek naar geschikte paaiplaatsen. Deze liggen veelal dicht onder de oever in stilstaand tot zwak stromend, ondiep water met beschutting tegen golfslag. De eieren worden afgezet op ondergedoken waterplanten, maar ook oeverplanten, boomwortels, stenen en andere obstakels worden als afzetsubstraat gebruikt. Zowel larven als juvenielen blijven geruime tijd in de oeverbegroeiing. Hierdoor is de blankvoorn sterker dan brasem gebonden aan wateren met begroeiing <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2">#2</a>. Ook is er een optimale en maximale temperatuur, pH en saliniteit voor de paai, deze zijn weergegeven in onderstaan rekenregels.</p><h3 id="Blankvoorn-Rutilusrutilus-Roach-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>De blankvoorn bereikt in het eerste jaar een lengte van 5 tot 7 cm. Onder gemiddelde omstandigheden is de blankvoorn geslachtsrijp op een leeftijd van 3 tot 5 jaar, de mannetjes eerder dan de vrouwtjes. De lengte is dan rond 15 cm. De maximale lengte is 45 cm en de maximale leeftijd ca. 10 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2">#2</a>.</p>]]></text>
+			<text>&lt;h3 id="Blankvoorn-Rutilusrutilus-Roach-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De blankvoorn is een van de meest algemeen voorkomende vissoorten in de Nederlandse binnenwateren. Het verspreidingsgebied van de blankvoorn strekt zich uit over een groot deel van Europa en het noordelijk deel van Azië. In Europa loopt de zuidgrens noordoostelijk van de Pyreneeën, noordelijk van de Alpen en daarna weer zuidelijk over de Balkon tot diep in Siberië. Tot in het noorden van Europa kan de blankvoorn voorkomen, in het noorden van Schotland en het noordweseten van Noorwegen kom de blankvoorn niet voor. Ook in Ierland komt de blankvoorn van nature niet voor, door sportvissers is de blankvoorn hier uitgezet&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-1"&gt;#1&lt;/a&gt;.Voor verspreiding zie figuur &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-4"&gt;#4&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Blankvoorn-Rutilusrutilus-Roach-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De blankvoorn is een omnivoor met een breed voedselspectrum. Het voedsel van jonge blankvoorn bestaat uit zoöplankton, in het bijzonder watervlooien. Oudere blankvoorn heeft een aanzienlijk uitgebreider voedselpakket. Zowel dierlijk voedsel, zoals&lt;br&gt;slakjes, driehoeksmosselen, insectenlarven, wormen en kreeftachtigen, als plantaardig materiaal, zoals algen en detritus, worden door deze vis gegeten &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2"&gt;#2&lt;/a&gt;. De blankvoorn kan zowel op zicht jagen waarbij afzonderlijke voedseldeeltjes aangevallen worden, als op de tast waarbij voedseldeeltjes uit het water of sediment gefiltreerd worden&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-1"&gt;#1&lt;/a&gt;. Voor de beschikbaarheid van voedsel en beschutting is het noodzakelijk dat er waterplanten aanwezig zijn, ook het doorzicht en de stroomsnelheid zijn van belang. In het algemeen stelt de blankvoorn eisen aan de waterkwaliteit, deze zijn weergegeven bij de waterkwaliteit rekenregels.&lt;/p&gt;&lt;h3 id="Blankvoorn-Rutilusrutilus-Roach-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;In de paaitijd, die doorgaans in april en mei valt, maar die tot in de zomer kan doorlopen, gaat de blankvoorn op zoek naar geschikte paaiplaatsen. Deze liggen veelal dicht onder de oever in stilstaand tot zwak stromend, ondiep water met beschutting tegen golfslag. De eieren worden afgezet op ondergedoken waterplanten, maar ook oeverplanten, boomwortels, stenen en andere obstakels worden als afzetsubstraat gebruikt. Zowel larven als juvenielen blijven geruime tijd in de oeverbegroeiing. Hierdoor is de blankvoorn sterker dan brasem gebonden aan wateren met begroeiing &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2"&gt;#2&lt;/a&gt;. Ook is er een optimale en maximale temperatuur, pH en saliniteit voor de paai, deze zijn weergegeven in onderstaan rekenregels.&lt;/p&gt;&lt;h3 id="Blankvoorn-Rutilusrutilus-Roach-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;De blankvoorn bereikt in het eerste jaar een lengte van 5 tot 7 cm. Onder gemiddelde omstandigheden is de blankvoorn geslachtsrijp op een leeftijd van 3 tot 5 jaar, de mannetjes eerder dan de vrouwtjes. De lengte is dan rond 15 cm. De maximale lengte is 45 cm en de maximale leeftijd ca. 10 jaar &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Blankvoorn+-+Rutilus+rutilus+-+Roach#Blankvoorn-Rutilusrutilus-Roach-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Breukelen, S. Van" year="1992" title="Habitat Geschiktheid Model: de Blankvoorn Rutilus rutilus." journal="Organisatie ter Verbetering van de Binnenvisserij." identification=""/>
 		<reference author="Sportvisserij Nederland" year="2006" title="Soortprofiel Blankvoorn (Rutilus rutilis)." journal="" identification=""/>

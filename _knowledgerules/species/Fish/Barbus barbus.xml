@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>52230210</EoLpagenr>
 			<LatName>Barbus barbus</LatName>
 			<CommonNames>
-				<Name name = "Barbeel" language = "NL"/>			
+				<Name name="Barbeel" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
 	</Topic>
 	<Autecology>
-		<ModelType name ="HSI">
+		<ModelType name="HSI">
 			<System name="Voortplanting Barbeel (grindbedden)">
 				<Scope>
 					<SpatialScope>
@@ -25,14 +23,14 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
+						<text>
 Onzekerheid en validatie
 Deze dosis-effect relaties zijn niet gevalideerd.
 Toepasbaarheid
 Deze dosis-effect relaties zijn bepaald aan de hand van literatuur die gebaseerd op metingen afkomstig van het verspreidingsgebied van de Barbeel. Hierdoor zijn de rekenregels niet op een locatie toegespitst en dienen ze voor gebruik gekalibreerd te worden op het te onderzoeken gebied.
 Voorbeeldproject
 Er is geen voorbeeldproject beschikbaar.
-]]></text>
+</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -86,508 +84,951 @@ Er is geen voorbeeldproject beschikbaar.
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="substraattype_ei">
-						<type>categorical</type>
-						<layername>"substraattype"</layername>
-						<unit>"Substraat"</unit>
-						<statistic>average</statistic>
-						<description>"Meest voorkomende substraattype in het paaigebied gedurende de paaitijd."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="waterplanten " HSI="0.2"/>
-							<parameter cat="klei/modder/silt (kleiner dan 0.06 mm) " HSI="0"/>
-							<parameter cat="zand ( 0.06-0.5 mm) " HSI="0.5"/>
-							<parameter cat="grof zand (0.5-4 mm ) " HSI="0.8"/>
-							<parameter cat="grind (4-32 mm) " HSI="1"/>							
-							<parameter cat="kiezels (32-64 mm) " HSI="0.8"/>
-							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="0.2"/>
-						</valuesCategorical>
-					</ResponseCurve>					
+						<inputLayers>
+							<layer name="substraattype_ei">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>substraattype_ei</layer_filename>
+								<unit>"Substraat"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Meest voorkomende substraattype in het paaigebied gedurende de paaitijd."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="waterplanten " output="0.2" output_cat=""/>
+								<parameter input="2" input_cat="klei/modder/silt (kleiner dan 0.06 mm) " output="0" output_cat=""/>
+								<parameter input="3" input_cat="zand ( 0.06-0.5 mm) " output="0.5" output_cat=""/>
+								<parameter input="4" input_cat="grof zand (0.5-4 mm ) " output="0.8" output_cat=""/>
+								<parameter input="5" input_cat="grind (4-32 mm) " output="1" output_cat=""/>
+								<parameter input="6" input_cat="kiezels (32-64 mm) " output="0.8" output_cat=""/>
+								<parameter input="7" input_cat="keien/rotsen/vast gesteente (&gt;65 mm ) " output="0.2" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substraattype_ei">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_substraattype_ei</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 					<ResponseCurve name="percentage_modder_slib">
-						<type>scalar</type>
-						<layername>"percentage_modder_slib"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage modder of slib (kleiner dan 0.06 mm) in het paaisubstraat gedurende de paaitijd."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="25" HSI="0"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="percentage_modder_slib">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>percentage_modder_slib</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage modder of slib (kleiner dan 0.06 mm) in het paaisubstraat gedurende de paaitijd."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="25" output="0"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_percentage_modder_slib">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_percentage_modder_slib</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="diameter_grindbed">
-						<type>scalar</type>
-						<layername>"diameter_grindbed"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde diameter van vlakke grindbedden zonder vegetatie gedurende de paaitijd."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="1" HSI="0"/>
-							<parameter value="3" HSI="1"/>
-							<parameter value="7" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="diameter_grindbed">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diameter_grindbed</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde diameter van vlakke grindbedden zonder vegetatie gedurende de paaitijd."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="1" output="0"/>
+								<parameter input="3" output="1"/>
+								<parameter input="7" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_diameter_grindbed">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_diameter_grindbed</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="diepte_paai">
-						<type>scalar</type>
-						<layername>"diepte"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde diepte van grindbedden gedurende de paaitijd."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="20" HSI="0"/>
-							<parameter value="30" HSI="1"/>
-							<parameter value="40" HSI="1"/>
-							<parameter value="100" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="diepte_paai">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diepte_paai</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde diepte van grindbedden gedurende de paaitijd."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="20" output="0"/>
+								<parameter input="30" output="1"/>
+								<parameter input="40" output="1"/>
+								<parameter input="100" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_diepte_paai">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_diepte_paai</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="debietfluctuatie">
-						<type>scalar</type>
-						<layername>"debietfluctuatie"</layername>
-						<unit>"cm"</unit>
-						<statistic>average</statistic>
-						<description>"Maximale verschil in waterpeil in het paaigebied gedurende de paai en de ontwikkeling van de eieren en dooierzaklarven (tot 3 weken na paai)"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="40" HSI="0"/>
-							<parameter value="70" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="debietfluctuatie">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>debietfluctuatie</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximale verschil in waterpeil in het paaigebied gedurende de paai en de ontwikkeling van de eieren en dooierzaklarven (tot 3 weken na paai)"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="20" output="1"/>
+								<parameter input="40" output="0"/>
+								<parameter input="70" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_debietfluctuatie">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_debietfluctuatie</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_paai">
-						<type>scalar</type>
-						<layername>"stroomsnelheid"</layername>
-						<unit>"cm/s"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde stroomsnelheid boven grindbedden in het paaigebied gemeten op 0.6 meter diepte gedurende de paaitijd."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="10" HSI="0"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="75" HSI="1"/>
-							<parameter value="175" HSI="0"/>
-							<parameter value="200" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="stroomsnelheid_paai">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_paai</layer_filename>
+								<unit>"cm/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde stroomsnelheid boven grindbedden in het paaigebied gemeten op 0.6 meter diepte gedurende de paaitijd."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="10" output="0"/>
+								<parameter input="25" output="1"/>
+								<parameter input="75" output="1"/>
+								<parameter input="175" output="0"/>
+								<parameter input="200" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_paai">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_paai</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurstofgehalte_ei">
-						<type>scalar</type>
-						<layername>"zuurstofgehalte"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde minimum zuurstofgehalte van het water in het paaigebied gedurende de paai en de ontwikkeling van eieren en dooierzaklarven (tot 3 weken na de paai) "</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="5" HSI="0"/>
-							<parameter value="9" HSI="1"/>
-							<parameter value="12" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zuurstofgehalte_ei">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurstofgehalte_ei</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde minimum zuurstofgehalte van het water in het paaigebied gedurende de paai en de ontwikkeling van eieren en dooierzaklarven (tot 3 weken na de paai) "</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="5" output="0"/>
+								<parameter input="9" output="1"/>
+								<parameter input="12" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurstofgehalte_ei">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurstofgehalte_ei</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_paai">
-						<type>scalar</type>
-						<layername>"temperatuur_paai"</layername>
-						<unit>"graden Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde watertemperatuur in het paaigebied gedurende de paaitijd"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="8" HSI="0"/>
-							<parameter value="13" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="29" HSI="0"/>
-							<parameter value="35" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="temperatuur_paai">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_paai</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde watertemperatuur in het paaigebied gedurende de paaitijd"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="8" output="0"/>
+								<parameter input="13" output="1"/>
+								<parameter input="20" output="1"/>
+								<parameter input="29" output="0"/>
+								<parameter input="35" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_paai">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_paai</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_ei">
-						<type>scalar</type>
-						<layername>"temperatuur_ei"</layername>
-						<unit>"graden Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde maximale watertemperatuur in het paaigebied gedurende de ontwikkeling van de eieren (tot 2 weken na de paai)."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="8" HSI="0"/>
-							<parameter value="13" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="22" HSI="0"/>
-							<parameter value="35" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="temperatuur_ei">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_ei</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde maximale watertemperatuur in het paaigebied gedurende de ontwikkeling van de eieren (tot 2 weken na de paai)."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="8" output="0"/>
+								<parameter input="13" output="1"/>
+								<parameter input="20" output="1"/>
+								<parameter input="22" output="0"/>
+								<parameter input="35" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_ei">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_ei</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="substraattype_larve">
-						<type>categorical</type>
-						<layername>"substraattype"</layername>
-						<unit>"Substraat"</unit>
-						<statistic>average</statistic>
-						<description>"Meest voorkomende substraattype in de ondiepe oeverzones gedurende de zomer."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="waterplanten " HSI="1"/>
-							<parameter cat="klei/modder/silt (kleiner dan 0.06 mm) " HSI="1"/>
-							<parameter cat="zand ( 0.06-0.5 mm) " HSI="0.8"/>
-							<parameter cat="grof zand (0.5-4 mm ) " HSI="0.6"/>
-							<parameter cat="grind (4-32 mm) " HSI="0.5"/>							
-							<parameter cat="kiezels (32-64 mm) " HSI="0.4"/>
-							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="0.3"/>
-						</valuesCategorical>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="substraattype_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>substraattype_larve</layer_filename>
+								<unit>"Substraat"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Meest voorkomende substraattype in de ondiepe oeverzones gedurende de zomer."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="waterplanten " output="1" output_cat=""/>
+								<parameter input="2" input_cat="klei/modder/silt (kleiner dan 0.06 mm) " output="1" output_cat=""/>
+								<parameter input="3" input_cat="zand ( 0.06-0.5 mm) " output="0.8" output_cat=""/>
+								<parameter input="4" input_cat="grof zand (0.5-4 mm ) " output="0.6" output_cat=""/>
+								<parameter input="5" input_cat="grind (4-32 mm) " output="0.5" output_cat=""/>
+								<parameter input="6" input_cat="kiezels (32-64 mm) " output="0.4" output_cat=""/>
+								<parameter input="7" input_cat="keien/rotsen/vast gesteente (&gt;65 mm ) " output="0.3" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substraattype_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_substraattype_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 					<ResponseCurve name="diepte_larve">
-						<type>scalar</type>
-						<layername>"diepte"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde diepte van de oeverzoens gedurende de zomer."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.2" HSI="1"/>
-							<parameter value="1" HSI="1"/>
-							<parameter value="3.2" HSI="0"/>
-							<parameter value="4" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="diepte_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diepte_larve</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde diepte van de oeverzoens gedurende de zomer."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.2" output="1"/>
+								<parameter input="1" output="1"/>
+								<parameter input="3.2" output="0"/>
+								<parameter input="4" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_diepte_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_diepte_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_larve">
-						<type>scalar</type>
-						<layername>"stroomsnelheid"</layername>
-						<unit>"cm/s"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde stroomsnelheid in ondiepe oeverzones gedurende de zomer"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="30" HSI="0.2"/>
-							<parameter value="60" HSI="0"/>
-							<parameter value="70" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="stroomsnelheid_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_larve</layer_filename>
+								<unit>"cm/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde stroomsnelheid in ondiepe oeverzones gedurende de zomer"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="30" output="0.2"/>
+								<parameter input="60" output="0"/>
+								<parameter input="70" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="beschutting_larve">
-						<type>scalar</type>
-						<layername>"beschutting"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage van de oever met een uitgeholde vorm (erosie-oevers) of met overhangende bomen, struiken of kruidachtige planten, of met in het water hangende wortels, gedurende de zomer."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="20" HSI="0"/>
-							<parameter value="80" HSI="1"/>
-							<parameter value="100" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="beschutting_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>beschutting_larve</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage van de oever met een uitgeholde vorm (erosie-oevers) of met overhangende bomen, struiken of kruidachtige planten, of met in het water hangende wortels, gedurende de zomer."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="20" output="0"/>
+								<parameter input="80" output="1"/>
+								<parameter input="100" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_beschutting_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_beschutting_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurstofgehalte_larve">
-						<type>scalar</type>
-						<layername>"Zuurstofgehalte"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde minimum zuurstofgehalte in ondiepe oeverzones gedurende de zomer"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="2" HSI="0"/>
-							<parameter value="9" HSI="1"/>
-							<parameter value="11" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zuurstofgehalte_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurstofgehalte_larve</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde minimum zuurstofgehalte in ondiepe oeverzones gedurende de zomer"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="2" output="0"/>
+								<parameter input="9" output="1"/>
+								<parameter input="11" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurstofgehalte_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurstofgehalte_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_larve">
-						<type>scalar</type>
-						<layername>"temperatuur"</layername>
-						<unit>"graden Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="13" HSI="0"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="30" HSI="0"/>
-							<parameter value="35" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="temperatuur_larve">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_larve</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="13" output="0"/>
+								<parameter input="20" output="1"/>
+								<parameter input="25" output="1"/>
+								<parameter input="30" output="0"/>
+								<parameter input="35" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="substraattype_adult">
-						<type>categorical</type>
-						<layername>"substraattype"</layername>
-						<unit>"Substraat"</unit>
-						<statistic>average</statistic>
-						<description>"Hoofdbestanddeel van het bodemsubstraat in de hoofdstroom van de rivier."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="waterplanten " HSI="0.2"/>
-							<parameter cat="klei/modder/silt (kleiner dan 0.06 mm) " HSI="0"/>
-							<parameter cat="zand ( 0.06-0.5 mm) " HSI="0.5"/>
-							<parameter cat="grof zand (0.5-4 mm ) " HSI="0.8"/>
-							<parameter cat="grind (4-32 mm) " HSI="1.0"/>							
-							<parameter cat="kiezels (32-64 mm) " HSI="1.0"/>
-							<parameter cat="keien/rotsen/vast gesteente (>65 mm ) " HSI="1.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="substraattype_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>substraattype_adult</layer_filename>
+								<unit>"Substraat"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Hoofdbestanddeel van het bodemsubstraat in de hoofdstroom van de rivier."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="waterplanten " output="0.2" output_cat=""/>
+								<parameter input="2" input_cat="klei/modder/silt (kleiner dan 0.06 mm) " output="0" output_cat=""/>
+								<parameter input="3" input_cat="zand ( 0.06-0.5 mm) " output="0.5" output_cat=""/>
+								<parameter input="4" input_cat="grof zand (0.5-4 mm ) " output="0.8" output_cat=""/>
+								<parameter input="5" input_cat="grind (4-32 mm) " output="1.0" output_cat=""/>
+								<parameter input="6" input_cat="kiezels (32-64 mm) " output="1.0" output_cat=""/>
+								<parameter input="7" input_cat="keien/rotsen/vast gesteente (&gt;65 mm ) " output="1.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substraattype_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_substraattype_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="diepte_adult">
-						<type>scalar</type>
-						<layername>"diepte"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde diepte van de hoofdstroom gedurende het gehele jaar."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="0.5" HSI="0.0"/>
-							<parameter value="1.0" HSI="1.0"/>
-							<parameter value="2.0" HSI="1.0"/>
-							<parameter value="2.5" HSI="0.0"/>
-							<parameter value="3.0" HSI="0.0"/>
-						</valuesScalar>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="diepte_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diepte_adult</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde diepte van de hoofdstroom gedurende het gehele jaar."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="0.5" output="0.0"/>
+								<parameter input="1.0" output="1.0"/>
+								<parameter input="2.0" output="1.0"/>
+								<parameter input="2.5" output="0.0"/>
+								<parameter input="3.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_diepte_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_diepte_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 					<ResponseCurve name="diepte_index">
-						<type>scalar</type>
-						<layername>"diepte_index"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"Mate waarin afwisselend diepe en ondiepe delen aanwezig zijn in de hoofdstroom gedurende de zomer. De index wordt berekend aan de hand van de volgende formule: Diepte index = Log( % ondiep / % diep ); % ondiep = % kleiner dan 0.7 meter; % diep = % groter dan 1.5 meter."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="0.18" HSI="1"/>
-							<parameter value="0.37" HSI="0.75"/>
-							<parameter value="0.6" HSI="0.5"/>
-							<parameter value="0.95" HSI="0.25"/>
-							<parameter value="1.28" HSI="0.1"/>
-							<parameter value="2" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="diepte_index">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diepte_index</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mate waarin afwisselend diepe en ondiepe delen aanwezig zijn in de hoofdstroom gedurende de zomer. De index wordt berekend aan de hand van de volgende formule: Diepte index = Log( % ondiep / % diep ); % ondiep = % kleiner dan 0.7 meter; % diep = % groter dan 1.5 meter."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="0.18" output="1"/>
+								<parameter input="0.37" output="0.75"/>
+								<parameter input="0.6" output="0.5"/>
+								<parameter input="0.95" output="0.25"/>
+								<parameter input="1.28" output="0.1"/>
+								<parameter input="2" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_diepte_index">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_diepte_index</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="diepte_verdeling">
-						<type>scalar</type>
-						<layername>"diepte_verdeling"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage van het wateroppervlak dat een diepte heeft van kleiner dan 0.7 meter of groter dan 1.5 meter."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="67" HSI="1"/>
-							<parameter value="100" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="diepte_verdeling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>diepte_verdeling</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage van het wateroppervlak dat een diepte heeft van kleiner dan 0.7 meter of groter dan 1.5 meter."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="67" output="1"/>
+								<parameter input="100" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_diepte_verdeling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_diepte_verdeling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_adult">
-						<type>scalar</type>
-						<layername>"Stroomsnelheid"</layername>
-						<unit>"cm/s"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde stroomsnelheid in de hoofdstroom over het gehele jaar, gemeten op 0.6 meter diepte."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="10" HSI="1"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="50" HSI="0"/>
-							<parameter value="60" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="stroomsnelheid_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_adult</layer_filename>
+								<unit>"cm/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde stroomsnelheid in de hoofdstroom over het gehele jaar, gemeten op 0.6 meter diepte."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="10" output="1"/>
+								<parameter input="25" output="1"/>
+								<parameter input="50" output="0"/>
+								<parameter input="60" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_index">
-						<type>scalar</type>
-						<layername>"stroomsnelheid_index"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer. Stroomsnelheid index = log( % langzaamstromend / % snelstromend ); % langzaamstromend = % kleiner dan 20 cm/s; % snelstromend = % groter dan 40 cm/s"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="0.18" HSI="1"/>
-							<parameter value="0.37" HSI="0.75"/>
-							<parameter value="0.6" HSI="0.5"/>
-							<parameter value="0.95" HSI="0.25"/>
-							<parameter value="1.28" HSI="0.1"/>
-							<parameter value="2" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="stroomsnelheid_index">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_index</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer. Stroomsnelheid index = log( % langzaamstromend / % snelstromend ); % langzaamstromend = % kleiner dan 20 cm/s; % snelstromend = % groter dan 40 cm/s"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="0.18" output="1"/>
+								<parameter input="0.37" output="0.75"/>
+								<parameter input="0.6" output="0.5"/>
+								<parameter input="0.95" output="0.25"/>
+								<parameter input="1.28" output="0.1"/>
+								<parameter input="2" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_index">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_index</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_verdeling">
-						<type>scalar</type>
-						<layername>"stroomsnelheid_verdeling"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="67" HSI="1"/>
-							<parameter value="100" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="stroomsnelheid_verdeling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>stroomsnelheid_verdeling</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Mate waarin afwisselend langzaamstromende en snelstromende delen in de hoofdstroom gedurende de zomer."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="67" output="1"/>
+								<parameter input="100" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_stroomsnelheid_verdeling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_stroomsnelheid_verdeling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="beschutting_adult">
-						<type>scalar</type>
-						<layername>"beschutting"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage van de oever met beschutting in de vorm van overhangende bomen, struiken of kruidachtige planten, in het water hangende wortels, holten en spleten tussen rotsen, onderwater liggende boomstronken, overhangende vorm van de oever (erosie-oever) of bruggen."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="20" HSI="0"/>
-							<parameter value="80" HSI="1"/>
-							<parameter value="100" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="beschutting_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>beschutting_adult</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage van de oever met beschutting in de vorm van overhangende bomen, struiken of kruidachtige planten, in het water hangende wortels, holten en spleten tussen rotsen, onderwater liggende boomstronken, overhangende vorm van de oever (erosie-oever) of bruggen."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="20" output="0"/>
+								<parameter input="80" output="1"/>
+								<parameter input="100" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_beschutting_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_beschutting_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurstofgehalte_adult">
-						<type>scalar</type>
-						<layername>"zuurstofgehalte"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde minimum zuurstofgehalte in de hoofdstroom gedurende de zomer"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="3.5" HSI="0"/>
-							<parameter value="5" HSI="0.6"/>
-							<parameter value="7" HSI="1"/>
-							<parameter value="11" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="zuurstofgehalte_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zuurstofgehalte_adult</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde minimum zuurstofgehalte in de hoofdstroom gedurende de zomer"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="3.5" output="0"/>
+								<parameter input="5" output="0.6"/>
+								<parameter input="7" output="1"/>
+								<parameter input="11" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zuurstofgehalte_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurstofgehalte_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_adult">
-						<type>scalar</type>
-						<layername>"temperatuur_adult"</layername>
-						<unit>"graden Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="15" HSI="0"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="25" HSI="1"/>
-							<parameter value="30" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="temperatuur_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>temperatuur_adult</layer_filename>
+								<unit>"graden Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Gemiddelde maximale watertemperatuur in ondiepe oeverzones gedurende de zomer."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="15" output="0"/>
+								<parameter input="20" output="1"/>
+								<parameter input="25" output="1"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperatuur_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="trofiegraad">
-						<type>categorical</type>
-						<layername>"trofiegraad"</layername>
-						<unit>"Trofiegraad"</unit>
-						<statistic>average</statistic>
-						<description>"Trofiegraad van de rivier."</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="oligotroof / zwak eutroof" HSI="1"/>
-							<parameter cat="matig eutroof" HSI="0.5"/>
-							<parameter cat="sterk eutroof " HSI="0"/>
-						</valuesCategorical>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="trofiegraad">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>trofiegraad</layer_filename>
+								<unit>"Trofiegraad"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Trofiegraad van de rivier."</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="oligotroof / zwak eutroof" output="1" output_cat=""/>
+								<parameter input="2" input_cat="matig eutroof" output="0.5" output_cat=""/>
+								<parameter input="3" input_cat="sterk eutroof " output="0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_trofiegraad">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_trofiegraad</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Barbeel-Barbusbarbus-Algemeenvoorkomen">Algemeen voorkomen</h3><p>Het verspreidingsgebied van de barbeel loopt vanaf het stroomgebied van de Rhone en de Donau in het Zuiden, tot aan de rivieren de Dnieper en de Neman in het noorden en oosten van Europa. In Engeland is de barbeel alleen inheems in sommige rivieren in het zuid-oosten, maar door uitzetting komt de soort nu ook voor in stroomgebieden van de Severn, Avon, Thames, Welland en Trent. In België komt de barbeel voor in de Maas en enkele zijrivieren hiervan zoals de Ourthe, Semois, Lesse, Sambre en Ambleve. De gehele levenscyclus speelt zich af in het zoete water. <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><p>In Nederland werd de Barbeel vroeger waargenomen in de IJssel, de Lek, de Rijn bij Arnhem en de Maas. De barbeel was talrijk in de Limburgse Maas en minder algemeen voorkomend in de Rijn, de Waal en de Geldersche IJssel. Door de bouw van stuwen en door de kanalisatie en normalisatie van de rivieren is de barbeelstand na WO-II afgenomen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><h3 id="Barbeel-Barbusbarbus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De barbeel is een typische bodemvis die zijn voedsel zoekt tussen de stenen en het zand gedurende de schemer en de nacht. Met de bekdraden en de dikke uitstulpbare lippen wordt het voedsel gevoeld en geproefd. De reukzin is hierbij eveneens van belang <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><p>De barbeel is een omnivore vis met een voorkeur voor dierlijk voedsel. Het voedsel bestaat uit insektenlarven, wormen, kreeftachtigen, weekdieren en soms ook kleine vis of visbroed. Plantendelen en organisch afval worden eveneens gegeten. De jonge barbelen (0+) voeden zich met zoöplankton <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><h3 id="Barbeel-Barbusbarbus-Reproductieenmigratie">Reproductie en migratie</h3><p>De barbeel is een soort die onder de kaperachtigen het meest trekt in de rivieren. Een trekkende barbeel kan zelfs een afstand van 300 km in 37 dagen afleggen in stroomopwaartse richting. In het voorjaar zoeken de vissen de hoger gelegen gedeelten in de rivier op die zij in het najaar door de grotere waterafvoer hebben moeten verlaten. In het najaar is er juist een tendens om rustiger en dieper water op te zoeken om te overwinteren. Deze migraties vinden plaats om te kunnen paaien op vlakke kiezelbeddingen met een flinke stroming. </p><p>De mannetjes zijn na 3 a 4 jaar geslachtsrijp en de vrouwtjes pas veel later (na 8 jaar is 50% geslachtsrijp). De paaitijd loopt van mei tot begin juli. In het voorjaar trekken volwassen barbelen stroomopwaarts. Deze trek wordt veroorzaakt door een voortdurend stijgende watertemperatuur, en mogelijk ook door een afnemend debiet. Bij een temperatuur van 14 tot 18 graden Celsius wordt er gepaaid. Dit gebeurt op een diepte van 30-40 cm op een vlakke bodem van stenen en grind met een flinke stroming. Deze grindbedden liggen doorgaans in of net stroomopwaarts van de monding van een zijriviertje. De trek naar deze gebieden gebeurt bij schemer en in de nacht. Het paaien gebeurt gedeeltelijk ook overdag. Hierbij wordt de bodem flink omgewoeld <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>De eieren hebben een kleverig omhulsel waardoor ze aan het grind en zand blijven plakken. Ze hebben een goudgele kleur en een diameter van 2 mm. Na 1 of 2 weken komen de eieren uit, afhankelijk van de watertemperatuur. Bij 6 tot 8 graden Celsius komen de eieren na 13-16 dagen uit. Bij 15-22 graden Celsius komen de eieren na 4 tot 7 dagen uit <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>De dooierzaklarven zijn lichtschuw en verbergen zich tussen de kiezelstenen voor een periode van ongeveer 10 dagen. Deze periode hangt samen met de watertemperatuur, waarbij een hogere temperatuur (20 graden Celsius) zorgt voor een kortere periode (6 dagen). Wanneer de dooierzak geresorbeerd is, zwemmen de larven vrij in het water en zijn dan niet meer lichtschuw. Ze voeden zich met zoöplankton <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>In de ondiepe maar goed doorstroomde oeverzones zwemmen de larven vervolgens stroomopwaarts naar rustiger en dieper water. Deze migratie vindt in de schemering en 's nachts plaats. Overdag houden de juvenielen zich schuil voor predatoren. Na ongeveer 30 dagen na de bevruchting wordt het alevin (juveniel) stadium bereikt, althans in kweekexperimenten bij een gemiddelde temperatuur van 22,6 graden Celsius <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><h3 id="Barbeel-Barbusbarbus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>De maximale leeftijd van de Barbeel is 25 jaar. De groei van de barbeel is over het algemeen langzaam. De groei van de mannetjes is trager dan van de vrouwtjes. De maximale lengte is 70 cm bij een gewicht van 3 kilo.   De groeisnelheid van de barbeel verschilt per geografisch gebied. In Zuid Duitsland en in het stroomgebied van de Donau groeit de Barbeel het snelst, waardoor een maximale lengte van 1 meter bereikt kan worden. In Engeland en België is de groei trager. In Zuid- Frankrijk (Rhone-gebied) is de groei het traagst. Deze groeiverschillen hebben waarschijnlijk niet direct te maken met de voedselsituatie maar met genetische verschillen: door isolatie van bepaalde populaties zijn ondersoorten ontstaan. De groei is dichtheidsafhankelijk gebleken in de rivier de Severn in Engeland. De groei kan sterk vertraagd worden door de darmparasiet Pomphothyncus laevis. Een andere ziekte die bij barbelen voorkomt is een vorm van builenpest, veroorzaakt door de bacterie Myxobus pferifferi <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p><h3 id="Barbeel-Barbusbarbus-Milieuvoorwaarden">Milieu voorwaarden</h3><p>De barbeel komt voor in de zogenoemde barbeelzone van de rivieren. Deze barbeelzone bevindt zich in de middenloop van de rivieren en wordt gekenmerkt door een matige tot krachtige stroming en een schone bodem met zand, grind en keien. Het water moet er wel zuurstofrijk zijn en de temperatuur moet ongeveer 15-22 graden Celsius in de zomer bedragen. <br>n het algemeen prefereren barbelen het midden van de stroom. De grotere exemplaren komen in de diepere stroomdelen voor, de kleinere zijn meer te vinden in de ondiepere, snelstromende gedeelten. Er treedt geen schoolvorming op maar barbelen komen wel altijd voor in kleine groepen van enkele individuen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>.</p><p>De belangrijkste redenen dat bepaalde barbeelpopulaties zijn verdwenen zijn verontreiniging van het water en fysische veranderingen in het leefmilieu. Door organische en allerlei chemische verontreiniging zijn al vele populaties uit rivieren verdwenen. De barbeel is over het algemeen zeer gevoelig voor thermische verontreiniging, evenals hoge concentraties chlorides, sulfaten, detergenten en organo-chlooor verbindingen. Verder zijn door kanalisering en bedijking stroomversnellingen en grindbedden verdwenen. Eveneens is er minder variatie in diepte en stroomsnelheid dan voorheen. Ook de bouw van onpasseerbare stuwen is nadeling: hierdoor wordt de paaimigratie naar stroomopwaarts gelegen gebieden en rekolonisatie van andere rivieren bemoeilijkt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1">#1</a>. </p>
-]]></text>
+			<text>&lt;h3 id="Barbeel-Barbusbarbus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;Het verspreidingsgebied van de barbeel loopt vanaf het stroomgebied van de Rhone en de Donau in het Zuiden, tot aan de rivieren de Dnieper en de Neman in het noorden en oosten van Europa. In Engeland is de barbeel alleen inheems in sommige rivieren in het zuid-oosten, maar door uitzetting komt de soort nu ook voor in stroomgebieden van de Severn, Avon, Thames, Welland en Trent. In België komt de barbeel voor in de Maas en enkele zijrivieren hiervan zoals de Ourthe, Semois, Lesse, Sambre en Ambleve. De gehele levenscyclus speelt zich af in het zoete water. &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;In Nederland werd de Barbeel vroeger waargenomen in de IJssel, de Lek, de Rijn bij Arnhem en de Maas. De barbeel was talrijk in de Limburgse Maas en minder algemeen voorkomend in de Rijn, de Waal en de Geldersche IJssel. Door de bouw van stuwen en door de kanalisatie en normalisatie van de rivieren is de barbeelstand na WO-II afgenomen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Barbeel-Barbusbarbus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De barbeel is een typische bodemvis die zijn voedsel zoekt tussen de stenen en het zand gedurende de schemer en de nacht. Met de bekdraden en de dikke uitstulpbare lippen wordt het voedsel gevoeld en geproefd. De reukzin is hierbij eveneens van belang &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;De barbeel is een omnivore vis met een voorkeur voor dierlijk voedsel. Het voedsel bestaat uit insektenlarven, wormen, kreeftachtigen, weekdieren en soms ook kleine vis of visbroed. Plantendelen en organisch afval worden eveneens gegeten. De jonge barbelen (0+) voeden zich met zoöplankton &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Barbeel-Barbusbarbus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;De barbeel is een soort die onder de kaperachtigen het meest trekt in de rivieren. Een trekkende barbeel kan zelfs een afstand van 300 km in 37 dagen afleggen in stroomopwaartse richting. In het voorjaar zoeken de vissen de hoger gelegen gedeelten in de rivier op die zij in het najaar door de grotere waterafvoer hebben moeten verlaten. In het najaar is er juist een tendens om rustiger en dieper water op te zoeken om te overwinteren. Deze migraties vinden plaats om te kunnen paaien op vlakke kiezelbeddingen met een flinke stroming. &lt;/p&gt;&lt;p&gt;De mannetjes zijn na 3 a 4 jaar geslachtsrijp en de vrouwtjes pas veel later (na 8 jaar is 50% geslachtsrijp). De paaitijd loopt van mei tot begin juli. In het voorjaar trekken volwassen barbelen stroomopwaarts. Deze trek wordt veroorzaakt door een voortdurend stijgende watertemperatuur, en mogelijk ook door een afnemend debiet. Bij een temperatuur van 14 tot 18 graden Celsius wordt er gepaaid. Dit gebeurt op een diepte van 30-40 cm op een vlakke bodem van stenen en grind met een flinke stroming. Deze grindbedden liggen doorgaans in of net stroomopwaarts van de monding van een zijriviertje. De trek naar deze gebieden gebeurt bij schemer en in de nacht. Het paaien gebeurt gedeeltelijk ook overdag. Hierbij wordt de bodem flink omgewoeld &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De eieren hebben een kleverig omhulsel waardoor ze aan het grind en zand blijven plakken. Ze hebben een goudgele kleur en een diameter van 2 mm. Na 1 of 2 weken komen de eieren uit, afhankelijk van de watertemperatuur. Bij 6 tot 8 graden Celsius komen de eieren na 13-16 dagen uit. Bij 15-22 graden Celsius komen de eieren na 4 tot 7 dagen uit &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De dooierzaklarven zijn lichtschuw en verbergen zich tussen de kiezelstenen voor een periode van ongeveer 10 dagen. Deze periode hangt samen met de watertemperatuur, waarbij een hogere temperatuur (20 graden Celsius) zorgt voor een kortere periode (6 dagen). Wanneer de dooierzak geresorbeerd is, zwemmen de larven vrij in het water en zijn dan niet meer lichtschuw. Ze voeden zich met zoöplankton &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;In de ondiepe maar goed doorstroomde oeverzones zwemmen de larven vervolgens stroomopwaarts naar rustiger en dieper water. Deze migratie vindt in de schemering en 's nachts plaats. Overdag houden de juvenielen zich schuil voor predatoren. Na ongeveer 30 dagen na de bevruchting wordt het alevin (juveniel) stadium bereikt, althans in kweekexperimenten bij een gemiddelde temperatuur van 22,6 graden Celsius &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Barbeel-Barbusbarbus-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;De maximale leeftijd van de Barbeel is 25 jaar. De groei van de barbeel is over het algemeen langzaam. De groei van de mannetjes is trager dan van de vrouwtjes. De maximale lengte is 70 cm bij een gewicht van 3 kilo.   De groeisnelheid van de barbeel verschilt per geografisch gebied. In Zuid Duitsland en in het stroomgebied van de Donau groeit de Barbeel het snelst, waardoor een maximale lengte van 1 meter bereikt kan worden. In Engeland en België is de groei trager. In Zuid- Frankrijk (Rhone-gebied) is de groei het traagst. Deze groeiverschillen hebben waarschijnlijk niet direct te maken met de voedselsituatie maar met genetische verschillen: door isolatie van bepaalde populaties zijn ondersoorten ontstaan. De groei is dichtheidsafhankelijk gebleken in de rivier de Severn in Engeland. De groei kan sterk vertraagd worden door de darmparasiet Pomphothyncus laevis. Een andere ziekte die bij barbelen voorkomt is een vorm van builenpest, veroorzaakt door de bacterie Myxobus pferifferi &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Barbeel-Barbusbarbus-Milieuvoorwaarden"&gt;Milieu voorwaarden&lt;/h3&gt;&lt;p&gt;De barbeel komt voor in de zogenoemde barbeelzone van de rivieren. Deze barbeelzone bevindt zich in de middenloop van de rivieren en wordt gekenmerkt door een matige tot krachtige stroming en een schone bodem met zand, grind en keien. Het water moet er wel zuurstofrijk zijn en de temperatuur moet ongeveer 15-22 graden Celsius in de zomer bedragen. &lt;br&gt;n het algemeen prefereren barbelen het midden van de stroom. De grotere exemplaren komen in de diepere stroomdelen voor, de kleinere zijn meer te vinden in de ondiepere, snelstromende gedeelten. Er treedt geen schoolvorming op maar barbelen komen wel altijd voor in kleine groepen van enkele individuen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;De belangrijkste redenen dat bepaalde barbeelpopulaties zijn verdwenen zijn verontreiniging van het water en fysische veranderingen in het leefmilieu. Door organische en allerlei chemische verontreiniging zijn al vele populaties uit rivieren verdwenen. De barbeel is over het algemeen zeer gevoelig voor thermische verontreiniging, evenals hoge concentraties chlorides, sulfaten, detergenten en organo-chlooor verbindingen. Verder zijn door kanalisering en bedijking stroomversnellingen en grindbedden verdwenen. Eveneens is er minder variatie in diepte en stroomsnelheid dan voorheen. Ook de bouw van onpasseerbare stuwen is nadeling: hierdoor wordt de paaimigratie naar stroomopwaarts gelegen gebieden en rekolonisatie van andere rivieren bemoeilijkt &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Barbeel+-+Barbus+barbus#Barbeel-Barbusbarbus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
+</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Bakker, H.D." year="1992" title="Habitat Geschiktheid Index Model. De Barbeel Barbus barbus L." journal="Organisatie ter Verbetering van de Binnevisserij" identification="juli 1992">
 		</reference>

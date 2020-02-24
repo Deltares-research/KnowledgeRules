@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45510608</EoLpagenr>
 			<LatName>Mergus merganser</LatName>
 			<CommonNames>
-				<Name name= "Grote zaagbek" language="NL"/>
-				<Name name= "Common Merganser" language="ENG"/>
+				<Name name="Grote zaagbek" language="NL"/>
+				<Name name="Common Merganser" language="ENG"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -26,10 +24,10 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="GroteZaagbek-Mergusmerganser-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Grote Zaagbek - Mergus merganser - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p><h1 id="GroteZaagbek-Mergusmerganser-Toepassingsgebied">Toepassingsgebied</h1><p>Grote zoete en zoute wateren.</p><h1 id="GroteZaagbek-Mergusmerganser-Voorbeeldproject">Voorbeeld project</h1><p>Niet aanwezig.</p>]]></text>
+						<text>&lt;h1 id="GroteZaagbek-Mergusmerganser-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Grote Zaagbek - Mergus merganser - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;h1 id="GroteZaagbek-Mergusmerganser-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;&lt;p&gt;Grote zoete en zoute wateren.&lt;/p&gt;&lt;h1 id="GroteZaagbek-Mergusmerganser-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Niet aanwezig.&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
-						<text><![CDATA[<h1 id="CommonMerganser(Mergusmerganser)-Uncertaintyandvalidation">Uncertainty and validation</h1><p><img class="emoticon emoticon-warning" src="./Common Merganser (Mergus merganser) - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> These dose-effect relations have not been validated.</p><h1 id="CommonMerganser(Mergusmerganser)-Areaofapplication">Area of application</h1><p>Large fresh and salt waters</p><h1 id="CommonMerganser(Mergusmerganser)-Exemplaryproject">Exemplary project</h1><p>Not available. </p>]]></text>
+						<text>&lt;h1 id="CommonMerganser(Mergusmerganser)-Uncertaintyandvalidation"&gt;Uncertainty and validation&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Common Merganser (Mergus merganser) - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; These dose-effect relations have not been validated.&lt;/p&gt;&lt;h1 id="CommonMerganser(Mergusmerganser)-Areaofapplication"&gt;Area of application&lt;/h1&gt;&lt;p&gt;Large fresh and salt waters&lt;/p&gt;&lt;h1 id="CommonMerganser(Mergusmerganser)-Exemplaryproject"&gt;Exemplary project&lt;/h1&gt;&lt;p&gt;Not available. &lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -67,113 +65,198 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="fish_presence_TP">
-						<type>range / categorical</type>
-						<layername>"totalphosporus_concentration"</layername>
-						<unit>"mg TP per l / categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Fish content based on total phosphorus concentration (available for lakes : Hanson en Legget, 1982) expressed in mg TP/l and categories"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="0.020" cat="0.0 - 0.020" HSI="0.0"/>
-							<parameter rangemin="0.020" rangemax="0.050" cat="0.020 - 0.050" HSI="0.2"/>
-							<parameter rangemin="0.050" rangemax="0.100" cat="0.050 - 0.100" HSI="0.4"/>
-							<parameter rangemin="0.100" rangemax="0.150" cat="0.100 - 0.150" HSI="0.6"/>
-							<parameter rangemin="0.150" rangemax="0.200" cat="0.150 - 0.200" HSI="0.8"/>
-							<parameter rangemin="0.200" rangemax="0.500" cat="0.200 - 0.500" HSI="1.0"/>
-							<parameter rangemin="0.500" rangemax="1.000" cat="0.500 - 1.000" HSI="0.4"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="fish_presence_TP">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>fish_presence_TP</layer_filename>
+								<unit>"mg TP per l / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Fish content based on total phosphorus concentration (available for lakes : Hanson en Legget, 1982) expressed in mg TP/l and categories"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="0.020" input_cat="0.0 - 0.020" output="0.0" output_cat=""/>
+								<parameter rangemin_input="0.020" rangemax_input="0.050" input_cat="0.020 - 0.050" output="0.2" output_cat=""/>
+								<parameter rangemin_input="0.050" rangemax_input="0.100" input_cat="0.050 - 0.100" output="0.4" output_cat=""/>
+								<parameter rangemin_input="0.100" rangemax_input="0.150" input_cat="0.100 - 0.150" output="0.6" output_cat=""/>
+								<parameter rangemin_input="0.150" rangemax_input="0.200" input_cat="0.150 - 0.200" output="0.8" output_cat=""/>
+								<parameter rangemin_input="0.200" rangemax_input="0.500" input_cat="0.200 - 0.500" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0.500" rangemax_input="1.000" input_cat="0.500 - 1.000" output="0.4" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_fish_presence_TP">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_fish_presence_TP</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth_winter">
-						<type>range / categorical</type>
-						<layername>"waterdepth_winter"</layername>
-						<unit>"m / categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth during the winter period expressed in meter and categorie"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-							<reference author="https://animaldiversity.org" title="Mergus_merganser" identification="" year="2020" journal=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="4.0" cat="0.0 - 4.0" HSI="1.0"/>
-							<parameter rangemin="0.0" rangemax="18.0" cat="4.0 - 18.0" HSI="0.5"/>
-							<parameter rangemin="18.0" rangemax="999999" cat="> 18" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="waterdepth_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdepth_winter</layer_filename>
+								<unit>"m / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Waterdepth during the winter period expressed in meter and categorie"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+								<reference author="https://animaldiversity.org" title="Mergus_merganser" identification="" year="2020" journal=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="4.0" input_cat="0.0 - 4.0" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0.0" rangemax_input="18.0" input_cat="4.0 - 18.0" output="0.5" output_cat=""/>
+								<parameter rangemin_input="18.0" rangemax_input="999999" input_cat="&gt; 18" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdepth_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="transparency_winter">
-						<type>range / categorical</type>
-						<layername>"transparency_winter"</layername>
-						<unit>"m / categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Transparency of water during the winter period expressed in meter and categories"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="0.5" cat="0.0 - 0.5" HSI="0.3"/>
-							<parameter rangemin="0.5" rangemax="1.0" cat="0.5 - 1.0" HSI="0.6"/>
-							<parameter rangemin="1.0" rangemax="999999" cat=" > 1.0" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="transparency_winter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>transparency_winter</layer_filename>
+								<unit>"m / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Transparency of water during the winter period expressed in meter and categories"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="0.5" input_cat="0.0 - 0.5" output="0.3" output_cat=""/>
+								<parameter rangemin_input="0.5" rangemax_input="1.0" input_cat="0.5 - 1.0" output="0.6" output_cat=""/>
+								<parameter rangemin_input="1.0" rangemax_input="999999" input_cat=" &gt; 1.0" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_transparency_winter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_transparency_winter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="PCB_presence_fish">
-						<type>scalar</type>
-						<layername>"PCB_presence_fish"</layername>
-						<unit>"mg/kg"</unit>
-						<statistic>average</statistic>
-						<description>"Total - PCB presence in fish (European Eel : Anguilla anguilla) expressed in mg/kg"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="1.0"/>
-							<parameter value="2.2" HSI="1.0"/>
-							<parameter value="5.5" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="PCB_presence_fish">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>PCB_presence_fish</layer_filename>
+								<unit>"mg/kg"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Total - PCB presence in fish (European Eel : Anguilla anguilla) expressed in mg/kg"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="2.2" output="1.0"/>
+								<parameter input="5.5" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_PCB_presence_fish">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_PCB_presence_fish</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="disturbance_distance">
-						<type>range / categorical</type>
-						<layername>"PCB_presence_fish"</layername>
-						<unit>"m / categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Disturbance distance in expressed in m and categories"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="200.0" cat="0.0 - 200.0" HSI="0.0"/>
-							<parameter rangemin="200.0" rangemax="300.0" cat="200.0 - 300.0" HSI="0.5"/>
-							<parameter rangemin="300.0" rangemax="999999" cat="> 300.0" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="disturbance_distance">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>disturbance_distance</layer_filename>
+								<unit>"m / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Disturbance distance in expressed in m and categories"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Duel, H en Specken, B." year="1994" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="200.0" input_cat="0.0 - 200.0" output="0.0" output_cat=""/>
+								<parameter rangemin_input="200.0" rangemax_input="300.0" input_cat="200.0 - 300.0" output="0.5" output_cat=""/>
+								<parameter rangemin_input="300.0" rangemax_input="999999" input_cat="&gt; 300.0" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_disturbance_distance">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_disturbance_distance</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="GroteZaagbek-Mergusmerganser-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De Grote Zaagbek is een viseter en wintergast, die is gebonden aan grote zoete of zoute wateren. Het IJsselmeer en het aangrenzende deel van de Waddenzee zijn verreweg de belangrijkste overwinteringsgebieden. Daarnaast komt de soort ook voor in het rivierengebied, het Deltagebied, de Biesbosch, op de Noordzee, en in verschillende zoete wateren in het binnenland. Vooral bij strenge vorst schuift het zwaartepunt van de verspreiding naar het zuiden op en neemt het belang van het rivierengebied en het Deltagebied toe <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+Zaagbek+-+Mergus+merganser#GroteZaagbek-Mergusmerganser-2">#2</a>.</p><h3 id="GroteZaagbek-Mergusmerganser-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>Het voedsel van de Grote Zaagbek bestaat hoofdzakelijk uit vissen, welke worden op gedoken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+Zaagbek+-+Mergus+merganser#GroteZaagbek-Mergusmerganser-2">#2</a>. De Grote Zaagbek fourageert bij voorkeur in ondiep water tot 4 m <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+Zaagbek+-+Mergus+merganser#GroteZaagbek-Mergusmerganser-1">#1</a>.</p><h3 id="GroteZaagbek-Mergusmerganser-Reproductieenmigratie">Reproductie en migratie</h3><p>De Grote Zaagbek is vrij algemene broedvogel in Fenno-Scandinavie, elders zeldzamer. In Nederland broedt deze vogel niet.</p>]]></text>
+			<text>&lt;h3 id="GroteZaagbek-Mergusmerganser-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De Grote Zaagbek is een viseter en wintergast, die is gebonden aan grote zoete of zoute wateren. Het IJsselmeer en het aangrenzende deel van de Waddenzee zijn verreweg de belangrijkste overwinteringsgebieden. Daarnaast komt de soort ook voor in het rivierengebied, het Deltagebied, de Biesbosch, op de Noordzee, en in verschillende zoete wateren in het binnenland. Vooral bij strenge vorst schuift het zwaartepunt van de verspreiding naar het zuiden op en neemt het belang van het rivierengebied en het Deltagebied toe &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+Zaagbek+-+Mergus+merganser#GroteZaagbek-Mergusmerganser-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="GroteZaagbek-Mergusmerganser-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;Het voedsel van de Grote Zaagbek bestaat hoofdzakelijk uit vissen, welke worden op gedoken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+Zaagbek+-+Mergus+merganser#GroteZaagbek-Mergusmerganser-2"&gt;#2&lt;/a&gt;. De Grote Zaagbek fourageert bij voorkeur in ondiep water tot 4 m &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+Zaagbek+-+Mergus+merganser#GroteZaagbek-Mergusmerganser-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="GroteZaagbek-Mergusmerganser-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;De Grote Zaagbek is vrij algemene broedvogel in Fenno-Scandinavie, elders zeldzamer. In Nederland broedt deze vogel niet.&lt;/p&gt;</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA[<h3 id="CommonMerganser(Mergusmerganser)-Occurrence">Occurrence</h3><p>The Common Merganser is a fish-eater and winter guest that lives on large fresh and salt water. <br>In winter, it can be found on the IJsselmeer and the neighbouring Wadden Sea. The Common Merganser also lives in river basins, the Delta region, the Biesbosch and the Noordzee and in various inland fresh waters. During severe frost, it spreads more south, which enhances the importance of the river basins and the Delta region <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722970#CommonMerganser(Mergusmerganser)-2">#2</a>.</p><h3 id="CommonMerganser(Mergusmerganser)-Foodhabitatandstrategy">Food habitat and strategy</h3><p>The Common Merganser feeds on fish, it prefers to forage in shallow water, diving to a depth of 4 metres <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722970#CommonMerganser(Mergusmerganser)-2">#2</a>,<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722970#CommonMerganser(Mergusmerganser)-1">#1</a>. </p><h3 id="CommonMerganser(Mergusmerganser)-Breedingandmigration">Breeding and migration</h3><p>The Common Merganser mainly breeds in Fenno-Scandinavia. It does not breed in The Netherlands.  </p>]]></text>
-		</Description>			
-	</ContentDescription>
+			<text>&lt;h3 id="CommonMerganser(Mergusmerganser)-Occurrence"&gt;Occurrence&lt;/h3&gt;&lt;p&gt;The Common Merganser is a fish-eater and winter guest that lives on large fresh and salt water. &lt;br&gt;In winter, it can be found on the IJsselmeer and the neighbouring Wadden Sea. The Common Merganser also lives in river basins, the Delta region, the Biesbosch and the Noordzee and in various inland fresh waters. During severe frost, it spreads more south, which enhances the importance of the river basins and the Delta region &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722970#CommonMerganser(Mergusmerganser)-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="CommonMerganser(Mergusmerganser)-Foodhabitatandstrategy"&gt;Food habitat and strategy&lt;/h3&gt;&lt;p&gt;The Common Merganser feeds on fish, it prefers to forage in shallow water, diving to a depth of 4 metres &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722970#CommonMerganser(Mergusmerganser)-2"&gt;#2&lt;/a&gt;,&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722970#CommonMerganser(Mergusmerganser)-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="CommonMerganser(Mergusmerganser)-Breedingandmigration"&gt;Breeding and migration&lt;/h3&gt;&lt;p&gt;The Common Merganser mainly breeds in Fenno-Scandinavia. It does not breed in The Netherlands.  &lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="https://animaldiversity.org" title="Mergus_merganser" identification="" year="2020" journal="">
-			<html><![CDATA[https://animaldiversity.org/accounts/Mergus_merganser/]]></html>
+			<html>https://animaldiversity.org/accounts/Mergus_merganser/</html>
 		</reference>
 		<reference author="http://www.soortenbank.nl" title="Bonte standloper" identification="" year="2019" journal="">
-			<html><![CDATA[http://www.soortenbank.nl/soorten.php?soortengroep=vogels&id=167&menuentry=soorten]]></html>
+			<html>http://www.soortenbank.nl/soorten.php?soortengroep=vogels&amp;id=167&amp;menuentry=soorten</html>
 		</reference>
 		<reference author="Duel, H en Specken, B." year="1994" title="Grote Zaagbek: een model voor het bepalen van de kwaliteit van water- en moerasgebieden als overwinteringshabitat voor de Grote Zaagbek (Mergus merganser)." journal="TNO-BSA Werkdocument" identification="P 94-032 december 1994"/>
 	</Documentation>

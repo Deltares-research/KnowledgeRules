@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>46563008</EoLpagenr>
 			<LatName>Osmerus eperlanus</LatName>
 			<CommonNames>
-				<Name name = "Smelt" language = "ENG"/>
-				<Name name = "Spiering" language = "NL"/>
+				<Name name="Smelt" language="ENG"/>
+				<Name name="Spiering" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -24,17 +23,17 @@
 					</TemporalScope>
 				</Scope>
 				<SystemDescription>
-					<Description language = "ENG">
-						<text><![CDATA[
+					<Description language="ENG">
+						<text>
 Uncertainty and validation
 The response curves have not been validated. Based on expert judgement, the relations were considered adequately enough to apply here.
 
 Applicability				
 The response curves can be applied throughout the year as they contain a large range covering the entire year. Input data, measurement data or model data can therefore by consulted all year round.
-.]]></text>
+.</text>
 					</Description>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Spiering-Osmeruseperlanus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze response curves zijn niet gevalideerd. De relaties zijn op basis van expert judgement voldoende bevonden om hier toe te passen.</p><h1 id="Spiering-Osmeruseperlanus-Toepasbaarheid">Toepasbaarheid</h1><p>De response curves zijn het hele jaar toepasbaar omdat ze een grote range omvatten die het hele jaar omvat. De respons curvDe invoergegevens, meetgegevens of modelgegevens, kunnen dan ook over het hele jaar door geraadpleegd worden. </p><h1 id="Spiering-Osmeruseperlanus-Voorbeeldproject">Voorbeeld project</h1><p>Geen voorbeeldproject beschikbaar</p>]]></text>
+						<text>&lt;h1 id="Spiering-Osmeruseperlanus-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;Deze response curves zijn niet gevalideerd. De relaties zijn op basis van expert judgement voldoende bevonden om hier toe te passen.&lt;/p&gt;&lt;h1 id="Spiering-Osmeruseperlanus-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;De response curves zijn het hele jaar toepasbaar omdat ze een grote range omvatten die het hele jaar omvat. De respons curvDe invoergegevens, meetgegevens of modelgegevens, kunnen dan ook over het hele jaar door geraadpleegd worden. &lt;/p&gt;&lt;h1 id="Spiering-Osmeruseperlanus-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Geen voorbeeldproject beschikbaar&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -50,79 +49,130 @@ The response curves can be applied throughout the year as they contain a large r
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Transparency">
-						<type>scalar</type>
-						<layername>"Transparency"</layername>
-						<unit>"cm"</unit>
-						<statistic>average</statistic>
-						<description>"Tolerable transparency for the Smelt species"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2011-03-31</date>
-						<references>
-							<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="70" HSI="1"/>
-							<parameter value="130" HSI="0.5"/>
-							<parameter value="200" HSI="0.25"/>
-							<parameter value="270" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Transparency">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Transparency</layer_filename>
+								<unit>"cm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Tolerable transparency for the Smelt species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2011-03-31</date>
+							<references>
+								<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="70" output="1"/>
+								<parameter input="130" output="0.5"/>
+								<parameter input="200" output="0.25"/>
+								<parameter input="270" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Transparency">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Transparency</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterTemperature">
-						<type>scalar</type>
-						<layername>"MaximumSummerWaterTemperature"</layername>
-						<unit>"degrees Celsius"</unit>
-						<statistic>summer maximum (june - august)</statistic>
-						<description>"Maximum summer water temperature tolerable for the Zebra mossel species"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="23" HSI="0.5"/>
-							<parameter value="25" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="WaterTemperature">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>WaterTemperature</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>summer maximum (june - august)</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum summer water temperature tolerable for the Zebra mossel species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="20" output="1"/>
+								<parameter input="23" output="0.5"/>
+								<parameter input="25" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_WaterTemperature">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_WaterTemperature</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Oxygen">
-						<type>scalar</type>
-						<layername>"MinimumOxygen"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum oxygen tolerable for the Zebra mossel species"</description>
-						<author>"Mijke van Oorschot"</author>
-						<date>2014-07-29</date>
-						<references>
-							<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="2" HSI="0"/>
-							<parameter value="4" HSI="0.25"/>
-							<parameter value="6" HSI="0.5"/>
-							<parameter value="8" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Oxygen">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Oxygen</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum oxygen tolerable for the Zebra mossel species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Dionisio, J. de Leeuw" year="2011" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="2" output="0"/>
+								<parameter input="4" output="0.25"/>
+								<parameter input="6" output="0.5"/>
+								<parameter input="8" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Oxygen">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Oxygen</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="ENG">
-			<text><![CDATA[<h3 id="Smelt-Osmeruseperlanus-Occurrence">Occurrence</h3><p>The Smelt is a species of fish in the Osmeridae family that lives in the waters of the Northern Hemisphere. A salt-water form, the anadrome smelt, is common in salt and fresh moving water. It grows in salt water and migrates inland to spawn. The freshwater form spends its entire life in fresh water, mainly the larger lakes <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1">#1</a>. It swims in schools and prefers large open waters, such as lake IJssel. </p><h3 id="Smelt-Osmeruseperlanus-Foodhabitatandstrategy">Food habitat and strategy</h3><p>Smelt larval feed on small plankton organisms. Juveniles feed on larger plankton. Adult smelts also feed on fish (smelts, small herrings and bass). The smelt itself is a major food source for many other fish and birds <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1">#1</a>. </p><h3 id="Smelt-Osmeruseperlanus-Growthandmigration">Growth and migration</h3><p>Spawning takes place from March to June. The egg count per female can be as much as 40,000. They spawn on a substrate of sand, gravel, rocks or water plants. To prevent suffocation of the eggs the substrate must be rather solid <a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1">#1</a>. </p><h3 id="Smelt-Osmeruseperlanus-Ageandmortality">Age and mortality</h3><p>Salt water smelt may reach 30cm in length and can live for 8 years. The freshwater smelt, on the other hand, can live for 3 years and can only reach 14cm.</p>]]></text>
+			<text>&lt;h3 id="Smelt-Osmeruseperlanus-Occurrence"&gt;Occurrence&lt;/h3&gt;&lt;p&gt;The Smelt is a species of fish in the Osmeridae family that lives in the waters of the Northern Hemisphere. A salt-water form, the anadrome smelt, is common in salt and fresh moving water. It grows in salt water and migrates inland to spawn. The freshwater form spends its entire life in fresh water, mainly the larger lakes &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1"&gt;#1&lt;/a&gt;. It swims in schools and prefers large open waters, such as lake IJssel. &lt;/p&gt;&lt;h3 id="Smelt-Osmeruseperlanus-Foodhabitatandstrategy"&gt;Food habitat and strategy&lt;/h3&gt;&lt;p&gt;Smelt larval feed on small plankton organisms. Juveniles feed on larger plankton. Adult smelts also feed on fish (smelts, small herrings and bass). The smelt itself is a major food source for many other fish and birds &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Smelt-Osmeruseperlanus-Growthandmigration"&gt;Growth and migration&lt;/h3&gt;&lt;p&gt;Spawning takes place from March to June. The egg count per female can be as much as 40,000. They spawn on a substrate of sand, gravel, rocks or water plants. To prevent suffocation of the eggs the substrate must be rather solid &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Smelt+-+Osmerus+eperlanus#Smelt-Osmeruseperlanus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Smelt-Osmeruseperlanus-Ageandmortality"&gt;Age and mortality&lt;/h3&gt;&lt;p&gt;Salt water smelt may reach 30cm in length and can live for 8 years. The freshwater smelt, on the other hand, can live for 3 years and can only reach 14cm.&lt;/p&gt;</text>
 		</Description>
 		<Description language="NL">
-			<text><![CDATA[<h1 id="Spiering-Osmeruseperlanus-Habitatbeschrijving">Habitat beschrijving</h1><h3 id="Spiering-Osmeruseperlanus-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De spiering is een zalmachtige (familie Osmeridae) die in twee vormen op het noordelijk halfrond voorkomt. De anadrome spiering, die in zout water opgroeit en landinwaarts trekt om te paaien, komt voor in zoute en zoete stromende wateren. De binnenspiering brengt zijn gehele leven door in zoete wateren (voornamelijk grote meren) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus#Spiering-Osmeruseperlanus-1">#1</a>. De soort is een echte scholenvis die van grote open wateren houdt zoals het IJsselmeer.</p><h3 id="Spiering-Osmeruseperlanus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>Spieringlarven voeden zich voornamelijk met kleine planktonische organismen. Juvenielen schakelen over op grotere planktonsoorten. Volwassen spieringen voeden zich ook met vis (spiering, kleine haring en baars). Daarnaast is spiering zelf een belangrijke voedselbron voor vele soorten vis en vogels <a href="https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus#Spiering-Osmeruseperlanus-1">#1</a>.</p><h3 id="Spiering-Osmeruseperlanus-Reproductieenmigratie">Reproductie en migratie</h3><p>Spiering paait meestal tussen maart en juni. Eieren (zo'n 40000 per vrouwtje) worden afgezet op een substraat van zand, grind, steen of waterplanten. Substraat moet redelijk hard zijn om de eieren niet te laten verstikken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus#Spiering-Osmeruseperlanus-1">#1</a>.</p><h3 id="Spiering-Osmeruseperlanus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>Een zoutwaterspiering wordt tot 30 cm lang en 8 jaar oud terwijl de zoetwaterspiering meestal niet ouder dan 3 jaar wordt en niet langer dan 14 cm.</p>]]></text>
+			<text>&lt;h1 id="Spiering-Osmeruseperlanus-Habitatbeschrijving"&gt;Habitat beschrijving&lt;/h1&gt;&lt;h3 id="Spiering-Osmeruseperlanus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De spiering is een zalmachtige (familie Osmeridae) die in twee vormen op het noordelijk halfrond voorkomt. De anadrome spiering, die in zout water opgroeit en landinwaarts trekt om te paaien, komt voor in zoute en zoete stromende wateren. De binnenspiering brengt zijn gehele leven door in zoete wateren (voornamelijk grote meren) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus#Spiering-Osmeruseperlanus-1"&gt;#1&lt;/a&gt;. De soort is een echte scholenvis die van grote open wateren houdt zoals het IJsselmeer.&lt;/p&gt;&lt;h3 id="Spiering-Osmeruseperlanus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;Spieringlarven voeden zich voornamelijk met kleine planktonische organismen. Juvenielen schakelen over op grotere planktonsoorten. Volwassen spieringen voeden zich ook met vis (spiering, kleine haring en baars). Daarnaast is spiering zelf een belangrijke voedselbron voor vele soorten vis en vogels &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus#Spiering-Osmeruseperlanus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Spiering-Osmeruseperlanus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;Spiering paait meestal tussen maart en juni. Eieren (zo'n 40000 per vrouwtje) worden afgezet op een substraat van zand, grind, steen of waterplanten. Substraat moet redelijk hard zijn om de eieren niet te laten verstikken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus#Spiering-Osmeruseperlanus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Spiering-Osmeruseperlanus-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;Een zoutwaterspiering wordt tot 30 cm lang en 8 jaar oud terwijl de zoetwaterspiering meestal niet ouder dan 3 jaar wordt en niet langer dan 14 cm.&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Dionisio, M., de Leeuw,J." title="Habitat pagina Spiering - Osmerus eperlanus" identification="" year="2009" journal="">
-			<html><![CDATA[https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus]]></html>
-			</reference>
+			<html>https://publicwiki.deltares.nl/display/HBTHOME/Spiering+-+Osmerus+eperlanus</html>
+		</reference>
 		<reference author="Sportvisserij Nederland" year="2006" title="Soortprofiel Spiering" journal="Sportvisserij Nederland" identification="">
-			<html><![CDATA[https://www.sportvisserijnederland.nl/vis-water/vissoorten/22/Spiering.html]]></html>
+			<html>https://www.sportvisserijnederland.nl/vis-water/vissoorten/22/Spiering.html</html>
 		</reference>
 	</Documentation>
 	<DataSources/>

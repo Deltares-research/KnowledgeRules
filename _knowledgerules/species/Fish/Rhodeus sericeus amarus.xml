@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -24,7 +23,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[
+						<text>
 Onzekerheid en validatie
 Deze response curves zijn niet gevalideerd. De relaties zijn gebruikt in het Volkerak Zoommeer project en zijn op basis van expert judgement voldoende bevonden om hier toe te passen.
 
@@ -33,7 +32,7 @@ De response curves zijn gebaseerd op de periode half april tot eind augustus, di
 
 Voorbeeld project
 Volkerak-Zoommeer Habitat analyse (#4)
-]]></text>
+</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -50,95 +49,163 @@ Volkerak-Zoommeer Habitat analyse (#4)
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="ondergedoken_waterplanten">
-						<type>range / categorical</type>
-						<layername>"ondergedoken_waterplanten"</layername>
-						<unit>"bedekkingsgraad"</unit>
-						<statistic>average</statistic>
-						<description>"Voor deze rekenregel is in bij #4 als maat van de bedekkingsgraad gebruik gemaakt van de HGI voor ondergedoken waterplanten (Ondergedoken waterplanten)."</description>
-						<author>"Marc Weeber"</author>
-						<date>2012-11-28</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.01" cat="1" HSI="0"/>
-							<parameter rangemin="0.01" rangemax="0.05" cat="2" HSI="0.075"/>
-							<parameter rangemin="0.05" rangemax="0.1" cat="3" HSI="0.15"/>
-							<parameter rangemin="0.1" rangemax="0.3" cat="4" HSI="0.3"/>
-							<parameter rangemin="0.3" rangemax="0.5" cat="5" HSI="0.45"/>
-							<parameter rangemin="0.5" rangemax="0.7" cat="6" HSI="0.6"/>
-							<parameter rangemin="0.7" rangemax="0.9" cat="7" HSI="0.675"/>
-							<parameter rangemin="0.9" rangemax="1" cat="8" HSI="0.75"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="ondergedoken_waterplanten">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>ondergedoken_waterplanten</layer_filename>
+								<unit>"bedekkingsgraad"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Voor deze rekenregel is in bij #4 als maat van de bedekkingsgraad gebruik gemaakt van de HGI voor ondergedoken waterplanten (Ondergedoken waterplanten)."</description>
+							<author>"Marc Weeber"</author>
+							<date>2012-11-28</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.01" input_cat="1" output="0" output_cat=""/>
+								<parameter rangemin_input="0.01" rangemax_input="0.05" input_cat="2" output="0.075" output_cat=""/>
+								<parameter rangemin_input="0.05" rangemax_input="0.1" input_cat="3" output="0.15" output_cat=""/>
+								<parameter rangemin_input="0.1" rangemax_input="0.3" input_cat="4" output="0.3" output_cat=""/>
+								<parameter rangemin_input="0.3" rangemax_input="0.5" input_cat="5" output="0.45" output_cat=""/>
+								<parameter rangemin_input="0.5" rangemax_input="0.7" input_cat="6" output="0.6" output_cat=""/>
+								<parameter rangemin_input="0.7" rangemax_input="0.9" input_cat="7" output="0.675" output_cat=""/>
+								<parameter rangemin_input="0.9" rangemax_input="1" input_cat="8" output="0.75" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_ondergedoken_waterplanten">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_ondergedoken_waterplanten</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="oevervegetatie">
-						<type>range / categorical</type>
-						<layername>"oevervegetatie"</layername>
-						<unit>"bedekkingsgraad"</unit>
-						<statistic>average</statistic>
-						<description>"Voor deze dosis-effect relatie is in bij #4 als maat van de bedekkingsgraad gebruik gemaakt van de HGI voor oevervegetatie (Oevervegetatie)."</description>
-						<author>"Marc Weeber"</author>
-						<date>2012-11-28</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.01" cat="1" HSI="0"/>
-							<parameter rangemin="0.01" rangemax="0.05" cat="2" HSI="0.1"/>
-							<parameter rangemin="0.05" rangemax="0.1" cat="3" HSI="0.2"/>
-							<parameter rangemin="0.1" rangemax="0.3" cat="4" HSI="0.4"/>
-							<parameter rangemin="0.3" rangemax="0.5" cat="5" HSI="0.6"/>
-							<parameter rangemin="0.5" rangemax="0.7" cat="6" HSI="0.8"/>
-							<parameter rangemin="0.7" rangemax="0.9" cat="7" HSI="0.9"/>
-							<parameter rangemin="0.9" rangemax="1" cat="8" HSI="1"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="oevervegetatie">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie</layer_filename>
+								<unit>"bedekkingsgraad"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Voor deze dosis-effect relatie is in bij #4 als maat van de bedekkingsgraad gebruik gemaakt van de HGI voor oevervegetatie (Oevervegetatie)."</description>
+							<author>"Marc Weeber"</author>
+							<date>2012-11-28</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.01" input_cat="1" output="0" output_cat=""/>
+								<parameter rangemin_input="0.01" rangemax_input="0.05" input_cat="2" output="0.1" output_cat=""/>
+								<parameter rangemin_input="0.05" rangemax_input="0.1" input_cat="3" output="0.2" output_cat=""/>
+								<parameter rangemin_input="0.1" rangemax_input="0.3" input_cat="4" output="0.4" output_cat=""/>
+								<parameter rangemin_input="0.3" rangemax_input="0.5" input_cat="5" output="0.6" output_cat=""/>
+								<parameter rangemin_input="0.5" rangemax_input="0.7" input_cat="6" output="0.8" output_cat=""/>
+								<parameter rangemin_input="0.7" rangemax_input="0.9" input_cat="7" output="0.9" output_cat=""/>
+								<parameter rangemin_input="0.9" rangemax_input="1" input_cat="8" output="1" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte">
-						<type>range / categorical</type>
-						<layername>"waterdiepte"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdiepte voor de Bittervoorn"</description>
-						<author>"Marc Weeber"</author>
-						<date>2012-11-28</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.25" cat="1" HSI="0"/>
-							<parameter rangemin="0.25" rangemax="2" cat="2" HSI="1"/>
-							<parameter rangemin="2" rangemax="99" cat="3" HSI="0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="waterdiepte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Waterdiepte voor de Bittervoorn"</description>
+							<author>"Marc Weeber"</author>
+							<date>2012-11-28</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.25" input_cat="1" output="0" output_cat=""/>
+								<parameter rangemin_input="0.25" rangemax_input="2" input_cat="2" output="1" output_cat=""/>
+								<parameter rangemin_input="2" rangemax_input="99" input_cat="3" output="0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zoutgehalte">
-						<type>range / categorical</type>
-						<layername>"zoutgehalte"</layername>
-						<unit>"gCl/l"</unit>
-						<statistic>average</statistic>
-						<description>"Zoutgehalte voor de Bittervoorn"</description>
-						<author>"Marc Weeber"</author>
-						<date>2012-11-28</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="1.6" cat="1" HSI="1"/>
-							<parameter rangemin="1.6" rangemax="999" cat="2" HSI="0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="zoutgehalte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>zoutgehalte</layer_filename>
+								<unit>"gCl/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Zoutgehalte voor de Bittervoorn"</description>
+							<author>"Marc Weeber"</author>
+							<date>2012-11-28</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="1.6" input_cat="1" output="1" output_cat=""/>
+								<parameter rangemin_input="1.6" rangemax_input="999" input_cat="2" output="0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_zoutgehalte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zoutgehalte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Bittervoorn-Rhodeussericeusamarus-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De bittervoorn komt in de zoete wateren van gematigde streken in Europa voor, van Frankrijk tot aan de Oeral. In Nederland komt ze met name in het westen voor, plaatselijk in hoge aantallen. Komt voor in stilstaand of langzaam stromend water (sloten, plassen, vijvers) met een goed ontwikkelde onderwatervegetatie en een niet te weke bodem. In stromend water kan de vis in de oeverzone worden aangetroffen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2">#2</a>.</p><h3 id="Bittervoorn-Rhodeussericeusamarus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De Bittervoorn eet met name plantaardig plankton <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2">#2</a>. Daarnaast wordt spaarzaam dierlijk voedsel genuttigd, zoals vlokreeften, insectenlarven, slakjes en wormen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-1">#1</a></p><h3 id="Bittervoorn-Rhodeussericeusamarus-Reproductieenmigratie">Reproductie en migratie</h3><p>De Bittervoorn legt zijn eieren, april-juni, in grote zoetwatermossels van de soorten <em>Anodonta</em> en <em>Unio</em>. Het mannetje zoekt een gezonde mossel uit waar omheen hij een territorium vestigt. Wanneer er een geslachtsrijp vrouwtje voorbij zwemt, probeert hij haar te lokken. De geslachtsrijpe wijfjes zijn te herkennen aan een dunne, drie tot vier cm lange buis waarmee eitjes worden gelegd in de lichaamsholte van een mossel. De legbuis is een slap apparaat, maar door er onder druk van urine eitjes door te persen, wordt de buis in een fractie van een seconde hard, waarna het vrouwtje hem korte tijd in de instroomopening (sifo) van de mossel houdt en de eitjes afzet. Zodra de eieren zijn gedeponeerd en het wijfje is weggezwommen, stort het mannetje zijn hom over de mossel uit, dat via de instroomopening de eitjes bereikt en bevrucht. Dit gedrag wordt enige malen herhaald met verschillende vrouwtjes en bij verschillende mossels. De eitjes ontwikkelen zich tussen de kieuwen van de mossel. De larven blijven twee tot drie weken in de mossel. De mossel maakt op ook gebruik van de bittervoorn, deze laat larven los die zich op de vis hechten en zo verspreidt worden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-1">#1</a>, <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2">#2</a>.</p><h3 id="Bittervoorn-Rhodeussericeusamarus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>Over de leeftijd en mortaliteit van de Bittervoorn is geen informatie beschikbaar.</p>]]></text>
+			<text>&lt;h3 id="Bittervoorn-Rhodeussericeusamarus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De bittervoorn komt in de zoete wateren van gematigde streken in Europa voor, van Frankrijk tot aan de Oeral. In Nederland komt ze met name in het westen voor, plaatselijk in hoge aantallen. Komt voor in stilstaand of langzaam stromend water (sloten, plassen, vijvers) met een goed ontwikkelde onderwatervegetatie en een niet te weke bodem. In stromend water kan de vis in de oeverzone worden aangetroffen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Bittervoorn-Rhodeussericeusamarus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De Bittervoorn eet met name plantaardig plankton &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2"&gt;#2&lt;/a&gt;. Daarnaast wordt spaarzaam dierlijk voedsel genuttigd, zoals vlokreeften, insectenlarven, slakjes en wormen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-1"&gt;#1&lt;/a&gt;&lt;/p&gt;&lt;h3 id="Bittervoorn-Rhodeussericeusamarus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;De Bittervoorn legt zijn eieren, april-juni, in grote zoetwatermossels van de soorten &lt;em&gt;Anodonta&lt;/em&gt; en &lt;em&gt;Unio&lt;/em&gt;. Het mannetje zoekt een gezonde mossel uit waar omheen hij een territorium vestigt. Wanneer er een geslachtsrijp vrouwtje voorbij zwemt, probeert hij haar te lokken. De geslachtsrijpe wijfjes zijn te herkennen aan een dunne, drie tot vier cm lange buis waarmee eitjes worden gelegd in de lichaamsholte van een mossel. De legbuis is een slap apparaat, maar door er onder druk van urine eitjes door te persen, wordt de buis in een fractie van een seconde hard, waarna het vrouwtje hem korte tijd in de instroomopening (sifo) van de mossel houdt en de eitjes afzet. Zodra de eieren zijn gedeponeerd en het wijfje is weggezwommen, stort het mannetje zijn hom over de mossel uit, dat via de instroomopening de eitjes bereikt en bevrucht. Dit gedrag wordt enige malen herhaald met verschillende vrouwtjes en bij verschillende mossels. De eitjes ontwikkelen zich tussen de kieuwen van de mossel. De larven blijven twee tot drie weken in de mossel. De mossel maakt op ook gebruik van de bittervoorn, deze laat larven los die zich op de vis hechten en zo verspreidt worden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-1"&gt;#1&lt;/a&gt;, &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Bittervoorn+-+Rhodeus+sericeus+amarus#Bittervoorn-Rhodeussericeusamarus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Bittervoorn-Rhodeussericeusamarus-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;Over de leeftijd en mortaliteit van de Bittervoorn is geen informatie beschikbaar.&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="" year="" title="" journal="http://www.minlnv.nl/natura2000" identification=""/>
 		<reference author="M.C. de Lange en W.A.M. van Emmerik" title="Kennisdocument  bittervoorn Rhodeus amarus (Bloch, 1782)" identification="Kennisdocument 15" year="2006" journal="Sportvisserij Nederland">
-				<html><![CDATA["https://www.sportvisserijnederland.nl/files/kennisdocument_bittervoorn_4546.pdf"]]></html>
+			<html>"https://www.sportvisserijnederland.nl/files/kennisdocument_bittervoorn_4546.pdf"</html>
 		</reference>
 		<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="Europese natuur in Nederland; soorten van de Habitat richtlijn" journal="" identification=""/>
 		<reference author="Schouten, W.J." year="1992" title="Habitatgeschiktheid index model Bittervoorn Rhodeus sericeus amarus (Bloch, 1782)." journal="OVB, Nieuwegein" identification=""/>

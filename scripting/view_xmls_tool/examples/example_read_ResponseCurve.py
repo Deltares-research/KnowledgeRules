@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Birds/Phalacrocorax carbo.xml")
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Molluscs/Dreissena_polymorpha.xml")
-xmltest = AutecologyXML(filename = "../../../_new_knowledgerules/species/Birds/Gallinago_gallinago.xml")
+xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Birds/Gallinago_gallinago.xml")
 
 xmltest._readxml()
 print(type(xmltest.xmlroot))

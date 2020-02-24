@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45514315</EoLpagenr>
 			<LatName>Panurus biarmicus</LatName>
 			<CommonNames>
-				<Name name= "Baardmannetje" language="NL"/>
+				<Name name="Baardmannetje" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -25,7 +23,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Baardmannetje-Panurusbiarmicus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Baardmannetje - Panurus biarmicus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p><p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1">#1</a>.</p><h1 id="Baardmannetje-Panurusbiarmicus-Toepassingsgebied">Toepassingsgebied</h1><p>Nederland</p><h1 id="Baardmannetje-Panurusbiarmicus-Voorbeeldproject">Voorbeeld project</h1><p>Niet aanwezig</p>]]></text>
+						<text>&lt;h1 id="Baardmannetje-Panurusbiarmicus-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Baardmannetje - Panurus biarmicus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;&lt;p&gt;Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="Baardmannetje-Panurusbiarmicus-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;&lt;p&gt;Nederland&lt;/p&gt;&lt;h1 id="Baardmannetje-Panurusbiarmicus-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -73,200 +71,387 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="rietland_afstand_langs_open_water">
-						<type>ranges</type>
-						<layername>"rietland_afstand_langs_open_water"</layername>
-						<unit>"km/Ha riet"</unit>
-						<statistic>average</statistic>
-						<description>"Afstand rietland langs open water"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRanges>
-							<parameter rangemin="0.0" rangemax="0.1" HSI="0.4"/>
-							<parameter rangemin="0.1" rangemax="0.15" HSI="0.8"/>
-							<parameter rangemin="0.15"  rangemax="999999" HSI="1.0"/>
-						</valuesRanges>
+						<inputLayers>
+							<layer name="rietland_afstand_langs_open_water">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>rietland_afstand_langs_open_water</layer_filename>
+								<unit>"km/Ha riet"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>ranges</type>
+							<description>"Afstand rietland langs open water"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRanges>
+								<parameter rangemin_input="0.0" rangemax_input="0.1" output="0.4"/>
+								<parameter rangemin_input="0.1" rangemax_input="0.15" output="0.8"/>
+								<parameter rangemin_input="0.15" rangemax_input="999999" output="1.0"/>
+							</valuesRanges>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_rietland_afstand_langs_open_water">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_rietland_afstand_langs_open_water</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="taludvorm">
-						<type>ranges</type>
-						<layername>"taludvorm"</layername>
-						<unit>"hellingsgraden"</unit>
-						<statistic>average</statistic>
-						<description>"Taludvorm in hellingsgraden"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRanges>
-							<parameter rangemin= "0.0" rangemax="5.0" HSI="1.0"/>
-							<parameter rangemin= "5.0" rangemax="360.0" HSI="0.0"/>
-						</valuesRanges>
+						<inputLayers>
+							<layer name="taludvorm">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>taludvorm</layer_filename>
+								<unit>"hellingsgraden"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>ranges</type>
+							<description>"Taludvorm in hellingsgraden"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRanges>
+								<parameter rangemin_input="0.0" rangemax_input="5.0" output="1.0"/>
+								<parameter rangemin_input="5.0" rangemax_input="360.0" output="0.0"/>
+							</valuesRanges>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_taludvorm">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_taludvorm</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="peilfluctuatie">
-						<type>scalar</type>
-						<layername>"peilfluctuatie"</layername>
-						<unit>"cm/dag"</unit>
-						<statistic>average</statistic>
-						<description>"Peilfluctuatie in het rietland in cm/dag"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="50" HSI="0.0"/>
-							<parameter value="60" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="peilfluctuatie">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>peilfluctuatie</layer_filename>
+								<unit>"cm/dag"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Peilfluctuatie in het rietland in cm/dag"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="50" output="0.0"/>
+								<parameter input="60" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_peilfluctuatie">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_peilfluctuatie</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte_ondiep">
-						<type>range / categorical</type>
-						<layername>"waterdiepte_ondiep"</layername>
-						<unit>"m / categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Aanwezigheid van ondiep water (bij watersnip gedefineerd als minder dan 15 cm)"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="0.15" cat="aanwezig" HSI="1"/>
-							<parameter rangemin="0.15" rangemax="999999" cat="afwezig" HSI="0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="waterdiepte_ondiep">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterdiepte_ondiep</layer_filename>
+								<unit>"m / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Aanwezigheid van ondiep water (bij watersnip gedefineerd als minder dan 15 cm)"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="0.15" input_cat="aanwezig" output="1" output_cat=""/>
+								<parameter rangemin_input="0.15" rangemax_input="999999" input_cat="afwezig" output="0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdiepte_ondiep">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterdiepte_ondiep</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="overstromingen_periode">
-						<type>range / categorical</type>
-						<layername>"overstromingen_periode"</layername>
-						<unit>maand / categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Periode van overstromingen zowel in maand nummer als categorie"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="10" rangemax="2" cat="oktober - februari" HSI="1.0"/> 
-							<parameter rangemin="3" rangemax="9" cat="maart - september" HSI="0.1"/>
-							<parameter rangemin="0" rangemax="0" cat="geen" HSI="1.0"/> 
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="overstromingen_periode">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>overstromingen_periode</layer_filename>
+								<unit>maand / categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Periode van overstromingen zowel in maand nummer als categorie"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="10" rangemax_input="2" input_cat="oktober - februari" output="1.0" output_cat=""/>
+								<parameter rangemin_input="3" rangemax_input="9" input_cat="maart - september" output="0.1" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="0" input_cat="geen" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_overstromingen_periode">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_overstromingen_periode</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="chloridegehalte">
-						<type>ranges</type>
-						<layername>"chloridegehalte"</layername>
-						<unit>"mg CL/L"</unit>
-						<statistic>average</statistic>
-						<description>"Chloridegehalte in water in mg CL / L"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRanges>
-							<parameter rangemin="0.0" rangemax="300.0" HSI="1.0"/>
-							<parameter rangemin="300.0" rangemax="999999" HSI="0.3"/> 
-						</valuesRanges>
+						<inputLayers>
+							<layer name="chloridegehalte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>chloridegehalte</layer_filename>
+								<unit>"mg CL/L"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>ranges</type>
+							<description>"Chloridegehalte in water in mg CL / L"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRanges>
+								<parameter rangemin_input="0.0" rangemax_input="300.0" output="1.0"/>
+								<parameter rangemin_input="300.0" rangemax_input="999999" output="0.3"/>
+							</valuesRanges>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_chloridegehalte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_chloridegehalte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="oevervegetatie_breedte">
-						<type>scalar</type>
-						<layername>"oevervegetatie_breedte"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Breedte van de oevervegetatie in meter"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="10" HSI="0.0"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="60" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="oevervegetatie_breedte">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oevervegetatie_breedte</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Breedte van de oevervegetatie in meter"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="10" output="0.0"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="60" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_oevervegetatie_breedte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_oevervegetatie_breedte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="rietland_areaal">
-						<type>scalar</type>
-						<layername>"rietland_areaal"</layername>
-						<unit>"Ha"</unit>
-						<statistic>average</statistic>
-						<description>"Areaal rietland in hectare"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"></parameter>
-							<parameter value="4.0" HSI="0.0"></parameter>
-							<parameter value="50.0" HSI="1.0"></parameter>
-							<parameter value="100.0" HSI="1.0"></parameter>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="rietland_areaal">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>rietland_areaal</layer_filename>
+								<unit>"Ha"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Areaal rietland in hectare"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="4.0" output="0.0"/>
+								<parameter input="50.0" output="1.0"/>
+								<parameter input="100.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_rietland_areaal">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_rietland_areaal</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="moerasland_areaal">
-						<type>scalar</type>
-						<layername>"moerasland_areaal"</layername>
-						<unit>"Ha"</unit>
-						<statistic>average</statistic>
-						<description>"Areaal moeraslandschap in hectare"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"></parameter>
-							<parameter value="50.0" HSI="0.4"></parameter>
-							<parameter value="300.0" HSI="1.0"></parameter>
-							<parameter value="400.0" HSI="1.0"></parameter>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="moerasland_areaal">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>moerasland_areaal</layer_filename>
+								<unit>"Ha"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Areaal moeraslandschap in hectare"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="50.0" output="0.4"/>
+								<parameter input="300.0" output="1.0"/>
+								<parameter input="400.0" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_moerasland_areaal">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_moerasland_areaal</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="rietland_overjarig_structuurrijk">
-						<type>categorical</type>
-						<layername>"rietland_overjarig_structuurrijk"</layername>
-						<unit>"categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Aanwezigheid van overjarig structuurrijk rietland"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="aanwezig" HSI="1.0"/>
-							<parameter cat="afwezig" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="rietland_overjarig_structuurrijk">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>rietland_overjarig_structuurrijk</layer_filename>
+								<unit>"categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Aanwezigheid van overjarig structuurrijk rietland"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="aanwezig" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="afwezig" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_rietland_overjarig_structuurrijk">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_rietland_overjarig_structuurrijk</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="insecten_aanwezigheid">
-						<type>categorical</type>
-						<layername>"insecten_aanwezigheid"</layername>
-						<unit>"categorie"</unit>
-						<statistic>average</statistic>
-						<description>"Hoeveelheid aanwezigheid van insecten"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="groot" HSI="1.0"/>
-							<parameter cat="klein" HSI="0.1"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="insecten_aanwezigheid">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>insecten_aanwezigheid</layer_filename>
+								<unit>"categorie"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Hoeveelheid aanwezigheid van insecten"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="groot" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="klein" output="0.1" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_insecten_aanwezigheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_insecten_aanwezigheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Baardmannetje-Panurusbiarmicus-Algemeenvoorkomen(broedgebied)">Algemeen voorkomen (broedgebied)</h3><p>Het baardmannetje broed in zoetwatergebieden. Sporadisch wordt er ook in licht brakke gebieden gebroed. Voor het baardmannetje zijn voor het broeden in Nederland vooral de Randmeren en moerasgebieden aan de oevers van het IJsselmeer van belang. Plaatselijk wordt er ook gebroed in uiterwaarden. Het baardmannetje broedt bij voorkeur in uitgestrekte rietmoerassen. Hier broeden ze hoofdzakelijk in overjarige rietlanden die van enige omvang zijn. Echter ook kleinere rietlanden kunnen als broedgebied dienst doen. Te sterke verruiging van het riet heeft een nadelig effect op het broedgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1">#1</a>.</p><p>In het broedseizoen wordt er voornamelijk langs open waterrietland en langs de oevers van gesloten rietland gefoerageerd, maar niet of nauwelijks in gesloten en veelal droge rietlanden. Dit hangt waarschijnlijk samen met het voorkomen van dansmuggen die voornamelijk in Nederland een belangrijke voedselbron vormt voor het baardmannetje. De afstand tussen broedgebied en foerageerplaats is tot 100 meter <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1">#1</a>.</p><p>Wanneer het nest boven het water wordt gebouwd in riet dat voldoende verruigd is, dan hebben kleine peilfluctuaties weinig effect. Echter, overstromingen in het broedseizoen zijn zeer schadelijk. Voor de nestbouw is pakketachtig dood rietmateriaal vereist <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1">#1</a>.  </p><h3 id="Baardmannetje-Panurusbiarmicus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>De baardmannetjes hebben hun dieet aangepast naar het moment, van het eten van insecten in de zomer schakelen ze in de winter over op het eten van (riet)zaden in de winter. De maag wordt hier structureel voor aangepast. Door de overschakeling van type voedsel dient het moerasgebied voldoende groot te zijn om de baardmannetjes in de winter ook van voedsel te kunnen voorzien <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1">#1</a>.   </p><h3 id="Baardmannetje-Panurusbiarmicus-Reproductieenmigratie">Reproductie en migratie</h3><p>De broedperiode loopt van eind maart tot half september. Over het algemeen worden er 3 legsels gelegd, maar een zeldzame keer 4. Per legsel zijn er 4 tot 8 eieren die na 10 tot 14 dagen broeden uitkomen. Na 12 tot 13 dagen zijn de jongen vliegvlug en na 2 weken zelfstandig. In oktober trekken de vogels weg van het nest. Overwinteren gebeurt binnen Europa en vaak binnen Nederland. Hieraan ligt de gunstigheid van de situatie te grondslag <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1">#1</a>. </p><h3 id="Baardmannetje-Panurusbiarmicus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3><p>Strenge winters kunnen een sterk negatief effect op de populatie uitoefenen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1">#1</a>.</p><h3 id="Baardmannetje-Panurusbiarmicus-OrnithologischBasisregister#2">Ornithologisch Basisregister <a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-2">#2</a></h3><div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" resolved="" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal"><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" ecotoop-gebied : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> ecotoop-gebied </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" nest : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> nest </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" voedsel : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> voedsel </p></div></th></tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" ecotoop-gebied : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> ecotoop-gebied </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" nest : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> nest </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" voedsel : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> voedsel </p></div></th></tr></thead><tbody aria-live="polite" aria-relevant="all"><tr role="row"><td class="confluenceTd"><p> open water </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> rietvegetaties </p></td><td class="confluenceTd"><p> ++ </p></td><td class="confluenceTd"><p> ++ </p></td></tr><tr role="row"><td class="confluenceTd"><p> ruigten </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> zandige, open ruigten en pioniersvegetaties </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> heide stuifzand, veen, open duin </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> grasland </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> akkers </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> struwelen </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> bos </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> bebouwd gebied </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr role="row"><td class="confluenceTd"><p> open gebied </p></td><td class="confluenceTd"><p>&nbsp;</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr></tbody></table></div><p>Het nest wordt met name gemaakt in het riet.</p><p>Het voedsel wordt gezocht in het riet, op de bodem, in de kruidlaag, de lage struiklaag en op het wateroppervlak en langs de waterkant.</p><p>De bepalende factor van voorkomen is de aanwezigheid van overjarig rietland.</p>]]></text>
-			</Description>
-	</ContentDescription>
+			<text>&lt;h3 id="Baardmannetje-Panurusbiarmicus-Algemeenvoorkomen(broedgebied)"&gt;Algemeen voorkomen (broedgebied)&lt;/h3&gt;&lt;p&gt;Het baardmannetje broed in zoetwatergebieden. Sporadisch wordt er ook in licht brakke gebieden gebroed. Voor het baardmannetje zijn voor het broeden in Nederland vooral de Randmeren en moerasgebieden aan de oevers van het IJsselmeer van belang. Plaatselijk wordt er ook gebroed in uiterwaarden. Het baardmannetje broedt bij voorkeur in uitgestrekte rietmoerassen. Hier broeden ze hoofdzakelijk in overjarige rietlanden die van enige omvang zijn. Echter ook kleinere rietlanden kunnen als broedgebied dienst doen. Te sterke verruiging van het riet heeft een nadelig effect op het broedgebied &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;In het broedseizoen wordt er voornamelijk langs open waterrietland en langs de oevers van gesloten rietland gefoerageerd, maar niet of nauwelijks in gesloten en veelal droge rietlanden. Dit hangt waarschijnlijk samen met het voorkomen van dansmuggen die voornamelijk in Nederland een belangrijke voedselbron vormt voor het baardmannetje. De afstand tussen broedgebied en foerageerplaats is tot 100 meter &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Wanneer het nest boven het water wordt gebouwd in riet dat voldoende verruigd is, dan hebben kleine peilfluctuaties weinig effect. Echter, overstromingen in het broedseizoen zijn zeer schadelijk. Voor de nestbouw is pakketachtig dood rietmateriaal vereist &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;&lt;h3 id="Baardmannetje-Panurusbiarmicus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;De baardmannetjes hebben hun dieet aangepast naar het moment, van het eten van insecten in de zomer schakelen ze in de winter over op het eten van (riet)zaden in de winter. De maag wordt hier structureel voor aangepast. Door de overschakeling van type voedsel dient het moerasgebied voldoende groot te zijn om de baardmannetjes in de winter ook van voedsel te kunnen voorzien &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1"&gt;#1&lt;/a&gt;.   &lt;/p&gt;&lt;h3 id="Baardmannetje-Panurusbiarmicus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;De broedperiode loopt van eind maart tot half september. Over het algemeen worden er 3 legsels gelegd, maar een zeldzame keer 4. Per legsel zijn er 4 tot 8 eieren die na 10 tot 14 dagen broeden uitkomen. Na 12 tot 13 dagen zijn de jongen vliegvlug en na 2 weken zelfstandig. In oktober trekken de vogels weg van het nest. Overwinteren gebeurt binnen Europa en vaak binnen Nederland. Hieraan ligt de gunstigheid van de situatie te grondslag &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;&lt;h3 id="Baardmannetje-Panurusbiarmicus-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;&lt;p&gt;Strenge winters kunnen een sterk negatief effect op de populatie uitoefenen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Baardmannetje-Panurusbiarmicus-OrnithologischBasisregister#2"&gt;Ornithologisch Basisregister &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Baardmannetje+-+Panurus+biarmicus#Baardmannetje-Panurusbiarmicus-2"&gt;#2&lt;/a&gt;&lt;/h3&gt;&lt;div class="table-wrap"&gt;&lt;table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" resolved="" style="padding: 0px;"&gt;&lt;thead class="tableFloatingHeaderOriginal"&gt;&lt;tr role="row" class="tablesorter-headerRow"&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" ecotoop-gebied : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; ecotoop-gebied &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" nest : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; nest &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" voedsel : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; voedsel &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;thead class="tableFloatingHeader" style="display: none;"&gt;&lt;tr role="row" class="tablesorter-headerRow"&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" ecotoop-gebied : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; ecotoop-gebied &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" nest : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; nest &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="2" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" voedsel : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; voedsel &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody aria-live="polite" aria-relevant="all"&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; open water &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; rietvegetaties &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; ++ &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; ++ &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; ruigten &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; zandige, open ruigten en pioniersvegetaties &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; heide stuifzand, veen, open duin &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; grasland &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; akkers &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; struwelen &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; bos &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; bebouwd gebied &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; open gebied &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;p&gt;Het nest wordt met name gemaakt in het riet.&lt;/p&gt;&lt;p&gt;Het voedsel wordt gezocht in het riet, op de bodem, in de kruidlaag, de lage struiklaag en op het wateroppervlak en langs de waterkant.&lt;/p&gt;&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van overjarig rietland.&lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
 		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>

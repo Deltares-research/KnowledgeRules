@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45509157</EoLpagenr>
 			<LatName>Charadrius dubius</LatName>
 			<CommonNames>
-				<Name name= "Kleine plevier" language="NL"/>
+				<Name name="Kleine plevier" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -25,26 +23,26 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<p>Het nest wordt gemaakt op de bodem.</p>
+						<text>&lt;p&gt;Het nest wordt gemaakt op de bodem.&lt;/p&gt;
 
-<p>Het voedsel wordt gezocht op de bodem en op het wateroppervalk, in de waterkant.</p>
+&lt;p&gt;Het voedsel wordt gezocht op de bodem en op het wateroppervalk, in de waterkant.&lt;/p&gt;
 
-<p>De bepalende factor van voorkomen is de aanwezigheid van zandige pionier vegetatie en/of zandplaten en zoet open water.</p>
+&lt;p&gt;De bepalende factor van voorkomen is de aanwezigheid van zandige pionier vegetatie en/of zandplaten en zoet open water.&lt;/p&gt;
 
 
-<h1 id="Kleineplevier-Charadriusdubius-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+&lt;h1 id="Kleineplevier-Charadriusdubius-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Kleine plevier - Charadrius dubius - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Kleine plevier - Charadrius dubius - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<p>Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1">#1</a>.</p>
+&lt;p&gt;Deze rekenregels zijn opgesteld aan de hand van een literatuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h1 id="Kleineplevier-Charadriusdubius-Toepassingsgebied">Toepassingsgebied</h1>
+&lt;h1 id="Kleineplevier-Charadriusdubius-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;
 
-<p>Nederland.</p>
+&lt;p&gt;Nederland.&lt;/p&gt;
 
-<h1 id="Kleineplevier-Charadriusdubius-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Kleineplevier-Charadriusdubius-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Niet aanwezig</p>]]></text>
+&lt;p&gt;Niet aanwezig&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -88,222 +86,409 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="bank_slope_angle">
-						<type>scalar</type>
-						<layername>"bank_slope_angle"</layername>
-						<unit>"degrees of slope"</unit>
-						<statistic>average</statistic>
-						<description>"Slope of the enbankment in degrees"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-							<reference author="M.P. Weeber" title="interpretation" identification="added in 2020-01-29" year="2020" journal=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="1.0"/>
-							<parameter value="45.0" HSI="0.0"/>
-							<parameter value="60.0" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="bank_slope_angle">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>bank_slope_angle</layer_filename>
+								<unit>"degrees of slope"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Slope of the enbankment in degrees"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+								<reference author="M.P. Weeber" title="interpretation" identification="added in 2020-01-29" year="2020" journal=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="45.0" output="0.0"/>
+								<parameter input="60.0" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_bank_slope_angle">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_bank_slope_angle</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="shallow_water">
-						<type>categorical</type>
-						<layername>"shallow_water"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Presence of shallow water"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="present" HSI="1.0"/>
-							<parameter cat="absent" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="shallow_water">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>shallow_water</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of shallow water"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="present" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="absent" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_shallow_water">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_shallow_water</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="groundwater_level">
-						<type>range / categorical</type>
-						<layername>groundwater_level</layername>
-						<unit>cm</unit>
-						<statistic>average</statistic>
-						<description>Level of the goundwater compared to field level</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="-999" rangemax="-20" cat="till -20" HSI="0.0"/>
-							<parameter rangemin="-20" rangemax="0" cat="-20 - 0" HSI="0.5"/>
-							<parameter rangemin="0" rangemax="999999" cat="0" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="groundwater_level">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>groundwater_level</layer_filename>
+								<unit>cm</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Level of the goundwater compared to field level</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="-999" rangemax_input="-20" input_cat="till -20" output="0.0" output_cat=""/>
+								<parameter rangemin_input="-20" rangemax_input="0" input_cat="-20 - 0" output="0.5" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="999999" input_cat="0" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_groundwater_level">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_groundwater_level</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="flooding_period">
-						<type>range / categorical</type>
-						<layername>"overstromingen_periode"</layername>
-						<unit>month / category"</unit>
-						<statistic>average</statistic>
-						<description>"Period of flooding"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
-							<parameter rangemin="0" rangemax="4" cat="September - April" HSI="1.0"/> 
-							<parameter rangemin="5" rangemax="8" cat="May - August" HSI="0.0"/>							
-							<parameter rangemin="9" rangemax="12" cat="September - April" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="flooding_period">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>flooding_period</layer_filename>
+								<unit>month / category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Period of flooding"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0" input_cat="None" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="4" input_cat="September - April" output="1.0" output_cat=""/>
+								<parameter rangemin_input="5" rangemax_input="8" input_cat="May - August" output="0.0" output_cat=""/>
+								<parameter rangemin_input="9" rangemax_input="12" input_cat="September - April" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_flooding_period">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_flooding_period</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="chloride_content">
-						<type>scalar</type>
-						<layername>"chloride_content"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Chloride concentration in mg/l"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="1.0"/>
-							<parameter value="300" HSI="1.0"/>
-							<parameter value="20000" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="chloride_content">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>chloride_content</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Chloride concentration in mg/l"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="1.0"/>
+								<parameter input="300" output="1.0"/>
+								<parameter input="20000" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_chloride_content">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_chloride_content</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="coverage_herb-vegetation">
-						<type>scalar</type>
-						<layername>"coverage_herb-vegetation"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Coverage of herblike vegetation in percent"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="0.0"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="40" HSI="1.0"/>
-							<parameter value="50" HSI="0.7"/>
-							<parameter value="100" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="coverage_herb-vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>coverage_herb-vegetation</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Coverage of herblike vegetation in percent"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="40" output="1.0"/>
+								<parameter input="50" output="0.7"/>
+								<parameter input="100" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_coverage_herb-vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_coverage_herb-vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="forest_within_100m_of_slik_bank">
-						<type>categorical</type>
-						<layername>"forest_within_100m_of_slik_bank"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Presence forest within 100m of slik bank"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="present" HSI="0.0"/>
-							<parameter cat="absent" HSI="1.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="forest_within_100m_of_slik_bank">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>forest_within_100m_of_slik_bank</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence forest within 100m of slik bank"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="present" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="absent" output="1.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_forest_within_100m_of_slik_bank">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_forest_within_100m_of_slik_bank</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="length_bare_bank">
-						<type>scalar</type>
-						<layername>"length_bare_bank"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Length of the bare embankment in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="0.0"/>
-							<parameter value="100" HSI="0.0"/>
-							<parameter value="350" HSI="0.8"/>
-							<parameter value="450" HSI="1.0"/>
-							<parameter value="1000" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="length_bare_bank">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>length_bare_bank</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Length of the bare embankment in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="100" output="0.0"/>
+								<parameter input="350" output="0.8"/>
+								<parameter input="450" output="1.0"/>
+								<parameter input="1000" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_length_bare_bank">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_length_bare_bank</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="area_slikken-zandplaten">
-						<type>scalar</type>
-						<layername>"area_slikken-zandplaten"</layername>
-						<unit>"ha"</unit>
-						<statistic>average</statistic>
-						<description>"Area of slikken or zandplaten in hectares"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="2" HSI="0.7"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="20" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="area_slikken-zandplaten">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>area_slikken-zandplaten</layer_filename>
+								<unit>"ha"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Area of slikken or zandplaten in hectares"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="2" output="0.7"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="20" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_area_slikken-zandplaten">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_area_slikken-zandplaten</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="prey_density">
-						<type>scalar</type>
-						<layername>"prey_density"</layername>
-						<unit>"n/m2"</unit>
-						<statistic>average</statistic>
-						<description>"Density of prey in n per square meter of silk or zandplaat"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="10" HSI="0.4"/>
-							<parameter value="80" HSI="1.0"/>
-							<parameter value="500" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="prey_density">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>prey_density</layer_filename>
+								<unit>"n/m2"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Density of prey in n per square meter of silk or zandplaat"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="10" output="0.4"/>
+								<parameter input="80" output="1.0"/>
+								<parameter input="500" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_prey_density">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_prey_density</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="access_for_ground_predators">
-						<type>categorical</type>
-						<layername>"access_for_ground_predators"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Accessibility for ground predators"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="good" HSI="0.5"/>
-							<parameter cat="bad" HSI="1.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="access_for_ground_predators">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>access_for_ground_predators</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Accessibility for ground predators"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="good" output="0.5" output_cat=""/>
+								<parameter input="2" input_cat="bad" output="1.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_access_for_ground_predators">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_access_for_ground_predators</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Kleineplevier-Charadriusdubius-Algemeenvoorkomen(broedhabitat)">Algemeen voorkomen (broedhabitat)</h3>
+			<text>&lt;h3 id="Kleineplevier-Charadriusdubius-Algemeenvoorkomen(broedhabitat)"&gt;Algemeen voorkomen (broedhabitat)&lt;/h3&gt;
 
-<p>De meeste kleine plevieren broeden in laag en waterrijk Nederland zoals het rivieren- en Deltagebied op de grind-, kiezel en zandbanken. Opspuit- en industrieterreinen, afgravingen, tichelgaten, maar ook akkers of landbouwgronden die schaars begroeid zijn dienen als (kunstmatig) broedhabitat. Bij natuurlijke successie verdwijnt de geschiktheid van het broedhabitat. De natuurlijke broedhabitat wordt, door wisselende waterstanden en rivierdynamiek, van nature vrijgehouden van vegetatie. De kleine plevier wisselt gemakkelijk van broedgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1">#1</a>.  </p>
-
-
-<h3 id="Kleineplevier-Charadriusdubius-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
-
-<p>Foerageren gebeurt op slikkig, voedselrijke gebieden in zoete wateren. Zoute wateren worden gemeden. Gewoonlijk zijn de foerageergebieden en broedgebieden niet gescheiden. De kleine plevier foerageert op insecten, vooral keverachtigen, spinnen en andere kleine invertebraten, met name die organismen die op zicht makkelijk nabij het bodemoppervlak gevangen kunnen worden. Keverachtigen kunnen 80% van het dieet uitmaken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1">#1</a>.</p>
-
-<h3 id="Kleineplevier-Charadriusdubius-Reproductieenmigratie">Reproductie en migratie</h3>
-
-<p>Van april tot augustus wordt er gebroed. Hierbij worden er 3 tot 5 eieren gelegd die na 24 tot 25 dagen uitkomen. In begin juni kunnen er ouders met jongen worden gezien. De jongen vliegen na ongeveer 22 dagen. De najaarstrek vindt plaats in augustus – september. Hierbij trekt de kleine plevier naar ten zuiden van de Sahara. De vogels arriveren in april en mei weer in Nederland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1">#1</a>.</p>
+&lt;p&gt;De meeste kleine plevieren broeden in laag en waterrijk Nederland zoals het rivieren- en Deltagebied op de grind-, kiezel en zandbanken. Opspuit- en industrieterreinen, afgravingen, tichelgaten, maar ook akkers of landbouwgronden die schaars begroeid zijn dienen als (kunstmatig) broedhabitat. Bij natuurlijke successie verdwijnt de geschiktheid van het broedhabitat. De natuurlijke broedhabitat wordt, door wisselende waterstanden en rivierdynamiek, van nature vrijgehouden van vegetatie. De kleine plevier wisselt gemakkelijk van broedgebied &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;
 
 
-<h3 id="Kleineplevier-Charadriusdubius-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Kleineplevier-Charadriusdubius-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Vossen en marterachtigen kunnen het voorzien hebben op de nesten van de kleine plevier. Overstromingen vormen een bedreiging voor het nest <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1">#1</a>.   </p>]]></text>
-			</Description>
-	</ContentDescription>
+&lt;p&gt;Foerageren gebeurt op slikkig, voedselrijke gebieden in zoete wateren. Zoute wateren worden gemeden. Gewoonlijk zijn de foerageergebieden en broedgebieden niet gescheiden. De kleine plevier foerageert op insecten, vooral keverachtigen, spinnen en andere kleine invertebraten, met name die organismen die op zicht makkelijk nabij het bodemoppervlak gevangen kunnen worden. Keverachtigen kunnen 80% van het dieet uitmaken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="Kleineplevier-Charadriusdubius-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
+
+&lt;p&gt;Van april tot augustus wordt er gebroed. Hierbij worden er 3 tot 5 eieren gelegd die na 24 tot 25 dagen uitkomen. In begin juni kunnen er ouders met jongen worden gezien. De jongen vliegen na ongeveer 22 dagen. De najaarstrek vindt plaats in augustus – september. Hierbij trekt de kleine plevier naar ten zuiden van de Sahara. De vogels arriveren in april en mei weer in Nederland &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;h3 id="Kleineplevier-Charadriusdubius-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
+
+&lt;p&gt;Vossen en marterachtigen kunnen het voorzien hebben op de nesten van de kleine plevier. Overstromingen vormen een bedreiging voor het nest &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+plevier+-+Charadrius+dubius#Kleineplevier-Charadriusdubius-1"&gt;#1&lt;/a&gt;.   &lt;/p&gt;</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden vroedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
 		<reference author="Sierdsema, H." year="1995" title="Broedvogels en beheer." journal="" identification=""/>

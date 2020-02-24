@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>45511332</EoLpagenr>
 			<LatName>Botaurus stellaris</LatName>
 			<CommonNames>
-				<Name name= "Roerdomp" language="NL"/>
+				<Name name="Roerdomp" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -25,17 +23,17 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Roerdomp-Botaurusstellaris-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Roerdomp-Botaurusstellaris-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Roerdomp - Botaurus stellaris - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Roerdomp - Botaurus stellaris - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<h1 id="Roerdomp-Botaurusstellaris-Toepassingsgebied">Toepassingsgebied</h1>
+&lt;h1 id="Roerdomp-Botaurusstellaris-Toepassingsgebied"&gt;Toepassingsgebied&lt;/h1&gt;
 
-<p>Zowel zoete en zoute wateren.</p>
+&lt;p&gt;Zowel zoete en zoute wateren.&lt;/p&gt;
 
-<h1 id="Roerdomp-Botaurusstellaris-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Roerdomp-Botaurusstellaris-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Niet aanwezig.</p>]]></text>
+&lt;p&gt;Niet aanwezig.&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -73,201 +71,371 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="open_water">
-						<type>categorical</type>
-						<layername>"open_water"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Presence of open water"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="present" HSI="1.0"/>
-							<parameter cat="absent" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="open_water">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>open_water</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of open water"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="present" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="absent" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_open_water">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_open_water</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterlevel_fluctuation">
-						<type>scalar</type>
-						<layername>waterlevel_fluctuation</layername>
-						<unit>cm per day</unit>
-						<statistic>average</statistic>
-						<description>Waterlevel fluctuation in cm per day</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="25" HSI="0.0"/>
-							<parameter value="40" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="waterlevel_fluctuation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>waterlevel_fluctuation</layer_filename>
+								<unit>cm per day</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>Waterlevel fluctuation in cm per day</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="25" output="0.0"/>
+								<parameter input="40" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterlevel_fluctuation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterlevel_fluctuation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="flooding_period">
-						<type>range / categorical</type>
-						<layername>"flooding_period"</layername>
-						<unit>category"</unit>
-						<statistic>average</statistic>
-						<description>"Period of flooding"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0" cat="None" HSI="1.0"/> 							
-							<parameter rangemin="0" rangemax="2" cat="October - March" HSI="1.0"/> 
-							<parameter rangemin="3" rangemax="9" cat="March - September" HSI="0.2"/>							
-							<parameter rangemin="10" rangemax="12" cat="October - March" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="flooding_period">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>flooding_period</layer_filename>
+								<unit>category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Period of flooding"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0" input_cat="None" output="1.0" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="2" input_cat="October - March" output="1.0" output_cat=""/>
+								<parameter rangemin_input="3" rangemax_input="9" input_cat="March - September" output="0.2" output_cat=""/>
+								<parameter rangemin_input="10" rangemax_input="12" input_cat="October - March" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_flooding_period">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_flooding_period</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="water_depth_helophyte_zone">
-						<type>scalar</type>
-						<layername>"water_depth_helophyte_zone"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth of surface water in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="0.0"/>
-							<parameter value="0.1" HSI="0.4"/>
-							<parameter value="0.15" HSI="1.0"/>
-							<parameter value="0.3" HSI="1.0"/>
-							<parameter value="0.6" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="water_depth_helophyte_zone">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>water_depth_helophyte_zone</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth of surface water in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="0.1" output="0.4"/>
+								<parameter input="0.15" output="1.0"/>
+								<parameter input="0.3" output="1.0"/>
+								<parameter input="0.6" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_water_depth_helophyte_zone">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_water_depth_helophyte_zone</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="perennial_(water)reed">
-						<type>categorical</type>
-						<layername>"perennial_(water)reed"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Presence of perennial (water)reed"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="present" HSI="1.0"/>
-							<parameter cat="absent" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="perennial_(water)reed">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>perennial_(water)reed</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of perennial (water)reed"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="present" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="absent" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_perennial_(water)reed">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_perennial_(water)reed</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="swamp_area">
-						<type>scalar</type>
-						<layername>"swamp_area"</layername>
-						<unit>"Ha"</unit>
-						<statistic>within one kilometer</statistic>
-						<description>"Area of swamp in hectares within two kilometers"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="20" HSI="0.5"/>
-							<parameter value="200" HSI="1.0"/>
-							<parameter value="250" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="swamp_area">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>swamp_area</layer_filename>
+								<unit>"Ha"</unit>
+								<statistic>within one kilometer</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Area of swamp in hectares within two kilometers"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="20" output="0.5"/>
+								<parameter input="200" output="1.0"/>
+								<parameter input="250" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_swamp_area">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_swamp_area</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="forest_opslag">
-						<type>range / categorical</type>
-						<layername>"forest_opslag"</layername>
-						<unit>category"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of forest opslag"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="5" cat="0 - 5" HSI="1.0"/> 							
-							<parameter rangemin="5" rangemax="25" cat="5 - 25" HSI="0.8"/> 
-							<parameter rangemin="25" rangemax="50" cat="25 - 50" HSI="0.4"/>							
-							<parameter rangemin="50" rangemax="100" cat="> 50" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="forest_opslag">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>forest_opslag</layer_filename>
+								<unit>category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Percentage of forest opslag"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="5" input_cat="0 - 5" output="1.0" output_cat=""/>
+								<parameter rangemin_input="5" rangemax_input="25" input_cat="5 - 25" output="0.8" output_cat=""/>
+								<parameter rangemin_input="25" rangemax_input="50" input_cat="25 - 50" output="0.4" output_cat=""/>
+								<parameter rangemin_input="50" rangemax_input="100" input_cat="&gt; 50" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_forest_opslag">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_forest_opslag</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="reed_edges">
-						<type>range / categorical</type>
-						<layername>"reed_edges"</layername>
-						<unit>category"</unit>
-						<statistic>average</statistic>
-						<description>"Reed edges along open water in kilometers per hectare of reed"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0.0" rangemax="0.1" cat="0.0 - 0.10" HSI="0.4"/> 							
-							<parameter rangemin="0.1" rangemax="0.15" cat="0.10 - 0.15" HSI="0.8"/>						
-							<parameter rangemin="0.15" rangemax="999999" cat="> 0.15" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="reed_edges">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>reed_edges</layer_filename>
+								<unit>category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Reed edges along open water in kilometers per hectare of reed"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0.0" rangemax_input="0.1" input_cat="0.0 - 0.10" output="0.4" output_cat=""/>
+								<parameter rangemin_input="0.1" rangemax_input="0.15" input_cat="0.10 - 0.15" output="0.8" output_cat=""/>
+								<parameter rangemin_input="0.15" rangemax_input="999999" input_cat="&gt; 0.15" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_reed_edges">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_reed_edges</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="bank_slope_angle">
-						<type>range / categorical</type>
-						<layername>"bank_slope_angle"</layername>
-						<unit>category"</unit>
-						<statistic>average</statistic>
-						<description>"Slope of the enbankment in degrees"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="5" cat="gentle" HSI="1.0"/> 							
-							<parameter rangemin="5" rangemax="180" cat="> 5 degrees" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="bank_slope_angle">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>bank_slope_angle</layer_filename>
+								<unit>category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Slope of the enbankment in degrees"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="5" input_cat="gentle" output="1.0" output_cat=""/>
+								<parameter rangemin_input="5" rangemax_input="180" input_cat="&gt; 5 degrees" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_bank_slope_angle">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_bank_slope_angle</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="width_reed_vegetation">
-						<type>range / categorical</type>
-						<layername>"width_reed_vegetation"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Average width of reed vegatation alongside open water in meters"</description>
-						<author>"Marc Weeber"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="10" cat="0 - 10" HSI="0.0"/> 							
-							<parameter rangemin="10" rangemax="999999" cat="> 10" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="width_reed_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>width_reed_vegetation</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Average width of reed vegatation alongside open water in meters"</description>
+							<author>"Marc Weeber"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="10" input_cat="0 - 10" output="0.0" output_cat=""/>
+								<parameter rangemin_input="10" rangemax_input="999999" input_cat="&gt; 10" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_width_reed_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_width_reed_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Roerdomp-Botaurusstellaris-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Roerdomp-Botaurusstellaris-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De Roerdomp prefereert stilstaand ondiep water met een dichte, uitgestrekte vegetatie van liefst overjarig riet, waarvan voldoende waterriet. Soms komt de soort ook in smalle rietkragen tot broeden. Wateren die geheel zijn omsloten door bos en moerasbossen worden gemeden. Voedselgebieden bevinden zich in de nabijheid van het nest in rustige plassen en sloten met voldoende randbegroeiing. De soort wordt in vrijwel alle regio's aangetroffen, maar de grootste aantallen broeden tegenwoordig in het laagveengebied en de Gelderse Poort <a href="https://publicwiki.deltares.nl/display/HBTHOME/Roerdomp+-+Botaurus+stellaris#Roerdomp-Botaurusstellaris-2">#2</a>. Het voorkomen van de Roerdomp is beperkt tot laaglandmoerassen met flinke rietvelden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Roerdomp+-+Botaurus+stellaris#Roerdomp-Botaurusstellaris-1">#1</a>.</p>
+&lt;p&gt;De Roerdomp prefereert stilstaand ondiep water met een dichte, uitgestrekte vegetatie van liefst overjarig riet, waarvan voldoende waterriet. Soms komt de soort ook in smalle rietkragen tot broeden. Wateren die geheel zijn omsloten door bos en moerasbossen worden gemeden. Voedselgebieden bevinden zich in de nabijheid van het nest in rustige plassen en sloten met voldoende randbegroeiing. De soort wordt in vrijwel alle regio's aangetroffen, maar de grootste aantallen broeden tegenwoordig in het laagveengebied en de Gelderse Poort &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Roerdomp+-+Botaurus+stellaris#Roerdomp-Botaurusstellaris-2"&gt;#2&lt;/a&gt;. Het voorkomen van de Roerdomp is beperkt tot laaglandmoerassen met flinke rietvelden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Roerdomp+-+Botaurus+stellaris#Roerdomp-Botaurusstellaris-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Roerdomp-Botaurusstellaris-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Roerdomp-Botaurusstellaris-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>De Roerdomp eet voornamelijk vis, amfibieen en insecten, ook kleine vogels, zoogdieren en ongewervelden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Roerdomp+-+Botaurus+stellaris#Roerdomp-Botaurusstellaris-1">#1</a>.</p>
+&lt;p&gt;De Roerdomp eet voornamelijk vis, amfibieen en insecten, ook kleine vogels, zoogdieren en ongewervelden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Roerdomp+-+Botaurus+stellaris#Roerdomp-Botaurusstellaris-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Roerdomp-Botaurusstellaris-Reproductieenmigratie">Reproductie en migratie</h3>
-]]></text>
-			</Description>
-	</ContentDescription>
+&lt;h3 id="Roerdomp-Botaurusstellaris-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
+</text>
+		</Description>
+	</TopicDescription>
 	<Documentation>
 		<reference author="http://www.soortenbank.nl" title="Roerdomp" identification="" year="2020" journal="">
-			<html><![CDATA[http://www.soortenbank.nl/soorten.php?soortengroep=vogels&id=26&menuentry=soorten]]></html>
+			<html>http://www.soortenbank.nl/soorten.php?soortengroep=vogels&amp;id=26&amp;menuentry=soorten</html>
 		</reference>
 		<reference author="http://www.synbiosys.alterra.nl/natura2000/" title="" identification="" year="2020" journal="">
-			<html><![CDATA[http://www.synbiosys.alterra.nl/natura2000/]]></html>
+			<html>http://www.synbiosys.alterra.nl/natura2000/</html>
 		</reference>
 		<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="HSI-modellen voor 15 oevergebonden broedvogelsoorten." journal="Ministerie van verkeer en waterstaat, Dienst weg en waterbouwkunde, Bureau Waardenburg" identification="februari 1996"/>
 	</Documentation>

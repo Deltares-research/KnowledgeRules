@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46581741</EoLpagenr>
+			<LatName>Cyprinus carpio</LatName>
+			<CommonNames>
+				<Name name="Karper" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Europe" id="6255148"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1992-01-01</StartDate>
+						<EndDate>1993-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Karper-Cyprinuscarpio-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Karper - Cyprinus carpio - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd. </p>
+
+<h1 id="Karper-Cyprinuscarpio-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze rekenregels zijn toepasbaar voor stilstaande en stromende, zoete en brakke wateren in Europa.</p>
+
+<h1 id="Karper-Cyprinuscarpio-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Er is geen voorbeeld project beschikbaar.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="adult">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Shelter_and_food</To>
+							<To>Water_quality</To>
+							<To>Reproduction</To>
+						</From>
+						<From name="Shelter_and_food">
+							<label>"Shelter_and_food"</label>
+							<equation>min</equation>
+							<To>Percentage_littoral</To>
+							<To>Vegetation_density</To>
+							<To>Flow_velocity</To>
+						</From>
+						<From name="Water_quality">
+							<label>"Water_quality"</label>
+							<equation>min</equation>
+							<To>Acidity</To>
+							<To>Oxygen_concentration</To>
+							<To>Chloride_content</To>
+							<To>Temperature</To>
+						</From>
+						<From name="Reproduction">
+							<label>"Reproduction"</label>
+							<equation>min</equation>
+							<To>Percentage_littoral</To>
+							<To>Vegetation_density</To>
+							<To>Flow_velocity</To>
+							<To>Temperature_spawning</To>
+							<To>Temperature_egg_larve</To>
+							<To>Oxygen_egg</To>
+							<To>Waterdepth_littoral</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Percentage_littoral">
+						<type>scalar</type>
+						<layername>"Percentage_littoral"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage littoral."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.2"/>
+							<parameter value="25" HSI="1.0"/>
+							<parameter value="35" HSI="1.0"/>
+							<parameter value="85" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Vegetation_density">
+						<type>scalar</type>
+						<layername>"Vegetation_density"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Average macrofyte coverage in the littoral during the growing season in percent."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.2"/>
+							<parameter value="25" HSI="0.7"/>
+							<parameter value="35" HSI="1.0"/>
+							<parameter value="55" HSI="1.0"/>
+							<parameter value="90" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>					
+					<ResponseCurve name="Flow_velocity">
+						<type>scalar</type>
+						<layername>"Flow_velocity"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Average flow velocity in spring in centimeters per second."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="25" HSI="0.7"/>
+							<parameter value="60" HSI="0.4"/>
+							<parameter value="150" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Acidity">
+						<type>scalar</type>
+						<layername>"Acidity"</layername>
+						<unit>"pH"</unit>
+						<statistic>average</statistic>
+						<description>"Average pH value during the growing season."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="4.5" HSI="0.0"/>
+							<parameter value="5.5" HSI="0.2"/>
+							<parameter value="6.5" HSI="1.0"/>
+							<parameter value="7.5" HSI="1.0"/>
+							<parameter value="9.0" HSI="0.7"/>
+							<parameter value="10.5" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_concentration">
+						<type>scalar</type>
+						<layername>"Oxygen_concentration"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average oxygen concentration during the growing season in the lottoral and the open water in milligrams per liter."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="1" HSI="0.0"/>
+							<parameter value="2" HSI="0.1"/>
+							<parameter value="4.5" HSI="0.5"/>
+							<parameter value="6" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Chloride_content">
+						<type>scalar</type>
+						<layername>"Chloride_content"</layername>
+						<unit>"ppm"</unit>
+						<statistic>average</statistic>
+						<description>"Average chloride content during the growing season in ppm."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="2200" HSI="1.0"/>
+							<parameter value="7200" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperature">
+						<type>scalar</type>
+						<layername>"Temperature"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum average water temperature during the summer in degrees Celsius."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="8" HSI="0.0"/>
+							<parameter value="23" HSI="1.0"/>
+							<parameter value="28" HSI="1.0"/>
+							<parameter value="32" HSI="0.2"/>
+							<parameter value="40" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperature_spawning">
+						<type>scalar</type>
+						<layername>"Temperature_spawning"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Average water temperature in the littoral zone during the months april till june in degrees Celsius."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="13" HSI="0.0"/>
+							<parameter value="18" HSI="1.0"/>
+							<parameter value="22" HSI="1.0"/>
+							<parameter value="28" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperature_egg_larve">
+						<type>scalar</type>
+						<layername>"Temperature_egg_larve"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Average water temperature in the littoral zone during the months april till june in degrees Celsius."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="12.5" HSI="0.0"/>
+							<parameter value="16" HSI="0.5"/>
+							<parameter value="17" HSI="1.0"/>
+							<parameter value="25" HSI="1.0"/>
+							<parameter value="26" HSI="0.5"/>
+							<parameter value="32.5" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_egg">
+						<type>scalar</type>
+						<layername>"Oxygen_egg"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average oxygen concentration in the littoral zone during the months april till june in milligrams per liter."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="4.5" HSI="0.0"/>
+							<parameter value="6.0" HSI="0.5"/>
+							<parameter value="9.0" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Waterdepth_littoral">
+						<type>scalar</type>
+						<layername>"Waterdepth_littoral"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Average water depth in the littoral zone during the months april till june in meters."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Van Breukelen, S." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.1" HSI="0.0"/>
+							<parameter value="0.3" HSI="1.0"/>
+							<parameter value="0.6" HSI="1.0"/>
+							<parameter value="1.0" HSI="0.7"/>
+							<parameter value="1.8" HSI="0.3"/>
+							<parameter value="3.0" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<ResponseCurve name="Flow_velocity_migration">
+						<type>categorical</type>
+						<layername>Flow_velocity_migration</layername>
+						<unit>category</unit>
+						<statistic>average</statistic>
+						<description>Flow velocity in the main channel</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="OVB kopien" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="none" HSI="0.05"/>
+							<parameter cat="little" HSI="0.3"/>
+							<parameter cat="moderate" HSI="0.6"/>
+							<parameter cat="strong" HSI="0.8"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_saturation">
+						<type>scalar</type>
+						<layername>"Oxygen_saturation"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Average minimum oxygen saturation in percent"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="OVB kopien" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="3" HSI="0.0"/>
+							<parameter value="8" HSI="1.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="999" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Barriers_upwards">
+						<type>categorical</type>
+						<layername>"Barriers_upwards"</layername>
+						<unit>"category"</unit>
+						<statistic>minimum</statistic>
+						<description>"Presence of barriers during stream upward migration"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="sluice" HSI="0.5"/>
+							<parameter cat="shipping lock + weir + fish ladder" HSI="0.7"/>
+							<parameter cat="
+shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+					<ResponseCurve name="Barriers_downwards">
+						<type>categorical</type>
+						<layername>"Barriers_downwards"</layername>
+						<unit>"category"</unit>
+						<statistic>minimum</statistic>
+						<description>"Presence of barriers during stream downward migration"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="sluice" HSI="1.0"/>
+							<parameter cat="shipping lock + weir + fish ladder" HSI="1.0"/>
+							<parameter cat="
+shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+					<ResponseCurve name="Salinity">
+						<type>range / categorical</type>
+						<layername>Salinity</layername>
+						<unit>gCl/l</unit>
+						<statistic>average</statistic>
+						<description>Salinity in grams Cl per liter</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0.25" cat="0 - 0.25" HSI="1.0"/>
+							<parameter rangemin="0.25" rangemax="999999" cat="> 0.25" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Temperature">
+						<type>range / categorical</type>
+						<layername>Temperature</layername>
+						<unit>degrees Celsius</unit>
+						<statistic>average</statistic>
+						<description>Temperature in degrees Celsius</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="17" cat="0 - 17" HSI="0.0"/>
+							<parameter rangemin="17" rangemax="999999" cat="> 17" HSI="1.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Substrate">
+						<type>categorical</type>
+						<layername>"Substrate"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Type of substrate in the spawning area"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="OVB kopien" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="silt" HSI="0.05"/>
+							<parameter cat="silt/sand" HSI="0.15"/>
+							<parameter cat="fine/coarse sand" HSI="1.0"/>
+							<parameter cat="coarse sand/gravel" HSI="0.6"/>
+							<parameter cat="gravel" HSI="0.2"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Tidal_fluctuation">
+						<type>categorical</type>
+						<layername>Tidal_fluctuation</layername>
+						<unit>category</unit>
+						<statistic>average</statistic>
+						<description>Tidal fluctuation of the waterlevel</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2011-05-17</date>
+						<references>
+							<reference author="OVB kopien" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="none" HSI="0.05"/>
+							<parameter cat="little" HSI="0.25"/>
+							<parameter cat="moderate" HSI="0.6"/>
+							<parameter cat="strong" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Karper-Cyprinuscarpio-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>Oorspronkelijk kwam de karper voor in de Kaspische Zee. Van hieruit heeft de karper zich zowel naar het oosten naar China, Japan, Zuid Rusland en naar het westen naar de Zwarte Zee en de Donau uitgebreid. Via de Donau heeft de karper zich naar Midden-Europa kunnen verspreiden. Deze verspreiding werd versneld door de Romeinen, die rond het begin van de jaartelling de Karper uit de Donau of uit Klein Azië haalden, en voor de kweek in Europa introduceerden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.</p>
+
+<p>Van nature kwam de Karper dus niet in Nederland voor, maar is er in de middeleeuwen uitgezet voor teelt- en consumptie. In de loop der eeuwen zijn er allerlei verschillende variëteiten ontwikkeld. Het oorspronkelijk in de middeleeuwen geïntroduceerde en daarna verwilderde type wordt wilde of boerenkarper genoemd. Hiernaast komen allerlei gekweekte variëteiten voor zoals schubkarper, spiegelkarper, rijenkarper en naaktkarper <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>. Door het op grote schaal uitzetten van gekweekte voor de sportvisserij (in Nederland jaarlijks zo'n 40 - 100 ton), wordt de oorspronkelijke, wilde karper weg geconcurreerd. Mede als gevolg hiervan is de oorspronkelijke, wilde karper een bedreigde soort in Europa. Alleen in de Donau kan de populatie zich goed in stand houden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.</p>
+
+<p>Het oorspronkelijke wilde type van de karper heeft een langerekt lichaam, dat matig tot licht is afgeplat. De rugzijde is olijfgroen en de buikzijde geelachtig. De rugvin is donker en overige vinnen hebben een oranje glans. De eindstandige bek is goed uitstulpbaar en op de bovenlip zijn twee paar baarddraden aanwezig. Gekweekte varianten hebben een hogere rug. Schubkarper heeft nog een volledige beschubbing. De spiegel- en rijenkarper hebben beperkte beschubbing en bij de naaktkarper ontbreken schubben <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>. </p>
+
+
+<h3 id="Karper-Cyprinuscarpio-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De Karper is een omnivoor. Voedsel wordt gezocht in de oeverzone, op de bodem en in het open water. Een begroeide oeverzone met een slibbige bodem wordt geprefereerd omdat de voedselrijkdom hier groter is dan in vergelijking met kale oevers. Oligochaeten, muggenlarven, andere insectenlarven, crustaceën en kleine slakken vormen een belangrijk aandeel in het voedselpakket. In open water bestaat het voedsel uit plankton, zoöplankton en insectenlarven. Verder kunnen zaden ook een belangrijk aandeel in het voedselpakket hebben.<br>
+Het voedselpakket is sterk afhankelijk van het watersysteem en het seizoen. Zodra een bepaald voedseltype schaars wordt, kan de karper overschakelen op een ander voedseltype. Mede hiervoor is de karper een sterke voedselconcurrent van andere vissoorten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>. </p>
+
+<p>Het voedsel van pas uitgekomen larven bestaat uit protozoën. In de eerste week na het uitkomen kunnen groenwieren een belangrijk aandeel in het voedselpakket vormen. Na 8 dagen worden ook mosselkreeften, cladoceren, copepoden en insectenlarven gegeten. Vanaf dag 10 bestaat het voedselpakket hoofdzakelijk uit de claddoceren Bosminia en Daphnia. Vanaf een lengte van 2 cm bestaat het dieet uit crustaceën, bodemfauna, en larven van haften <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.</p>
+
+<h3 id="Karper-Cyprinuscarpio-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>In Europa vindt in het oosten van Duitsland, Noord-Europa Zuid-Europa geen voortplanting plaats. In Nederland kan de karper zich nauwelijks met voldoende succes voortplanten om een populatie in stand te houden. Een belangrijk deel van rekruterende jonge karpers bestaat uit uitgezette exemplaren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>. In de meeste Europese landen loopt de paaiperiode van mei tot eind juni, en deze kan doorgaan tot eind juli. Bij slechte paaiomstandigheden, zoals een gebrek aan substraat of bij lage of sterk schommelende waterpeilen, kan de paai tot in augustus uitgesteld worden. Het tijdstip waarop er gepaaid wordt, is vooral afhankelijk van de temperatuur, vegetatierijkheid en rustig water <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.  </p>
+
+<p>Paai vindt plaats in met zachte vegetatie begroeide ondergelopen gebieden of in waterplantenvegetaties in het litoraal, waar de eieren aan de planten blijven plakken. Ook worden flab, stenen,fuiken,organisch materiaal en een kale bodem wel als paaisubstraat gebruikt. De eitjes worden onder hevig spartelen afgezet en door de verschillende mannetjes bevrucht. Paai vindt vaak in de vroege ochtend plaats. Bij goede weersomstandigheden legt de wilde karper de eieren in 3-4 parten in 3-4 dagen, bij minder gunstig weer wordt de paai onderbroken en verspreidt over 2-3 weken. Bij geteelde Karper worden alle eieren in één keer afgezet. Het gewicht aan geproduceerde eieren bedraagt 14-20% van het somatisch gewicht. De eieren hebben een diameter van 1.5-2.5 mm <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>. </p>
+
+<p>Afhankelijk van de temperatuur komen de eieren over het algemeen na 3-10 dagen uit . De larven zijn 5mm groot als ze uit het ei komen en binnen een aantal uur vrijzwemmend. Na 7-9 dagen verdwijnt de dooierzak, de larven hebben dan een lengte van 6-10 mm. Zolang er nog een dooierzak aanwezig is wordt de snelheid van de ontwikkeling door de temperatuur bepaald. Bij een lage temperatuur van 11-14 graden Celsius gaat het broed in rust, waarbij ze met de kop aan waterplanten blijven plakken. Na het dooierzak stadium is de ontwikkeling afhankelijk van temperatuur en voedselbeschikbaarheid <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.</p>
+
+<p>Geslachtsrijpheid wordt in Europa door mannetjes na 3-4 en door vrouwtjes na 4-5 jaar bereikt bij een lengte van 40-45 cm. Het bereiken van de geslachtsrijpheid wordt sterk door de temperatuur en voedselomstandigheden bepaald. Een mannetje uit een snelgroeiende populatie kan al na 1 jaar geslachtsrijp zijn, een vrouwtje uit een langzaam groeiende populatie pas na 5 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.</p>
+
+<h3 id="Karper-Cyprinuscarpio-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>De lengte van de karper is maximaal 150 cm waarbij een gewicht van 25-35 kg bereikt wordt. In Europa is de maximale lengte 70-107 cm met een gewicht van 10 kg. De maximale leeftijd is 20 jaar, maar meestal wordt een karper niet ouder dan 10 jaar. Ondanks het grote reproducerende vermogen van de karper is het aantal overlevenden in het 0+ stadium gering. In het larvale stadium kunnen kikkers, padden, eenden en waterkevers en –wantsen voor een hoge predatie zorgen. Predatie door vooral jonge snoek (Esox lucius) en snoekbaars (Stizostedion luciopera) kan het bestand 0+ en 1+ vis behoorlijk decimeren. Pas bij een lengte van zo'n 30 cm treedt er geen predatie meer op <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.</p>
+
+<h3 id="Karper-Cyprinuscarpio-Milieuvoorwaarden">Milieu voorwaarden</h3>
+
+<p>De noordelijke begrenzing van het verspreidingsgebied van de warmteminnende karper ligt bij de 55-66 breedtegraad. Bij te lage temperaturen is tot op zekere hoogte nog goede groei mogelijk maar stokt de voortplanting. Verder stelt de Karper relatief lage eisen aan zijn habitat, maar de voorkeur gaat uit naar ondiep vegetatierijk stilstaand of langzaam stromend water met voldoende structuren en dekkingsmogelijkheden en een zanderige tot slibbige bodem. In gesloten systemen kan de Karper sterk dominant aanwezig zijn, in rivieren is dit meestal niet het geval <a href="https://publicwiki.deltares.nl/display/HBTHOME/Karper+-+Cyprinus+carpio#Karper-Cyprinuscarpio-1">#1</a>.</p>
+]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Van Breukelen, S." year="1992" title="Habitat Geschiktheid Index Model. De Karper Cyprinus carpio L." journal="" identification="Organisatie ter Verbetering van de Binnevisserij. juli 1992"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

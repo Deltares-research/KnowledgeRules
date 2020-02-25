@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>1084191</EoLpagenr>
+			<LatName>Alisma gramineum</LatName>
+			<CommonNames>
+				<Name name="Smalle waterweegbree" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Markermeer doorzicht">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language ="NL">
+						<text><![CDATA[<h1 id="Smallewaterweegbree-Alismagramineum-Dosis-effectrelaties">Dosis-effect relaties</h1>
+<p><br class="atl-forced-newline">
+Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Smalle+waterweegbree+-+Alisma+gramineum#Smallewaterweegbree-Alismagramineum-3">#3</a>). De toenemende verbetering van het lichtklimaat, leidde in het <a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow">NMIJ project</a> tot een  verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Smalle+waterweegbree+-+Alisma+gramineum#Smallewaterweegbree-Alismagramineum-4">#4</a>). In (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Smalle+waterweegbree+-+Alisma+gramineum#Smallewaterweegbree-Alismagramineum-5">#5</a>) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van smalle waterweegbree in de Macromij benadering en in de nieuwe mixed model benadering.</p>
+
+<p>De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.</p>
+
+
+<p>Doorzicht:<br>
+P_alis = 1*exp(-(-6.912056505+deelgebied-0.531361693*diepte_zom+0.035894273*(diepte_zom^2)-0.440335259*diepte_zom*doorzicht-0.000848449*strijklengte)))</p>
+
+
+<p>Extinctie:<br>
+P_alis =1*exp(-(-4.79567066+deelgebied-1.810776978*diepte_zom+0.042890288*(diepte_zom^2)+0.425244597*diepte_zom*extinctie-0.866421971*extinctie-0.000888816*strijklengte)))</p>
+
+<p>HGI_alis = 1 / (1+P_alis)</p>
+
+<p>deelgebied   = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br>
+diepte_zom   = de gemiddelde waterdiepte in de zomer (m)<br>
+doorzicht    = secchi diepte (m)<br>
+extinctie    = extinctiecoefficient (1/m)<br>
+strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p>
+
+<p>Er zijn benadering beschikbaar voor doorzicht en extinctie wanneer de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's <a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a> en <a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a>.</p>
+
+
+<h1 id="Smallewaterweegbree-Alismagramineum-Validatie">Validatie</h1>
+<p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_alis">
+						<layername>"HGI_alis"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Berekening HGI"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"HGI_alis"</output>
+						<equation>"1 / (1+P_alis)"</equation>
+						<Parameters>
+							<valuesScalar dataname="P_alis" type="scalar" unit="-">
+								<parameter min="0" max="1"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_doorzicht">
+						<layername>"Effect_doorzicht"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van doorzicht op Smalle waterweegbree"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_alis"</output>
+						<equation>"1*exp(-(-6.912056505+deelgebied-0.531361693*diepte_zom+0.035894273*(diepte_zom^2)-0.440335259*diepte_zom*doorzicht-0.000848449*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="doorzicht" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_extinctie">
+						<layername>"Effect_extinctie"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van extinctie op Smalle waterweegbree"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_alis"</output>
+						<equation>"1*exp(-(-4.79567066+deelgebied-1.810776978*diepte_zom+0.042890288*(diepte_zom^2)+0.425244597*diepte_zom*extinctie-0.866421971*extinctie-0.000888816*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="extinctie" type="scalar" unit="m-1">
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h1 id="Smallewaterweegbree-Alismagramineum-Habitatbeschrijving">Habitatbeschrijving</h1>
+<p><br class="atl-forced-newline">
+Smalle waterweegbree komt voor op zonnige plaatsen in en aan stilstaand of zwak stromend, ondiep, matig voedselrijk tot voedselrijk, weinig of niet verontreinigd, zoet of zwak brak, kalkhoudend water. De plant kan aangetroffen worden in plassen (aan de buitenrand van de oevervegetatie), sloten tussen bollenvelden, sloten langs spoorwegen, infiltratiegebieden in de duinen, natte delen van opgespoten terreinen, wielen en kleigaten. De plant is over het algemeen in Nederland vrij zeldzaam (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Smalle+waterweegbree+-+Alisma+gramineum#Smallewaterweegbree-Alismagramineum-2">#2</a>).</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://www.soortenbank.nl]]></html>
+		</reference>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://wilde-planten.nl/smalle%20waterweegbree.htm]]></html>
+		</reference>
+		<reference author="Van den Berg M.S., W. Joosse and H. Coops" year="2003" title="A statistical model predicting the occurrence and dynamics of submerged macrophytes in shallow lakes in the Netherlands." journal="Hydrobiologia 611:623" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

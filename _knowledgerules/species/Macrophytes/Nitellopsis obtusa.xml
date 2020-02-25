@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>913079</EoLpagenr>
+			<LatName>Nitellopsis obtusa</LatName>
+			<CommonNames>
+				<Name name="Sterkranswier" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Markermeer doorzicht">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language ="NL">
+						<text><![CDATA[<h1 id="Sterkranswier-Nitellopsisobtusa-Dosis-effectrelaties">Dosis-effect relaties</h1><p>Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTDB/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-5" rel="nofollow">#7</a>). In (<a href="https://publicwiki.deltares.nl/display/HBTDB/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-6" rel="nofollow">#8</a>) zijn de vergelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van sterkranswier in de Macromij benadering en in de nieuwe mixed model benadering.</p><p>De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.</p><p><strong>Doorzicht</strong>:</p><p>P_Nitelobt= 1/(1+exp(-(-7.551994864+deelgebied+2.035959675*diepte_zom-0.887909492*(diepte_zom^2)+1.451981197*diepte_zom*doorzicht-0.001251113*strijklengte)))</p><p><strong>Extinctie</strong>:</p><p>P_ Nitelobt=1/(1+exp(-(-9.206085992+deelgebied+3.715232921*diepte_zom-0.818446686*(diepte_zom^2)-0.397517433*diepte_zom*extinctie+0.499419689*extinctie-0.00120804*strijklengte)))</p><p>HGI Nitelobt = 1 / (1+P_Nitelobt)</p><p>deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br> diepte_zom = de gemiddelde waterdiepte in de zomer (m)<br> doorzicht = secchi diepte (m)<br> extinctie = extinctiecoefficient (1/m)<br> strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p><p>Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's&nbsp;<a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a>&nbsp;en&nbsp;<a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a>.</p><h1 id="Sterkranswier-Nitellopsisobtusa-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Sterkranswier-Nitellopsisobtusa-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_Nitelobt">
+						<layername>"HGI_Nitelobt"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Berekening HGI"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"HGI_Nitelobt"</output>
+						<equation>"1 / (1+P_Nitelobt)"</equation>
+						<Parameters>
+							<valuesScalar dataname="P_Nitelobt" type="scalar" unit="-">
+								<parameter min="0" max="1"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_doorzicht">
+						<layername>"Effect_doorzicht"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van doorzicht op Sterkranswier"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_Nitelobt"</output>
+						<equation>"1/(1+exp(-(-7.551994864+deelgebied+2.035959675*diepte_zom-0.887909492*(diepte_zom^2)+1.451981197*diepte_zom*doorzicht-0.001251113*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="4.0"/>
+							</valuesScalar>
+							<valuesScalar dataname="doorzicht" type="scalar" unit="m">
+								<parameter min="0" max="4.0"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_extinctie">
+						<layername>"Effect_extinctie"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van extinctie op Sterkranswier"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_Nitelobt"</output>
+						<equation>"1/(1+exp(-(-9.206085992+deelgebied+3.715232921*diepte_zom-0.818446686*(diepte_zom^2)-0.397517433*diepte_zom*extinctie+0.499419689*extinctie-0.00120804*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="4.0"/>
+							</valuesScalar>
+							<valuesScalar dataname="extinctie" type="scalar" unit="m-1">
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h1 id="Sterkranswier-Nitellopsisobtusa-Habitatbeschrijving">Habitatbeschrijving</h1><p>Sterkranswier (<em>Nitellopsis obtusa</em>) behoort tot de kranswierklasse <em>Charetea fragilis </em>(orde <em>Charetalia</em> <em>hispidae) </em>en is indicatief (kensoort) voor de associatie<em> Nitellopsidetum obtusae </em>(<a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-2">#2</a>). Sterkranswier is een geheel ondergedoken waterplant en groeit in stilstaand tot zwak stromend, onbeschaduwd water. De soort komt voor in weinig vervuilde, mesotrofe tot eutrofe, grote oppervlaktewateren dat zoet tot zwak brak is (tot ongeveer 700 mg chloride per liter). De maximale waterdiepte in ondiepe meren bedraagt in Nederland ongeveer 3 – 4 meter; in diepe zandwinplassen met helder water groeit deze soort op beduidend grotere waterdiepte. In het IJsselmeergebied groeit Sterkranswier in helder water (extinctie-coëfficiënt 1-2 m<sup>-1</sup>) in de diepterange van 2-4 meter (9). De pH van het water varieert veelal tussen 7.5 tot 9.2. Sterkranswier vormt vaak dichte, uitgestrekte velden die tot meer dan een meter boven de bodem kunnen uitgroeien. De bodem bestaat veelal uit modderige zand- of veen op zandbodems (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-2">#2</a>, <a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-3">#3</a>, <a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-4">#4</a>).</p><p>De dichte kranswiervelden van deze soort zijn een geliefd habitat voor macrofaunasoorten omdat zij bescherming bieden tegen vispredatie (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-5">#5</a>). Ook hebben zij een positieve invloed op het doorzicht omdat de dichte vegetatie de opwerveling van slib door wind en vissen verminderd (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-4">#4</a>).</p><p>De afgelopen decennia is Sterkranswier in Nederland duidelijk toegenomen door verbeteringen in de waterkwaliteit. Zwaartepunten van de verspreiding liggen in het IJsselmeergebied (Gouwzee, veluwerandmeren), de veenplassen in Noordwest-Overijssel en Hollands-Utrechtse plassengebied (Naardermeer, Vechtplassen, Nieuwkoopse plassen). Hiernaast groeit Sterkranswier in toenemende mate in diepe, heldere zandwinputten in het rivierengebied.</p><p>Kranswierwateren worden beschermd in de Habitatrichtlijn vanwege Europese belang. Sterkranswier valt onder het habitattype H3140 Kalkhoudende oligo-mesotrofe wateren met&nbsp;<em>Chara spp.</em>&nbsp;vegetaties (verkorte naam: Kranswierwateren) (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-5">#5</a>).</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title="Sterkranswier foto" journal="" identification="">
+			<html><![CDATA[www.rws.nl/water/plannen_en_projecten/vaarwegen/eemmeer/een_natuurlijk_schoon_en_gezond_eemmeer/maatregelen/index.aspx]]></html>
+		</reference>
+		<reference author="Schaminée, J.H.J, E.X. Maier and J.C van Raam" year="1995" title="De vegetatie van Nederland. Deel 2 - Wateren, moerassen, natte heiden." journal="" identification=""/>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[www.kranswieren.nl]]></html>
+		</reference>
+		<reference author="Duel, H and B. Specken" year="1994" title="Kranswieren en waterkwaliteit – Het voorkomen van een drietal kranswiersoorten in meren en plassen in relatie tot de waterkwaliteit." journal="Rapport P94-019. TNO-BSA." identification=""/>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[www.natuurkennis.nl/index.php%3Fhoofdgroep%3D2%26niveau%3D3%26subgroep%3D103%26subsubgroep%3D1006%26subsubsubgroep%3D400#indeling]]></html>
+		</reference>
+		<reference author="Van den Berg M.S., W. Joosse and H. Coops" year="2003" title="A statistical model predicting the occurrence and dynamics of submerged macrophytes in shallow lakes in the Netherlands." journal="Hydrobiologia 611:623" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

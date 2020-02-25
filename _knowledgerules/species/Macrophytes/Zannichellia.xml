@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>108395</EoLpagenr>
+			<LatName>Zannichellia</LatName>
+			<CommonNames>
+				<Name name="Zannichellia" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Markermeer doorzicht">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language ="NL">
+						<text><![CDATA[<h1 id="Zannichellia-Dosis-effectrelaties">Dosis-effect relaties</h1><p>Voor deze soort waren tot voor kort nog geen kennisregels beschikbaar. Op basis van een mixed model benadering zijn in 2014 kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-8">#8</a>) en (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-9">#9</a>). Wat betreft het lichtklimaat zijn afzonderlijke dosis-effect relaties opgesteld voor zowel doorzicht als extinctie. Voor een toelichting op deze begrippen, zie de pagina’s <a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a>&nbsp;en <a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a>.</p><p><strong>Doorzicht</strong>:</p><p>P_ Zanni_sp= 1/(1+exp(-(-0.836283468+deelgebied-2.678429997*diepte_zom+0.093452326*(diepte_zom^2)+0.397326678*diepte_zom*doorzicht-0.000580393*strijklengte)))</p><p><strong>Extinctie</strong>:</p><p>P_ Zanni_sp= 1/(1+exp(-(-1.596244827+deelgebied-1.714394462*diepte_zom+0.08105808*(diepte_zom^2)-0.263564618*diepte_zom*extinctie+0.556030451*extinctie-0.00051814*strijklengte)))</p><p>HGI Zanni_sp= 1 / (1+P_ Zanni_sp)</p><p>deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br> diepte_zom = de gemiddelde waterdiepte in de zomer (m)<br> doorzicht = secchi diepte (m)<br> extinctie = extinctiecoefficient (1/m)<br> strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p><h1 id="Zannichellia-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Zannichellia-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_ Zanni_sp">
+						<layername>"HGI_ Zanni_sp"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Berekening HGI"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"HGI_ Zanni_sp"</output>
+						<equation>"1 / (1+P_ Zanni_sp)"</equation>
+						<Parameters>
+							<valuesScalar dataname="P_ Zanni_sp" type="scalar" unit="-">
+								<parameter min="0" max="1"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_doorzicht">
+						<layername>"Effect_doorzicht"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van doorzicht op Zannichellia"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_ Zanni_sp"</output>
+						<equation>"1/(1+exp(-(-0.836283468+deelgebied-2.678429997*diepte_zom+0.093452326*(diepte_zom^2)+0.397326678*diepte_zom*doorzicht-0.000580393*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="4.0"/>
+							</valuesScalar>
+							<valuesScalar dataname="doorzicht" type="scalar" unit="m">
+								<parameter min="0" max="4.0"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_extinctie">
+						<layername>"Effect_extinctie"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van extinctie op Zannichellia"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_ Zanni_sp"</output>
+						<equation>"1/(1+exp(-(-1.596244827+deelgebied-1.714394462*diepte_zom+0.08105808*(diepte_zom^2)-0.263564618*diepte_zom*extinctie+0.556030451*extinctie-0.00051814*strijklengte)))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="4.0"/>
+							</valuesScalar>
+							<valuesScalar dataname="extinctie" type="scalar" unit="m-1">
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h1 id="Zannichellia-Habitatbeschrijving">Habitatbeschrijving</h1><p style="text-align: left;">Zannichellia is een kosmopoliet en komt regelmatig verspreid in Nederland voor. Deze planten groeien op zonnige plaatsen in ondiepe oeverzones met matig tot zeer voedselrijk, hard water. Zannichellia groeit voornamelijk in stilstaand water, al kan het ook in zwak stromend water voorkomen (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-2">#2</a>, <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-3">#3</a>). In Nederland groeien twee ondersoorten, te weten: Zittende Zannichellia (<em>Zannichellia palustris</em> spp. <em>palustris</em>) en Gesteelde Zannichellia (<em>Z. palustris</em> spp. <em>pedicellata</em>). Indien geen onderscheid mogelijk is op basis van afwezigheid van vruchten worden ze samen geteld als <em>Zannichellia palustris</em> s.l. (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-4">#4</a>). De planten zijn 10 tot 50 cm lang met sterk vertakte drijvende draadvormige stengels. De bladeren zijn maximaal 2 mm breed. Bloeitijd is van mei t/m september. Het substraat is voornamelijk zand of klei met een hoog percentage of organisch materiaal. Zannichellia heeft ondiep groeiende wortelstokken die zich in het voorjaar horizontaal uitbreiden en een dichte plantenmat vormen. Vanaf mei begint de verticale groei wat in een dik pakket van stengels en bladeren in de bovenste waterlaag kan resulteren (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-5">#5</a>). Door deze groeiwijze kan Zannichellia voor overlast zorgen bij recreanten.</p><p style="text-align: left;">Zittende zannichellia is kenmerkend voor zoete wateren, en groeit in Nederland vooral in het IJsselmeergebied, langs de grote rivieren, en in het westen van het land. De zaden behouden hun kiemkracht voor meer dan 5 jaar (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-2">#2</a>). Deze soort heeft kou nodig om te kieming, terwijl dit bij Gesteelde zannichellia niet het geval is (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-5">#5</a>). In het IJsselmeer groeit Zannichellia in ondiep (&lt;1 meter), matig troebel water (extinctie-coëfficiënt 2-4 m<sup>-1</sup>) (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-6">#6</a>).</p><p style="text-align: left;">Gesteelde Zannichellia is karakteristiek voor kleine, matig tot sterk brakke wateren (M31) (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-7">#7</a>). Het zwaartepunt van de verspreiding van deze ondersoort ligt in de brakke wateren en sloten in het Deltagebied en de noordelijke rand van Friesland en Groningen. Deze ondersoort verdraagt grote fluctuaties in het zoutgehalte, en groeit vaak samen met andere kenmerkende brakwatersoorten als Fijn Hoornblad (<em>Ceratophyllum submersum</em>), Zilte waterranonkel (<em>Ranunculus baudottii</em>) en soms ook Snavelruppia (<em>R. maritima</em>) en Spiraalruppia (<em>R. cirrhosae</em>). In brakke kustwateren is deze soort beduidend concurrentiekrachtiger dan Gesteelde Zannichellia (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Zannichellia#Zannichellia-6">#6</a>).&nbsp;</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title="Zannichellia palustris s.l. foto" journal="" identification="">
+			<html><![CDATA[http://newfs.s3.amazonaws.com/taxon-images-1000s1000/Potamogetonaceae/zannichellia-palustris-le-dcameron-a.jpg]]></html>
+		</reference>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://www.iucnredlist.org/details/164133/0]]></html>
+		</reference>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://wilde-planten.nl/zittende%20zannichellia.htm]]></html>
+		</reference>
+		<reference author="De Witte, B.J., M.L. Streekstra and A.D. Gul" year="1995" title="Monitoring van waterplanten in het IJsselmeergebied." journal="RDIJ-werkdocument 95-4. Rijkswaterstaat Directie IJsselmeergebied" identification=""/>
+		<reference author="Schaminée, J.H.J, E.X. Maier and J.C van Raam" year="1995" title="De vegetatie van Nederland. Deel 2 - Wateren, moerassen, natte heiden." journal="" identification=""/>
+		<reference author="Van Geest G. and R. Noordhuis" year="2014" title="Sturen op watervegetaties." journal="" identification=""/>
+		<reference author="STOWA" year="2007" title="Referenties en maatlatten voor natuurlijke watertypen voor de Kaderrichtlijn Water." journal="Rapport Stowa 2007-32, RWS-Waterdienst 2007-018." identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

@@ -683,8 +683,8 @@ def connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules
 			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "max("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
 		elif(equations[origin_model_name] == "average"):
 			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5,  "(" + " + ".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ") / " + str(len(revhsimodel5.InputGridCoverages))))
-		#elif(equations[origin_model_name] == "geometric_average"):
-		#	HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "areaaverage("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
+		elif(equations[origin_model_name] == "geometric_average"):
+			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "("+ " * ".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")**(1/" + str(len(revhsimodel5.InputGridCoverages)) + ")"))
 		else:
 			_AutecologyXMLLogger.Warn("Current equation for HSI model structure is not yet available :" +\
 						equations[origin_model_name])

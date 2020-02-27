@@ -18,11 +18,11 @@ InputDir = "Test_invoerfiles\\Maps\\"
 KnowledgeRuleDir = "Test_invoerfiles\\Response curves\\"
 OutputDir = "OutputMaps\\"
 
-#Soort X
-kr_file = "SoortX.xml"
-topic_name = "Soort X"
-system_to_model = "habitat_geschiktheid"
-flow_diagram ="adult"
+#Vegetation types Northern Delta
+kr_file = "Vegetationtypes_Northen_Delta.xml"
+topic_name = "Vegetation types Northern Delta"
+system_to_model = "biesbosch_area"
+flow_diagram ="vegetation_ungrazed"
 
 #endregion
 
@@ -34,7 +34,6 @@ root = ET.parse(os.path.join(KnowledgeRuleDir,kr_file)).getroot()
 flow_diagram_overview = make_flowdiagram_dict(root,system_to_model)
 autecology_overview = make_knowledgerules_dict(root, system_to_model)
 response_curves_overview = autecology_overview["knowledgerules"]
-
 
 #print species name
 print("Topic : " + autecology_overview["Topic"])
@@ -77,7 +76,6 @@ knowledgerules_list = make_knowledgerule_models(structure, response_curves_overv
     #4. TableReclassification
     #5. MultiTableReclassification
 (knowledgerules_list, input_list, output_list) = fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules_list)
-
 #endregion
 
 

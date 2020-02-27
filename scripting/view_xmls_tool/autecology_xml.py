@@ -170,6 +170,7 @@ class AutecologyXML(_File):
 		self.XMLconvention = {}
 		self.XMLconvention["topic_species"] = "Species"
 		self.XMLconvention["topic_wfdind"] = "WFDindicator"
+		self.XMLconvention["topic_habitats"] = "Habitats"
 		self.XMLconvention["modeltypekey"] = "name"
 		self.XMLconvention["systemkey"] = "name"
 		self.XMLconvention["rc"] = "ResponseCurve"
@@ -409,8 +410,8 @@ class AutecologyXML(_File):
 
 	def get_data_layers(self,sp_kr_element,element_find):
 		layers = OrderedDict()	
-		for input_layer in sp_kr_element.findall(element_find):
-			layer_dict = self.get_data_layer(input_layer)
+		for layer in sp_kr_element.findall(element_find):
+			layer_dict = self.get_data_layer(layer)
 			layers[layer_dict["layername"]] = layer_dict
 
 		return(layers)
@@ -494,7 +495,7 @@ class AutecologyXML(_File):
 
 			if(not(parameter_dict["layername"] in rule_dict["inputLayers"])):
 				raise RuntimeError("Used layer "+ str(parameter_dict["layername"]) + " in "+ self.XMLconvention["fb"] +" "+\
-					  str(rule_dict["name"]) + "is not in inputlayers.")
+					  str(rule_dict["name"]) + " is not in inputlayers.")
 
 			parameter_dict["unit"] = rule_dict["inputLayers"][parameter_dict["layername"]]["unit"]
 
@@ -507,7 +508,7 @@ class AutecologyXML(_File):
 				for parameter in values.findall(self.make_find(["parameter"])):
 					parameter_list.append([float(parameter.get("min_input")), float(parameter.get("max_input"))])
 			else:
-				raise RuntimeError("type "+ parameter_dict["type"] + " is not available in " + self.XMLconvention["fb"] +".")
+				raise RuntimeError("type "+ str(parameter_dict["type"]) + " is not available in " + self.XMLconvention["fb"] +".")
 
 			column_names = values.findall(self.make_find(["parameter"]))[0].keys()
 			parameter_dict["data"] = pandas.DataFrame(parameter_list, columns = column_names)
@@ -707,6 +708,10 @@ class AutecologyXML(_File):
 			self.commonnames = [{"name" : cn.get("name"), "language" : cn.get("language")}\
 								 for cn in topic.find(self.make_find(['CommonNames']))]
 		
+		elif(topic_name == self.XMLconvention["topic_habitats"]):
+			self.topic_name = self.XMLconvention["topic_habitats"]
+			self.commonnames = [{"name" : cn.get("name"), "language" : cn.get("language")}\
+								 for cn in topic.find(self.make_find(['CommonNames']))]
 		else:
 			raise ValueError("Topic element is not yet available for interpretation : " + topic_name)
 		

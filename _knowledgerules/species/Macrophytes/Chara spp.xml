@@ -12,7 +12,7 @@
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
-			<System name="ijsselmeergebied_doorzicht">
+			<System name="ijsselmeergebied">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
@@ -28,7 +28,22 @@
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="chara_presence_visibility">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_chara</To>
+							<To>P_chara_visibility</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="chara_presence_extinction">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_chara</To>
+							<To>P_chara_extinction</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<FormulaBased name="HGI_chara">

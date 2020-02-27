@@ -18,11 +18,17 @@ InputDir = "Test_invoerfiles\\Maps\\"
 KnowledgeRuleDir = "Test_invoerfiles\\Response curves\\"
 OutputDir = "OutputMaps\\"
 
-#Soort X
-kr_file = "SoortX.xml"
-topic_name = "Soort X"
-system_to_model = "habitat_geschiktheid"
-flow_diagram ="adult"
+##Soort X
+#kr_file = "SoortX.xml"
+#topic_name = "Soort X"
+#system_to_model = "habitat_geschiktheid"
+#flow_diagram ="adult"
+
+#Chara spp
+kr_file = "Chara spp.xml"
+topic_name = "Chara spp"
+system_to_model = "ijsselmeergebied"
+flow_diagram ="chara_presence_visibility"
 
 #endregion
 

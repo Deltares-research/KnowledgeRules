@@ -420,7 +420,6 @@
 		<sequence>
 			<element name="label" type="string"/>
 			<element name="equation" type="AutXML:LinkEquationSimpleType"/>
-			<element name="specific_equation" type="string" minOccurs="0"/>
 			<element name="To" type="string" maxOccurs="unbounded"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
@@ -431,7 +430,7 @@
 			<enumeration value="min"/>
 			<enumeration value="max"/>
 			<enumeration value="geometric_average"/>
-			<enumeration value="specific"/>
+			<enumeration value="knowledge_rule"/>
 		</restriction>
 	</simpleType>
 	<complexType name="ReferenceComplexType">

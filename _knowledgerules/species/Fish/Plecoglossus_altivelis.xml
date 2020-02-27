@@ -34,6 +34,8 @@
 							<To>"Spawning"</To>
 							<To>"Egg_incubation"</To>
 							<To>"Feeding"</To>
+							<To>"Descending"</To>
+							<To>"Ascending"</To>
 						</From>
 						<From name="Spawning">
 							<label>"Spawning habitat"</label>
@@ -63,6 +65,24 @@
 							<To>"DissolvedOxygenFeeding"</To>
 							<To>"SuspendedSedimentFeeding"</To>
 						</From>
+						<From name="Descending">
+							<label>Habitat for descending larvae</label>
+							<equation>min</equation>
+							<To>"WaterDepthDescending"</To>
+							<To>"TemperatureDescending"</To>
+							<To>"DissolvedOxygenDescending"</To>
+							<To>"SuspendedSedimentDescending"</To>
+						</From>
+						<From name="Ascending">
+							<label>Habitat for ascending juveniles</label>
+							<equation>min</equation>
+							<To>"WaterDepthAscending"</To>
+							<To>"FlowVelocityMeanAscending"</To>
+							<To>"FlowVelocityMaxAscending"</To>
+							<To>"TemperatureAscending"</To>
+							<To>"DissolvedOxygenAscending"</To>
+							<To>"SuspendedSedimentAscending"</To>
+						</From>
 					</FlowDiagram>
 					<FlowDiagram name="Ayu_habitat_stepped">
 						<From name="Main_model">
@@ -70,6 +90,7 @@
 							<equation>min</equation>
 							<To>"Egg_incubation"</To>
 							<To>"Feeding"</To>
+							<To>"Juvenile_movement"</To>
 						</From>
 						<From name="Egg_incubation">
 							<label>Habitat for egg incubation</label>
@@ -82,6 +103,12 @@
 							<To>"DissolvedOxygenEgg"</To>
 							<To>"SuspendedSedimentEgg"</To>
 						</From>
+						<From name="Juvenile_movement">
+							<label>"Juvenile_movement"</label>
+							<equation>min</equation>
+							<To>Descending</To>
+							<To>Ascending</To>
+						</From>
 						<From name="Feeding">
 							<label>Habitat for feeding adults</label>
 							<equation>min</equation>
@@ -99,6 +126,24 @@
 							<To>"TemperatureSpawning"</To>
 							<To>"DissolvedOxygenSpawning"</To>
 							<To>"SuspendedMatterSpawning"</To>
+						</From>
+						<From name="Descending">
+							<label>Habitat for descending larvae</label>
+							<equation>min</equation>
+							<To>"WaterDepthDescending"</To>
+							<To>"TemperatureDescending"</To>
+							<To>"DissolvedOxygenDescending"</To>
+							<To>"SuspendedSedimentDescending"</To>
+						</From>
+						<From name="Ascending">
+							<label>Habitat for ascending juveniles</label>
+							<equation>min</equation>
+							<To>"WaterDepthAscending"</To>
+							<To>"FlowVelocityMeanAscending"</To>
+							<To>"FlowVelocityMaxAscending"</To>
+							<To>"TemperatureAscending"</To>
+							<To>"DissolvedOxygenAscending"</To>
+							<To>"SuspendedSedimentAscending"</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
@@ -857,9 +902,9 @@
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
-					<ResponseCurve name="SuspendedMatterAscending">
+					<ResponseCurve name="SuspendedSedimentAscending">
 						<inputLayers>
-							<layer name="SuspendedMatterAscending">
+							<layer name="SuspendedSedimentAscending">
 								<parameter_cat>TOBEFILLED</parameter_cat>
 								<layer_filename>SuspendedMatterAscending</layer_filename>
 								<unit>"mg/l"</unit>
@@ -885,9 +930,9 @@
 							</valuesScalar>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_SuspendedMatterAscending">
+							<layer name="HSI_SuspendedSedimentAscending">
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_SuspendedMatterAscending</layer_filename>
+								<layer_filename>HSI_SuspendedSedimentAscending</layer_filename>
 								<unit>factor</unit>
 								<statistic>average</statistic>
 								<description>TOBEFILLED</description>

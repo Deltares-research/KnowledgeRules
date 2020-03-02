@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>217145</EoLpagenr>
+			<LatName>Misgurnus fossilis</LatName>
+			<CommonNames>
+				<Name name="Grote Modderkruiper" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1992-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Grotemodderkruiper-Misgurnusfossilis-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Grote modderkruiper - Misgurnus fossilis - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd.</p>
+
+<h1 id="Grotemodderkruiper-Misgurnusfossilis-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze dosis-effect relaties zijn toepasbaar op zoet water in Nederland. Op alle niet zwaar vervuilde en niet te sterk eutrofe wateren, met een brede litorale zone of andere ondiepe gedeelten, kan dit model zonder bezwaar worden toegepast. Het model is echter onvolledig door bijvoorbeeld het ontbreken van relaties over eutrofiering en verontreiniging omdat hier over te weinig gegevens bekend zijn om relaties op te stellen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-3">#3</a>.</p>
+
+<h1 id="Grotemodderkruiper-Misgurnusfossilis-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Er is geen voorbeeld projekt beschikbaar.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="HGI">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Water_quality</To>
+							<To>Spawning_habitat_quality</To>
+						</From>
+						<From name="Migration_habitat_quality">
+							<label>"Migration_habitat_quality"</label>
+							<equation>min</equation>
+							<To>Flow_velocity</To>
+							<To>Acidity</To>
+						</From>
+						<From name="Spawning_habitat_quality">
+							<label>"Spawning_habitat_quality"</label>
+							<equation>min</equation>
+							<To>Watertemperature</To>
+							<To>Shallow_water_mud</To>
+							<To>Bank_vegetation</To>
+							<To>Submerse_vegetation</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Flow_velocity">
+						<type>scalar</type>
+						<layername>Flow_velocity</layername>
+						<unit>m/s</unit>
+						<statistic>average</statistic>
+						<description>Flow velocity in meters per second</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="30" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Acidity">
+						<type>scalar</type>
+						<layername>"Acidity"</layername>
+						<unit>"pH"</unit>
+						<statistic>average</statistic>
+						<description>"Average pH value during the growing season."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="3.5" HSI="0.0"/>
+							<parameter value="4" HSI="0.5"/>
+							<parameter value="5" HSI="0.5"/>
+							<parameter value="6" HSI="1.0"/>
+							<parameter value="9" HSI="1.0"/>
+							<parameter value="11" HSI="0.0"/>
+							<parameter value="14" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Watertemperature">
+						<type>range / categorical</type>
+						<layername>"Watertemperature"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Water temperature in the spawning period in degrees Celsius."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="13" cat="0 - 13" HSI="0.0"/>
+							<parameter rangemin="13" rangemax="19" cat="13 - 19" HSI="0.5"/>							
+							<parameter rangemin="19" rangemax="21" cat="19 - 21" HSI="1.0"/>
+							<parameter rangemin="21" rangemax="24" cat="21 - 24" HSI="0.5"/>
+							<parameter rangemin="24" rangemax="999999" cat="> 24" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Shallow_water_mud">
+						<type>scalar</type>
+						<layername>"Shallow_water_mud"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage of the area consisting of shallow water with a muddy soil."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Bank_vegetation">
+						<type>scalar</type>
+						<layername>"Bank_vegetation"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage of the bank that is covered with vegetation."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="50" HSI="0.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Submerse_vegetation">
+						<type>scalar</type>
+						<layername>"Submerse_vegetation"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage of the submerse vegetation in percent."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="50" HSI="0.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="80" HSI="1.0"/>
+							<parameter value="80" HSI="0.5"/>
+							<parameter value="100" HSI="0.5"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Grotemodderkruiper-Misgurnusfossilis-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De Grote modderkruiper leeft in ondiep, stilstaand of zeer langzaam stromend water, waarin op de bodem een dikke modderlaag en veel planten aanwezig zijn. De soort wordt het meest aangetroffen in kleine wateren, vooral in poldersloten met een goede waterkwaliteit. Vaak betreft het locaties met kwelwater en/of bicarbonaatrijk water. Ook komt de soort voor in langzaam stromende rivieren en beken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1">#1</a>.</p>
+
+<h3 id="Grotemodderkruiper-Misgurnusfossilis-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Net als de Kleine modderkruiper vindt de soort zijn voedsel in de bodem, waarbij ze allerlei kleine dieren eet, zoals wormen, watervlooien, muggenlarven en kreeftjes. De vis is 's nachts actief en verblijft overdag in de bovenste bodemlaag, die behalve modder veel organisch materiaal (sapropelium) bevat <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1">#1</a>.</p>
+
+<h3 id="Grotemodderkruiper-Misgurnusfossilis-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De vis paait van maart tot eind juni op ondiepe plekken, doorgaans dicht langs de oevers in holten of onder de beschutting van overhangende begroeiing (bijvoorbeeld wilgen) of drijvende watervegetatie. Eieren worden zowel in de watervegetatie als op kaal substraat afgezet. De eitjes komen na acht tot negen dagen uit. De jonge vissen zijn na twee jaar geslachtsrijp, bij een lengte van circa 15 cm <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1">#1</a>.</p>
+
+<h3 id="Grotemodderkruiper-Misgurnusfossilis-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>DOver de leeftijd van de Grote modderkruiper is niets bekend.</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title="http://www.minlnv.nl/natura2000" journal="" identification=""/>
+		<reference author=" Schouten, W.J." year="1992" title="Habitatgeschiktheid index model Grote Modderkruiper Misgurnus fossilis L." journal="" identification="OVB, Nieuwegein. 1992"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

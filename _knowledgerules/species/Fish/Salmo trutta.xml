@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>206777</EoLpagenr>
+			<LatName>Salmo trutta</LatName>
+			<CommonNames>
+				<Name name="Bruine forel" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="North America" id="6255149"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1986-01-01</StartDate>
+						<EndDate>2012-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Bruineforel-Salmotrutta-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Bruine forel - Salmo trutta - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd.</p>
+
+<h1 id="Bruineforel-Salmotrutta-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze habitatregels zijn opgesteld voor Noord-Amerika.</p>
+
+<h1 id="Bruineforel-Salmotrutta-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Er is geen voorbeeld project beschikbaar.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="adult">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Temperature_adult_juvenile</To>
+							<To>Temperature_juvenile</To>
+							<To>Temperature_embryo</To>
+							<To>Oxygen_below10degrees</To>
+							<To>Oxygen_above10degrees</To>
+							<To>Flow_velocity_embryo</To>
+							<To>Vegetation_larvae</To>
+							<To>Vegetation_adult</To>
+							<To>Substrate_A</To>
+							<To>Substrate_B</To>
+							<To>Substrate_class</To>
+							<To>Dominant_Substrate_type</To>
+							<To>Coverage_ponds</To>
+							<To>Bank_vegetation</To>
+							<To>Bank_stability</To>
+							<To>Acidity</To>
+							<To>Flow</To>
+							<To>Pond_classification</To>
+							<To>Fine_sediment_embryo</To>
+							<To>Fine_sediment_adult</To>
+							<To>Schadow</To>
+							<To>Nitrate_concentration</To>
+							<To>Peak_discharge</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Temperature_adult_juvenile">
+						<type>scalar</type>
+						<layername>"Temperature_adult_juvenile"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum water temperature in degrees Celsius."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="12" HSI="1.0"/>
+							<parameter value="19" HSI="1.0"/>
+							<parameter value="27" HSI="0.0"/>
+							<parameter value="30" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperature_juvenile">
+						<type>scalar</type>
+						<layername>"Temperature_juvenile"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum water temperature in degrees Celsius."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="0.0"/>
+							<parameter value="7" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+							<parameter value="26" HSI="0.0"/>
+							<parameter value="30" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperature_embryo">
+						<type>scalar</type>
+						<layername>"Temperature_embryo"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum water temperature in degrees Celsius."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="7" HSI="1.0"/>
+							<parameter value="13" HSI="1.0"/>
+							<parameter value="15" HSI="0.0"/>
+							<parameter value="20" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_below10degrees">
+						<type>scalar</type>
+						<layername>"Oxygen_below10degrees"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Dissolved oxygen in water when temperature is below ten degrees Celsius in milligrams per liter."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="3" HSI="0.0"/>
+							<parameter value="9.3" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_above10degrees">
+						<type>scalar</type>
+						<layername>"Oxygen_above10degrees"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Dissolved oxygen in water when temperature is above ten degrees Celsius in milligrams per liter."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="6" HSI="0.0"/>
+							<parameter value="14.5" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Flow_velocity_embryo">
+						<type>scalar</type>
+						<layername>"Flow_velocity_embryo"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>average</statistic>
+						<description>"Average flow velocity in centimeters per second."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="15" HSI="0.0"/>
+							<parameter value="40" HSI="1.0"/>
+							<parameter value="70" HSI="1.0"/>
+							<parameter value="90" HSI="0.0"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Vegetation_larvae">
+						<type>scalar</type>
+						<layername>"Vegetation_larvae"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage of the waterbody by vegetation in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="15" HSI="1.0"/>
+							<parameter value="40" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Vegetation_adult">
+						<type>scalar</type>
+						<layername>"Vegetation_larvae"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage of the waterbody by vegetation in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="34" HSI="1.0"/>
+							<parameter value="40" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Substrate_A">
+						<type>scalar</type>
+						<layername>"Substrate_A"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by substrate with a size between 1 and 7 cm in percent, when the coverage lower than 5% one should use Substrate_B."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="2" HSI="0.7"/>
+							<parameter value="5" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Substrate_B">
+						<type>scalar</type>
+						<layername>"Substrate_B"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by substrate with a size between 0.3 and 1 cm and between 7 and 10 cm in percent, use a weighted average of the coverage of Substrate_A and Substrate_B to calculate the suitability."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="2" HSI="0.7"/>
+							<parameter value="5" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Substrate_class">
+						<type>scalar</type>
+						<layername>"Substrate_class"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by substrate with a size between 10 and 40 cm in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="20" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Dominant_Substrate_type">
+						<type>categorical</type>
+						<layername>"Dominant_Substrate_type"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Dominant type of substrate."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="Rubble, small boulders or aquatic vegetation" HSI="0.7"/>
+							<parameter cat="Rubble, gravel, pebbles and fine sediment in equal quantities, with or without aquatic plants" HSI="1.0"/>
+							<parameter cat="Fine sediment, rocky soil, fine gravel or large boulders are dominant" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Coverage_ponds">
+						<type>scalar</type>
+						<layername>"Coverage_ponds"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by ponds in the shallow water period in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.1"/>
+							<parameter value="25" HSI="0.6"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="70" HSI="1.0"/>
+							<parameter value="100" HSI="0.5"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Bank_vegetation">
+						<type>scalar</type>
+						<layername>"Bank_vegetation"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Bank vegetation index in percent. Note: Only applicable to non-productive streams 15 meters wide or less # 1. Vegetation index = 2 (shrubs) + 1.5 (grasses) + (trees)."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.08"/>
+							<parameter value="20" HSI="0.08"/>
+							<parameter value="100" HSI="0.85"/>
+							<parameter value="140" HSI="1.0"/>
+							<parameter value="300" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Bank_stability">
+						<type>scalar</type>
+						<layername>"Bank_stability"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"The share of roots and rocky bank cover in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.2"/>
+							<parameter value="30" HSI="0.35"/>
+							<parameter value="50" HSI="0.8"/>
+							<parameter value="65" HSI="0.95"/>
+							<parameter value="75" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Acidity">
+						<type>scalar</type>
+						<layername>"Acidity"</layername>
+						<unit>"pH"</unit>
+						<statistic>average</statistic>
+						<description>"Average pH value during the growing season."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="0.0"/>
+							<parameter value="6.8" HSI="1.0"/>
+							<parameter value="7.8" HSI="1.0"/>
+							<parameter value="9.5" HSI="0.0"/>
+							<parameter value="10" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Flow">
+						<type>scalar</type>
+						<layername>"Flow"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Late summer discharge compared to average discharge in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Pond_classification">
+						<type>categorical</type>
+						<layername>"Pond_classification"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Pond classification."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="More than 30% large and deep" HSI="1.0"/>
+							<parameter cat="Between 10% and 30% large and deep, more than 50% medium" HSI="0.6"/>
+							<parameter cat="Less than 10% large and deep, less than 50% medium" HSI="0.3"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Fine_sediment_embryo">
+						<type>scalar</type>
+						<layername>"Fine_sediment_embryo"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by fine sediment smaller than 3 mm in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="5" HSI="1.0"/>
+							<parameter value="15" HSI="0.5"/>
+							<parameter value="30" HSI="0.2"/>
+							<parameter value="40" HSI="0.1"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Fine_sediment_adult">
+						<type>scalar</type>
+						<layername>"Fine_sediment_adult"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by fine sediment smaller than 3 mm in percent."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="40" HSI="0.2"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Schadow">
+						<type>scalar</type>
+						<layername>"Schadow"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Shading of the stream between 10:00 and 14:00 in percent. Note: Only use for currents narrower than 50 meters and that are above 18 degrees Celsius."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.3"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="75" HSI="1.0"/>
+							<parameter value="85" HSI="0.9"/>
+							<parameter value="100" HSI="0.5"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Nitrate_concentration">
+						<type>range / categorical</type>
+						<layername>Nitrate_concentration</layername>
+						<unit>mg/l</unit>
+						<statistic>average</statistic>
+						<description>Nitrate or nitrogen concentration in milligrams per liter.</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-15</date>
+						<references>
+							<reference author="Van der Winden, J., Dirksen, S., Poot, M.J.M." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="0" cat="0.00" HSI="0.0"/>
+							<parameter rangemin="0.00" rangemax="0.05" cat="0.00 - 0.05" HSI="0.25"/>
+							<parameter rangemin="0.05" rangemax="0.10" cat="0.05 - 0.10" HSI="0.5"/>
+							<parameter rangemin="0.10" rangemax="0.15" cat="0.10 - 0.15" HSI="0.75"/>
+							<parameter rangemin="0.15" rangemax="0.25" cat="0.15 - 0.25" HSI="1.0"/>
+							<parameter rangemin="0.25" rangemax="0.50" cat="0.25 - 0.50" HSI="0.75"/>
+							<parameter rangemin="0.50" rangemax="0.90" cat="0.50 - 0.90" HSI="0.5"/>
+							<parameter rangemin="0.90" rangemax="2.00" cat="0.90 - 2.00" HSI="0.25"/>
+							<parameter rangemin="2.00" rangemax="999999" cat="> 2.00" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Peak_discharge">
+						<type>scalar</type>
+						<layername>"Peak_discharge"</layername>
+						<unit>"-"</unit>
+						<statistic>average</statistic>
+						<description>"Average yearly peak discharge divided by the average daily discharge."</description>
+						<author>"Marc Weeber"</author>
+						<date>2013-01-19</date>
+						<references>
+							<reference author="U.S. Fish and Wildlife Service" year="1986" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="1" HSI="0.5"/>
+							<parameter value="2" HSI="1.0"/>
+							<parameter value="2.8" HSI="1.0"/>
+							<parameter value="4.5" HSI="0.7"/>
+							<parameter value="6" HSI="0.2"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Bruineforel-Salmotrutta-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De bruine forel (<em>Salmo trutta</em>) komt van nature in Eurazië en het Noorden van Afrika voor. De verspreiding trekt zich van het vaste land naar zee en is gecentreerd rond de Middellandse zee, Caspische zee en Noordzee. Na 1883 heeft de bruine forel zich na introductie in Noord-Amerika gevestigd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>. <br>
+De bruine forel is een vis die in meerdere vormen voorkomt, namelijk zeeforel (<em>Salmo trutta trutta</em>), meerforel (<em>Salmo trutta lacustris</em>) en de beekforel (<em>Salmo trutta fario</em>) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a><a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-3">#3</a>. Onderzoek heeft aangetoond dat de bruine forel zich afhankelijk van de omstandigheden, en de hiermee samenhangende wens om te migreren, als één van deze vormen kan ontwikkelen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-3">#3</a>. In dit habitatmodel zijn alleen de habitateisen opgenomen voor de periode dat de bruine forel in meren en beken verblijft.</p>
+
+<p>In Nederland komt de bruine forel in de kustwateren, het IJsselmeer en de groter rivieren voor. De bruine forel trekt vanuit zee rivieren op om in zijriviertjes en beken te paren. Jonge bruine forellen kunnen na 1 a 2 jaar in zoetwater naar zee trekken, alwaar ze opgroeien tot volwassen zeeforellen. Tijdens de migratie naar zee verandert de jonge zeeforel van het parr stadium naar het smolt stadium. Hierbij maakt de bruine forel zowel een innerlijke als een uiterlijke verandering door. De forel verandert van zwarte vlekken op de flank naar compleet zilverkleurig <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-2">#2</a>. Deze zilverkleurige forellen worden gerekend tot de vorm zeeforel. Zoals de naam al zegt trekken de meerforellen vanuit de beken en rivieren naar de meren. De beekforellen brengen hun hele leven in de beek door en deze worden gezien als de niet migrerende vorm van de bruine forel <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-3">#3</a>. </p>
+
+<h3 id="Bruineforel-Salmotrutta-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Jonge forellen eten ongewervelden, die ze zowel boven als onder water vangen. Volwassen forellen eten kleine vissen, amfibieën en zoogdieren, zoals muizen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-2">#2</a>. Volwassen forellen jagen voornamelijk ’s nachts <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>.</p>
+
+<h3 id="Bruineforel-Salmotrutta-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De trek naar de paaigebieden wordt mogelijk bepaald door de afname van de dagduur, het toenemen van de stroming of de afname in watertemperatuur. De paai vindt plaats in nestkuilen gelegen in de grindbanken van snelstromende beken en kleine rivieren. Hier worden de eieren afgezet, waarna ze worden afgedekt met een klein laagje grind. Deze grindbanken worden gekarakteriseerd door het opwellen van grondwater en/of neerwaarts gerichte waterstromen. Dit zorgt circulatie van water tussen het grind, waardoor er geen sedimentlaagje over de eieren kan vormen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>. </p>
+
+<p>Na de uitkomst zoeken de larvale forellen een beschutte plaats om op te groeien <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-2">#2</a>. De larven verspreiden zich binnen een week na uitkomen over het geschikte habitat. Hier verblijven ze één levensjaar. Tijdens dit levensjaar vindt er veel sterfte plaats door intraspecifiek territoriaal gedrag <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>. Hierna kan de jonge forel afhankelijk van de omstandigheden richting een meer of de zee trekken, waar zij twee levensjaren doorbrengen. In zee trekken de jonge forellen op in scholen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>. </p>
+
+<p>De forel kan in het derde of vijfde levensjaar deelnemen aan de voortplanting. Volwassen forellen kunnen 13 jaar oud worden en een lengte van 30 cm bereiken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>.</p>
+
+<h3 id="Bruineforel-Salmotrutta-Milieuvoorwaarden">Milieuvoorwaarden</h3>
+
+<p>Voor de bruine forel is de watertemperatuur de meest bepalende factor voor hun verspreiding. Waterstromen met veel schaduw en koude bronnen hebben de voorkeur, vanwege een constante en lage watertemperatuur. In kleine stromen is hierom de nabijheid van bomen van belang, voornamelijk op hete zomerdagen. In grotere stromen en meren helpt een groter volume aan water en de waterdiepte de afwezigheid van schaduw te compenseren. Ook het prooiaanbod is hoger bij een lage en constante temperatuur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>.</p>
+
+<p>Alle levensfases van de forel hebben een sterke behoefte aan voldoende opgelost zuurstof. De behoefte varieert echter tussen de verschillende levensfases, maar wordt ook beïnvloed door de zuurgraad, watertemperatuur, activiteit van de forel en de hoeveelheid zwevende stof. Daarnaast heeft een lage zuurgraad een negatief effect op het voedselaanbod, de groei en de maximale leeftijd van de forel <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>.</p>
+
+<p>Oevervegetatie zorgt ervoor dat erosie niet plaats kan vinden. Erosie zorgt voor fijn sediment, wat een negatief effect heeft op het overleven van het embryo, de voedselproductie en de dekking in de vorm van groot substraat en waterplanten <a class="unresolved" href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#">1</a>.  Sterke veranderingen in de stroming kunnen ook een negatief effect hebben op het embryo. Door een laag debiet kunnen stromen droogvallen of bevriezen en bij een hoge afvoer kan het grind gaan verschuiven <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>. </p>
+
+<p>In stromen met een sterk gradiënt komt het meeste eetbare materiaal van landplanten en landinsecten. Naarmate het gradiënt afneemt neemt het aantal invertebraten rond stenige oevers toe. Benedenstrooms daalt de stroomsnelheid en substraatgrootte, echter het aantal poelen ten opzichte van stenige oevers, de watertemperatuur, productiviteit van het systeem en de diversiteit in insecten nemen over het algemeen toe. Zowel de larvale en de juvenile forellen hebben een voorkeur voor poelen, een lagere stroomsnelheid (15 cm/s) en rotsachtig substraat. Daarnaast is voor larvale forellen beschutting erg belangrijk. Die zoeken ze in het grindbed. Hierin brengen zij de winter door. Juveniele forel geeft de voorkeur aan water dieper dan 15 cm. Volwassen beekforellen worden voornamelijk aangetroffen bij hogere stroomsnelheden en dieper water. Bij de meerforel wordt het optimale habitat gekenmerkt door helder, koel tot koud, oligotroof water met een grote waterdiepte. De afmetingen van het meer en de chemische kwaliteit mogen hierbij variëren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>.</p>
+
+<p>Volwassen forellen in waterstromen hebben een sterke behoefte aan beschutting. Deze beschutting wordt verkregen door ondergedoken vegetatie, overhangende vegetatie en objecten in de waterkolom. Deze vegetatie en de objecten remmen de stroomsnelheid. In deze luwe delen wordt door de forellen naar voedsel gezocht en gerust <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>. In de winter trekken de volwassen forellen naar diep en luw water, zoals meren en grotere rivieren. In de winterperiode is ook in dieper water de behoefte aan beschutting groot <a href="https://publicwiki.deltares.nl/display/HBTHOME/Bruine+forel+-+Salmo+trutta#Bruineforel-Salmotrutta-1">#1</a>.</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="U.S. Fish and Wildlife Service" year="1986" title="HABITAT SUITABILITY INDEX MODELS AND INSTREAM FLOW SUITABILITY CURVES: BROWN TROUT" journal="" identification="Biological Report 82, 10.124, Revised, september 1986"/>
+		<reference author="" year="2012" title=" www.ravon.nl (Forel)" journal="" identification="18 december 2012"/>
+		<reference author="Van Emmerik, W.A.M., De Nie, H.W." year="2006" title="De zoetwatervissen van Nederland. Ecologisch bekeken." journal="" identification="Sportvisserij Nederland, Bilthoven."/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

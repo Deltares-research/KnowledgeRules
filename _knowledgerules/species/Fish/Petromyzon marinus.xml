@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46582331</EoLpagenr>
+			<LatName>Petromyzon marinus</LatName>
+			<CommonNames>
+				<Name name="Zeeprik" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2004-01-01</StartDate>
+						<EndDate>2004-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Zeeprik-Petronyzonmarinus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Zeeprik - Petronyzon marinus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)">&nbsp;Deze dosis-effect relaties zijn niet gevalideerd.</p>
+
+<h1 id="Zeeprik-Petronyzonmarinus-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>De dosis-effect relatie voor trek is van toepassing voor rivieren in Nederland. De dosis-effect relaties voor het paaigebied zijn niet voor Nederland van toepassing.</p>
+
+<h1 id="Zeeprik-Petronyzonmarinus-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Voor deze dosis-effect relaties is geen voorbeeldprojekt beschikbaar.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="HGI">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Migration_habitat_quality</To>
+							<To>Spawning_habitat_quality</To>
+						</From>
+						<From name="Migration_habitat_quality">
+							<label>"Migration_habitat_quality"</label>
+							<equation>min</equation>
+							<To>Barriers_upwards</To>
+							<To>Barriers_downwards</To>
+						</From>
+						<From name="Spawning_habitat_quality">
+							<label>"Spawning_habitat_quality"</label>
+							<equation>min</equation>
+							<To>Substrate_juveniles</To>
+							<To>Flow_velocity_spawning</To>
+							<To>Substrate_spawning</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Barriers_upwards">
+						<type>categorical</type>
+						<layername>"Barriers_upwards"</layername>
+						<unit>"category"</unit>
+						<statistic>minimum</statistic>
+						<description>"Presence of barriers during stream upward migration"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="sluice" HSI="0.5"/>
+							<parameter cat="shipping lock + weir + fish ladder" HSI="0.7"/>
+							<parameter cat="
+shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+					<ResponseCurve name="Barriers_downwards">
+						<type>categorical</type>
+						<layername>"Barriers_downwards"</layername>
+						<unit>"category"</unit>
+						<statistic>minimum</statistic>
+						<description>"Presence of barriers during stream downward migration"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="sluice" HSI="0.8"/>
+							<parameter cat="shipping lock + weir + fish ladder" HSI="1.0"/>
+							<parameter cat="
+shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+					<ResponseCurve name="Sediment_type">
+						<type>categorical</type>
+						<layername>"Sediment_type"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Type of sediment expressed in categories"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="Silt" HSI="1.0"/>
+							<parameter cat="Silt/sand" HSI="1.0"/>
+							<parameter cat="Fine/coarse sand" HSI="0.5"/>							
+							<parameter cat="Coarse sand/pebbles" HSI="0.1"/>							
+							<parameter cat="Pebbles" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Flow_velocity_spawning">
+						<type>range / categorical</type>
+						<layername>Flow_velocity_spawning</layername>
+						<unit>m/s</unit>
+						<statistic>average</statistic>
+						<description>Flow_velocity in the spawning area in meters per second</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="1" cat="0 - 1" HSI="0.0"/>
+							<parameter rangemin="1" rangemax="2" cat="1 - 2" HSI="1.0."/>
+							<parameter rangemin="2" rangemax="999999" cat="> 2" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Substrate_spawning">
+						<type>categorical</type>
+						<layername>"Substrate_spawning"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Availability of pebbles in the spawning area"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+							<reference author="Rivierprik - Lampetra fluviatilis" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="None" HSI="0.0"/>
+							<parameter cat="Few" HSI="0.1"/>
+							<parameter cat="Moderate" HSI="0.35"/>
+							<parameter cat="Reasonable" HSI="0.65"/>
+							<parameter cat="Many" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Zeeprik-Petronyzonmarinus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De Zeeprik (Petromyzon marinus) is een vis uit de familie der Prikachtigen (Petromyzontidae), die deel uitmaakt van de Rondbekken. In plaats van kaken bezitten prikken rondom de bek een zuigschijf, die bezet is met tanden. De normaal bij vissen aanwezige buik- en borstvinnen ontbreken, maar ze hebben wel een (doorgaans tweedelige) rugvin die ver achter op het lichaam is geplaatst. Op grond van enkele afwijkende kenmerken vormen rondbekken een eigen klasse. Alle andere zoetwatervissen in Nederland behoren tot de beenvissen; kraakbeenvissen vormen een derde groep. De Zeeprik is vuilwit tot grijswit van kleur en heeft een opvallend gemarmerd vlekkenpatroon. De ronde palingachtige vorm is naar achteren toe ietwat zijdelings samengedrukt. De Zeeprik bereikt een lengte tot 100 cm, waarmee ze de grootste prikkensoort in Europa is. De lengte, kleur, vlekkentekening en plaatsing van de tanden in de zuigbek onderscheiden de soort van de andere prikken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-1">#1</a>.<br>
+De Zeeprik heeft een noordatlantisch areaal (Noord-Amerika, Europa). In Europa leeft hij verspreid langs de kusten en in de grote rivieren van Noord-Rusland tot in de Middellandse Zee. De Zeeprik gebruikt ons land alleen als doortrekgebied op weg naar geschikte paaiplaatsen halverwege Duitsland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>
+
+<h3 id="Zeeprik-Petronyzonmarinus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Parasitair als adult, larven voeden zich met algen en plantaardig materiaal <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>
+
+<h3 id="Zeeprik-Petronyzonmarinus-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>Anadrome trekvis. De paaigronden liggen in de midden en bovenlopen van de grote rivieren. Het zijn ondiepe plekken (circa 50 cm diep) met hoge stroomsnelheden (1-2 m/s) en een stenige zonverwarmde bodem. De trek vindt plaats in feb-jun <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>
+
+<h3 id="Zeeprik-Petronyzonmarinus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>Larven leven 5 tot 8 jaar in een modderbank (zoetwater) en voeden zich daar met algen, plantenresten en ander organisch materiaal. Volwassen blijven zo'n drie jaar op zee voor ze naar de paaigronden gaan waar ze meestal na de voortplanting sterven <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title="http://www.minlnv.nl/natura2000" journal="" identification=""/>
+		<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="Europese natuur in Nederland; soorten van de Habitat richtlijn." journal="" identification="2004"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

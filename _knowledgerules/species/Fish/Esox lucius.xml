@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46582152</EoLpagenr>
+			<LatName>Esox lucius</LatName>
+			<CommonNames>
+				<Name name="Snoek" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="North America" id="6255149"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1982-01-01</StartDate>
+						<EndDate>2012-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Snoek-Esoxlucius-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Snoek - Esox lucius - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd.</p>
+
+<h1 id="Snoek-Esoxlucius-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze habitateisen zijn opgesteld voor Noord-Amerika <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>.</p>
+
+<h1 id="Snoek-Esoxlucius-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Er is geen voorbeeldproject beschikbaar.</p>
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="adult">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Mating_habitat</To>
+							<To>Living_habitat</To>
+						</From>
+						<From name="Mating_habitat">
+							<label>"Mating_habitat"</label>
+							<equation>min</equation>
+							<To>Percentage_mating_habitat</To>
+							<To>Waterdepth_mating</To>
+							<To>Flow_velocity_mating</To>
+							<To>Shelter_mating</To>
+						</From>
+						<From name="Living_habitat">
+							<label>"Living_habitat"</label>
+							<equation>min</equation>
+							<To>Waterlevel_drop</To>
+							<To>Macrofytes_shelter</To>
+							<To>Transparency</To>
+							<To>Acidity</To>
+							<To>Freeze-free_period</To>
+							<To>Temperature</To>
+							<To>Calm_water</To>
+							<To>Slope</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Percentage_mating_habitat">
+						<type>scalar</type>
+						<layername>"Percentage_mating_habitat"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage of the available habitat that is shallower than 1 meter with vegetation."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="0.8"/>
+							<parameter value="20" HSI="0.9"/>
+							<parameter value="30" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Waterdepth_mating">
+						<type>scalar</type>
+						<layername>"Waterdepth_mating"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Average waterdepth in the mating habitat in centimeters."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="0.0"/>
+							<parameter value="30" HSI="1.0"/>
+							<parameter value="60" HSI="1.0"/>
+							<parameter value="140" HSI="0.0"/>
+							<parameter value="200" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Flow_velocity_mating">
+						<type>scalar</type>
+						<layername>"Flow_velocity_mating"</layername>
+						<unit>"cm/s"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum flow velocity in the mating period in centimeters per second."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="10" HSI="0.5"/>
+							<parameter value="20" HSI="0.2"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Shelter_mating">
+						<type>scalar</type>
+						<layername>"Shelter_mating"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Average shelter bij macrophytes or objects in the mating period in percent."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="40" HSI="0.0"/>
+							<parameter value="60" HSI="0.5"/>
+							<parameter value="80" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Waterlevel_drop">
+						<type>scalar</type>
+						<layername>"Waterlevel_drop"</layername>
+						<unit>"cm"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum water level drop compared to average low water in the mating period in centimeters."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="50" HSI="0.3"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Macrofytes_shelter">
+						<type>scalar</type>
+						<layername>"Macrofytes_shelter"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage op the habitat that has macrophytes or shelter."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="50" HSI="1.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Transparency">
+						<type>scalar</type>
+						<layername>"Transparency"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Average transparency of the water during summer in centimeters."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="0.4" HSI="0.0"/>
+							<parameter value="1" HSI="0.7"/>
+							<parameter value="3" HSI="1.0"/>
+							<parameter value="4" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Acidity">
+						<type>scalar</type>
+						<layername>"Acidity"</layername>
+						<unit>"pH"</unit>
+						<statistic>average</statistic>
+						<description>"Average pH value during the growing season."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="4.5" HSI="0.0"/>
+							<parameter value="5.5" HSI="1.0"/>
+							<parameter value="9" HSI="1.0"/>
+							<parameter value="9.5" HSI="0.0"/>
+							<parameter value="14" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Freeze-free_period">
+						<type>scalar</type>
+						<layername>"Freeze-free_period"</layername>
+						<unit>"days"</unit>
+						<statistic>average</statistic>
+						<description>"Length of the freeze-free_period in days."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="50" HSI="0.0"/>
+							<parameter value="120" HSI="1.0"/>
+							<parameter value="180" HSI="1.0"/>
+							<parameter value="220" HSI="0.0"/>
+							<parameter value="300" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Temperature">
+						<type>scalar</type>
+						<layername>"Temperature"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Average water temperature during the mating period in degrees Celsius."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="4.4" HSI="0.0"/>
+							<parameter value="7" HSI="0.8"/>
+							<parameter value="9" HSI="1.0"/>
+							<parameter value="12" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Calm_water">
+						<type>scalar</type>
+						<layername>"Calm_water"</layername>
+						<unit>"percent"</unit>
+						<statistic>average</statistic>
+						<description>"Coverage by pools, standing and slow (smaller than 5 cm/s) running waters in percent."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Slope">
+						<type>scalar</type>
+						<layername>"Slope"</layername>
+						<unit>"m/km"</unit>
+						<statistic>average</statistic>
+						<description>"Slope of the stream in meter per kilometer."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-21</date>
+						<references>
+							<reference author="Inskip, P.D." year="1982" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="0.75" HSI="1.0"/>
+							<parameter value="2.5" HSI="0.3"/>
+							<parameter value="5" HSI="0.1"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Snoek-Esoxlucius-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De snoek komt van nature in alle zoete wateren boven 40 graden noorderbreedte voor. De snoek is een van de meest algemene en wijdverspreide vissoorten van Nederland. Hij komt voor in helder en stilstaand of langzaam stromend water met een structuurrijke onderwater- en oevervegetatie. De vegetatie dient als schuilplaats en foerageergebiedt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-2">#2</a>. </p>
+
+<p>Afhankelijk van het voedselaanbod en de watertemperatuur kan de snoek snel groeien <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-2">#2</a>. In het eerste jaar kunnen al lengtes bereikt worden van 30 cm. De maximale lengte die de snoek kan bereiken is 140 cm <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-2">#2</a>. </p>
+
+
+<h3 id="Snoek-Esoxlucius-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Bij een lengte kleiner dan 10 cm leeft de snoek voornamelijk van kleine kreeftachtigen en insectenlarven. Bij een lengte groter dan 10 cm begint de jacht op vis en gewervelde dieren, zoals kikkers.  Bij het adulte stadium wordt naast kleine en grote vis en amfibieën, zelfs kleine watervogels en ratten gegeten. De snoek is dan ook geen kieskeurige eter; ze eten nagenoeg alles dat in hun betande bek past <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-2">#2</a>. </p>
+
+<h3 id="Snoek-Esoxlucius-Reproductieenmigratie">Reproductie en migratie</h3>
+
+
+<p>In het voorjaar (maart – april) vindt de paai plaats. De verplaatsing richting de paaiplaatsen begint meestal al vroeg in de lente, direct na het smelten van het ijs. Om bij de paaiplaatsen te komen, kunnen relatief lange afstanden worden afgelegd. Het moment waarop de paai plaatsvindt, wordt beïnvloed door veranderingen in het waterpeil. Voor de paai worden ondiepe, luwe, vegetatierijke wateren opgezocht, voornamelijk oeverzones en ondiepe sloten. Ook overstroomd grasland en poelen worden gebruikt. Vaak vormt één vrouwtje met meerdere mannetjes een groep, waarbij de eieren op diverse geschikte plaatsen worden afgezet <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a> <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-2">#2</a>. De tijd waarop de eieren uitkomen is afhankelijk van de temperatuur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>. </p>
+
+<p>De larven zijn na het uitkomen slechts enkele dagen actief. Hierna klampen zij zich vast aan waterplanten, waarmee ze voorkomen dat ze afzakken naar de zuurstofloze bodem. Na 16 tot 24 dagen begint de dispersie vanaf hun geboorteplaats. Ondanks dat ze weg trekken van hun geboorte grond, blijven ze een voorkeur houden voor ondiepe wateren met beschutting van vegetatie. Vanaf een lengte van 6.5 mm wordt de snoek als juveniel gezien. Na 2 tot 3 levensjaren kunnen de meeste snoeken meedoen aan de voortplanting.  Dit wordt voornamelijk door de lengte van de snoek bepaald, bij mannelijke snoeken is dit vanaf een lengte van 34 tot 42 cm en bij vrouwelijke snoeken is dit vanaf een lengte van 40 tot 42 cm <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>. </p>
+
+<h3 id="Snoek-Esoxlucius-Voedselhabitatenstrategie.1">Voedselhabitat en strategie</h3>
+<p>De snoek is een zichtjager. Hierom is de snoek vooral overdag actief. Vanuit de waterplanten jaagt de snoek op de prooi. Hierbij moet hij het hebben van zijn snelheid (kort) en het verrassingseffect. In een achtervolging houdt de snoek zijn prooi niet bij <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>.</p>
+
+<p>Bij een lengte kleiner dan 10 mm leeft de snoek voornamelijk van zooplankton. Bij een lengte groter dan 10 mm begint de jacht op vis, insectenlarven en andere larvale snoeken. Bij een lengte van 10 cm jaagt de snoek op vis en gewervelde dieren, zoals kikkers. Volwassen snoeken eten naast kleine vis, grote vis en amfibieën, zelfs kleine watervogels en ratten. De snoek is opportunist en eet nagenoeg alles dat in zijn bek past, waaronder de eigen soort <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a> <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-2">#2</a>. In de lente en het begin van de zomer consumeert de snoek meer voedsel dan in de andere seizoenen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>.</p>
+
+<h3 id="Snoek-Esoxlucius-Milieuvoorwaarden">Milieuvoorwaarden</h3>
+
+<p>Voor het uitkomen van de eieren zijn de zuurstofrijkheid van het water, zuurgraad, temperatuur, sedimentatie en weersomstandigheden van belang. In de optimale situatie worden de eieren afgezet op een dichte mat met korte vegetatie, ondiep en beschut tegen de wind, waarbij de omstandigheden circulatie van het water toelaten. Daarnaast mogen de eieren niet droog komen te liggen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>. Het sterk fluctueren van het waterniveau is negatief voor de ontwikkeling van vegetatie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>.  </p>
+
+<p>Grote snoeken worden op grotere diepte aangetroffen. Diepte zelf blijkt hierbij niet bepalend te zijn, maar de temperatuur, in het water opgeloste zuurstof, vegetatie en aanwezigheid van voedsel. Een sterke temperatuur stijging kan er voor zorgen dat de bovenlaag van een meer zuurstof arm wordt. De tolerantie van de snoek voor een laag zuurstofgehalte lijkt af te nemen met het toenemen van de lichaamsgrootte <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>. </p>
+
+<p>De snoek komt voor in oligotroof, mesotroof en licht eutroof water. Hierbij is er, door het voedselaanbod en de jachtmethode, een voorkeur voor mesotroof water. Zout en brakwater worden gemeden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoek+-+Esox+lucius#Snoek-Esoxlucius-1">#1</a>.</p>
+]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Inskip, P.D." year="1982" title="HABITAT SUITABILITY INDEX MODELS: NORTHEN PIKE, Biological services program and Division of ecological services." journal="" identification="U.S. Fish and Wildlife Service, juli 1982"/>
+		<reference author="" year="2012" title=" www.ravon.nl (Snoek)" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

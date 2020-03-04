@@ -98,9 +98,9 @@ shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
 shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
 						</valuesCategorical>
 					</ResponseCurve>	
-					<ResponseCurve name="Sediment_type">
+					<ResponseCurve name="Substrate_juveniles">
 						<type>categorical</type>
-						<layername>"Sediment_type"</layername>
+						<layername>"Substrate_juveniles"</layername>
 						<unit>"categorical"</unit>
 						<statistic>average</statistic>
 						<description>"Type of sediment expressed in categories"</description>
@@ -130,7 +130,7 @@ shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
 						</references>
 						<valuesRangeCategorical>
 							<parameter rangemin="0" rangemax="1" cat="0 - 1" HSI="0.0"/>
-							<parameter rangemin="1" rangemax="2" cat="1 - 2" HSI="1.0."/>
+							<parameter rangemin="1" rangemax="2" cat="1 - 2" HSI="1.0"/>
 							<parameter rangemin="2" rangemax="999999" cat="> 2" HSI="0.0"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>

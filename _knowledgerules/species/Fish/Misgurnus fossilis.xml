@@ -43,7 +43,7 @@
 						<From name="Habitat_quality">
 							<label>"Habitat_quality"</label>
 							<equation>min</equation>
-							<To>Water_quality</To>
+							<To>Migration_habitat_quality</To>
 							<To>Spawning_habitat_quality</To>
 						</From>
 						<From name="Migration_habitat_quality">

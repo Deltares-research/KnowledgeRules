@@ -60,7 +60,7 @@
 							<To>Acidity</To>
 							<To>Oxygen_concentration</To>
 							<To>Chloride_content</To>
-							<To>Temperature</To>
+							<To>Temperature_maximum</To>
 						</From>
 						<From name="Reproduction">
 							<label>"Reproduction"</label>
@@ -187,7 +187,7 @@
 							<parameter value="7200" HSI="0.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					<ResponseCurve name="Temperature">
+					<ResponseCurve name="Temperature_maximum">
 						<type>scalar</type>
 						<layername>"Temperature"</layername>
 						<unit>"degrees Celsius"</unit>
@@ -281,16 +281,6 @@
 							<parameter value="3.0" HSI="0.0"/>
 						</valuesScalar>
 					</ResponseCurve>
-					
-				
-				
-				
-				
-				
-				
-				
-				
-				
 					<ResponseCurve name="Flow_velocity_migration">
 						<type>categorical</type>
 						<layername>Flow_velocity_migration</layername>
@@ -380,7 +370,7 @@ shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
 							<parameter rangemin="0.25" rangemax="999999" cat="> 0.25" HSI="0.0"/>
 						</valuesRangeCategorical>
 					</ResponseCurve>
-					<ResponseCurve name="Temperature">
+					<ResponseCurve name="Temperature_average">
 						<type>range / categorical</type>
 						<layername>Temperature</layername>
 						<unit>degrees Celsius</unit>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>212012</EoLpagenr>
+			<LatName>Cottus perifretum</LatName>
+			<CommonNames>
+				<Name name="Rivierdonderpad" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750404"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1993-01-01</StartDate>
+						<EndDate>2010-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[
+<h1 id="Rivierdonderpad-Cottusperifretum-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p>Het model is gevalideerd door expert judgement van J. Kranenbarg. Aanbeveling voor verdere validatie die hij mee geeft is om het model te toetsten en mogelijk te verbeteren op basis van visbemonsteringsgegevens in het IJsselmeer en het Markermeer en eventueel in andere wateren.</p>
+
+<h1 id="Rivierdonderpad-Cottusperifretum-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze response functies zijn toepasbaar voor meren, plassen en beken in Nederland.</p>
+
+<h1 id="Rivierdonderpad-Cottusperifretum-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Er is voor deze soort geen voorbeeldprojekt beschikbaar.</p>
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="adult">
+						<From name="Habitat_geschiktheid">
+							<label>"Habitat_geschiktheid"</label>
+							<equation>min</equation>
+							<To>Waterdepth</To>
+							<To>Substrate</To>
+							<To>Presence_of_macrofytes</To>
+							<To>silt_content</To>
+							<To>oxygen_saturation</To>
+							<To>temperature</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Waterdepth">
+						<type>scalar</type>
+						<layername>"Waterdepth"</layername>
+						<unit>"cm"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in centimeters"</description>
+						<author>"Marc Weeber"</author>
+						<date>2012-12-18</date>
+						<references>
+							<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="500" HSI="0.7"/>
+							<parameter value="600" HSI="0.0"/>
+							<parameter value="1000" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Substrate">
+						<type>categorical</type>
+						<layername>"Substrate"</layername>
+						<unit>"category"</unit>
+						<statistic>average</statistic>
+						<description>"Type of substrate"</description>
+						<author>"Marc Weeber"</author>
+						<date>2012-12-18</date>
+						<references>
+							<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="deposited stones " HSI="1.0"/>
+							<parameter cat="large rocks" HSI="1.0"/>
+							<parameter cat="gravel " HSI="1.0"/>
+							<parameter cat="sand" HSI="0.0"/>
+							<parameter cat="clay" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>			
+					<ResponseCurve name="Presence_of_macrofytes">
+						<type>scalar</type>
+						<layername>"Presence_of_macrofytes"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Percentage of coverage by macrofytes"</description>
+						<author>"Marc Weeber"</author>
+						<date>2012-12-18</date>
+						<references>
+							<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="5" HSI="1.0"/>
+							<parameter value="25" HSI="0.5"/>
+							<parameter value="30" HSI="0.0"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="silt_content">
+						<type>scalar</type>
+						<layername>"silt_content"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Silt content in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2012-12-18</date>
+						<references>
+							<reference author="Semmekrot, S." year="1993" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="1.0"/>
+							<parameter value="5" HSI="0.7"/>
+							<parameter value="25" HSI="0.0"/>
+							<parameter value="100" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="oxygen_saturation">
+						<type>scalar</type>
+						<layername>"oxygen_saturation"</layername>
+						<unit>"%"</unit>
+						<statistic>minimum</statistic>
+						<description>"Minimum oxygen_saturation in percent"</description>
+						<author>"Marc Weeber"</author>
+						<date>2012-12-18</date>
+						<references>
+							<reference author="Semmekrot, S." year="1993" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="80" HSI="0.0"/>
+							<parameter value="85" HSI="1.0"/>
+							<parameter value="120" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="temperature">
+						<type>scalar</type>
+						<layername>"temperature"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum watertemperature in degrees Celsius"</description>
+						<author>"Marc Weeber"</author>
+						<date>2012-12-18</date>
+						<references>
+							<reference author="Semmekrot, S." year="1993" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="7" HSI="0"/>
+							<parameter value="12" HSI="1"/>
+							<parameter value="17" HSI="1"/>
+							<parameter value="20" HSI="0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Rivierdonderpad-Cottusperifretum-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De rivierdonderpad komt in bijna heel Europa voor. Het verspreidingsgebied aan de zuidzijde wordt begrenst door noord Spanje, noord Italie en noord Griekenland. In het noorden wordt het verspreidingsgebied van de rivierdonderpad begrenst door noord Engeland en Wales, Nederland, noord Duitsland, Zweden en zuid Finland. De rivierdonderpad komt niet voor in Ierland, Schotland, Denemarken, Noorwegen, Lapland en noord Finland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-1">#1</a>. Onlangs (2005) is vastgesteld dat er in Nederland 2 in plaats van 1 soort rivierdonderpadden voorkomen (de Cottus perifretum en de Cottus rhehanus). Dit zou een verklaring zijn voor het voorkomen van de rivierdonderpad in andere dan de verwachte habitat. De rivierdonderpad Cottus gobio, die in eerste instantie gedacht werd voor te komen in Nederland, komt niet in Nederland voor <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-2">#2</a>.<br>
+Hoewel de rivierdonderpad wordt beschreven als een typische vis uit de forelzone, komt hij in Nederland ook wel voor in natuurlijke laaglandbeken, rivieren en sommige vrijwel stilstaande meren. De rivierdonderpad voelt zich thuis in onvervuilde, met zuurstof verzadigde, langzaam tot snel stromende wateren met een bodem waar voldoende schuilgelegenheden zijn. Verder moeten er niet te veel obstakels zijn, zoals waterplanten, die de rivierdonderpad in zijn voedselzoektochten belemmeren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-1">#1</a>.</p>
+
+
+<h3 id="Rivierdonderpad-Cottusperifretum-Milieucondities">Milieucondities</h3>
+
+<p>Vaak is voor vissen, samen met diepte en substraat, de stroomsnelheid van het water van belang. Voor de rivierdonderpad is dit, mits er genoeg beschutting aanwezig is in de vorm van stortsteen of grote stenen, niet het geval. Onder deze voorwaarde kan de rivierdonderpad voorkomen bij stroomsnelheden zelfs groter dan 1.2 m/s <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-3">#3</a>. Vooral substraat is zeer belangrijk voor de rivierdonderpad omdat deze de leefomgeving bepalen (zie verder "voedselhabitat en strategie") <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-4">#4</a>. Wanneer er scenario's doorgerekend worden waarbij meer extreme waarden voorkomen, kunnen de extra response functies, die ook in deze factsheet zijn opgenomen, aan het model worden toegevoegd.</p>
+
+<h3 id="Rivierdonderpad-Cottusperifretum-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Stenen of andere obstakels spelen in het leven van een rivierdonderpad een belangrijke rol. De rivierdonderpad verschuilt zich overdag onder deze obstakels en 's nachts, of bij bewolkt weer, jaagt hij vrijwel steeds vanuit zo'n holletje <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-1">#1</a>.</p>
+
+<h3 id="Rivierdonderpad-Cottusperifretum-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>Rivierdonderpadden zijn honkvaste vissoorten. Het leggen van de eitjes gebeurt in het leefgebied van de adulten.In de paaitijd maakt het mannetje een holletje onder een obstakel dat als nest wordt gebruikt. De eitjes worden aan de onderkant van de afdekkende steen van het broedhol afgezet. Nadat het vrouwtje haar 100 tot 500 rood-gele, 2,5 mm grote eitjes heeft gelegd, verlaat ze het nest. Het mannetje bewaakt de eitjes totdat ze zijn uitgekomen en hij verzorgt ze ook, door met zijn borstvinnen zorg te dragen voor een continue waterstroom over de eitjes, zodat de eitjes voldoende vers en zuurstofrijk water krijgen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-1">#1</a>.</p>
+
+<h3 id="Rivierdonderpad-Cottusperifretum-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>De rivierdonderpad is na 2 jaar paairijp en bereikt een leeftijd van 3-5 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierdonderpad+-+Cottus+perifretum#Rivierdonderpad-Cottusperifretum-1">#1</a>.</p>
+]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Klein Breteler J.G.P. en Kranenbarg, J." year="2000" title="Gidssoortenmatrix Ecologische Netwerkstudies: annex vis." journal="" identification="Organisatie ter Verbetering van de Binnenvisserij. 2000"/>
+		<reference author="" year="" title="http://www.ravon.nl/Soorten/Vissen/Rivierdonderpad/tabid/194/language/en-US/Default.aspx" journal="" identification=""/>
+		<reference author="Kranenbarg et al." year="2010" title="in press" journal="" identification=""/>
+		<reference author="Kranenbarg, J." year="" title="memo" journal="" identification=""/>
+		<reference author="Semmekrot, S." year="1993" title="Habitat Geschiktheid Index Model De Rivierdonderpad Cottus gobio L." journal="" identification="Organisatie ter Verbetering van de Binnenvisserij. maart 1993"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

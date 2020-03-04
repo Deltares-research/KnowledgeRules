@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46582323</EoLpagenr>
+			<LatName>Lampetra fluviatilis</LatName>
+			<CommonNames>
+				<Name name="Rivierprik" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1995-01-01</StartDate>
+						<EndDate>2000-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Rivierprik-Lampetrafluviatilis-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Rivierprik - Lampetra fluviatilis - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)">&nbsp;Deze rekenregels zijn niet gevalideerd.</p>
+
+<h1 id="Rivierprik-Lampetrafluviatilis-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze relaties zijn geschikt voor het berekenen van de habitat geschiktheid van de Rivierprik in de kustwateren en aangrenzende rivieren. De relaties zijn niet gevalideerd. Aanvullende informatie is noodzakelijk, met name als de relaties ook voor gebieden buiten Nederland gebruikt gaan worden.</p>
+
+<h1 id="Rivierprik-Lampetrafluviatilis-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Voor deze response functies is geen voorbeeldprojekt aanwezig.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="HGI">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Watertemperature</To>
+							<To>Shelter_detritus</To>
+							<To>Oxygen_concentration</To>
+							<To>Sediment_type</To>
+							<To>Waterdepth</To>
+							<To>Substrate_spawning</To>
+							<To>Barriers_upwards</To>
+							<To>Barriers_downwards</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Watertemperature">
+						<type>scalar</type>
+						<layername>"Watertemperature"</layername>
+						<unit>"degrees Celsius"</unit>
+						<statistic>average</statistic>
+						<description>"Average maximum water temperature in degrees Celsius."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="OVB rapport " year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="14" HSI="0.0"/>
+							<parameter value="15" HSI="0.2"/>
+							<parameter value="18" HSI="1.0"/>
+							<parameter value="21" HSI="1.0"/>
+							<parameter value="24" HSI="0.3"/>
+							<parameter value="27" HSI="0.1"/>
+							<parameter value="30" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Shelter_detritus">
+						<type>categorical</type>
+						<layername>"Shelter_detritus"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Availability of sheltered places with detritus"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="OVB rapport " year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="None" HSI="0.0"/>
+							<parameter cat="Few" HSI="0.15"/>
+							<parameter cat="Moderate" HSI="0.4"/>
+							<parameter cat="Reasonable" HSI="0.7"/>
+							<parameter cat="Many" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_concentration">
+						<type>categorical</type>
+						<layername>"Oxygen_concentration"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average minimum oxygen concentration in milligrams per liter."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="OVB rapport " year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="0" HSI="0.0"/>
+							<parameter cat="4" HSI="0.0"/>
+							<parameter cat="10" HSI="1.0"/>
+							<parameter cat=">10" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Sediment_type">
+						<type>categorical</type>
+						<layername>"Sediment_type"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Type of sediment expressed in categories"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="OVB rapport " year="1995" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="Silt" HSI="0.0"/>
+							<parameter cat="Silt/sand" HSI="0.1"/>
+							<parameter cat="Fine/coarse sand" HSI="1.0"/>							
+							<parameter cat="Coarse sand/pebbles" HSI="0.3"/>							
+							<parameter cat="Pebbles" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Waterdepth">
+						<type>categorical</type>
+						<layername>"Waterdepth"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in meters."</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="WL | Delft report. T2033." year="1996" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="0.01 - 0.3" HSI="1.0"/>
+							<parameter cat="> 0.3" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Substrate_spawning">
+						<type>categorical</type>
+						<layername>"Substrate_spawning"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Availability of pebbles in the spawning area"</description>
+						<author>"Marjolein Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Klein Breteler J.G.P. and Kranenbarg, J." year="2000" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="None" HSI="0.0"/>
+							<parameter cat="Few" HSI="0.1"/>
+							<parameter cat="Moderate" HSI="0.35"/>
+							<parameter cat="Reasonable" HSI="0.65"/>
+							<parameter cat="Many" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Barriers_upwards">
+						<type>categorical</type>
+						<layername>"Barriers_upwards"</layername>
+						<unit>"category"</unit>
+						<statistic>minimum</statistic>
+						<description>"Presence of barriers during stream upward migration"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="sluice" HSI="0.5"/>
+							<parameter cat="shipping lock + weir + fish ladder" HSI="0.7"/>
+							<parameter cat="
+shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+					<ResponseCurve name="Barriers_downwards">
+						<type>categorical</type>
+						<layername>"Barriers_downwards"</layername>
+						<unit>"category"</unit>
+						<statistic>minimum</statistic>
+						<description>"Presence of barriers during stream downward migration"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="sluice" HSI="1.0"/>
+							<parameter cat="shipping lock + weir + fish ladder" HSI="1.0"/>
+							<parameter cat="
+shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
+						</valuesCategorical>
+					</ResponseCurve>	
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Rivierprik-Lampetrafluviatilis-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>Verspreiding in de kustwateren en aangrenzende rivieren van West-Europa, de Oostzee en Zuid-Noorwegen to het westelijke bekken van de Middellandse Zee. Adulten verblijven in riviermondingen en kustwateren. In Nederland ligt het centrum van het verspreidingsgebied, met name in de Zuid-Hollandse en Zeeuwse wateren. Door de aanleg van stuwen en dammen is de populatie sterk achteruit gegaan. De Rivierprik wordt tegenwoordig nog het meest aangetroffen in de grote rivieren. De exacte verspreiding is echter niet bekend; anders dan de Zeeprik wordt deze vis bijvoorbeeld haast niet in netten en fuiken gevangen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierprik+-+Lampetra+fluviatilis#Rivierprik-Lampetrafluviatilis-2">#2</a>.</p>
+
+<h3 id="Rivierprik-Lampetrafluviatilis-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De adult zijn parasitair op andere vissen, larven voeden zich met micro-organismen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierprik+-+Lampetra+fluviatilis#Rivierprik-Lampetrafluviatilis-2">#2</a>.</p>
+
+<h3 id="Rivierprik-Lampetrafluviatilis-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>Anadrome trekvis. Paaitrek naar zoet water begint in de herfst (sept-okt) en duurt tot in het voorjaar. De paaigronden zijn in het algemeen onbeschaduwd en de bodem bestaat uit zand of grind, met een voorkeur voor diepere plaatsen in snelstromend water. Larven blijven enkele weken op de paaigronden voor ze met de stroom mee naar gebieden met zachtere bodem worden vervoerd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierprik+-+Lampetra+fluviatilis#Rivierprik-Lampetrafluviatilis-1">#1</a>. Over de voortplantingsplaatsen is weinig bekend: de larven leiden een onopvallend bestaan in de rivierbodem en zijn bovendien moeilijk herkenbaar. We moeten het doen met incidentele waarnemingen. Langs de Limburgse Maas is de soort gevonden in de zijriviertjes Roer en Geul, zodat daar waarschijnlijk paaiplaatsen liggen. In de Drentsche Aa zijn de laatste jaren enkele paairijpe exemplaren aangetroffen, wat aannemelijk maakt dat ook deze beek als paaigebied wordt gebruikt. Het lijkt erop dat de soort zich in ons land in dit verband wat anders gedraagt dan elders; in andere delen van Europa liggen de paaigronden vooral in midden- en bovenlopen van de grotere rivieren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierprik+-+Lampetra+fluviatilis#Rivierprik-Lampetrafluviatilis-1">#1</a>.</p>
+
+<h3 id="Rivierprik-Lampetrafluviatilis-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>Vanaf een leeftijd van 7 a 8 jaar wordt er gepaaid <a href="https://publicwiki.deltares.nl/display/HBTHOME/Rivierprik+-+Lampetra+fluviatilis#Rivierprik-Lampetrafluviatilis-4">#4</a>.</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title="http://www.minlnv.nl/natura2000" journal="" identification=""/>
+		<reference author="Klein Breteler J.G.P. and Kranenbarg, J." year="2000" title="Gidssoortenmatrix Ecologische Netwerkstudies: annex vis." journal="" identification="Organisatie ter Verbetering van de Binnenvisserij, Nieuwegein. OVB Onderzoeksrapport 87: 56 pp + 6 bijlagen. 2000"/>
+		<reference author="" year="1995" title="OVB rapport" journal="" identification=""/>
+		<reference author="" year="1996" title="WL | Delft report. T2033." journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

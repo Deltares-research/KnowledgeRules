@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>1037789</EoLpagenr>
+			<LatName>Microtus oeconomus</LatName>
+			<CommonNames>
+				<Name name = "Noordse woelmuis" language = "NL"/>
+				<Name name = "Tundra vole" language = "ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+		</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1994-01-01</StartDate>
+						<EndDate>2009-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+					<text><![CDATA[<h1 id="Noordsewoelmuis-Microtusoeconomus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p>De rekenregels zijn gevalideerd op de Makkumer Waarden, waarbij een goede habitatgeschiktheid werd gesteld op een waarde van 0.7 en hoger. De meetdata, uit 2006 en 2008, zijn afkomstig van <a href="http://www.zoogdiervereniging.nl/" class="external-link" rel="nofollow">De Zoogdiervereniging</a>.</p>
+
+<div class="table-wrap"><table class="confluenceTable" resolved=""><thead><tr>
+<th class="confluenceTh"><p>Aanwezigheid goed voorspeld </p></th>
+<td class="confluenceTd"><p> 0.75 </p></td>
+</tr></thead><tbody>
+
+<tr>
+<th class="confluenceTh"><p>Aanwezigheid fout voorspeld </p></th>
+<td class="confluenceTd"><p> 0.25 </p></td>
+</tr>
+<tr>
+<th class="confluenceTh"><p>Aafwezigheid goed voorspeld </p></th>
+<td class="confluenceTd"><p> 1.0</p></td>
+</tr>
+<tr>
+<th class="confluenceTh"><p>Afwezigheid fout voorspeld </p></th>
+<td class="confluenceTd"><p> 0.0 </p></td>
+</tr>
+</tbody></table></div>
+
+
+
+
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default" role="grid" resolved=""><thead><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="  : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> <span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-thumbnail" src="./Noordse woelmuis - Microtus oeconomus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/meetdata.JPG" data-image-src="/download/attachments/25722987/meetdata.JPG?version=1&amp;modificationDate=1267099525000&amp;api=v2" data-unresolved-comment-count="0" data-linked-resource-id="25952305" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="meetdata.JPG" data-base-url="https://publicwiki.deltares.nl" data-linked-resource-content-type="image/x-citrix-pjpeg" data-linked-resource-container-id="25722987" data-linked-resource-container-version="76"></span> </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="  : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> <span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-thumbnail" src="./Noordse woelmuis - Microtus oeconomus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/modeldata.JPG" data-image-src="/download/attachments/25722987/modeldata.JPG?version=1&amp;modificationDate=1267099525000&amp;api=v2" data-unresolved-comment-count="0" data-linked-resource-id="25952306" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="modeldata.JPG" data-base-url="https://publicwiki.deltares.nl" data-linked-resource-content-type="image/x-citrix-pjpeg" data-linked-resource-container-id="25722987" data-linked-resource-container-version="76"></span> </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<th class="confluenceTh"><p>meetdata</p></th>
+<th class="confluenceTh"><p>modeldata</p></th>
+</tr>
+</tbody></table></div>
+</div>
+<div class="sectionMacro conf-macro output-block" data-hasbody="false" data-macro-name="section"><div class="sectionMacroRow"> </div></div>
+
+
+<h1 id="Noordsewoelmuis-Microtusoeconomus-Opmerkingenenaanbevelingen">Opmerkingen en aanbevelingen</h1>
+
+<p>Zoals opgemerkt is er niet met volstrekte zekerheid aan te geven in welke mate en vorm de noordse woelmuis concurrentie ondervindt van de aardmuis (en veldmuis). Echter, omdat het van wezenlijk belang is wordt in de opzet voor het HABITAT model voor de noordse woelmuis de concurrentie van de aardmuis meegenomen op basis van algemene informatie. Wanneer uit onderzoek blijkt dat er locaal geen sprake is van concurrentie, of in andere mate, tussen deze twee soorten, dan zal de rekenregel voor de aardmuis uit het model verwijdert en /of gewijzigd worden. Met betrekking tot vluchtplaatsen wanneer inundatie plaats heeft: hiervoor is nog geen model beschikbaar.</p>
+
+<h1 id="Noordsewoelmuis-Microtusoeconomus-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Andere standplaatsfactoren zoals begrazingsdruk, maaibeheer en voedselrijkdom zijn ook van belang voor de mate van voorkomen van de Noordse Woelmuis. Omdat deze factoren niet veranderen onder invloed van de verschillende varianten in studie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-3">#3</a> zijn ze niet van invloed op de uitkomst van de habitatanalyse in deze studie. Wel kan in het doorrekenen van toekomstscenario's hier rekening mee worden gehouden.<br>
+De rekenregels kunnen toegepast worden op de grote meren van Nederland.</p>
+
+<h1 id="Noordsewoelmuis-Microtusoeconomus-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. WL report Q4015. 2006</p>]]></text>
+					</Description>
+					<Description language="ENG">
+					<text><![CDATA[<h1 id="Tundravole(Microtusoeconomus)-Uncertaintyandvalidation">Uncertainty and validation</h1>
+<p>The dose-effect relations have been validated on Makkumer values, for which the habitat suitability was set at a value of 0,7 and higher. The 2006 and 2008 measurement data come from the De zoogdierenvereniging (mammals association).</p>
+
+<div class="table-wrap"><table class="confluenceTable" resolved=""><tbody>
+<tr>
+<td class="confluenceTd"><p>occurrence correctly predicted  </p></td>
+<td class="confluenceTd"><p>	0.75 	</p></td>
+</tr>
+<tr>
+<td class="confluenceTd"><p>absence correctly predicted  </p></td>
+<td class="confluenceTd"><p>	0.25 	</p></td>
+</tr>
+<tr>
+<td class="confluenceTd"><p>occurrence wrongly predicted  </p></td>
+<td class="confluenceTd"><p>	1.0	</p></td>
+</tr>
+<tr>
+<td class="confluenceTd"><p>absence wrongly predicted  	</p></td>
+<td class="confluenceTd"><p>0.0 	</p></td>
+</tr>
+</tbody></table></div>
+
+
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default" role="grid" resolved=""><thead><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="  : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> <span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-thumbnail" src="./Tundra vole (Microtus oeconomus) - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/meetdata.JPG" data-image-src="/download/attachments/25722998/meetdata.JPG?version=1&amp;modificationDate=1302615363000&amp;api=v2" data-unresolved-comment-count="0" data-linked-resource-id="25952260" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="meetdata.JPG" data-base-url="https://publicwiki.deltares.nl" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="25722998" data-linked-resource-container-version="18"></span> </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label="  : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> <span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image confluence-thumbnail" src="./Tundra vole (Microtus oeconomus) - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/modeldata.JPG" data-image-src="/download/attachments/25722998/modeldata.JPG?version=1&amp;modificationDate=1302615366000&amp;api=v2" data-unresolved-comment-count="0" data-linked-resource-id="25952257" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="modeldata.JPG" data-base-url="https://publicwiki.deltares.nl" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="25722998" data-linked-resource-container-version="18"></span> </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<th class="confluenceTh"><p>measurements</p></th>
+<th class="confluenceTh"><p>model predictions</p></th>
+</tr>
+</tbody></table></div>
+</div>
+<div class="sectionMacro conf-macro output-block" data-hasbody="false" data-macro-name="section"><div class="sectionMacroRow"> </div></div>
+
+<h1 id="Tundravole(Microtusoeconomus)-Remarksandrecommendations">Remarks and recommendations</h1>
+<p>As remarked earlier, it is not possible to indicate how and to what extent the tundra vole experiences competition from the field vole (and common vole). This is however of crucial importance. Therefore, when designing the HABITAT model, the competition of the field vole with the tundra vole will be taken into account, based on general information. If research shows that there is no competition between the two species, or it is at another level, than the field vole knowledge rules will be removed from the model, or they will be adjusted. With regard to the hiding places in case of inundation, no model is available for this purpose. </p>
+
+<h1 id="Tundravole(Microtusoeconomus)-Applicability">Applicability</h1>
+<p>The occurrence of the tundra vole is also determined by other habitat factors, such as grazing pressure, mowing policy and food availability. As these factors remain the same in the different study variants, they do not influence the outcome of the habitat analysis of this study. They can be taken into account when calculating future scenarios. The knowledge rules can be applied to the Dutch great lakes.</p>
+
+<h1 id="Tundravole(Microtusoeconomus)-Exemplaryproject">Exemplary project</h1>
+<p>Habitat analysis in the framework of the Plan study/EIS for Krammer, Volkerak and Zoommeer. WL report Q4015. 2006</p>
+]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="HGI">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Inundation</To>
+							<To>inundation_presence_Field_vole</To>
+							<To>Vegetation_type</To>
+							<To>Area_size</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Inundation">
+						<type>categorical</type>
+						<layername>"Inundation"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Inundation period. The northern vole can, thanks to its good swimming capacity, withstand winter inundation. However, when a hole runs under water, there is a chance that the vole will drown, but survival is also possible. Inundation outside the winter season leads to the death of young because they cannot swim properly yet (Witte, R.H., 2010)."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2010-04-20</date>
+						<references>
+							<reference author="" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="winter inundation" HSI="0.7"/>
+							<parameter cat="summer inundation" HSI="0.0"/>
+							<parameter cat="no inundation" HSI="1.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="inundation_presence_Field_vole">
+						<type>categorical</type>
+						<layername>"inundation_presence_Field_vole"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Presence of the Field vole during inundation"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2010-04-20</date>
+						<references>
+							<reference author="" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="yes" HSI="0.7"/>
+							<parameter cat="no" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Vegetation_type">
+						<type>categorical</type>
+						<layername>"Vegetation_type"</layername>
+						<unit>"categorical"</unit>
+						<statistic>average</statistic>
+						<description>"Stage of vegetation succession. Note: The information on vegetation in the Volkerak-Zoommeer project comes from the aquatic plant module (riverbank vegetation, HSI> 0.5) and the ecotope map (spreading of reed beds). Within the IJsselmeer validation use was made of an ecotope map, previously used in the project: Seasonal Levels IJsselmeer ( Haasnoot, M., Kranenbarg, J. en van Buren, R., 2005)."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2010-04-20</date>
+						<references>
+							<reference author="La Haye, M., J.M. Drees and R.C. van Apeldoorn" year="2004" title="" journal="" identification=""/>
+							<reference author="Hollander, H. and J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesCategorical>
+							<parameter cat="humid reed land" HSI="1.0"/>
+							<parameter cat="drier reed roughness" HSI="0.8"/>
+							<parameter cat="wet grassland, reed land, rough" HSI="0.7"/>
+							<parameter cat="flowery grassland, open vegetation" HSI="0.4"/>
+							<parameter cat="other vegetation" HSI="0.0"/>
+						</valuesCategorical>
+					</ResponseCurve>
+					<ResponseCurve name="Area_size">
+						<type>scalar</type>
+						<layername>"Area_size"</layername>
+						<unit>"m2"</unit>
+						<statistic>average</statistic>
+						<description>"Area size. Note: a vital population (50 males and 100 females) requires an area (with suitable vegetation) of 75000 m2. Smaller areas can act as a temporary habitat (Witte, R.H., 2010)."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2010-04-20</date>
+						<references>
+							<reference author="Hollander, H. and J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="500" HSI="0.05"/>
+							<parameter value="2000" HSI="0.1"/>
+							<parameter value="75000" HSI="1.0"/>
+							<parameter value="100000" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL"><text><![CDATA[<h3 id="Noordsewoelmuis-Microtusoeconomus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>Het verspreidingsgebied van de noordse woelmuis strekt zich uit van Noord-Scandinavië via Siberië en Alaska tot in Canada. De ondersoort arenicola komt alleen verspreid voor op Texel en in laag Nederland en is daarmee de enige endemische vertebraat van Nederland. Op basis van zijn verspreiding worden binnen Nederland vijf regio's onderscheiden die verschillen in landschappelijke kenmerken, waterhuishouding en bodem <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-1">#1</a>.</p>
+
+<p>1.	Friesland<br>
+2.	Texel<br>
+3.	Noord-Holland Midden<br>
+4.	Veenweidegebied Holland-Utrecht<br>
+5.	Deltagebied</p>
+
+<p>Per regio zijn de condities die bepalen of het habitat geschikt is voor de noordse woelmuis verschillend. Het habitat wordt echter veelal gekenmerkt door een dynamisch milieu met wisselende waterstanden en hoge bedekkingsgraad aan vegetatie. De soort heeft in aanwezigheid van concurrentie een duidelijke voorkeur voor natte terreinen, zoals rietland, moeras, drassige hooilanden, vochtige duinvalleien, en periodiek overstroomde terreinen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-2">#2</a> en in hoge vegetaties met vooral grasachtige planten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-3">#3</a>. Echter, de gebieden moeten noch te open noch te dichtbegroeid zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-4">#4</a>. Doordat de noordse woelmuis geen watervrees heeft, kan hij goed eilandjes bereiken (zwemafstand van 1500 m bekend), waar hij dan vaak als enige woelmuissoort voorkomt.<br>
+De noordse woelmuis ondervindt concurrentie van andere woelmuissoorten, met name de aardmuis en de veldmuis <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-1">#1</a>, <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-5">#5</a>. De heersende omgevingscondities bepalen welke woelmuissoort voorkomt. Bekend is dat in geval van aanwezigheid van de aardmuis de kans op het aantreffen  van noordse woelmuis met 44-61% verlaagd word. Voor veldmuizen is het negatieve effect alleen aangetoond in habitats die geschikt zijn voor de veldmuis en niet optimaal voor de noordse woelmuis <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-6">#6</a>. De mate waarin is nog niet bekend maar er kan niet uitgesloten worden dat ook de rosse woelmuis als concurrent beschouwd mag worden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-2">#2</a>. Wel dient opgemerkt te worden dat de aardmuis bij regelmatige inundatie (overstroming) beduidend vaker afwezig is dan in situaties met een stabiele waterhuishouding <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-7">#7</a>.</p>
+
+<p>Naast dat de noordse woelmuis over water een goede mobiliteit heeft, is zijn mobiliteit over land ook goed te noemen (tot circa 3200 m)en hoger dan de aardmuis. Dit verschil heeft betekenis voor de morfologie van een plaats: wanneer er in de omgeving vluchtplaatsen aanwezig zijn dan is dit voordelig voor de aardmuis, welke zich bij een hoger waterpeil snel in veiligheid kan brengen en bij een dalend waterpeil de omgeving weer snel kan koloniseren. De omgekeerde situatie is ook waar: wanneer er nauwelijks vluchtplaatsen zijn, dan zal de noordse woelmuis meer voordeel hebben, met name als de vluchtplaatsen alleen aan de buitenrand van het leefgebied zijn gesitueerd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-4">#4</a>.<br>
+Opgemerkt dient te worden dat de concurrentie tussen de aardmuis en noordse woelmuis slechts een sterk vermoeden is en dat er nog geen data beschikbaar is die dit vermoeden echt kunnen bevestigen of ontkennen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-5">#5</a>.</p>
+
+<h3 id="Noordsewoelmuis-Microtusoeconomus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>De noordse woelmuis is een vrijwel strikte herbivoor met een weinig selectieve voedselkeuze. Zijn voedsel bestaat uit rietspruiten, zeggen, biezen en (schijn)grassen. In de winter kan dit worden aangevuld met schors, zaden en wortels, in de zomer met kruiden. In ondiepe kamers worden 's winters voedselvoorraden bewaard <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-5">#5</a>.</p>
+
+<h3 id="Noordsewoelmuis-Microtusoeconomus-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De noordse woelmuis is territoriaal, waarbij het territorium voor mannetjes zo'n 20 vierkante meter beslaat. De actieradius wordt op maximaal 800 meter per dag geschat <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-5">#5</a>. In Nederland, Duitsland en Oosterijk duurt het voortplantingsseizoen van april tot oktober. In noordelijker streken duurt het voortplantingsseizoen van mei tot september <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-8">#8</a>. </p>
+
+<h3 id="Noordsewoelmuis-Microtusoeconomus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+
+<p>Levensduur			onbekend, berekend op max 1.4 jaar in vrije natuur en 1.8 jaar in gevangenschap.<br>
+Vrouw geslachtsrijp		30 dagen<br>
+Man geslachtsrijp		48 dagen (42-56)<br>
+Drachttijd			20-22 dagen<br>
+Voortplantingsperiode		april - september<br>
+Zoogperiode			19 dagen<br>
+Aantal jongen per worp		7 (3-8)<br>
+Worpen per jaar			3.5 gem; 5 max<br>
+Interval tussen worpen		29 dagen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Noordse+woelmuis+-+Microtus+oeconomus#Noordsewoelmuis-Microtusoeconomus-1">#1</a></p>
+]]></text>
+		</Description>
+		<Description language="ENG"><text><![CDATA[<h3 id="Tundravole(Microtusoeconomus)-Occurrence">Occurrence</h3>
+<p>The tundra vole is found from North Scandinavia through Siberia and Alaska to Canada. The subspecies arenicola can only be found on Texel and the low-lying parts of the Netherlands. This makes it the only Dutch endemic vertebrate. Based on its occurrence, five regions in The Netherlands have been identified which vary in natural characteristics, water management and soil<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-1">#1</a>.</p>
+
+<p>1. Friesland<br>
+2. Texel<br>
+3. North-Holland centre<br>
+4. Peat meadow areas Holland-Utrecht<br>
+5. Delta region</p>
+
+<p>The conditions that determine if a habitat is suitable for the tundra vole differ per region. Specific habitat characteristics are a dynamic environment with varying water levels and meadows with abundant cover. When faced with competition, this species clearly prefers wet areas, such as reed-land, marshes, swamp meadows, moist dunes and periodically flooded areas or high vegetation areas with mostly grass-like plants <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-3">#3</a>. The area, however, must not be too covered or too open<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-4">#4</a>. The tundra vole is a good swimmer and is able to reach small islands, where it has no competition of other voles. </p>
+
+<p>The tundra vole has to compete with other vole species, especially with the field vole and the common vole <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-1">#1</a>, <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-5">#5</a>.  The prevailing conditions determine which vole occurs. If the field vole is found, the chance of finding a tundra vole is reduced by 44-61%. For field voles, a negative effect was only monitored in a habitat with optimal conditions for field voles and not for tundra voles <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-6">#6</a>. The bank vole can also be considered as a competitor, but to what extent is uncertain <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-2">#2</a>. The field vole clearly prefers a habitat with a stable water level to habitats that regularly flood<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-7">#7</a>.</p>
+
+<p>The tundra vole can move easily in water but also on land (up to approx. 3200m), its mobility is higher than that of the field vole. There is also a relation with the morphology of the habitat. If there are enough places to hide, this is an advantage for the field vole as it can quickly seek refuge during flooding and when the water drops it can colonize the habitat again. However, if there are just few hiding places, the tundra vole has the advantage, especially if the hiding places are located near the habitats outer sections <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-4">#4</a>. There is however only a strong suspicion of the competition between the field vole and tundra vole, no data is available to confirm or deny it<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-5">#5</a>.</p>
+
+<h3 id="Tundravole(Microtusoeconomus)-Foodhabitatandstrategy">Food habitat and strategy</h3>
+<p>The tundra vole is a strict herbivore and is not selective when choosing food. It feeds (among others) on young reed vegetation and Juncaceae species. In winter, they also feed on bark, seeds and roots and in summer on herbs. In winter, they stockpile food in shallow chambers <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-5">#5</a>.</p>
+
+<h3 id="Tundravole(Microtusoeconomus)-Breeding(reproduction)andmigration">Breeding (reproduction) and migration</h3>
+<p>The tundra vole is territorial. The territory of a male can cover approx. 20 metres square<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-5">#5</a>. Its radius of action is estimated at a maximum of 800 metres per day. In The Netherlands, Germany and Austria, the breeding season lasts from April to October. In more northern parts it lasts from May to September <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-8">#8</a>. </p>
+
+<h3 id="Tundravole(Microtusoeconomus)-Ageandmortality">Age and mortality </h3>
+<p>Life expectancy unknown, calculated at max 1.4 year in free nature and 1.8 year in captivity.<br>
+Female sexually mature 30 days<br>
+Male sexually mature 48 days (42-56)<br>
+Gestation 20-22 days<br>
+Breeding season April - September<br>
+Nursing period 19 days<br>
+no of young per litter  7 (3-8)<br>
+no of litter per year  3.5 approx. 5 max<br>
+Interval between litter 29 days  <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722998#Tundravole(Microtusoeconomus)-1">#1</a></p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Witte van den Bosch, R.H., D.L. Bekker and J.J.A. Dekker" year="2009" title="Landschapsdynamiek voor de noordse woelmuis." journal="" identification="Landschap 2009-3: 146-152."/>
+		<reference author="Haasnoot, M. and Van de Wolfshaar, K.E." year="2006" title= "Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer." journal="" identification="WL report Q4015. 2006"/>
+		<reference author="" year="" title= "http://www.minlnv.nl/natura2000" journal="" identification=""/>
+		<reference author="La Haye, M., J.M. Drees and R.C. van Apeldoorn" year="2004" title= "Beheerplan Noordse Woelmuis" journal="" identification="Ministerie van LNV, 2004"/>
+		<reference author="Witte, R.H." year="2010" title= "Ecoprofiel noordse woelmuis Microtus oeconomus arenicola. Soortinformatie ten behoeve van modellering, mitigatie, compensatie en ecologische herstelmaatregelen" journal="" identification="Zoogdiervereniging, Nijmegen."/>
+		<reference author="Nieuwenhuizen, W., M.J.J. La Haye and F. Mertens" year="2000" title= "De noordse woelmuis in Fryslân. Naar een duurzame instandhouding." journal="" identification="Alterra-rapport 149, iSSN 1566-7197."/>
+		<reference author="Bergers, P.J.M., R. van Apeldoorn and H. bussink" year="1994" title= "Spatial dynamics of fragmented root vole (Microtus oeconomus) populations: preliminary results." journal="" identification="Pol. Ecol. Stud. 101-105."/>
+		<reference author="" year="" title= "http://nl.wikipedia.org/wiki/Noordse_woelmuis" journal="" identification=""/>
+		<reference author="Hollander, H. and J.O. Reinhold." year="1999" title= "HSI-Modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van de huidige ecologische kennis." journal="" identification="Rijkswaterstaat Dienst Weg en Waterbouwkunde. DWW Rapport W-DWW-99-011."/>
+		<reference author="Haasnoot, M., Kranenbarg, J. and van Buren, R." year="2005" title= "Seizoensgebonden peilen in het IJsselmeergebied." journal="" identification="WL report Q3889. 2005."/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

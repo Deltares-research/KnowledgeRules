@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46467202</EoLpagenr>
+			<LatName>Crassostrea gigas</LatName>
+			<CommonNames>
+				<Name name = "Japanse Oester" language = "NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+		</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2003-01-01</StartDate>
+						<EndDate>2007-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+					<text><![CDATA[<h1 id="Japanseoester-Crassostreagigas-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p>Deze dosis-effect relaties zijn verkregen op basis van data uit de Oosterschelde.</p>
+
+<h1 id="Japanseoester-Crassostreagigas-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze dosis-effect relaties zijn toepasbaar op zoute wateren in Nederland.</p>
+
+<h1 id="Japanseoester-Crassostreagigas-Voorbeeldproject">Voorbeeld project</h1>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="HGI">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>							
+							<To>Salinity</To>
+							<To>Flood_duration</To>
+							<To>Height</To>
+							<To>Oxygen_concentration</To>
+							<To>Waterdepth</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Salinity">
+						<type>scalar</type>
+						<layername>"Salinity"</layername>
+						<unit>"g Cl/l"</unit>
+						<statistic>average</statistic>
+						<description>"Salinity in milligrams chloride per liter"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Dankers, N.M.J.A., Dijkman, E.M., de Jong, M.L., de Kort, G. and A. Meijboom." year="2004" title="" journal="" identification=""/>
+							<reference author="Tydeman, P. and H. Kleef." year="2003" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5.5" HSI="0.0"/>
+							<parameter value="11" HSI="0.5"/>
+							<parameter value="15" HSI="1.0"/>
+							<parameter value="20" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Flood_duration">
+						<type>scalar</type>
+						<layername>"Flood_duration"</layername>
+						<unit>"%"</unit>
+						<statistic>average</statistic>
+						<description>"Flood duration in percent"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Dankers, N.M.J.A., Dijkman, E.M., de Jong, M.L., de Kort, G. and A. Meijboom." year="2004" title="" journal="" identification=""/>
+							<reference author="Tydeman, P. and H. Kleef." year="2003" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="30" HSI="0.0"/>
+							<parameter value="75" HSI="0.5"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Height">
+						<type>scalar</type>
+						<layername>"Height"</layername>
+						<unit>"m +NAP"</unit>
+						<statistic>average</statistic>
+						<description>"Surface height in m +NAP "</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Tydeman, P. and H. Kleef." year="2003" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="-5" HSI="1.0"/>
+							<parameter value="-3" HSI="0.8"/>
+							<parameter value="0" HSI="0.1"/>
+							<parameter value="2" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_concentration">
+						<type>scalar</type>
+						<layername>"Oxygen_concentration"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average oxygen concentration in milligrams per liter"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="Lengkeek, W., Bouma, S. and H.W. Waardenburg." year="2007" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="0.0"/>
+							<parameter value="7" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Waterdepth">
+						<type>range / categorical</type>
+						<layername>"Waterdepth"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in the winter in meters"</description>
+						<author>"Marjolijn Haasnoot"</author>
+						<date>2009-01-01</date>
+						<references>
+							<reference author="" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="2" cat="0 - 2" HSI="0.8"/>
+							<parameter rangemin="2" rangemax="5" cat="2 - 5" HSI="1.0"/>
+							<parameter rangemin="5" rangemax="10" cat="5 - 10" HSI="0.6"/>
+							<parameter rangemin="10" rangemax="25" cat="10 - 25" HSI="0.3"/>
+							<parameter rangemin="25" rangemax="50" cat="25 - 50" HSI="0.1"/>
+							<parameter rangemin="50" rangemax="999999" cat="> 50" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL"><text><![CDATA[<h2 id="Japanseoester-Crassostreagigas-Algemeenvoorkomen">Algemeen voorkomen</h2>
+
+<p>De Japanse oester is een soort die niet inheems is voor de Nederlandse wateren, maar inmiddels in grote aantallen wordt gevonden in de Zeeuwse estuaria, in het Eems-Dollard estuarium en in de Waddenzee. De oester is in Nederland en Frankrijk geintroduceerd vanuit Portugal maar komt zeer waarschijnlijk origineel uit Japan. Dit verklaart dat de oester bekend staat als Portugese oester en als Japanse oester. Ook aan de westkust van de VS en Canada komt de soort als exoot voor. </p>
+
+<h3 id="Japanseoester-Crassostreagigas-Milieurandvoorwaarden">Milieurandvoorwaarden</h3>
+
+<p>De oester wordt vooral subtidaal aangetroffen maar komt ook in het intergetijde gebied voor tot iets boven NAP. Subtidaal is de diepte van voorkomen over het algemeen beperkt tot een meter of 10, maar er zijn ook gevallen bekend van oesters die weten te overleven op 40 meter. Het wordt echter aangenomen dat op grotere diepte minder licht doordringt en licht is een vereiste voor de productie van phytoplankton (algen), het voedsel van de oester. Via het filtreren van het water nemen ze hun voedsel tot zich. Oesters hechten op harde ondergrond en zijn nadat ze zijn gehecht niet meer mobiel. Ze worden meestal aangetroffen met meerdere oesters samen in een bed of bank. </p>
+
+<h3 id="Japanseoester-Crassostreagigas-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3>
+
+<p>De Japanse oester werd in 1963 geintroduceerd voor consumptie als alternatief voor de Zeeuwse oester (<em>Ostrea edulis</em>). Men dacht dat de Nederlandse wateren te koud waren voor voortplanting van de exotische oester. Na een paar jaar begon de oester zich echter toch voort te planten en is inmiddels zeer algemeen voorkomend in de Zeeuwse estuaria, in het Eems-Dollard estuarium en in de Waddenzee. Sommigen zien de oester als een plaag die de inheemse Zeeuwse oester verdringt. Anderen benadrukken het belang van de riffen die de oester vormt als leefplaats voor andere organismen. </p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title= "http://nl.wikipedia.org/wiki/Japanse_oester" journal="" identification=""/>
+		<reference author="Dankers, N.M.J.A., Dijkman, E.M., de Jong, M.L., de Kort, G. and A. Meijboom." year="2004" title="De verspreiding en uitbreiding van de Japanse Oester in de Nederlandse Waddenzee." journal="" identification="Alterra-rapport 909."/>
+		<reference author="Tydeman, P. and H. Kleef." year="2003" title="Japanse oesters rukken op en binden in." journal="" identification="Zoutkrant juli:5"/>
+		<reference author="Lengkeek, W., Bouma, S. and H.W. Waardenburg." year="2007" title="Het effect van zuurstofdeficientie op het bodemleven in het Grevelingenmeer." journal="" identification="Bureau Waardenburg bv. Rapport nr. 07-186"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

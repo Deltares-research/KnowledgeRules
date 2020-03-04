@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>223856</EoLpagenr>
+			<LatName>Gasterosteus aculeatus</LatName>
+			<CommonNames>
+				<Name name="Driedoornige stekelbaars" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Veerse meer" id="2745733"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2002-01-01</StartDate>
+						<EndDate>2012-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="DriedoornigeStekelbaars-Gasterosteusaculeatus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p><img class="emoticon emoticon-warning" src="./Driedoornige Stekelbaars - Gasterosteus aculeatus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)">&nbsp;De dosis-effect relaties zijn niet gevalideerd.</p>
+
+<h1 id="DriedoornigeStekelbaars-Gasterosteusaculeatus-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>De reponse functies zijn toepasbaar voor het Veerse Meer <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driedoornige+Stekelbaars+-+Gasterosteus+aculeatus#DriedoornigeStekelbaars-Gasterosteusaculeatus-1">#1</a></p>
+
+<h1 id="DriedoornigeStekelbaars-Gasterosteusaculeatus-Voorbeeldproject">Voorbeeldproject</h1>
+
+<p>Er is geen voorbeeldproject aanwezig.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="HGI">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Waterdepth_winter</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="Waterdepth_winter">
+						<type>scalar</type>
+						<layername>"Waterdepth_winter"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in the winter in meters."</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2013-01-16</date>
+						<references>
+							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="0.01" HSI="0.0"/>
+							<parameter value="0.05" HSI="1.0"/>
+							<parameter value="1" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="DriedoornigeStekelbaars-Gasterosteusaculeatus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+
+<p>De driedoornige stekelbaars (maximale lengte 10 cm) komt voor in de gematigde en subarctische delen van het noordelijk halfrond. Er zijn een drietal varianten te onderscheiden; vissen die hun hele leven in brak of zout water leven, een anadrome variant en vissen die hun hele leven in zoet water doorbrengen. Wanneer de driedoornige stekelbaars voorkomt, is hij vaak zeer veelvuldig aanwezig, zodat het zelfs andere soorten vis verdringt. Toch heeft het door verkeerd beheer van beken en slechte waterkwaliteit in Nederland een moeilijke periode gekend <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driedoornige+Stekelbaars+-+Gasterosteus+aculeatus#DriedoornigeStekelbaars-Gasterosteusaculeatus-1">#1</a>. </p>
+
+<h3 id="DriedoornigeStekelbaars-Gasterosteusaculeatus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+
+<p>Driedoornige stekelbaarzen leven in scholen en voeden zich met wormen, insecten en visbroed. <br>
+De Driedoornige stekelbaars zelf is een belangrijke voedselbron voor een aantal vogelsoorten, waaronder de Fuut, Zaagbek en de Brilduiker. </p>
+
+<h3 id="DriedoornigeStekelbaars-Gasterosteusaculeatus-Reproductieenmigratie">Reproductie en migratie</h3>
+
+<p>De driedoornige stekelbaars is een kortlevende soort die zich vanaf het tweede jaar voortplant. Om aan de paai deel te nemen trekt de anadrome variant van februari tot mei het zoete water op. De terugtrek  vindt plaats in juli <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driedoornige+Stekelbaars+-+Gasterosteus+aculeatus#DriedoornigeStekelbaars-Gasterosteusaculeatus-1">#1</a>. </p>
+
+<p>Het mannetje krijgt in het voortplantingsseizoen (maart-juli) een rode keel en buik en een blauwe iris. In het begin van de paaitijd wordt door het mannetje een nest gebouwd en verdedigt hij zijn territorium. Na een paarritueel deponeert het vrouwtje haar eieren in het nest. Het mannetje bevrucht ze en zorgt voor het broedsel. Buiten de paaitijd zijn driedoornige stekelbaarzen zilverkleurig <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driedoornige+Stekelbaars+-+Gasterosteus+aculeatus#DriedoornigeStekelbaars-Gasterosteusaculeatus-2">#2</a>.</p>
+
+<p>Voor een geslaagde paai is de vis afhankelijk van water met afwisselend begroeiing en open stukken. De stekelbaars komt in vrijwel alle watertypen voor mits begroeiing aanwezig is. In stromende wateren is het belangrijk dat er uitwijkmogelijkheden zijn naar rustiger water <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driedoornige+Stekelbaars+-+Gasterosteus+aculeatus#DriedoornigeStekelbaars-Gasterosteusaculeatus-1">#1</a>.</p>
+
+<p>De anadrome variant is relatief hoger dan de in het zoet water levende vis en kan zich tegen een stroomsnelheid van 30 cm/s verplaatsen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Driedoornige+Stekelbaars+-+Gasterosteus+aculeatus#DriedoornigeStekelbaars-Gasterosteusaculeatus-1">#1</a>.</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en ecologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat Evaluatie Procedure." journal="" identification="WL|Delft Hydraulics. november 2002"/>
+		<reference author="" year="2012" title="www.ravon.nl (Driedoornige Stekelbaars)" journal="" identification="26-11-2012"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

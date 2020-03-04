@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46466840</EoLpagenr>
+			<LatName>Mytilus edulis</LatName>
+			<CommonNames>
+				<Name name = "Mossel" language = "NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+		</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="adult">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Netherlands" id="2750405"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2002-01-01</StartDate>
+						<EndDate>2002-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+					<text><![CDATA[<h1 id="Mossel-Mytilusedulis-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+
+<p>Deze dosis-effect relaties zijn gevalideerd voor de Waddenzee.</p>
+
+<h1 id="Mossel-Mytilusedulis-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Deze dosis-effect relaties zijn toepasbaar op zoute wateren in Nederland.</p>
+
+<h1 id="Mossel-Mytilusedulis-Voorbeeldproject">Voorbeeld project</h1>
+
+<p>Er is geen voorbeeld projekt voor de mossel.</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="HGI">
+						<From name="Habitat_quality">
+							<label>"Habitat_quality"</label>
+							<equation>min</equation>
+							<To>Maximum_flow_velocity</To>
+							<To>Maximum_orbital_velocity</To>
+							<To>Flooding</To>
+							<To>Salinity</To>
+							<To>Oxygen_concentration</To>
+							<To>Waterdepth</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>		
+					<ResponseCurve name="Maximum_flow_velocity">
+						<type>scalar</type>
+						<layername>"Maximum_flow_velocity"</layername>
+						<unit>"m/s"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum flow velocity of the water in meters per second"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="Brinkman, A.G., Dankers, N.M.J.A., van Stralen, M.R." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.0"/>
+							<parameter value="0.2" HSI="0.0"/>
+							<parameter value="0.5" HSI="0.5"/>
+							<parameter value="0.8" HSI="1.0"/>
+							<parameter value="1.0" HSI="0.75"/>
+							<parameter value="1.2" HSI="0.4"/>
+							<parameter value="1.5" HSI="0.2"/>
+							<parameter value="1.8" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Maximum_orbital_velocity">
+						<type>scalar</type>
+						<layername>"Maximum_orbital_velocity"</layername>
+						<unit>"m/s"</unit>
+						<statistic>maximum</statistic>
+						<description>"Maximum orbital velocity of the water in meters per second"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="Brinkman, A.G., Dankers, N.M.J.A., van Stralen, M.R." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0.0" HSI="0.4"/>
+							<parameter value="0.2" HSI="1.0"/>
+							<parameter value="0.3" HSI="0.5"/>
+							<parameter value="0.5" HSI="0.2"/>
+							<parameter value="0.6" HSI="0.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Flooding">
+						<type>scalar</type>
+						<layername>"Flooding"</layername>
+						<unit>"%"</unit>
+						<statistic>maximum</statistic>
+						<description>"Flooding duration in percent"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="Brinkman, A.G., Dankers, N.M.J.A., van Stralen, M.R." year="2002" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="55" HSI="0.0"/>
+							<parameter value="70" HSI="0.5"/>
+							<parameter value="100" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Salinity">
+						<type>scalar</type>
+						<layername>"Salinity"</layername>
+						<unit>"gCl/l"</unit>
+						<statistic>maximum</statistic>
+						<description>"Flooding duration in percent"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="http://www.vliz.be/docs/groterede/GR13_blauwe_mossel.pdf" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="4" HSI="0.0"/>
+							<parameter value="10" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Oxygen_concentration">
+						<type>scalar</type>
+						<layername>"Oxygen_concentration"</layername>
+						<unit>"mg/l"</unit>
+						<statistic>average</statistic>
+						<description>"Average oxygen concentration in milligrams per liter"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="" year="" title="This relationship is based on information from the Zebra mussel and the Japanese oyster and needs to be improved if more information is available." journal="" identification=""/>
+						</references>
+						<valuesScalar>
+							<parameter value="0" HSI="0.0"/>
+							<parameter value="5" HSI="0.0"/>
+							<parameter value="7" HSI="1.0"/>
+							<parameter value="15" HSI="1.0"/>
+						</valuesScalar>
+					</ResponseCurve>
+					<ResponseCurve name="Waterdepth">
+						<type>range / categorical</type>
+						<layername>"Waterdepth"</layername>
+						<unit>"m"</unit>
+						<statistic>average</statistic>
+						<description>"Waterdepth in meters"</description>
+						<author>"Valesca Harezlak"</author>
+						<date>2014-07-29</date>
+						<references>
+							<reference author="" year="" title="" journal="" identification=""/>
+						</references>
+						<valuesRangeCategorical>
+							<parameter rangemin="0" rangemax="2" cat="0 - 2" HSI="0.8"/>
+							<parameter rangemin="2" rangemax="5" cat="2 - 5" HSI="1.0"/>
+							<parameter rangemin="5" rangemax="10" cat="5 - 10" HSI="0.6"/>
+							<parameter rangemin="10" rangemax="20" cat="10 - 20" HSI="0.3"/>
+							<parameter rangemin="20" rangemax="999999" cat="> 20" HSI="0.0"/>
+						</valuesRangeCategorical>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL"><text><![CDATA[<h2 id="Mossel-Mytilusedulis-Algemeenvoorkomen">Algemeen voorkomen</h2>
+
+<p>De mossel (<em>mytilus edulis</em>) kent een groot verspreidingsgebied en wordt gevonden van Noord-Noorwegen tot Noordwest-Afrika. De mossel komt ook voor langs vrijwel de gehele oostkust van Noord-Amerika van de poolzee tot South Carolina, en langs de westkust van Alaska tot Baja California (Mexico).</p>
+
+<h3 id="Mossel-Mytilusedulis-Milieurandvoorwaarden">Milieurandvoorwaarden</h3>
+
+<p>De mossel wordt vooral in het intergetijde gebied en dieper aangetroffen. Mosselen hechten vaak op harde ondergrond, zoals steigers of dijkvoeten, of op elkaar. Ze worden vaak aangetroffen in dichte bedden of banken die meerdere jaarklassen bevatten. Deze bedden verheffen zich, door invanging van sediment, boven het omliggende gebied. Als de bedden te hoog worden, worden ze instabiel. Tijdens de winterstormen verdwijnen grote delen van zowel de jonge als de oude mosselbedden.</p>
+
+<h3 id="Mossel-Mytilusedulis-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3>
+
+<p>De mossel is een geliefd consumptieproduct en wordt daardoor op grote schaal gekweekt. De kweek binnen Nederland vindt voornamelijk plaats in de Oosterschelde.</p>]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="Brinkman, A.G., Dankers, N.M.J.A., van Stralen, M.R." year="2002" title="An analysis of mussel bed habitats in the Dutch Wadden Sea." journal="" identification="Helgoland Marine Research 56: 59-75"/>
+		<reference author="" year="" title= "http://www.vliz.be/docs/groterede/GR13_blauwe_mossel.pdf" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

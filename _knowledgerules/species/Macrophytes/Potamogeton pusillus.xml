@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>1115944</EoLpagenr>
+			<LatName>Potamogeton pusillus</LatName>
+			<CommonNames>
+				<Name name="Tenger fonteinkruid" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Markermeer doorzicht">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language ="NL">
+						<text><![CDATA[<h1 id="Tengerfonteinkruid-Potamogetonpusillus-Dosis-effectrelaties">Dosis-effect relaties</h1>
+<p><br class="atl-forced-newline">
+Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Tenger+fonteinkruid+-+Potamogeton+pusillus#Tengerfonteinkruid-Potamogetonpusillus-3">#3</a>). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect van waterplanten op dit lichtklimaat, leidde in het <a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow">NMIJ project</a> tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Tenger+fonteinkruid+-+Potamogeton+pusillus#Tengerfonteinkruid-Potamogetonpusillus-5">#5</a>). In (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Tenger+fonteinkruid+-+Potamogeton+pusillus#Tengerfonteinkruid-Potamogetonpusillus-6">#6</a>) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van tenger fonteinkruid in de Macromij benadering en in de nieuwe mixed model benadering.</p>
+
+<p>De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.</p>
+
+<p>Doorzicht:<br>
+P_potapus = 1*exp(-(-2.154920185+deelgebeiden-1.427441069*diepte_zom+0.04838721*(diepte_zom^2)+0.20374052*diepte_zom*doorzicht-0.000372492*strijklengte))</p>
+
+<p>Extinctie:<br>
+P_potapus = 1*exp(-(-1.488180498+deelgebied-0.948768926*diepte_zom+0.04251785*(diepte_zom^2)-0.134108637*diepte_zom*extinctie+0.124935344*extinctie-0.000350674*strijklengte))</p>
+
+
+
+<p>HGI P_potapus = 1 / (1+_potapus)</p>
+
+<p>deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br>
+diepte_zom = de gemiddelde waterdiepte in de zomer (m)<br>
+doorzicht = secchi diepte (m)<br>
+extinctie = extinctiecoefficient (1/m)<br>
+strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p>
+
+
+<p>Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's <a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a> en <a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a>.</p>
+
+<h1 id="Tengerfonteinkruid-Potamogetonpusillus-Validatie">Validatie</h1>
+<p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p>
+
+
+<h1 id="Tengerfonteinkruid-Potamogetonpusillus-Toepasbaarheid">Toepasbaarheid</h1>
+
+<p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="TOBEFILLED"/>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_potapus">
+						<layername>"HGI_potapus"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Berekening HGI"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"HGI_potapus"</output>
+						<equation>"1 / (1+P_potapus)"</equation>
+						<Parameters>
+							<valuesScalar dataname="P_potapus" type="scalar" unit="-">
+								<parameter min="0" max="1"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_doorzicht">
+						<layername>"Effect_doorzicht"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van doorzicht op Tenger fonteinkruid"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_potapus"</output>
+						<equation>"1*exp(-(-2.154920185+deelgebeiden-1.427441069*diepte_zom+0.04838721*(diepte_zom^2)+0.20374052*diepte_zom*doorzicht-0.000372492*strijklengte))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="doorzicht" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+					<FormulaBased name="Effect_extinctie">
+						<layername>"Effect_extinctie"</layername>
+						<unit>"-"</unit>
+						<statistic>none</statistic>
+						<description>"Effect van extinctie op Tenger fonteinkruid"</description>
+						<author>"Clara Chrzanowski"</author>
+						<date>2014-10-02</date>
+						<references>
+							<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
+						</references>
+						<output>"P_potapus"</output>
+						<equation>"1*exp(-(-1.488180498+deelgebied-0.948768926*diepte_zom+0.04251785*(diepte_zom^2)-0.134108637*diepte_zom*extinctie+0.124935344*extinctie-0.000350674*strijklengte))"</equation>
+						<Parameters>
+							<valuesConstant dataname="deelgebied" type="constant" unit="-">
+								<parameter constantset="MBIJ" value="-0.81302272"/>
+								<parameter constantset="MGZ" value="1.998701637"/>
+								<parameter constantset="MHE" value="0.724567841"/>
+								<parameter constantset="MHH" value="1.733868205"/>
+								<parameter constantset="MHRDz" value="2.214793065"/>
+								<parameter constantset="MIJ" value="1.45711916"/>
+							</valuesConstant>
+							<valuesScalar dataname="diepte_zom" type="scalar" unit="m">
+								<parameter min="0" max="3.5"/>
+							</valuesScalar>
+							<valuesScalar dataname="extinctie" type="scalar" unit="m-1">
+								<parameter min="0" max="10"/>
+							</valuesScalar>
+							<valuesScalar dataname="strijklengte" type="scalar" unit="m">
+								<parameter min="0" max="50000"/>
+							</valuesScalar>
+						</Parameters>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<ContentDescription>
+		<Description language="NL">
+			<text><![CDATA[<h1 id="Tengerfonteinkruid-Potamogetonpusillus-Habitatbeschrijving">Habitatbeschrijving</h1>
+
+<p>Tenger fonteinkruid komt voor op zonnige plaatsen in ondiep, helder, stilstaand of zwak stromend, voedselrijk, zoet of zwak brak, kalkhoudend water. Je kunt de plant aantreffen in plassen, vijvers, kanalen, sloten en meertjes. In Nederland is de plant vrij algemeen in het westen en noorden (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Tenger+fonteinkruid+-+Potamogeton+pusillus#Tengerfonteinkruid-Potamogetonpusillus-2">#2</a>).</p>
+]]></text>
+		</Description>
+	</ContentDescription>
+	<Documentation>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://www.soortenbank.nl]]></html>
+		</reference>
+		<reference author="" year="" title="" journal="" identification="">
+			<html><![CDATA[http://wilde-planten.nl/tenger%20fonteinkruid.htm]]></html>
+		</reference>
+		<reference author="Van den Berg M.S., W. Joosse and H. Coops" year="2003" title="A statistical model predicting the occurrence and dynamics of submerged macrophytes in shallow lakes in the Netherlands." journal="Hydrobiologia 611:623" identification=""/>
+		<reference author="Scheffer, M." year="1998" title="Ecology of Shallow Lakes." journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

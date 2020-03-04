@@ -9,8 +9,9 @@ autor: Weeber
 import sys
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
-import xml.etree.ElementTree as ET
-from xml.etree.ElementTree import ElementTree
+#import xml.etree.ElementTree as ET
+#from xml.etree.ElementTree import ElementTree
+from lxml import etree as ET
 import autecology_xml
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.figure import Figure
@@ -57,7 +58,7 @@ class API:
 		(name, file_type) = QtWidgets.QFileDialog.getSaveFileName(qfd, 'Save File', "","XML files (*.xml)")
 		try:
 			xmlfile = open(name,'w')
-			tree = ElementTree(obj.xmlroot)
+			tree = ET(obj.xmlroot)
 			tree.write(xmlfile, encoding='unicode')
 			xmlfile.close()
 		except:

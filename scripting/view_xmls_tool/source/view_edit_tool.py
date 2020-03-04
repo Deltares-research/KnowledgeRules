@@ -12,7 +12,10 @@ import view_edit_tool_API
 from PyQt5 import QtCore, QtGui, QtWidgets
 import autecology_xml
 
+
 class UI_MainWindow(object):
+	
+
 	def setupUI(self, MainWindow):
 
 		#start build up
@@ -22,7 +25,14 @@ class UI_MainWindow(object):
 		self.MainWindow.resize(1121, 806)
 		self.MainWindow.setMinimumSize(1121, 806)
 
-		self.path = os.path.realpath(__file__)
+		#See: https://stackoverflow.com/questions/16771894/python-nameerror-global-name-file-is-not-defined
+		if getattr(sys, 'frozen', False):
+			# The application is frozen
+			self.path = os.path.realpath(sys.executable)
+		else:
+			# The application is not frozen
+			# Change this bit to match where you store your data files:
+			self.path = os.path.realpath(__file__)
 
 		font = QtGui.QFont()
 		font.setPointSize(10)
@@ -270,7 +280,14 @@ class UI_StartWindow(object):
 		self.StartWindow.setObjectName("StartWindow")
 		self.StartWindow.resize(1122, 700)
 
-		self.path = os.path.realpath(__file__)
+		#See: https://stackoverflow.com/questions/16771894/python-nameerror-global-name-file-is-not-defined
+		if getattr(sys, 'frozen', False):
+			# The application is frozen
+			self.path = os.path.realpath(sys.executable)
+		else:
+			# The application is not frozen
+			# Change this bit to match where you store your data files:
+			self.path = os.path.realpath(__file__)
 
 		font = QtGui.QFont()
 		font.setPointSize(10)

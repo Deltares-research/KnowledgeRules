@@ -23,6 +23,7 @@ from pyqt5_visualization import LabeledSlider
 
 #flowdiagram plots
 from blockdiag import parser, builder, drawer
+import requests
 import matplotlib.image as mpimg
 
 #testing
@@ -1390,7 +1391,8 @@ class AutecologyXML(_File):
 			from_name = links_from["From_name"].replace('"','')
 
 			#add from link
-			source = source + from_name + " [label = '" + links_from["label"] + "', shape = roundedbox];"
+			#source = source + from_name + " [label = '" + links_from["label"] + "', shape = roundedbox];"
+			source = source + from_name + " [label = '" + links_from["label"] + "'];"
 			
 			for nr, link_to in enumerate(links_from["To_names"]):
 				to_name = link_to.replace('"','')
@@ -1404,16 +1406,33 @@ class AutecologyXML(_File):
 		source = source + "}" 
 
 		#graph.write_png('example1_graph.png')
-		tree = parser.parse_string(source)
-		diagram = builder.ScreenNodeBuilder.build(tree)
-		if(output == None):
-			draw = drawer.DiagramDraw("SVG", diagram, filename = None)
-			draw.draw()
-			svg_str = draw.save()
+		if getattr(sys, 'frozen', False):
+			
+			#blockdiag does not compile well (pkg_sources library in use), but luckely an online API is available
+			#current other floww diagrams makers need Graphviz which is a seperate executable,
+			# and not convieniant for distribution. This is current best solution.
+			#https://kroki.io/#how
+			URL = "https://kroki.io/blockdiag/svg"
+			response = requests.post(url = URL, data = source)
+			if(response.status_code == 200):
+				svg_str = response.text
+			else:
+				raise Warning("No visualisation of flow diagram. https://kroki.io reponse is not working,"+\
+					" either no internet or is down. Reponse is : " + str(response.status_code))
+				svg_str = "<svg></svg>"
 		else:
-			draw = drawer.DiagramDraw("SVG", diagram, filename = output)
-			draw.draw()
-			draw.save()
+			#Use local installation of blockdiag
+			tree = parser.parse_string(source)
+			diagram = builder.ScreenNodeBuilder.build(tree)
+		
+			if(output == None):
+				draw = drawer.DiagramDraw("SVG", diagram, filename = None)
+				draw.draw()
+				svg_str = draw.save()
+			else:
+				draw = drawer.DiagramDraw("SVG", diagram, filename = output)
+				draw.draw()
+				draw.save()
 
 		return(svg_str)
 

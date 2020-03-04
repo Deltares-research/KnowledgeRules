@@ -1,5 +1,6 @@
 import sys
 sys.path.append("..")
+sys.path.append('..\\source')
 
 from autecology_xml import AutecologyXML
 from matplotlib import pyplot as plt

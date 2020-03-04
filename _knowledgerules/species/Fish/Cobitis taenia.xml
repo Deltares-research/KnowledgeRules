@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,18 +23,18 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Kleinemodderkruiper-Cobitistaenia-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Kleinemodderkruiper-Cobitistaenia-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p>Deze response functies zijn niet gevalideerd. Ze zijn gebruikt in de studies in het Volkerak Zoommeer en IJsselmeergebied een daarin op basis van expert judgement voldoende bevonden om toe te passen.</p>
+&lt;p&gt;Deze response functies zijn niet gevalideerd. Ze zijn gebruikt in de studies in het Volkerak Zoommeer en IJsselmeergebied een daarin op basis van expert judgement voldoende bevonden om toe te passen.&lt;/p&gt;
 
-<h1 id="Kleinemodderkruiper-Cobitistaenia-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Kleinemodderkruiper-Cobitistaenia-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>Deze response functies zijn toepasbaar op zoet water in Nederland. Op alle niet zwaar vervuilde en niet te sterk eutrofe wateren, met een brede litorale zone of andere ondiepe gedeelten, kan dit model zonder bezwaar worden toegepast. Het model is echter onvolledig door bijvoorbeeld het ontbreken van relaties over eutrofiering en verontreiniging omdat hier over te weinig gegevens bekend zijn om relaties op te stellen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3">#3</a>.</p>
+&lt;p&gt;Deze response functies zijn toepasbaar op zoet water in Nederland. Op alle niet zwaar vervuilde en niet te sterk eutrofe wateren, met een brede litorale zone of andere ondiepe gedeelten, kan dit model zonder bezwaar worden toegepast. Het model is echter onvolledig door bijvoorbeeld het ontbreken van relaties over eutrofiering en verontreiniging omdat hier over te weinig gegevens bekend zijn om relaties op te stellen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3"&gt;#3&lt;/a&gt;.&lt;/p&gt;
 
-<h1 id="Kleinemodderkruiper-Cobitistaenia-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Kleinemodderkruiper-Cobitistaenia-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Volkerak-Zoommeer Habitat analyse (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-4">#4</a>) en Seizoensgebonden peilen in het IJsselmeergebied (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-5">#5</a>).</p>
-]]></text>
+&lt;p&gt;Volkerak-Zoommeer Habitat analyse (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-4"&gt;#4&lt;/a&gt;) en Seizoensgebonden peilen in het IJsselmeergebied (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-5"&gt;#5&lt;/a&gt;).&lt;/p&gt;
+</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -53,109 +51,177 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Coverage_submers_macrofytes">
-						<type>range / categorical</type>
-						<layername>Coverage_submers_macrofytes</layername>
-						<unit>fraction</unit>
-						<statistic>average</statistic>
-						<description>Fraction coverage of submers macrofytes</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2010-01-22</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.05" cat="0 - 0.05" HSI="0.2"/>
-							<parameter rangemin="0.05" rangemax="0.1" cat="0.05 - 0.1" HSI="0.3"/>
-							<parameter rangemin="0.1" rangemax="0.2" cat="0.1 - 0.2" HSI="0.4"/>
-							<parameter rangemin="0.2" rangemax="0.3" cat="0.2 - 0.3" HSI="0.5"/>
-							<parameter rangemin="0.3" rangemax="0.4" cat="0.3 - 0.4" HSI="0.6"/>
-							<parameter rangemin="0.4" rangemax="0.5" cat="0.4 - 0.5" HSI="0.7"/>
-							<parameter rangemin="0.5" rangemax="0.6" cat="0.5 - 0.6" HSI="0.8"/>
-							<parameter rangemin="0.6" rangemax="0.7" cat="0.6 - 0.7" HSI="0.9"/>
-							<parameter rangemin="0.7" rangemax="1.0" cat="0.7 - 1.0" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Coverage_submers_macrofytes">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Coverage_submers_macrofytes</layer_filename>
+								<unit>fraction</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Fraction coverage of submers macrofytes</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2010-01-22</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.05" input_cat="0 - 0.05" output="0.2" output_cat=""/>
+								<parameter rangemin_input="0.05" rangemax_input="0.1" input_cat="0.05 - 0.1" output="0.3" output_cat=""/>
+								<parameter rangemin_input="0.1" rangemax_input="0.2" input_cat="0.1 - 0.2" output="0.4" output_cat=""/>
+								<parameter rangemin_input="0.2" rangemax_input="0.3" input_cat="0.2 - 0.3" output="0.5" output_cat=""/>
+								<parameter rangemin_input="0.3" rangemax_input="0.4" input_cat="0.3 - 0.4" output="0.6" output_cat=""/>
+								<parameter rangemin_input="0.4" rangemax_input="0.5" input_cat="0.4 - 0.5" output="0.7" output_cat=""/>
+								<parameter rangemin_input="0.5" rangemax_input="0.6" input_cat="0.5 - 0.6" output="0.8" output_cat=""/>
+								<parameter rangemin_input="0.6" rangemax_input="0.7" input_cat="0.6 - 0.7" output="0.9" output_cat=""/>
+								<parameter rangemin_input="0.7" rangemax_input="1.0" input_cat="0.7 - 1.0" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Coverage_submers_macrofytes">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Coverage_submers_macrofytes</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Coverage_bank_vegetation">
-						<type>range / categorical</type>
-						<layername>Coverage_bank_vegetation</layername>
-						<unit>fraction</unit>
-						<statistic>average</statistic>
-						<description>Fraction coverage of the bank by vegetation</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2010-01-22</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.05" cat="0 - 0.05" HSI="0.04"/>
-							<parameter rangemin="0.05" rangemax="0.1" cat="0.05 - 0.1" HSI="0.06"/>
-							<parameter rangemin="0.1" rangemax="0.2" cat="0.1 - 0.2" HSI="0.08"/>
-							<parameter rangemin="0.2" rangemax="0.3" cat="0.2 - 0.3" HSI="0.1"/>
-							<parameter rangemin="0.3" rangemax="0.4" cat="0.3 - 0.4" HSI="0.12"/>
-							<parameter rangemin="0.4" rangemax="0.5" cat="0.4 - 0.5" HSI="0.14"/>
-							<parameter rangemin="0.5" rangemax="0.6" cat="0.5 - 0.6" HSI="0.16"/>
-							<parameter rangemin="0.6" rangemax="0.7" cat="0.6 - 0.7" HSI="0.18"/>
-							<parameter rangemin="0.7" rangemax="1.0" cat="0.7 - 1.0" HSI="0.2"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Coverage_bank_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Coverage_bank_vegetation</layer_filename>
+								<unit>fraction</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Fraction coverage of the bank by vegetation</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2010-01-22</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.05" input_cat="0 - 0.05" output="0.04" output_cat=""/>
+								<parameter rangemin_input="0.05" rangemax_input="0.1" input_cat="0.05 - 0.1" output="0.06" output_cat=""/>
+								<parameter rangemin_input="0.1" rangemax_input="0.2" input_cat="0.1 - 0.2" output="0.08" output_cat=""/>
+								<parameter rangemin_input="0.2" rangemax_input="0.3" input_cat="0.2 - 0.3" output="0.1" output_cat=""/>
+								<parameter rangemin_input="0.3" rangemax_input="0.4" input_cat="0.3 - 0.4" output="0.12" output_cat=""/>
+								<parameter rangemin_input="0.4" rangemax_input="0.5" input_cat="0.4 - 0.5" output="0.14" output_cat=""/>
+								<parameter rangemin_input="0.5" rangemax_input="0.6" input_cat="0.5 - 0.6" output="0.16" output_cat=""/>
+								<parameter rangemin_input="0.6" rangemax_input="0.7" input_cat="0.6 - 0.7" output="0.18" output_cat=""/>
+								<parameter rangemin_input="0.7" rangemax_input="1.0" input_cat="0.7 - 1.0" output="0.2" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Coverage_bank_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Coverage_bank_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth">
-						<type>range / categorical</type>
-						<layername>Waterdepth</layername>
-						<unit>m</unit>
-						<statistic>average</statistic>
-						<description>Waterdepth in meters</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2010-01-22</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.1" cat="0 - 0.1" HSI="0.0"/>
-							<parameter rangemin="0.1" rangemax="1.5" cat="0.1 - 1.5" HSI="1.0"/>
-							<parameter rangemin="1.5" rangemax="999999" cat="> 1.5" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Waterdepth">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterdepth</layer_filename>
+								<unit>m</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Waterdepth in meters</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2010-01-22</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.1" input_cat="0 - 0.1" output="0.0" output_cat=""/>
+								<parameter rangemin_input="0.1" rangemax_input="1.5" input_cat="0.1 - 1.5" output="1.0" output_cat=""/>
+								<parameter rangemin_input="1.5" rangemax_input="999999" input_cat="&gt; 1.5" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterdepth">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity">
-						<type>range / categorical</type>
-						<layername>Salinity</layername>
-						<unit>gCl/l</unit>
-						<statistic>average</statistic>
-						<description>Salinity in grams Cl per liter</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2010-01-22</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="0.01" cat="0 - 0.01" HSI="0.0"/>
-							<parameter rangemin="0.01" rangemax="2.7" cat="0.01 - 2.7" HSI="1.0"/>
-							<parameter rangemin="2.7" rangemax="999999" cat="> 2.7" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Salinity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity</layer_filename>
+								<unit>gCl/l</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Salinity in grams Cl per liter</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2010-01-22</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="0.01" input_cat="0 - 0.01" output="0.0" output_cat=""/>
+								<parameter rangemin_input="0.01" rangemax_input="2.7" input_cat="0.01 - 2.7" output="1.0" output_cat=""/>
+								<parameter rangemin_input="2.7" rangemax_input="999999" input_cat="&gt; 2.7" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Kleinemodderkruiper-Cobitistaenia-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Kleinemodderkruiper-Cobitistaenia-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De kleine modderkruiper komt in vrijwel geheel Europa voor, met uitzondering van IJsland, Ierland, een groot deel van Groot-Brittannie, Noorwegen, Midden en Noord-Zweden en bijna geheel Finland. Het verspreidingsgebied wordt in oostelijke richting begrensd door het stroomgebied van de Lena Rivier in het Gemenebest van Onafhankelijke Staten en in het zuiden loopt de grens van de noordelijkste punt van Afrika via Midden-Griekenland naar Noord-West-Turkije en het zuiden van het G.O.S. <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-2">#2</a>.<br>
-De kleine modderkruiper komt voor in stilstaand tot middelmatig stromend wa-ter, dat zwak-brak mag zijn. Zowel in kleine slootjes, greppels, beken en kanalen als in de littorale zone van grote meren en in zandwinputten en overstroomde rivieroevers kan deze soort aange-troffen worden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-2">#2</a>.</p>
+&lt;p&gt;De kleine modderkruiper komt in vrijwel geheel Europa voor, met uitzondering van IJsland, Ierland, een groot deel van Groot-Brittannie, Noorwegen, Midden en Noord-Zweden en bijna geheel Finland. Het verspreidingsgebied wordt in oostelijke richting begrensd door het stroomgebied van de Lena Rivier in het Gemenebest van Onafhankelijke Staten en in het zuiden loopt de grens van de noordelijkste punt van Afrika via Midden-Griekenland naar Noord-West-Turkije en het zuiden van het G.O.S. &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-2"&gt;#2&lt;/a&gt;.&lt;br&gt;
+De kleine modderkruiper komt voor in stilstaand tot middelmatig stromend wa-ter, dat zwak-brak mag zijn. Zowel in kleine slootjes, greppels, beken en kanalen als in de littorale zone van grote meren en in zandwinputten en overstroomde rivieroevers kan deze soort aange-troffen worden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Kleinemodderkruiper-Cobitistaenia-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Kleinemodderkruiper-Cobitistaenia-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>In het algemeen wordt aangenomen dat deze vis pas in de avondschemering actief wordt en op zoek naar voedsel gaat en zich overdag in de bodem, onder stenen of waterplanten of in bedden van groene draadalgen (<em>Cladophora</em> of 'flab'), verborgen houdt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3">#3</a>.</p>
+&lt;p&gt;In het algemeen wordt aangenomen dat deze vis pas in de avondschemering actief wordt en op zoek naar voedsel gaat en zich overdag in de bodem, onder stenen of waterplanten of in bedden van groene draadalgen (&lt;em&gt;Cladophora&lt;/em&gt; of 'flab'), verborgen houdt &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3"&gt;#3&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Kleinemodderkruiper-Cobitistaenia-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Kleinemodderkruiper-Cobitistaenia-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>De paaitijd valt in de periode van april-mei tot en met juli. De kleine modder-kruiper kan zich in zeer ondiep water (tot 4 cm) voortplanten. De geelachtig gekleurde eieren worden op stenen, aan (wortels van) waterplanten of in het 'flab' afgezet, of ze worden los op de bodem gedepo-neerd, waar ze dankzij hun kleverigheid geheel door substraatdeeltjes omgeven worden, zodat ze toch tegen predatie beschermd zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3">#3</a>.</p>
+&lt;p&gt;De paaitijd valt in de periode van april-mei tot en met juli. De kleine modder-kruiper kan zich in zeer ondiep water (tot 4 cm) voortplanten. De geelachtig gekleurde eieren worden op stenen, aan (wortels van) waterplanten of in het 'flab' afgezet, of ze worden los op de bodem gedepo-neerd, waar ze dankzij hun kleverigheid geheel door substraatdeeltjes omgeven worden, zodat ze toch tegen predatie beschermd zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3"&gt;#3&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Kleinemodderkruiper-Cobitistaenia-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Kleinemodderkruiper-Cobitistaenia-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>De kleine moderkruiper is na 1-2 jaar geslachtsrijp. Mannetjes bereiken een leeftijd van 3 vrouwtjes een leeftijd van 4 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3">#3</a></p>]]></text>
+&lt;p&gt;De kleine moderkruiper is na 1-2 jaar geslachtsrijp. Mannetjes bereiken een leeftijd van 3 vrouwtjes een leeftijd van 4 jaar &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Kleine+modderkruiper+-+Cobitis+taenia#Kleinemodderkruiper-Cobitistaenia-3"&gt;#3&lt;/a&gt;&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="http://www.minlnv.nl/natura2000" year="" title="" journal="" identification=""/>
 		<reference author="Schouten, W.J." year="1992" title="Habitatgeschiktheid index model Kleine Modderkruiper Cobitis taenia L." journal="" identification="OVB, Nieuwegein"/>

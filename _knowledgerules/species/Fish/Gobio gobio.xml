@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,20 +23,20 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Riviergrondel - Gobio gobio - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd. </p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Riviergrondel - Gobio gobio - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze dosis-effect relaties zijn niet gevalideerd. &lt;/p&gt;
 
-<p>Dit model gebaseerd op expert judgement en literatuur en nog niet getoetst aan een veld situatie. </p>
+&lt;p&gt;Dit model gebaseerd op expert judgement en literatuur en nog niet getoetst aan een veld situatie. &lt;/p&gt;
 
-<h1 id="Riviergrondel-Gobiogobio-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Riviergrondel-Gobiogobio-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>Deze rekenregels zijn toepasbaar voor stilstaand tot snel stromend water, zoet en brak water binnen Europa.</p>
+&lt;p&gt;Deze rekenregels zijn toepasbaar voor stilstaand tot snel stromend water, zoet en brak water binnen Europa.&lt;/p&gt;
 
-<h1 id="Riviergrondel-Gobiogobio-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Riviergrondel-Gobiogobio-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Er is geen voorbeeld project beschikbaar.</p>
-]]></text>
+&lt;p&gt;Er is geen voorbeeld project beschikbaar.&lt;/p&gt;
+</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -71,222 +69,392 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Waterdepth">
-						<type>scalar</type>
-						<layername>"Waterdepth"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Average waterdepth in meters."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="0.25" HSI="1.0"/>
-							<parameter value="1" HSI="1.0"/>
-							<parameter value="1.5" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Waterdepth">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterdepth</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average waterdepth in meters."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="0.25" output="1.0"/>
+								<parameter input="1" output="1.0"/>
+								<parameter input="1.5" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterdepth">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Summer_water_temperature">
-						<type>scalar</type>
-						<layername>"Summer_water_temperature"</layername>
-						<unit>"degrees Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Average water temperature during the summer in degrees Celsius."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="12" HSI="0.3"/>
-							<parameter value="17" HSI="1.0"/>
-							<parameter value="22" HSI="1.0"/>
-							<parameter value="31" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Summer_water_temperature">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Summer_water_temperature</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average water temperature during the summer in degrees Celsius."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="12" output="0.3"/>
+								<parameter input="17" output="1.0"/>
+								<parameter input="22" output="1.0"/>
+								<parameter input="31" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Summer_water_temperature">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Summer_water_temperature</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Oxygen_concentration">
-						<type>scalar</type>
-						<layername>"Oxygen_concentration"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Average oxygen concentration in milligrams per liter."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="1.9" HSI="0.0"/>
-							<parameter value="6" HSI="0.7"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="11" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Oxygen_concentration">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Oxygen_concentration</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average oxygen concentration in milligrams per liter."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="1.9" output="0.0"/>
+								<parameter input="6" output="0.7"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="11" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Oxygen_concentration">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Oxygen_concentration</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity">
-						<type>scalar</type>
-						<layername>"Flow_velocity"</layername>
-						<unit>"cm/s"</unit>
-						<statistic>average</statistic>
-						<description>"Flow velocity in centimeters per second."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.8"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="30" HSI="1.0"/>
-							<parameter value="40" HSI="0.5"/>
-							<parameter value="55" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Flow_velocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity</layer_filename>
+								<unit>"cm/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Flow velocity in centimeters per second."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.8"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="30" output="1.0"/>
+								<parameter input="40" output="0.5"/>
+								<parameter input="55" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity">
-						<type>scalar</type>
-						<layername>"Salinity"</layername>
-						<unit>"ppm"</unit>
-						<statistic>average</statistic>
-						<description>"Average salinity in ppm."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-							<parameter value="1000" HSI="0.7"/>
-							<parameter value="5000" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Salinity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity</layer_filename>
+								<unit>"ppm"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average salinity in ppm."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+								<parameter input="1000" output="0.7"/>
+								<parameter input="5000" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Structure_relief">
-						<type>scalar</type>
-						<layername>"Structure_relief"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of the waterbottom that has structure or relief. Note: Under soil structure / relief are channels, ridges, bowls, sand and gravel banks and similar structures considered."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.2"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Structure_relief">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Structure_relief</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of the waterbottom that has structure or relief. Note: Under soil structure / relief are channels, ridges, bowls, sand and gravel banks and similar structures considered."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.2"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Structure_relief">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Structure_relief</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Vegetation_obstacles">
-						<type>scalar</type>
-						<layername>"Vegetation_obstacles"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of the vegetation or obstacles. Note: This is understood to mean shelter formed by aquatic plants, tree stumps lying on the ground and branches, large stones and other obstacles."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="20" HSI="1.0"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="100" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Vegetation_obstacles">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Vegetation_obstacles</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of the vegetation or obstacles. Note: This is understood to mean shelter formed by aquatic plants, tree stumps lying on the ground and branches, large stones and other obstacles."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="20" output="1.0"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="100" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Vegetation_obstacles">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Vegetation_obstacles</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate">
-						<type>scalar</type>
-						<layername>"Substrate"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of the waterbottom that has substrate that is suitable for spawning."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="10" HSI="0.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Substrate">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Substrate</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of the waterbottom that has substrate that is suitable for spawning."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="10" output="0.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Substrate">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Substrate</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Transparency">
-						<type>scalar</type>
-						<layername>"Transparency"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Average transparency of the water in meters."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="1" HSI="0.0"/>
-							<parameter value="2" HSI="0.1"/>
-							<parameter value="4.5" HSI="0.5"/>
-							<parameter value="6" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Transparency">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Transparency</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average transparency of the water in meters."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="1" output="0.0"/>
+								<parameter input="2" output="0.1"/>
+								<parameter input="4.5" output="0.5"/>
+								<parameter input="6" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Transparency">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Transparency</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_deposit">
-						<type>scalar</type>
-						<layername>"Substrate_deposit"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage substrate to deposit eggs on."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="20" HSI="1.0"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="100" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Substrate_deposit">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Substrate_deposit</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage substrate to deposit eggs on."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Schouten, W.J." year="1993" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="20" output="1.0"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="100" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Substrate_deposit">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Substrate_deposit</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Riviergrondel-Gobiogobio-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Riviergrondel-Gobiogobio-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>Het verspreidingsgebied van de riviergrondel strekt zich uit van West- en Midden-Europa tot de Kaspische Zee. In Noorwegen, noord-Zweden en Finland komt hij niet voor. In het zuiden wordt het verspreidingsgebied begrensd door de Pyreneeën en loopt via noord-Italië en Griekenland naar het noorden van Turkije. De riviergrondel is in Spanje uitgezet en heeft zich van daaruit tot in Portugal verspreid <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>. </p>
+&lt;p&gt;Het verspreidingsgebied van de riviergrondel strekt zich uit van West- en Midden-Europa tot de Kaspische Zee. In Noorwegen, noord-Zweden en Finland komt hij niet voor. In het zuiden wordt het verspreidingsgebied begrensd door de Pyreneeën en loopt via noord-Italië en Griekenland naar het noorden van Turkije. De riviergrondel is in Spanje uitgezet en heeft zich van daaruit tot in Portugal verspreid &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>Lange tijd is de riviergrondel een algemene verschijning geweest, die in zeer uiteenlopende wateren kon worden aangetroffen. Door verschillende oorzaken is de soort op vele plaatsen sterk achteruit gegaan, maar schijnt in sommige wateren weer in aantal toe te nemen. De kanalisatie van beken en rivieren wordt wel de belangrijkste oorzaak van de achteruitgang genoemd, maar watervervuiling en het verdwijnen van paaiplaatsen hebben hier ook een groot aandeel in gehad. </p>
+&lt;p&gt;Lange tijd is de riviergrondel een algemene verschijning geweest, die in zeer uiteenlopende wateren kon worden aangetroffen. Door verschillende oorzaken is de soort op vele plaatsen sterk achteruit gegaan, maar schijnt in sommige wateren weer in aantal toe te nemen. De kanalisatie van beken en rivieren wordt wel de belangrijkste oorzaak van de achteruitgang genoemd, maar watervervuiling en het verdwijnen van paaiplaatsen hebben hier ook een groot aandeel in gehad. &lt;/p&gt;
 
-<p>De riviergrondel is een aan de waterbodem gebonden vis. Vooral in ondiep water houdt hij zich, vaak in kleine scholen, bij een hellende bodem op. Bij het ontbreken van natuurlijke oevers, zoals in kanalen en vaarten, staan ze ook wel vertikaal tegen beschoeiingen en kade-muren aan <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>. In de paaitijd en in de zomermaanden wordt de riviergrondel in ondiep water aangetroffen. ’s Winters zoekt hij het diepere water op om te overwinteren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>. </p>
+&lt;p&gt;De riviergrondel is een aan de waterbodem gebonden vis. Vooral in ondiep water houdt hij zich, vaak in kleine scholen, bij een hellende bodem op. Bij het ontbreken van natuurlijke oevers, zoals in kanalen en vaarten, staan ze ook wel vertikaal tegen beschoeiingen en kade-muren aan &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;. In de paaitijd en in de zomermaanden wordt de riviergrondel in ondiep water aangetroffen. ’s Winters zoekt hij het diepere water op om te overwinteren &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>De riviergrondel heeft een langgerekt lichaam, dat in dwarsdoorsnede bijna rond en naar de staart toe zijlings afgeplat is. De rug is licht gebogen en de buik afgeplat. De brede kop van de riviergrondel heeft een stompe snuit en in beide hoeken van de onderstandige mond bevindt zich een korte baarddraad. Het lichaam is bedekt met relatief grote schubben. Op de keel en tussen de borstvinnen bevinden zich geen schubben. De rug- en anaalvin hebben een korte basis en zijn, evenals de staartvin, vaak bedekt met donkere punten of streepjes. De lichaamskleur is zeer variabel en afhankelijk van de omgeving. De rugzijde is zwart-, groen- of blauw-bruin, de zijden zijn lichter van kleur en de buik is vuilwit of zilverachtig. Boven de zijlijn bevinden zich 7 tot 11 paarsachtige tot blauwe, ongelijke vlekken. De maximale lengte is 16-20 cm. </p>
+&lt;p&gt;De riviergrondel heeft een langgerekt lichaam, dat in dwarsdoorsnede bijna rond en naar de staart toe zijlings afgeplat is. De rug is licht gebogen en de buik afgeplat. De brede kop van de riviergrondel heeft een stompe snuit en in beide hoeken van de onderstandige mond bevindt zich een korte baarddraad. Het lichaam is bedekt met relatief grote schubben. Op de keel en tussen de borstvinnen bevinden zich geen schubben. De rug- en anaalvin hebben een korte basis en zijn, evenals de staartvin, vaak bedekt met donkere punten of streepjes. De lichaamskleur is zeer variabel en afhankelijk van de omgeving. De rugzijde is zwart-, groen- of blauw-bruin, de zijden zijn lichter van kleur en de buik is vuilwit of zilverachtig. Boven de zijlijn bevinden zich 7 tot 11 paarsachtige tot blauwe, ongelijke vlekken. De maximale lengte is 16-20 cm. &lt;/p&gt;
 
-<h3 id="Riviergrondel-Gobiogobio-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Riviergrondel-Gobiogobio-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>De riviergrondel is een alleseter. Voor juveniele stadia vormt zoöplankton de belangrijkste voedselbron en in stilstaand water in Ierland worden door de kleinere exemplaren (&lt;7.5 cm) voornamelijk Cladocera gegeten. Adulte dieren voeden zich met allerlei bodemorganismen. In de darm zijn muggen- en andere insectenlarven aangetroffen, als ook wormpjes , kleine kreeftachtigen, slakken en mosseltjes, kuit van andere vissen en ook wel kleine visjes. Ook plantaardig materiaal wordt gegeten, zoals Diatomeeën en draadalgen; deze laatste soms zelfs in aanzienlijke hoeveelheden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>. </p>
+&lt;p&gt;De riviergrondel is een alleseter. Voor juveniele stadia vormt zoöplankton de belangrijkste voedselbron en in stilstaand water in Ierland worden door de kleinere exemplaren (&amp;lt;7.5 cm) voornamelijk Cladocera gegeten. Adulte dieren voeden zich met allerlei bodemorganismen. In de darm zijn muggen- en andere insectenlarven aangetroffen, als ook wormpjes , kleine kreeftachtigen, slakken en mosseltjes, kuit van andere vissen en ook wel kleine visjes. Ook plantaardig materiaal wordt gegeten, zoals Diatomeeën en draadalgen; deze laatste soms zelfs in aanzienlijke hoeveelheden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<h3 id="Riviergrondel-Gobiogobio-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Riviergrondel-Gobiogobio-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>De paaitijd valt in de maanden april, mei en juni. De mannetjes krijgen dan paaiuitslag: de kop, de zijden en de bovenkant van de borstvistralen zijn dan bedekt met kleine witte knobbeltjes. In meren levende riviergrondels trekken dan naar de mondingen van beken en rivieren, op zoek naar geschikte paaiplaatsen. Het paaisubstraat dient uit zand of grind te bestaan en vrij te zijn van silt en onregelmatigheden waardoor de eieren mogelijk bedekt kunnen raken. Boven een zachte modder bodem heersen door afbraak van organisch materiaal vaak zuurstofarme omstandigheden. Hier kunnen de eieren zich niet ontwikkelen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>. </p>
+&lt;p&gt;De paaitijd valt in de maanden april, mei en juni. De mannetjes krijgen dan paaiuitslag: de kop, de zijden en de bovenkant van de borstvistralen zijn dan bedekt met kleine witte knobbeltjes. In meren levende riviergrondels trekken dan naar de mondingen van beken en rivieren, op zoek naar geschikte paaiplaatsen. Het paaisubstraat dient uit zand of grind te bestaan en vrij te zijn van silt en onregelmatigheden waardoor de eieren mogelijk bedekt kunnen raken. Boven een zachte modder bodem heersen door afbraak van organisch materiaal vaak zuurstofarme omstandigheden. Hier kunnen de eieren zich niet ontwikkelen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>De eitjes worden, met veel geplons en gespetter, in de avondschemering afgezet. Ze zijn blauwig-grijs van kleur, circa 1.5 mm groot en worden los of in klompjes van 2-4 stuks aan stenen, waterplanten, boomwortels en gezonken bladeren of beschoeiingen vastgekleefd. Het vrouwtje zet niet alle eitjes in 1 keer af, maar spreidt dit over enkele weken uit. De riviergrondel produceert rond de 1000-2000 eitjes. Afhankelijk van de temperatuur komen na 10-30 dagen de eitjes uit <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>. </p>
+&lt;p&gt;De eitjes worden, met veel geplons en gespetter, in de avondschemering afgezet. Ze zijn blauwig-grijs van kleur, circa 1.5 mm groot en worden los of in klompjes van 2-4 stuks aan stenen, waterplanten, boomwortels en gezonken bladeren of beschoeiingen vastgekleefd. Het vrouwtje zet niet alle eitjes in 1 keer af, maar spreidt dit over enkele weken uit. De riviergrondel produceert rond de 1000-2000 eitjes. Afhankelijk van de temperatuur komen na 10-30 dagen de eitjes uit &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>Onderzoek aan een riviergrondelpopulatie in de Mole-rivier in Groot-Brittannië wees uit dat twee derde van de populatie binnen een eigen home-range leeft en dat de rest van de populatie uit de zwervende dieren bestaat. Dit kan verklaren waarom de riviergrondel zich altijd als één van de eerste vissoorten weet te herstellen na werkzaamheden in een water: De zwervende riviergrondels kunnen voor snelle herkolonisatie van het water zorgen, wanneer door een ingreep het home-range gebonden deel van de populatie verdwenen is <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>.</p>
+&lt;p&gt;Onderzoek aan een riviergrondelpopulatie in de Mole-rivier in Groot-Brittannië wees uit dat twee derde van de populatie binnen een eigen home-range leeft en dat de rest van de populatie uit de zwervende dieren bestaat. Dit kan verklaren waarom de riviergrondel zich altijd als één van de eerste vissoorten weet te herstellen na werkzaamheden in een water: De zwervende riviergrondels kunnen voor snelle herkolonisatie van het water zorgen, wanneer door een ingreep het home-range gebonden deel van de populatie verdwenen is &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Riviergrondel-Gobiogobio-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Riviergrondel-Gobiogobio-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>De groeisnelheid is afhankelijk van verschillende omstandigheden, zoals de lengte van het groeiseizoen en het voedselaanbod. De riviergrondel is na 2 of 3 jaar geslachtsrijp. De maximale leeftijd is waarschijnlijk 6 tot 8 jaar, maar slechts weinig dieren worden ouder dan 3 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>.  </p>
+&lt;p&gt;De groeisnelheid is afhankelijk van verschillende omstandigheden, zoals de lengte van het groeiseizoen en het voedselaanbod. De riviergrondel is na 2 of 3 jaar geslachtsrijp. De maximale leeftijd is waarschijnlijk 6 tot 8 jaar, maar slechts weinig dieren worden ouder dan 3 jaar &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;
 
-<h3 id="Riviergrondel-Gobiogobio-Milieuvoorwaarden">Milieu voorwaarden</h3>
+&lt;h3 id="Riviergrondel-Gobiogobio-Milieuvoorwaarden"&gt;Milieu voorwaarden&lt;/h3&gt;
 
-<p>De riviergrondel kan in zeer verschillende watertypen worden aangetroffen, maar houdt zich bij voorkeur op in het heldere, stromende water van beken. Hij komt echter ook voor in grotere rivieren en in stilstaand water, zoals meren, reservoirs, grindgaten, sloten en kanalen. De riviergrondel kan zich handhaven in water met lage saliniteit. Hoewel gevoelig voor vervuiling, dat zijn voorkomen aanzienlijk beperkt, stelt de riviergrondel geen bijzondere hoge eisen aan de waterkwaliteit; van doorslaggevend belang voor zijn voorkomen is de aanwezigheid van geschikte paaiplaatsen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1">#1</a>. </p>]]></text>
+&lt;p&gt;De riviergrondel kan in zeer verschillende watertypen worden aangetroffen, maar houdt zich bij voorkeur op in het heldere, stromende water van beken. Hij komt echter ook voor in grotere rivieren en in stilstaand water, zoals meren, reservoirs, grindgaten, sloten en kanalen. De riviergrondel kan zich handhaven in water met lage saliniteit. Hoewel gevoelig voor vervuiling, dat zijn voorkomen aanzienlijk beperkt, stelt de riviergrondel geen bijzondere hoge eisen aan de waterkwaliteit; van doorslaggevend belang voor zijn voorkomen is de aanwezigheid van geschikte paaiplaatsen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riviergrondel+-+Gobio+gobio#Riviergrondel-Gobiogobio-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Schouten, W.J." year="1993" title="Habitat Geschiktheid Index Model. De Riviergrondel Gobio gobio L." journal="" identification="Organisatie ter Verbetering van de Binnenvisserij. februari 1993"/>
 	</Documentation>

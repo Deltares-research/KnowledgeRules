@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>1114576</EoLpagenr>
 			<LatName>Phragmites australis</LatName>
 			<CommonNames>
-				<Name name = "Riet" language = "NL"/>
+				<Name name="Riet" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
-		</Topic>
+	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
 			<System name="adult">
@@ -24,17 +23,17 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-					<text><![CDATA[<h1 id="Riet-Phragmitesaustralis-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Riet-Phragmitesaustralis-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p>Deze dosis-effect relaties zijn niet gevalideerd</p>
+&lt;p&gt;Deze dosis-effect relaties zijn niet gevalideerd&lt;/p&gt;
 
-<h1 id="Riet-Phragmitesaustralis-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Riet-Phragmitesaustralis-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>Deze dosis-effect relaties beschrijven nog niet een model. Deze dosis-effect relaties zijn , in zoverre, toepasbaar op zoete wateren in Nederland.</p>
+&lt;p&gt;Deze dosis-effect relaties beschrijven nog niet een model. Deze dosis-effect relaties zijn , in zoverre, toepasbaar op zoete wateren in Nederland.&lt;/p&gt;
 
-<h1 id="Riet-Phragmitesaustralis-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Riet-Phragmitesaustralis-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Er is geen voorbeeld project.</p>]]></text>
+&lt;p&gt;Er is geen voorbeeld project.&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -49,103 +48,172 @@
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
-				<KnowledgeRules>		
+				<KnowledgeRules>
 					<ResponseCurve name="Salinity_germination">
-						<type>scalar</type>
-						<layername>"Salinity_germination"</layername>
-						<unit>"gCl/l"</unit>
-						<statistic>average</statistic>
-						<description>"Chloride concentration during germination in milligrams chloride per liter"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Ter Heerdt, G." year="1995" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="9" HSI="1.0"/>
-							<parameter value="12" HSI="0.0"/>
-							<parameter value="23" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Salinity_germination">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity_germination</layer_filename>
+								<unit>"gCl/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Chloride concentration during germination in milligrams chloride per liter"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Ter Heerdt, G." year="1995" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="9" output="1.0"/>
+								<parameter input="12" output="0.0"/>
+								<parameter input="23" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity_germination">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity_germination</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity_seedling">
-						<type>scalar</type>
-						<layername>"Salinity_seedling"</layername>
-						<unit>"gCl/l"</unit>
-						<statistic>average</statistic>
-						<description>"Chloride concentration during the seedling life stage in milligrams chloride per liter"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Ter Heerdt, G." year="1995" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="5" HSI="1.0"/>
-							<parameter value="16" HSI="0.0"/>
-							<parameter value="23" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Salinity_seedling">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity_seedling</layer_filename>
+								<unit>"gCl/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Chloride concentration during the seedling life stage in milligrams chloride per liter"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Ter Heerdt, G." year="1995" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="5" output="1.0"/>
+								<parameter input="16" output="0.0"/>
+								<parameter input="23" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity_seedling">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity_seedling</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity_adult">
-						<type>scalar</type>
-						<layername>"Salinity_adult"</layername>
-						<unit>"gCl/l"</unit>
-						<statistic>average</statistic>
-						<description>"Chloride concentration during the adult life stage in milligrams chloride per liter"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Ter Heerdt, G." year="1995" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="12" HSI="1.0"/>
-							<parameter value="16" HSI="0.0"/>
-							<parameter value="23" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Salinity_adult">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity_adult</layer_filename>
+								<unit>"gCl/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Chloride concentration during the adult life stage in milligrams chloride per liter"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Ter Heerdt, G." year="1995" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="12" output="1.0"/>
+								<parameter input="16" output="0.0"/>
+								<parameter input="23" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Grazing_of_bank_vegetation">
-						<type>scalar</type>
-						<layername>"Grazing_of_bank_vegetation"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in meters"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="0.5" HSI="1.0"/>
-							<parameter value="0.5" HSI="0.0"/>
-							<parameter value="1" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Grazing_of_bank_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Grazing_of_bank_vegetation</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in meters"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="0.5" output="1.0"/>
+								<parameter input="0.5" output="0.0"/>
+								<parameter input="1" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Grazing_of_bank_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Grazing_of_bank_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
-		<Description language="NL"><text><![CDATA[<h3 id="Riet-Phragmitesaustralis-Algemeenvoorkomen">Algemeen voorkomen</h3>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Riet-Phragmitesaustralis-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>Riet behoort tot de familie van de grassen en is tevens de grootste van deze familie die in de Nederland van nature voorkomt. De plant is vaak te vinden aan de waterkant, maar ook in natte bodems van beek en rivierdalen doet deze plant het goed. Riet kan zich op 3 manieren verbreiden: door middel van zaad, door middel van diep in de bodem doordringende wortelstokken en door forse bovengrondse uitlopers <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-2">#2</a> en <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-3">#3</a>. Riet is een helofyt en kan voorkomen in zuurstofarme bodems. Door middel van luchtgangen via de halmen zorgt riet ervoor dat er zuurstof bij de wortels komt.</p>
+&lt;p&gt;Riet behoort tot de familie van de grassen en is tevens de grootste van deze familie die in de Nederland van nature voorkomt. De plant is vaak te vinden aan de waterkant, maar ook in natte bodems van beek en rivierdalen doet deze plant het goed. Riet kan zich op 3 manieren verbreiden: door middel van zaad, door middel van diep in de bodem doordringende wortelstokken en door forse bovengrondse uitlopers &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-2"&gt;#2&lt;/a&gt; en &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-3"&gt;#3&lt;/a&gt;. Riet is een helofyt en kan voorkomen in zuurstofarme bodems. Door middel van luchtgangen via de halmen zorgt riet ervoor dat er zuurstof bij de wortels komt.&lt;/p&gt;
 
-<p>Aan het einde van de herfst als de winter aanvangt, sterft het bovengrondse gedeelte af met uitzondering van de stijve stengels. Als riet onder het watervlak gemaaid wordt sterft riet af doordat de luchtholten vollopen en hierdoor verdrinkt <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-3">#3</a>. Riet bloeit van juli tot oktober. De pollen worden met de wind meegevoerd en na bevruchting ontstaat er zaad waaruit, bij kieming, nieuwe rietplanten kunnen ontstaan <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-3">#3</a>. </p>
+&lt;p&gt;Aan het einde van de herfst als de winter aanvangt, sterft het bovengrondse gedeelte af met uitzondering van de stijve stengels. Als riet onder het watervlak gemaaid wordt sterft riet af doordat de luchtholten vollopen en hierdoor verdrinkt &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-3"&gt;#3&lt;/a&gt;. Riet bloeit van juli tot oktober. De pollen worden met de wind meegevoerd en na bevruchting ontstaat er zaad waaruit, bij kieming, nieuwe rietplanten kunnen ontstaan &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-3"&gt;#3&lt;/a&gt;. &lt;/p&gt;
 
-<h3 id="Riet-Phragmitesaustralis-Milieurandvoorwaarden">Milieurandvoorwaarden</h3>
+&lt;h3 id="Riet-Phragmitesaustralis-Milieurandvoorwaarden"&gt;Milieurandvoorwaarden&lt;/h3&gt;
 
-<p>Riet blijkt nog bij hoge zoutgehalten tot ontkieming te komen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-1">#1</a>. Ganzen kunnen een grote begrazingsdruk uitoefenen op riet dat in water tot ontwikkeling is gekomen. Tot een diepte van 50 cm kunnen de ganzen het riet begrazen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-2">#2</a>.</p>
+&lt;p&gt;Riet blijkt nog bij hoge zoutgehalten tot ontkieming te komen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-1"&gt;#1&lt;/a&gt;. Ganzen kunnen een grote begrazingsdruk uitoefenen op riet dat in water tot ontwikkeling is gekomen. Tot een diepte van 50 cm kunnen de ganzen het riet begrazen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Riet+-+Phragmites+australis#Riet-Phragmitesaustralis-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Riet-Phragmitesaustralis-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3>
+&lt;h3 id="Riet-Phragmitesaustralis-Beheerenontwikkelingskansen"&gt;Beheer en ontwikkelingskansen&lt;/h3&gt;
 
-<p>-</p>]]></text>
+&lt;p&gt;-&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Ter Heerdt, G." year="1995" title="Planten in de Peiling: Literatuuronderzoek naar de invloed van het zoutgehalte in de bodem op de ontwikkeling van helofyten." journal="" identification="Directoraat-generaalRijkswaterstaat, Riza Notanr. 95.041, Laboratorium voor Plantenoecologie, Rijksuniversiteit Groningen, Lelystad, februari 1995"/>
-		<reference author="Daling, J., Zijlstra, M., Van Manen, H.A." year="" title= "Invloed van waterpeil en begrazing op de ontwikkeling van oevervegetatie." journal="" identification="RIZA werkdocument 2002.122X, Rijksintituut voor Integraal Zoetwaterbeheer en Afvalwaterbehandeling.2002"/>
-		<reference author="" year="" title= "www.floravannederland.nl (Riet)" journal="" identification="18 december 2012"/>
+		<reference author="Daling, J., Zijlstra, M., Van Manen, H.A." year="" title="Invloed van waterpeil en begrazing op de ontwikkeling van oevervegetatie." journal="" identification="RIZA werkdocument 2002.122X, Rijksintituut voor Integraal Zoetwaterbeheer en Afvalwaterbehandeling.2002"/>
+		<reference author="" year="" title="www.floravannederland.nl (Riet)" journal="" identification="18 december 2012"/>
 	</Documentation>
 	<DataSources/>
 </AutecologyXML>

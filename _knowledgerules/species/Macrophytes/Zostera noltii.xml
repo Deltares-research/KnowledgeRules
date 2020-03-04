@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -16,7 +15,7 @@
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lagoon of Venice" id="8394243"/>
-					</SpatialScope>	
+					</SpatialScope>
 					<TemporalScope>
 						<StartDate>2005-01-01</StartDate>
 						<EndDate>2006-01-01</EndDate>
@@ -24,174 +23,259 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Kleinzeegras-Zosteranoltii-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
-<p>Deze dosis-effect relaties zijn gevalideerd voor de Lagune van Venetie.</p>
+						<text>&lt;h1 id="Kleinzeegras-Zosteranoltii-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
+&lt;p&gt;Deze dosis-effect relaties zijn gevalideerd voor de Lagune van Venetie.&lt;/p&gt;
 
 
-<h1 id="Kleinzeegras-Zosteranoltii-Toepasbaarheid">Toepasbaarheid</h1>
-<p>Deze dosis-effect relaties zijn toepasbaar op zout en brak water in Nederland. </p>
+&lt;h1 id="Kleinzeegras-Zosteranoltii-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
+&lt;p&gt;Deze dosis-effect relaties zijn toepasbaar op zout en brak water in Nederland. &lt;/p&gt;
 
-<h1 id="Kleinzeegras-Zosteranoltii-Voorbeeldproject">Voorbeeld project</h1>
-<p>Volkerak-Zoommeer Habitat analyse (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-2">#2</a>) en de Lagune van Venetie (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-3">#3</a>). </p>
-]]></text>
+&lt;h1 id="Kleinzeegras-Zosteranoltii-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
+&lt;p&gt;Volkerak-Zoommeer Habitat analyse (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-2"&gt;#2&lt;/a&gt;) en de Lagune van Venetie (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-3"&gt;#3&lt;/a&gt;). &lt;/p&gt;
+</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
 					<FlowDiagram name="standplaats">
-					<From name="habitat_quality">
-						<label>"habitat_quality"</label>
-						<equation>min</equation>
-						<To>percentage_of_ligth_at_bottom</To>
-						<To>salinity</To>
-						<To>flow_velocity</To>
-						<To>sediment_composition</To>
-						<To>percentage_fallen_dry</To>
-					</From>
+						<From name="habitat_quality">
+							<label>"habitat_quality"</label>
+							<equation>min</equation>
+							<To>percentage_of_ligth_at_bottom</To>
+							<To>salinity</To>
+							<To>flow_velocity</To>
+							<To>sediment_composition</To>
+							<To>percentage_fallen_dry</To>
+						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="percentage_of_ligth_at_bottom">
-						<type>scalar</type>
-						<layername>"percentage_of_ligth_at_bottom"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"percentage of ligth that reaches the bottom"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2015-10-05</date>
-						<references>
-							<reference author="Haasnoot, M. and Van de Wolfshaar, K.E." year="2006" title="" journal="" identification=""/>
-							<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="0"/>
-							<parameter value="2.0" HSI="0"/>
-							<parameter value="2.5" HSI="0.393469"/>
-							<parameter value="3.0" HSI="0.632121"/>
-							<parameter value="3.5" HSI="0.77687"/>
-							<parameter value="4.0" HSI="0.864665"/>
-							<parameter value="4.5" HSI="0.917915"/>
-							<parameter value="5.0" HSI="0.950213"/>
-							<parameter value="5.5" HSI="0.969803"/>
-							<parameter value="6.0" HSI="0.981684"/>
-							<parameter value="6.5" HSI="0.988891"/>
-							<parameter value="7.0" HSI="0.993262"/>
-							<parameter value="7.5" HSI="0.995913"/>
-							<parameter value="8.0" HSI="0.997521"/>
-							<parameter value="8.5" HSI="0.998497"/>
-							<parameter value="9.0" HSI="0.999088"/>
-							<parameter value="9.5" HSI="0.999447"/>
-							<parameter value="10.0" HSI="1"/>
-							<parameter value="100.0" HSI="1"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="percentage_of_ligth_at_bottom">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>percentage_of_ligth_at_bottom</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"percentage of ligth that reaches the bottom"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2015-10-05</date>
+							<references>
+								<reference author="Haasnoot, M. and Van de Wolfshaar, K.E." year="2006" title="" journal="" identification=""/>
+								<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0"/>
+								<parameter input="2.0" output="0"/>
+								<parameter input="2.5" output="0.393469"/>
+								<parameter input="3.0" output="0.632121"/>
+								<parameter input="3.5" output="0.77687"/>
+								<parameter input="4.0" output="0.864665"/>
+								<parameter input="4.5" output="0.917915"/>
+								<parameter input="5.0" output="0.950213"/>
+								<parameter input="5.5" output="0.969803"/>
+								<parameter input="6.0" output="0.981684"/>
+								<parameter input="6.5" output="0.988891"/>
+								<parameter input="7.0" output="0.993262"/>
+								<parameter input="7.5" output="0.995913"/>
+								<parameter input="8.0" output="0.997521"/>
+								<parameter input="8.5" output="0.998497"/>
+								<parameter input="9.0" output="0.999088"/>
+								<parameter input="9.5" output="0.999447"/>
+								<parameter input="10.0" output="1"/>
+								<parameter input="100.0" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_percentage_of_ligth_at_bottom">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_percentage_of_ligth_at_bottom</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="salinity">
-						<type>scalar</type>
-						<layername>"salinity"</layername>
-						<unit>"ppt"</unit>
-						<statistic>average</statistic>
-						<description>"Salinity expressed in ppt"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2015-10-05</date>
-						<references>
-							<reference author="Haasnoot, M. and Van de Wolfshaar, K.E." year="2006" title="" journal="" identification=""/>
-							<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="10" HSI="0"/>
-							<parameter value="20" HSI="1"/>
-							<parameter value="30" HSI="1"/>
-							<parameter value="40" HSI="0"/>
-							<parameter value="70" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="salinity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>salinity</layer_filename>
+								<unit>"ppt"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Salinity expressed in ppt"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2015-10-05</date>
+							<references>
+								<reference author="Haasnoot, M. and Van de Wolfshaar, K.E." year="2006" title="" journal="" identification=""/>
+								<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="10" output="0"/>
+								<parameter input="20" output="1"/>
+								<parameter input="30" output="1"/>
+								<parameter input="40" output="0"/>
+								<parameter input="70" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_salinity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_salinity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="flow_velocity">
-						<type>scalar</type>
-						<layername>"flow_velocity"</layername>
-						<unit>"m/s"</unit>
-						<statistic>average</statistic>
-						<description>"Flow velocity expressed in meters per second"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2015-10-05</date>
-						<references>
-							<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.03" HSI="0"/>
-							<parameter value="0.04" HSI="1"/>
-							<parameter value="0.08" HSI="1"/>
-							<parameter value="0.33" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="flow_velocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>flow_velocity</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Flow velocity expressed in meters per second"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2015-10-05</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.03" output="0"/>
+								<parameter input="0.04" output="1"/>
+								<parameter input="0.08" output="1"/>
+								<parameter input="0.33" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_flow_velocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_flow_velocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="sediment_composition">
-						<type>scalar</type>
-						<layername>"sediment_composition"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Clay content of the sediment in percent"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2015-10-05</date>
-						<references>
-							<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="0.4" HSI="0"/>
-							<parameter value="8" HSI="1"/>
-							<parameter value="60" HSI="1"/>
-							<parameter value="70" HSI="0"/>
-							<parameter value="100" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="sediment_composition">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>sediment_composition</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Clay content of the sediment in percent"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2015-10-05</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.4" output="0"/>
+								<parameter input="8" output="1"/>
+								<parameter input="60" output="1"/>
+								<parameter input="70" output="0"/>
+								<parameter input="100" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_sediment_composition">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_sediment_composition</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="percentage_fallen_dry">
-						<type>scalar</type>
-						<layername>"percentage_fallen_dry"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of time the sediment is fallen dry"</description>
-						<author>"Clara Chrzanowski"</author>
-						<date>2015-10-05</date>
-						<references>
-							<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0"/>
-							<parameter value="1" HSI="0.05"/>
-							<parameter value="2" HSI="0.15"/>
-							<parameter value="3" HSI="0.25"/>
-							<parameter value="4" HSI="0.38"/>
-							<parameter value="5" HSI="1"/>
-							<parameter value="67" HSI="1"/>
-							<parameter value="75" HSI="0"/>
-							<parameter value="100" HSI="0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="percentage_fallen_dry">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>percentage_fallen_dry</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of time the sediment is fallen dry"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2015-10-05</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="1" output="0.05"/>
+								<parameter input="2" output="0.15"/>
+								<parameter input="3" output="0.25"/>
+								<parameter input="4" output="0.38"/>
+								<parameter input="5" output="1"/>
+								<parameter input="67" output="1"/>
+								<parameter input="75" output="0"/>
+								<parameter input="100" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_percentage_fallen_dry">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_percentage_fallen_dry</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
-	<Description language="NL">
-		<text><![CDATA[<h1 id="Kleinzeegras-Zosteranoltii-Habitatbeschrijving">Habitat beschrijving</h1>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h1 id="Kleinzeegras-Zosteranoltii-Habitatbeschrijving"&gt;Habitat beschrijving&lt;/h1&gt;
 
 
 
-<h3 id="Kleinzeegras-Zosteranoltii-Algemeenvoorkomen">Algemeen voorkomen</h3>
-<p>Klein zeegras komt voor in de getijdenzone, waar grote wisselingen optreden in vocht- en zoutgehalte, temperatuur en zonnestraling. <br>
-In de Waddenzee zijn enkele kleine groeiplaatsen langs de kusten in het Delta- en Waddengebied, in een bij eb droogvallende zone <a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-1">#1</a>.</p>
+&lt;h3 id="Kleinzeegras-Zosteranoltii-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
+&lt;p&gt;Klein zeegras komt voor in de getijdenzone, waar grote wisselingen optreden in vocht- en zoutgehalte, temperatuur en zonnestraling. &lt;br&gt;
+In de Waddenzee zijn enkele kleine groeiplaatsen langs de kusten in het Delta- en Waddengebied, in een bij eb droogvallende zone &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
 
-<h3 id="Kleinzeegras-Zosteranoltii-Milieurandvoorwaarden">Milieurandvoorwaarden</h3>
-<p>Klein zeegras verdraagt droogvallen maar kan niet tegen hoge zoutgehaltes. Voor het voorkomen van zeegrassoorten zijn het zoutgehalte en de hoeveelheid licht op de bodem van belang. Daarnaast spelen de droogvalduur en de stroomsnelheid een belangrijke rol in de aan- en afwezigheid van zeegras <a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-2">#2</a>. </p>
+&lt;h3 id="Kleinzeegras-Zosteranoltii-Milieurandvoorwaarden"&gt;Milieurandvoorwaarden&lt;/h3&gt;
+&lt;p&gt;Klein zeegras verdraagt droogvallen maar kan niet tegen hoge zoutgehaltes. Voor het voorkomen van zeegrassoorten zijn het zoutgehalte en de hoeveelheid licht op de bodem van belang. Daarnaast spelen de droogvalduur en de stroomsnelheid een belangrijke rol in de aan- en afwezigheid van zeegras &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Klein+zeegras+-+Zostera+noltii#Kleinzeegras-Zosteranoltii-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;
 
-<h3 id="Kleinzeegras-Zosteranoltii-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3>
-<p>Bij het beheer ishet van belang dat er geen meechanische schade optreedt ten gevolge van aktiviteiten maar ook dat de helderheid van het water niet verslechterd. Eventuele werkzaamheden moeten aangepast worden aan de gevoeligheid van de plant en effecten die mogelijk kunnen optreden, bijvoorbeeld m.b.v. een milieumanagementplan om tijdens werkzaamheden vervuiling of vertroebeling van water te voorkomen. Indien voldoende planten of zaden aanwezig zijn is het mogelijk om nieuwe groeiplaatsen aan te leggen. </p>]]></text>
+&lt;h3 id="Kleinzeegras-Zosteranoltii-Beheerenontwikkelingskansen"&gt;Beheer en ontwikkelingskansen&lt;/h3&gt;
+&lt;p&gt;Bij het beheer ishet van belang dat er geen meechanische schade optreedt ten gevolge van aktiviteiten maar ook dat de helderheid van het water niet verslechterd. Eventuele werkzaamheden moeten aangepast worden aan de gevoeligheid van de plant en effecten die mogelijk kunnen optreden, bijvoorbeeld m.b.v. een milieumanagementplan om tijdens werkzaamheden vervuiling of vertroebeling van water te voorkomen. Indien voldoende planten of zaden aanwezig zijn is het mogelijk om nieuwe groeiplaatsen aan te leggen. &lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="" year="" title="" journal="" identification="">
-			<html><![CDATA[http://www.soortenbank.nl]]></html>
+			<html>http://www.soortenbank.nl</html>
 		</reference>
 		<reference author="Haasnoot, M. and Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer." journal="" identification="WL report Q4015."/>
 		<reference author="Erftemeijer, P.L.A. and Van de Wolfshaar" year="2006" title=" Ecological model of het Lagoon of Venice. Part III: Seagrass Habitat Model." journal="" identification="WL | Delft report Z3733."/>

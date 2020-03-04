@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>327580</EoLpagenr>
 			<LatName>Myotis daubentonii</LatName>
 			<CommonNames>
-				<Name name = "Watervleermuis" language = "NL"/>
+				<Name name="Watervleermuis" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
-		</Topic>
+	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
 			<System name="adult">
@@ -24,19 +23,19 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-					<text><![CDATA[<h1 id="Watervleermuis-Myotisdaubentonii-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Watervleermuis-Myotisdaubentonii-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Watervleermuis - Myotis daubentonii - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Watervleermuis - Myotis daubentonii - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<p>De rekenregels zijn opgesteld aan de hand van lieratuuronderzoek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a></p>
+&lt;p&gt;De rekenregels zijn opgesteld aan de hand van lieratuuronderzoek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;&lt;/p&gt;
 
-<h1 id="Watervleermuis-Myotisdaubentonii-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Watervleermuis-Myotisdaubentonii-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>De rekenregels zijn opgesteld om het potentiële jachtgebied van de watervleermuis te bepalen (geldig in de periode maart-september). Het model is niet geldig in open (polder)landschappen (kleigebieden) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>.</p>
+&lt;p&gt;De rekenregels zijn opgesteld om het potentiële jachtgebied van de watervleermuis te bepalen (geldig in de periode maart-september). Het model is niet geldig in open (polder)landschappen (kleigebieden) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h1 id="Watervleermuis-Myotisdaubentonii-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Watervleermuis-Myotisdaubentonii-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Geen</p>]]></text>
+&lt;p&gt;Geen&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -55,169 +54,306 @@
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
-				<KnowledgeRules>		
+				<KnowledgeRules>
 					<ResponseCurve name="Emerse_vegetation">
-						<type>scalar</type>
-						<layername>"Emerse_vegetation"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Coverage by emerse vegetation in percent"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="50" HSI="0.5"/>
-							<parameter value="100" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Emerse_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Emerse_vegetation</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Coverage by emerse vegetation in percent"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="50" output="0.5"/>
+								<parameter input="100" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Emerse_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Emerse_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Light_source">
-						<type>scalar</type>
-						<layername>"Light_source"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of watersurface that overlaps with the light surface in percent"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="50" HSI="0.5"/>
-							<parameter value="100" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Light_source">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Light_source</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of watersurface that overlaps with the light surface in percent"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="50" output="0.5"/>
+								<parameter input="100" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Light_source">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Light_source</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Watersurface">
-						<type>scalar</type>
-						<layername>"Watersurface"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Size of the watersurface in square meters"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="40" HSI="0.1"/>
-							<parameter value="100" HSI="1.0"/>
-							<parameter value="200" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Watersurface">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Watersurface</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Size of the watersurface in square meters"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="40" output="0.1"/>
+								<parameter input="100" output="1.0"/>
+								<parameter input="200" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Watersurface">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Watersurface</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Distance_line_element">
-						<type>scalar</type>
-						<layername>"Distance_line_element"</layername>
-						<unit>"km"</unit>
-						<statistic>average</statistic>
-						<description>"Distance from a line element to the water in kilometers"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="1" HSI="0.0"/>
-							<parameter value="2" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Distance_line_element">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Distance_line_element</layer_filename>
+								<unit>"km"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Distance from a line element to the water in kilometers"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="1" output="0.0"/>
+								<parameter input="2" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Distance_line_element">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Distance_line_element</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Distance_colony_tree">
-						<type>categorical</type>
-						<layername>"Distance_colony_tree"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"Presence of suitable residence places within 5 kilometers</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="no colony trees or less than 30 old trees" HSI="0.0"/>
-							<parameter cat="colony trees or more than 30 old trees" HSI="1.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Distance_colony_tree">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Distance_colony_tree</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of suitable residence places within 5 kilometers</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="no colony trees or less than 30 old trees" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="colony trees or more than 30 old trees" output="1.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Distance_colony_tree">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Distance_colony_tree</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Water_width">
-						<type>range / categorical</type>
-						<layername>"Water_width"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Width of the water in meters"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="5" cat="0 - 5" HSI="0.0"/>
-							<parameter rangemin="5" rangemax="10" cat="5 - 10" HSI="1.0"/>
-							<parameter rangemin="10" rangemax="999999" cat="> 10" HSI="1.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Water_width">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Water_width</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Width of the water in meters"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="5" input_cat="0 - 5" output="0.0" output_cat=""/>
+								<parameter rangemin_input="5" rangemax_input="10" input_cat="5 - 10" output="1.0" output_cat=""/>
+								<parameter rangemin_input="10" rangemax_input="999999" input_cat="&gt; 10" output="1.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Water_width">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Water_width</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Shelter">
-						<type>scalar</type>
-						<layername>"Shelter"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of the banks that provides shelter in percent. Note: This is based on bank sections that together have a minimum length of 4 kilometers. Trees, dikes and landscaping that are present within a radius of 10 meters from the actual bank are included as shelter. The percentage represents the part of the bank sections that is protected"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="25" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Shelter">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Shelter</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of the banks that provides shelter in percent. Note: This is based on bank sections that together have a minimum length of 4 kilometers. Trees, dikes and landscaping that are present within a radius of 10 meters from the actual bank are included as shelter. The percentage represents the part of the bank sections that is protected"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="25" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Shelter">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Shelter</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Trophy_rate">
-						<type>categorical</type>
-						<layername>"Trophy_rate"</layername>
-						<unit>"-"</unit>
-						<statistic>Average</statistic>
-						<description>"Trophy rate"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="oligotrophic" HSI="0.1"/>
-							<parameter cat="mesotrophic" HSI="1.0"/>
-							<parameter cat="eutrophic" HSI="0.7"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Trophy_rate">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Trophy_rate</layer_filename>
+								<unit>"-"</unit>
+								<statistic>Average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Trophy rate"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="oligotrophic" output="0.1" output_cat=""/>
+								<parameter input="2" input_cat="mesotrophic" output="1.0" output_cat=""/>
+								<parameter input="3" input_cat="eutrophic" output="0.7" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Trophy_rate">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Trophy_rate</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
-		<Description language="NL"><text><![CDATA[<h3 id="Watervleermuis-Myotisdaubentonii-Algemeenvoorkomen">Algemeen voorkomen</h3>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Watervleermuis-Myotisdaubentonii-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De watervleermuis (Myotis daubentonii) is een boombewonende vleermuissoort, maar wordt ook op kerkzolders, in grotten, bunkers en holle ruimten en spleten in (beton)bruggen aangetroffen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a> en <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>. De verspreiding is echter met name gekoppeld aan het aanbod van oude, holle bomen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>. De verspreiding toont een duidelijk relatie met de oudere bossen op de duinen in het westen van Nederland en de hogere zandgronden en het krijtlandschap in het oosten en het zuiden van Nederland. Ook is de soort te vinden in het laagland bij oude bossen en parken en in het noordwesten op zolders als er geen bossen in de buurt zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>.</p>
+&lt;p&gt;De watervleermuis (Myotis daubentonii) is een boombewonende vleermuissoort, maar wordt ook op kerkzolders, in grotten, bunkers en holle ruimten en spleten in (beton)bruggen aangetroffen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt; en &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;. De verspreiding is echter met name gekoppeld aan het aanbod van oude, holle bomen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;. De verspreiding toont een duidelijk relatie met de oudere bossen op de duinen in het westen van Nederland en de hogere zandgronden en het krijtlandschap in het oosten en het zuiden van Nederland. Ook is de soort te vinden in het laagland bij oude bossen en parken en in het noordwesten op zolders als er geen bossen in de buurt zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>De watervleermuis is een grote vleermuis met een spanwijdte van 20 tot 30 cm en een gewicht van 14 tot 20 gram. Net als de meervleermuis heeft de watervleermuis opvallend grote voeten die hij gebruikt om insecten van het wateroppervlak te scheppen. De soort is te onderscheiden van andere Myotis soorten door de bruine neus met in verhouding vrij grote neusknobbels. De buikvacht is grijswit met een donkere ondervacht en deze steekt duidelijk af tegen de middel- tot donkerbruingrijze rugvacht <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>.</p>
+&lt;p&gt;De watervleermuis is een grote vleermuis met een spanwijdte van 20 tot 30 cm en een gewicht van 14 tot 20 gram. Net als de meervleermuis heeft de watervleermuis opvallend grote voeten die hij gebruikt om insecten van het wateroppervlak te scheppen. De soort is te onderscheiden van andere Myotis soorten door de bruine neus met in verhouding vrij grote neusknobbels. De buikvacht is grijswit met een donkere ondervacht en deze steekt duidelijk af tegen de middel- tot donkerbruingrijze rugvacht &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Watervleermuis-Myotisdaubentonii-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Watervleermuis-Myotisdaubentonii-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Het minimale wateroppervlak waarbij de watervleermuis is waargenomen is 40 m2. Grotere wateren (100 m2) vormen een meer gebruikelijk voedselhabitat. Het oppervlak kan ook opgemaakt worden uit een serie nabij gelegen wateren binnen een straal van enkele tientallen/honderden meters <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>.</p>
+&lt;p&gt;Het minimale wateroppervlak waarbij de watervleermuis is waargenomen is 40 m2. Grotere wateren (100 m2) vormen een meer gebruikelijk voedselhabitat. Het oppervlak kan ook opgemaakt worden uit een serie nabij gelegen wateren binnen een straal van enkele tientallen/honderden meters &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<p>Het jachtgebied bestaat uit allerlei typen wateren. Vooral beschutte wateren als vijvers in landgoederen en parken, smalle vaarten, en langzaam stromende beken worden gebruikt. Hierbij jaagt de watervleermuis circa 5 tot 30 cm boven het wateroppervlak. Watervleermuizen zijn met name te vinden boven mesotrofe wateren, hier is het insecten aanbod namelijk het hoogst. Watervleermuizen zijn opportunistische jagers waardoor het insectenaanbod daarom wel eens de meest bepalende factor van voorkomen kan zijn <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>. De soort wordt zelden jagend aangetroffen boven water dat met kroos of waterlelies bedekt is of door riet of boomopslag wordt onderbroken. </p>
+&lt;p&gt;Het jachtgebied bestaat uit allerlei typen wateren. Vooral beschutte wateren als vijvers in landgoederen en parken, smalle vaarten, en langzaam stromende beken worden gebruikt. Hierbij jaagt de watervleermuis circa 5 tot 30 cm boven het wateroppervlak. Watervleermuizen zijn met name te vinden boven mesotrofe wateren, hier is het insecten aanbod namelijk het hoogst. Watervleermuizen zijn opportunistische jagers waardoor het insectenaanbod daarom wel eens de meest bepalende factor van voorkomen kan zijn &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;. De soort wordt zelden jagend aangetroffen boven water dat met kroos of waterlelies bedekt is of door riet of boomopslag wordt onderbroken. &lt;/p&gt;
 
-<p>De watervleermuis jaagt ook boven land. Dit doet hij voornamelijk relatief laag boven bospaden, in beschutte open plekken van het bos of hoger tussen de boomkronen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>. De watervleermuis jaagt voornamelijk op dansmuggen (Chironomidae), maar ook op langpootmuggen (Tipulidae), vlinders (Lepidoptera) en kevers (Coleoptra) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>. Bij het jagen kan de homerange variëren van enkele tot 10 kilometers, afhankelijk van de ligging van de kolonie ten opzichte van het jachtgebied <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>. Op de weg naar het jachtgebied blijft de watervleermuis in het algemeen in de beschutting van bosranden, houtwallen en andere lijnvormige elementen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>. Het jachtgebied dient daarom bij voorkeur te grenzen aan (potentieel) koloniegebied of verbonden te zijn aan het kolonie gebied door middel van lijnvormige elementen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>. Rondom een lichtbron (lantarenpaal) wordt een areaal van 10 meter door de watervleermuis gemeden. Op het moment dat dit areaal overlapt met potentieel jachtgebied dan zal de watervleermuis hier niet jagen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>.</p>
+&lt;p&gt;De watervleermuis jaagt ook boven land. Dit doet hij voornamelijk relatief laag boven bospaden, in beschutte open plekken van het bos of hoger tussen de boomkronen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;. De watervleermuis jaagt voornamelijk op dansmuggen (Chironomidae), maar ook op langpootmuggen (Tipulidae), vlinders (Lepidoptera) en kevers (Coleoptra) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;. Bij het jagen kan de homerange variëren van enkele tot 10 kilometers, afhankelijk van de ligging van de kolonie ten opzichte van het jachtgebied &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;. Op de weg naar het jachtgebied blijft de watervleermuis in het algemeen in de beschutting van bosranden, houtwallen en andere lijnvormige elementen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;. Het jachtgebied dient daarom bij voorkeur te grenzen aan (potentieel) koloniegebied of verbonden te zijn aan het kolonie gebied door middel van lijnvormige elementen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;. Rondom een lichtbron (lantarenpaal) wordt een areaal van 10 meter door de watervleermuis gemeden. Op het moment dat dit areaal overlapt met potentieel jachtgebied dan zal de watervleermuis hier niet jagen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Watervleermuis-Myotisdaubentonii-Reproductie,migratieenleefgebied">Reproductie, migratie en leefgebied</h3>
+&lt;h3 id="Watervleermuis-Myotisdaubentonii-Reproductie,migratieenleefgebied"&gt;Reproductie, migratie en leefgebied&lt;/h3&gt;
 
-<p>De watervleermuis overwinterd in koele vochtige ondergrondse ruimten met een min of meer constante temperatuur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>. Hiervoor gebruiken ze voornamelijk ondergrondse objecten, zoals grotten, kalksteengroeven, oude steenfabrieken, bunkers, forten, vestingwerken, ijskelders en (kasteel)kelders. Hierbij blijft de watervleermuis in een stabiele winterslaap van september/oktober tot maart/april <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>. </p>
+&lt;p&gt;De watervleermuis overwinterd in koele vochtige ondergrondse ruimten met een min of meer constante temperatuur &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;. Hiervoor gebruiken ze voornamelijk ondergrondse objecten, zoals grotten, kalksteengroeven, oude steenfabrieken, bunkers, forten, vestingwerken, ijskelders en (kasteel)kelders. Hierbij blijft de watervleermuis in een stabiele winterslaap van september/oktober tot maart/april &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;
 
-<p>Paren vindt voor zover tijdens de winterslaap en in de najaarszwermen plaats <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>. Vanaf april vormen de vrouwtjes kraamgroepen, waarbij in de tweede helft van juni de jongen worden geboren die in de tweede helft van juli uitvliegen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2">#2</a>. Kraamkolonies variëren van enkele tientallen tot meer dan honderd individuen en bestaat uit een verwante groep vrouwelijke watervleermuizen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1">#1</a>.</p>]]></text>
+&lt;p&gt;Paren vindt voor zover tijdens de winterslaap en in de najaarszwermen plaats &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;. Vanaf april vormen de vrouwtjes kraamgroepen, waarbij in de tweede helft van juni de jongen worden geboren die in de tweede helft van juli uitvliegen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-2"&gt;#2&lt;/a&gt;. Kraamkolonies variëren van enkele tientallen tot meer dan honderd individuen en bestaat uit een verwante groep vrouwelijke watervleermuizen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Watervleermuis+-+Myotis+daubentonii#Watervleermuis-Myotisdaubentonii-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="" year="2012" title="www.vleermuis.net (Watervleermuis)" journal="" identification="10 december 2012"/>
 		<reference author="Hollands., H., J.O. Reinhold" year="1999" title="HSI-modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van huidige ecologische kennis" journal="" identification="Dienst Weg- en Waterbouwkunde"/>

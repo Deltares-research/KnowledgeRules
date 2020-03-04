@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,17 +23,17 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Grotemodderkruiper-Misgurnusfossilis-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Grotemodderkruiper-Misgurnusfossilis-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Grote modderkruiper - Misgurnus fossilis - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze dosis-effect relaties zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Grote modderkruiper - Misgurnus fossilis - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze dosis-effect relaties zijn niet gevalideerd.&lt;/p&gt;
 
-<h1 id="Grotemodderkruiper-Misgurnusfossilis-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Grotemodderkruiper-Misgurnusfossilis-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>Deze dosis-effect relaties zijn toepasbaar op zoet water in Nederland. Op alle niet zwaar vervuilde en niet te sterk eutrofe wateren, met een brede litorale zone of andere ondiepe gedeelten, kan dit model zonder bezwaar worden toegepast. Het model is echter onvolledig door bijvoorbeeld het ontbreken van relaties over eutrofiering en verontreiniging omdat hier over te weinig gegevens bekend zijn om relaties op te stellen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-3">#3</a>.</p>
+&lt;p&gt;Deze dosis-effect relaties zijn toepasbaar op zoet water in Nederland. Op alle niet zwaar vervuilde en niet te sterk eutrofe wateren, met een brede litorale zone of andere ondiepe gedeelten, kan dit model zonder bezwaar worden toegepast. Het model is echter onvolledig door bijvoorbeeld het ontbreken van relaties over eutrofiering en verontreiniging omdat hier over te weinig gegevens bekend zijn om relaties op te stellen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-3"&gt;#3&lt;/a&gt;.&lt;/p&gt;
 
-<h1 id="Grotemodderkruiper-Misgurnusfossilis-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Grotemodderkruiper-Misgurnusfossilis-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Er is geen voorbeeld projekt beschikbaar.</p>]]></text>
+&lt;p&gt;Er is geen voorbeeld projekt beschikbaar.&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -64,140 +62,242 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Flow_velocity">
-						<type>scalar</type>
-						<layername>Flow_velocity</layername>
-						<unit>m/s</unit>
-						<statistic>average</statistic>
-						<description>Flow velocity in meters per second</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="30" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Flow_velocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity</layer_filename>
+								<unit>m/s</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>Flow velocity in meters per second</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="30" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Acidity">
-						<type>scalar</type>
-						<layername>"Acidity"</layername>
-						<unit>"pH"</unit>
-						<statistic>average</statistic>
-						<description>"Average pH value during the growing season."</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0.0" HSI="0.0"/>
-							<parameter value="3.5" HSI="0.0"/>
-							<parameter value="4" HSI="0.5"/>
-							<parameter value="5" HSI="0.5"/>
-							<parameter value="6" HSI="1.0"/>
-							<parameter value="9" HSI="1.0"/>
-							<parameter value="11" HSI="0.0"/>
-							<parameter value="14" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Acidity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Acidity</layer_filename>
+								<unit>"pH"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average pH value during the growing season."</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="3.5" output="0.0"/>
+								<parameter input="4" output="0.5"/>
+								<parameter input="5" output="0.5"/>
+								<parameter input="6" output="1.0"/>
+								<parameter input="9" output="1.0"/>
+								<parameter input="11" output="0.0"/>
+								<parameter input="14" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Acidity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Acidity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Watertemperature">
-						<type>range / categorical</type>
-						<layername>"Watertemperature"</layername>
-						<unit>"degrees Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Water temperature in the spawning period in degrees Celsius."</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="13" cat="0 - 13" HSI="0.0"/>
-							<parameter rangemin="13" rangemax="19" cat="13 - 19" HSI="0.5"/>							
-							<parameter rangemin="19" rangemax="21" cat="19 - 21" HSI="1.0"/>
-							<parameter rangemin="21" rangemax="24" cat="21 - 24" HSI="0.5"/>
-							<parameter rangemin="24" rangemax="999999" cat="> 24" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Watertemperature">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Watertemperature</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Water temperature in the spawning period in degrees Celsius."</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="13" input_cat="0 - 13" output="0.0" output_cat=""/>
+								<parameter rangemin_input="13" rangemax_input="19" input_cat="13 - 19" output="0.5" output_cat=""/>
+								<parameter rangemin_input="19" rangemax_input="21" input_cat="19 - 21" output="1.0" output_cat=""/>
+								<parameter rangemin_input="21" rangemax_input="24" input_cat="21 - 24" output="0.5" output_cat=""/>
+								<parameter rangemin_input="24" rangemax_input="999999" input_cat="&gt; 24" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Watertemperature">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Watertemperature</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Shallow_water_mud">
-						<type>scalar</type>
-						<layername>"Shallow_water_mud"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of the area consisting of shallow water with a muddy soil."</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Shallow_water_mud">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Shallow_water_mud</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of the area consisting of shallow water with a muddy soil."</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Shallow_water_mud">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Shallow_water_mud</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Bank_vegetation">
-						<type>scalar</type>
-						<layername>"Bank_vegetation"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of the bank that is covered with vegetation."</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="50" HSI="0.0"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Bank_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Bank_vegetation</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of the bank that is covered with vegetation."</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="50" output="0.0"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Bank_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Bank_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Submerse_vegetation">
-						<type>scalar</type>
-						<layername>"Submerse_vegetation"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Coverage of the submerse vegetation in percent."</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="50" HSI="0.0"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="80" HSI="1.0"/>
-							<parameter value="80" HSI="0.5"/>
-							<parameter value="100" HSI="0.5"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Submerse_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Submerse_vegetation</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Coverage of the submerse vegetation in percent."</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="50" output="0.0"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="80" output="1.0"/>
+								<parameter input="80" output="0.5"/>
+								<parameter input="100" output="0.5"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Submerse_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Submerse_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Grotemodderkruiper-Misgurnusfossilis-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Grotemodderkruiper-Misgurnusfossilis-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De Grote modderkruiper leeft in ondiep, stilstaand of zeer langzaam stromend water, waarin op de bodem een dikke modderlaag en veel planten aanwezig zijn. De soort wordt het meest aangetroffen in kleine wateren, vooral in poldersloten met een goede waterkwaliteit. Vaak betreft het locaties met kwelwater en/of bicarbonaatrijk water. Ook komt de soort voor in langzaam stromende rivieren en beken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1">#1</a>.</p>
+&lt;p&gt;De Grote modderkruiper leeft in ondiep, stilstaand of zeer langzaam stromend water, waarin op de bodem een dikke modderlaag en veel planten aanwezig zijn. De soort wordt het meest aangetroffen in kleine wateren, vooral in poldersloten met een goede waterkwaliteit. Vaak betreft het locaties met kwelwater en/of bicarbonaatrijk water. Ook komt de soort voor in langzaam stromende rivieren en beken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Grotemodderkruiper-Misgurnusfossilis-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Grotemodderkruiper-Misgurnusfossilis-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Net als de Kleine modderkruiper vindt de soort zijn voedsel in de bodem, waarbij ze allerlei kleine dieren eet, zoals wormen, watervlooien, muggenlarven en kreeftjes. De vis is 's nachts actief en verblijft overdag in de bovenste bodemlaag, die behalve modder veel organisch materiaal (sapropelium) bevat <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1">#1</a>.</p>
+&lt;p&gt;Net als de Kleine modderkruiper vindt de soort zijn voedsel in de bodem, waarbij ze allerlei kleine dieren eet, zoals wormen, watervlooien, muggenlarven en kreeftjes. De vis is 's nachts actief en verblijft overdag in de bovenste bodemlaag, die behalve modder veel organisch materiaal (sapropelium) bevat &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Grotemodderkruiper-Misgurnusfossilis-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Grotemodderkruiper-Misgurnusfossilis-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>De vis paait van maart tot eind juni op ondiepe plekken, doorgaans dicht langs de oevers in holten of onder de beschutting van overhangende begroeiing (bijvoorbeeld wilgen) of drijvende watervegetatie. Eieren worden zowel in de watervegetatie als op kaal substraat afgezet. De eitjes komen na acht tot negen dagen uit. De jonge vissen zijn na twee jaar geslachtsrijp, bij een lengte van circa 15 cm <a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1">#1</a>.</p>
+&lt;p&gt;De vis paait van maart tot eind juni op ondiepe plekken, doorgaans dicht langs de oevers in holten of onder de beschutting van overhangende begroeiing (bijvoorbeeld wilgen) of drijvende watervegetatie. Eieren worden zowel in de watervegetatie als op kaal substraat afgezet. De eitjes komen na acht tot negen dagen uit. De jonge vissen zijn na twee jaar geslachtsrijp, bij een lengte van circa 15 cm &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Grote+modderkruiper+-+Misgurnus+fossilis#Grotemodderkruiper-Misgurnusfossilis-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Grotemodderkruiper-Misgurnusfossilis-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Grotemodderkruiper-Misgurnusfossilis-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>DOver de leeftijd van de Grote modderkruiper is niets bekend.</p>]]></text>
+&lt;p&gt;DOver de leeftijd van de Grote modderkruiper is niets bekend.&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="" year="" title="http://www.minlnv.nl/natura2000" journal="" identification=""/>
 		<reference author=" Schouten, W.J." year="1992" title="Habitatgeschiktheid index model Grote Modderkruiper Misgurnus fossilis L." journal="" identification="OVB, Nieuwegein. 1992"/>

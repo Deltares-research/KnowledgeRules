@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,18 +23,18 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Elft-Alosaalosa-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Elft-Alosaalosa-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Elft - Alosa alosa - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)">&nbsp;De response curves zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Elft - Alosa alosa - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt;&amp;nbsp;De response curves zijn niet gevalideerd.&lt;/p&gt;
 
-<h1 id="Elft-Alosaalosa-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Elft-Alosaalosa-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>De response curves voor trek kunnen gebruikt worden voor Nederlandse rivieren zoals de Rijn en de Maas. Omdat de Elft niet in Nederland paait zijn de relaties voor het paaigebied niet voor gebieden in Nederland toepasbaar. De dosis-effect relaties voor de passeerbaarheid van barrieres zijn algemeen niet kenmerkend voor de Elft.</p>
+&lt;p&gt;De response curves voor trek kunnen gebruikt worden voor Nederlandse rivieren zoals de Rijn en de Maas. Omdat de Elft niet in Nederland paait zijn de relaties voor het paaigebied niet voor gebieden in Nederland toepasbaar. De dosis-effect relaties voor de passeerbaarheid van barrieres zijn algemeen niet kenmerkend voor de Elft.&lt;/p&gt;
 
-<h1 id="Elft-Alosaalosa-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Elft-Alosaalosa-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Op dit moment is er geen voorbeeld projekt beschikbaar.</p>
-]]></text>
+&lt;p&gt;Op dit moment is er geen voorbeeld projekt beschikbaar.&lt;/p&gt;
+</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -64,119 +62,202 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Flow_velocity_migration">
-						<type>range / categorical</type>
-						<layername>Flow_velocity_migration</layername>
-						<unit>m/s</unit>
-						<statistic>average</statistic>
-						<description>Flow velocity in meters per second during migration</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Maitland, P.S. and Hatton-Ellis, T.W." year="2003" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="2" cat="0 - 2" HSI="1.0"/>
-							<parameter rangemin="2" rangemax="999999" cat="> 2" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Flow_velocity_migration">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity_migration</layer_filename>
+								<unit>m/s</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Flow velocity in meters per second during migration</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Maitland, P.S. and Hatton-Ellis, T.W." year="2003" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="2" input_cat="0 - 2" output="1.0" output_cat=""/>
+								<parameter rangemin_input="2" rangemax_input="999999" input_cat="&gt; 2" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity_migration">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity_migration</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Barriers_upwards">
-						<type>categorical</type>
-						<layername>"Barriers_upwards"</layername>
-						<unit>"category"</unit>
-						<statistic>minimum</statistic>
-						<description>"Presence of barriers during stream upward migration"</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="sluice" HSI="0.5"/>
-							<parameter cat="shipping lock + weir + fish ladder" HSI="0.7"/>
-							<parameter cat="
-shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
-						</valuesCategorical>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="Barriers_upwards">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Barriers_upwards</layer_filename>
+								<unit>"category"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of barriers during stream upward migration"</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="sluice" output="0.5" output_cat=""/>
+								<parameter input="2" input_cat="shipping lock + weir + fish ladder" output="0.7" output_cat=""/>
+								<parameter input="3" input_cat=" shipping lock + weir + hydroelectric power station + fish ladder" output="0.7" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Barriers_upwards">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 					<ResponseCurve name="Barriers_downwards">
-						<type>categorical</type>
-						<layername>"Barriers_downwards"</layername>
-						<unit>"category"</unit>
-						<statistic>minimum</statistic>
-						<description>"Presence of barriers during stream downward migration"</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="sluice" HSI="1.0"/>
-							<parameter cat="shipping lock + weir + fish ladder" HSI="1.0"/>
-							<parameter cat="
-shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
-						</valuesCategorical>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="Barriers_downwards">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Barriers_downwards</layer_filename>
+								<unit>"category"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of barriers during stream downward migration"</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="sluice" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="shipping lock + weir + fish ladder" output="1.0" output_cat=""/>
+								<parameter input="3" input_cat=" shipping lock + weir + hydroelectric power station + fish ladder" output="0.7" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Barriers_downwards">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity_spawning">
-						<type>range / categorical</type>
-						<layername>Flow_velocity_spawning</layername>
-						<unit>m/s</unit>
-						<statistic>maximum</statistic>
-						<description>Flow velocity in meters per second during spawning</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="http://www.minlnv.nl/natura2000" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="1" cat="0 - 1" HSI="1.0"/>
-							<parameter rangemin="1" rangemax="999999" cat="> 1" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Flow_velocity_spawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity_spawning</layer_filename>
+								<unit>m/s</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Flow velocity in meters per second during spawning</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="http://www.minlnv.nl/natura2000" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="0 - 1" output="1.0" output_cat=""/>
+								<parameter rangemin_input="1" rangemax_input="999999" input_cat="&gt; 1" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity_spawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity_spawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate">
-						<type>categorical</type>
-						<layername>"Substrate"</layername>
-						<unit>"category"</unit>
-						<statistic>average</statistic>
-						<description>"Presence of gravel in the spawning area. In the absence of extensive information, this relationship is based on the dose-effect relationship of the river lamprey, which requires a similar spawning area."</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="none" HSI="0.0"/>
-							<parameter cat="few" HSI="0.1"/>
-							<parameter cat="moderate" HSI="0.35"/>
-							<parameter cat="reasonable" HSI="0.65"/>
-							<parameter cat="much" HSI="1.0"/>
-						</valuesCategorical>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="Substrate">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Substrate</layer_filename>
+								<unit>"category"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of gravel in the spawning area. In the absence of extensive information, this relationship is based on the dose-effect relationship of the river lamprey, which requires a similar spawning area."</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="none" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="few" output="0.1" output_cat=""/>
+								<parameter input="3" input_cat="moderate" output="0.35" output_cat=""/>
+								<parameter input="4" input_cat="reasonable" output="0.65" output_cat=""/>
+								<parameter input="5" input_cat="much" output="1.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Substrate">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Substrate</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<p>De Elft (<em>Alosa alosa</em>) behoort tot de Haringachtigen (<em>Clupeidae</em>), een familie van doorgaans betrekkelijk kleine, zilverkleurige vissen. Met een maximale lengte van ruim 80 cm is de Elft de grootste vertegenwoordiger van deze familie. Het geslacht Alosa onderscheidt zich van de rest van de Haringachtigen door het bezit van twee verlengde schubben aan het begin van de staartvin. De Elft lijkt sterk op haar familielid de Fint (<em>Alosa fallax</em>), maar wordt iets langer en heeft een groter aantal aanhangsels op de eerste kieuwboog: 90 tot 155 bij de Elft, 35 tot 60 bij de Fint. Het aantal kieuwboogaanhangsels neemt toe met de lengte; de gegeven aantallen gelden dan ook voor een lengte van minimaal 30 (Elft) en 25 (Fint) cm. Exemplaren met 60 tot 90 kieuwboogaanhangsels kunnen kruisingen tussen beide soorten betreffen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-1">#1</a>.</p>
+			<text>&lt;p&gt;De Elft (&lt;em&gt;Alosa alosa&lt;/em&gt;) behoort tot de Haringachtigen (&lt;em&gt;Clupeidae&lt;/em&gt;), een familie van doorgaans betrekkelijk kleine, zilverkleurige vissen. Met een maximale lengte van ruim 80 cm is de Elft de grootste vertegenwoordiger van deze familie. Het geslacht Alosa onderscheidt zich van de rest van de Haringachtigen door het bezit van twee verlengde schubben aan het begin van de staartvin. De Elft lijkt sterk op haar familielid de Fint (&lt;em&gt;Alosa fallax&lt;/em&gt;), maar wordt iets langer en heeft een groter aantal aanhangsels op de eerste kieuwboog: 90 tot 155 bij de Elft, 35 tot 60 bij de Fint. Het aantal kieuwboogaanhangsels neemt toe met de lengte; de gegeven aantallen gelden dan ook voor een lengte van minimaal 30 (Elft) en 25 (Fint) cm. Exemplaren met 60 tot 90 kieuwboogaanhangsels kunnen kruisingen tussen beide soorten betreffen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Elft-Alosaalosa-Algemeenvoorkomen">Algemeen voorkomen</h3>
+&lt;h3 id="Elft-Alosaalosa-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De Elft heeft een verspreiding aan de Oost-Atlantische kust, van Marokko en westelijk deel Middellandse Zee tot Ierland. In het noorden van Europa is de soort uitgestorven en in Zuid-Europa is de soort zeldzaam geworden. In Nederland kwam de elft voor als trekvis om in de Rijn, Moezel en Neckar onder andere te paaien. Door de aanleg van stuwen en dammen is de populatie sterk achteruit gegaan <a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-2">#2</a>.</p>
+&lt;p&gt;De Elft heeft een verspreiding aan de Oost-Atlantische kust, van Marokko en westelijk deel Middellandse Zee tot Ierland. In het noorden van Europa is de soort uitgestorven en in Zuid-Europa is de soort zeldzaam geworden. In Nederland kwam de elft voor als trekvis om in de Rijn, Moezel en Neckar onder andere te paaien. Door de aanleg van stuwen en dammen is de populatie sterk achteruit gegaan &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Elft-Alosaalosa-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Elft-Alosaalosa-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Juvenielen eten voornamelijk bentische invertebraten, vooral muggelarven en kreeftachtigen. Adulten eten alleen in zout water en ook hun voedsel bestaat voornamelijk uit invertebrates, vooral kleine kreeftjes, maar ook kleine vis <a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-3">#3</a>.</p>
+&lt;p&gt;Juvenielen eten voornamelijk bentische invertebraten, vooral muggelarven en kreeftachtigen. Adulten eten alleen in zout water en ook hun voedsel bestaat voornamelijk uit invertebrates, vooral kleine kreeftjes, maar ook kleine vis &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-3"&gt;#3&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Elft-Alosaalosa-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Elft-Alosaalosa-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>De Elft is een anadrome trekvis. De paaigronden liggen in kalm water van nevengeulen, zijarmen of tussen ribben in grindbeddingen. De trek vindt plaats vanaf een watertemperatuur van 11-12 graden, bij temperaturen boven de 17-20 graden stopt de trekdrang. De migratie in de Rijn viel tussen mei en half juni <a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-2">#2</a>. Stroomsnelheden van maximaal 2 m/s vormen geen probleem voor de trek <a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-3">#3</a>.</p>
+&lt;p&gt;De Elft is een anadrome trekvis. De paaigronden liggen in kalm water van nevengeulen, zijarmen of tussen ribben in grindbeddingen. De trek vindt plaats vanaf een watertemperatuur van 11-12 graden, bij temperaturen boven de 17-20 graden stopt de trekdrang. De migratie in de Rijn viel tussen mei en half juni &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-2"&gt;#2&lt;/a&gt;. Stroomsnelheden van maximaal 2 m/s vormen geen probleem voor de trek &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-3"&gt;#3&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Elft-Alosaalosa-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Elft-Alosaalosa-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>Larven leven 1 tot 2 jaar in de rivier alvorens ze naar zee trekken. Een Elft leeft maximaal circa zeven jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-1">#1</a>.</p>
+&lt;p&gt;Larven leven 1 tot 2 jaar in de rivier alvorens ze naar zee trekken. Een Elft leeft maximaal circa zeven jaar &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Elft+-+Alosa+alosa#Elft-Alosaalosa-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-]]></text>
+</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="http://www.minlnv.nl/natura2000" year="" title="" journal="" identification=""/>
 		<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="Europese natuur in Nederland; soorten van de Habitat richtlijn." journal="" identification=""/>

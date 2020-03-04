@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>46470499</EoLpagenr>
 			<LatName>Mya arenaria</LatName>
 			<CommonNames>
-				<Name name = "Strandgaper" language = "NL"/>
+				<Name name="Strandgaper" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
-		</Topic>
+	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
 			<System name="adult">
@@ -24,109 +23,161 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-					<text><![CDATA[<h1 id="Strandgaper-Myaarenaria-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Strandgaper-Myaarenaria-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Strandgaper - Mya arenaria - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Het model is niet gevalideerd. </p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Strandgaper - Mya arenaria - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Het model is niet gevalideerd. &lt;/p&gt;
 
-<h1 id="Strandgaper-Myaarenaria-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Strandgaper-Myaarenaria-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>De rekenregels zijn samengesteld uit logistische regressie op de Westerschelde data verkregen door Ysebaert en Meire (1999) <a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-3">#3</a>. Het model is opgezet voor het Veerse Meer <a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2">#2</a>. </p>
+&lt;p&gt;De rekenregels zijn samengesteld uit logistische regressie op de Westerschelde data verkregen door Ysebaert en Meire (1999) &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-3"&gt;#3&lt;/a&gt;. Het model is opgezet voor het Veerse Meer &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;
 
-<h1 id="Strandgaper-Myaarenaria-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Strandgaper-Myaarenaria-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Er is geen voorbeeldproject beschikbaar</p>]]></text>
+&lt;p&gt;Er is geen voorbeeldproject beschikbaar&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
 					<FlowDiagram name="HGI">
 						<From name="Habitat_quality">
 							<label>"Habitat_quality"</label>
-							<equation>min</equation>							
+							<equation>min</equation>
 							<To>Salinity</To>
 							<To>Waterdepth</To>
 							<To>Flow_velocity</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
-				<KnowledgeRules>		
+				<KnowledgeRules>
 					<ResponseCurve name="Salinity">
-						<type>scalar</type>
-						<layername>"Salinity"</layername>
-						<unit>"promille"</unit>
-						<statistic>average</statistic>
-						<description>"Salinity in promille"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
-							<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="5" HSI="0.0"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="22.5" HSI="1.0"/>
-							<parameter value="28" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Salinity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity</layer_filename>
+								<unit>"promille"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Salinity in promille"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+								<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="5" output="0.0"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="22.5" output="1.0"/>
+								<parameter input="28" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth">
-						<type>scalar</type>
-						<layername>"Waterdepth"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in the winter in meters"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
-							<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="0.05" HSI="1.0"/>
-							<parameter value="3" HSI="1.0"/>
-							<parameter value="7.5" HSI="0.0"/>
-							<parameter value="10" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Waterdepth">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterdepth</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in the winter in meters"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+								<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="0.05" output="1.0"/>
+								<parameter input="3" output="1.0"/>
+								<parameter input="7.5" output="0.0"/>
+								<parameter input="10" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterdepth">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity">
-						<type>scalar</type>
-						<layername>"Flow_velocity"</layername>
-						<unit>"m/s"</unit>
-						<statistic>average</statistic>
-						<description>"Flow velocity in meters per second"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
-							<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="0.6" HSI="1.0"/>
-							<parameter value="0.8" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Flow_velocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Flow velocity in meters per second"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Wijsman, J." year="2002" title="" journal="" identification=""/>
+								<reference author="Ysebaert,T.,Meire,P." year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="0.6" output="1.0"/>
+								<parameter input="0.8" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
-		<Description language="NL"><text><![CDATA[<h3 id="Strandgaper-Myaarenaria-Algemeenvoorkomen">Algemeen voorkomen</h3>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Strandgaper-Myaarenaria-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>Strandgapers zijn van oorsprong Amerikaans en zijn in de 16e-17e eeuw door de Vikingen vanuit Noord-Amerika naar Europa gebracht <a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-1">#1</a>. De strandgaper is een soort die vooral voorkomt in het intergetijdengebied en leeft in een verticale positie op een diepte van maximaal 40 cm diep in het sediment (afhankelijk van leeftijd en de lengte van de adembuizen (siphons)). In het Veerse Meer liggen de individuen om een onverklaarbare reden bovenop het sediment <a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2">#2</a>.</p>
+&lt;p&gt;Strandgapers zijn van oorsprong Amerikaans en zijn in de 16e-17e eeuw door de Vikingen vanuit Noord-Amerika naar Europa gebracht &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-1"&gt;#1&lt;/a&gt;. De strandgaper is een soort die vooral voorkomt in het intergetijdengebied en leeft in een verticale positie op een diepte van maximaal 40 cm diep in het sediment (afhankelijk van leeftijd en de lengte van de adembuizen (siphons)). In het Veerse Meer liggen de individuen om een onverklaarbare reden bovenop het sediment &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="Strandgaper-Myaarenaria-Voedselhabitatenstrategie">Voedselhabitat en strategie</h2>
+&lt;h2 id="Strandgaper-Myaarenaria-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h2&gt;
 
-<p>De Strandgaper is een filterfeeder en haalt met behulp van zijn siphon (adembuis) micro-organismen (flagellaten) en detritus uit het water. Daarnaast kan de Strandgaper met zijn siphon voedseldeeltjes van het sedimentoppervlak naar binnen trekken.</p>
+&lt;p&gt;De Strandgaper is een filterfeeder en haalt met behulp van zijn siphon (adembuis) micro-organismen (flagellaten) en detritus uit het water. Daarnaast kan de Strandgaper met zijn siphon voedseldeeltjes van het sedimentoppervlak naar binnen trekken.&lt;/p&gt;
 
-<h3 id="Strandgaper-Myaarenaria-Milieurandvoorwaarden">Milieurandvoorwaarden</h3>
+&lt;h3 id="Strandgaper-Myaarenaria-Milieurandvoorwaarden"&gt;Milieurandvoorwaarden&lt;/h3&gt;
 
-<p>De Strandgaper is een echte euryhaline soort die kan voorkomen bij lage zoutgehalten (vanaf 5 promille) en is aangepast aan sterk variërende zoutconcentraties. Op langere termijn moet het zoutgehalte boven 9 promille zijn. Middels logistische regressie op de gegevens in de Westerschelde is er een optimum zoutgehalte gevonden van 18 promille. Bij lagere zoutgehalten dan 10 en hogere zoutgehalten dan 22.5 nam de waarschijnlijkheid van voorkomen van de Strandgaper af. Verder bleek uit de logistische regressieanalyse dat de Strandgaper tot ongeveer 7.5 meter onder het gemiddelde waterniveau voorkomt. Bij uitzondering worden er exemplaren aangetroffen op 10 meter diepte. Ook werd bij deze analyse gevonden dat de Strandgaper niet voorkomt bij stroomsnelheden boven 0.7 m/s. Lage stroomsnelheden zijn niet beperkend, omdat het voor zijn voedselvoorziening niet afhankelijk is van stroming <a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-3">#3</a> en <a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2">#2</a>. De Strandgaper kan namelijk ook algenmateriaal en detritus dat op de bodem is afgezet eten. Verder is de strandgaper goed bestand tegen lage zuurstofgehalten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2">#2</a>. </p>]]></text>
+&lt;p&gt;De Strandgaper is een echte euryhaline soort die kan voorkomen bij lage zoutgehalten (vanaf 5 promille) en is aangepast aan sterk variërende zoutconcentraties. Op langere termijn moet het zoutgehalte boven 9 promille zijn. Middels logistische regressie op de gegevens in de Westerschelde is er een optimum zoutgehalte gevonden van 18 promille. Bij lagere zoutgehalten dan 10 en hogere zoutgehalten dan 22.5 nam de waarschijnlijkheid van voorkomen van de Strandgaper af. Verder bleek uit de logistische regressieanalyse dat de Strandgaper tot ongeveer 7.5 meter onder het gemiddelde waterniveau voorkomt. Bij uitzondering worden er exemplaren aangetroffen op 10 meter diepte. Ook werd bij deze analyse gevonden dat de Strandgaper niet voorkomt bij stroomsnelheden boven 0.7 m/s. Lage stroomsnelheden zijn niet beperkend, omdat het voor zijn voedselvoorziening niet afhankelijk is van stroming &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-3"&gt;#3&lt;/a&gt; en &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2"&gt;#2&lt;/a&gt;. De Strandgaper kan namelijk ook algenmateriaal en detritus dat op de bodem is afgezet eten. Verder is de strandgaper goed bestand tegen lage zuurstofgehalten &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Strandgaper+-+Mya+arenaria#Strandgaper-Myaarenaria-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
-		<reference author="" year="" title= " www.ecomare.nl (Strandgaper)" journal="" identification="23-11-2012"/>
+		<reference author="" year="" title=" www.ecomare.nl (Strandgaper)" journal="" identification="23-11-2012"/>
 		<reference author="Wijsman, J." year="2002" title="Onderzoek naar de toekomstige waterkwaliteit en eccologie van het Veerse Meer. Studie naar het effect van het doorlaatmiddel en aanvullende maatregelen. Deel 2: Opzet en verificatie van de Habitat evaluatie Procedure." journal="" identification="WL|Delft Hydraulics. november 2002"/>
 		<reference author="Ysebaert,T.,Meire,P." year="1999" title="Macrobenthos of the Schelde estuary: predicting macrobenthic species responses in the estuarine environment. A statistical analysis of the Schelde estuary macrobenthos within the ECOFLAT project." journal="" identification="Report Institute of Nature Conservation IN99/19. Brussel, Belgium. 226 p. 1999"/>
 	</Documentation>

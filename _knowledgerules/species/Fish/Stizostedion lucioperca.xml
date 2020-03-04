@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,17 +23,17 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Snoekbaars-Stizostedionlucioperca-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Snoekbaars-Stizostedionlucioperca-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Snoekbaars - Stizostedion lucioperca - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze response curves zijn niet gevalideerd. </p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Snoekbaars - Stizostedion lucioperca - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze response curves zijn niet gevalideerd. &lt;/p&gt;
 
-<h1 id="Snoekbaars-Stizostedionlucioperca-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Snoekbaars-Stizostedionlucioperca-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>Nederland. </p>
+&lt;p&gt;Nederland. &lt;/p&gt;
 
-<h1 id="Snoekbaars-Stizostedionlucioperca-Voorbeeldproject">Voorbeeldproject</h1>
+&lt;h1 id="Snoekbaars-Stizostedionlucioperca-Voorbeeldproject"&gt;Voorbeeldproject&lt;/h1&gt;
 
-<p>Een voorbeelproject is niet beschikbaar.</p>]]></text>
+&lt;p&gt;Een voorbeelproject is niet beschikbaar.&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -76,265 +74,469 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Summer_water_temperature">
-						<type>scalar</type>
-						<layername>"Summer_water_temperature"</layername>
-						<unit>"degrees Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Average water temperature during the summer in degrees Celsius."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="8" HSI="0.0"/>
-							<parameter value="18" HSI="1.0"/>
-							<parameter value="28" HSI="1.0"/>
-							<parameter value="32" HSI="0.5"/>
-							<parameter value="37" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Summer_water_temperature">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Summer_water_temperature</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average water temperature during the summer in degrees Celsius."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="8" output="0.0"/>
+								<parameter input="18" output="1.0"/>
+								<parameter input="28" output="1.0"/>
+								<parameter input="32" output="0.5"/>
+								<parameter input="37" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Summer_water_temperature">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Summer_water_temperature</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Oxygen_concentration">
-						<type>scalar</type>
-						<layername>"Oxygen_concentration"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>minimum</statistic>
-						<description>"Minimum oxygen concentration in milligrams per liter."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="4.5" HSI="0.0"/>
-							<parameter value="6" HSI="0.5"/>
-							<parameter value="9" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Oxygen_concentration">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Oxygen_concentration</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Minimum oxygen concentration in milligrams per liter."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="4.5" output="0.0"/>
+								<parameter input="6" output="0.5"/>
+								<parameter input="9" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Oxygen_concentration">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Oxygen_concentration</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Acidity">
-						<type>scalar</type>
-						<layername>"Acidity"</layername>
-						<unit>"pH"</unit>
-						<statistic>average</statistic>
-						<description>"Average pH value during the growing season."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="6.1" HSI="0.0"/>
-							<parameter value="6.4" HSI="1.0"/>
-							<parameter value="8" HSI="1.0"/>
-							<parameter value="8.2" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Acidity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Acidity</layer_filename>
+								<unit>"pH"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average pH value during the growing season."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="6.1" output="0.0"/>
+								<parameter input="6.4" output="1.0"/>
+								<parameter input="8" output="1.0"/>
+								<parameter input="8.2" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Acidity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Acidity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity">
-						<type>scalar</type>
-						<layername>"Flow_velocity"</layername>
-						<unit>"cm/s"</unit>
-						<statistic>maximum</statistic>
-						<description>"Maximum flow velocity in centimeters per second."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="25" HSI="0.5"/>
-							<parameter value="30" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Flow_velocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity</layer_filename>
+								<unit>"cm/s"</unit>
+								<statistic>maximum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum flow velocity in centimeters per second."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="25" output="0.5"/>
+								<parameter input="30" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity">
-						<type>scalar</type>
-						<layername>"Salinity"</layername>
-						<unit>"promille"</unit>
-						<statistic>average</statistic>
-						<description>"Average salinity in promille."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="5" HSI="1.0"/>
-							<parameter value="8" HSI="0.5"/>
-							<parameter value="10" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Salinity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity</layer_filename>
+								<unit>"promille"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average salinity in promille."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="5" output="1.0"/>
+								<parameter input="8" output="0.5"/>
+								<parameter input="10" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Transparency">
-						<type>scalar</type>
-						<layername>"Transparency"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Average transparency of the water in meters."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="0.3" HSI="0.5"/>
-							<parameter value="0.5" HSI="1.0"/>
-							<parameter value="0.9" HSI="1.0"/>
-							<parameter value="1.5" HSI="0.5"/>
-							<parameter value="3" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Transparency">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Transparency</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average transparency of the water in meters."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="0.3" output="0.5"/>
+								<parameter input="0.5" output="1.0"/>
+								<parameter input="0.9" output="1.0"/>
+								<parameter input="1.5" output="0.5"/>
+								<parameter input="3" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Transparency">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Transparency</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth">
-						<type>scalar</type>
-						<layername>"Waterdepth"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Average waterdepth in meters."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="1" HSI="0.0"/>
-							<parameter value="2" HSI="0.2"/>
-							<parameter value="3" HSI="0.5"/>
-							<parameter value="4" HSI="1.0"/>
-							<parameter value="10" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Waterdepth">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterdepth</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average waterdepth in meters."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="1" output="0.0"/>
+								<parameter input="2" output="0.2"/>
+								<parameter input="3" output="0.5"/>
+								<parameter input="4" output="1.0"/>
+								<parameter input="10" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterdepth">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Obstacles_relief">
-						<type>scalar</type>
-						<layername>"Obstacles_relief"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage of the waterbottom that has obstacles or relief."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.2"/>
-							<parameter value="50" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Obstacles_relief">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Obstacles_relief</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of the waterbottom that has obstacles or relief."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.2"/>
+								<parameter input="50" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Obstacles_relief">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Obstacles_relief</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Watertemperature_mating">
-						<type>scalar</type>
-						<layername>"Watertemperature_mating"</layername>
-						<unit>"degrees Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Average water temperature during the mating period in degrees Celsius."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="6" HSI="0.0"/>
-							<parameter value="8" HSI="0.5"/>
-							<parameter value="12" HSI="1.0"/>
-							<parameter value="15" HSI="1.0"/>
-							<parameter value="22" HSI="0.5"/>
-							<parameter value="26" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Watertemperature_mating">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Watertemperature_mating</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average water temperature during the mating period in degrees Celsius."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="6" output="0.0"/>
+								<parameter input="8" output="0.5"/>
+								<parameter input="12" output="1.0"/>
+								<parameter input="15" output="1.0"/>
+								<parameter input="22" output="0.5"/>
+								<parameter input="26" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Watertemperature_mating">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Watertemperature_mating</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Watertemperature_embryo">
-						<type>scalar</type>
-						<layername>"Watertemperature_embryo"</layername>
-						<unit>"degrees Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Average water temperature during the embryo period in degrees Celsius."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="7" HSI="0.0"/>
-							<parameter value="9" HSI="0.5"/>
-							<parameter value="12" HSI="1.0"/>
-							<parameter value="18" HSI="1.0"/>
-							<parameter value="24" HSI="0.5"/>
-							<parameter value="25" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Watertemperature_embryo">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Watertemperature_embryo</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average water temperature during the embryo period in degrees Celsius."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="7" output="0.0"/>
+								<parameter input="9" output="0.5"/>
+								<parameter input="12" output="1.0"/>
+								<parameter input="18" output="1.0"/>
+								<parameter input="24" output="0.5"/>
+								<parameter input="25" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Watertemperature_embryo">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Watertemperature_embryo</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_deposit">
-						<type>scalar</type>
-						<layername>"Substrate_deposit"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage coverage by substrate for the deposition of eggs."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="30" HSI="0.5"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Substrate_deposit">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Substrate_deposit</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage coverage by substrate for the deposition of eggs."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="30" output="0.5"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Substrate_deposit">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Substrate_deposit</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_hard">
-						<type>scalar</type>
-						<layername>"Substrate_hard"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Percentage coverage by hard substrate."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-16</date>
-						<references>
-							<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Substrate_hard">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Substrate_hard</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage coverage by hard substrate."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Substrate_hard">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Substrate_hard</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Snoekbaars-Stizostedionlucioperca-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Snoekbaars-Stizostedionlucioperca-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De snoekbaars (Stizostedion lucioperca) komt alleen in Europa voor. Oorspronkelijk was de snoekbaars voornamelijk verspreid in het oostelijke deel van Europa rond de Kaspische, de Zwarte en de Baltische zee. In 1880 is de soort uitgezet in het stroomgebied van de Rijn en later ook in Franse, Engelse, Spaanse, Italiaanse en Griekse wateren. De Snoekbaars komt voor in alle grote rivieren en hiermee in verbinding staande meren. De Snoekbaars is een typische predator die van belang kan zijn bij de regulering van cyprinidenbestanden. Ook is de Snoekbaars van groot commercieel belang en wordt door sportvissers erg gewaardeerd <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.</p>
+&lt;p&gt;De snoekbaars (Stizostedion lucioperca) komt alleen in Europa voor. Oorspronkelijk was de snoekbaars voornamelijk verspreid in het oostelijke deel van Europa rond de Kaspische, de Zwarte en de Baltische zee. In 1880 is de soort uitgezet in het stroomgebied van de Rijn en later ook in Franse, Engelse, Spaanse, Italiaanse en Griekse wateren. De Snoekbaars komt voor in alle grote rivieren en hiermee in verbinding staande meren. De Snoekbaars is een typische predator die van belang kan zijn bij de regulering van cyprinidenbestanden. Ook is de Snoekbaars van groot commercieel belang en wordt door sportvissers erg gewaardeerd &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Snoekbaars-Stizostedionlucioperca-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Snoekbaars-Stizostedionlucioperca-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Tot een lengte van ca. 2 cm eet snoekbaars vrijwel uitsluitend zoöplankton, boven 10 cm uitsluitend vis, hiertussen wordt de voedselsamenstelling door de omstandigheden en het aanbod bepaald. De maximale prooigrootte voor adulte snoekbaars bedraagt ca. 45% van zijn eigen lengte. Dankzij een verschil in prooigrootte-voorkeur tussen snoek en snoekbaars zijn deze soorten waarschijnlijk geen voedselconcurrenten van elkaar. Baars en Snoekbaars hebben wel aanzienlijke overlap in prooivoorkeur. Door voedselgebrek kan er kannibalisme optreden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.</p>
+&lt;p&gt;Tot een lengte van ca. 2 cm eet snoekbaars vrijwel uitsluitend zoöplankton, boven 10 cm uitsluitend vis, hiertussen wordt de voedselsamenstelling door de omstandigheden en het aanbod bepaald. De maximale prooigrootte voor adulte snoekbaars bedraagt ca. 45% van zijn eigen lengte. Dankzij een verschil in prooigrootte-voorkeur tussen snoek en snoekbaars zijn deze soorten waarschijnlijk geen voedselconcurrenten van elkaar. Baars en Snoekbaars hebben wel aanzienlijke overlap in prooivoorkeur. Door voedselgebrek kan er kannibalisme optreden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Snoekbaars-Stizostedionlucioperca-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Snoekbaars-Stizostedionlucioperca-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>De snoekbaars wordt geslachtsrijp na 3 tot 5 jaar bij een lengte van ongeveer 35 – 45 cm. De paai vindt plaats in april mei of juni, afhankelijk van het klimaat. In Nederland valt de paaitijd meestal rond eind april-begin mei, wanneer het water een temperatuuur heeft van 12-15 graden Celsius. In grotere wateren paait de snoekbaars doorgaans in de ondiepere oeverzones, in kleinere wateren is deze voorkeur minder duidelijk. De paaidiepte varieert van 1-17 meter <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.  </p>
+&lt;p&gt;De snoekbaars wordt geslachtsrijp na 3 tot 5 jaar bij een lengte van ongeveer 35 – 45 cm. De paai vindt plaats in april mei of juni, afhankelijk van het klimaat. In Nederland valt de paaitijd meestal rond eind april-begin mei, wanneer het water een temperatuuur heeft van 12-15 graden Celsius. In grotere wateren paait de snoekbaars doorgaans in de ondiepere oeverzones, in kleinere wateren is deze voorkeur minder duidelijk. De paaidiepte varieert van 1-17 meter &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.  &lt;/p&gt;
 
-<p>In de grote rivieren trekt de snoekbaars in de paaitijd naar stilstaand of zeer langzaam stromend water. Voordat de eieren worden afgezet, maken de mannetjes in ondiep water (0.5-1.5 m diep) een nest. De mannetjes bewaken het broed tegen indringers en kuitrovers (Blankvoorn, Baars en Aal) en waaieren met de vinnen over het legsel, waardoor vers water wordt aangevoerd en slib wordt verwijderd. De incubatietijd van de eieren bedraagt ongeveer 110 daggraden: 11 dagen bij 10 graden Celsius en 4 dagen bij 18 graden Celsius. In Nederland vormt de watertemperatuur zelden een beperkende factor voor de ontwikkeling van de eieren. </p>
+&lt;p&gt;In de grote rivieren trekt de snoekbaars in de paaitijd naar stilstaand of zeer langzaam stromend water. Voordat de eieren worden afgezet, maken de mannetjes in ondiep water (0.5-1.5 m diep) een nest. De mannetjes bewaken het broed tegen indringers en kuitrovers (Blankvoorn, Baars en Aal) en waaieren met de vinnen over het legsel, waardoor vers water wordt aangevoerd en slib wordt verwijderd. De incubatietijd van de eieren bedraagt ongeveer 110 daggraden: 11 dagen bij 10 graden Celsius en 4 dagen bij 18 graden Celsius. In Nederland vormt de watertemperatuur zelden een beperkende factor voor de ontwikkeling van de eieren. &lt;/p&gt;
 
-<p>6 tot 7 dagen na het uitkomen van de eieren beginnen de larven zich te voeden met zoöplankton en kleine bodemorganismen van 0.1-0.4 mm. De larven hebben gedurende de eerste dagen een positieve fototaxis (ze bewegen omhoog naar het licht); dit verandert na enkele weken in een negatieve fototaxis. Een voortdurende inwerking van direct maar ook diffuus licht blijkt in dit stadium snel tot schade en sterfte te leiden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.</p>
+&lt;p&gt;6 tot 7 dagen na het uitkomen van de eieren beginnen de larven zich te voeden met zoöplankton en kleine bodemorganismen van 0.1-0.4 mm. De larven hebben gedurende de eerste dagen een positieve fototaxis (ze bewegen omhoog naar het licht); dit verandert na enkele weken in een negatieve fototaxis. Een voortdurende inwerking van direct maar ook diffuus licht blijkt in dit stadium snel tot schade en sterfte te leiden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>Aan het einde van de eerste zomer, al vanaf 20-26 dagen, kan de 0+-snoekbaars overgaan op consumptie van vis, bij voorkeur spiering en jonge baars, maar ook wel cypriniden, indien deze in grote dichtheden beschikbaar zijn. Afhankelijk van het voedselaanbod kan kannibalisme optreden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.</p>
+&lt;p&gt;Aan het einde van de eerste zomer, al vanaf 20-26 dagen, kan de 0+-snoekbaars overgaan op consumptie van vis, bij voorkeur spiering en jonge baars, maar ook wel cypriniden, indien deze in grote dichtheden beschikbaar zijn. Afhankelijk van het voedselaanbod kan kannibalisme optreden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Snoekbaars-Stizostedionlucioperca-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Snoekbaars-Stizostedionlucioperca-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>Sterfte onder larven kan vooral optreden wanneer de voedseldichtheid (voornamelijk. Naupliuslarven) gedurende de eerste dagen onvoldoende is. Kannibalisme kan ook een grote invloed hebben op de sterkte van een jaarklasse; snoekbaarzen staan voornamelijk in hun eerste levensjaar bloot aan predatie door soortgenoten. Ook dit is weer afhankelijk van de prooivisdichtheid van het water <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a> .</p>
+&lt;p&gt;Sterfte onder larven kan vooral optreden wanneer de voedseldichtheid (voornamelijk. Naupliuslarven) gedurende de eerste dagen onvoldoende is. Kannibalisme kan ook een grote invloed hebben op de sterkte van een jaarklasse; snoekbaarzen staan voornamelijk in hun eerste levensjaar bloot aan predatie door soortgenoten. Ook dit is weer afhankelijk van de prooivisdichtheid van het water &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt; .&lt;/p&gt;
 
-<h3 id="Snoekbaars-Stizostedionlucioperca-Milieueisen">Milieu eisen</h3>
+&lt;h3 id="Snoekbaars-Stizostedionlucioperca-Milieueisen"&gt;Milieu eisen&lt;/h3&gt;
 
-<p>Een relatief geringe diepte van het water, troebelheid (veroorzaakt door een grote (zoö)planktondichtheid, met name Leptodora) en een goed prooivisbestand (vooral spiering) zijn optimale omstandigheden voor de snoekbaars. De planktondichtheid en weersomstandigheden bepalen in hoge mate de overleving in het eerste jaar. Bij sterk teruglopende zoöplanktondichtheid zal het bestand aan jonge snoekbaarzen ook zeer snel achteruit gaan. Een doorgaans als zeer geschikt “snoekbaarswater” kan daardoor, als gevolg van ongunstige weersomstandigheden met een negatieve invloed op de planktonproductie, soms onverwacht slechte mogelijkheden bieden aan (vooral jonge) snoekbaars.</p>
+&lt;p&gt;Een relatief geringe diepte van het water, troebelheid (veroorzaakt door een grote (zoö)planktondichtheid, met name Leptodora) en een goed prooivisbestand (vooral spiering) zijn optimale omstandigheden voor de snoekbaars. De planktondichtheid en weersomstandigheden bepalen in hoge mate de overleving in het eerste jaar. Bij sterk teruglopende zoöplanktondichtheid zal het bestand aan jonge snoekbaarzen ook zeer snel achteruit gaan. Een doorgaans als zeer geschikt “snoekbaarswater” kan daardoor, als gevolg van ongunstige weersomstandigheden met een negatieve invloed op de planktonproductie, soms onverwacht slechte mogelijkheden bieden aan (vooral jonge) snoekbaars.&lt;/p&gt;
 
-<p>Onder de 5 graden Celsius stopt alle activiteit. Het actief voedsel zoeken en de spijsvertering komen pas weer op gang bij 8-10 graden Celsius. De letale temperatuur ligt rond de 31.5 en 37.0 graden Celsius.  De paaitemperatuur ligt tussen de 8 en 22 graden Celsius. Bij temperaturen lager dan 7 en hoger dan 25 graden Celsius neemt de mortaliteit en abnormaliteiten bij embryo’s toe <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.</p>
+&lt;p&gt;Onder de 5 graden Celsius stopt alle activiteit. Het actief voedsel zoeken en de spijsvertering komen pas weer op gang bij 8-10 graden Celsius. De letale temperatuur ligt rond de 31.5 en 37.0 graden Celsius.  De paaitemperatuur ligt tussen de 8 en 22 graden Celsius. Bij temperaturen lager dan 7 en hoger dan 25 graden Celsius neemt de mortaliteit en abnormaliteiten bij embryo’s toe &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>De Snoekbaars voelt zich het beste thuis in vrijwel stilstaand water, hoewel hij ook in water met een stroomsnelheid &gt;10 cm/s wordt waargenomen. Hierin bevindt hij zich op een waterdiepte van 1 tot meer dan 25 meter. Stratificatie verdrijft de Snoekbaars uit de diepste lagen, omdat de snoekbaars hoge eisen stelt aan het zuurstofgehalte. Een zuurstofgehalte van 4.5 mg/l en lager is letaal voor jonge snoekbaarzen en zorgt dat adulte snoekbaarzen wegtrekken.<br>
-Verder is troebel water optimaal voor de snoekbaars: de ogen zijn aangepast aan het zien bij lage lichtintensiteit. Helder water moet behoorlijk diep zijn voor de Snoekbaars, zodat toch een lage lichtintensiteit bereikt wordt bij de bodem, waar de snoekbaars zich voornamelijk ophoudt. Tijdens perioden van voedselschaarste wordt de Snoekbaars ook litoraal aangetroffen, omdat daar dan relatief veel jonge prooivis te vinden is <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.</p>
+&lt;p&gt;De Snoekbaars voelt zich het beste thuis in vrijwel stilstaand water, hoewel hij ook in water met een stroomsnelheid &amp;gt;10 cm/s wordt waargenomen. Hierin bevindt hij zich op een waterdiepte van 1 tot meer dan 25 meter. Stratificatie verdrijft de Snoekbaars uit de diepste lagen, omdat de snoekbaars hoge eisen stelt aan het zuurstofgehalte. Een zuurstofgehalte van 4.5 mg/l en lager is letaal voor jonge snoekbaarzen en zorgt dat adulte snoekbaarzen wegtrekken.&lt;br&gt;
+Verder is troebel water optimaal voor de snoekbaars: de ogen zijn aangepast aan het zien bij lage lichtintensiteit. Helder water moet behoorlijk diep zijn voor de Snoekbaars, zodat toch een lage lichtintensiteit bereikt wordt bij de bodem, waar de snoekbaars zich voornamelijk ophoudt. Tijdens perioden van voedselschaarste wordt de Snoekbaars ook litoraal aangetroffen, omdat daar dan relatief veel jonge prooivis te vinden is &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>De snoekbaars houdt zich bij voorkeur op op plaatsen op die beschutting bieden, zoals spaarzame vegetatie en hellingen. Op de bodem liggende boomstammen en stronken bieden ideale schuilplaatsen. Een dichte begroeiing biedt zeer goede omstandigheden voor Baars en Snoek, wat nadelig is voor het snoekbaarsbroed. Zand, grind, klei en mergel zijn als bodemsubstraat zeer geschikt voor het maken van een snoekbaarsnest. Een zachte bodem zorgt ervoor dat de eieren snel door modder-, slib- of detritusdeeltjes bedekt raken en dit is erg ongunstig. Verder dient de pH hoger te zijn dan 6.1, hieronder treedt er bij zowel larven als adulten sterfte op. De aldulte snoekbaars begeeft zich in zoet tot matig brakwater. Snoekbaars larven sterven bij een zoutgehalte van 10 promille. Calcium- en kopergehalte zijn ook belangrijk in het overleven van de snoekbaarslarven <a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1">#1</a>.</p>
-]]></text>
+&lt;p&gt;De snoekbaars houdt zich bij voorkeur op op plaatsen op die beschutting bieden, zoals spaarzame vegetatie en hellingen. Op de bodem liggende boomstammen en stronken bieden ideale schuilplaatsen. Een dichte begroeiing biedt zeer goede omstandigheden voor Baars en Snoek, wat nadelig is voor het snoekbaarsbroed. Zand, grind, klei en mergel zijn als bodemsubstraat zeer geschikt voor het maken van een snoekbaarsnest. Een zachte bodem zorgt ervoor dat de eieren snel door modder-, slib- of detritusdeeltjes bedekt raken en dit is erg ongunstig. Verder dient de pH hoger te zijn dan 6.1, hieronder treedt er bij zowel larven als adulten sterfte op. De aldulte snoekbaars begeeft zich in zoet tot matig brakwater. Snoekbaars larven sterven bij een zoutgehalte van 10 promille. Calcium- en kopergehalte zijn ook belangrijk in het overleven van de snoekbaarslarven &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Snoekbaars+-+Stizostedion+lucioperca#Snoekbaars-Stizostedionlucioperca-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
+</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Bakker, H.D., Schouten, W.J." year="1992" title="Habitat Geschiktheid Index Model: De Snoekbaars Stizostedion lucioperca." journal="" identification="Organisatie ter Verbetering van de Binnenvisserij. december 1992"/>
 	</Documentation>

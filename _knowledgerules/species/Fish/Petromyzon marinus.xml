@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,17 +23,17 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Zeeprik-Petronyzonmarinus-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Zeeprik-Petronyzonmarinus-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Zeeprik - Petronyzon marinus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)">&nbsp;Deze dosis-effect relaties zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Zeeprik - Petronyzon marinus - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt;&amp;nbsp;Deze dosis-effect relaties zijn niet gevalideerd.&lt;/p&gt;
 
-<h1 id="Zeeprik-Petronyzonmarinus-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Zeeprik-Petronyzonmarinus-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>De dosis-effect relatie voor trek is van toepassing voor rivieren in Nederland. De dosis-effect relaties voor het paaigebied zijn niet voor Nederland van toepassing.</p>
+&lt;p&gt;De dosis-effect relatie voor trek is van toepassing voor rivieren in Nederland. De dosis-effect relaties voor het paaigebied zijn niet voor Nederland van toepassing.&lt;/p&gt;
 
-<h1 id="Zeeprik-Petronyzonmarinus-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Zeeprik-Petronyzonmarinus-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Voor deze dosis-effect relaties is geen voorbeeldprojekt beschikbaar.</p>]]></text>
+&lt;p&gt;Voor deze dosis-effect relaties is geen voorbeeldprojekt beschikbaar.&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -63,121 +61,204 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Barriers_upwards">
-						<type>categorical</type>
-						<layername>"Barriers_upwards"</layername>
-						<unit>"category"</unit>
-						<statistic>minimum</statistic>
-						<description>"Presence of barriers during stream upward migration"</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="sluice" HSI="0.5"/>
-							<parameter cat="shipping lock + weir + fish ladder" HSI="0.7"/>
-							<parameter cat="
-shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
-						</valuesCategorical>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="Barriers_upwards">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Barriers_upwards</layer_filename>
+								<unit>"category"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of barriers during stream upward migration"</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="sluice" output="0.5" output_cat=""/>
+								<parameter input="2" input_cat="shipping lock + weir + fish ladder" output="0.7" output_cat=""/>
+								<parameter input="3" input_cat=" shipping lock + weir + hydroelectric power station + fish ladder" output="0.7" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Barriers_upwards">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 					<ResponseCurve name="Barriers_downwards">
-						<type>categorical</type>
-						<layername>"Barriers_downwards"</layername>
-						<unit>"category"</unit>
-						<statistic>minimum</statistic>
-						<description>"Presence of barriers during stream downward migration"</description>
-						<author>"Marjolijn Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="sluice" HSI="0.8"/>
-							<parameter cat="shipping lock + weir + fish ladder" HSI="1.0"/>
-							<parameter cat="
-shipping lock + weir + hydroelectric power station + fish ladder" HSI="0.7"/>
-						</valuesCategorical>
-					</ResponseCurve>	
+						<inputLayers>
+							<layer name="Barriers_downwards">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Barriers_downwards</layer_filename>
+								<unit>"category"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Presence of barriers during stream downward migration"</description>
+							<author>"Marjolijn Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Expert Judgement Jan Kranenbarg" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="sluice" output="0.8" output_cat=""/>
+								<parameter input="2" input_cat="shipping lock + weir + fish ladder" output="1.0" output_cat=""/>
+								<parameter input="3" input_cat=" shipping lock + weir + hydroelectric power station + fish ladder" output="0.7" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Barriers_downwards">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
 					<ResponseCurve name="Substrate_juveniles">
-						<type>categorical</type>
-						<layername>"Substrate_juveniles"</layername>
-						<unit>"categorical"</unit>
-						<statistic>average</statistic>
-						<description>"Type of sediment expressed in categories"</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="Silt" HSI="1.0"/>
-							<parameter cat="Silt/sand" HSI="1.0"/>
-							<parameter cat="Fine/coarse sand" HSI="0.5"/>							
-							<parameter cat="Coarse sand/pebbles" HSI="0.1"/>							
-							<parameter cat="Pebbles" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Substrate_juveniles">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Substrate_juveniles</layer_filename>
+								<unit>"categorical"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Type of sediment expressed in categories"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="Silt" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="Silt/sand" output="1.0" output_cat=""/>
+								<parameter input="3" input_cat="Fine/coarse sand" output="0.5" output_cat=""/>
+								<parameter input="4" input_cat="Coarse sand/pebbles" output="0.1" output_cat=""/>
+								<parameter input="5" input_cat="Pebbles" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Substrate_juveniles">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Substrate_juveniles</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity_spawning">
-						<type>range / categorical</type>
-						<layername>Flow_velocity_spawning</layername>
-						<unit>m/s</unit>
-						<statistic>average</statistic>
-						<description>Flow_velocity in the spawning area in meters per second</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="1" cat="0 - 1" HSI="0.0"/>
-							<parameter rangemin="1" rangemax="2" cat="1 - 2" HSI="1.0"/>
-							<parameter rangemin="2" rangemax="999999" cat="> 2" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Flow_velocity_spawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity_spawning</layer_filename>
+								<unit>m/s</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>Flow_velocity in the spawning area in meters per second</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="0 - 1" output="0.0" output_cat=""/>
+								<parameter rangemin_input="1" rangemax_input="2" input_cat="1 - 2" output="1.0" output_cat=""/>
+								<parameter rangemin_input="2" rangemax_input="999999" input_cat="&gt; 2" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity_spawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity_spawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_spawning">
-						<type>categorical</type>
-						<layername>"Substrate_spawning"</layername>
-						<unit>"categorical"</unit>
-						<statistic>average</statistic>
-						<description>"Availability of pebbles in the spawning area"</description>
-						<author>"Marjolein Haasnoot"</author>
-						<date>2009-01-01</date>
-						<references>
-							<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
-							<reference author="Rivierprik - Lampetra fluviatilis" year="" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="None" HSI="0.0"/>
-							<parameter cat="Few" HSI="0.1"/>
-							<parameter cat="Moderate" HSI="0.35"/>
-							<parameter cat="Reasonable" HSI="0.65"/>
-							<parameter cat="Many" HSI="1.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Substrate_spawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Substrate_spawning</layer_filename>
+								<unit>"categorical"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Availability of pebbles in the spawning area"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2009-01-01</date>
+							<references>
+								<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="" journal="" identification=""/>
+								<reference author="Rivierprik - Lampetra fluviatilis" year="" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="None" output="0.0" output_cat=""/>
+								<parameter input="2" input_cat="Few" output="0.1" output_cat=""/>
+								<parameter input="3" input_cat="Moderate" output="0.35" output_cat=""/>
+								<parameter input="4" input_cat="Reasonable" output="0.65" output_cat=""/>
+								<parameter input="5" input_cat="Many" output="1.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Substrate_spawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Substrate_spawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Zeeprik-Petronyzonmarinus-Algemeenvoorkomen">Algemeen voorkomen</h3>
+			<text>&lt;h3 id="Zeeprik-Petronyzonmarinus-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De Zeeprik (Petromyzon marinus) is een vis uit de familie der Prikachtigen (Petromyzontidae), die deel uitmaakt van de Rondbekken. In plaats van kaken bezitten prikken rondom de bek een zuigschijf, die bezet is met tanden. De normaal bij vissen aanwezige buik- en borstvinnen ontbreken, maar ze hebben wel een (doorgaans tweedelige) rugvin die ver achter op het lichaam is geplaatst. Op grond van enkele afwijkende kenmerken vormen rondbekken een eigen klasse. Alle andere zoetwatervissen in Nederland behoren tot de beenvissen; kraakbeenvissen vormen een derde groep. De Zeeprik is vuilwit tot grijswit van kleur en heeft een opvallend gemarmerd vlekkenpatroon. De ronde palingachtige vorm is naar achteren toe ietwat zijdelings samengedrukt. De Zeeprik bereikt een lengte tot 100 cm, waarmee ze de grootste prikkensoort in Europa is. De lengte, kleur, vlekkentekening en plaatsing van de tanden in de zuigbek onderscheiden de soort van de andere prikken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-1">#1</a>.<br>
-De Zeeprik heeft een noordatlantisch areaal (Noord-Amerika, Europa). In Europa leeft hij verspreid langs de kusten en in de grote rivieren van Noord-Rusland tot in de Middellandse Zee. De Zeeprik gebruikt ons land alleen als doortrekgebied op weg naar geschikte paaiplaatsen halverwege Duitsland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>
+&lt;p&gt;De Zeeprik (Petromyzon marinus) is een vis uit de familie der Prikachtigen (Petromyzontidae), die deel uitmaakt van de Rondbekken. In plaats van kaken bezitten prikken rondom de bek een zuigschijf, die bezet is met tanden. De normaal bij vissen aanwezige buik- en borstvinnen ontbreken, maar ze hebben wel een (doorgaans tweedelige) rugvin die ver achter op het lichaam is geplaatst. Op grond van enkele afwijkende kenmerken vormen rondbekken een eigen klasse. Alle andere zoetwatervissen in Nederland behoren tot de beenvissen; kraakbeenvissen vormen een derde groep. De Zeeprik is vuilwit tot grijswit van kleur en heeft een opvallend gemarmerd vlekkenpatroon. De ronde palingachtige vorm is naar achteren toe ietwat zijdelings samengedrukt. De Zeeprik bereikt een lengte tot 100 cm, waarmee ze de grootste prikkensoort in Europa is. De lengte, kleur, vlekkentekening en plaatsing van de tanden in de zuigbek onderscheiden de soort van de andere prikken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-1"&gt;#1&lt;/a&gt;.&lt;br&gt;
+De Zeeprik heeft een noordatlantisch areaal (Noord-Amerika, Europa). In Europa leeft hij verspreid langs de kusten en in de grote rivieren van Noord-Rusland tot in de Middellandse Zee. De Zeeprik gebruikt ons land alleen als doortrekgebied op weg naar geschikte paaiplaatsen halverwege Duitsland &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Zeeprik-Petronyzonmarinus-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Zeeprik-Petronyzonmarinus-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Parasitair als adult, larven voeden zich met algen en plantaardig materiaal <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>
+&lt;p&gt;Parasitair als adult, larven voeden zich met algen en plantaardig materiaal &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Zeeprik-Petronyzonmarinus-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Zeeprik-Petronyzonmarinus-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>Anadrome trekvis. De paaigronden liggen in de midden en bovenlopen van de grote rivieren. Het zijn ondiepe plekken (circa 50 cm diep) met hoge stroomsnelheden (1-2 m/s) en een stenige zonverwarmde bodem. De trek vindt plaats in feb-jun <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>
+&lt;p&gt;Anadrome trekvis. De paaigronden liggen in de midden en bovenlopen van de grote rivieren. Het zijn ondiepe plekken (circa 50 cm diep) met hoge stroomsnelheden (1-2 m/s) en een stenige zonverwarmde bodem. De trek vindt plaats in feb-jun &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Zeeprik-Petronyzonmarinus-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
+&lt;h3 id="Zeeprik-Petronyzonmarinus-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
 
-<p>Larven leven 5 tot 8 jaar in een modderbank (zoetwater) en voeden zich daar met algen, plantenresten en ander organisch materiaal. Volwassen blijven zo'n drie jaar op zee voor ze naar de paaigronden gaan waar ze meestal na de voortplanting sterven <a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2">#2</a>.</p>]]></text>
+&lt;p&gt;Larven leven 5 tot 8 jaar in een modderbank (zoetwater) en voeden zich daar met algen, plantenresten en ander organisch materiaal. Volwassen blijven zo'n drie jaar op zee voor ze naar de paaigronden gaan waar ze meestal na de voortplanting sterven &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Zeeprik+-+Petronyzon+marinus#Zeeprik-Petronyzonmarinus-2"&gt;#2&lt;/a&gt;.&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="" year="" title="http://www.minlnv.nl/natura2000" journal="" identification=""/>
 		<reference author="Janssen, J.A.M. en Schaminee, J.H.J." year="2004" title="Europese natuur in Nederland; soorten van de Habitat richtlijn." journal="" identification="2004"/>

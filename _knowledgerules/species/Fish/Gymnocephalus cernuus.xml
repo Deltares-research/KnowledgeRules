@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,14 +23,14 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Pos(Gymnocephaluscernuus)-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
-<p>Deze rekenregels zijn gevalideerd door middel van expert judgement van J. Kranenbarg. De aanbeveling is om het model te toetsten en mogelijk te verbeteren op basis van visbemonsteringsgegevens in het IJssel- en het Markermeer en eventueel in andere wateren. Een punt van aandacht hierbij is de vraag of het in werkelijkheid ook zo is dat de pos vrijwel overal in het open water voorkomt of dat er plaatsen zijn waar hogere dichtheden worden waargenomen en hoe dit dan te verklaren zou zijn.</p>
+						<text>&lt;h1 id="Pos(Gymnocephaluscernuus)-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
+&lt;p&gt;Deze rekenregels zijn gevalideerd door middel van expert judgement van J. Kranenbarg. De aanbeveling is om het model te toetsten en mogelijk te verbeteren op basis van visbemonsteringsgegevens in het IJssel- en het Markermeer en eventueel in andere wateren. Een punt van aandacht hierbij is de vraag of het in werkelijkheid ook zo is dat de pos vrijwel overal in het open water voorkomt of dat er plaatsen zijn waar hogere dichtheden worden waargenomen en hoe dit dan te verklaren zou zijn.&lt;/p&gt;
 
-<h1 id="Pos(Gymnocephaluscernuus)-Toepasbaarheid">Toepasbaarheid</h1>
-<p>Deze rekenregels kunnen toegepast worden op meren en rivieren.</p>
+&lt;h1 id="Pos(Gymnocephaluscernuus)-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
+&lt;p&gt;Deze rekenregels kunnen toegepast worden op meren en rivieren.&lt;/p&gt;
 
-<h1 id="Pos(Gymnocephaluscernuus)-Voorbeeldproject">Voorbeeldproject</h1>
-<p>Er is nog geen voorbeeldproject.</p>]]></text>
+&lt;h1 id="Pos(Gymnocephaluscernuus)-Voorbeeldproject"&gt;Voorbeeldproject&lt;/h1&gt;
+&lt;p&gt;Er is nog geen voorbeeldproject.&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -54,209 +52,362 @@
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="Flow_velocity">
-						<type>scalar</type>
-						<layername>"Flow_velocity"</layername>
-						<unit>"m/s"</unit>
-						<statistic>average</statistic>
-						<description>"Flow velocity in meters per second."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="J. Kranenbarg" year="" title="" journal="" identification=""/>
-							<reference author="Tarvainen, M., A. Anttalainen, H. Helminen, T. Keskinen, J. Sarvala, I. Vaahto en J. Karjalainen" year="2008" title="" journal="" identification=""/>
-							<reference author="Hokanson K.E.F." year="1977" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="0.15" HSI="1.0"/>
-							<parameter value="0.3" HSI="0.5"/>
-							<parameter value="0.35" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Flow_velocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Flow velocity in meters per second."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="J. Kranenbarg" year="" title="" journal="" identification=""/>
+								<reference author="Tarvainen, M., A. Anttalainen, H. Helminen, T. Keskinen, J. Sarvala, I. Vaahto en J. Karjalainen" year="2008" title="" journal="" identification=""/>
+								<reference author="Hokanson K.E.F." year="1977" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="0.15" output="1.0"/>
+								<parameter input="0.3" output="0.5"/>
+								<parameter input="0.35" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth_spawning">
-						<type>scalar</type>
-						<layername>"Waterdepth_spawning"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in the spawning area in meters."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="Hölker, F. en R. Thiel" year="1998" title="" journal="" identification=""/>
-							<reference author="Ogle, D.H." year="1998" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="0.85" HSI="0.0"/>
-							<parameter value="1" HSI="1.0"/>
-							<parameter value="3" HSI="1.0"/>
-							<parameter value="3.1" HSI="0.0"/>
-							<parameter value="12" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Waterdepth_spawning">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterdepth_spawning</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in the spawning area in meters."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="Hölker, F. en R. Thiel" year="1998" title="" journal="" identification=""/>
+								<reference author="Ogle, D.H." year="1998" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="0.85" output="0.0"/>
+								<parameter input="1" output="1.0"/>
+								<parameter input="3" output="1.0"/>
+								<parameter input="3.1" output="0.0"/>
+								<parameter input="12" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterdepth_spawning">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterdepth_spawning</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth">
-						<type>scalar</type>
-						<layername>"Waterdepth"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth in meters."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="1.8" HSI="0.0"/>
-							<parameter value="2" HSI="1.0"/>
-							<parameter value="5" HSI="1.0"/>
-							<parameter value="6" HSI="0.8"/>
-							<parameter value="10" HSI="0.8"/>
-							<parameter value="11" HSI="0.6"/>
-							<parameter value="15" HSI="0.6"/>
-							<parameter value="20" HSI="0.4"/>
-							<parameter value="30" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Waterdepth">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterdepth</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth in meters."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="1.8" output="0.0"/>
+								<parameter input="2" output="1.0"/>
+								<parameter input="5" output="1.0"/>
+								<parameter input="6" output="0.8"/>
+								<parameter input="10" output="0.8"/>
+								<parameter input="11" output="0.6"/>
+								<parameter input="15" output="0.6"/>
+								<parameter input="20" output="0.4"/>
+								<parameter input="30" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterdepth">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Sediment_type">
-						<type>categorical</type>
-						<layername>"Sediment_type"</layername>
-						<unit>"categorical"</unit>
-						<statistic>average</statistic>
-						<description>"Type of sediment expressed in categories"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="Lelek, A." year="1987" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="Gravel" HSI="0.7"/>
-							<parameter cat="Sand" HSI="1.0"/>
-							<parameter cat="Clay" HSI="1.0"/>
-							<parameter cat="Silt" HSI="1.0"/>
-							<parameter cat="Dump stone" HSI="0.7"/>
-							<parameter cat="Other" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Sediment_type">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Sediment_type</layer_filename>
+								<unit>"categorical"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Type of sediment expressed in categories"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="Lelek, A." year="1987" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="Gravel" output="0.7" output_cat=""/>
+								<parameter input="2" input_cat="Sand" output="1.0" output_cat=""/>
+								<parameter input="3" input_cat="Clay" output="1.0" output_cat=""/>
+								<parameter input="4" input_cat="Silt" output="1.0" output_cat=""/>
+								<parameter input="5" input_cat="Dump stone" output="0.7" output_cat=""/>
+								<parameter input="6" input_cat="Other" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Sediment_type">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Sediment_type</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Macrophytes">
-						<type>scalar</type>
-						<layername>"Macrophytes"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Macrophyte coverage in percent."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="J. Kranenbarg" year="" title="" journal="" identification=""/>
-							<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="50" HSI="0.7"/>
-							<parameter value="100" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Macrophytes">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Macrophytes</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Macrophyte coverage in percent."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="J. Kranenbarg" year="" title="" journal="" identification=""/>
+								<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="50" output="0.7"/>
+								<parameter input="100" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Macrophytes">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Macrophytes</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Oxygen_concentration">
-						<type>scalar</type>
-						<layername>"Oxygen_concentration"</layername>
-						<unit>"mg/l"</unit>
-						<statistic>average</statistic>
-						<description>"Average oxygen concentration in milligrams per liter."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="Ogle, D.H." year="1998" title="" journal="" identification=""/>
-							<reference author="Holcik, J., P. Banarescu and D. Evans" year="1989" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="0.97" HSI="0.0"/>
-							<parameter value="5" HSI="1.0"/>
-							<parameter value="12" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Oxygen_concentration">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Oxygen_concentration</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average oxygen concentration in milligrams per liter."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="Ogle, D.H." year="1998" title="" journal="" identification=""/>
+								<reference author="Holcik, J., P. Banarescu and D. Evans" year="1989" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="0.97" output="0.0"/>
+								<parameter input="5" output="1.0"/>
+								<parameter input="12" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Oxygen_concentration">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Oxygen_concentration</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Acidity">
-						<type>scalar</type>
-						<layername>"Acidity"</layername>
-						<unit>"pH"</unit>
-						<statistic>average</statistic>
-						<description>"pH value."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="Van Emmerik" year="2004" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="6" HSI="0.0"/>
-							<parameter value="7" HSI="1.0"/>
-							<parameter value="10" HSI="1.0"/>
-							<parameter value="11" HSI="0.0"/>
-							<parameter value="12" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Acidity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Acidity</layer_filename>
+								<unit>"pH"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"pH value."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="Van Emmerik" year="2004" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="6" output="0.0"/>
+								<parameter input="7" output="1.0"/>
+								<parameter input="10" output="1.0"/>
+								<parameter input="11" output="0.0"/>
+								<parameter input="12" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Acidity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Acidity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity">
-						<type>scalar</type>
-						<layername>"Salinity"</layername>
-						<unit>"promille"</unit>
-						<statistic>average</statistic>
-						<description>"Salinity in promille."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="Ogle, D.H." year="1998" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="11" HSI="1.0"/>
-							<parameter value="12" HSI="0.0"/>
-							<parameter value="20" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Salinity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Salinity</layer_filename>
+								<unit>"promille"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Salinity in promille."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="Ogle, D.H." year="1998" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="11" output="1.0"/>
+								<parameter input="12" output="0.0"/>
+								<parameter input="20" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Salinity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Salinity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Watertemperature">
-						<type>scalar</type>
-						<layername>"Watertemperature"</layername>
-						<unit>"degrees Celsius"</unit>
-						<statistic>average</statistic>
-						<description>"Average water temperature in degrees Celsius."</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2010-04-20</date>
-						<references>
-							<reference author="Tarvainen, M., A. Anttalainen, H. Helminen, T. Keskinen, J. Sarvala, I. Vaahto en J. Karjalainen" year="2008" title="" journal="" identification=""/>
-							<reference author="Hokanson K.E.F." year="1977" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="7" HSI="0.0"/>
-							<parameter value="10" HSI="0.0"/>
-							<parameter value="15" HSI="1.0"/>
-							<parameter value="20" HSI="1.0"/>
-							<parameter value="28" HSI="0.0"/>
-							<parameter value="20" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Watertemperature">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Watertemperature</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average water temperature in degrees Celsius."</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2010-04-20</date>
+							<references>
+								<reference author="Tarvainen, M., A. Anttalainen, H. Helminen, T. Keskinen, J. Sarvala, I. Vaahto en J. Karjalainen" year="2008" title="" journal="" identification=""/>
+								<reference author="Hokanson K.E.F." year="1977" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="7" output="0.0"/>
+								<parameter input="10" output="0.0"/>
+								<parameter input="15" output="1.0"/>
+								<parameter input="20" output="1.0"/>
+								<parameter input="28" output="0.0"/>
+								<parameter input="20" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Watertemperature">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Watertemperature</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
+	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Pos(Gymnocephaluscernuus)-Algemeenvoorkomen">Algemeen voorkomen</h3>
-<p>De Pos komt, met uitzondering van de meest noordelijke, zuidelijke en westelijke delen, binnen heel Europa voor. Per ongeluk werd de Pos na 1980 geïntroduceerd in Groot-Brittannië, Noorwegen, Zuid-Frankrijk, Italië en in de Verenigde Staten, waar hij zich goed kan handhaven. De Pos komt in Nederland voor in de grote rivieren, het IJssel- en Markermeer en ook in meren en plassen. De Pos komt minder voor in kleinere rivieren en stilstaande wateren en komt nauwelijks voor in kleine wateren, beken en sloten. <br>
-De Pos leeft in scholen en laat zich verder omschrijven als een eurytope soort: hij kan onder een brede range van condities voorkomen <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-1">#1</a>.</p>
+			<text>&lt;h3 id="Pos(Gymnocephaluscernuus)-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
+&lt;p&gt;De Pos komt, met uitzondering van de meest noordelijke, zuidelijke en westelijke delen, binnen heel Europa voor. Per ongeluk werd de Pos na 1980 geïntroduceerd in Groot-Brittannië, Noorwegen, Zuid-Frankrijk, Italië en in de Verenigde Staten, waar hij zich goed kan handhaven. De Pos komt in Nederland voor in de grote rivieren, het IJssel- en Markermeer en ook in meren en plassen. De Pos komt minder voor in kleinere rivieren en stilstaande wateren en komt nauwelijks voor in kleine wateren, beken en sloten. &lt;br&gt;
+De Pos leeft in scholen en laat zich verder omschrijven als een eurytope soort: hij kan onder een brede range van condities voorkomen &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Pos(Gymnocephaluscernuus)-Milieucondities">Milieucondities</h3>
-<p>Voor de Pos zijn vooral de volgende milieucondities van belang: diepte, substraat en stroomsnelheid. Diepte is van belang voor voedsel en voor paai. De optimale diepte voor voedselvoorziening en paai verschillen. De pos kan zijn voedsel redelijk tot goed vinden tot een diepte van 15 meter, daarna wordt het lastiger. pos heeft de voorkeur voor paaiplaatsen op een diepte tussen de 1 en 3 meter. Hard substraat op de paaiplaats, is naast de diepte, ook van belang voor een goede paaiplaats. Hoge stroomsnelheid kan voor de pos een beperkende factor worden voor een geschikte habitat omdat de pos een eurytope soort met een hoge bouw waardoor hij zich niet goed in de stroming kan handhaven <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-2">#2</a>. Van invloed zijn ook temperatuur van het water, zuurstofgehalte, zuurgraad en saliniteit, maar door de brede range waarbinnen de Pos kan voorkomen, zijn deze milieucondities niet vaak beperkend <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-3">#3</a>. In het model van de pos hoeven deze dan ook niet altijd worden meegenomen. Echter, wanneer er gerekend gaat worden met scenario's waarbij deze milieucondities erg kunnen veranderen, zoals toename in temperatuur of toename in dagen van stratificatie, dan wordt aangeraden deze functies wel mee te nemen <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-2">#2</a>. Deze "extra" functies zijn wel in deze factsheet opgenomen.</p>
+&lt;h3 id="Pos(Gymnocephaluscernuus)-Milieucondities"&gt;Milieucondities&lt;/h3&gt;
+&lt;p&gt;Voor de Pos zijn vooral de volgende milieucondities van belang: diepte, substraat en stroomsnelheid. Diepte is van belang voor voedsel en voor paai. De optimale diepte voor voedselvoorziening en paai verschillen. De pos kan zijn voedsel redelijk tot goed vinden tot een diepte van 15 meter, daarna wordt het lastiger. pos heeft de voorkeur voor paaiplaatsen op een diepte tussen de 1 en 3 meter. Hard substraat op de paaiplaats, is naast de diepte, ook van belang voor een goede paaiplaats. Hoge stroomsnelheid kan voor de pos een beperkende factor worden voor een geschikte habitat omdat de pos een eurytope soort met een hoge bouw waardoor hij zich niet goed in de stroming kan handhaven &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-2"&gt;#2&lt;/a&gt;. Van invloed zijn ook temperatuur van het water, zuurstofgehalte, zuurgraad en saliniteit, maar door de brede range waarbinnen de Pos kan voorkomen, zijn deze milieucondities niet vaak beperkend &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-3"&gt;#3&lt;/a&gt;. In het model van de pos hoeven deze dan ook niet altijd worden meegenomen. Echter, wanneer er gerekend gaat worden met scenario's waarbij deze milieucondities erg kunnen veranderen, zoals toename in temperatuur of toename in dagen van stratificatie, dan wordt aangeraden deze functies wel mee te nemen &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-2"&gt;#2&lt;/a&gt;. Deze "extra" functies zijn wel in deze factsheet opgenomen.&lt;/p&gt;
 
-<h3 id="Pos(Gymnocephaluscernuus)-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
-<p>De Pos leeft nabij de bodem en haalt daar dan ook het meeste van zijn voedsel vandaan. Het dieet van de Pos bestaat onder meer uit dansmuggen, kleine kreeftachtigen, haften, kokerjuffers, bloedzuigers en visseneieren en -larven van bij voorkeur spiering. De prooi wordt voornamelijk waargenomen doormiddel van het zijlijnorgaan en, wanneer het water helder genoeg is, door zicht <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-1">#1</a>.</p>
+&lt;h3 id="Pos(Gymnocephaluscernuus)-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
+&lt;p&gt;De Pos leeft nabij de bodem en haalt daar dan ook het meeste van zijn voedsel vandaan. Het dieet van de Pos bestaat onder meer uit dansmuggen, kleine kreeftachtigen, haften, kokerjuffers, bloedzuigers en visseneieren en -larven van bij voorkeur spiering. De prooi wordt voornamelijk waargenomen doormiddel van het zijlijnorgaan en, wanneer het water helder genoeg is, door zicht &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Pos(Gymnocephaluscernuus)-Reproductieenmigratie">Reproductie en migratie</h3>
-<p>De Pos is een r-strateeg, wat inhoudt dat deze vis relatief klein is, korte generatietijden heeft, snel groeit en veel eitjes per legsel voortbrengt. De eitjes worden afgezet op blokken, gravel, stenen en waterplanten. Echter, de paaiplaatsen moeten een harde bodem hebben, zoals klei, zand of gravel en de maximale paaiwaterdiepte bedraagt 3 meter <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-4">#4</a>.</p>
+&lt;h3 id="Pos(Gymnocephaluscernuus)-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
+&lt;p&gt;De Pos is een r-strateeg, wat inhoudt dat deze vis relatief klein is, korte generatietijden heeft, snel groeit en veel eitjes per legsel voortbrengt. De eitjes worden afgezet op blokken, gravel, stenen en waterplanten. Echter, de paaiplaatsen moeten een harde bodem hebben, zoals klei, zand of gravel en de maximale paaiwaterdiepte bedraagt 3 meter &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-4"&gt;#4&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="Pos(Gymnocephaluscernuus)-Leeftijdenmortaliteit">Leeftijd en mortaliteit</h3>
-<p>Op een leeftijd van ongeveer 2 tot 3 jaar is de Pos geslachtsrijp. De gemiddelde leeftijd die een Pos bereikt is 6 jaar <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-1">#1</a>.</p>]]></text>
+&lt;h3 id="Pos(Gymnocephaluscernuus)-Leeftijdenmortaliteit"&gt;Leeftijd en mortaliteit&lt;/h3&gt;
+&lt;p&gt;Op een leeftijd van ongeveer 2 tot 3 jaar is de Pos geslachtsrijp. De gemiddelde leeftijd die een Pos bereikt is 6 jaar &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722995#Pos(Gymnocephaluscernuus)-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Van Emmerik, W.A.M. and H.W. de Nie" year="2006" title="De zoetwatervissen van Nederland. Ecologisch bekeken" journal="" identification="Vereniging Sportvisserij Nederland, Bilthoven"/>
 		<reference author="J. Kranenbarg" year="" title="Memo" journal="" identification=""/>

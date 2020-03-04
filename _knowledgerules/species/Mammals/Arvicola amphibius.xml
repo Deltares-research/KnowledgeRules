@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 			<EoLpagenr>1179597</EoLpagenr>
 			<LatName>Arvicola amphibius</LatName>
 			<CommonNames>
-				<Name name = "Woelrat" language = "NL"/>
+				<Name name="Woelrat" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
-		</Topic>
+	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
 			<System name="adult">
@@ -24,17 +23,17 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-					<text><![CDATA[<h1 id="Woelrat-Avricolaamphibius-Onzekerheidenvalidatie">Onzekerheid en validatie</h1>
+						<text>&lt;h1 id="Woelrat-Avricolaamphibius-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;
 
-<p><img class="emoticon emoticon-warning" src="./Woelrat - Avricola amphibius - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"> Deze rekenregels zijn niet gevalideerd.</p>
+&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Woelrat - Avricola amphibius - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt; Deze rekenregels zijn niet gevalideerd.&lt;/p&gt;
 
-<h1 id="Woelrat-Avricolaamphibius-Toepasbaarheid">Toepasbaarheid</h1>
+&lt;h1 id="Woelrat-Avricolaamphibius-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;
 
-<p>De rekenregels zijn opgesteld om het potentieel leefgebied van de woelrat te bepalen en zijn toepasbaar op grote en kleinere zoete wateren.</p>
+&lt;p&gt;De rekenregels zijn opgesteld om het potentieel leefgebied van de woelrat te bepalen en zijn toepasbaar op grote en kleinere zoete wateren.&lt;/p&gt;
 
-<h1 id="Woelrat-Avricolaamphibius-Voorbeeldproject">Voorbeeld project</h1>
+&lt;h1 id="Woelrat-Avricolaamphibius-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;
 
-<p>Geen</p>]]></text>
+&lt;p&gt;Geen&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -64,196 +63,350 @@
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
-				<KnowledgeRules>		
+				<KnowledgeRules>
 					<ResponseCurve name="Width_hydrosere_zone">
-						<type>scalar</type>
-						<layername>"Width_hydrosere_zone"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Width of the zone where hydrosere takes place in meters"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="1.0"/>
-							<parameter value="3" HSI="1.0"/>
-							<parameter value="4" HSI="0.0"/>
-							<parameter value="5" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Width_hydrosere_zone">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Width_hydrosere_zone</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Width of the zone where hydrosere takes place in meters"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1.0"/>
+								<parameter input="3" output="1.0"/>
+								<parameter input="4" output="0.0"/>
+								<parameter input="5" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Width_hydrosere_zone">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Width_hydrosere_zone</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Bank_shape">
-						<type>scalar</type>
-						<layername>"Bank_shape"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Inclination of the bank in percent"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="20" HSI="0.0"/>
-							<parameter value="35" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Bank_shape">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Bank_shape</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Inclination of the bank in percent"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="20" output="0.0"/>
+								<parameter input="35" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Bank_shape">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Bank_shape</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity">
-						<type>range / categorical</type>
-						<layername>"Flow_velocity"</layername>
-						<unit>"m/s"</unit>
-						<statistic>average</statistic>
-						<description>"Flow velocity of the water in meters per second"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesRangeCategorical>
-							<parameter rangemin="0" rangemax="1" cat="0 - 1" HSI="1.0"/>
-							<parameter rangemin="1" rangemax="999999" cat="> 1" HSI="0.0"/>
-						</valuesRangeCategorical>
+						<inputLayers>
+							<layer name="Flow_velocity">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Flow_velocity</layer_filename>
+								<unit>"m/s"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Flow velocity of the water in meters per second"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="0 - 1" output="1.0" output_cat=""/>
+								<parameter rangemin_input="1" rangemax_input="999999" input_cat="&gt; 1" output="0.0" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Flow_velocity">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterlevel_fluctuation">
-						<type>categorical</type>
-						<layername>"Waterlevel_fluctuation"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"Waterlevel fluctuation</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="stabile" HSI="1.0"/>
-							<parameter cat="instabile" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Waterlevel_fluctuation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterlevel_fluctuation</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Waterlevel fluctuation</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="stabile" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="instabile" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterlevel_fluctuation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterlevel_fluctuation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth_near_bank">
-						<type>scalar</type>
-						<layername>"Waterdepth_near_bank"</layername>
-						<unit>"m"</unit>
-						<statistic>average</statistic>
-						<description>"Waterdepth 1 meter from the bank in centimeters"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="5" HSI="0.0"/>
-							<parameter value="10" HSI="0.4"/>
-							<parameter value="70" HSI="1.0"/>
-							<parameter value="200" HSI="1.0"/>
-							<parameter value="260" HSI="0.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Waterdepth_near_bank">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Waterdepth_near_bank</layer_filename>
+								<unit>"m"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Waterdepth 1 meter from the bank in centimeters"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="5" output="0.0"/>
+								<parameter input="10" output="0.4"/>
+								<parameter input="70" output="1.0"/>
+								<parameter input="200" output="1.0"/>
+								<parameter input="260" output="0.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Waterdepth_near_bank">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Waterdepth_near_bank</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Coverage_grasses">
-						<type>scalar</type>
-						<layername>"Coverage_grasses"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Coverage by grasses in percent"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="20" HSI="0.0"/>
-							<parameter value="70" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Coverage_grasses">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Coverage_grasses</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Coverage by grasses in percent"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="20" output="0.0"/>
+								<parameter input="70" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Coverage_grasses">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Coverage_grasses</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Coverage_other_vegetation">
-						<type>scalar</type>
-						<layername>"Coverage_other_vegetation"</layername>
-						<unit>"%"</unit>
-						<statistic>average</statistic>
-						<description>"Coverage by other vegetation in percent"</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesScalar>
-							<parameter value="0" HSI="0.0"/>
-							<parameter value="20" HSI="1.0"/>
-							<parameter value="100" HSI="1.0"/>
-						</valuesScalar>
+						<inputLayers>
+							<layer name="Coverage_other_vegetation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Coverage_other_vegetation</layer_filename>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Coverage by other vegetation in percent"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0.0"/>
+								<parameter input="20" output="1.0"/>
+								<parameter input="100" output="1.0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Coverage_other_vegetation">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Coverage_other_vegetation</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Mowing_frequency">
-						<type>categorical</type>
-						<layername>"Mowing_frequency"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"Mowing frequency</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="less than once per two years" HSI="0.6"/>
-							<parameter cat="once per two years" HSI="1.0"/>
-							<parameter cat="once per year" HSI="1.0"/>
-							<parameter cat="twice per year" HSI="1.0"/>
-							<parameter cat="more than twice per year" HSI="0.5"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Mowing_frequency">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Mowing_frequency</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Mowing frequency</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="less than once per two years" output="0.6" output_cat=""/>
+								<parameter input="2" input_cat="once per two years" output="1.0" output_cat=""/>
+								<parameter input="3" input_cat="once per year" output="1.0" output_cat=""/>
+								<parameter input="4" input_cat="twice per year" output="1.0" output_cat=""/>
+								<parameter input="5" input_cat="more than twice per year" output="0.5" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Mowing_frequency">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Mowing_frequency</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Bank_substrate">
-						<type>categorical</type>
-						<layername>"Bank_substrate"</layername>
-						<unit>"-"</unit>
-						<statistic>average</statistic>
-						<description>"Bank substrate. Note: The digibility of banks is important for making holts.</description>
-						<author>"Valesca Harezlak"</author>
-						<date>2013-01-15</date>
-						<references>
-							<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
-						</references>
-						<valuesCategorical>
-							<parameter cat="digible" HSI="1.0"/>
-							<parameter cat="not-digible" HSI="0.0"/>
-						</valuesCategorical>
+						<inputLayers>
+							<layer name="Bank_substrate">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>Bank_substrate</layer_filename>
+								<unit>"-"</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Bank substrate. Note: The digibility of banks is important for making holts.</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-15</date>
+							<references>
+								<reference author="Hollands., H., J.O. Reinhold" year="1999" title="" journal="" identification=""/>
+							</references>
+							<valuesCategorical>
+								<parameter input="1" input_cat="digible" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="not-digible" output="0.0" output_cat=""/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_Bank_substrate">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_Bank_substrate</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
 					</ResponseCurve>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
 	</Autecology>
-	<ContentDescription>
-		<Description language="NL"><text><![CDATA[<h3 id="Woelrat-Avricolaamphibius-Algemeenvoorkomen">Algemeen voorkomen</h3>
+	<TopicDescription>
+		<Description language="NL">
+			<text>&lt;h3 id="Woelrat-Avricolaamphibius-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;
 
-<p>De woelrat (Arvicola amphibius)leeft semi-aquatisch langs oevers. Sinds 2005 wordt de molrat (Arvicola scherman) die verder van het water af te vinden is in graslanden, akkers met hakvruchten, tuinen en boomgaarden als een aparte soort gezien. In geheel Nederland komt de woelrat voor (behalve de Waddeneilanden), de molrat wordt alleen gevonden in Limburg. De woelrat komt voor langs schoon stilstaand water <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2">#2</a>, zoals beken, rivieren, meren, vijvers, veengebieden en moerassen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a> en <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2">#2</a>. De woelrat wordt verder gevonden in bijna geheel Europa met uitzondering van Ierland, het westen en uiterste zuiden van Frankrijk, een groot deel van het Iberische Schiereiland, de zuidelijke delen van Italië en het zuiden van voormalig Joegoslavië <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>.</p>
+&lt;p&gt;De woelrat (Arvicola amphibius)leeft semi-aquatisch langs oevers. Sinds 2005 wordt de molrat (Arvicola scherman) die verder van het water af te vinden is in graslanden, akkers met hakvruchten, tuinen en boomgaarden als een aparte soort gezien. In geheel Nederland komt de woelrat voor (behalve de Waddeneilanden), de molrat wordt alleen gevonden in Limburg. De woelrat komt voor langs schoon stilstaand water &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2"&gt;#2&lt;/a&gt;, zoals beken, rivieren, meren, vijvers, veengebieden en moerassen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt; en &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2"&gt;#2&lt;/a&gt;. De woelrat wordt verder gevonden in bijna geheel Europa met uitzondering van Ierland, het westen en uiterste zuiden van Frankrijk, een groot deel van het Iberische Schiereiland, de zuidelijke delen van Italië en het zuiden van voormalig Joegoslavië &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>In de literatuur is het bekend dat er concurrentie kan optreden tussen de woelrat, muskusrat en bruine rat. Echter over de aard van deze concurrentie zijn weinig meetgegevens. Ook kunnen natuurlijke vijanden een sterk effect hebben op de populatie en het voorkomen van de woelrat <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>.</p>
+&lt;p&gt;In de literatuur is het bekend dat er concurrentie kan optreden tussen de woelrat, muskusrat en bruine rat. Echter over de aard van deze concurrentie zijn weinig meetgegevens. Ook kunnen natuurlijke vijanden een sterk effect hebben op de populatie en het voorkomen van de woelrat &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>Het habitat van de woelrat bestaat uit oevers van stilstaand en langzaam stromend water, bij voorkeur met een dichte oevervegetatie. De woelrat heeft een sterke voorkeur voor een vrij stabiel waterpeil, overhangende vegetatie, een stroomsnelheid van minder dan 0.5 m/sec, een waterdiepte van meer dan 20 cm, een oeverhoogte van meer dan 1 meter en modderige en slikkige oevers. Tevens van belang is dat het oeverhol zo kan worden aangelegd dat een opening naar het water onder dekking mogelijk is. Indien de verlandingszone (rietlanden, slib- en zandbanken) groter is dan 3 meter dan kan de woelrat niet snel genoeg zijn nestplaats bereiken vanuit het water. Hierdoor is hij extra kwetsbaar voor predatie <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>.</p>
+&lt;p&gt;Het habitat van de woelrat bestaat uit oevers van stilstaand en langzaam stromend water, bij voorkeur met een dichte oevervegetatie. De woelrat heeft een sterke voorkeur voor een vrij stabiel waterpeil, overhangende vegetatie, een stroomsnelheid van minder dan 0.5 m/sec, een waterdiepte van meer dan 20 cm, een oeverhoogte van meer dan 1 meter en modderige en slikkige oevers. Tevens van belang is dat het oeverhol zo kan worden aangelegd dat een opening naar het water onder dekking mogelijk is. Indien de verlandingszone (rietlanden, slib- en zandbanken) groter is dan 3 meter dan kan de woelrat niet snel genoeg zijn nestplaats bereiken vanuit het water. Hierdoor is hij extra kwetsbaar voor predatie &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;
 
-<p>NB. Doordat woelratten sterk gebonden zijn aan dichte, overhangende oevervegetaties zijn de gevolgen van maaien groot. In lage vegetaties is de kans op predatie groter. Daarentegen wordt de gewenste dichtheid aan grassen wel door maaien bewerkstelligd. De voorkeur gaat uit naar gefaseerd maaibeheer <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>.   </p>
+&lt;p&gt;NB. Doordat woelratten sterk gebonden zijn aan dichte, overhangende oevervegetaties zijn de gevolgen van maaien groot. In lage vegetaties is de kans op predatie groter. Daarentegen wordt de gewenste dichtheid aan grassen wel door maaien bewerkstelligd. De voorkeur gaat uit naar gefaseerd maaibeheer &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;.   &lt;/p&gt;
 
-<h3 id="Woelrat-Avricolaamphibius-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3>
+&lt;h3 id="Woelrat-Avricolaamphibius-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;
 
-<p>Woelratten zijn strikt herbivoren en hebben grassen en kruiden op het menu staan. Een voorbeeld van de kruiden die gegeten worden zijn brandnetel, kattestaart en pijlkruid <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>. Ook noten en zaden worden gegeten <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2">#2</a>. ’s Winters zijn de woelratten aangewezen op ondergrondse plantedelen, zoals wortelstokken, knollen en bollen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>. Zeer zelden eet de woelrat dierlijk voedsel, zoals insecten en vissen <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2">#2</a>. De woelrat foerageert gedurende de grootste gedeelte van de tijd binnen 2 meter van de oeverrand <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>. De woelrat is ’s nachts en overdags actief met periodes van 2 a 3 uur <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2">#2</a>.   </p>
+&lt;p&gt;Woelratten zijn strikt herbivoren en hebben grassen en kruiden op het menu staan. Een voorbeeld van de kruiden die gegeten worden zijn brandnetel, kattestaart en pijlkruid &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;. Ook noten en zaden worden gegeten &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2"&gt;#2&lt;/a&gt;. ’s Winters zijn de woelratten aangewezen op ondergrondse plantedelen, zoals wortelstokken, knollen en bollen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;. Zeer zelden eet de woelrat dierlijk voedsel, zoals insecten en vissen &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2"&gt;#2&lt;/a&gt;. De woelrat foerageert gedurende de grootste gedeelte van de tijd binnen 2 meter van de oeverrand &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;. De woelrat is ’s nachts en overdags actief met periodes van 2 a 3 uur &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2"&gt;#2&lt;/a&gt;.   &lt;/p&gt;
 
-<p>De woelrat is de prooi van hermelijn, bunzing, nerts, otter, vos, das, kat, uilen, reigers en snoeken. Jonge woelratten vallen soms te prooi aan de bruine rat. Ook de mens draagt zijn steentje bij door de woelrat in land- en tuinbouwgebieden te bestrijden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2">#2</a>.   </p>
+&lt;p&gt;De woelrat is de prooi van hermelijn, bunzing, nerts, otter, vos, das, kat, uilen, reigers en snoeken. Jonge woelratten vallen soms te prooi aan de bruine rat. Ook de mens draagt zijn steentje bij door de woelrat in land- en tuinbouwgebieden te bestrijden &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2"&gt;#2&lt;/a&gt;.   &lt;/p&gt;
 
-<h3 id="Woelrat-Avricolaamphibius-Reproductieenmigratie">Reproductie en migratie</h3>
+&lt;h3 id="Woelrat-Avricolaamphibius-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;
 
-<p>De voortplantingstijd loopt van maart tot september-oktober. Tijdens deze tijd bezetten de vrouwtjes territoria die elkaar kunnen overlappen. Vrowutjes zijn monogaam, terwijl de mannetjes er 2 a 3 partners kunnen hebben. Na een draagtijd van 3 weken worden er 5 tot 6 jongen geboren. Na 2 weken gezoogd te zijn kunnen ze het nest al verlaten. Na 50 dagen nemen de mannetjes al deel aan de voortplanting, vrouwtjes zijn iets trager met 70 dagen. Gemiddeld hebben de vrouwtjes 5 worpen per jaar. Een woelrat wordt gemiddeld 18 maanden oud met een maximum van 3 jaar <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2">#2</a>. </p>
+&lt;p&gt;De voortplantingstijd loopt van maart tot september-oktober. Tijdens deze tijd bezetten de vrouwtjes territoria die elkaar kunnen overlappen. Vrowutjes zijn monogaam, terwijl de mannetjes er 2 a 3 partners kunnen hebben. Na een draagtijd van 3 weken worden er 5 tot 6 jongen geboren. Na 2 weken gezoogd te zijn kunnen ze het nest al verlaten. Na 50 dagen nemen de mannetjes al deel aan de voortplanting, vrouwtjes zijn iets trager met 70 dagen. Gemiddeld hebben de vrouwtjes 5 worpen per jaar. Een woelrat wordt gemiddeld 18 maanden oud met een maximum van 3 jaar &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-2"&gt;#2&lt;/a&gt;. &lt;/p&gt;
 
-<p>Woelratten leven in kolonies. Over sociale structuur van populaties is niet veel bekend. Mogelijk wordt op basis van de sociale status van individuen het geschikte habitat verdeeld. Het leefgebied van de mannetjes bedraagt 170 meter tot maximaal 500 meter oever en dat van de vrouwtjes 120 tot maximaal 200 meter oever. Een mannetje blijft zijn gehele leven op de zelfde locatie terwijl het vrouwtje soms verhuist  <a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1">#1</a>. </p>]]></text>
+&lt;p&gt;Woelratten leven in kolonies. Over sociale structuur van populaties is niet veel bekend. Mogelijk wordt op basis van de sociale status van individuen het geschikte habitat verdeeld. Het leefgebied van de mannetjes bedraagt 170 meter tot maximaal 500 meter oever en dat van de vrouwtjes 120 tot maximaal 200 meter oever. Een mannetje blijft zijn gehele leven op de zelfde locatie terwijl het vrouwtje soms verhuist  &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Woelrat+-+Avricola+amphibius#Woelrat-Avricolaamphibius-1"&gt;#1&lt;/a&gt;. &lt;/p&gt;</text>
 		</Description>
-	</ContentDescription>
+	</TopicDescription>
 	<Documentation>
 		<reference author="Hollands., H., J.O. Reinhold" year="1999" title="HSI-modellen voor 5 oevergebonden zoogdiersoorten. Voorlopige versie op basis van huidige ecologische kennis" journal="" identification="Dienst Weg- en Waterbouwkunde"/>
-		<reference author="" year="2012" title= "www.zoogdiervereniging.nl (Woelrat)" journal="" identification="11 december 2012"/>
+		<reference author="" year="2012" title="www.zoogdiervereniging.nl (Woelrat)" journal="" identification="11 december 2012"/>
 	</Documentation>
 	<DataSources/>
 </AutecologyXML>

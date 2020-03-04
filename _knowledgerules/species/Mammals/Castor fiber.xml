@@ -73,7 +73,7 @@
 								<parameter input="0" output="0"/>
 								<parameter input="8" output="0"/>
 								<parameter input="15" output="1"/>
-								<parameter input="999" output="1"/>
+								<parameter input="30" output="1"/>
 							</valuesScalar>
 						</Content>
 						<outputLayers>
@@ -139,7 +139,7 @@
 							</references>
 							<valuesRangeCategorical>
 								<parameter rangemin_input="0" rangemax_input="50" input_cat="1" output="0" output_cat=""/>
-								<parameter rangemin_input="50" rangemax_input="999" input_cat="2" output="1" output_cat=""/>
+								<parameter rangemin_input="50" rangemax_input="999999" input_cat="2" output="1" output_cat=""/>
 							</valuesRangeCategorical>
 						</Content>
 						<outputLayers>
@@ -207,7 +207,7 @@
 								<parameter input="0" output="1"/>
 								<parameter input="6" output="1"/>
 								<parameter input="10" output="0"/>
-								<parameter input="999" output="0"/>
+								<parameter input="20" output="0"/>
 							</valuesScalar>
 						</Content>
 						<outputLayers>

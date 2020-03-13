@@ -41,8 +41,8 @@ Er is geen voorbeeldproject beschikbaar.
 					<FlowDiagram name="rivieren">
 						<From name="habitat_geschiktheid">
 							<label>"habitat_geschiktheid"</label>
-							<equation>specific</equation>
-							<specific_equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie * overig)^(1/6)"</specific_equation>
+							<equation>knowledge_rule</equation>
+							<To>geschiktheid_rivieren</To>
 							<To>voedsel</To>
 							<To>beschutting</To>
 							<To>waterkwaliteit</To>
@@ -64,8 +64,7 @@ Er is geen voorbeeldproject beschikbaar.
 						</From>
 						<From name="waterkwaliteit">
 							<label>"waterkwaliteit"</label>
-							<equation>specific</equation>
-							<specific_equation>"(troebelheid + zuurgraad + (zuurstofgehalte * 2) + saliniteit + ((temperatuur_adult * temperatuur_larve * temperatuur_juveniel)^(1/3) * 2)) / 7"</specific_equation>
+							<equation>knowledge_rule</equation>
 							<To>troebelheid</To>
 							<To>zuurgraad</To>
 							<To>zuurstofgehalte</To>
@@ -98,8 +97,8 @@ Er is geen voorbeeldproject beschikbaar.
 					<FlowDiagram name="meren">
 						<From name="habitat_geschiktheid">
 							<label>"habitat_geschiktheid"</label>
-							<equation>specific</equation>
-							<specific_equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie * overig)^(1/6)"</specific_equation>
+							<equation>knowledge_rule</equation>
+							<To>geschiktheid_meren</To>
 							<To>voedsel</To>
 							<To>beschutting</To>
 							<To>waterkwaliteit</To>
@@ -122,8 +121,8 @@ Er is geen voorbeeldproject beschikbaar.
 						</From>
 						<From name="waterkwaliteit">
 							<label>"waterkwaliteit"</label>
-							<equation>specific</equation>
-							<specific_equation>"(troebelheid + zuurgraad + (zuurstofgehalte * 2) + saliniteit + ((temperatuur_adult * temperatuur_larve * temperatuur_juveniel)^(1/3) * 2)) / 7"</specific_equation>
+							<equation>knowledge_rule</equation>
+							<To>geschiktheid_waterkwaliteit</To>
 							<To>troebelheid</To>
 							<To>zuurgraad</To>
 							<To>zuurstofgehalte</To>
@@ -142,6 +141,238 @@ Er is geen voorbeeldproject beschikbaar.
 					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
+					<FormulaBased name="geschiktheid_rivieren">
+						<inputLayers>
+							<layer name="voedsel">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_voedsel</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van voedselbeschikbaarheid"</description>
+							</layer>
+							<layer name="beschutting">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_beschutting</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van beschuttingbeschikbaarheid"</description>
+							</layer>							
+							<layer name="waterkwaliteit">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterkwaliteit</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van waterkwaliteit"</description>
+							</layer>
+							<layer name="reproductie">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_reproductie</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI voor reproductiegelegenheid"</description>
+							</layer>
+							<layer name="overig">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_overig</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI overig"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Geschiktheid van rivieren op basis van andere factoren"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie * overig)^(1/7)"</equation>
+							<Parameters>
+								<valuesScalar layername = "voedsel" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "beschutting" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "waterkwaliteit" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "reproductie" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "overig" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>							
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="habitatgeschiktheid_rivieren">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_habitatgeschiktheid_rivieren</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI habitat geschiktheid rivieren"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="geschiktheid_meren">
+						<inputLayers>
+							<layer name="voedsel">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_voedsel</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van voedselbeschikbaarheid"</description>
+							</layer>
+							<layer name="beschutting">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_beschutting</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van beschuttingbeschikbaarheid"</description>
+							</layer>
+							<layer name="waterkwaliteit">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterkwaliteit</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van waterkwaliteit"</description>
+							</layer>
+							<layer name="reproductie">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_reproductie</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI voor reproductiegelegenheid"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Geschiktheid van meren op basis van andere factoren"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie)^(1/6)"</equation>
+							<Parameters>
+								<valuesScalar layername = "voedsel" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "beschutting" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "waterkwaliteit" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "reproductie" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="habitatgeschiktheid_meren">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_habitatgeschiktheid_meren</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI habitat geschiktheid meren"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="geschiktheid_waterkwaliteit">
+						<inputLayers>
+							<layer name="troebelheid">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_troebelheid</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van troebelheid"</description>
+							</layer>
+							<layer name="zuurgraad">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurgraad</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van zuurgraad"</description>
+							</layer>
+							<layer name="zuurstofgehalte">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_zuurstofgehalte</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI van zuurstofgehalte"</description>
+							</layer>
+							<layer name="saliniteit">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_saliniteit</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI voor saliniteit"</description>
+							</layer>
+							<layer name="temperatuur_adult">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_adult</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI temperatuur adult"</description>
+							</layer>
+							<layer name="temperatuur_larve">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_larve</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI temperatuur larve"</description>
+							</layer>
+							<layer name="temperatuur_juveniel">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_temperatuur_juveniel</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI temperatuur juveniel"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Geschiktheid waterkwaliteit op basis van andere factoren"</description>
+							<author>"Valesca Harezlak"</author>
+							<date>2013-01-16</date>
+							<references>
+								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
+							</references>
+							<equation>(troebelheid + zuurgraad + (zuurstofgehalte * 2) + saliniteit + ((temperatuur_adult * temperatuur_larve * temperatuur_juveniel)^(1/3) * 2)) / 7"</equation>
+							<Parameters>
+								<valuesScalar layername = "troebelheid" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "zuurgraad" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>		
+								<valuesScalar layername = "zuurstofgehalte" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "saliniteit" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>	
+								<valuesScalar layername = "temperatuur_adult" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "temperatuur_larve" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+								<valuesScalar layername = "temperatuur_juveniel" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>																
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterkwaliteit">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_waterkwaliteit</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI waterkwaliteit"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
 					<ResponseCurve name="poelen_verdeling">
 						<inputLayers>
 							<layer name="poelen_verdeling">

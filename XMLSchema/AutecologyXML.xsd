@@ -33,17 +33,17 @@
 	</complexType>
 	<complexType name="TopicComplexType">
 		<choice>
-			<element name="Species" type="AutXML:SpeciesComplexType">
+			<element name="Species" type="AutXML:SpeciesComplexType" minOccurs="1" maxOccurs="1">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
 			</element>
-			<element name="WFDindicator" type="AutXML:WFDIComplexType">
+			<element name="WFDindicator" type="AutXML:WFDIComplexType" minOccurs="1" maxOccurs="1">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
 			</element>
-			<element name="Habitats" type="AutXML:HabitatsComplexType">
+			<element name="Habitats" type="AutXML:HabitatsComplexType"  minOccurs="1" maxOccurs="1">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>

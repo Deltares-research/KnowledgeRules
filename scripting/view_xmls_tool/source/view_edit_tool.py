@@ -237,12 +237,13 @@ class UI_MainWindow(object):
 
 		#load and refresh data
 		self = objAPI.load_file(self)
-		(self, AutXML) = objAPI.refresh_data(self, AutXML)
+		if(hasattr(self,"xmlroot")):
+			(self, AutXML) = objAPI.refresh_data(self, AutXML)
 
-		#set connections
-		self.comboBox.currentIndexChanged.connect(lambda: objAPI.refresh_language(self, self.cur_language))
-		self.comboBox_2.currentIndexChanged.connect(lambda: objAPI.refresh_group_data(self, AutXML, self.modeltypename, self.systemname, self.groupBox))
-		self.comboBox_3.currentIndexChanged.connect(lambda: objAPI.refresh_flowdiagram(self, AutXML, self.modeltypename, self.systemname, self.cur_flowdiagram))
+			#set connections
+			self.comboBox.currentIndexChanged.connect(lambda: objAPI.refresh_language(self, self.cur_language))
+			self.comboBox_2.currentIndexChanged.connect(lambda: objAPI.refresh_group_data(self, AutXML, self.modeltypename, self.systemname, self.groupBox))
+			self.comboBox_3.currentIndexChanged.connect(lambda: objAPI.refresh_flowdiagram(self, AutXML, self.modeltypename, self.systemname, self.cur_flowdiagram))
 
 		return()
 

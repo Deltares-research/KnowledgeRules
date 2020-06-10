@@ -31,8 +31,8 @@ print(svg_str)
 # 	os.makedirs(directory)
 # xmltest.create_flowdiagram_image(flowdiagram, output = os.path.join(directory,"example_flowdiagram.svg"))
 
-# #show in PyQt
-# subwindow_flowdiagram = xmltest.visualize_flowdiagram_image(svg_str)
-# xmltest.show_PyQt_plot(subwindow_flowdiagram)
+#show in PyQt
+subwindow_flowdiagram = xmltest.visualize_flowdiagram_image(svg_str)
+xmltest.show_PyQt_plot(subwindow_flowdiagram)
 
-# print("Done.")
+print("Done.")

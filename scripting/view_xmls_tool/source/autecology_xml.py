@@ -9,7 +9,9 @@ from lxml.etree import _Element as Element
 from lxml import etree as ET
 import pandas
 import numpy as np
+import ast
 from asteval import Interpreter
+import inspect
 from collections import OrderedDict
 
 #static plots
@@ -149,7 +151,7 @@ class AutecologyXML(_File):
 		self.XMLlayers["layer1_2_1_1_3"] = "SystemFlowDiagrams"
 		self.XMLlayers["layer1_2_1_1_4"] = "KnowledgeRules"
 #		self.XMLlayers["layer1_3"] = "FysicalCharacteristics"			#Not implemented (yet?)
-#		self.XMLlayers["layer1_4"] = "Traits"				            #Not implemented (yet?)
+#		self.XMLlayers["layer1_4"] = "Traits"							#Not implemented (yet?)
 		self.XMLlayers["layer1_5"] = "TopicDescription"
 		self.XMLlayers["layer1_6"] = "Documentation"
 		self.XMLlayers["layer1_7"] = "DataSources"
@@ -397,7 +399,37 @@ class AutecologyXML(_File):
 		type_tag_mr = type_tag_mr_list[0]
 		return(type_tag_mr)
 
+	def get_formula_interpretation(self, formula_text):
+
+		#change formula_text to interpretation
+		formula_interpretation = formula_text.replace('^','**')
+		
+		#make if elseif else statements from if(something;TRUE;FALSE)
+		formula_interpretation_split = formula_interpretation.split(";")
+		if("if(" in formula_interpretation):
+			if(len(formula_interpretation_split) == 3):
+				formula_interpretation = formula_interpretation_split[1] + formula_interpretation_split[0].replace("if("," if ") +\
+				" else " + formula_interpretation_split[2][:-1]
+			else:
+				raise RuntimeError("'if('' is present in formula : "+ formula_text +\
+				 ", but no true/false conditions specified with ';'")
+
+		#remove unnecessary indents
+		formula_interpretation = formula_interpretation.strip()
+
+		#check code validity
+		try:
+			ast.parse(str(formula_interpretation))
+
+		except SyntaxError:
+			raise RuntimeError("current formula is not valid : "+ formula_interpretation +" ." +\
+				" formula generated from : " + formula_text )			
+
+		return(formula_interpretation)
+
 	def get_data_layer(self,layer_element):
+
+		ToFormula = Interpreter()
 
 		layer_dict = {}
 		layer_dict["layername"] = layer_element.get('name').replace('"','')
@@ -483,8 +515,9 @@ class AutecologyXML(_File):
 		rule_dict["outputLayers"] = self.get_data_layers(fb_element, find_outputLayers) 
 
 		#get content
-		rule_dict["equation_text"] = fb_element.find(self.make_find(['Content','equation'])).text.replace('"','').replace('^','**')
-		
+		rule_dict["equation_text"] = fb_element.find(self.make_find(['Content','equation'])).text.replace('"','')
+		rule_dict["equation_interpretation"] = self.get_formula_interpretation(rule_dict["equation_text"])
+
 		rule_dict["parameters"] = [] 
 		#Get the number of values under Parameters
 		fb_values_tags = fb_element.findall(self.make_find(["Content","Parameters","valuesScalar"])) + \
@@ -564,8 +597,6 @@ class AutecologyXML(_File):
 
 		return(rule_dict)
 
-
-
 	def make_fb_first_parametersettings(self, fb_data):
 		parametersettings = {}
 		for i, var in enumerate(fb_data["parameters"]):
@@ -629,7 +660,7 @@ class AutecologyXML(_File):
 
 		#calculate formula
 		if(listparameter == False):
-			parametersettings[self.XMLconvention["fb_result"]] = ToFormula(fb_data["equation_text"])
+			parametersettings[self.XMLconvention["fb_result"]] = ToFormula(fb_data["equation_interpretation"])
 		elif(listparameter == True):
 			result_calculation = []
 			for element in variableparameter[variable_key]:
@@ -639,7 +670,7 @@ class AutecologyXML(_File):
 				
 				#fill formula dictionary
 				ToFormula.symtable[variable_key] = float(element)
-				result_calculation.append(ToFormula(fb_data["equation_text"]))
+				result_calculation.append(ToFormula(fb_data["equation_interpretation"]))
 
 			parametersettings[self.XMLconvention["fb_result"]] = result_calculation
 		else:
@@ -681,6 +712,40 @@ class AutecologyXML(_File):
 		[variable_dict] = [value for value in fb_data["parameters"] if(value["layername"] == variable_key)]
 
 		return(result, variable, variable_dict)
+
+
+	def make_mr_dataframe(self, mr_data):
+		for nr, cur_par in enumerate(mr_data["parameters"]):
+			df_current_rule = cur_par["data"]
+			
+			#Currently enabled for type "range / categorical"
+			if(cur_par["type"] == "range / categorical"):
+				#If boolean change table input
+				if(cur_par["unit"] == "boolean"):
+					df_current_rule["input"] = df_current_rule["rangemax_input"]
+				else:
+					df_current_rule["input"] = df_current_rule["rangemin_input"].astype(str) + " - "+ df_current_rule["rangemax_input"].astype(str)
+			
+			else:
+				raise ValueError("Table visualisation not enabled yet for other than input type 'range / categorical'")
+
+			df_current_rule_subset = df_current_rule[["output_cat","output","input"]].copy()
+			df_current_rule_subset.columns = ["output_cat","output",cur_par["layername"]]
+			
+			if(nr == 0):
+				df_total_rule = df_current_rule_subset
+			
+				#store headers for later
+				df_total_rule_headers = {"header" : [mr_data["name"],"",cur_par["layername"]], "unit" : ["str","output id",cur_par["unit"]]}
+			else:
+				df_total_rule = df_total_rule.merge(df_current_rule_subset, on = ["output_cat","output"], how = "outer")
+				df_total_rule_headers["header"].append(cur_par["layername"])
+				df_total_rule_headers["unit"].append(cur_par["unit"])
+
+		#sort the data
+		df_total_rule = df_total_rule.sort_values(by=["output"])
+	
+		return(df_total_rule, df_total_rule_headers)
 
 	def _scan(self):
 
@@ -1015,9 +1080,13 @@ class AutecologyXML(_File):
 		#make plot based on data
 		x_data = np.asarray(variable)
 		offset_x = (np.max(x_data) - np.min(x_data)) / 10
+		if(offset_x == 0.0):
+			offset_x = 1.0
 		y_data = np.asarray(result)
 		offset_y = (np.max(y_data) - np.min(y_data)) / 10
-		
+		if(offset_y == 0.0):
+			offset_y = 1.0
+
 		x_label = variable_dict["layername"] + " ("+ variable_dict["unit"] +")"
 		
 		#Set up a canvas
@@ -1448,7 +1517,7 @@ class AutecologyXML(_File):
 				super(SubWindow,self).__init__(parent)
 				self.SubWindow_layout = QtWidgets.QGridLayout()
 
-				self.create_plot_frame(svg_str)
+				self.add_plot_frame(svg_str)
 
 				self.setLayout(self.SubWindow_layout)
 
@@ -1476,10 +1545,10 @@ class AutecologyXML(_File):
 				self.box = QtWidgets.QGroupBox()
 				self.vbox = QtWidgets.QGridLayout()
 			
-				pm_box = QtWidgets.QGroupBox()
+				self.pm_box = QtWidgets.QGroupBox()
 				self.pm_box_layout = QtWidgets.QGridLayout()
 
-				pm_pixmap_widget = QtWidgets.QWidget(pm_box)
+				pm_pixmap_widget = QtWidgets.QWidget(self.pm_box)
 				pm_pixmap_layout = QtWidgets.QGridLayout(pm_pixmap_widget)
 
 				#make plot
@@ -1493,24 +1562,115 @@ class AutecologyXML(_File):
 				self.label = QtWidgets.QLabel()
 				self.label.setPixmap(image)
 				self.pm_box_layout.addWidget(self.label)
-				pm_box.setLayout(self.pm_box_layout)
+				self.pm_box.setLayout(self.pm_box_layout)
 
-				self.vbox.addWidget(pm_box)
+				self.vbox.addWidget(self.pm_box)
 				
 				self.box.setLayout(self.vbox)
 				self.main_frame_layout.addWidget(self.box)
 
 				return()
 
-
-	
-			def create_plot_frame(self, svg_str):
+			def add_plot_frame(self, svg_str):
 			
 				self.main_frame = QtWidgets.QWidget()
 				self.main_frame_layout = QtWidgets.QGridLayout(self.main_frame)
 
 				#make frame based on settings
 				self.make_frame(svg_str)
+
+				self.SubWindow_layout.addWidget(self.main_frame)
+
+				return()
+
+		return(SubWindow)
+
+	def visualize_mr_table(self, mr_dataframe, mr_dataframe_dict):
+
+		#make the plot
+		class SubWindow(QtWidgets.QWidget):
+			def __init__(self, parent=None):
+				super(SubWindow,self).__init__(parent)
+				self.SubWindow_layout = QtWidgets.QGridLayout()
+
+				self.add_table_frame(mr_dataframe, mr_dataframe_dict)
+				
+				self.setLayout(self.SubWindow_layout)
+
+
+			# def closeEvent(self, event):
+			# 	event.ignore()
+
+			def clearLayout(self,cur_layout):
+				def deleteItems(cur_layout):
+					if cur_layout is not None:
+						while cur_layout.count():
+							item = cur_layout.takeAt(0)
+							widget = item.widget()
+							if widget is not None:
+								widget.deleteLater()
+							else:
+								deleteItems(item.layout())
+				deleteItems(cur_layout)
+
+			def make_table_frame(self, mr_dataframe, mr_dataframe_dict):
+
+				#initilize the class to get XMLconvention
+				init_Aut = AutecologyXML(None)
+
+				#rebuild the frame based on selected variable
+				self.box = QtWidgets.QGroupBox()
+				self.vbox = QtWidgets.QGridLayout()
+			
+				self.mrt_box = QtWidgets.QGroupBox()
+				self.mrt_box_layout = QtWidgets.QGridLayout()
+
+				#add table widget
+				self.tableWidget = QtWidgets.QTableWidget()
+				self.tableWidget.setRowCount(mr_dataframe.shape[0])
+				self.tableWidget.setColumnCount(mr_dataframe.shape[1])
+
+				#make header
+				header_list = [head + "\n\n" + unit for  (head, unit) in\
+				 zip(mr_dataframe_dict["header"],mr_dataframe_dict["unit"])]
+
+				#set headers
+				self.tableWidget.setHorizontalHeaderLabels(header_list)
+				self.tableWidget.horizontalHeader().setStretchLastSection(True)
+				self.tableWidget.horizontalHeader().setDefaultAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+
+				#add value rows
+				for row_idx in range(mr_dataframe.shape[0]):
+					for col_idx in range(mr_dataframe.shape[1]):
+						val = QtWidgets.QTableWidgetItem(str(mr_dataframe.values[row_idx][col_idx]))
+						self.tableWidget.setItem(row_idx, col_idx, val)
+
+
+				#resize table to content
+				self.tableWidget.resizeColumnsToContents()
+				self.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
+				self.tableWidget.horizontalHeader().setStretchLastSection(True)
+				self.tableWidget.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+				
+				#add widget
+				self.mrt_box_layout.addWidget(self.tableWidget)
+				self.mrt_box_layout.setAlignment(self.tableWidget, QtCore.Qt.AlignVCenter)
+				self.mrt_box.setLayout(self.mrt_box_layout)
+
+				self.vbox.addWidget(self.mrt_box)
+				
+				self.box.setLayout(self.vbox)
+				self.main_frame_layout.addWidget(self.box)
+				
+				return()
+
+			def add_table_frame(self, mr_dataframe, mr_dataframe_dict):
+			
+				self.main_frame = QtWidgets.QWidget()
+				self.main_frame_layout = QtWidgets.QGridLayout(self.main_frame)
+
+				#make frame based on settings
+				self.make_table_frame(mr_dataframe, mr_dataframe_dict)
 
 				self.SubWindow_layout.addWidget(self.main_frame)
 

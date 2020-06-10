@@ -163,6 +163,11 @@ class API:
 			obj.topic_name = AutXML.topic_name
 			obj.commonnames = AutXML.commonnames
 			obj.subjectlink = None
+		elif(AutXML.topic_name == AutXML.XMLconvention["topic_habitats"]):
+			#get names
+			obj.topic_name = AutXML.topic_name
+			obj.commonnames = AutXML.commonnames
+			obj.subjectlink = None
 
 		else:
 			raise ValueError("The topic '" + AutXML.topic_name + "'has not yet been enabled in the viewer.")
@@ -400,6 +405,27 @@ class API:
 				kr_groupboxlayout.addWidget(kr_label1)
 				kr_groupboxlayout.addWidget(kr_textBrowser_eq)
 
+
+			elif(obj.knowledgerulecat[i] == xml_obj.XMLconvention["mr"]):
+
+				mr_tag = xml_obj.get_element_multiple_reclassification(modeltypename = modeltype, systemname = system, mrname = kr)
+				mr_data = xml_obj.get_data_multiple_reclassification_data(mr_tag)
+				mr_dataframe, mr_headers = xml_obj.make_mr_dataframe(mr_data)
+				mr_subframe = xml_obj.visualize_mr_table(mr_dataframe,mr_headers)
+
+				
+				mr_groupbox = QtWidgets.QGroupBox()
+				mr_groupbox_layout = QtWidgets.QGridLayout()
+				mr_subframe_ready = mr_subframe()
+				mr_subframe_ready.show()
+				mr_groupbox_layout.addWidget(mr_subframe_ready)
+				mr_groupbox.setLayout(mr_groupbox_layout)
+				mr_groupbox.setFixedHeight(mr_subframe_ready.size().height() +\
+					mr_subframe_ready.contentsMargins().top() + mr_subframe_ready.contentsMargins().bottom())
+
+				kr_groupboxlayout.addWidget(mr_groupbox)
+
+				#TO BE CORRECTED AND FINISHED
 
 			else:
 				raise ValueError("type of knowledge rule not supported : " + str(obj.knowledgerulecat[i]))

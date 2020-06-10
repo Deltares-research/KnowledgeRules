@@ -153,7 +153,7 @@
 								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
 								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
 							</references>
-							<equation>bankheight_GLW - (0.76 * (bankheight_GHW - ))</equation>
+							<equation>bankheight_GLW - (0.76 * (bankheight_GHW - bankheight_GHWS))</equation>
 							<Parameters>
 								<valuesScalar layername="bankheight_GLW" type="scalar">
 									<parameter min_input="0" max_input="5"/>
@@ -208,7 +208,7 @@
 								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
 								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
 							</references>
-							<equation><![CDATA[if((bankheight_GLW - bankheight_GHW) > bound_A) and ((bankheight_GLW - bankheight_GHW) < bankheight_GLW; 1; 0)]]></equation>
+							<equation><![CDATA[if((((bankheight_GLW - bankheight_GHW) > bound_A) and ((bankheight_GLW - bankheight_GHW) < bankheight_GLW)); 1; 0)]]></equation>
 							<Parameters>
 								<valuesScalar layername="bankheight_GLW" type="scalar">
 									<parameter min_input="0" max_input="5"/>
@@ -692,7 +692,7 @@
 								<description>A boolean presence approximation of vegetation type H</description>
 							</layer>
 						</outputLayers>
-					</FormulaBased>					
+					</FormulaBased>
 					<MultipleReclassification name="vegetationtypes_without_grazing">
 						<inputLayers>
 							<layer name="veg_A">
@@ -827,7 +827,7 @@
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_types">
-								<parameter_cat>"vegetation"</parameter_cat>						
+								<parameter_cat>"vegetation"</parameter_cat>
 								<layer_filename>"vegetation_types"</layer_filename>
 								<unit>categories</unit>
 								<statistic>average</statistic>

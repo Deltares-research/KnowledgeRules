@@ -33,37 +33,28 @@
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
-				</SystemFlowDiagrams>
-				<KnowledgeRules>
-				</KnowledgeRules>
-			</System>
-			<System name="biesbosch_area">
-				<Scope>
-					<SpatialScope>
-						<GeoNames name="Biesbosch" id="2758979"/>
-					</SpatialScope>
-					<TemporalScope>
-						<StartDate>1990-01-01</StartDate>
-						<EndDate>2005-01-01</EndDate>
-					</TemporalScope>
-				</Scope>
-				<SystemDescription>
-					<Description language="NL">
-						<text><![CDATA[<h2 id="VegetatietypenNoordelijkeDeltabekken-2.OevervegetatieontwikkelingindeBiesbosch#3">2. Oevervegetatieontwikkeling in de Biesbosch <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-3">#3</a></h2><p>Als input van deze kennisregels zijn de volgende gegevens nodig:</p><ul>	<li>Digital Terrain Model (DTM) in cm + NAP</li>	<li>Waterniveau bij GHW (gemiddeld hoog water)</li>	<li>Getijdenamplitudo (cm)</li></ul><p>De vegetatieontwikkeling wordt bepaald aan de hand van de getijdenamplitudo (ten opzichte van GHW) en de specifieke beheersvorm. In figuren 3a t/m 3c staat een schematische weergave van de vegetatieontwikkeling van de Biesbosch bij verschillende getijdenamplitudo`s en beheersvormen.</p><p>Voor het classificeren van de vegetatie wordt aangenomen dat er een ruimtelijke kaart beschikbaar is van de getijdenamplitudo en beheersvarianten ingedeeld in verschillende klassen (tabellen 6 en 7).</p><p>Aan de hand van het DTM en GHW moet een kaart met hoogteligging (in cm) gemaakt worden. Met de volgende classificatietabel worden verschillende vegetatietypen onderscheiden op basis van hoogteligging ten opzichte van GHW in combinatie met getijdenamplitudo en beheersvariant (tabel 8).</p>]]></text>
-					</Description>
-					<Description language="ENG">
-						<text>"To be filled"</text>
-					</Description>
-				</SystemDescription>
-				<SystemFlowDiagrams>
 					<FlowDiagram name="vegetation_ungrazed">
-						<From name="habitat_suitabillity_ungrazed">
-							<label>"habitat_suitabillity_ungrazed"</label>
+						<From name="vegetation_class_ungrazed">
+							<label>"vegetation_class_ungrazed"</label>
 							<equation>knowledge_rule</equation>
 							<To>vegetationtypes_without_grazing</To>
 							<To>veg_H_presence</To>
 							<To>veg_G_presence</To>
+							<To>veg_F_presence</To>
+							<To>veg_E_presence</To>
+							<To>veg_D_presence</To>
+							<To>veg_C_presence</To>
+							<To>veg_B_presence</To>
+							<To>veg_A_presence</To>
+							<To>bound_B</To>
+							<To>bound_A</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="vegetation_grazed">
+						<From name="vegetation_class_grazed">
+							<label>"vegetation_class_grazed"</label>
+							<equation>knowledge_rule</equation>
+							<To>vegetationtypes_with_grazing</To>
 							<To>veg_F_presence</To>
 							<To>veg_E_presence</To>
 							<To>veg_D_presence</To>
@@ -397,7 +388,7 @@
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Vegatation class D based on waterlevel along the bank and vegetation boundaries"</description>
+							<description>"Vegetation class D based on waterlevel along the bank and vegetation boundaries"</description>
 							<author>M. van Oorschot</author>
 							<date>2014-03-06</date>
 							<references>
@@ -760,7 +751,7 @@
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Vegatation types under no-grazing based on vegetation classes, vegetation boundaries, chloride concentration"</description>
+							<description>"Vegetation types under no-grazing based on vegetation classes, vegetation boundaries, chloride concentration"</description>
 							<author>M. van Oorschot</author>
 							<date>2014-03-06</date>
 							<references>
@@ -831,7 +822,498 @@
 								<layer_filename>"vegetation_types"</layer_filename>
 								<unit>categories</unit>
 								<statistic>average</statistic>
-								<description>"Vegetation types according to ..."</description>
+								<description>"Vegetation types without grazing according to ..."</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+					<MultipleReclassification name="vegetationtypes_with_grazing">
+						<inputLayers>
+							<layer name="veg_A">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_A_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type A</description>
+							</layer>
+							<layer name="veg_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_B_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type B</description>
+							</layer>
+							<layer name="veg_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_C_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type C</description>
+							</layer>
+							<layer name="veg_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_D_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type D</description>
+							</layer>
+							<layer name="veg_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_E_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type E</description>
+							</layer>
+							<layer name="veg_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_F_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type F</description>
+							</layer>
+							<layer name="chloride_concentration">
+								<parameter_cat>"salinity"</parameter_cat>
+								<layer_filename>"chloride_concentration"</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>average</statistic>
+								<description>Chloride concentration in surface water</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation types under no-grazing based on vegetation classes, vegetation boundaries, chloride concentration"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<Parameters>
+								<valuesRangeCategorical layername="veg_A" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="1" output_cat="Kaal slik"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_A_present" output="11" output_cat="Overig"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_B" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="2" output_cat="Schaars begroeid slik + pioniers"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_B_present" output="11" output_cat="Overig"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_C" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="3" output_cat="Salicornietum strictae"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="4" output_cat="Rg Agrostis stolonifera"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="5" output_cat="Triglochino- Agrostietum stoloniferae"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_C_present" output="11" output_cat="Overig"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_D" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_D_present" output="6" output_cat="Puccinellietum distantis"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_D_present" output="11" output_cat="Overig"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_E" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_E_present" output="7" output_cat="Puccinellitum maritimae"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_E_present" output="11" output_cat="Overig"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_F" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="8" output_cat="Rg Poa trivialis-Lolium perenne - Plantogini-Lolietum perennis"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="9" output_cat="Plantogini-Lolietum perennis puccinellietosum"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="10" output_cat="Juncetum gerardii"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_F_present" output="11" output_cat="Overig"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="chloride_concentration" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="22000" input_cat="0 - 22,000" output="1" output_cat="Kaal slik"/>
+									<parameter rangemin_input="0" rangemax_input="10000" input_cat="0 - 10,000" output="2" output_cat="Schaars begroeid slik + pioniers"/>
+									<parameter rangemin_input="10000" rangemax_input="22000" input_cat="10,000 - 22,000" output="3" output_cat="Salicornietum strictae"/>
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="4" output_cat="Rg Agrostis stolonifera"/>
+									<parameter rangemin_input="200" rangemax_input="5500" input_cat="200 - 5,500" output="5" output_cat="Triglochino- Agrostietum stoloniferae"/>
+									<parameter rangemin_input="200" rangemax_input="10000" input_cat="5500 - 10000" output="6" output_cat="Puccinellietum distantis"/>
+									<parameter rangemin_input="10000" rangemax_input="22000" input_cat="10,000 - 22,000" output="7" output_cat="Puccinellitum maritimae"/>
+									<parameter rangemin_input="0" rangemax_input="3000" input_cat="0 - 3,000" output="8" output_cat="Rg Poa trivialis-Lolium perenne - Plantogini-Lolietum perennis"/>
+									<parameter rangemin_input="3000" rangemax_input="10000" input_cat="3,000 - 10,000" output="9" output_cat="Plantogini-Lolietum perennis puccinellietosum"/>
+									<parameter rangemin_input="10000" rangemax_input="22000" input_cat="10,000 - 22,000" output="10" output_cat="Juncetum gerardii"/>
+								</valuesRangeCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="vegetation_types">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"vegetation_types"</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>"Vegetation types under grazing according to ..."</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+				</KnowledgeRules>
+			</System>
+			<System name="biesbosch_area">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Biesbosch" id="2758979"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>2005-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h2 id="VegetatietypenNoordelijkeDeltabekken-2.OevervegetatieontwikkelingindeBiesbosch#3">2. Oevervegetatieontwikkeling in de Biesbosch <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-3">#3</a></h2><p>Als input van deze kennisregels zijn de volgende gegevens nodig:</p><ul>	<li>Digital Terrain Model (DTM) in cm + NAP</li>	<li>Waterniveau bij GHW (gemiddeld hoog water)</li>	<li>Getijdenamplitudo (cm)</li></ul><p>De vegetatieontwikkeling wordt bepaald aan de hand van de getijdenamplitudo (ten opzichte van GHW) en de specifieke beheersvorm. In figuren 3a t/m 3c staat een schematische weergave van de vegetatieontwikkeling van de Biesbosch bij verschillende getijdenamplitudo`s en beheersvormen.</p><p>Voor het classificeren van de vegetatie wordt aangenomen dat er een ruimtelijke kaart beschikbaar is van de getijdenamplitudo en beheersvarianten ingedeeld in verschillende klassen (tabellen 6 en 7).</p><p>Aan de hand van het DTM en GHW moet een kaart met hoogteligging (in cm) gemaakt worden. Met de volgende classificatietabel worden verschillende vegetatietypen onderscheiden op basis van hoogteligging ten opzichte van GHW in combinatie met getijdenamplitudo en beheersvariant (tabel 8).</p>]]></text>
+					</Description>
+					<Description language="ENG">
+						<text>"To be filled"</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="vegetation">
+						<From name="vegetation_class">
+							<label>"vegetation_class"</label>
+							<equation>knowledge_rule</equation>
+							<To>vegetation_classification</To>
+							<To>tidal_amplitude</To>
+							<To>vegetation_management</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="tidal_amplitude_cm">
+						<inputLayers>
+							<layer name="tidal_amplitude">
+								<parameter_cat>"tidal amplitude"</parameter_cat>
+								<layer_filename>tidal_amplitude</layer_filename>
+								<unit>cm</unit>
+								<statistic>average</statistic>
+								<description>"The average tidal amplitude in cm"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Translation of average tidal amplitude in cm's to classes"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""></reference>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="30" input_cat="small tidal amplitude" output="1" output_cat="1"/>
+								<parameter rangemin_input="30" rangemax_input="80" input_cat="middle tidal amplitude" output="2" output_cat="2"/>
+								<parameter rangemin_input="80" rangemax_input="200" input_cat="large_tidal_amplitude" output="3" output_cat="3"/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="tidal_amplitude_number">
+								<parameter_cat>"tidal amplitude"</parameter_cat>
+								<layer_filename>tidal_amplitude_category</layer_filename>
+								<unit>category</unit>
+								<statistic>average</statistic>
+								<description>The average tidal amplitude as category</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="vegetation_management">
+						<inputLayers>
+							<layer name="vegetation_management_category">
+								<parameter_cat>"vegetation management"</parameter_cat>
+								<layer_filename>vegetation_management_category</layer_filename>
+								<unit>category</unit>
+								<statistic>average</statistic>
+								<description>"The average vegetation management practiced in categories"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>categorical</type>
+							<description>"Translation of vegetation management categories to numeric categories"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""></reference>
+							</references>
+							<valuesCategorical>
+								<parameter input= "1" input_cat="Unmanaged" output="1" output_cat="Unmanaged"/>
+								<parameter input= "2" input_cat="Harvesting of reeds and rushes" output="2" output_cat="Harvesting of reeds and rushes"/>
+								<parameter input= "3" input_cat="Harvesting of hay" output="3" output_cat="Harvesting of hay"/>
+								<parameter input= "4" input_cat="Extensive grazing" output="4" output_cat="Extensive grazing"/>
+								<parameter input= "4" input_cat="Intensive grazing" output="4" output_cat="Intensive grazing"/>
+								<parameter input= "5" input_cat="Intensive grazing" output="4" output_cat="Intensive grazing"/>
+							</valuesCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="vegetation_management_nr">
+								<parameter_cat>vegetation management</parameter_cat>
+								<layer_filename>vegetation_management_nr</layer_filename>
+								<unit>"category nr"</unit>
+								<statistic>average</statistic>
+								<description>"The average vegetation management practiced in categorie nrs"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<MultipleReclassification name="vegetation_classification">
+						<inputLayers>
+							<layer name="elevation">
+								<parameter_cat>"elevation"</parameter_cat>
+								<layer_filename>elevation_cm</layer_filename>
+								<unit>cm</unit>
+								<statistic>average</statistic>
+								<description>"The elevation in comparison to the average sealevel in cm"</description>
+							</layer>
+							<layer name="tidal_amplitude_number">
+								<parameter_cat>"tidal amplitude"</parameter_cat>
+								<layer_filename>tidal_amplitude_category</layer_filename>
+								<unit>category</unit>
+								<statistic>average</statistic>
+								<description>The average tidal amplitude as category</description>
+							</layer>
+							<layer name="vegetation_management_nr">
+								<parameter_cat>vegetation management</parameter_cat>
+								<layer_filename>vegetation_management_nr</layer_filename>
+								<unit>"category nr"</unit>
+								<statistic>average</statistic>
+								<description>"The average vegetation management practiced in categorie nrs"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegetation types based on elevation, tidal amplitude and vegetation management"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""></reference>
+							</references>
+							<Parameters>
+								<valuesRangeCategorical layername="elevation" type="range / categorical">
+									<parameter rangemin_input="-30" rangemax_input="-25" input_cat="-30 - -25" output="1" output_cat="Kaal + Biezen"/>
+									<parameter rangemin_input="-25" rangemax_input="-10" input_cat="-25 - -10" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
+									<parameter rangemin_input="-10" rangemax_input="15" input_cat="-10 - 15" output="3" output_cat="Ruig riet"/>
+									<parameter rangemin_input="15" rangemax_input="45" input_cat="15 - 45" output="4" output_cat="Natte strooiselruigte"/>									
+									<parameter rangemin_input="45" rangemax_input="50" input_cat="45 - 50" output="5" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter rangemin_input="-30" rangemax_input="-25" input_cat="-30 - -25" output="6" output_cat="Kaal + biezen"/>
+									<parameter rangemin_input="-25" rangemax_input="15" input_cat="-25 - 15" output="7" output_cat="Rietland + spindotter"/>									
+									<parameter rangemin_input="15" rangemax_input="25" input_cat="15 - 25" output="8" output_cat="Ruig riet"/>
+									<parameter rangemin_input="25" rangemax_input="50" input_cat="25 - 50" output="9" output_cat="Overig"/>
+									<parameter rangemin_input="15" rangemax_input="25" input_cat="15 - 25" output="10" output_cat="Fioringgras"/>
+									<parameter rangemin_input="25" rangemax_input="40" input_cat="25 - 40" output="11" output_cat="Vossestaart + kweek"/>									
+									<parameter rangemin_input="40" rangemax_input="50" input_cat="40 - 50" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
+									<parameter rangemin_input="-30" rangemax_input="-10" input_cat="-30 - -10" output="13" output_cat="Overig"/>
+									<parameter rangemin_input="-10" rangemax_input="0" input_cat="-10 - 0" output="14" output_cat="Liesgras"/>
+									<parameter rangemin_input="0" rangemax_input="20" input_cat="0 - 20" output="15" output_cat="Liesgras ruigte"/>
+									<parameter rangemin_input="20" rangemax_input="50" input_cat="20 - 50" output="16" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="-30" rangemax_input="-10" input_cat="-30 - -10" output="17" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="20" input_cat="0 - 20" output="18" output_cat="Fioringgras"/>
+									<parameter rangemin_input="20" rangemax_input="50" input_cat="20 - 50" output="19" output_cat="Ruw beemdgras/engels raaigras"/>
+									<parameter rangemin_input="-30" rangemax_input="0" input_cat="-30 - 0" output="20" output_cat="Overig"/>
+									<parameter rangemin_input="-10" rangemax_input="5" input_cat="-10 - 5" output="21" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter rangemin_input="5" rangemax_input="20" input_cat="5 - 20" output="22" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="20" rangemax_input="50" input_cat="20 - 50" output="23" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="-999999.0" rangemax_input="-30" input_cat=".lt. -30" output="24" output_cat="Water"/>
+									<parameter rangemin_input="-80" rangemax_input="-50" input_cat="-80 - -50" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
+									<parameter rangemin_input="-50" rangemax_input="-20" input_cat="-50 - -20" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
+									<parameter rangemin_input="-20" rangemax_input="10" input_cat="-20 - 10" output="27" output_cat="Ruig riet"/>
+									<parameter rangemin_input="10" rangemax_input="50" input_cat="10 - 50" output="28" output_cat="Natte strooiselruigte"/>									
+									<parameter rangemin_input="50" rangemax_input="160" input_cat="50 - 160" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter rangemin_input="-80" rangemax_input="-50" input_cat="-80 - -50" output="30" output_cat="Biezen"/>
+									<parameter rangemin_input="-50" rangemax_input="0" input_cat="-50 - 0" output="31" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="0" rangemax_input="10" input_cat="0 - 10" output="32" output_cat="Ruig riet"/>
+									<parameter rangemin_input="10" rangemax_input="160" input_cat="10 - 160" output="33" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="10" input_cat="0 - 10" output="34" output_cat="Fioringgras"/>
+									<parameter rangemin_input="10" rangemax_input="30" input_cat="10 - 30" output="35" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="30" rangemax_input="160" input_cat="30 - 160" output="36" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter rangemin_input="-80" rangemax_input="0" input_cat="-80 - 0" output="37" output_cat="Overig"/>
+									<parameter rangemin_input="-50" rangemax_input="-20" input_cat="-50 - -20" output="38" output_cat="Liesgras"/>
+									<parameter rangemin_input="-20" rangemax_input="10" input_cat="-20 - 10" output="39" output_cat="Liesgrasruigte"/>
+									<parameter rangemin_input="10" rangemax_input="160" input_cat="10 - 160" output="40" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="-50" rangemax_input="-80" input_cat="-50 - -80" output="41" output_cat="Overig"/>
+									<parameter rangemin_input="-5" rangemax_input="20" input_cat="-5 - 20" output="42" output_cat="Fioringras"/>
+									<parameter rangemin_input="20" rangemax_input="160" input_cat="20 - 160" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
+									<parameter rangemin_input="-80" rangemax_input="-5" input_cat="-80 - -5" output="44" output_cat="Overig"/>
+									<parameter rangemin_input="-20" rangemax_input="-5" input_cat="-20 - -5" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter rangemin_input="-5" rangemax_input="20" input_cat="-5 - 20" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="20" rangemax_input="160" input_cat="20 - 160" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="-80" rangemax_input="-20" input_cat="-80 - -20" output="48" output_cat="Overig"/>
+									<parameter rangemin_input="-999999" rangemax_input="-80" input_cat="lt - 80" output="49" output_cat="Water"/>
+									<parameter rangemin_input="-200" rangemax_input="-120" input_cat="-200 - -120" output="50" output_cat="Kaal + biezen"/>
+									<parameter rangemin_input="-120" rangemax_input="-70" input_cat="-120 - -70" output="51" output_cat="Biezen + waterpeper - waterereprijs"/>
+									<parameter rangemin_input="-70" rangemax_input="-20" input_cat="-70 - -20" output="52" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="-20" rangemax_input="0" input_cat="-20 - 0" output="53" output_cat="Ruig riet"/>
+									<parameter rangemin_input="0" rangemax_input="25" input_cat="0 - 25" output="54" output_cat="Natte strooiselruigte"/>
+									<parameter rangemin_input="25" rangemax_input="100" input_cat="25 - 100" output="55" output_cat="Droge nitrofiele ruigte"/>
+									<parameter rangemin_input="-150" rangemax_input="-70" input_cat="-150 - -70" output="56" output_cat="Biezen"/>
+									<parameter rangemin_input="-70" rangemax_input="0" input_cat="-70 - 0" output="57" output_cat="Rietland en spindotter"/>
+									<parameter rangemin_input="0" rangemax_input="10" input_cat="0 - 10" output="58" output_cat="Ruit riet"/>
+									<parameter rangemin_input="10" rangemax_input="100" input_cat="10 - 100" output="59" output_cat="Overig"/>
+									<parameter rangemin_input="-200" rangemax_input="-150" input_cat="-200 - -150" output="60" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="10" input_cat="0 - 10" output="61" output_cat="Fioringras"/>
+									<parameter rangemin_input="10" rangemax_input="25" input_cat="10 - 25" output="62" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="25" rangemax_input="100" input_cat="25 - 100" output="63" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter rangemin_input="-200" rangemax_input="0" input_cat="-200 - 0" output="64" output_cat="Overig"/>
+									<parameter rangemin_input="-70" rangemax_input="-20" input_cat="-70 - -20" output="65" output_cat="Liesgras"/>
+									<parameter rangemin_input="-20" rangemax_input="10" input_cat="-20 - 10" output="66" output_cat="Liesgras ruigte"/>
+									<parameter rangemin_input="10" rangemax_input="100" input_cat="10 - 100" output="67" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="-200" rangemax_input="-70" input_cat="-200 - -70" output="68" output_cat="Overig"/>
+									<parameter rangemin_input="-30" rangemax_input="10" input_cat="-30 - 10" output="69" output_cat="Fioringras"/>
+									<parameter rangemin_input="10" rangemax_input="100" input_cat="10 - 100" output="70" output_cat="Raaigras"/>
+									<parameter rangemin_input="-200" rangemax_input="-30" input_cat="-200 - -30" output="71" output_cat="Overig"/>
+									<parameter rangemin_input="-70" rangemax_input="-30" input_cat="-70 - -30" output="72" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter rangemin_input="-30" rangemax_input="10" input_cat="-30 - 10" output="73" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="10" rangemax_input="100" input_cat="10 - 100" output="74" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="-200" rangemax_input="-70" input_cat="-200 - -70" output="75" output_cat="Overig"/>
+									<parameter rangemin_input="-999999.0" rangemax_input="-200" input_cat=".lt. -200" output="76" output_cat="Water"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="tidal_amplitude_number" type="range / categorical">
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="1" output_cat="Kaal + Biezen"/>
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="3" output_cat="Ruig riet"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="4" output_cat="Natte strooiselruigte"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="5" output_cat="Droge nitrofiele ruigte"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="6" output_cat="Kaal + biezen"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="7" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="8" output_cat="Ruig riet"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="9" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="10" output_cat="Fioringgras"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="11" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="13" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="14" output_cat="Liesgras"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="15" output_cat="Liesgras ruigte"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="16" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="17" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="18" output_cat="Fioringgras"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="19" output_cat="Ruw beemdgras/engels raaigras"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="20" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="21" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="22" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="23" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="24" output_cat="Water"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="27" output_cat="Ruig riet"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="28" output_cat="Natte strooiselruigte"/>									
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="30" output_cat="Biezen"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="33" output_cat="Overig"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="34" output_cat="Fioringgras"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="35" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="36" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="37" output_cat="Overig"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="38" output_cat="Liesgras"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="39" output_cat="Liesgrasruigte"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="40" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="41" output_cat="Overig"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="42" output_cat="Fioringras"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="44" output_cat="Overig"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="48" output_cat="Overig"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="49" output_cat="Water"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="50" output_cat="Kaal + biezen"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="51" output_cat="Biezen + waterpeper - waterereprijs"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="52" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="53" output_cat="Ruig riet"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="54" output_cat="Natte strooiselruigte"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="55" output_cat="Droge nitrofiele ruigte"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="56" output_cat="Biezen"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="57" output_cat="Rietland en spindotter"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="58" output_cat="Ruit riet"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="59" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="60" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="61" output_cat="Fioringras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="62" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="63" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="64" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="65" output_cat="Liesgras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="66" output_cat="Liesgras ruigte"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="67" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="68" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="69" output_cat="Fioringras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="70" output_cat="Raaigras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="71" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="72" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="73" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="74" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="75" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="76" output_cat="Water"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="vegetation_management_nr" type="range / categorical">
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="1" output_cat="Kaal + Biezen"/>
+								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="3" output_cat="Ruig riet"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="4" output_cat="Natte strooiselruigte"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="5" output_cat="Droge nitrofiele ruigte"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="6" output_cat="Kaal + biezen"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="7" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="8" output_cat="Ruig riet"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="9" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="10" output_cat="Fioringgras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="11" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="13" output_cat="Overig"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="14" output_cat="Liesgras"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="15" output_cat="Liesgras ruigte"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="16" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="17" output_cat="Overig"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="18" output_cat="Fioringgras"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="19" output_cat="Ruw beemdgras/engels raaigras"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="20" output_cat="Overig"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="21" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="22" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="23" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="27" output_cat="Ruig riet"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="28" output_cat="Natte strooiselruigte"/>									
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="30" output_cat="Biezen"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="33" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="34" output_cat="Fioringgras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="35" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="36" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="37" output_cat="Overig"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="38" output_cat="Liesgras"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="39" output_cat="Liesgrasruigte"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="40" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="41" output_cat="Overig"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="42" output_cat="Fioringras"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="44" output_cat="Overig"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="48" output_cat="Overig"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="50" output_cat="Kaal + biezen"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="51" output_cat="Biezen + waterpeper - waterereprijs"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="52" output_cat="Rietland + spindotter"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="53" output_cat="Ruig riet"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="54" output_cat="Natte strooiselruigte"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="55" output_cat="Droge nitrofiele ruigte"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="56" output_cat="Biezen"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="57" output_cat="Rietland en spindotter"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="58" output_cat="Ruit riet"/>
+									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="59" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="60" output_cat="Overig"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="61" output_cat="Fioringras"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="62" output_cat="Vossestaart + kweek"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="63" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="64" output_cat="Overig"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="65" output_cat="Liesgras"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="66" output_cat="Liesgras ruigte"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="67" output_cat="Rietzwenkgras"/>
+									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="68" output_cat="Overig"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="69" output_cat="Fioringras"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="70" output_cat="Raaigras"/>
+									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="71" output_cat="Overig"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="72" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="73" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="74" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="75" output_cat="Overig"/>
+								</valuesRangeCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="vegetation_types">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"vegetation_types"</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>"Vegetation types based on altitude, tide and management according to ..."</description>
 							</layer>
 						</outputLayers>
 					</MultipleReclassification>
@@ -856,9 +1338,1836 @@
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="vegetation_ungrazed">
+						<From name="vegetation_class_ungrazed">
+							<label>"vegetation_class_ungrazed"</label>
+							<equation>knowledge_rule</equation>
+							<To>vegetationtypes_without_grazing</To>
+							<To>veg_L_presence</To>
+							<To>veg_K_presence</To>
+							<To>veg_J_presence</To>
+							<To>veg_I_presence</To>
+							<To>veg_H_presence</To>
+							<To>veg_G_presence</To>
+							<To>veg_F_presence_ungrazed</To>
+							<To>veg_E_presence_ungrazed</To>
+							<To>veg_D_presence_ungrazed</To>
+							<To>veg_C_presence_ungrazed</To>
+							<To>veg_B_presence</To>
+							<To>veg_A_presence</To>
+							<To>bound</To>
+							<To>bound_E</To>
+							<To>bound_D_ungrazed</To>
+							<To>bound_C_ungrazed</To>
+							<To>bound_B_ungrazed</To>
+							<To>bound_A</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="vegetation_grazed">
+						<From name="vegetation_class_grazed">
+							<label>"vegetation_class_grazed"</label>
+							<equation>knowledge_rule</equation>
+							<To>vegetationtypes_with_grazing</To>
+							<To>veg_F_presence_grazed</To>
+							<To>veg_E_presence_grazed</To>
+							<To>veg_D_presence_grazed</To>
+							<To>veg_C_presence_grazed</To>
+							<To>veg_B_presence</To>
+							<To>veg_A_presence</To>
+							<To>bound_D_grazed</To>
+							<To>bound_C_grazed</To>
+							<To>bound_B_grazed</To>
+							<To>bound_A</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
+					<FormulaBased name="bound_A">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegetation boundary A under grazing or without grazing based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.43 * (bankheight_GLW - bankheight_GHW))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_A">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_A"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_B_grazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary B with grazing based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.86 * (bankheight_GLW - bankheight_GHW))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_B"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_B_ungrazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary B without grazing based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.63 * (bankheight_GLW - bankheight_GHW))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_B"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_C_grazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary C with grazing based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.10 * (bankheight_GHW - bankheight_GHWS))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_C_ungrazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary C without grazing based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.77 * (bankheight_GLW - bankheight_GHW))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_D_grazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary D with grazing based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.73 * (bankheight_GHW - bankheight_GHWS))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_D"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_D_ungrazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHWS"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary D without grazing based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.47 * (bankheight_GLW - bankheight_GHWS))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_D"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_E">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary E based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.80 * (bankheight_GLW - bankheight_GHWS))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_E"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="bound_F">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_EHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_EHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Maximal possible water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation boundary F based on waterlevel along the bank"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation>bankheight_GLW - (0.45 * (bankheight_GLW - bankheight_EHW))</equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_EHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="bound_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_F"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation F in Northen Delta"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_A_presence">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_A">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_A"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class A based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if((((bankheight_GLW - bankheight_GHW) > bound_A) and ((bankheight_GLW - bankheight_GHW) < bankheight_GLW)); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_A" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_A">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_A_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type A</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_B_presence">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_A">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bound_A"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
+							</layer>
+							<layer name="bound_B">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bound_B"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class B based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bound_B) and ((bankheight_GLW - bankheight_GHW) < bound_A); 1;0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_A" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_B" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_B_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type B</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_C_presence_grazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_B"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
+							</layer>
+							<layer name="bound_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_D"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class C with grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bound_B); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_B" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_D" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_C_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type C</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_C_presence_ungrazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_B"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
+							</layer>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class C without grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bound_C) and ((bankheight_GLW - bankheight_GHW) < bound_B); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_B" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_C" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_C_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type C</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_D_presence_grazed">
+						<inputLayers>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+							<layer name="bound_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_D"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegetation class D with grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GHW - bankheight_GHWS) < bound_C); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_C" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_D" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_D_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type D</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_D_presence_ungrazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_B"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegetation class D without grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bankheight_GHW) and ((bankheight_GLW - bankheight_GHW) < bound_B); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_B" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_D_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type D</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_E_presence_grazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_B"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
+							</layer>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class E with grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_C) and ((bankheight_GLW - bankheight_GHW) < bound_B); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_B" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_C" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_E_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type E</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_E_presence_ungrazed">
+						<inputLayers>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class E without grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > 0); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_E_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type E</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_F_presence_grazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_EHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_EHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Maximal possible water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+							<layer name="bound_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_D"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class F with grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bound_C); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_EHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_C" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_D" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_F_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type F</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_F_presence_ungrazed">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+							<layer name="bound_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_E"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class F without grazing based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_E) and ((bankheight_GLW - bankheight_GHW) < bound_C); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>								
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_C" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_E" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_F_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type F</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_G_presence">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+							<layer name="bound_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_C"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class G based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bound_C); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_C" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_D" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_G">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_G_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type G</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_H_presence">
+						<inputLayers>
+							<layer name="bankheight_GLW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GLW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average low water level along bank height in meters"</description>
+							</layer>							
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_D"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
+							</layer>
+							<layer name="bound_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_E"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class H based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_E) and ((bankheight_GLW - bankheight_GHW) < bound_D); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GLW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_D" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_E" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_H">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_H_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type H</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_I_presence">
+						<inputLayers>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_EHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_EHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Maximal possible water level along bank height in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class I based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > 0); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_EHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_I">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_I_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type I</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>					
+					<FormulaBased name="veg_J_presence">
+						<inputLayers>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_EHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_EHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Maximal possible water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_E"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class J based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) < bound_E); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_EHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_E" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_J">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_J_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type J</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_K_presence">
+						<inputLayers>
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_EHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_EHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Maximal possible water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_F"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation F in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class K based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) < bound_F); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_EHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_F" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_K">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_K_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type K</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="veg_L_presence">
+						<inputLayers>				
+							<layer name="bankheight_GHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average high water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_GHWS">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_GHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Average springtide water level along bank height in meters"</description>
+							</layer>
+							<layer name="bankheight_EHW">
+								<parameter_cat>"water level"</parameter_cat>
+								<layer_filename>"bankheight_EHW"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Maximal possible water level along bank height in meters"</description>
+							</layer>
+							<layer name="bound_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_E"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
+							</layer>
+							<layer name="bound_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"bound_F"</layer_filename>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
+								<description>"Vegetation type class border for vegetation F in Northen Delta"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation class L based on waterlevel along the bank and vegetation boundaries"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bound_F) and ((bankheight_GHW - bankheight_GHWS) < bound_E); 1; 0)]]></equation>
+							<Parameters>
+								<valuesScalar layername="bankheight_GHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_GHWS" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bankheight_EHW" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_E" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+								<valuesScalar layername="bound_F" type="scalar">
+									<parameter min_input="0" max_input="5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="veg_L">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_L_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type L</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<MultipleReclassification name="vegetationtypes_without_grazing">
+						<inputLayers>
+							<layer name="veg_A">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_A_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type A</description>
+							</layer>
+							<layer name="veg_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_B_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type B</description>
+							</layer>
+							<layer name="veg_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_C_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type C</description>
+							</layer>
+							<layer name="veg_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_D_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type D</description>
+							</layer>
+							<layer name="veg_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_E_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type E</description>
+							</layer>
+							<layer name="veg_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_F_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type F</description>
+							</layer>
+							<layer name="veg_G">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_G_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type G</description>
+							</layer>
+							<layer name="veg_H">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_H_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type H</description>
+							</layer>
+							<layer name="veg_I">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_I_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type I</description>
+							</layer>
+							<layer name="veg_J">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_J_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type J</description>
+							</layer>
+							<layer name="veg_K">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_K_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type K</description>
+							</layer>
+							<layer name="veg_L">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_L_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type L</description>
+							</layer>
+							<layer name="chloride_concentration">
+								<parameter_cat>"salinity"</parameter_cat>
+								<layer_filename>"chloride_concentration"</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>average</statistic>
+								<description>Chloride concentration in surface water</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegetation types under no-grazing based on vegetation classes, vegetation boundaries, chloride concentration"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<Parameters>
+								<valuesRangeCategorical layername="veg_A" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="1" output_cat="Biezen en pionier"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="2" output_cat="Scirpetum tabemaemontani"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="3" output_cat="Kaal slik"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_A_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_B" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="4" output_cat="Riet en spindotter"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_B_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_C" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="5" output_cat="RG scirpus maritimus"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="6" output_cat="Spartinetum townsendii (bij matige dynamiek), Salicornietum-Saedetum in luwte"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_C_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_D" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_D_present" output="7" output_cat="Ruig rietland"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_D_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_E" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_E_present" output="8" output_cat="Natte strooiselruigten: Epilobietum"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_E_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_F" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="9" output_cat="RG Calystegia sepium-Phragmites australis"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_F_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_G" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_G_present" output="10" output_cat="Artemisietum maritimae (oeverwallen)"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_G_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_H" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_H_present" output="11" output_cat="Halimoinetum portulacoideis, Plantagini-Limonietum, Puccillietum maritimae, bij hoge dynamiek kaal strand"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_H_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_I" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_I_present" output="12" output_cat="Droge, nitrofiele ruigten: Urticetum"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_I_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_J" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_J_present" output="13" output_cat="Soncho-Epilobietum altheaetosum"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_J_present" output="14" output_cat="Oenantho Althaeetum"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_J_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_K" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_K_present" output="15" output_cat="Atriplici-Elytrigietum pungentis, Honckenyou-Agropyretum juncei (dynamisch)"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_K_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_L" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_L_present" output="15" output_cat="Armerio-Festucetum, Atriplicetum litoralis (vloedmerk, beschut), Salsolo-Cakiletum (vloedmerk, dynamisch)"/>
+									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_L_absent" output="17" output_cat="Overige"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="chloride_concentration" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="1" output_cat="Biezen en pionier"/>
+									<parameter rangemin_input="200" rangemax_input="5500" input_cat="200 - 5.500" output="2" output_cat="Scirpetum tabemaemontani"/>
+									<parameter rangemin_input="5500" rangemax_input="50000" input_cat="5.500 - 50,000" output="3" output_cat="Kaal slik"/>
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="4" output_cat="Riet en Spindotter"/>
+									<parameter rangemin_input="200" rangemax_input="5500" input_cat="200 - 5.500" output="5" output_cat="RG scirpus maritimus"/>
+									<parameter rangemin_input="5500" rangemax_input="50000" input_cat="5.500 - 50.000" output="6" output_cat="Spartinetum townsendii (bij matige dynamiek), Salicornietum/Saedetum in luwte"/>
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="7" output_cat="Ruig rietland"/>
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="8" output_cat="Natte strooiselruigten: Epilobietum"/>
+									<parameter rangemin_input="200" rangemax_input="5500" input_cat="200 - 5,500" output="9" output_cat="RG Calystegia sepium-Phragmites australis"/>
+									<parameter rangemin_input="5500" rangemax_input="50000" input_cat="5,500 - 50,000" output="10" output_cat="Artemisietum maritimae (oeverwallen)"/>
+									<parameter rangemin_input="5500" rangemax_input="50000" input_cat="5,500 - 50,000" output="11" output_cat="Halimoinetum portulacoideis, Plantagini-Limonietum, Puccillietum maritimae, bij hoge dynamiek kaal strand"/>
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="12" output_cat="Droge, nitrofiele ruigten: Urticetum"/>
+									<parameter rangemin_input="200" rangemax_input="3000" input_cat="200 - 3,000" output="13" output_cat="Soncho-Epilobietum altheaetosum"/>
+									<parameter rangemin_input="3000" rangemax_input="5500" input_cat="3,000 - 5,500" output="14" output_cat="Oenantho Althaeetum"/>
+									<parameter rangemin_input="5500" rangemax_input="50000" input_cat="5,500 - 50,000" output="15" output_cat="Atriplici-Elytrigietum pungentis, Honckenyou-Agropyretum juncei (dynamisch)"/>
+									<parameter rangemin_input="5500" rangemax_input="50000" input_cat="5,500 - 50,000" output="16" output_cat="Armerio-Festucetum, Atriplicetum litoralis (vloedmerk, beschut), Salsolo-Cakiletum (vloedmerk, dynamisch"/>
+								</valuesRangeCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="vegetation_types">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"vegetation_types"</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>"Vegetation types without grazing according to ..."</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+					<MultipleReclassification name="vegetationtypes_with_grazing">
+						<inputLayers>
+							<layer name="veg_A">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_A_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type A</description>
+							</layer>
+							<layer name="veg_B">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_B_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type B</description>
+							</layer>
+							<layer name="veg_C">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_C_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type C</description>
+							</layer>
+							<layer name="veg_D">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_D_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type D</description>
+							</layer>
+							<layer name="veg_E">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_E_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type E</description>
+							</layer>
+							<layer name="veg_F">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"veg_F_presence"</layer_filename>
+								<unit>boolean</unit>
+								<statistic>average</statistic>
+								<description>A boolean presence approximation of vegetation type F</description>
+							</layer>
+							<layer name="chloride_concentration">
+								<parameter_cat>"salinity"</parameter_cat>
+								<layer_filename>"chloride_concentration"</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>average</statistic>
+								<description>Chloride concentration in surface water</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Vegatation types under grazing based on vegetation classes, vegetation boundaries, chloride concentration"</description>
+							<author>M. van Oorschot</author>
+							<date>2014-03-06</date>
+							<references>
+								<reference author="Van den Rijt" title="Beschrijving en synotsische tabellen van de Vegetatietypen in EMOE 5.0" identification="" year="2001" journal=""/>
+								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
+							</references>
+							<Parameters>
+								<valuesRangeCategorical layername="veg_A" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="1" output_cat="Kaal slik"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_B" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="2" output_cat="Slik en pioniers"/>
+									<parameter rangemin_input="0" rangemax_input="2" input_cat="veg_B_present" output="3" output_cat="Salicornitum/Spartinotum/Suaedetum"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_C" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="4" output_cat="Rg, Agrostis stolonifera"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="5" output_cat="Trifolio fragiferi Agrostietum stoloniforae"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="8" output_cat="Puccinellietum maritimae"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_D" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_D_present" output="6" output_cat="Puccinellietum distantis"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_E" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_E_present" output="7" output_cat="Puccinellitum maritimae"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="veg_F" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="9" output_cat="Plantagini-Lolietum perennis"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="10" output_cat="Plantogini-Lolietum perennis puccinellietosum"/>
+									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="10" output_cat="Juncetum gerardii"/>
+								</valuesRangeCategorical>
+								<valuesRangeCategorical layername="chloride_concentration" type="range / categorical">
+									<parameter rangemin_input="0" rangemax_input="22000" input_cat="0 - 22,000" output="1" output_cat="Kaal slik"/>
+									<parameter rangemin_input="0" rangemax_input="5500" input_cat="0 - 5,500" output="2" output_cat="Slik en pioniers"/>
+									<parameter rangemin_input="5500" rangemax_input="22000" input_cat="5,500 - 22,000" output="3" output_cat="Salicornitum/Spartinotum/Suaedetum"/>
+									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="4" output_cat="Rg Agrostis stolonifera"/>
+									<parameter rangemin_input="200" rangemax_input="5500" input_cat="200 - 5,500" output="5" output_cat="Triglochino- Agrostietum stoloniferae"/>
+									<parameter rangemin_input="200" rangemax_input="10000" input_cat="5500 - 10000" output="6" output_cat="Puccinellietum distantis"/>
+									<parameter rangemin_input="55000" rangemax_input="10000" input_cat="5,500 - 10,000" output="7" output_cat="Puccinellitum maritimae"/>
+									<parameter rangemin_input="10000" rangemax_input="22000" input_cat="10,000 - 22,000" output="8" output_cat="Puccinellitum maritimae"/>
+									<parameter rangemin_input="0" rangemax_input="3000" input_cat="0 - 3,000" output="9" output_cat="Plantagini-Lolietum perennis"/>
+									<parameter rangemin_input="3000" rangemax_input="5500" input_cat="3000 - 5,500" output="10" output_cat="Plantagini-Lolietum puccinellietos"/>
+									<parameter rangemin_input="5500" rangemax_input="22000" input_cat="5,500 - 22,000" output="11" output_cat="Juncetum gerardii"/>
+								</valuesRangeCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="vegetation_types">
+								<parameter_cat>"vegetation"</parameter_cat>
+								<layer_filename>"vegetation_types"</layer_filename>
+								<unit>categories</unit>
+								<statistic>average</statistic>
+								<description>"Vegetation types under grazing according to ..."</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
 				</KnowledgeRules>
 			</System>
 		</ModelType>

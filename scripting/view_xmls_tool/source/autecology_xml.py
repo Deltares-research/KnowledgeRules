@@ -14,6 +14,10 @@ from asteval import Interpreter
 import inspect
 from collections import OrderedDict
 
+#import for formulas
+import math
+import re
+
 #static plots
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
@@ -134,7 +138,7 @@ class AutecologyXML(_File):
 		self.StartDate = None
 		self.EndDate = None
 		self.knowledgeRulesNr = None
-		self.knowledgeRulesCategorie = None
+		self.knowledgeRulesCategories = None
 		self.knowledgeRulesDict = None
 		self.knowledgeRulesStatistics = None
 		self.knowledgeRulesUnits = None
@@ -171,6 +175,7 @@ class AutecologyXML(_File):
 
 		#XML_specifics
 		self.XMLconvention = {}
+		self.XMLconvention["topic_parameter"] = "Parameter"
 		self.XMLconvention["topic_species"] = "Species"
 		self.XMLconvention["topic_wfdind"] = "WFDindicator"
 		self.XMLconvention["topic_habitats"] = "Habitats"
@@ -191,7 +196,7 @@ class AutecologyXML(_File):
 		self.XMLconvention["rc_dict_datatable"] = "rule"
 		self.XMLconvention["fb_result"] = "result_calculation"
 
-		self.XMLconvention["allowed_knowledgeRulesNames"] = [self.XMLconvention["rc"],self.XMLconvention["fb"],\
+		self.XMLconvention["allowed_knowledgeRulesCategories"] = [self.XMLconvention["rc"],self.XMLconvention["fb"],\
 															self.XMLconvention["mr"]]
 
 
@@ -402,17 +407,33 @@ class AutecologyXML(_File):
 	def get_formula_interpretation(self, formula_text):
 
 		#change formula_text to interpretation
-		formula_interpretation = formula_text.replace('^','**')
+		formula_interpretation = formula_text
 		
 		#make if elseif else statements from if(something;TRUE;FALSE)
-		formula_interpretation_split = formula_interpretation.split(";")
 		if("if(" in formula_interpretation):
+			if(len(list(re.finditer("if\(",formula_interpretation))) > 1):
+				raise RuntimeError("Multiple occurances of if in formula : "+ formula_text +\
+					" This has not yet been enabled in the code.")
+
+			formula_interpretation_split = formula_interpretation.split(";")
+		
 			if(len(formula_interpretation_split) == 3):
-				formula_interpretation = formula_interpretation_split[1] + formula_interpretation_split[0].replace("if("," if ") +\
+				formula_interpretation = formula_interpretation_split[0].replace("if(",formula_interpretation_split[1] + " if ") +\
 				" else " + formula_interpretation_split[2][:-1]
 			else:
 				raise RuntimeError("'if('' is present in formula : "+ formula_text +\
 				 ", but no true/false conditions specified with ';'")
+		
+		#Change PCRASTER function ^ to understandable Python code		
+		if("^" in formula_interpretation):
+			formula_interpretation = formula_interpretation.replace('^','**')
+
+		#Change PCRASTER function scalar to understandable Python code
+		if("scalar(" in formula_interpretation):
+			formula_interpretation = formula_interpretation.replace("scalar(","float(")
+		#Change PCRASTER function exp to understandable Python code
+		if("exp(" in formula_interpretation):
+			formula_interpretation = formula_interpretation.replace("exp(","math.exp(")
 
 		#remove unnecessary indents
 		formula_interpretation = formula_interpretation.strip()
@@ -537,7 +558,18 @@ class AutecologyXML(_File):
 			parameter_list = []
 			if(parameter_dict["type"] == "constant"):
 				for parameter in values.findall(self.make_find(["parameter"])):
-					parameter_list.append([int(parameter.get("input")),str(parameter.get("input_cat")), float(parameter.get("output"))])
+					#Transform parameter input to required form
+					if parameter.get("input").isdigit():
+						parameter_input = int(parameter.get("input"))
+					else:
+						parameter_input = float(parameter.get("input"))
+					#Transform parameter output to required form
+					if parameter.get("output").isdigit():
+						parameter_output = int(parameter.get("output"))
+					else:
+						parameter_output = float(parameter.get("output"))
+					#add to list
+					parameter_list.append([parameter_input,str(parameter.get("input_cat")), parameter_output])
 			elif(parameter_dict["type"] == "scalar"):
 				for parameter in values.findall(self.make_find(["parameter"])):
 					parameter_list.append([float(parameter.get("min_input")), float(parameter.get("max_input"))])
@@ -577,7 +609,7 @@ class AutecologyXML(_File):
 			parameter_dict["type"] = "range / categorical"
 
 			if(not(parameter_dict["layername"] in rule_dict["inputLayers"])):
-				raise RuntimeError("Used layer "+ str(parameter_dict["layername"]) + " in " + self.XMLconvention["fb"] + " " +\
+				raise RuntimeError("Used layer "+ str(parameter_dict["layername"]) + " in " + self.XMLconvention["mr"] + " " +\
 					  str(rule_dict["name"]) + " is not in inputlayers.")
 
 			parameter_dict["unit"] = rule_dict["inputLayers"][parameter_dict["layername"]]["unit"]
@@ -586,8 +618,22 @@ class AutecologyXML(_File):
 			parameter_list = []
 			if(parameter_dict["type"] == "range / categorical"):
 				for parameter in values.findall(self.make_find(["parameter"])):
+					#Transform parameter output to required form
+					if parameter.get("output").isdigit():
+						parameter_output = int(parameter.get("output"))
+					else:
+						parameter_output = float(parameter.get("output"))
 					parameter_list.append([float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),str(parameter.get("input_cat")),\
-						float(parameter.get("output")),str(parameter.get("output_cat"))])
+						parameter_output,str(parameter.get("output_cat"))])
+			elif(parameter_dict["type"] == "categorical"):
+				for parameter in values.findall(self.make_find(["parameter"])):
+					#Transform parameter output to required form
+					if parameter.get("output").isdigit():
+						parameter_output = int(parameter.get("output"))
+					else:
+						parameter_output = float(parameter.get("output"))
+					#add to list
+					parameter_list.append([int(parameter.get("input")),str(parameter.get("input_cat")), parameter_output])
 			else:
 				raise RuntimeError("type "+ parameter_dict["type"] + " is not available in "+ self.XMLconvention["mr"] +".")
 
@@ -721,11 +767,10 @@ class AutecologyXML(_File):
 			#Currently enabled for type "range / categorical"
 			if(cur_par["type"] == "range / categorical"):
 				#If boolean change table input
-				if(cur_par["unit"] == "boolean"):
-					df_current_rule["input"] = df_current_rule["rangemax_input"]
-				else:
-					df_current_rule["input"] = df_current_rule["rangemin_input"].astype(str) + " - "+ df_current_rule["rangemax_input"].astype(str)
-			
+				df_current_rule["input"] = df_current_rule["rangemin_input"].astype(str) + " - "+ df_current_rule["rangemax_input"].astype(str)
+			elif(cur_par["type"] == "categorical"):
+				df_current_rule["input"] = df_current_rule["input"]
+
 			else:
 				raise ValueError("Table visualisation not enabled yet for other than input type 'range / categorical'")
 
@@ -761,7 +806,12 @@ class AutecologyXML(_File):
 		topic = topics[0]
 		topic_name = topic_names[0]
 
-		if(topic_name == self.XMLconvention["topic_species"]):
+		if(topic_name == self.XMLconvention["topic_parameter"]):
+			self.topic_name = self.XMLconvention["topic_parameter"]
+			self.commonnames = [{"name" : cn.get("name"), "language" : cn.get("language")}\
+								 for cn in topic.find(self.make_find(['CommonNames']))]
+
+		elif(topic_name == self.XMLconvention["topic_species"]):
 			self.topic_name = self.XMLconvention["topic_species"]
 			self.EoL_ID = topic.find(self.make_find([self.XMLconvention["EoL_ID"]])).text
 			self.EoL_Link = self.XMLconvention["EoL_Link_ID"] + self.EoL_ID 
@@ -830,21 +880,21 @@ class AutecologyXML(_File):
 		#Store data
 		self.systemname = systemname
 		self.knowledgeRulesNr = len(list(child for child in krs_root)) 
-		self.knowledgeRulesCategorie = list(child.tag.replace(self.xmlns,"") for child in krs_root)
+		self.knowledgeRulesCategories = list(child.tag.replace(self.xmlns,"") for child in krs_root)
 		self.knowledgeRulesNames = list(child.get('name') for child in krs_root)
 
 		#Make dictonary of knowledge rules
 		rule_overview = {}
 		rule_overview["rules"] = {}
 		for nr, child in enumerate(krs_root):
-			if(self.knowledgeRulesCategorie[nr] == self.XMLconvention["rc"]):
+			if(self.knowledgeRulesCategories[nr] == self.XMLconvention["rc"]):
 				rule_dict = self.get_data_response_curve_data(child)
-			elif(self.knowledgeRulesCategorie[nr] == self.XMLconvention["fb"]):
+			elif(self.knowledgeRulesCategories[nr] == self.XMLconvention["fb"]):
 				rule_dict = self.get_data_formula_based_data(child)
-			elif(self.knowledgeRulesCategorie[nr] == self.XMLconvention["mr"]):
+			elif(self.knowledgeRulesCategories[nr] == self.XMLconvention["mr"]):
 				rule_dict = self.get_data_multiple_reclassification_data(child)
 			else:
-				raise RuntimeError("type '" + str(self.knowledgeRulesCategorie[nr]) + "' not available in methods for data extraction.")
+				raise RuntimeError("type '" + str(self.knowledgeRulesCategories[nr]) + "' not available in methods for data extraction.")
 			rule_overview["rules"][child.get('name')] = rule_dict
 		
 		#Store data		
@@ -1780,7 +1830,7 @@ class TestAutecologyXML_any(unittest.TestCase):
 				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
 				self.assertTrue(isinstance(self.xmltest.systemname, str),"Error occurs at system :" + cur_system)
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesNr,int),"Error occurs at system :" + cur_system)
-				self.assertTrue(isinstance(self.xmltest.knowledgeRulesCategorie,list),"Error occurs at system :" + cur_system) 
+				self.assertTrue(isinstance(self.xmltest.knowledgeRulesCategories,list),"Error occurs at system :" + cur_system) 
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at system :" + cur_system) 
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesNames,list),"Error occurs at system :" + cur_system)
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesInputLayernames,list),"Error occurs at system :" + cur_system)
@@ -1789,8 +1839,8 @@ class TestAutecologyXML_any(unittest.TestCase):
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesOutputLayernames,list),"Error occurs at system :" + cur_system)
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesOutputStatistics,list),"Error occurs at system :" + cur_system)
 				self.assertTrue(isinstance(self.xmltest.knowledgeRulesOutputUnits,list),"Error occurs at system :" + cur_system)
-				self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
-										in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + cur_system)
+				self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \
+										in self.xmltest.knowledgeRulesCategories),"Error occurs at system :" + cur_system)
 		
 
 	def test_read_systemdescription(self):
@@ -1821,7 +1871,7 @@ TESTNEW'''
 			for cur_system in self.xmltest.systems:
 				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
 				allrc = self.xmltest.knowledgeRulesNames
-				alltypes = self.xmltest.knowledgeRulesCategorie
+				alltypes = self.xmltest.knowledgeRulesCategories
 				for cur_rc, cur_type in zip(allrc,alltypes):
 					if(cur_type == "ResponseCurve"):
 						rc_tag = self.xmltest.get_element_response_curve(modeltypename = cur_modeltype, systemname = cur_system, rcname = cur_rc)	
@@ -1840,7 +1890,7 @@ TESTNEW'''
 			for cur_system in self.xmltest.systems:
 				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
 				allrc = self.xmltest.knowledgeRulesNames
-				alltypes = self.xmltest.knowledgeRulesCategorie
+				alltypes = self.xmltest.knowledgeRulesCategories
 				for cur_rc, cur_type in zip(allrc,alltypes):
 					if(cur_type == self.xmltest.XMLconvention["rc"]):
 						rc_tag = self.xmltest.get_element_response_curve(modeltypename = cur_modeltype, systemname = cur_system, rcname = cur_rc)	
@@ -1866,7 +1916,7 @@ TESTNEW'''
 			for cur_system in self.xmltest.systems:
 				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
 				allrc = self.xmltest.knowledgeRulesNames
-				alltypes = self.xmltest.knowledgeRulesCategorie
+				alltypes = self.xmltest.knowledgeRulesCategories
 				for cur_fb, cur_type in zip(allrc,alltypes):
 					if(cur_type == self.xmltest.XMLconvention["fb"]):
 						fb_tag = self.xmltest.get_element_formula_based(modeltypename = cur_modeltype, systemname = cur_system, fbname = cur_fb)	
@@ -1888,7 +1938,7 @@ TESTNEW'''
 			for cur_system in self.xmltest.systems:
 				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
 				allrc = self.xmltest.knowledgeRulesNames
-				alltypes = self.xmltest.knowledgeRulesCategorie
+				alltypes = self.xmltest.knowledgeRulesCategories
 				for cur_fb, cur_type in zip(allrc,alltypes):
 					if(cur_type == self.xmltest.XMLconvention["fb"]):
 						fb_tag = self.xmltest.get_element_formula_based(modeltypename = cur_modeltype, systemname = cur_system, fbname = cur_fb)	
@@ -1916,7 +1966,7 @@ TESTNEW'''
 			for cur_system in self.xmltest.systems:
 				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
 				allrc = self.xmltest.knowledgeRulesNames
-				alltypes = self.xmltest.knowledgeRulesCategorie
+				alltypes = self.xmltest.knowledgeRulesCategories
 				for cur_mr, cur_type in zip(allrc,alltypes):
 					if(cur_type == self.xmltest.XMLconvention["mr"]):
 						mr_tag = self.xmltest.get_element_multiple_reclassification(modeltypename = cur_modeltype, systemname = cur_system, mrname = cur_mr)	
@@ -1935,7 +1985,7 @@ TESTNEW'''
 			for cur_system in self.xmltest.systems:
 				self.xmltest._scan_knowledgerules(modeltypename = cur_modeltype, systemname = cur_system)
 				allrc = self.xmltest.knowledgeRulesNames
-				alltypes = self.xmltest.knowledgeRulesCategorie
+				alltypes = self.xmltest.knowledgeRulesCategories
 				for cur_mr, cur_type in zip(allrc,alltypes):
 					if(cur_type == self.xmltest.XMLconvention["mr"]):
 						mr_tag = self.xmltest.get_element_multiple_reclassification(modeltypename = cur_modeltype, systemname = cur_system, mrname = cur_mr)	
@@ -1996,7 +2046,7 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 		self.xmltest._scan_knowledgerules(modeltypename = self.xmltest.modeltypes[0], systemname = self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.systemname, "testsystem","Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesNr,6,"Error occurs at system :" + self.xmltest.systems[0])
-		self.assertEqual(self.xmltest.knowledgeRulesCategorie,["ResponseCurve","ResponseCurve","ResponseCurve",\
+		self.assertEqual(self.xmltest.knowledgeRulesCategories,["ResponseCurve","ResponseCurve","ResponseCurve",\
 														"ResponseCurve","FormulaBased","MultipleReclassification"],"Error occurs at system :" + self.xmltest.systems[0]) 
 		# self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at model :" + cur_model) 
 		self.assertEqual(self.xmltest.knowledgeRulesNames,["chloride_concentration","soil_type","silt_fraction",\
@@ -2020,8 +2070,8 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 													['factor'],['categories']],\
 													"Error occurs at system :" + self.xmltest.systems[0])
 		
-		self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
-								in self.xmltest.knowledgeRulesCategorie),"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \
+								in self.xmltest.knowledgeRulesCategories),"Error occurs at system :" + self.xmltest.systems[0])
 	
 	def test_read_write_systemdescription(self):
 		test_language = "ENG"
@@ -2087,7 +2137,7 @@ if __name__ == '__main__':
 # print(xmltest.models)
 
 # xmltest._scan_knowledgerules("adult")
-# print(xmltest.knowledgeRulesCategorie)
+# print(xmltest.knowledgeRulesCategories)
 # print(xmltest.knowledgeRulesStatistics)
 
 # print(xmltest._read_contentdescription())

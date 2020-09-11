@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46470942</EoLpagenr>
+			<LatName>Dreissena rostiformis bugensis</LatName>
+			<CommonNames>
+				<Name name="Quagga mussel" language="ENG"/>
+				<Name name="Quaggamossel" language="NL"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="ijsselmeergebied">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[To be filled]]></text>
+					</Description>
+					<Description language="ENG">
+						<text><![CDATA[To be filled]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="livingarea_stagnant_waters">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>min</equation>
+							<To>waterdepth_lakes</To>
+							<To>silt_fraction_waterbed</To>
+							<To>substrate</To>							
+							<To>orthophosphate_concentration</To>
+							<To>silt_concentration</To>
+						</From>
+						<From name="substrate">
+							<label>"substrate"</label>
+							<equation>knowledge_rule</equation>
+							<To>substrate_suitability</To>
+							<To>silt_fraction_waterbed</To>
+							<To>shell_coverage</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="orthophosphate_concentration">
+						<inputLayers>
+							<layer name="orthophosphate_concentration">
+								<parameter_cat>"Nutrient concentration"</parameter_cat>
+								<layer_filename>"orthophosphate_concentration"</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>"Average orthophosphate concentration in water"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average orthophosphate tolerable for the Zebra mossel species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.001" output="1"/>
+								<parameter input="0.1" output="1"/>
+								<parameter input="0.3" output="0"/>
+								<parameter input="1.0" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_orthophosphate_concentration">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>"HSI_orthophosphate_concentration"</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on orthophosphate concentration"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<FormulaBased name="substrate_suitability">
+						<inputLayers>
+							<layer name="HSI_silt_fraction">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>"HSI_silt_fraction"</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on silt fraction"</description>
+							</layer>
+							<layer name="HSI_shell_coverage">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_shell_coverage</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on shell content coverage of the waterbed"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Average substrate type tolerable for the Zebra mossel species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<equation>"max(HSI_shell_coverage, HSI_silt_fraction)"</equation>
+							<Parameters>
+								<valuesScalar layername="HSI_shell_coverage" type="scalar">
+									<parameter  min_input="0" max_input="1" />
+								</valuesScalar>
+								<valuesScalar layername="HSI_silt_fraction" type="scalar">
+									<parameter  min_input="0" max_input="1" />
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substrate_suitability">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>"HSI_substrate_suitability"</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on substrate suitability for Quagga mussels"</description>
+							</layer>
+						</outputLayers>						
+					</FormulaBased>
+					<ResponseCurve name="silt_fraction_waterbed">
+						<inputLayers>
+							<layer name="silt_fraction">
+								<parameter_cat>"Waterbed substrate"</parameter_cat>
+								<layer_filename>"silt_fraction_waterbed"</layer_filename>
+								<unit>"percentage"</unit>
+								<statistic>average</statistic>
+								<description>"Average silt content in water bed"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>range / categorical</type>
+							<description>"Average silt content tolerable for the Zebra mossel species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesRangeCategorical>
+								<parameter rangemin_input="0" rangemax_input="10"  input_cat="slibarm" output="0.753" output_cat=""/>
+								<parameter rangemin_input="10" rangemax_input="25"  input_cat="matig slibrijk" output="0.6" output_cat=""/>
+								<parameter rangemin_input="25" rangemax_input="100"  input_cat="slibrijk" output="0.3" output_cat=""/>
+							</valuesRangeCategorical>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_silt_fraction">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>"HSI_silt_fraction"</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on silt fraction"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="shell_coverage">
+						<inputLayers>
+							<layer name="shell_coverage">
+								<parameter_cat>"Waterbed substrate"</parameter_cat>
+								<layer_filename>"shell_substrate"</layer_filename>
+								<unit>"ml/m2"</unit>
+								<statistic>average</statistic>
+								<description>"Average shell substrate coverage of waterbed"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average shell content tolerable for the Zebra mossel species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="10" output="0.5"/>
+								<parameter input="20" output="0.8"/>
+								<parameter input="30" output="1"/>
+								<parameter input="40" output="1"/>
+								<parameter input="100" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_shell_coverage">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>HSI_shell_coverage</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on shell content coverage of the waterbed"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="silt_concentration">
+						<inputLayers>
+							<layer name="ISS_concentration">
+								<parameter_cat>"Suspended solids"</parameter_cat>
+								<layer_filename>"inorganic_suspended_solids"</layer_filename>
+								<unit>"mg/l"</unit>
+								<statistic>average</statistic>
+								<description>"Average silt concentration in water"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average silt content tolerable for the Zebra mossel species"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="500" output="1"/>
+								<parameter input="600" output="0.8"/>
+								<parameter input="700" output="0.6"/>
+								<parameter input="800" output="0.4"/>
+								<parameter input="900" output="0.2"/>
+								<parameter input="1000" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_silt_concentration">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>"HSI_silt_concentration"</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on silt concentration in water column"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>	
+					<ResponseCurve name="waterdepth_lakes">
+						<inputLayers>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>ranges</type>
+							<description>"Waterdepth tolerable for the Zebra mossel species in Lakes"</description>
+							<author>"Mijke van Oorschot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
+							</references>
+							<valuesRanges>
+								<parameter rangemin_input="0" rangemax_input="2" output="0.287"/>
+								<parameter rangemin_input="2" rangemax_input="5" output="0.9"/>
+								<parameter rangemin_input="5" rangemax_input="10" output="0.8"/>
+								<parameter rangemin_input="10" rangemax_input="25" output="0.4"/>
+								<parameter rangemin_input="25" rangemax_input="50" output="0.033"/>
+								<parameter rangemin_input="50" rangemax_input="999999" output="0"/>
+							</valuesRanges>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_waterdepth_lakes_quaggamussel">
+								<parameter_cat>HSI</parameter_cat>
+								<layer_filename>"HSI_waterdepth_lakes_quaggamussel"</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"HSI based on waterdepth for quagga mussels in lakes"</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text><![CDATA[To be filled]]></text>
+		</Description>
+		<Description language="ENG">
+			<text><![CDATA[To be filled]]></text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="Haasnoot, M. en Van de Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. " journal="WL | Delft Hydraulics" identification="WL report Q4015">
+		</reference>
+		<reference author="Duel, H. en Specken B." year="1994" title="Habitatmodel Driehoeksmossel en andere modellen voor het voorspellen van de populatie-omvang van de Driehoeksmossel Dreissena polymorpha in meren en rivieren." journal="TNO-BSA" identification="werkdocument P94-026 1994">
+		</reference>
+		<reference author="Van der Lee, G., H. Duel, S. Groot, H. Aarts, R. Pouwels" year="2000" title="Kwaliteit van het HEP-instrumentarium voor toepassing in het IJsselmeergebied." journal="WL | Delft Hydraulics" identification="WL-rapport T2391">
+		</reference>
+		<reference author="Noordhuis, R. en EJ. Houwing" year="2003" title="Oorzaken en gevolgen van een vermoedelijke crash met betrekking tot waterkwaliteit, slibhuishouding en natuurwaarden." journal="RIZA, Lelystad" identification="RIZA rapport 2003.016">
+		</reference>
+		<reference author="Van de Wolfshaar, K.E., M. Haasnoot" year="2007" title="Toetsing dosis-effect relaties HABITAT. Pilot voor het Markermeer en de Voordelta." journal="WL | Delft Hydraulics" identification="WL-report Q4327">
+			<html><![CDATA["http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"]]></html>
+		</reference>
+		<reference author="Strayer, D.L." year="1991" title=" Projected distribution of the zebra mussel. Dreissana polymorpha, in North America." journal="Can. J. Fish. Aquati. Sci." identification="48:1389-1395">
+		</reference>
+		<reference author="Laane, W.E.M." year="1994" title="Habitatmodellen Driehoeksmossel, Hydropsyche contubernalis en Oeveraas." journal="RIZA, Lelystad" identification="werkdocument 96.044x.">
+		</reference>
+		<reference author="Sprung, M." year="1994" title="The other life: An account of present knowledge of the larval phase of Dreissana polymorpha." journal="Zebra Myssels, biology, impacts and control." identification="Chapter 2 pp 39-53">
+		</reference>
+		<reference author="Dionisio, M." year="2009" title="Memo: Invloed van slibconcentratie op mosselfiltratie" journal="Deltares" identification="-">
+			<html><![CDATA["https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962&preview=/25722962/25952424/Memo%20Slibinvloed%20driehoeksmosselen.doc#Driehoeksmossel-Dreissenapolymorpha+quagga-3"]]></html>
+		</reference>
+		<reference author="Haasnoot et al" year="2005" title="Seizoensgebonden Peilen in het IJsselmeergbied" journal="Deltares" identification="-">
+			<html><![CDATA[http://public.deltares.nl/download/attachments/16384257/Haasnoot+et+al+2005.pdf?version=1]]></html>
+		</reference>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="Deltares" identification="-">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf]]></html>
+		</reference>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="Deltares" identification="-">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf]]></html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

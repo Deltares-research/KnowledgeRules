@@ -14,8 +14,8 @@ testext = xmltest._read_topicdescription()
 print(type(testext))
 xmltest._scan_modeltype("HSI")
 xmltest._scan_knowledgerules(modeltypename = "HSI", systemname = "biesbosch_area")
-print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
-									in xmltest.knowledgeRulesNames))
+print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \
+									in xmltest.knowledgeRulesCategories))
 print(xmltest.systemname)
 print(xmltest.knowledgeRulesNr)
 print(xmltest.knowledgeRulesCategorie)

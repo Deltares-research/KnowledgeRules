@@ -33,17 +33,22 @@
 	</complexType>
 	<complexType name="TopicComplexType">
 		<choice>
-			<element name="Species" type="AutXML:SpeciesComplexType" minOccurs="1" maxOccurs="1">
+			<element name="Species" type="AutXML:SpeciesComplexType">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
 			</element>
-			<element name="WFDindicator" type="AutXML:WFDIComplexType" minOccurs="1" maxOccurs="1">
+			<element name="Parameter" type="AutXML:ParameterComplexType">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
 			</element>
-			<element name="Habitats" type="AutXML:HabitatsComplexType"  minOccurs="1" maxOccurs="1">
+			<element name="WFDindicator" type="AutXML:WFDIComplexType">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="Habitats" type="AutXML:HabitatsComplexType">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
@@ -74,6 +79,15 @@
 					</annotation>
 				</element>
 			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="ParameterComplexType">
+		<sequence>
+			<element name="CommonNames" type="AutXML:CommonNamesComplexType">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
 		</sequence>
 	</complexType>
 	<complexType name="WFDIComplexType">
@@ -283,15 +297,16 @@
 		</sequence>
 	</complexType>
 	<complexType name="FBParametersComplexType">
-		<sequence>
+		<choice maxOccurs="unbounded">
 			<element name="valuesConstant" type="AutXML:FBConstantValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="valuesScalar" type="AutXML:FBScalarValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
-		</sequence>
+		</choice>
 	</complexType>
 	<complexType name="MRParametersComplexType">
-		<sequence>
+		<choice maxOccurs="unbounded">
 			<element name="valuesRangeCategorical" type="AutXML:MRValuesRangeCategoricalComplexType" minOccurs="0" maxOccurs="unbounded"/>
-		</sequence>
+			<element name="valuesCategorical" type="AutXML:MRValuesCategoricalComplexType" minOccurs="0" maxOccurs="unbounded"/>
+		</choice>
 	</complexType>
 	<complexType name="RCValuesScalarComplexType">
 		<sequence>
@@ -333,6 +348,13 @@
 		</sequence>
 		<attribute name="layername" type="string" use="required"/>
 		<attribute name="type" type="string" use="required" fixed="range / categorical"/>
+	</complexType>
+		<complexType name="MRValuesCategoricalComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterCategoricalRCComplexType" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="layername" type="string" use="required"/>
+		<attribute name="type" type="string" use="required" fixed="categorical"/>
 	</complexType>
 	<complexType name="ParameterConstantFBComplexType">
 		<attribute name="input" type="string" use="required"/>

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Parameter>
+			<CommonNames>
+				<Name name="Fetch" language="ENG"/>
+				<Name name="Strijklengte" language="NL"/>
+			</CommonNames>
+		</Parameter>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="ijsselmeergebied">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Kranswieren-Charaspp.-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Kranswieren-Charaspp.-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
+					</Description>
+					<Description language="ENG">
+						<text><![CDATA["To be filled"]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="fetch">
+						<From name="parameters">
+							<label>"parameters"</label>
+							<equation>knowledge_rule</equation>
+							<To>Fetch</To>
+							<To>"North_Fetch_length"</To>
+							<To>"NorthEast_Fetch_length"</To>
+							<To>"East_Fetch_length"</To>
+							<To>"SouthEast_Fetch_length"</To>
+							<To>"South_Fetch_length"</To>
+							<To>"SouthWest_Fetch_length"</To>
+							<To>"West_Fetch_length"</To>
+							<To>"NorthWest_Fetch_length"</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="Fetch">
+						<inputLayers>
+							<layer name="North">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_North</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the Northern direction"</description>
+							</layer>
+							<layer name="NorthEast">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_NorthEast</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the NorthEast direction"</description>
+							</layer>
+							<layer name="East">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_East</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the East direction"</description>
+							</layer>
+							<layer name="SouthEast">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_SouthEast</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the SouthEast direction"</description>
+							</layer>							
+							<layer name="South">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_South</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the South direction"</description>
+							</layer>
+							<layer name="SouthWest">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_SouthWest</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the SouthWest direction"</description>
+							</layer>
+							<layer name="West">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_West</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the West direction"</description>
+							</layer>
+							<layer name="NorthWest">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_NorthWest</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the NorthWest direction"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>cm</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"cover(((North*0.0551)+(West*0.0672)+(NorthWest*0.0824)+(SouthWest*0.0447)+(South*0.1710)+(SouthEast*0.2475)+(East*0.2406)+(NorthEast*0.0916)),waterdepth_summer*0)"</equation>
+							<Parameters>
+								<valuesScalar layername = "North" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "NorthEast" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "East" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "SouthEast" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "South" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "SouthWest" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "West" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "NorthWest" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="North_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate North Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(watersurface-1)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="North">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_North</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the Northern direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="NorthEast_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate NorthEast Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(wateroppervlak-1+45)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="NorthEast">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_NorthEast</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the NorthEast direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="East_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate East Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(wateroppervlak-1+90)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="East">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_East</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the East direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="SouthEast_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate SouthEast Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(wateroppervlak-1+135)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="SouthEast">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_SouthEast</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the SouthEast direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="South_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate South Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(wateroppervlak-1+180)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="South">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_South</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the South direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="SouthWest_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate SouthWest Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(wateroppervlak-1+225)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="SouthWest">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_SouthWest</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the SouthWest direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="West_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate West Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(wateroppervlak-1+270)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="West">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_West</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the West direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="NorthWest_Fetch_length">
+						<inputLayers>
+							<layer name="watersurface">
+								<parameter_cat>"Water surface"</parameter_cat>
+								<layer_filename>watersurface</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water surface in square meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate NorthWest Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"slopelength(ldd(directional(wateroppervlak-1+315)),1)"</equation>
+							<Parameters>
+								<valuesScalar layername = "watersurface" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="NorthWest">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_NorthWest</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the NorthWest direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text><![CDATA[<h3 id="Kranswieren-Charaspp.-Algemeenvoorkomen">Algemeen voorkomen</h3><p>Kranswieren zijn pioniers van minder voedselrijke, heldere wateren. Onder deze omstandigheden ontwikkelen ze dichte tapijten die bestaan uit een of meerdere soorten kranswieren, waarin nauwelijks andere waterplanten kunnen doordringen. Kenmerkende soorten voor kalkrijke wateren zijn: Gewoon kransblad (<em>Chara vulgaris</em>), Ruw kransblad (<em>Chara aspera</em>), Stekelharig kransblad (<em>Chara hispida</em>), Brokkelig kransblad (<em>Chara contraria</em>), Sterkranswier (<em>Nitellopsis obtusa</em>). In zwak brakke wateren kunnen ook gebogen kransblad (<em>Chara connivens</em>) en brakwaterkransblad (<em>Chara canescens</em>) een rol spelen.<br>In de grote meren van het IJsselmeergebied komen in de ondiepe zone (0,5 - 2,5 m) kranswieren voor als de waterkwaliteit voldoende is verbeterd en er voldoende licht tot op de bodem doordringt. Uitgestrekte 'kranswierweiden' zijn te vinden in de Veluwerandmeren, het IJmeer en de Gouwzee. De laatste jaren is er ook een toename te zien in het Gooimeer, het Zwarte Meer en langs de Friese kust.</p><h3 id="Kranswieren-Charaspp.-Milieuvoorwaarden">Milieuvoorwaarden</h3><p>Kranswieren komen voor in wateren met uiteenlopende chemische samenstelling (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-3">#3</a>). Het doorzicht in de waterkolom is de meest bepalende factor die die de maximale groeidiepte bepaalt waarop lichtbeperking optreedt. In zeer ondiep water (in meren met een vast peil &lt; 20 cm) kunnen kranswieren echter niet groeien vanwege de turbulentie in de waterkolom en begrazing. De alkaliniteit kan zeer hoog zijn; ook in brakke meren en plassen kunnen kranswieren aspectbepalend zijn. Kranswieren hebben basisische condities (pH &gt; 6) nodig. Ze groeien op uiteenlopende bodems (zand, klei, veen).<br>Uitgebreid onderzoek in het IJsselmeergebied heeft aangetoond dat daar de factoren doorzicht en diepte samen voor het grootste deel het voorkomen van Chara sp. verklaart, met name de plekken waar Chara afwezig is. Om ook de plekken waar Chara wel staat goed te kunnen voorspellen is de aanwezigheid in het voorgaande jaar als aanvullende factor nodig (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-1">#1</a>). </p><h3 id="Kranswieren-Charaspp.-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3><p>Kranswiervegetaties zijn gevoelig voor verhoogde troebelheid (door toevoer van nutrienten, slibopwoeling e.d.), en worden dan snel verdrongen door andere waterplanten of draadwieren. Bij matig verminderd doorzicht kunnen kranswieren zich vaak goed handhaven doordat ze zelf de helderheid versterken. Na het verdwijnen van de vegetatie zijn zeer heldere omstandigheden nodig om herkolonisatie mogelijk te maken.<br>Primair zal het beheer van kranswiermeren dus moeten bestaan uit het voorkomen van hoge nutrientenbelasting en andere bronnen van vertroebeling. Daarnaast is het instandhouden van ondiep-watergebieden een vereiste.<br>Ontwikkeling van kranswiervegetaties is mogelijk door maatregelen te nemen die de helderheid vergroten, zoals actief biologisch beheer of doorspoelen. Maatregelen als het selectief maaien van boven de kranswieren uitgroeiende waterplanten en het uitzetten van sporen zijn met wisselend succes toegepast. </p>]]></text>
+		</Description>
+		<Description language="ENG">
+			<text><![CDATA["To be filled"]]></text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+			<reference author=" Haasnoot, M., Van den Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer." journal="WL" identification="report Q4015. 2006">
+			<html><![CDATA[http://habitat.wldelft.nl/confluence/display/HABITAT/5+Toepassingen]]></html>
+		</reference>
+		<reference author=" Haasnoot, M., Kranenbarg, J. en van Buren, R.." year="2005" title="Seizoensgebonden peilen in het IJsselmeergebied." journal="WL" identification="report Q3889. 2005">
+			<html><![CDATA[http://habitat.wldelft.nl/confluence/display/HABITAT/5+Toepassingen]]></html>
+		</reference>
+		<reference author="Van den Berg M.S., Scheffer,M. , Van Nes, E. and Coops, H." year="1999" title="Dynamics and stability of Chara sp. and Potamogeton pectinatus in a shallow lake changing in eutrophication level." journal="Hydrobiologia " identification="408/409: 335-342.">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722921/Van%20den%20Berg%202003%20Hyd506-509%20611-623.pdf?version=1&modificationDate=1172139605000&api=v2]]></html>
+		</reference>
+		<reference author="Scheffer, M." year="1998" title="Ecology of Shallow Lakes." journal="Chapman and Hall, London" identification="357 pp. "/>
+		<reference author="Van Zuidam, B." year="2014" title="Upgrade kennisregels waterplanten" journal="" identification="">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf]]></html>
+		</reference>
+		<reference author="Van Zuidam, B." year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification="">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf]]></html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

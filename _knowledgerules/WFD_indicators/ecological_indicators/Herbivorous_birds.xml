@@ -1,14 +1,11 @@
 <AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
-		<Species>
-			<EoLpagenr>45515425</EoLpagenr>
-			<LatName>Acrocephalus palustris</LatName>
+		<WFDindicator>
 			<CommonNames>
 				<Name name="Plant-etende vogels" language="NL"/>
 				<Name name="Herbivorous birds" language="ENG"/>
 			</CommonNames>
-			<SpecCode/>
-		</Species>
+		</WFDindicator>
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
@@ -36,8 +33,6 @@
 							<label>"potential"</label>
 							<equation>knowledge_rule</equation>
 							<To>birds_potential</To>
-							<To>water_depth</To>
-							<To>aquatic_vegetation</To>
 							<To>terrestic_vegetation</To>
 						</From>
 					</FlowDiagram>
@@ -45,12 +40,12 @@
 				<KnowledgeRules>
 					<MultipleReclassification name="birds_potential">
 						<inputLayers>
-							<layer name="birds_waterdepth">
-								<parameter_cat>"Bird groups"</parameter_cat>
-								<layer_filename>birds_waterdepth</layer_filename>
-								<unit>category</unit>
-								<statistic>average</statistic>
-								<description>"Type of herbivorous birds based on waterdepth"</description>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
 							</layer>
 							<layer name="HSI_terrestic_herbivorous_birds">
 								<parameter_cat>"HSI"</parameter_cat>
@@ -59,12 +54,12 @@
 								<statistic>"average"</statistic>
 								<description>"HSI for herbivorous birds based on terrestic vegetation"</description>
 							</layer>
-							<layer name="HSI_aquatic_herbivorous_birds">
+							<layer name="HSI_aquatic_vegetation">
 								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>hsi_terrestic_herbivorous_birds</layer_filename>
+								<layer_filename>hsi_aquatic_vegetation</layer_filename>
 								<unit>factor</unit>
 								<statistic>"average"</statistic>
-								<description>"HSI for herbivorous birds based on aquatic vegetation"</description>
+								<description>"HSI determined for aquatic vegetation as factor</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -75,20 +70,24 @@
 								<reference author="Haasnoot, M. en K.E. van de Wolfshaar" title="" identification="" year="2006" journal=""></reference>
 							</references>
 							<Parameters>
-								<valuesRangeCategorical layername="birds_waterdepth" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="goose .lt. 0.2 m" output="1.0" output_cat="goose .lt. 0.2 m"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="goose and ducks .lt. 0.2 m" output="2.0" output_cat="goose and ducks .lt. 0.2 m"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="grondel ducks, goose and swans 0.2 - 0.5 m" output="3.0" output_cat="grondel ducks, goose and swans 0.2 - 0.5 m"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="swans 0.5 - 1 m" output="4.0" output_cat="swans 0.5 - 1 m"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="diving ducks/coots 1 - 2 m" output="5.0" output_cat="diving ducks/coots 1 - 2 m"/>
+								<valuesRangeCategorical layername="waterdepth_summer" type="range / categorical">
+								<parameter rangemin_input="-500.0" rangemax_input="0.0"  input_cat="-500.0 - 0" output="1" output_cat="land"/>
+								<parameter rangemin_input="0.0" rangemax_input="0.2"  input_cat=".lt. 0.2 m" output="2" output_cat= "goose .lt. 0.2 m"/>
+								<parameter rangemin_input="0.0" rangemax_input="0.2"  input_cat=".lt. 0.2 m" output="3" output_cat= "goose and ducks .lt. 0.2 m"/>
+								<parameter rangemin_input="0.2" rangemax_input="0.5"  input_cat="0.2 - 0.5 m" output="4" output_cat= "grondel ducks, goose and swans 0.2 - 0.5 m"/>
+								<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="0.5 - 1.0 m" output="5" output_cat= "swans 0.5 - 1 m"/>
+								<parameter rangemin_input="1.0" rangemax_input="2.0"  input_cat="1.0 - 2.0 m" output="6" output_cat= "diving ducks/coots 1 - 2 m"/>
+								<parameter rangemin_input="2.0" rangemax_input="999999.0"  input_cat="" output="7" output_cat="not reachable"/>
 								</valuesRangeCategorical>
 								<valuesRangeCategorical  layername="HSI_terrestic_herbivorous_birds" type="range / categorical">
-									<parameter rangemin_input="0.0" rangemax_input="1.0"  input_cat="" output="1" output_cat="goose .lt. 0.2 m"/>
+									<parameter rangemin_input="0.0" rangemax_input="1.0"  input_cat="" output="2" output_cat="goose .lt. 0.2 m"/>
 								</valuesRangeCategorical>
-								<valuesRangeCategorical  layername="HSI_aquatic_herbivorous_birds" type="range / categorical">
-									<parameter rangemin_input="0.0" rangemax_input="1.0"  input_cat="" output="3" output_cat="goose .lt. 0.2 m"/>
-									<parameter rangemin_input="0.0" rangemax_input="1.0"  input_cat="" output="4" output_cat="swans 0.5 - 1 m"/>
-									<parameter rangemin_input="0.0" rangemax_input="1.0"  input_cat="" output="5" output_cat="diving ducks/coots 1 - 2 m"/>									
+								<valuesRangeCategorical  layername="HSI_aquatic_vegetation" type="range / categorical">
+									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="3" output_cat="goose .lt. 0.2 m"/>
+									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="4" output_cat="swans 0.5 - 1 m"/>
+									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="5" output_cat="diving ducks/coots 1 - 2 m"/>
+									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="5" output_cat="not reachable"/>
+									<parameter rangemin_input="0.0" rangemax_input="0.5"  input_cat="" output="5" output_cat="no macrophytes"/>											
 								</valuesRangeCategorical>
 							</Parameters>
 						</Content>
@@ -102,42 +101,6 @@
 							</layer>
 						</outputLayers>
 					</MultipleReclassification>
-					<ResponseCurve name="water_depth">
-						<inputLayers>
-							<layer name="water_depth">
-								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>"water_depth"</layer_filename>
-								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>"Average waterdepth to bed level"</description>
-							</layer>
-						</inputLayers>
-						<Content>
-							<type>range / categorical</type>
-							<description>"Average waterdepth for period of interest for bird foraging"</description>
-							<author>"M. Haasnoot"</author>
-							<date>2009-01-01</date>
-							<references>
-								<reference author="Haasnoot, M. en K.E. van de Wolfshaar" title="" identification="" year="2006" journal=""></reference>
-							</references>
-							<valuesRangeCategorical>
-								<parameter rangemin_input="0.0" rangemax_input="0.2"  input_cat=".lt. 0.2 m" output="1" output_cat= "goose .lt. 0.2 m"></parameter>
-								<parameter rangemin_input="0.0" rangemax_input="0.2"  input_cat=".lt. 0.2 m" output="2" output_cat= "goose and ducks .lt. 0.2 m"></parameter>
-								<parameter rangemin_input="0.2" rangemax_input="0.5"  input_cat="0.2 - 0.5 m" output="3" output_cat= "grondel ducks, goose and swans 0.2 - 0.5 m"></parameter>
-								<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="0.5 - 1.0 m" output="4" output_cat= "swans 0.5 - 1 m"></parameter>
-								<parameter rangemin_input="1.0" rangemax_input="2.0"  input_cat="1.0 - 2.0 m" output="5" output_cat= "diving ducks/coots 1 - 2 m"></parameter>
-							</valuesRangeCategorical>
-						</Content>
-						<outputLayers>
-							<layer name="birds_waterdepth">
-								<parameter_cat>"Bird groups"</parameter_cat>
-								<layer_filename>birds_waterdepth</layer_filename>
-								<unit>category</unit>
-								<statistic>average</statistic>
-								<description>"Type of herbivorous birds based on waterdepth"</description>
-							</layer>
-						</outputLayers>
-					</ResponseCurve>
 					<ResponseCurve name="terrestic_vegetation">
 						<inputLayers>
 							<layer name="terrestic_vegetation_type">
@@ -171,39 +134,6 @@
 								<unit>factor</unit>
 								<statistic>"average"</statistic>
 								<description>"HSI for herbivorous birds based on terrestic vegetation"</description>
-							</layer>
-						</outputLayers>
-					</ResponseCurve>
-					<ResponseCurve name="aquatic_vegetation">
-						<inputLayers>
-							<layer name="HSI_aquatic_vegetation">
-								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>hsi_aquatic_vegetation</layer_filename>
-								<unit>factor</unit>
-								<statistic>"average"</statistic>
-								<description>"HSI determined for aquatic vegetation as factor</description>
-							</layer>
-						</inputLayers>
-						<Content>
-							<type>range / categorical</type>
-							<description>"Presence of herbivorous birds based on aquatic vegetation presence"</description>
-							<author>M. Haasnoot</author>
-							<date>2009-01-01</date>
-							<references>
-								<reference author="Haasnoot, M. en K.E. van de Wolfshaar" title="" identification="" year="2006" journal=""></reference>
-							</references>
-							<valuesRangeCategorical>
-								<parameter rangemin_input="0.0" rangemax_input="0.6"  input_cat="0.0 - 0.6 HSI" output="1" output_cat="only goose and ducks .lt. 0.2 m"/>
-								<parameter rangemin_input="0.6" rangemax_input="1.0"  input_cat="0.6 - 1.0 HSI" output="2" output_cat="all herbivorous birds"/>
-							</valuesRangeCategorical>
-						</Content>
-						<outputLayers>
-							<layer name="HSI_aquatic_herbivorous_birds">
-								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>hsi_terrestic_herbivorous_birds</layer_filename>
-								<unit>factor</unit>
-								<statistic>"average"</statistic>
-								<description>"HSI for herbivorous birds based on aquatic vegetation"</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

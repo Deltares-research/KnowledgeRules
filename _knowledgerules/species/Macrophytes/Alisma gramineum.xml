@@ -11,7 +11,7 @@
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
-			<System name="Markermeer doorzicht">
+			<System name="Markermeer">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
@@ -128,7 +128,7 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1*exp(-(-6.912056505+deelgebied-0.531361693*diepte_zom+0.035894273*(diepte_zom^2)-0.440335259*diepte_zom*doorzicht-0.000848449*strijklengte)))"</equation>
+							<equation>"1*exp(-(-6.912056505+deelgebied-0.531361693*diepte_zom+0.035894273*(diepte_zom^2)-0.440335259*diepte_zom*doorzicht-0.000848449*strijklengte))"</equation>
 							<Parameters>
 								<valuesConstant layername="deelgebied" type="constant">
 									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>
@@ -197,7 +197,7 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1*exp(-(-4.79567066+deelgebied-1.810776978*diepte_zom+0.042890288*(diepte_zom^2)+0.425244597*diepte_zom*extinctie-0.866421971*extinctie-0.000888816*strijklengte)))"</equation>
+							<equation>"1*exp(-(-4.79567066+deelgebied-1.810776978*diepte_zom+0.042890288*(diepte_zom^2)+0.425244597*diepte_zom*extinctie-0.866421971*extinctie-0.000888816*strijklengte))"</equation>
 							<Parameters>
 								<valuesConstant layername="deelgebied" type="constant">
 									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>

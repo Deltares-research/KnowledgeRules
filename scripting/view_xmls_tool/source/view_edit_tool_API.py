@@ -311,7 +311,7 @@ class API:
 
 		#Get number of knowledge rules and knowledge rule names
 		obj.knowledgerulenr = xml_obj.knowledgeRulesNr
-		obj.knowledgerulecat = xml_obj.knowledgeRulesCategorie
+		obj.knowledgerulecat = xml_obj.knowledgeRulesCategories
 		obj.knowledgerulenames = xml_obj.knowledgeRulesNames
 		
 		obj.boxlayout.addWidget(system_label_1)

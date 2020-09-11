@@ -16,10 +16,10 @@ print(type(testext))
 xmltest._scan_modeltype("HSI")
 #xmltest._scan_knowledgerules(systemname = "adult")
 xmltest._scan_knowledgerules(modeltypename = "HSI", systemname = "adult")
-print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
-									in xmltest.knowledgeRulesNames))
+print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \
+									in xmltest.knowledgeRulesCategories))
 print(xmltest.knowledgeRulesCategorie)
-print(xmltest.XMLconvention["allowed_knowledgeRulesNames"])
+print(xmltest.XMLconvention["allowed_knowledgeRulesCategories"])
 flowdiagram = xmltest._read_systemflowdiagrams(modeltypename = "HSI", systemname = "adult")
 print(flowdiagram)
 print(flowdiagram[0]["name"])

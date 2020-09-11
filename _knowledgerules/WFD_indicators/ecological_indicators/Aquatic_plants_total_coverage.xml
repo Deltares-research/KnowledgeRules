@@ -1,0 +1,322 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<WFDindicator>
+			<CommonNames>
+				<Name name="Totale bedekking waterplanten" language="NL"/>
+				<Name name="Aquatic plants total coverage" language="ENG"/>
+			</CommonNames>
+		</WFDindicator>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="ijsselmeergebied">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2014-10-02</StartDate>
+						<EndDate>2014-10-02</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Totalebedekking-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Totalebedekking-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer).</p>]]></text>
+					</Description>
+					<Description language="ENG">
+						<text><![CDATA["TOBEFILLED"]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="aquatic_plant_coverage_visibility">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_tot_cover</To>
+							<To>P_tot_cover_visibility</To>
+							<To>subarea_factor_tot_cover_visibility</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="aquatic_plant_coverage_extinction">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_tot_cover</To>
+							<To>P_tot_cover_extinction</To>
+							<To>subarea_factor_tot_cover_extinction</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_tot_cover">
+						<inputLayers>
+							<layer name="P_tot_cover">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"P_tot_cover"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for coverage of aquatic plants"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Equation to calculate the HSI from vegetation coverage presence"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal="">
+									<html></html>
+								</reference>
+							</references>
+							<equation>"1/(1 + P_tot_cover)"</equation>
+							<Parameters>
+								<valuesScalar layername = "P_tot_cover" type="scalar">
+									<parameter min_input="0" max_input = "1"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_tot_cover">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"HSI_tot_cover"</layer_filename>
+								<unit>"-"</unit>
+								<statistic>none</statistic>
+								<description>"Habitat suitability for the coverage of aquatic plants"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>					
+					<FormulaBased name="P_tot_cover_visibility">
+						<inputLayers>
+							<layer name="subarea_factor_tot_cover_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_tot_cover"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for total aquatic plants coverage prediction based on visibility"</description>
+							</layer>
+							<layer name="visibility">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>dm</unit>
+								<statistic>"average"</statistic>
+								<description>"Light penetration depth in the water column in decimeters"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
+							</layer>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate total coverage of aquatic species presence based on several parameters among which visibility"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<equation>"1/(1+exp(-(0.896535408+subarea_factor_tot_cover_visibility-1.774724153*waterdepth_summer+0.107883832*(waterdepth_summer^2)-0.683243807*waterdepth_summer*visibility-0.000336719*fetch)))"</equation>
+							<Parameters>
+								<valuesConstant layername = "subarea_factor_tot_cover_visibility" type="constant">
+									<parameter input= "0.274379362" input_cat ="MBIJ" output="0.274379362"/>
+									<parameter input= "-1.085149234" input_cat ="MGZ" output="-1.085149234"/>
+									<parameter input= "1.82542425" input_cat ="MHE" output="1.82542425"/>
+									<parameter input= "-0.093074567" input_cat ="MHH" output="-0.093074567"/>
+									<parameter input= "0.19125474" input_cat ="MHRDz" output="0.19125474"/>
+									<parameter input= "1.141799633" input_cat ="MIJ" output="1.141799633"/>
+								</valuesConstant>
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+								<valuesScalar layername = "visibility" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "fetch" type="scalar">
+									<parameter min_input="0" max_input="50000"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="P_tot_cover">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"P_tot_cover"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for coverage of aquatic plants"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="P_tot_cover_extinction">
+						<inputLayers>
+							<layer name="subarea_factor_tot_cover_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_tot_cover"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for total aquatic plants coverage prediction based on extinction"</description>
+							</layer>
+							<layer name="extinction">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>Kd</unit>
+								<statistic>"average"</statistic>
+								<description>"Extinction in the water column in Kd"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
+							</layer>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate total coverage of aquatic species presence based on several parameters among which extinction"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>	
+							</references>
+							<equation>"1/(1+exp(-(0.247702657+subarea_factor_tot_cover_extinction-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
+							<Parameters>
+								<valuesConstant layername = "subarea_factor_tot_cover_extinction" type="constant">
+									<parameter input = "1.45711916" input_cat ="MIJ" output="1.45711916"/>
+									<parameter input = "-0.81302272" input_cat ="MBIJ" output="-0.81302272"/>
+									<parameter input = "1.998701637" input_cat ="MGZ" output="1.998701637"/>
+									<parameter input = "2.214793065" input_cat ="MHRDz" output="2.214793065"/>
+									<parameter input = "0.724567841" input_cat ="MHE" output="0.724567841"/>
+									<parameter input = "1.733868205" input_cat ="MHH" output="1.733868205"/>		
+								</valuesConstant>
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+								<valuesScalar layername = "extinction" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+								<valuesScalar layername = "fetch" type="scalar">
+									<parameter min_input="0" max_input="50000"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="P_tot_cover">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"P_tot_cover"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for coverage of aquatic plants"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<MultipleReclassification name="subarea_factor_tot_cover_visibility">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for total aquatic plant coverage prediction based on visibility"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input= "1" input_cat ="MBIJ" output="0.274379362" output_cat ="MBIJ"/>
+									<parameter input= "2" input_cat ="MGZ" output="-1.085149234" output_cat ="MGZ"/>
+									<parameter input= "3" input_cat ="MHE" output="1.82542425" output_cat ="MHE"/>
+									<parameter input= "4" input_cat ="MHH" output="-0.093074567" output_cat ="MHH"/>
+									<parameter input= "5" input_cat ="MHRDz" output="0.19125474" output_cat ="MHRDz"/>
+									<parameter input= "7" input_cat ="MIJ" output="1.141799633" output_cat ="MIJ"/>
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_tot_cover_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_tot_cover"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for total aquatic plants coverage prediction based on visibility"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+					<MultipleReclassification name="subarea_factor_tot_cover_extinction">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for total aquatic plant coverage prediction based on extinction"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input = "1" input_cat ="MIJ" output="1.45711916" output_cat ="MIJ"/>
+									<parameter input = "2" input_cat ="MBIJ" output="-0.81302272" output_cat ="MBIJ"/>
+									<parameter input = "3" input_cat ="MGZ" output="1.998701637" output_cat ="MGZ"/>
+									<parameter input = "4" input_cat ="MHRDz" output="2.214793065" output_cat ="MHRDz"/>
+									<parameter input = "5" input_cat ="MHE" output="0.724567841" output_cat ="MHE"/>
+									<parameter input = "7" input_cat ="MHH" output="1.733868205" output_cat ="MHH"/>								
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_tot_cover_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_tot_cover"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for total aquatic plants coverage prediction based on extinction"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text><![CDATA[<h1 id="Totalebedekking-Habitatbeschrijving">Habitatbeschrijving</h1><p>De totale bedekking heeft betrekking op alle waterplanten. Het omvat dus de ondergedoken (submerse) vegetatie, drijfbladplanten (zowel wortelende als zwevende soorten), als ook draadwier en flab. De ondergedoken vegetatie wordt vooral gestuurd door de beschikbaarheid van licht. Drijfbladplanten zijn echter veel minder sterk van het lichtklimaat afhankelijk, omdat de bladeren zich het merendeel van het groeiseizoen op het wateroppervlak bevinden, en dan niet afhankelijk zijn van de troebeling van het water.&nbsp;</p>]]></text>
+		</Description>
+		<Description language="ENG">
+			<text><![CDATA["TOBEFILLED"]]></text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="Zuidam, B. van," year="2014" title=" Upgrade kennisregels waterplanten." journal="" identification="">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf]]></html>
+		</reference>
+		<reference author="Zuidam, B. van," year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification="">
+			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf]]></html>
+		</reference>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

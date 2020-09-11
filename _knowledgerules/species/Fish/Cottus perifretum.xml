@@ -43,9 +43,9 @@
 						<From name="Habitat_geschiktheid">
 							<label>"Habitat_geschiktheid"</label>
 							<equation>min</equation>
-							<To>Waterdepth</To>
-							<To>Substrate</To>
-							<To>Presence_of_macrofytes</To>
+							<To>waterdepth</To>
+							<To>substrate</To>
+							<To>presence_of_macrofytes</To>
 							<To>silt_content</To>
 							<To>oxygen_saturation</To>
 							<To>temperature</To>
@@ -53,34 +53,34 @@
 					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="Waterdepth">
+					<ResponseCurve name="waterdepth">
 						<inputLayers>
-							<layer name="Waterdepth">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Waterdepth</layer_filename>
-								<unit>"cm"</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
 							</layer>
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Waterdepth in centimeters"</description>
+							<description>"waterdepth"</description>
 							<author>"Marc Weeber"</author>
 							<date>2012-12-18</date>
 							<references>
 								<reference author="Kranenbarg et al." year="2010" title="" journal="" identification=""/>
 							</references>
 							<valuesScalar>
-								<parameter input="0" output="0.0"/>
-								<parameter input="10" output="1.0"/>
-								<parameter input="500" output="0.7"/>
-								<parameter input="600" output="0.0"/>
-								<parameter input="1000" output="0.0"/>
+								<parameter input="0.0" output="0.0"/>
+								<parameter input="0.1" output="1.0"/>
+								<parameter input="0.5" output="0.7"/>
+								<parameter input="0.6" output="0.0"/>
+								<parameter input="10.0" output="0.0"/>
 							</valuesScalar>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_Waterdepth">
+							<layer name="HSI_waterdepth">
 								<parameter_cat>HSI</parameter_cat>
 								<layer_filename>HSI_Waterdepth</layer_filename>
 								<unit>factor</unit>
@@ -89,11 +89,11 @@
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
-					<ResponseCurve name="Substrate">
+					<ResponseCurve name="substrate">
 						<inputLayers>
-							<layer name="Substrate">
+							<layer name="substrate">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Substrate</layer_filename>
+								<layer_filename>substrate</layer_filename>
 								<unit>"category"</unit>
 								<statistic>average</statistic>
 								<description>TOBEFILLED</description>
@@ -116,28 +116,28 @@
 							</valuesCategorical>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_Substrate">
+							<layer name="HSI_substrate">
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Substrate</layer_filename>
+								<layer_filename>HSI_substrate</layer_filename>
 								<unit>factor</unit>
 								<statistic>average</statistic>
 								<description>TOBEFILLED</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
-					<ResponseCurve name="Presence_of_macrofytes">
+					<ResponseCurve name="presence_of_macrofytes">
 						<inputLayers>
-							<layer name="Presence_of_macrofytes">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Presence_of_macrofytes</layer_filename>
-								<unit>"%"</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="HSI_tot_cover">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"HSI_tot_cover"</layer_filename>
+								<unit>"-"</unit>
+								<statistic>none</statistic>
+								<description>"Habitat suitability for the coverage of aquatic plants"</description>
 							</layer>
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Percentage of coverage by macrofytes"</description>
+							<description>"Percentage of coverage by aquatic plants"</description>
 							<author>"Marc Weeber"</author>
 							<date>2012-12-18</date>
 							<references>
@@ -145,16 +145,16 @@
 							</references>
 							<valuesScalar>
 								<parameter input="0" output="1.0"/>
-								<parameter input="5" output="1.0"/>
-								<parameter input="25" output="0.5"/>
-								<parameter input="30" output="0.0"/>
-								<parameter input="100" output="0.0"/>
+								<parameter input="0.05" output="1.0"/>
+								<parameter input="0.25" output="0.5"/>
+								<parameter input="0.30" output="0.0"/>
+								<parameter input="1.00" output="0.0"/>
 							</valuesScalar>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_Presence_of_macrofytes">
+							<layer name="HSI_presence_of_macrofytes">
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Presence_of_macrofytes</layer_filename>
+								<layer_filename>HSI_presence_of_macrofytes</layer_filename>
 								<unit>factor</unit>
 								<statistic>average</statistic>
 								<description>TOBEFILLED</description>
@@ -163,12 +163,12 @@
 					</ResponseCurve>
 					<ResponseCurve name="silt_content">
 						<inputLayers>
-							<layer name="silt_content">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>silt_content</layer_filename>
-								<unit>"%"</unit>
+							<layer name="silt_fraction">
+								<parameter_cat>"Waterbed substrate"</parameter_cat>
+								<layer_filename>"silt_fraction_waterbed"</layer_filename>
+								<unit>"factor"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<description>"Average silt content in water bed"</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -181,9 +181,9 @@
 							</references>
 							<valuesScalar>
 								<parameter input="0" output="1.0"/>
-								<parameter input="5" output="0.7"/>
-								<parameter input="25" output="0.0"/>
-								<parameter input="100" output="0.0"/>
+								<parameter input="0.05" output="0.7"/>
+								<parameter input="0.25" output="0.0"/>
+								<parameter input="1.00" output="0.0"/>
 							</valuesScalar>
 						</Content>
 						<outputLayers>
@@ -198,10 +198,10 @@
 					</ResponseCurve>
 					<ResponseCurve name="oxygen_saturation">
 						<inputLayers>
-							<layer name="oxygen_saturation">
+							<layer name="oxygen">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_saturation</layer_filename>
-								<unit>"%"</unit>
+								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<unit>"percentage"</unit>
 								<statistic>minimum</statistic>
 								<description>TOBEFILLED</description>
 							</layer>

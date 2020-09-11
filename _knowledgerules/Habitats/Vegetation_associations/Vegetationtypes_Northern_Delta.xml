@@ -759,41 +759,41 @@
 								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
 							</references>
 							<Parameters>
-								<valuesRangeCategorical layername="veg_A" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="1" output_cat="Scirpetum lacustris"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="2" output_cat="Scirpetum tabemaemontani"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="3" output_cat="Kaal slik"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_B" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="4" output_cat="Scirpetum maritimi"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="5" output_cat="Haloscirpetum maritime"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="7" output_cat="Spartinetum townsendii"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_C" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="6" output_cat="Haloscirpetum maritime"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="7" output_cat="Spartinetum townsendii"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="9" output_cat="C-P Caithetosum"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_D" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_D_present" output="10" output_cat="(Calystegio)-Phragmitetum communis"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_E" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_E_present" output="11" output_cat="(Calystegio)-Phragmitetum communis"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_F" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="12" output_cat="Artemisietum maritimae"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_G" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_G_present" output="13" output_cat="Halimionetum portulacoides"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_H" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_H_present" output="14" output_cat="Epilobietum hirsute / Galio - Urticetum dioicae"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_H_present" output="15" output_cat="Sonchus palustris/ Angelica archangelica"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_H_present" output="16" output_cat="Althaeeto- Calystegietum"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_H_present" output="17" output_cat="Atripliceto - Cirsietum"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_H_present" output="18" output_cat="Elymetum arhericus"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_H_present" output="19" output_cat="Cakiletea maritimae / pioniers"/>
-								</valuesRangeCategorical>
+								<valuesCategorical layername="veg_A" type="categorical">
+									<parameter input="1" input_cat="veg_A_present" output="1" output_cat="Scirpetum lacustris"/>
+									<parameter input="1" input_cat="veg_A_present" output="2" output_cat="Scirpetum tabemaemontani"/>
+									<parameter input="1" input_cat="veg_A_present" output="3" output_cat="Kaal slik"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_B" type="categorical">
+									<parameter input="1" input_cat="veg_B_present" output="4" output_cat="Scirpetum maritimi"/>
+									<parameter input="1" input_cat="veg_B_present" output="5" output_cat="Haloscirpetum maritime"/>
+									<parameter input="1" input_cat="veg_B_present" output="7" output_cat="Spartinetum townsendii"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_C" type="categorical">
+									<parameter input="1" input_cat="veg_C_present" output="6" output_cat="Haloscirpetum maritime"/>
+									<parameter input="1" input_cat="veg_C_present" output="7" output_cat="Spartinetum townsendii"/>
+									<parameter input="1" input_cat="veg_C_present" output="9" output_cat="C-P Caithetosum"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_D" type="categorical">
+									<parameter input="1" input_cat="veg_D_present" output="10" output_cat="(Calystegio)-Phragmitetum communis"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_E" type="categorical">
+									<parameter input="1" input_cat="veg_E_present" output="11" output_cat="(Calystegio)-Phragmitetum communis"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_F" type="categorical">
+									<parameter input="1" input_cat="veg_F_present" output="12" output_cat="Artemisietum maritimae"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_G" type="categorical">
+									<parameter input="1" input_cat="veg_G_present" output="13" output_cat="Halimionetum portulacoides"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_H" type="categorical">
+									<parameter input="1" input_cat="veg_H_present" output="14" output_cat="Epilobietum hirsute / Galio - Urticetum dioicae"/>
+									<parameter input="1" input_cat="veg_H_present" output="15" output_cat="Sonchus palustris/ Angelica archangelica"/>
+									<parameter input="1" input_cat="veg_H_present" output="16" output_cat="Althaeeto- Calystegietum"/>
+									<parameter input="1" input_cat="veg_H_present" output="17" output_cat="Atripliceto - Cirsietum"/>
+									<parameter input="1" input_cat="veg_H_present" output="18" output_cat="Elymetum arhericus"/>
+									<parameter input="1" input_cat="veg_H_present" output="19" output_cat="Cakiletea maritimae / pioniers"/>
+								</valuesCategorical>
 								<valuesRangeCategorical layername="chloride_concentration" type="range / categorical">
 									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="1" output_cat="Scirpetum lacustris"/>
 									<parameter rangemin_input="200" rangemax_input="3000" input_cat="200 - 3,000" output="2" output_cat="Scirpetum tabemaemontani"/>
@@ -887,34 +887,34 @@
 								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
 							</references>
 							<Parameters>
-								<valuesRangeCategorical layername="veg_A" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="1" output_cat="Kaal slik"/>
-									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_A_present" output="11" output_cat="Overig"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_B" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="2" output_cat="Schaars begroeid slik + pioniers"/>
-									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_B_present" output="11" output_cat="Overig"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_C" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="3" output_cat="Salicornietum strictae"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="4" output_cat="Rg Agrostis stolonifera"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_C_present" output="5" output_cat="Triglochino- Agrostietum stoloniferae"/>
-									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_C_present" output="11" output_cat="Overig"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_D" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_D_present" output="6" output_cat="Puccinellietum distantis"/>
-									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_D_present" output="11" output_cat="Overig"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_E" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_E_present" output="7" output_cat="Puccinellitum maritimae"/>
-									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_E_present" output="11" output_cat="Overig"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_F" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="8" output_cat="Rg Poa trivialis-Lolium perenne - Plantogini-Lolietum perennis"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="9" output_cat="Plantogini-Lolietum perennis puccinellietosum"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_F_present" output="10" output_cat="Juncetum gerardii"/>
-									<parameter rangemin_input="0" rangemax_input="0" input_cat="veg_F_present" output="11" output_cat="Overig"/>
-								</valuesRangeCategorical>
+								<valuesCategorical layername="veg_A" type="categorical">
+									<parameter input="1" input_cat="veg_A_present" output="1" output_cat="Kaal slik"/>
+									<parameter input="0" input_cat="veg_A_present" output="11" output_cat="Overig"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_B" type="categorical">
+									<parameter input="1" input_cat="veg_B_present" output="2" output_cat="Schaars begroeid slik + pioniers"/>
+									<parameter input="0" input_cat="veg_B_present" output="11" output_cat="Overig"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_C" type="categorical">
+									<parameter input="1" input_cat="veg_C_present" output="3" output_cat="Salicornietum strictae"/>
+									<parameter input="1" input_cat="veg_C_present" output="4" output_cat="Rg Agrostis stolonifera"/>
+									<parameter input="1" input_cat="veg_C_present" output="5" output_cat="Triglochino- Agrostietum stoloniferae"/>
+									<parameter input="0" input_cat="veg_C_present" output="11" output_cat="Overig"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_D" type="categorical">
+									<parameter input="1" input_cat="veg_D_present" output="6" output_cat="Puccinellietum distantis"/>
+									<parameter input="0" input_cat="veg_D_present" output="11" output_cat="Overig"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_E" type="categorical">
+									<parameter input="1" input_cat="veg_E_present" output="7" output_cat="Puccinellitum maritimae"/>
+									<parameter input="0" input_cat="veg_E_present" output="11" output_cat="Overig"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_F" type="categorical">
+									<parameter input="1" input_cat="veg_F_present" output="8" output_cat="Rg Poa trivialis-Lolium perenne - Plantogini-Lolietum perennis"/>
+									<parameter input="1" input_cat="veg_F_present" output="9" output_cat="Plantogini-Lolietum perennis puccinellietosum"/>
+									<parameter input="1" input_cat="veg_F_present" output="10" output_cat="Juncetum gerardii"/>
+									<parameter input="0" input_cat="veg_F_present" output="11" output_cat="Overig"/>
+								</valuesCategorical>
 								<valuesRangeCategorical layername="chloride_concentration" type="range / categorical">
 									<parameter rangemin_input="0" rangemax_input="22000" input_cat="0 - 22,000" output="1" output_cat="Kaal slik"/>
 									<parameter rangemin_input="0" rangemax_input="10000" input_cat="0 - 10,000" output="2" output_cat="Schaars begroeid slik + pioniers"/>
@@ -971,14 +971,14 @@
 					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<ResponseCurve name="tidal_amplitude_cm">
+					<ResponseCurve name="tidal_amplitude">
 						<inputLayers>
 							<layer name="tidal_amplitude">
 								<parameter_cat>"tidal amplitude"</parameter_cat>
 								<layer_filename>tidal_amplitude</layer_filename>
-								<unit>cm</unit>
+								<unit>m</unit>
 								<statistic>average</statistic>
-								<description>"The average tidal amplitude in cm"</description>
+								<description>"The average tidal amplitude in meter"</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -990,9 +990,9 @@
 								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""></reference>
 							</references>
 							<valuesRangeCategorical>
-								<parameter rangemin_input="0" rangemax_input="30" input_cat="small tidal amplitude" output="1" output_cat="1"/>
-								<parameter rangemin_input="30" rangemax_input="80" input_cat="middle tidal amplitude" output="2" output_cat="2"/>
-								<parameter rangemin_input="80" rangemax_input="200" input_cat="large_tidal_amplitude" output="3" output_cat="3"/>
+								<parameter rangemin_input="0" rangemax_input="0.3" input_cat="small tidal amplitude" output="1" output_cat="1"/>
+								<parameter rangemin_input="0.3" rangemax_input="0.8" input_cat="middle tidal amplitude" output="2" output_cat="2"/>
+								<parameter rangemin_input="0.8" rangemax_input="2.0" input_cat="large_tidal_amplitude" output="3" output_cat="3"/>
 							</valuesRangeCategorical>
 						</Content>
 						<outputLayers>
@@ -1152,159 +1152,159 @@
 									<parameter rangemin_input="-200" rangemax_input="-70" input_cat="-200 - -70" output="75" output_cat="Overig"/>
 									<parameter rangemin_input="-999999.0" rangemax_input="-200" input_cat=".lt. -200" output="76" output_cat="Water"/>
 								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="tidal_amplitude_number" type="range / categorical">
-								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="1" output_cat="Kaal + Biezen"/>
-								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="3" output_cat="Ruig riet"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="4" output_cat="Natte strooiselruigte"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="5" output_cat="Droge nitrofiele ruigte"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="6" output_cat="Kaal + biezen"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="7" output_cat="Rietland + spindotter"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="8" output_cat="Ruig riet"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="9" output_cat="Overig"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="10" output_cat="Fioringgras"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="11" output_cat="Vossestaart + kweek"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="13" output_cat="Overig"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="14" output_cat="Liesgras"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="15" output_cat="Liesgras ruigte"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="16" output_cat="Rietzwenkgras"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="17" output_cat="Overig"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="18" output_cat="Fioringgras"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="19" output_cat="Ruw beemdgras/engels raaigras"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="20" output_cat="Overig"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="21" output_cat="Waterweegbree - wilgenvloedbos"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="22" output_cat="Fluitekruid - wilgenvloedbos"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="23" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="24" output_cat="Water"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="27" output_cat="Ruig riet"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="28" output_cat="Natte strooiselruigte"/>									
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="29" output_cat="Droge nitrofiele ruigte"/>									
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="30" output_cat="Biezen"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="33" output_cat="Overig"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="34" output_cat="Fioringgras"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="35" output_cat="Vossestaart + kweek"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="36" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="37" output_cat="Overig"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="38" output_cat="Liesgras"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="39" output_cat="Liesgrasruigte"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="40" output_cat="Rietzwenkgras"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="41" output_cat="Overig"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="42" output_cat="Fioringras"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="44" output_cat="Overig"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="48" output_cat="Overig"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="49" output_cat="Water"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="50" output_cat="Kaal + biezen"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="51" output_cat="Biezen + waterpeper - waterereprijs"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="52" output_cat="Rietland + spindotter"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="53" output_cat="Ruig riet"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="54" output_cat="Natte strooiselruigte"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="55" output_cat="Droge nitrofiele ruigte"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="56" output_cat="Biezen"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="57" output_cat="Rietland en spindotter"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="58" output_cat="Ruit riet"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="59" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="60" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="61" output_cat="Fioringras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="62" output_cat="Vossestaart + kweek"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="63" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="64" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="65" output_cat="Liesgras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="66" output_cat="Liesgras ruigte"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="67" output_cat="Rietzwenkgras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="68" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="69" output_cat="Fioringras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="70" output_cat="Raaigras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="71" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="72" output_cat="Waterweegbree - wilgenvloedbos"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="73" output_cat="Fluitekruid - wilgenvloedbos"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="74" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="75" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="76" output_cat="Water"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="vegetation_management_nr" type="range / categorical">
-								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="1" output_cat="Kaal + Biezen"/>
-								<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="3" output_cat="Ruig riet"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="4" output_cat="Natte strooiselruigte"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="5" output_cat="Droge nitrofiele ruigte"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="6" output_cat="Kaal + biezen"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="7" output_cat="Rietland + spindotter"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="8" output_cat="Ruig riet"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="9" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="10" output_cat="Fioringgras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="11" output_cat="Vossestaart + kweek"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="13" output_cat="Overig"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="14" output_cat="Liesgras"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="15" output_cat="Liesgras ruigte"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="16" output_cat="Rietzwenkgras"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="17" output_cat="Overig"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="18" output_cat="Fioringgras"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="19" output_cat="Ruw beemdgras/engels raaigras"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="20" output_cat="Overig"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="21" output_cat="Waterweegbree - wilgenvloedbos"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="22" output_cat="Fluitekruid - wilgenvloedbos"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="23" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="27" output_cat="Ruig riet"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="28" output_cat="Natte strooiselruigte"/>									
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="29" output_cat="Droge nitrofiele ruigte"/>									
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="30" output_cat="Biezen"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="33" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="34" output_cat="Fioringgras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="35" output_cat="Vossestaart + kweek"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="36" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="37" output_cat="Overig"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="38" output_cat="Liesgras"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="39" output_cat="Liesgrasruigte"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="40" output_cat="Rietzwenkgras"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="41" output_cat="Overig"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="42" output_cat="Fioringras"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="44" output_cat="Overig"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="48" output_cat="Overig"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="50" output_cat="Kaal + biezen"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="51" output_cat="Biezen + waterpeper - waterereprijs"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="52" output_cat="Rietland + spindotter"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="53" output_cat="Ruig riet"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="54" output_cat="Natte strooiselruigte"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="1" output="55" output_cat="Droge nitrofiele ruigte"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="56" output_cat="Biezen"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="57" output_cat="Rietland en spindotter"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="58" output_cat="Ruit riet"/>
-									<parameter rangemin_input="1" rangemax_input="2" input_cat="2" output="59" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="60" output_cat="Overig"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="61" output_cat="Fioringras"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="62" output_cat="Vossestaart + kweek"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="63" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
-									<parameter rangemin_input="2" rangemax_input="3" input_cat="3" output="64" output_cat="Overig"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="65" output_cat="Liesgras"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="66" output_cat="Liesgras ruigte"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="67" output_cat="Rietzwenkgras"/>
-									<parameter rangemin_input="3" rangemax_input="4" input_cat="4" output="68" output_cat="Overig"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="69" output_cat="Fioringras"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="70" output_cat="Raaigras"/>
-									<parameter rangemin_input="4" rangemax_input="5" input_cat="5" output="71" output_cat="Overig"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="72" output_cat="Waterweegbree - wilgenvloedbos"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="73" output_cat="Fluitekruid - wilgenvloedbos"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="74" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
-									<parameter rangemin_input="5" rangemax_input="6" input_cat="6" output="75" output_cat="Overig"/>
-								</valuesRangeCategorical>
+								<valuesCategorical layername="tidal_amplitude_number" type="categorical">
+									<parameter input="1" input_cat="1" output="1" output_cat="Kaal + Biezen"/>
+									<parameter input="1" input_cat="1" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
+									<parameter input="1" input_cat="1" output="3" output_cat="Ruig riet"/>
+									<parameter input="1" input_cat="1" output="4" output_cat="Natte strooiselruigte"/>
+									<parameter input="1" input_cat="1" output="5" output_cat="Droge nitrofiele ruigte"/>
+									<parameter input="1" input_cat="1" output="6" output_cat="Kaal + biezen"/>
+									<parameter input="1" input_cat="1" output="7" output_cat="Rietland + spindotter"/>
+									<parameter input="1" input_cat="1" output="8" output_cat="Ruig riet"/>
+									<parameter input="1" input_cat="1" output="9" output_cat="Overig"/>
+									<parameter input="1" input_cat="1" output="10" output_cat="Fioringgras"/>
+									<parameter input="1" input_cat="1" output="11" output_cat="Vossestaart + kweek"/>
+									<parameter input="1" input_cat="1" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
+									<parameter input="1" input_cat="1" output="13" output_cat="Overig"/>
+									<parameter input="1" input_cat="1" output="14" output_cat="Liesgras"/>
+									<parameter input="1" input_cat="1" output="15" output_cat="Liesgras ruigte"/>
+									<parameter input="1" input_cat="1" output="16" output_cat="Rietzwenkgras"/>
+									<parameter input="1" input_cat="1" output="17" output_cat="Overig"/>
+									<parameter input="1" input_cat="1" output="18" output_cat="Fioringgras"/>
+									<parameter input="1" input_cat="1" output="19" output_cat="Ruw beemdgras/engels raaigras"/>
+									<parameter input="1" input_cat="1" output="20" output_cat="Overig"/>
+									<parameter input="1" input_cat="1" output="21" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter input="1" input_cat="1" output="22" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter input="1" input_cat="1" output="23" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter input="1" input_cat="1" output="24" output_cat="Water"/>
+									<parameter input="2" input_cat="2" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
+									<parameter input="2" input_cat="2" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
+									<parameter input="2" input_cat="2" output="27" output_cat="Ruig riet"/>
+									<parameter input="2" input_cat="2" output="28" output_cat="Natte strooiselruigte"/>									
+									<parameter input="2" input_cat="2" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter input="2" input_cat="2" output="30" output_cat="Biezen"/>
+									<parameter input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
+									<parameter input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
+									<parameter input="2" input_cat="2" output="33" output_cat="Overig"/>
+									<parameter input="2" input_cat="2" output="34" output_cat="Fioringgras"/>
+									<parameter input="2" input_cat="2" output="35" output_cat="Vossestaart + kweek"/>
+									<parameter input="2" input_cat="2" output="36" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter input="2" input_cat="2" output="37" output_cat="Overig"/>
+									<parameter input="2" input_cat="2" output="38" output_cat="Liesgras"/>
+									<parameter input="2" input_cat="2" output="39" output_cat="Liesgrasruigte"/>
+									<parameter input="2" input_cat="2" output="40" output_cat="Rietzwenkgras"/>
+									<parameter input="2" input_cat="2" output="41" output_cat="Overig"/>
+									<parameter input="2" input_cat="2" output="42" output_cat="Fioringras"/>
+									<parameter input="2" input_cat="2" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
+									<parameter input="2" input_cat="2" output="44" output_cat="Overig"/>
+									<parameter input="2" input_cat="2" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter input="2" input_cat="2" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter input="2" input_cat="2" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter input="2" input_cat="2" output="48" output_cat="Overig"/>
+									<parameter input="2" input_cat="2" output="49" output_cat="Water"/>
+									<parameter input="3" input_cat="3" output="50" output_cat="Kaal + biezen"/>
+									<parameter input="3" input_cat="3" output="51" output_cat="Biezen + waterpeper - waterereprijs"/>
+									<parameter input="3" input_cat="3" output="52" output_cat="Rietland + spindotter"/>
+									<parameter input="3" input_cat="3" output="53" output_cat="Ruig riet"/>
+									<parameter input="3" input_cat="3" output="54" output_cat="Natte strooiselruigte"/>
+									<parameter input="3" input_cat="3" output="55" output_cat="Droge nitrofiele ruigte"/>
+									<parameter input="3" input_cat="3" output="56" output_cat="Biezen"/>
+									<parameter input="3" input_cat="3" output="57" output_cat="Rietland en spindotter"/>
+									<parameter input="3" input_cat="3" output="58" output_cat="Ruit riet"/>
+									<parameter input="3" input_cat="3" output="59" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="60" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="61" output_cat="Fioringras"/>
+									<parameter input="3" input_cat="3" output="62" output_cat="Vossestaart + kweek"/>
+									<parameter input="3" input_cat="3" output="63" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter input="3" input_cat="3" output="64" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="65" output_cat="Liesgras"/>
+									<parameter input="3" input_cat="3" output="66" output_cat="Liesgras ruigte"/>
+									<parameter input="3" input_cat="3" output="67" output_cat="Rietzwenkgras"/>
+									<parameter input="3" input_cat="3" output="68" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="69" output_cat="Fioringras"/>
+									<parameter input="3" input_cat="3" output="70" output_cat="Raaigras"/>
+									<parameter input="3" input_cat="3" output="71" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="72" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter input="3" input_cat="3" output="73" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter input="3" input_cat="3" output="74" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter input="3" input_cat="3" output="75" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="76" output_cat="Water"/>
+								</valuesCategorical>
+								<valuesCategorical layername="vegetation_management_nr" type="categorical">
+									<parameter input="1" input_cat="1" output="1" output_cat="Kaal + Biezen"/>
+									<parameter input="1" input_cat="1" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
+									<parameter input="1" input_cat="1" output="3" output_cat="Ruig riet"/>
+									<parameter input="1" input_cat="1" output="4" output_cat="Natte strooiselruigte"/>
+									<parameter input="1" input_cat="1" output="5" output_cat="Droge nitrofiele ruigte"/>
+									<parameter input="2" input_cat="2" output="6" output_cat="Kaal + biezen"/>
+									<parameter input="2" input_cat="2" output="7" output_cat="Rietland + spindotter"/>
+									<parameter input="2" input_cat="2" output="8" output_cat="Ruig riet"/>
+									<parameter input="2" input_cat="2" output="9" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="10" output_cat="Fioringgras"/>
+									<parameter input="3" input_cat="3" output="11" output_cat="Vossestaart + kweek"/>
+									<parameter input="3" input_cat="3" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
+									<parameter input="3" input_cat="3" output="13" output_cat="Overig"/>
+									<parameter input="4" input_cat="4" output="14" output_cat="Liesgras"/>
+									<parameter input="4" input_cat="4" output="15" output_cat="Liesgras ruigte"/>
+									<parameter input="4" input_cat="4" output="16" output_cat="Rietzwenkgras"/>
+									<parameter input="4" input_cat="4" output="17" output_cat="Overig"/>
+									<parameter input="5" input_cat="5" output="18" output_cat="Fioringgras"/>
+									<parameter input="5" input_cat="5" output="19" output_cat="Ruw beemdgras/engels raaigras"/>
+									<parameter input="5" input_cat="5" output="20" output_cat="Overig"/>
+									<parameter input="6" input_cat="6" output="21" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter input="6" input_cat="6" output="22" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter input="6" input_cat="6" output="23" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter input="1" input_cat="1" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
+									<parameter input="1" input_cat="1" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
+									<parameter input="1" input_cat="1" output="27" output_cat="Ruig riet"/>
+									<parameter input="1" input_cat="1" output="28" output_cat="Natte strooiselruigte"/>									
+									<parameter input="1" input_cat="1" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter input="2" input_cat="2" output="30" output_cat="Biezen"/>
+									<parameter input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
+									<parameter input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
+									<parameter input="2" input_cat="2" output="33" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="34" output_cat="Fioringgras"/>
+									<parameter input="3" input_cat="3" output="35" output_cat="Vossestaart + kweek"/>
+									<parameter input="3" input_cat="3" output="36" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter input="4" input_cat="4" output="37" output_cat="Overig"/>
+									<parameter input="4" input_cat="4" output="38" output_cat="Liesgras"/>
+									<parameter input="4" input_cat="4" output="39" output_cat="Liesgrasruigte"/>
+									<parameter input="4" input_cat="4" output="40" output_cat="Rietzwenkgras"/>
+									<parameter input="4" input_cat="4" output="41" output_cat="Overig"/>
+									<parameter input="5" input_cat="5" output="42" output_cat="Fioringras"/>
+									<parameter input="5" input_cat="5" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
+									<parameter input="5" input_cat="5" output="44" output_cat="Overig"/>
+									<parameter input="6" input_cat="6" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter input="6" input_cat="6" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter input="6" input_cat="6" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter input="6" input_cat="6" output="48" output_cat="Overig"/>
+									<parameter input="1" input_cat="1" output="50" output_cat="Kaal + biezen"/>
+									<parameter input="1" input_cat="1" output="51" output_cat="Biezen + waterpeper - waterereprijs"/>
+									<parameter input="1" input_cat="1" output="52" output_cat="Rietland + spindotter"/>
+									<parameter input="1" input_cat="1" output="53" output_cat="Ruig riet"/>
+									<parameter input="1" input_cat="1" output="54" output_cat="Natte strooiselruigte"/>
+									<parameter input="1" input_cat="1" output="55" output_cat="Droge nitrofiele ruigte"/>
+									<parameter input="2" input_cat="2" output="56" output_cat="Biezen"/>
+									<parameter input="2" input_cat="2" output="57" output_cat="Rietland en spindotter"/>
+									<parameter input="2" input_cat="2" output="58" output_cat="Ruit riet"/>
+									<parameter input="2" input_cat="2" output="59" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="60" output_cat="Overig"/>
+									<parameter input="3" input_cat="3" output="61" output_cat="Fioringras"/>
+									<parameter input="3" input_cat="3" output="62" output_cat="Vossestaart + kweek"/>
+									<parameter input="3" input_cat="3" output="63" output_cat="Glanshaver (klei en zavel)/rood zwenkgras (zand)"/>
+									<parameter input="3" input_cat="3" output="64" output_cat="Overig"/>
+									<parameter input="4" input_cat="4" output="65" output_cat="Liesgras"/>
+									<parameter input="4" input_cat="4" output="66" output_cat="Liesgras ruigte"/>
+									<parameter input="4" input_cat="4" output="67" output_cat="Rietzwenkgras"/>
+									<parameter input="4" input_cat="4" output="68" output_cat="Overig"/>
+									<parameter input="5" input_cat="5" output="69" output_cat="Fioringras"/>
+									<parameter input="5" input_cat="5" output="70" output_cat="Raaigras"/>
+									<parameter input="5" input_cat="5" output="71" output_cat="Overig"/>
+									<parameter input="6" input_cat="6" output="72" output_cat="Waterweegbree - wilgenvloedbos"/>
+									<parameter input="6" input_cat="6" output="73" output_cat="Fluitekruid - wilgenvloedbos"/>
+									<parameter input="6" input_cat="6" output="74" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
+									<parameter input="6" input_cat="6" output="75" output_cat="Overig"/>
+								</valuesCategorical>
 							</Parameters>
 						</Content>
 						<outputLayers>
@@ -1355,7 +1355,7 @@
 							<To>veg_C_presence_ungrazed</To>
 							<To>veg_B_presence</To>
 							<To>veg_A_presence</To>
-							<To>bound</To>
+							<To>bound_F</To>
 							<To>bound_E</To>
 							<To>bound_D_ungrazed</To>
 							<To>bound_C_ungrazed</To>

@@ -12,8 +12,8 @@ testext = xmltest._read_topicdescription()
 print(type(testext))
 xmltest._scan_modeltype("HSI")
 xmltest._scan_knowledgerules(modeltypename = "HSI", systemname = "ijsselmeergebied")
-print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesNames"] for elem \
-									in xmltest.knowledgeRulesNames))
+print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \
+									in xmltest.knowledgeRulesCategories))
 print(xmltest.knowledgeRulesCategorie)
 print(xmltest.XMLconvention["allowed_knowledgeRulesNames"])
 fb_tag = xmltest.get_element_formula_based(modeltypename = "HSI", systemname = "ijsselmeergebied", fbname = "P_chara_visibility")

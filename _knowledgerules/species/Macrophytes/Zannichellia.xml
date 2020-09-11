@@ -11,7 +11,7 @@
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
-			<System name="Markermeer doorzicht">
+			<System name="Markermeer">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
@@ -27,181 +27,274 @@
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="zannich_presence_visibility">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_Zannich</To>
+							<To>P_Zannich_visibility</To>
+							<To>subarea_factor_Zannich_visibility</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="zannich_presence_extinction">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_Zannich</To>
+							<To>P_Zannich_extinction</To>
+							<To>subarea_factor_Zannich_extinction</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<FormulaBased name="HGI_ Zanni_sp">
+					<FormulaBased name="HGI_Zannich">
 						<inputLayers>
-							<layer name="P_ Zanni_sp">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>P_ Zanni_sp</layer_filename>
-								<unit>-</unit>
+							<layer name="P_Zannich">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>P_ Zannichellia_spp</layer_filename>
+								<unit>"factor"</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<description>"Likeliness of presence for the Zannichellia species"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Berekening HGI"</description>
+							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_ Zanni_sp)"</equation>
+							<equation>"1 / (1+P_Zannich)"</equation>
 							<Parameters>
-								<valuesScalar layername="P_ Zanni_sp" type="scalar">
+								<valuesScalar layername="P_Zannich" type="scalar">
 									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_P_ Zanni_sp">
+							<layer name="HSI_P_Zannich">
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_P_ Zanni_sp</layer_filename>
+								<layer_filename>HSI_P_Zannichellia_spp</layer_filename>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<description>Habitat suitability for the Zannichellia species</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
-					<FormulaBased name="Effect_doorzicht">
+					<FormulaBased name="P_Zannich_visibility">
 						<inputLayers>
-							<layer name="deelgebied">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>deelgebied</layer_filename>
-								<unit>categories</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="subarea_factor_Zannich_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Zannichellia"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Zannichellia species prediction based on visibility"</description>
 							</layer>
-							<layer name="diepte_zom">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>diepte_zom</layer_filename>
-								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="visibility">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>dm</unit>
+								<statistic>"average"</statistic>
+								<description>"Light penetration depth in the water column in decimeters"</description>
 							</layer>
-							<layer name="doorzicht">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>doorzicht</layer_filename>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
 							</layer>
-							<layer name="strijklengte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>strijklengte</layer_filename>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Effect van doorzicht op Zannichellia"</description>
+							<description>"Calculate Zannichellia species presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-0.836283468+deelgebied-2.678429997*diepte_zom+0.093452326*(diepte_zom^2)+0.397326678*diepte_zom*doorzicht-0.000580393*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-0.836283468+subarea_factor_Zannich_visibility-2.678429997*waterdepth_summer+0.093452326*(waterdepth_summer^2)+0.397326678*waterdepth_summer*visibility-0.000580393*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername="deelgebied" type="constant">
-									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="2" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="3" input_cat="MHE" output="0.724567841"/>
-									<parameter input="4" input_cat="MHH" output="1.733868205"/>
-									<parameter input="5" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="6" input_cat="MIJ" output="1.45711916"/>
+								<valuesConstant layername="subarea_factor_Zannich_visibility" type="constant">
+									<parameter input="-0.81302272" input_cat="MBIJ" output="-0.81302272"/>
+									<parameter input="1.998701637" input_cat="MGZ" output="1.998701637"/>
+									<parameter input="0.724567841" input_cat="MHE" output="0.724567841"/>
+									<parameter input="1.733868205" input_cat="MHH" output="1.733868205"/>
+									<parameter input="2.214793065" input_cat="MHRDz" output="2.214793065"/>
+									<parameter input="1.45711916" input_cat="MIJ" output="1.45711916"/>
 								</valuesConstant>
-								<valuesScalar layername="diepte_zom" type="scalar">
+								<valuesScalar layername="waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="4.0"/>
 								</valuesScalar>
-								<valuesScalar layername="doorzicht" type="scalar">
+								<valuesScalar layername="visibility" type="scalar">
 									<parameter min_input="0" max_input="4.0"/>
 								</valuesScalar>
-								<valuesScalar layername="strijklengte" type="scalar">
+								<valuesScalar layername="fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_strijklengte">
-								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_strijklengte</layer_filename>
-								<unit>factor</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="P_Zannich">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>P_ Zannichellia_spp</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for the Zannichellia species"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
-					<FormulaBased name="Effect_extinctie">
+					<FormulaBased name="P_Zannich_extinction">
 						<inputLayers>
-							<layer name="deelgebied">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>deelgebied</layer_filename>
-								<unit>categories</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="subarea_factor_Zannich_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Zannichellia"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Zannichellia species prediction based on extinction"</description>
 							</layer>
-							<layer name="diepte_zom">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>diepte_zom</layer_filename>
+							<layer name="extinction">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>Kd</unit>
+								<statistic>"average"</statistic>
+								<description>"Extinction in the water column in Kd"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
 							</layer>
-							<layer name="extinctie">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>extinctie</layer_filename>
-								<unit>m-1</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
-							</layer>
-							<layer name="strijklengte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>strijklengte</layer_filename>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Effect van extinctie op Zannichellia"</description>
+							<description>"Calculate Zannichellia species presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-1.596244827+deelgebied-1.714394462*diepte_zom+0.08105808*(diepte_zom^2)-0.263564618*diepte_zom*extinctie+0.556030451*extinctie-0.00051814*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-1.596244827+subarea_factor_Zannich_extinction-1.714394462*waterdepth_summer+0.08105808*(waterdepth_summer^2)-0.263564618*waterdepth_summer*extinction+0.556030451*extinction-0.00051814*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername="deelgebied" type="constant">
-									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="2" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="3" input_cat="MHE" output="0.724567841"/>
-									<parameter input="4" input_cat="MHH" output="1.733868205"/>
-									<parameter input="5" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="6" input_cat="MIJ" output="1.45711916"/>
+								<valuesConstant layername="subarea_factor_Zannich_extinction" type="constant">
+									<parameter input="-0.81302272" input_cat="MBIJ" output="-0.81302272"/>
+									<parameter input="1.998701637" input_cat="MGZ" output="1.998701637"/>
+									<parameter input="0.724567841" input_cat="MHE" output="0.724567841"/>
+									<parameter input="1.733868205" input_cat="MHH" output="1.733868205"/>
+									<parameter input="2.214793065" input_cat="MHRDz" output="2.214793065"/>
+									<parameter input="1.45711916" input_cat="MIJ" output="1.45711916"/>
 								</valuesConstant>
-								<valuesScalar layername="diepte_zom" type="scalar">
-									<parameter min_input="0" max_input="4.0"/>
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername="extinctie" type="scalar">
+								<valuesScalar layername = "extinction" type="scalar">
 									<parameter min_input="0" max_input="10"/>
 								</valuesScalar>
-								<valuesScalar layername="strijklengte" type="scalar">
+								<valuesScalar layername = "fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_strijklengte">
-								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_strijklengte</layer_filename>
-								<unit>factor</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="P_Zannich">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>P_ Zannichellia_spp</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for the Zannichellia species"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
+					<MultipleReclassification name="subarea_factor_Zannich_visibility">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Zannichellia spp prediction based on visibility"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input="1" input_cat="MBIJ" output="-0.81302272" output_cat="MBIJ" />
+									<parameter input="2" input_cat="MGZ" output="1.998701637" output_cat="MGZ"/>
+									<parameter input="3" input_cat="MHE" output="0.724567841" output_cat="MHE"/>
+									<parameter input="4" input_cat="MHH" output="1.733868205" output_cat="MHH"/>
+									<parameter input="5" input_cat="MHRDz" output="2.214793065" output_cat="MHRDz"/>
+									<parameter input="7" input_cat="MIJ" output="1.45711916" output_cat="MIJ"/>
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_Zannich_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Zannichellia"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Zannichellia species prediction based on visibility"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+					<MultipleReclassification name="subarea_factor_Zannich_extinction">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Zannichellia spp prediction based on extinction"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input = "1" input_cat ="MIJ" output="-0.81302272" output_cat="MIJ"/>
+									<parameter input = "2" input_cat ="MBIJ" output="1.998701637" output_cat="MBIJ"/>
+									<parameter input = "3" input_cat ="MGZ" output="0.724567841" output_cat="MGZ"/>
+									<parameter input = "4" input_cat ="MHRDz" output="1.733868205" output_cat="MHRDz"/>
+									<parameter input = "5" input_cat ="MHE" output="2.214793065" output_cat="MHE"/>
+									<parameter input = "7" input_cat ="MHH" output="7" output_cat="MHH"/>								
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_Zannich_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Zannichellia"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Zannichellia species prediction based on extinction"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
 				</KnowledgeRules>
 			</System>
 		</ModelType>

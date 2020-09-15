@@ -5,6 +5,7 @@
 			<LatName>Nitellopsis obtusa</LatName>
 			<CommonNames>
 				<Name name="Sterkranswier" language="NL"/>
+				<Name name="Starry stonewort" language="NL"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
@@ -24,6 +25,9 @@
 				<SystemDescription>
 					<Description language="NL">
 						<text>&lt;h1 id="Sterkranswier-Nitellopsisobtusa-Dosis-effectrelaties"&gt;Dosis-effect relaties&lt;/h1&gt;&lt;p&gt;Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (&lt;a href="https://publicwiki.deltares.nl/display/HBTDB/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-5" rel="nofollow"&gt;#7&lt;/a&gt;). In (&lt;a href="https://publicwiki.deltares.nl/display/HBTDB/Doorgroeid+fonteinkruid+-+Potamogeton+perfoliatus#Doorgroeidfonteinkruid-Potamogetonperfoliatus-6" rel="nofollow"&gt;#8&lt;/a&gt;) zijn de vergelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van sterkranswier in de Macromij benadering en in de nieuwe mixed model benadering.&lt;/p&gt;&lt;p&gt;De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Doorzicht&lt;/strong&gt;:&lt;/p&gt;&lt;p&gt;P_Nitelobt= 1/(1+exp(-(-7.551994864+deelgebied+2.035959675*diepte_zom-0.887909492*(diepte_zom^2)+1.451981197*diepte_zom*doorzicht-0.001251113*strijklengte)))&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Extinctie&lt;/strong&gt;:&lt;/p&gt;&lt;p&gt;P_ Nitelobt=1/(1+exp(-(-9.206085992+deelgebied+3.715232921*diepte_zom-0.818446686*(diepte_zom^2)-0.397517433*diepte_zom*extinctie+0.499419689*extinctie-0.00120804*strijklengte)))&lt;/p&gt;&lt;p&gt;HGI Nitelobt = 1 / (1+P_Nitelobt)&lt;/p&gt;&lt;p&gt;deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )&lt;br&gt; diepte_zom = de gemiddelde waterdiepte in de zomer (m)&lt;br&gt; doorzicht = secchi diepte (m)&lt;br&gt; extinctie = extinctiecoefficient (1/m)&lt;br&gt; strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)&lt;/p&gt;&lt;p&gt;Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's&amp;nbsp;&lt;a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow"&gt;doorzicht&lt;/a&gt;&amp;nbsp;en&amp;nbsp;&lt;a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow"&gt;extinctie&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="Sterkranswier-Nitellopsisobtusa-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;Deze dosis-effect relaties zijn gevalideerd op het Markermeer.&lt;/p&gt;&lt;h1 id="Sterkranswier-Nitellopsisobtusa-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)&lt;/p&gt;</text>
+					</Description>
+					<Description language="ENG">
+						<text>"To be filled"</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -83,7 +87,7 @@
 					</FormulaBased>
 					<FormulaBased name="P_Nitelobt_visibility">
 						<inputLayers>
-								<layer name="subarea_factor_Nitelobt_visibility">
+							<layer name="subarea_factor_Nitelobt_visibility">
 								<parameter_cat>Area specifics</parameter_cat>
 								<layer_filename>"subarea_factor_Nitellopsis_obtusa"</layer_filename>
 								<unit>"factor"</unit>
@@ -119,15 +123,16 @@
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-7.551994864+subarea_factor_Nitelobt_visibility+2.035959675*diepte_zom-0.887909492*(waterdepth_summer^2)+1.451981197*diepte_zom*doorzicht-0.001251113*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-7.551994864+subarea_factor_Nitelobt_visibility+2.035959675*waterdepth_summer-0.887909492*(waterdepth_summer^2)+1.451981197*waterdepth_summer*visibility-0.001251113*fetch)))"</equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Nitelobt_visibility" type="constant">
-									<parameter input="-0.81302272" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="1.998701637" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="0.724567841" input_cat="MHE" output="0.724567841"/>
-									<parameter input="1.733868205" input_cat="MHH" output="1.733868205"/>
-									<parameter input="2.214793065" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="1.45711916" input_cat="MIJ" output="1.45711916"/>
+									<parameter input="6.235589476" input_cat="MIJ" output="6.235589476"/>									
+									<parameter input="-0.230499406" input_cat="MBIJ" output="-0.230499406"/>
+									<parameter input="10.75916129" input_cat="MGZ" output="10.75916129"/>
+									<parameter input="2.333677335" input_cat="MHRDz" output="2.333677335"/>
+									<parameter input="-0.00482929" input_cat="MHE" output="-0.00482929"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input="-0.326336041" input_cat="MHH" output="-0.326336041"/>
 								</valuesConstant>
 								<valuesScalar layername="waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="4.0"/>
@@ -188,15 +193,16 @@
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-9.206085992+subarea_factor_Nitelobt_extinction+3.715232921*diepte_zom-0.818446686*(diepte_zom^2)-0.397517433*diepte_zom*extinctie+0.499419689*extinctie-0.00120804*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-9.206085992+subarea_factor_Nitelobt_extinction+3.715232921*waterdepth_summer-0.818446686*(waterdepth_summer^2)-0.397517433*waterdepth_summer*extinction+0.499419689*extinction-0.00120804*fetch)))"</equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Nitelobt_extinction" type="constant">
-									<parameter input="-0.81302272" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="1.998701637" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="0.724567841" input_cat="MHE" output="0.724567841"/>
-									<parameter input="1.733868205" input_cat="MHH" output="1.733868205"/>
-									<parameter input="2.214793065" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="1.45711916" input_cat="MIJ" output="1.45711916"/>
+									<parameter input="6.613101494" input_cat="MIJ" output="6.613101494"/>									
+									<parameter input="-0.352060434" input_cat="MBIJ" output="-0.352060434"/>
+									<parameter input="10.69109554" input_cat="MGZ" output="10.69109554"/>
+									<parameter input="2.325532503" input_cat="MHRDz" output="2.325532503"/>
+									<parameter input="-0.006323901" input_cat="MHE" output="-0.006323901"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input="-0.435288326" input_cat="MHH" output="-0.435288326"/>	
 								</valuesConstant>
 								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -238,12 +244,13 @@
 							</references>
 							<Parameters>
 								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input="1" input_cat="MBIJ" output="-0.81302272" output_cat="MBIJ" />
-									<parameter input="2" input_cat="MGZ" output="1.998701637" output_cat="MGZ"/>
-									<parameter input="3" input_cat="MHE" output="0.724567841" output_cat="MHE"/>
-									<parameter input="4" input_cat="MHH" output="1.733868205" output_cat="MHH"/>
-									<parameter input="5" input_cat="MHRDz" output="2.214793065" output_cat="MHRDz"/>
-									<parameter input="7" input_cat="MIJ" output="1.45711916" output_cat="MIJ"/>
+									<parameter input="1" input_cat="MIJ" output="6.235589476"  output_cat="MIJ"/>									
+									<parameter input="2" input_cat="MBIJ" output="-0.230499406" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="10.75916129" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="2.333677335"  output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="-0.00482929"  output_cat="MHE"/>
+									<parameter input="6" input_cat ="MWenmid" output="0.0" output_cat ="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="-0.326336041"  output_cat="MHH"/>
 								</valuesCategorical>
 							</Parameters>
 						</Content>
@@ -276,12 +283,13 @@
 							</references>
 							<Parameters>
 								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input = "1" input_cat ="MIJ" output="-0.81302272" output_cat="MIJ"/>
-									<parameter input = "2" input_cat ="MBIJ" output="1.998701637" output_cat="MBIJ"/>
-									<parameter input = "3" input_cat ="MGZ" output="0.724567841" output_cat="MGZ"/>
-									<parameter input = "4" input_cat ="MHRDz" output="1.733868205" output_cat="MHRDz"/>
-									<parameter input = "5" input_cat ="MHE" output="2.214793065" output_cat="MHE"/>
-									<parameter input = "7" input_cat ="MHH" output="7" output_cat="MHH"/>								
+									<parameter input="1" input_cat="MIJ" output="6.613101494"  output_cat="MIJ"/>									
+									<parameter input="2" input_cat="MBIJ" output="-0.352060434"  output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="10.69109554"  output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="2.325532503"  output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="-0.006323901"  output_cat="MHE"/>
+									<parameter input="6" input_cat="MWenmid" output="0.0" output_cat="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="-0.435288326"  output_cat="MHH"/>									
 								</valuesCategorical>
 							</Parameters>
 						</Content>
@@ -302,6 +310,9 @@
 	<TopicDescription>
 		<Description language="NL">
 			<text>&lt;h1 id="Sterkranswier-Nitellopsisobtusa-Habitatbeschrijving"&gt;Habitatbeschrijving&lt;/h1&gt;&lt;p&gt;Sterkranswier (&lt;em&gt;Nitellopsis obtusa&lt;/em&gt;) behoort tot de kranswierklasse &lt;em&gt;Charetea fragilis &lt;/em&gt;(orde &lt;em&gt;Charetalia&lt;/em&gt; &lt;em&gt;hispidae) &lt;/em&gt;en is indicatief (kensoort) voor de associatie&lt;em&gt; Nitellopsidetum obtusae &lt;/em&gt;(&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-2"&gt;#2&lt;/a&gt;). Sterkranswier is een geheel ondergedoken waterplant en groeit in stilstaand tot zwak stromend, onbeschaduwd water. De soort komt voor in weinig vervuilde, mesotrofe tot eutrofe, grote oppervlaktewateren dat zoet tot zwak brak is (tot ongeveer 700 mg chloride per liter). De maximale waterdiepte in ondiepe meren bedraagt in Nederland ongeveer 3 – 4 meter; in diepe zandwinplassen met helder water groeit deze soort op beduidend grotere waterdiepte. In het IJsselmeergebied groeit Sterkranswier in helder water (extinctie-coëfficiënt 1-2 m&lt;sup&gt;-1&lt;/sup&gt;) in de diepterange van 2-4 meter (9). De pH van het water varieert veelal tussen 7.5 tot 9.2. Sterkranswier vormt vaak dichte, uitgestrekte velden die tot meer dan een meter boven de bodem kunnen uitgroeien. De bodem bestaat veelal uit modderige zand- of veen op zandbodems (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-2"&gt;#2&lt;/a&gt;, &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-3"&gt;#3&lt;/a&gt;, &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-4"&gt;#4&lt;/a&gt;).&lt;/p&gt;&lt;p&gt;De dichte kranswiervelden van deze soort zijn een geliefd habitat voor macrofaunasoorten omdat zij bescherming bieden tegen vispredatie (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-5"&gt;#5&lt;/a&gt;). Ook hebben zij een positieve invloed op het doorzicht omdat de dichte vegetatie de opwerveling van slib door wind en vissen verminderd (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-4"&gt;#4&lt;/a&gt;).&lt;/p&gt;&lt;p&gt;De afgelopen decennia is Sterkranswier in Nederland duidelijk toegenomen door verbeteringen in de waterkwaliteit. Zwaartepunten van de verspreiding liggen in het IJsselmeergebied (Gouwzee, veluwerandmeren), de veenplassen in Noordwest-Overijssel en Hollands-Utrechtse plassengebied (Naardermeer, Vechtplassen, Nieuwkoopse plassen). Hiernaast groeit Sterkranswier in toenemende mate in diepe, heldere zandwinputten in het rivierengebied.&lt;/p&gt;&lt;p&gt;Kranswierwateren worden beschermd in de Habitatrichtlijn vanwege Europese belang. Sterkranswier valt onder het habitattype H3140 Kalkhoudende oligo-mesotrofe wateren met&amp;nbsp;&lt;em&gt;Chara spp.&lt;/em&gt;&amp;nbsp;vegetaties (verkorte naam: Kranswierwateren) (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Sterkranswier+-+Nitellopsis+obtusa#Sterkranswier-Nitellopsisobtusa-5"&gt;#5&lt;/a&gt;).&lt;/p&gt;</text>
+		</Description>
+		<Description language="ENG">
+			<text>"To be filled"</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>

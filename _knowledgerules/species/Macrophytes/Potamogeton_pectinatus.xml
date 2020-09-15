@@ -1,0 +1,331 @@
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>1116005</EoLpagenr>
+			<LatName>Stuckenia pectinata</LatName>
+			<CommonNames>
+				<Name name="Schedefonteinkruid" language="NL"/>
+				<Name name="Sago pondweed" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Markermeer">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA[<h1 id="Schedefonteinkruid-Potamogetonpectinatus-Dosis-effectrelaties">Dosis-effect relaties</h1><p>Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-3">#3</a>). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect waterplanten hebben op dit lichtklimaat, leidde in het <a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow">NMIJ project</a> tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-6">#6</a>). In (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-7">#7</a>) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van schedefonteinkruid in de Macromij benadering en in de nieuwe mixed model benadering.</p><p>De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.</p><p>Doorzicht:<br>P_potapect = 1*exp(-(0.009131365+deelgebied-2.015339078*diepte_zom+0.0742555*(diepte_zom^2)+0.287750211*diepte_zom*doorzicht-0.000350627*strijklengte))</p><p>Extinctie:<br>P_potapect =1*exp(-(0.323798613+deelgebied-1.92555153*diepte_zom+0.077634715*(diepte_zom^2)+0.055855163*diepte_zom*extinctie-0.000359289*strijklengte))</p><p>HGI Potapect = 1 / (1+P_potapect)</p><p>deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )<br>diepte_zom = de gemiddelde waterdiepte in de zomer (m)<br>doorzicht = secchi diepte (m)<br>extinctie = extinctiecoefficient (1/m)<br>strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)</p><p>Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's <a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow">doorzicht</a> en <a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow">extinctie</a></p><h2 id="Schedefonteinkruid-Potamogetonpectinatus-Standplaatsmodelvoorrivieren,getijdewateren,meren,plassenenkanalen">Standplaats model voor rivieren, getijdewateren, meren, plassen en kanalen</h2><p>De toepassing van de kennisregels in dit model hangt samen met het watertype dat wordt geanalyseerd.</p><h1 id="Schedefonteinkruid-Potamogetonpectinatus-Toepasbaarheid">Toepasbaarheid</h1><p>Het logistisch regressie model voor het Markermeer is enkel gevalideerd voor het Markermeer</p>]]></text>
+					</Description>
+					<Description language="ENG">
+						<text>"To be filled"</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="potapect_presence_visibility">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_potapect</To>
+							<To>P_potapect_visibility</To>
+							<To>subarea_factor_potapect_visibility</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="potapect_presence_extinction">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_potapect</To>
+							<To>P_potapect_extinction</To>
+							<To>subarea_factor_potapect_extinction</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="HGI_potapect">
+						<inputLayers>
+							<layer name="P_potapect">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>P_stuckenia_pectinata</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for the Stuckenia pectinata species"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Equation to calculate the HSI from a vegetation presence"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2014-10-02</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<equation>"1 / (1+P_potapect)"</equation>
+							<Parameters>
+								<valuesScalar layername="P_potapect" type="scalar">
+									<parameter min_input="0" max_input="1"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_potapect">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>HSI_stuckenia_pectinata</layer_filename>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<description>"Habitat suitability for the Stuckenia pectinata"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="P_potapect_visibility">
+						<inputLayers>
+							<layer name="subarea_factor_potapect_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_potapect"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Stuckenia pectinata prediction based on visibility"</description>
+							</layer>
+							<layer name="visibility">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>dm</unit>
+								<statistic>"average"</statistic>
+								<description>"Light penetration depth in the water column in decimeters"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
+							</layer>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate Stuckenia pectinata presence based on several parameters among which visibility"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2014-10-02</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<equation>"1/(1+exp(-(0.009131365+subarea_factor_potapect_visibility-2.015339078*waterdepth_summer+0.0742555*(waterdepth_summer^2)+0.287750211*waterdepth_summer*visibility-0.000350627*fetch)))"</equation>
+							<Parameters>
+								<valuesConstant layername="subarea_factor_potapect_visibility" type="constant">
+									<parameter input="1.291172858" input_cat="MIJ" output="1.291172858"/>									
+									<parameter input="0.618639828" input_cat="MBIJ" output="0.618639828"/>
+									<parameter input="-2.328903042" input_cat="MGZ" output="-2.328903042"/>
+									<parameter input="0.837567446" input_cat="MHRDz" output="0.837567446"/>
+									<parameter input="1.978599509" input_cat="MHE" output="1.978599509"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input="0.851785226" input_cat="MHH" output="0.851785226"/>
+								</valuesConstant>
+								<valuesScalar layername="waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="4.0"/>
+								</valuesScalar>
+								<valuesScalar layername="visibility" type="scalar">
+									<parameter min_input="0" max_input="4.0"/>
+								</valuesScalar>
+								<valuesScalar layername="fetch" type="scalar">
+									<parameter min_input="0" max_input="50000"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="P_potapect">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>P_stuckenia_pectinata</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for the Stuckenia pectinata species"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="P_potapect_extinction">
+						<inputLayers>
+							<layer name="subarea_factor_potapect_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_potapect"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Stuckenia pectinata prediction based on extinction"</description>
+							</layer>
+							<layer name="extinction">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>Kd</unit>
+								<statistic>"average"</statistic>
+								<description>"Extinction in the water column in Kd"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
+							</layer>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate Stuckenia pectinata presence based on several parameters among which extinction"</description>
+							<author>"Clara Chrzanowski"</author>
+							<date>2014-10-02</date>
+							<references>
+								<reference author="" year="" title="" journal="" identification=""/>
+							</references>
+							<equation>"1/(1+exp(-(0.323798613+subarea_factor_potapect_extinction-1.92555153*waterdepth_summer+0.077634715*(waterdepth_summer^2)+0.055855163*waterdepth_summer*extinction-0.000359289*fetch)))"</equation>
+							<Parameters>
+								<valuesConstant layername="subarea_factor_potapect_extinction" type="constant">
+									<parameter input="1.319797137" input_cat="MIJ" output="1.319797137"/>									
+									<parameter input="0.172883911" input_cat="MBIJ" output="0.172883911"/>
+									<parameter input="-2.859662756" input_cat="MGZ" output="-2.859662756"/>
+									<parameter input="0.447434605" input_cat="MHRDz" output="0.447434605"/>
+									<parameter input="1.852899879" input_cat="MHE" output="1.852899879"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input="-0.31433529" input_cat="MHH" output="-0.31433529"/>
+								</valuesConstant>
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="3.5"/>
+								</valuesScalar>
+								<valuesScalar layername = "extinction" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+								<valuesScalar layername = "fetch" type="scalar">
+									<parameter min_input="0" max_input="50000"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="P_potapect">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>P_stuckenia_pectinata</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for the Stuckenia pectinata species"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<MultipleReclassification name="subarea_factor_potapect_visibility">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Stuckenia pectinata prediction based on visibility"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input="1" input_cat="MIJ" output="1.291172858" output_cat="MIJ"/>									
+									<parameter input="2" input_cat="MBIJ" output="0.618639828" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="-2.328903042" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="0.837567446" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="1.978599509" output_cat="MHE"/>
+									<parameter input="6" input_cat ="MWenmid" output="0.0" output_cat ="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="0.851785226" output_cat="MHH"/>
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_potapect_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_potapect"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Stuckenia pectinata prediction based on visibility"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+					<MultipleReclassification name="subarea_factor_potapect_extinction">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Stuckenia pectinata prediction based on extinction"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input="1" input_cat="MIJ" output="1.319797137" output_cat="MIJ"/>									
+									<parameter input="2" input_cat="MBIJ" output="0.172883911" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="-2.859662756" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="0.447434605" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="1.852899879" output_cat="MHE"/>
+									<parameter input="6" input_cat="MWenmid" output="0.0" output_cat="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="-0.31433529" output_cat="MHH"/>								
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_potapect_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_potapect"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Stuckenia pectinata prediction based on extinction"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text><![CDATA[<h1 id="Schedefonteinkruid-Potamogetonpectinatus-Habitatbeschrijving">Habitatbeschrijving</h1><p>Schedefonteinkruid komt voor in Europa, Azië en Noord-Amerika en verspreid in Afrika, Australië en Nieuw Zeeland <a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-5">#5</a>.</p><p>Schedefonteinkruid is een waterplant die met draadvormige steel die gaffelvormig is vertakt een lengte van 3 meter kan halen. De bladeren zijn grasachtig, lijnvormig en veelal 1-4 mm breed. Het is een overblijvende plant die in ons land in het algemeen overwinterd via knolletjes aan het wortelstelsel van de wortelstok. De plant kan ook bovengronds overwinteren, maar dit vindt alleen in de relatief kleine en beschutte wateren plaats <a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-5">#5</a>.</p><p>Schedefonteinkruid wordt aangetroffen in ondiep water van allerlei type wateren, van matig voedselrijk tot zeer voedselrijk, van zoet tot brak en van stagnant tot zwak stromend <a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-5">#5</a>. Populaties komen voor in rivieren, oude strangen, kleiputten, zandwinplassen, grindgaten, kanalen, grachten, weteringen, sloten, plassen, meren en kreken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-5">#5</a>. In West-Nederland is schedefonteinkruid vrij algemeen. Schedefonteinkruid is een belangrijke voedselplant voor watervogels. De bladeren en zaden worden veel gegeten door meerkoet, wilde eend en knobbelzwaan. De wortelknolletjes in de waterbodem vormen een belangrijke voedselbron voor de kleine zwaan tijdens de migratie (<a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-1">#1</a>,<a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-2">#2</a>). Vissen zetten hun eieren op deze waterplant af en ze vervullen voor voor jonge vissen een kraamkamerfunctie door dekking te bieden tegen predatoren <a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-1">#1</a>. Ook veel macrofauna zijn gebonden aan waterplantenvegetaties, wat weer als voedsel dient voor vissen. De plant zelf wordt ook gegeten, bijvoorbeeld kolblei (Abramis bjoerkna), kroeskaper (Carassius carassius) en blankvoorn (Rutilus rutilus) dient de plant als aanvulling op het hoofdmenu <a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-5">#5</a>.</p><p>In juli-augustus is de hoeveelheid bovengrondse biomassa van de schedefonteinkruid maximaal. in de periode juni- september komt schedefonteinkruid tot bloeien. Om dit moment vindt ook de vruchtzetting plaats. Schedefonteinkruid kan zich vooral in dynamische milieu's sterk vegatief uitbreiden <a href="https://publicwiki.deltares.nl/display/HBTHOME/Schedefonteinkruid+-+Potamogeton+pectinatus#Schedefonteinkruid-Potamogetonpectinatus-5">#5</a>.</p>]]></text>
+		</Description>
+		<Description language="ENG">
+			<text>"To be filled"</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="" year="" title="" journal="" identification="">
+			<html>http://nl.wikipedia.org/wiki/Doorgroeid_fonteinkruid</html>
+		</reference>
+		<reference author="" year="" title="" journal="" identification="">
+			<html>http://wilde-planten.nl/doorgroeid%20fonteinkruid</html>
+		</reference>
+		<reference author="Van den Berg M.S., W. Joosse and H. Coops" year="2003" title="A statistical model predicting the occurrence and dynamics of submerged macrophytes in shallow lakes in the Netherlands." journal="Hydrobiologia 611:623" identification=""/>
+		<reference author="Scheffer, M." year="1998" title="Ecology of Shallow Lakes." journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="" identification=""/>
+		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

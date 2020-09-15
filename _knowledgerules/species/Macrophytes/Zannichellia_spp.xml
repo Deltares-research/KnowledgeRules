@@ -122,12 +122,13 @@
 							<equation>"1/(1+exp(-(-0.836283468+subarea_factor_Zannich_visibility-2.678429997*waterdepth_summer+0.093452326*(waterdepth_summer^2)+0.397326678*waterdepth_summer*visibility-0.000580393*fetch)))"</equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Zannich_visibility" type="constant">
-									<parameter input="-0.81302272" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="1.998701637" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="0.724567841" input_cat="MHE" output="0.724567841"/>
-									<parameter input="1.733868205" input_cat="MHH" output="1.733868205"/>
-									<parameter input="2.214793065" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="1.45711916" input_cat="MIJ" output="1.45711916"/>
+									<parameter input="0.039073394" input_cat="MIJ" output="0.039073394"/>									
+									<parameter input="-0.374906525" input_cat="MBIJ" output="-0.374906525"/>
+									<parameter input="-1.444277958" input_cat="MGZ" output="-1.444277958"/>
+									<parameter input="0.572366555" input_cat="MHRDz" output="0.572366555"/>
+									<parameter input="-0.126234511" input_cat="MHE" output="-0.126234511"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>									
+									<parameter input="-0.514243155" input_cat="MHH" output="-0.514243155"/>
 								</valuesConstant>
 								<valuesScalar layername="waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="4.0"/>
@@ -191,12 +192,13 @@
 							<equation>"1/(1+exp(-(-1.596244827+subarea_factor_Zannich_extinction-1.714394462*waterdepth_summer+0.08105808*(waterdepth_summer^2)-0.263564618*waterdepth_summer*extinction+0.556030451*extinction-0.00051814*fetch)))"</equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Zannich_extinction" type="constant">
-									<parameter input="-0.81302272" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="1.998701637" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="0.724567841" input_cat="MHE" output="0.724567841"/>
-									<parameter input="1.733868205" input_cat="MHH" output="1.733868205"/>
-									<parameter input="2.214793065" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="1.45711916" input_cat="MIJ" output="1.45711916"/>
+									<parameter input="0.237390354" input_cat="MIJ" output="0.237390354"/>
+									<parameter input="-1.023355696" input_cat="MBIJ" output="-1.023355696"/>
+									<parameter input="-2.553732158" input_cat="MGZ" output="-2.553732158"/>
+									<parameter input="-0.118823867" input_cat="MHRDz" output="-0.118823867"/>
+									<parameter input="-0.463722726" input_cat="MHE" output="-0.463722726"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input="-1.376127548" input_cat="MHH" output="-1.376127548"/>
 								</valuesConstant>
 								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -238,12 +240,13 @@
 							</references>
 							<Parameters>
 								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input="1" input_cat="MBIJ" output="-0.81302272" output_cat="MBIJ" />
-									<parameter input="2" input_cat="MGZ" output="1.998701637" output_cat="MGZ"/>
-									<parameter input="3" input_cat="MHE" output="0.724567841" output_cat="MHE"/>
-									<parameter input="4" input_cat="MHH" output="1.733868205" output_cat="MHH"/>
-									<parameter input="5" input_cat="MHRDz" output="2.214793065" output_cat="MHRDz"/>
-									<parameter input="7" input_cat="MIJ" output="1.45711916" output_cat="MIJ"/>
+									<parameter input="1" input_cat="MIJ" output="0.039073394" output_cat="MIJ"/>									
+									<parameter input="2" input_cat="MBIJ" output="-0.374906525" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="-1.444277958" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="0.572366555" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="-0.126234511" output_cat="MHE"/>
+									<parameter input="6" input_cat ="MWenmid" output="0.0" output_cat ="MWenmid"/>									
+									<parameter input="7" input_cat="MHH" output="-0.514243155" output_cat="MHH"/>
 								</valuesCategorical>
 							</Parameters>
 						</Content>
@@ -276,12 +279,13 @@
 							</references>
 							<Parameters>
 								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input = "1" input_cat ="MIJ" output="-0.81302272" output_cat="MIJ"/>
-									<parameter input = "2" input_cat ="MBIJ" output="1.998701637" output_cat="MBIJ"/>
-									<parameter input = "3" input_cat ="MGZ" output="0.724567841" output_cat="MGZ"/>
-									<parameter input = "4" input_cat ="MHRDz" output="1.733868205" output_cat="MHRDz"/>
-									<parameter input = "5" input_cat ="MHE" output="2.214793065" output_cat="MHE"/>
-									<parameter input = "7" input_cat ="MHH" output="7" output_cat="MHH"/>								
+									<parameter input="1" input_cat="MIJ" output="0.237390354" output_cat="MIJ"/>
+									<parameter input="2" input_cat="MBIJ" output="-1.023355696" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="-2.553732158" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="-0.118823867" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="-0.463722726" output_cat="MHE"/>
+									<parameter input="6" input_cat ="MWenmid" output="0.0" output_cat ="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="-1.376127548" output_cat="MHH"/>							
 								</valuesCategorical>
 							</Parameters>
 						</Content>

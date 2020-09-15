@@ -5,13 +5,14 @@
 			<LatName>Myriophyllum spicatum</LatName>
 			<CommonNames>
 				<Name name="Aarvederkruid" language="NL"/>
+				<Name name="Eurasian watermilfoil" language="ENG"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
-			<System name="Markermeer doorzicht">
+			<System name="Markermeer">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
@@ -25,183 +26,283 @@
 					<Description language="NL">
 						<text>&lt;h1 id="Aarvederkruid-Myriophyllumspicatum-Dosis-effectrelaties"&gt;Dosis-effect relaties&lt;/h1&gt;&lt;p&gt;Binnen HABITAT studies voor het IJsselmeergebied is tot halverwege 2014 gebruik gemaakt van de dosis-effect relaties van het logistisch regressie model Macromij (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-3"&gt;#3&lt;/a&gt;). De validatie van deze kennisregels op het Markermeer (2006) bleek goed te zijn. Echter, de toenemende verbetering van het lichtklimaat en het effect waterplanten hebben op dit lichtklimaat, leidde in het &lt;a href="http://www.deltares.nl/nl/project/1210661/natuurlijk-er-markermeer-ijmeer" class="external-link" rel="nofollow"&gt;NMIJ project&lt;/a&gt; tot een duidelijk verschil tussen voorspeld potentieel geschikt habitat en daadwerkelijk gekoloniseerd gebied. Op basis van een mixed model benadering zijn nieuwe kennisregels opgesteld. Meer details over de methode zijn terug te vinden in (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-5"&gt;#5&lt;/a&gt;). In (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-6"&gt;#6&lt;/a&gt;) zijn de vegelijkingen getoond tussen de effecten van stuurvariabelen op het potentieel voorkomen van aarvederkruid in de Macromij benadering en in de nieuwe mixed model benadering.&lt;/p&gt;&lt;p&gt;De mixed model dosis effect relaties zijn opgesteld op basis van doorzicht en op basis van extinctie.&lt;/p&gt;&lt;p&gt;Doorzicht:&lt;br&gt; P_myrio = 1*exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte))&lt;/p&gt;&lt;p&gt;Extinctie:&lt;br&gt; P_myrio = 1*exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte))&lt;/p&gt;&lt;p&gt;HGI myrio = 1 / (1+P_myrio)&lt;/p&gt;&lt;p&gt;deelgebied = het gebiedsintercept. Dit houdt in dat een bepaald gebied een straf of bonus krijgt met betrekking tot het voorkomen van waterplanten. De straf of bonus is gebaseerd op de trainingsdataset voor de kennisregels ( - )&lt;br&gt; diepte_zom = de gemiddelde waterdiepte in de zomer (m)&lt;br&gt; doorzicht = secchi diepte (m)&lt;br&gt; extinctie = extinctiecoefficient (1/m)&lt;br&gt; strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bft of meer (m)&lt;/p&gt;&lt;p&gt;Er zijn benaderingen beschikbaar voor doorzicht en extinctie de lichtklimaatparameters niet gemeten zijn. Zie hiervoor de pagina's &lt;a href="http://publicwiki.deltares.nl/display/HBTDB/Doorzicht" class="external-link" rel="nofollow"&gt;doorzicht&lt;/a&gt; en &lt;a href="http://publicwiki.deltares.nl/display/HBTDB/Extinctie" class="external-link" rel="nofollow"&gt;extinctie&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="Aarvederkruid-Myriophyllumspicatum-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;Deze dosis-effect relaties zijn gevalideerd op het Markermeer.&lt;/p&gt;&lt;h1 id="Aarvederkruid-Myriophyllumspicatum-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)&lt;/p&gt;</text>
 					</Description>
+					<Description language="ENG">
+						<text>"To be filled"</text>
+					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="myr_spic_presence_visibility">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_myr_spic</To>
+							<To>P_myr_spic_visibility</To>
+							<To>subarea_factor_myr_spic_visibility</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="myr_spic_presence_extinction">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_myr_spic</To>
+							<To>P_myr_spic_extinction</To>
+							<To>subarea_factor_myr_spic_extinction</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<FormulaBased name="HGI_myrio">
+					<FormulaBased name="HGI_myr_spic">
 						<inputLayers>
-							<layer name="P_myrio">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>P_myrio</layer_filename>
-								<unit>-</unit>
+							<layer name="P_myr_spic">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
+								<unit>"factor"</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<description>"Likeliness of presence for the Myriophyllum spicatum species"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Berekening HGI"</description>
+							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_myrio)"</equation>
+							<equation>"1 / (1+P_myr_spic)"</equation>
 							<Parameters>
-								<valuesScalar layername="P_myrio" type="scalar">
+								<valuesScalar layername="P_myr_spic" type="scalar">
 									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_P_myrio">
-								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_P_myrio</layer_filename>
-								<unit>factor</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="HSI_myr_spic">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"HSI_myriophyllum_spicatum"</layer_filename>
+								<unit>"-"</unit>
+								<statistic>none</statistic>
+								<description>"Habitat suitability for the Myriophyllum spicatum species"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
-					<FormulaBased name="Effect_doorzicht">
+					<FormulaBased name="P_myr_spic_visibility">
 						<inputLayers>
-							<layer name="deelgebied">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>deelgebied</layer_filename>
-								<unit>categories</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="subarea_factor_myr_spic_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on visibility"</description>
 							</layer>
-							<layer name="diepte_zom">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>diepte_zom</layer_filename>
-								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="visibility">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>dm</unit>
+								<statistic>"average"</statistic>
+								<description>"Light penetration depth in the water column in decimeters"</description>
 							</layer>
-							<layer name="doorzicht">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>doorzicht</layer_filename>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
 							</layer>
-							<layer name="strijklengte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>strijklengte</layer_filename>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Effect van doorzicht op Aarvederkruid"</description>
+							<description>"Calculate Myriophyllum spicatum presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-3.27857109+deelgebied-0.722531165*diepte_zom-0.223865427*(diepte_zom^2)+1.850463753*diepte_zom*doorzicht-0.000108748*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-3.27857109+subarea_factor_myr_spic_visibility-0.722531165*waterdepth_summer-0.223865427*(waterdepth_summer^2)+1.850463753*waterdepth_summer*visibility-0.000108748*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername="deelgebied" type="constant">
-									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="2" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="3" input_cat="MHE" output="0.724567841"/>
-									<parameter input="4" input_cat="MHH" output="1.733868205"/>
-									<parameter input="5" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="6" input_cat="MIJ" output="1.45711916"/>
+								<valuesConstant layername = "subarea_factor_myr_spic_visibility" type="constant">
+									<parameter input= "-1.764671097" input_cat ="MIJ" output="-1.764671097"/>
+									<parameter input= "-1.63963648" input_cat ="MBIJ" output="-1.63963648"/>
+									<parameter input= "3.212869897" input_cat ="MGZ" output="3.212869897"/>
+									<parameter input= "2.099800348" input_cat ="MHRDz" output="2.099800348"/>									
+									<parameter input= "0.472906793" input_cat ="MHE" output="0.472906793"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input= "0.106872035" input_cat ="MHH" output="0.106872035"/>
 								</valuesConstant>
-								<valuesScalar layername="diepte_zom" type="scalar">
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername="doorzicht" type="scalar">
-									<parameter min_input="0" max_input="3.5"/>
+								<valuesScalar layername = "visibility" type="scalar">
+									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername="strijklengte" type="scalar">
+								<valuesScalar layername = "fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_strijklengte">
-								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_strijklengte</layer_filename>
-								<unit>factor</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="P_myr_spic">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for the Myriophyllum spicatum species"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
-					<FormulaBased name="Effect_extinctie">
+					<FormulaBased name="P_myr_spic_extinction">
 						<inputLayers>
-							<layer name="deelgebied">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>deelgebied</layer_filename>
-								<unit>categories</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="subarea_factor_myr_spic_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on extinction"</description>
 							</layer>
-							<layer name="diepte_zom">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>diepte_zom</layer_filename>
+							<layer name="extinction">
+								<parameter_cat>"Water clearity"</parameter_cat>
+								<layer_filename>visibility</layer_filename>
+								<unit>Kd</unit>
+								<statistic>"average"</statistic>
+								<description>"Extinction in the water column in Kd"</description>
+							</layer>
+							<layer name="waterdepth_summer">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in meters"</description>
 							</layer>
-							<layer name="extinctie">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>extinctie</layer_filename>
-								<unit>m-1</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
-							</layer>
-							<layer name="strijklengte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>strijklengte</layer_filename>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
 								<unit>m</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-							<description>"Effect van extinctie op Aarvederkruid"</description>
+							<description>"Calculate Myriophyllum spicatum presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-6.35471533+deelgebied+1.237471255*diepte_zom-0.160502853*(diepte_zom^2)-0.469718771*diepte_zom*extinctie+0.485265559*extinctie-0.000101317*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-6.35471533+subarea_factor_Chara_extinction+1.237471255*waterdepth_summer-0.160502853*(waterdepth_summer^2)-0.469718771*waterdepth_summer*extinction+0.485265559*extinction-0.000101317*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername="deelgebied" type="constant">
-									<parameter input="1" input_cat="MBIJ" output="-0.81302272"/>
-									<parameter input="2" input_cat="MGZ" output="1.998701637"/>
-									<parameter input="3" input_cat="MHE" output="0.724567841"/>
-									<parameter input="4" input_cat="MHH" output="1.733868205"/>
-									<parameter input="5" input_cat="MHRDz" output="2.214793065"/>
-									<parameter input="6" input_cat="MIJ" output="1.45711916"/>
+								<valuesConstant layername = "subarea_factor_Chara_extinction" type="constant">
+									<parameter input = "-1.824219126" input_cat ="MIJ" output="-1.824219126"/>
+									<parameter input = "-1.571804689" input_cat ="MBIJ" output="-1.571804689"/>
+									<parameter input = "3.92010267" input_cat ="MGZ" output="3.92010267"/>
+									<parameter input = "2.554598687" input_cat ="MHRDz" output="2.554598687"/>									
+									<parameter input = "0.635048234" input_cat ="MHE" output="0.635048234"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input = "0.532617294" input_cat ="MHH" output="0.532617294"/>
 								</valuesConstant>
-								<valuesScalar layername="diepte_zom" type="scalar">
+								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername="extinctie" type="scalar">
+								<valuesScalar layername = "extinction" type="scalar">
 									<parameter min_input="0" max_input="10"/>
 								</valuesScalar>
-								<valuesScalar layername="strijklengte" type="scalar">
+								<valuesScalar layername = "fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="HSI_strijklengte">
-								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_strijklengte</layer_filename>
-								<unit>factor</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+							<layer name="P_myr_spic">
+								<parameter_cat>Vegetation</parameter_cat>
+								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Likeliness of presence for the Myriophyllum spicatum species"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
+					<MultipleReclassification name="subarea_factor_myr_spic_visibility">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Myriophyllum spicatum prediction based on visibility"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input= "1" input_cat ="MIJ" output="-1.764671097"  output_cat ="MIJ"/>
+									<parameter input= "2" input_cat ="MBIJ" output="-1.63963648"  output_cat ="MBIJ"/>
+									<parameter input= "3" input_cat ="MGZ" output="3.212869897"  output_cat ="MGZ"/>
+									<parameter input= "4" input_cat ="MHRDz" output="2.099800348"  output_cat ="MHRDz"/>									
+									<parameter input= "5" input_cat ="MHE" output="0.472906793"  output_cat ="MHE"/>
+									<parameter input= "6" input_cat ="MWenmid" output="0.0"  output_cat ="MWenmid"/>
+									<parameter input= "7" input_cat ="MHH" output="0.106872035"  output_cat ="MHH"/>
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_myr_spic_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on visibility"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+					<MultipleReclassification name="subarea_factor_myr_spic_extinction">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Myriophyllum spicatum prediction based on extinction"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input = "1" input_cat ="MIJ" output="-1.824219126" output_cat ="MIJ"/>
+									<parameter input = "2" input_cat ="MBIJ" output="-1.571804689" output_cat ="MBIJ"/>
+									<parameter input = "3" input_cat ="MGZ" output="3.92010267"  output_cat ="MGZ"/>
+									<parameter input = "4" input_cat ="MHRDz" output="2.554598687"  output_cat ="MHRDz"/>									
+									<parameter input = "5" input_cat ="MHE" output="0.635048234"  output_cat ="MHE"/>
+									<parameter input = "6" input_cat ="MWenmid" output="0.0"  output_cat ="MWenmid"/>
+									<parameter input = "7" input_cat ="MHH" output="0.532617294" output_cat ="MHH"/>								
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_myr_spic_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on extinction"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
@@ -209,6 +310,9 @@
 	<TopicDescription>
 		<Description language="NL">
 			<text>&lt;h1 id="Aarvederkruid-Myriophyllumspicatum-Habitatbeschrijving"&gt;Habitatbeschrijving&lt;/h1&gt;&lt;p&gt;Aarvederkruid komt zowel in zoet als in brak voedselrijk water voor. De plant komt van nature voor in Eurazië en heeft zich daarvandaan verspreid naar Noord-Amerika waar het een invasieve soort is geworden. De plant komt over het algemeen voor op een diepte van 0,5 tot 3,5 m op een bodem van zand, leem, zavel, veen of klei. De groeiplaatsen waar ze gevonden kunnen worden zijn: kleisloten, afgravingen, duinplassen, laagveenplassen en in spoorsloten. Aarvederkruid is vrij algemeen in het westen van Nederland (maar vrij zeldzaam in Zeeland), in het noordelijk zeekleigebied, het rivierengebied en in stedelijke omgeving. Elders vrij zeldzaam tot zeldzaam (&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-1"&gt;#1&lt;/a&gt;,&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Aarvederkruid+-+Myriophyllum+spicatum#Aarvederkruid-Myriophyllumspicatum-2"&gt;#2&lt;/a&gt;).&lt;/p&gt;</text>
+		</Description>
+		<Description language="ENG">
+			<text>"To be filled"</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>

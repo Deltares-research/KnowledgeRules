@@ -193,9 +193,9 @@
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-6.35471533+subarea_factor_Chara_extinction+1.237471255*waterdepth_summer-0.160502853*(waterdepth_summer^2)-0.469718771*waterdepth_summer*extinction+0.485265559*extinction-0.000101317*fetch)))"</equation>
+							<equation>"1/(1+exp(-(-6.35471533+subarea_factor_myr_spic_extinction+1.237471255*waterdepth_summer-0.160502853*(waterdepth_summer^2)-0.469718771*waterdepth_summer*extinction+0.485265559*extinction-0.000101317*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername = "subarea_factor_Chara_extinction" type="constant">
+								<valuesConstant layername = "subarea_factor_myr_spic_extinction" type="constant">
 									<parameter input = "-1.824219126" input_cat ="MIJ" output="-1.824219126"/>
 									<parameter input = "-1.571804689" input_cat ="MBIJ" output="-1.571804689"/>
 									<parameter input = "3.92010267" input_cat ="MGZ" output="3.92010267"/>

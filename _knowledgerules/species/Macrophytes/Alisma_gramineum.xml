@@ -219,9 +219,9 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1*exp(-(-4.79567066+deelgebied-1.810776978*diepte_zom+0.042890288*(diepte_zom^2)+0.425244597*diepte_zom*extinctie-0.866421971*extinctie-0.000888816*strijklengte))"</equation>
+							<equation>"1*exp(-(-4.79567066+subarea_factor_ali_gra_extinction-1.810776978*waterdepth_summer+0.042890288*(waterdepth_summer^2)+0.425244597*waterdepth_summer*extinction-0.866421971*extinction-0.000888816*fetch))"</equation>
 							<Parameters>
-								<valuesConstant layername = "subarea_factor_Chara_extinction" type="constant">
+								<valuesConstant layername = "subarea_factor_ali_gra_extinction" type="constant">
 									<parameter input ="-0.457302559" input_cat ="MIJ" output="-0.457302559"/>
 									<parameter input = "-0.069980559" input_cat ="MBIJ" output="-0.069980559"/>
 									<parameter input = "-0.342519692" input_cat ="MGZ" output="-0.342519692"/>

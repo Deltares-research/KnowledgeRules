@@ -51,7 +51,7 @@
 					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<FormulaBased name="HGI_filam_algae ">
+					<FormulaBased name="HGI_filam_algae">
 						<inputLayers>
 							<layer name="P_filam_algae">
 								<parameter_cat>Vegetation</parameter_cat>
@@ -123,9 +123,9 @@
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-1.009677173+deelgebied-1.488380475*diepte_zom+0.062599049*(diepte_zom^2)-0.019458869*diepte_zom*doorzicht-0.0000949*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-1.009677173+subarea_factor_filam_algae_visibility-1.488380475*waterdepth_summer+0.062599049*(waterdepth_summer^2)-0.019458869*waterdepth_summer*visibility-0.0000949*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername = "subarea_factor_tot_cover_visibility" type="constant">
+								<valuesConstant layername = "subarea_factor_filam_algae_visibility" type="constant">
 									<parameter input="-0.050028014" input_cat="MIJ" output="-0.050028014"/>
 									<parameter input="0.481107461" input_cat="MBIJ" output="0.481107461"/>
 									<parameter input="-1.70762488" input_cat="MGZ" output="-1.70762488"/>
@@ -194,7 +194,7 @@
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-0.276884752+deelgebied-1.323829778*diepte_zom+0.058226538*(diepte_zom^2)-0.073627804*diepte_zom*extinctie-0.0000928*strijklengte)))"</equation>
+							<equation>"1/(1+exp(-(-0.276884752+subarea_factor_filam_algae_extinction-1.323829778*waterdepth_summer+0.058226538*(waterdepth_summer^2)-0.073627804*waterdepth_summer*extinction-0.0000928*fetch)))"</equation>
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_filam_algae_extinction" type="constant">
 									<parameter input = "0.116717843" input_cat ="MIJ" output="0.116717843"/>		

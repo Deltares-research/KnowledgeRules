@@ -69,7 +69,7 @@
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(slibwater))"</equation>
+							<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(inorganic_suspeded_solids))"</equation>
 							<Parameters>
 								<valuesScalar layername = "chlorophylla" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -113,7 +113,7 @@
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(slibwater))"</equation>
+							<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(inorganic_suspeded_solids))"</equation>
 							<Parameters>
 								<valuesScalar layername = "chlorophylla" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>

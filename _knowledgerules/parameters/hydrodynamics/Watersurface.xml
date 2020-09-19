@@ -55,7 +55,7 @@
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"scalar(if(waterdepth_summer>0;1;0))"</equation>
+							<equation>"scalar(if(waterdepth_summer>0,1,0))"</equation>
 							<Parameters>
 								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="30.0"/>

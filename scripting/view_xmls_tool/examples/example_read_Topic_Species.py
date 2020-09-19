@@ -7,7 +7,7 @@ from autecology_xml import AutecologyXML
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Birds/Phalacrocorax carbo.xml")
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Molluscs/Dreissena_polymorpha.xml")
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Nitellopsis obtusa.xml")
-xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Zannichellia.xml")
+xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Myriophyllum_spicatum.xml")
 xmltest._readxml()
 print(type(xmltest.xmlroot))
 

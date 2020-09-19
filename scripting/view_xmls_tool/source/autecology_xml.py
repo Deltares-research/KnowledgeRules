@@ -415,7 +415,7 @@ class AutecologyXML(_File):
 				raise RuntimeError("Multiple occurances of if in formula : "+ formula_text +\
 					" This has not yet been enabled in the code.")
 
-			formula_interpretation_split = formula_interpretation.split(";")
+			formula_interpretation_split = formula_interpretation.split(",")
 		
 			if(len(formula_interpretation_split) == 3):
 				formula_interpretation = formula_interpretation_split[0].replace("if(",formula_interpretation_split[1] + " if ") +\
@@ -919,7 +919,13 @@ class AutecologyXML(_File):
 				name = fromlink.get("name")
 				label = fromlink.find(self.make_find(["label"])).text
 				equation = fromlink.find(self.make_find(["equation"])).text
-				to = [tolink.text.replace('"','') for tolink in fromlink.findall(self.make_find(["To"]))]
+				#make sure knowledge rules are placed at the bottom of the To's
+				if(equation == "knowledge_rule"):
+					ToLinks = fromlink.findall(make_find(["To"]))
+					knowledge_ruleTo = ToLinks[0].text.replace('"','')
+					to = [tolink.text.replace('"','') for tolink in ToLinks[1:]] + [knowledge_ruleTo]
+				else:
+					to = [tolink.text.replace('"','') for tolink in fromlink.findall(make_find(["To"]))]
 				from_overview.append(OrderedDict([("From_name",name),("label",label),("equation",equation),("To_names",to)]))
 			syfd_overview.append(OrderedDict([("diagram_name",flow_diagram_name),("Links",from_overview)]))
 

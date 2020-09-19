@@ -1,5 +1,6 @@
 from Libraries.StandardFunctions import *
 from Libraries.HabitatFunctions import *
+import DelftTools.Shell.Core.Workflow
 
 from log4net import LogManager as _LogManager
 
@@ -60,7 +61,16 @@ def make_flowdiagram_dict(root,systemname):
 	type_tag_applicable_modeltype = [f for f in type_tag_modeltype if(modeltypename in f.get("name"))]
 	type_tag_system = type_tag_applicable_modeltype[0].findall(make_find(["System"]))
 	type_tag_applicable_system = [e for e in type_tag_system if(systemname in e.get("name"))]
-	system_root = type_tag_applicable_system[0]
+	
+	if(len(type_tag_applicable_system) > 1):
+		_AutecologyXMLLogger.Error("System name found multiple times :" + systemname + ".")
+	
+	elif(len(type_tag_applicable_system) == 0):
+		_AutecologyXMLLogger.Error("System name not found :" + systemname + ".")	
+	
+	else:	
+		system_root = type_tag_applicable_system[0]
+	
 
 	# get system flow diagrams type tag
 	type_tag_systemflowdiagram = system_root.find(make_find(["SystemFlowDiagrams"]))
@@ -74,7 +84,13 @@ def make_flowdiagram_dict(root,systemname):
 			fromname = fromlink.get("name")
 			label = fromlink.find(make_find(["label"])).text
 			equation = fromlink.find(make_find(["equation"])).text
-			to = [tolink.text.replace('"','') for tolink in fromlink.findall(make_find(["To"]))]
+			#make sure knowledge rules are placed at the bottom of the To's
+			if(equation == "knowledge_rule"):
+				ToLinks = fromlink.findall(make_find(["To"]))
+				knowledge_ruleTo = ToLinks[0].text.replace('"','')
+				to = list(reversed([tolink.text.replace('"','') for tolink in ToLinks[1:]])) + [knowledge_ruleTo]
+			else:
+				to = list(reversed([tolink.text.replace('"','') for tolink in fromlink.findall(make_find(["To"]))]))
 			from_overview.append(OrderedDict([("from", fromname),("label",label),("equation",equation),("to",to)]))
 		syfd_overview.append(OrderedDict([("name",flow_diagram_name),("structure",from_overview)]))
 
@@ -91,7 +107,7 @@ def make_knowledgerules_dict(root,systemname):
 	modeltypename = "HSI"
 
 	# get species type tag
-	type_tags =  root.findall(make_find(["Topic","Species"])) +  root.findall(make_find(["Topic","WFDIndicator"])) +\
+	type_tags =  root.findall(make_find(["Topic","Parameter"])) + root.findall(make_find(["Topic","Species"])) +  root.findall(make_find(["Topic","WFDIndicator"])) +\
 		 root.findall(make_find(["Topic","Habitats"]))
 
 	type_tag_root =  type_tags[0]
@@ -105,7 +121,9 @@ def make_knowledgerules_dict(root,systemname):
 
 	# 1. Make repsonse curves dictionary
 	autecology_overview = {}
-	if(type_tag_root.tag == make_find(["Species"])):
+	if(type_tag_root.tag == make_find(["Parameter"])):
+		autecology_overview["Topic"] = "Parameter"
+	elif(type_tag_root.tag == make_find(["Species"])):
 		autecology_overview["Topic"] = "Species"
 		autecology_overview["EoLCode"] = type_tag_root.find(make_find(['EoLpagenr'])).text
 		autecology_overview["latinname"] = type_tag_root.find(make_find(['LatName'])).text
@@ -286,28 +304,67 @@ def get_flow_diagram_equations(flow_diagram_overview,flow_diagram_name):
 
 	return(equations)
 
-def make_hyrarchical_model_structure(topic_name, structure,equations):
+def make_hyrarchical_model_structure(model_name, topic_name, structure,equations, topic_model_list = None):
 	#2. Setup model structure
 	### !!! NEEDS TO BE AUTOMISED BASED ON FlowDiagram
+	if(topic_model_list == None):
+		topic_model_list = []
+
+	#make content related structure
 	model_list = []
 	HSI_list = []
 	build_struct = {}
 	struct_index = {}
 
-	# Create main composite model
+	#Create main composite model (from now on model_list[nr + 2] is
+	#the current entry as two were added manually)
+	if(len(topic_model_list) > 0):
+		topic_model_list_names = [cur_model.Name for cur_model in\
+		 topic_model_list if(isinstance(cur_model, DelftTools.Shell.Core.Workflow.CompositeModel))]
+	else:
+		topic_model_list_names = []
+
+	# Create main composite model if it does not exist yet, else get its position
+	if(model_name in topic_model_list_names):
+		
+		#if main composite model already exists get index
+		#TEST
+		#_AutecologyXMLLogger.Warn("list :" + str([cur_model.Name for i, cur_model in enumerate(topic_model_list) ]))
+		_AutecologyXMLLogger.Warn("type :" + str([type(cur_model) for i, cur_model in enumerate(topic_model_list)]))
+		
+				
+		topic_model_list_position_list = [i for i, cur_model in enumerate(topic_model_list) if(cur_model.Name == model_name)]
+		first = False
+
+		#give an error if it is not one index
+		if(len(topic_model_list_position_list) > 1):
+			_AutecologyXMLLogger.Error("Doubling composite models with topic name found :" + model_name + ".")
+		else:
+			topic_model_list_position = topic_model_list_position_list[0]
+			model_list.append(topic_model_list[topic_model_list_position])
+
+	else:
+		model_list.append(CreateModel(HabitatModelType.CompositeModel))
+		model_list[0].Name = model_name
+		first = True
+
+	
+	#add the topic name
 	model_list.append(CreateModel(HabitatModelType.CompositeModel))
-	model_list[0].Name = topic_name
+	model_list[1].Name = topic_name
+
+	model_list[0].Activities.Add(model_list[1])
 
 	count_HSI_nr = 0
 
 	for nr, key in enumerate(structure.keys()):
 		build_struct[key] = structure[key]		
-		struct_index[key] = nr + 1
+		struct_index[key] = nr + 2
 		if(nr == 0):
 			# Create composite model and add to main
 			model_list.append(CreateModel(HabitatModelType.CompositeModel))
-			model_list[nr + 1].Name = key
-			model_list[0].Activities.Add(model_list[nr + 1])
+			model_list[nr + 2].Name = key
+			model_list[nr + 1].Activities.Add(model_list[nr + 2])
 
 		else:
 			#get higher composite model
@@ -321,23 +378,28 @@ def make_hyrarchical_model_structure(topic_name, structure,equations):
 
 			# Create composite model and add to main
 			model_list.append(CreateModel(HabitatModelType.CompositeModel))
-			model_list[nr + 1].Name = key
-			model_list[index_comp].Activities.Add(model_list[nr + 1])
+			model_list[nr + 2].Name = key
+			model_list[index_comp].Activities.Add(model_list[nr + 2])
 
 		#make formula based calculation
 		if(equations[key] == "knowledge_rule"):
 			continue
 		else:
 			HSI_list.append(CreateModel(HabitatModelType.FormuleBased))
-			HSI_list[count_HSI_nr].Name = "HSI_" + model_list[nr + 1].Name
+			HSI_list[count_HSI_nr].Name = "HSI_" + model_list[nr + 2].Name
 			HSI_list[count_HSI_nr].InputGridCoverages.Clear() # Remove default grid 
 			HSI_list[count_HSI_nr].Formulas.Clear() # remove output grid
 
 			count_HSI_nr = count_HSI_nr + 1
 
-	# Add main model to project
-	AddToProject(model_list[0])
-	return((model_list, HSI_list))
+	#show the results
+	if(first):
+		topic_model_list.append(model_list[0])
+		AddToProject(model_list[0])
+	else:
+		pass
+
+	return((model_list, HSI_list, topic_model_list))
 
 
 def make_knowledgerule_models(structure,response_curves_overview, model_list):
@@ -370,7 +432,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 				#add to correct model
 				for nr, key in enumerate(structure.keys()):
 					if(knowledgerules_list[nr2].Name in structure[key]):
-						model_list[nr + 1].Activities.Add(knowledgerules_list[nr2])
+						model_list[nr + 2].Activities.Add(knowledgerules_list[nr2])
 
 			elif((response_curves_overview[knwlrl2]["type"] == "categorical") or\
 				(response_curves_overview[knwlrl2]["type"] == "ranges") or\
@@ -383,7 +445,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 				#add to correct model
 				for nr, key in enumerate(structure.keys()):
 					if(knowledgerules_list[nr2].Name in structure[key]):
-						model_list[nr + 1].Activities.Add(knowledgerules_list[nr2])
+						model_list[nr + 2].Activities.Add(knowledgerules_list[nr2])
 
 			else:
 				_AutecologyXMLLogger.Error("Current responsecurve type is not yet available :" +\
@@ -398,7 +460,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 			#add to correct model
 			for nr, key in enumerate(structure.keys()):
 				if(knowledgerules_list[nr2].Name in structure[key]):
-					model_list[nr + 1].Activities.Add(knowledgerules_list[nr2])
+					model_list[nr + 2].Activities.Add(knowledgerules_list[nr2])
 
 		elif(knwlrl_categorie2 == "MultipleReclassification"):
 			knowledgerules_list.append(CreateModel(HabitatModelType.MultiTableReclassification))
@@ -408,7 +470,7 @@ def make_knowledgerule_models(structure,response_curves_overview, model_list):
 			#add to correct model
 			for nr, key in enumerate(structure.keys()):
 				if(knowledgerules_list[nr2].Name in structure[key]):
-					model_list[nr + 1].Activities.Add(knowledgerules_list[nr2])
+					model_list[nr + 2].Activities.Add(knowledgerules_list[nr2])
 
 		else:
 			_AutecologyXMLLogger.Error("Current knowledge rule categorie is not yet available :" +\
@@ -423,12 +485,12 @@ def add_HSI_collection_models(structure, equations, model_list, HSI_list):
 		if(equations[key] == "knowledge_rule"):
 			continue
 		else:
-			model_list[nr + 1].Activities.Add(HSI_list[count_HSI_nr])
+			model_list[nr + 2].Activities.Add(HSI_list[count_HSI_nr])
 			count_HSI_nr = count_HSI_nr + 1
 
 	return((model_list,HSI_list))
 
-def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules_list):
+def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules_list, topic_model_list):
 	#5. fill  hsi models
 	input_list = []
 	output_list = []	
@@ -438,68 +500,120 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 
 	output_dict = OrderedDict()
 
+	#Collect previous loaded or created layers that could be input.
+	#Stacked for loops in list work as follows: [word for sentence in text for word in sentence]
+	topic_model_list_models = [model for model in\
+		 topic_model_list if(not(isinstance(model, DelftTools.Shell.Core.Workflow.CompositeModel)))]
+
+	previous_models_inputlayernames = [inputgrid.Name for previous_model in topic_model_list_models for inputgrid in previous_model.InputGridCoverages ]
+	previous_models_inputlayernames_index = [[nr_model, nr_inputlayer] for nr_model, previous_model in\
+											 enumerate(topic_model_list_models) for nr_inputlayer, inputgrid in\
+											 enumerate(previous_model.InputGridCoverages) ]
+
+	previous_models_outputlayernames = [outputgrid.Name for previous_model in topic_model_list_models for\
+											 outputgrid in previous_model.OutputGridCoverages ]
+	previous_models_outputlayernames_index = [[nr_model, nr_outputlayer] for nr_model, previous_model in\
+											 enumerate(topic_model_list_models) for nr_outputlayer, outputgrid in\
+											 enumerate(previous_model.OutputGridCoverages) ]
+
 	#reverse list to run lowest level input first
-	revknowledgerules_list = list(reversed(knowledgerules_list))
-	for nr3, revknwlrl3 in enumerate(revknowledgerules_list):
+	knowledgerules_list = list(knowledgerules_list)
+	for nr3, knwlrl3 in enumerate(knowledgerules_list):
 
 		#get knowledgerule categorie
-		knwlrl_categorie3 =  response_curves_overview[revknwlrl3.Name]["KnowledgeruleCategorie"]
+		knwlrl_categorie3 =  response_curves_overview[knwlrl3.Name]["KnowledgeruleCategorie"]
 
 		#load input if file exists (currently only ASCI files)
-		inputlayers = response_curves_overview[revknwlrl3.Name]["inputLayers"]
-		outputlayers = response_curves_overview[revknwlrl3.Name]["outputLayers"]
+		inputlayers = response_curves_overview[knwlrl3.Name]["inputLayers"]
+		outputlayers = response_curves_overview[knwlrl3.Name]["outputLayers"]
 		
 		#collected all outputlayers created for potential input in next model
 		outputnames = [rn for rn in output_dict.keys()]
 		
 		#Create input layers
-		for nr, layername in enumerate(inputlayers.keys()):
-			layer_details = inputlayers[layername]
-			knwlrl_layerfilename3 = layer_details["layer_filename"]
+		for nr, input_layername in enumerate(inputlayers.keys()):
+			input_layer_details = inputlayers[input_layername]
+			knwlrl_layerfilename3 = input_layer_details["layer_filename"]
 
-
-			if(layername in outputnames):
+			if(input_layername in outputnames):
 				#load layer from previous calculation
-				index_nr = outputnames.index(layername)
+				index_nr = outputnames.index(input_layername)
 				input_list.append(CreateEmptyMap())
-				revknowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
+				knowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
+			
+			# # CORRECTION : CURRENT SOFTWARE ONLY LINKING POSSIBLE WITH OTPUTGRIDS
+			# elif(layername in previous_models_inputlayernames):
+			# 	#load layer from previous inputlayer of model
+			# 	index_nr_pre_in = previous_models_inputlayernames.index(layername)
+			# 	input_list.append(CreateEmptyMap())
+			# 	knowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
+
+			elif(input_layername in previous_models_outputlayernames):
+				#load layer from previous outputlayer of model
+				index_nr_pre_out = previous_models_outputlayernames.index(input_layername)
+				input_list.append(CreateEmptyMap())
+				knowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
 
 			elif(os.path.exists(os.path.join(InputDir, knwlrl_layerfilename3 + ".asc"))):
 				#load layer from ascii file
 				input_list.append(ImportMapFromFile(os.path.join(InputDir, knwlrl_layerfilename3 + ".asc")))
-				revknowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
+				knowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
 
 			else:
 				#leave layer empty
 				input_list.append(CreateEmptyMap())
-				revknowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
+				knowledgerules_list[nr3].InputGridCoverages.Add(input_list[count_input])
 				_AutecologyXMLLogger.Warn("Automatic layer loading failed : " + str(knwlrl_layerfilename3) + ".asc "+\
-							  " not found for knowledgerule " + str(revknwlrl3.Name) + ". Load layer manually or remove rule.")
+							  " not found for knowledgerule " + str(knwlrl3.Name) + ". Load layer manually or remove rule.")
 
-			
-			revknowledgerules_list[nr3].InputGridCoverages[nr].Name = "_" +  layername
+			#Name the newly added input grid
+			knowledgerules_list[nr3].InputGridCoverages[nr].Name =  input_layername
 
 			#Link layers if already in outputs
-			if(layername in outputnames):
-				for nr_made, knrl_made in enumerate(revknowledgerules_list):
+			if(input_layername in outputnames):
+				for nr_made, knrl_made in enumerate(knowledgerules_list):
 					for nr_outputgrid_made, outputgrid_made in enumerate(knrl_made.OutputGridCoverages):
-						if(outputgrid_made.Name == revknowledgerules_list[nr3].InputGridCoverages[nr].Name):
-							LinkMaps(revknowledgerules_list[nr_made],\
-							 revknowledgerules_list[nr_made].OutputGridCoverages[nr_outputgrid_made].Name,\
-							 revknowledgerules_list[nr3],\
-							 revknowledgerules_list[nr3].InputGridCoverages[nr].Name)
+						if(outputgrid_made.Name == knowledgerules_list[nr3].InputGridCoverages[nr].Name):
+							LinkMaps(knowledgerules_list[nr_made],\
+							 knowledgerules_list[nr_made].OutputGridCoverages[nr_outputgrid_made].Name,\
+							 knowledgerules_list[nr3],\
+							 knowledgerules_list[nr3].InputGridCoverages[nr].Name)
 
+			# #Link layers if already in previous model inputs
+			# # CORRECTION : CURRENT SOFTWARE ONLY LINKING POSSIBLE WITH OTPUTGRIDS
+			# elif(layername in previous_models_inputlayernames):		
+			# 	index_values = previous_models_inputlayernames_index[index_nr_pre_in]
+			# 	index_model = index_values[0]
+			# 	index_layer = index_values[1]
+			# 	LinkMaps(topic_model_list[index_model],\
+			# 		 topic_model_list[index_model].InputGridCoverages[index_layer].Name,\
+			# 		 knowledgerules_list[nr3],\
+			# 		 knowledgerules_list[nr3].InputGridCoverages[nr].Name)
+
+			#Link layers if already in previous model outputs
+			elif(input_layername in previous_models_outputlayernames):
+				index_values = previous_models_outputlayernames_index[index_nr_pre_out]
+				index_model = index_values[0]
+				index_layer = index_values[1]
+				LinkMaps(topic_model_list_models[index_model],\
+					 topic_model_list_models[index_model].OutputGridCoverages[index_layer].Name,\
+					 knowledgerules_list[nr3],\
+					 knowledgerules_list[nr3].InputGridCoverages[nr].Name)
+			else:
+				pass
+
+			#count the input layers processed
 			count_input = count_input + 1
 
 		#load knowledge rule to HSI model
 		if(knwlrl_categorie3 == "ResponseCurve"):
-			if(response_curves_overview[revknwlrl3.Name]["type"] == "scalar"):
-				for line in response_curves_overview[revknwlrl3.Name]["rule"]:
+			if(response_curves_overview[knwlrl3.Name]["type"] == "scalar"):
+				for line in response_curves_overview[knwlrl3.Name]["rule"]:
 					#add scalar value and HSI value
-					AddBrokenLinearReclassificationRow(revknowledgerules_list[nr3], float(line[0]), float(line[1]))
+					AddBrokenLinearReclassificationRow(knowledgerules_list[nr3], float(line[0]), float(line[1]))
 
-			elif(response_curves_overview[revknwlrl3.Name]["type"] == "categorical"):
-				for nr4, line in enumerate(response_curves_overview[revknwlrl3.Name]["rule"]):
+			elif(response_curves_overview[knwlrl3.Name]["type"] == "categorical"):
+				for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["rule"]):
 					
 					#create range input
 					if(nr4 == 0):
@@ -508,10 +622,10 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 						make_string = "<" + str(line[0]) + ", "+ str(line[0]) + "]"
 
 					#add range / categorical value and HSI value	 
-					AddMultiTableReclassificationRow(revknowledgerules_list[nr3], [make_string], float(line[2]), description = str(line[2]))
+					AddMultiTableReclassificationRow(knowledgerules_list[nr3], [make_string], float(line[2]), description = str(line[2]))
 
-			elif(response_curves_overview[revknwlrl3.Name]["type"] == "ranges"):
-				for nr4, line in enumerate(response_curves_overview[revknwlrl3.Name]["rule"]):
+			elif(response_curves_overview[knwlrl3.Name]["type"] == "ranges"):
+				for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["rule"]):
 					
 					#create range input
 					if(nr4 == 0):
@@ -520,10 +634,10 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 						make_string = "<" + str(line[0]) + ", "+ str(line[1]) + "]"
 
 					#add range / categorical value and HSI value	 
-					AddMultiTableReclassificationRow(revknowledgerules_list[nr3], [make_string], float(line[2]), description = str(""))
+					AddMultiTableReclassificationRow(knowledgerules_list[nr3], [make_string], float(line[2]), description = str(""))
 
-			elif(response_curves_overview[revknwlrl3.Name]["type"] == "range / categorical"):
-				for nr4, line in enumerate(response_curves_overview[revknwlrl3.Name]["rule"]):
+			elif(response_curves_overview[knwlrl3.Name]["type"] == "range / categorical"):
+				for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["rule"]):
 					
 					#create range input
 					if(nr4 == 0):
@@ -532,30 +646,27 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 						make_string = "<" + str(line[0]) + ", "+ str(line[1]) + "]"
 
 					#add range / categorical value and HSI value	 
-					AddMultiTableReclassificationRow(revknowledgerules_list[nr3], [make_string], float(line[3]), description = str(line[2]))
+					AddMultiTableReclassificationRow(knowledgerules_list[nr3], [make_string], float(line[3]), description = str(line[2]))
 
 			else:
 				_AutecologyXMLLogger.Warn("Current responsecurve type is not yet available :" +\
-						response_curves_overview[revknwlrl3.Name]["type"] + ". "+\
+						response_curves_overview[knwlrl3.Name]["type"] + ". "+\
 						"Classification was not added")
 
 
 		elif(knwlrl_categorie3 == "FormulaBased"):
 			
 			#only for formula based a output grid is directly needed
-			cur_output_layer_name = response_curves_overview[revknwlrl3.Name]["outputLayers"].keys()[0]
+			cur_output_layer_name = response_curves_overview[knwlrl3.Name]["outputLayers"].keys()[0]
 			
-			equation_text =  response_curves_overview[revknwlrl3.Name]["equation_text"]
-			revknowledgerules_list[nr3].Formulas.Add(CreateEquation(cur_output_layer_name, revknowledgerules_list[nr3], str(equation_text)))
+			equation_text =  response_curves_overview[knwlrl3.Name]["equation_text"]
+			knowledgerules_list[nr3].Formulas.Add(CreateEquation(cur_output_layer_name, knowledgerules_list[nr3], str(equation_text)))
 			
-			for nr4, line in enumerate(response_curves_overview[revknwlrl3.Name]["parameters"]):
+			for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["parameters"]):
 				if(line["type"] == "scalar"):
 					pass
 				elif(line["type"] == "constant"):
-					_AutecologyXMLLogger.Warn("Current formulabased type is not yet available :" +\
-						str(line["type"]) + ". "+\
-						"Manual translation is required")
-
+					pass
 				else:
 					_AutecologyXMLLogger.Warn("Current formulabased type is not yet available :" +\
 						str(line["type"]) + ". "+\
@@ -565,8 +676,11 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 			#check if all are range / categorical and collect unique output nrs
 			output_values = []
 			output_values_df = []
-			for nr4, line in enumerate(response_curves_overview[revknwlrl3.Name]["parameters"]):
+			for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["parameters"]):
 				if(line["type"] == "range / categorical"):					
+					for subline in line["data"]:
+						output_values.append([subline[3],str(subline[4])])
+				elif(line["type"] == "categorical"):
 					for subline in line["data"]:
 						output_values.append([subline[3],str(subline[4])])
 				else:
@@ -582,7 +696,7 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 
 			output_values_df = copy.deepcopy(output_values_ls)
 			for nr_ls, value_ls in enumerate(output_values_ls):
-				for nr4, line in enumerate(response_curves_overview[revknwlrl3.Name]["parameters"]):
+				for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["parameters"]):
 					in_subline = False
 					for subline in line["data"]:
 						if(value_ls[0] == subline[3]):
@@ -604,7 +718,7 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 			for input_line in output_values_df:
 				#add range / categorical value and HSI value
 				reclassification_settings = input_line[2:len(input_line)]	 
-				AddMultiTableReclassificationRow(revknowledgerules_list[nr3], reclassification_settings, input_line[0], description = input_line[1])
+				AddMultiTableReclassificationRow(knowledgerules_list[nr3], reclassification_settings, input_line[0], description = input_line[1])
 
 
 		else:
@@ -613,27 +727,23 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 
 
 		#Create output layer
-		for nr, layername in enumerate(outputlayers.keys()):
-			layer_details = outputlayers[layername]
-			knwlrl_layerfilename3 = layer_details["layer_filename"]
-			knwlrl_categorie3 =  response_curves_overview[revknwlrl3.Name]["KnowledgeruleCategorie"]
+		for nr, output_layername in enumerate(outputlayers.keys()):
+			output_layer_details = outputlayers[output_layername]
+			knwlrl_layerfilename3 = output_layer_details["layer_filename"]
+			knwlrl_categorie3 =  response_curves_overview[knwlrl3.Name]["KnowledgeruleCategorie"]
 
-			if(len(revknowledgerules_list[nr3].OutputGridCoverages) > 0 and nr == 0):
-				output_list.append(revknowledgerules_list[nr3].OutputGridCoverages[nr])
+			if(len(knowledgerules_list[nr3].OutputGridCoverages) > 0 and nr == 0):
+				output_list.append(knowledgerules_list[nr3].OutputGridCoverages[nr])
 			else:
 				output_list.append(CreateEmptyMap())
-				revknowledgerules_list[nr3].OutputGridCoverages.Add(output_list[count_output])
+				knowledgerules_list[nr3].OutputGridCoverages.Add(output_list[count_output])
 				
-			revknowledgerules_list[nr3].OutputGridCoverages[nr].Name = "_" + layername
+			knowledgerules_list[nr3].OutputGridCoverages[nr].Name =  output_layername
 
-			output_dict[layername] = str(revknowledgerules_list[nr3].OutputGridCoverages[nr].Name)
+			output_dict[output_layername] = str(knowledgerules_list[nr3].OutputGridCoverages[nr].Name)
 
 			count_output = count_output + 1
 
-
-
-	#re-reverse knowledgerules_list
-	knowledgerules_list = list(reversed(revknowledgerules_list))
 
 	return((knowledgerules_list, input_list, output_list))
 	
@@ -641,82 +751,300 @@ def run_knowledgerule_models(knowledgerules_list):
 	#6. run  hsi models
 
 	#reverse list to run lowest level input first
-	revknowledgerules_list = list(reversed(knowledgerules_list)) 
-	for nr4, revknwlrl4 in enumerate(revknowledgerules_list):
+	knowledgerules_list = list(knowledgerules_list) 
+	for nr4, knwlrl4 in enumerate(knowledgerules_list):
 
 		#run the model
-		RunModel(revknowledgerules_list[nr4],True)
-
-	#re-reverse knowledgerules_list
-	knowledgerules_list = list(reversed(revknowledgerules_list))
+		RunModel(knowledgerules_list[nr4],True)
 
 	return(knowledgerules_list)
 
 def connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules_list):
 	#7. connect submodels (current situation is that always the minimum of all HSI will be taken)
 	
-	complete_model_list = knowledgerules_list
-	HSI_equation = []
-	for nr5, revhsimodel5 in enumerate(reversed(HSI_list)):
+	#prepare
+	HSI_input_list = []
+	HSI_equation_list = []
+	HSI_output_list = []
 
-		# Redirect output of submodels as input to new model
+	count_input = 0
+	count_output = 0
+
+
+	#Make a reversed HSI list to go from small to larger
+	revHSI_list = list(reversed(HSI_list))
+
+	#get all model names
+	#Deze onderstaande routines gaan er vanuit dat er slechts 1 output per model geproduceerd wordt
+	knowledgerules_list_modelnames = [model.Name for model in knowledgerules_list]
+	knowledgerules_list_modelnames_index = [nr_model for nr_model, model in enumerate(knowledgerules_list)]
+
+	output_hsi_dict = {}
+	
+	for nr5, revhsimodel5 in enumerate(revHSI_list):
+
 		origin_model_name = revhsimodel5.Name.replace("HSI_","")
 		
-		for submodel in structure[origin_model_name]:
-			for nr6, cmknwlrl5 in enumerate(complete_model_list):
-				if(cmknwlrl5.Name.replace("HSI_","") == submodel):
-					revhsimodel5.InputGridCoverages.Add(CreateEmptyMap()) # add new map to formula based model
+		#collected all outputlayers created for potential input in next model
+		hsi_modelnames = [str(hsi_model.Name.replace("HSI_","")) for hsi_model in revHSI_list]
+	 	hsi_modelnames_index = [nr_model for nr_model, hsi_model in enumerate(revHSI_list)]
 
-		countnr = 0
-		for submodel in structure[origin_model_name]:
-			for nr6, cmknwlrl5 in enumerate(complete_model_list):
-				if(cmknwlrl5.Name.replace("HSI_","") == submodel):
-					if(countnr == 0): 
-						LinkMaps(cmknwlrl5, cmknwlrl5.OutputGridCoverages[0].Name, revhsimodel5, "Grid")
-					else:
-						LinkMaps(cmknwlrl5, cmknwlrl5.OutputGridCoverages[0].Name, revhsimodel5, "Grid_" + str(countnr))
-					countnr = countnr + 1
+		#TEST
+		_AutecologyXMLLogger.Warn("current hsi_model :" + str(revhsimodel5))
 
+		for nr6, submodel in enumerate(structure[origin_model_name]):
+			#Add a new input grid
+			HSI_input_list.append(CreateEmptyMap())
+			revHSI_list[nr5].InputGridCoverages.Add(HSI_input_list[count_input])
+			
+			#Redirect output of submodels as input to new model
+			if(submodel in hsi_modelnames):
+				#TEST
+				_AutecologyXMLLogger.Warn("Submodel found in hsi_outputlayernames :" + submodel)
+				#load layer from previous calculation
+				index_hsi_nr = hsi_modelnames.index(submodel)
+				revHSI_list[nr5].InputGridCoverages[nr6].Name =  "HSI_" + submodel
+
+				#connect layer
+				index_values = hsi_modelnames_index[index_hsi_nr]
+				index_model = index_values
+				index_layer = 0
+				LinkMaps(revHSI_list[index_model],\
+						revHSI_list[index_model].OutputGridCoverages[index_layer].Name,\
+					 	revHSI_list[nr5], revHSI_list[nr5].InputGridCoverages[nr6].Name)
+
+			# Redirect output of sub-knowledgerules as input to new model
+			elif(submodel in knowledgerules_list_modelnames):
+				#TEST
+				_AutecologyXMLLogger.Warn("Submodel found in knowledgerules_list_outputlayernames :" + submodel)
+				index_kr_nr = knowledgerules_list_modelnames.index(submodel)
+				revHSI_list[nr5].InputGridCoverages[nr6].Name =  submodel
+
+				#connect layer
+				index_values = knowledgerules_list_modelnames_index[index_kr_nr]
+				index_model = index_values
+				index_layer = 0
+				LinkMaps(knowledgerules_list[index_model],\
+					 knowledgerules_list[index_model].OutputGridCoverages[index_layer].Name,\
+					 revHSI_list[nr5], revHSI_list[nr5].InputGridCoverages[nr6].Name)
+			else:
+				_AutecologyXMLLogger.Error("Submodel " + submodel + " in HSI component "+ revhsimodel5.Name +" is not available in earlier layers.")
+
+			count_input = count_input + 1
+
+		#add formula
 		if(equations[origin_model_name] == "min"):
-			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "min("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
+			HSI_equation_list.append(CreateEquation(HSI_list[nr5].Name, HSI_list[nr5], "min("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
 		elif(equations[origin_model_name] == "max"):
-			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "max("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
+			HSI_equation_list.append(CreateEquation(HSI_list[nr5].Name, HSI_list[nr5], "max("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
 		elif(equations[origin_model_name] == "average"):
-			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5,  "(" + " + ".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ") / " + str(len(revhsimodel5.InputGridCoverages))))
+			HSI_equation_list.append(CreateEquation(HSI_list[nr5].Name, HSI_list[nr5], "average("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
 		elif(equations[origin_model_name] == "geometric_average"):
-			HSI_equation.append(CreateEquation(revhsimodel5.Name, revhsimodel5, "("+ " * ".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")**(1/" + str(len(revhsimodel5.InputGridCoverages)) + ")"))
+			HSI_equation_list.append(CreateEquation(HSI_list[nr5].Name, HSI_list[nr5], "areaaverage("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
 		else:
 			_AutecologyXMLLogger.Warn("Current equation for HSI model structure is not yet available :" +\
 						equations[origin_model_name])
 		
-		revhsimodel5.Formulas.Add(HSI_equation[nr5])
+		revHSI_list[nr5].Formulas.Add(HSI_equation_list[nr5])
 
-		complete_model_list.append(revhsimodel5)
+		#Create one output layer per HSI model
+		if(len(revHSI_list[nr5].OutputGridCoverages) > 0):
+			HSI_output_list.append(revHSI_list[nr5].OutputGridCoverages[0])
+		else:
+			HSI_output_list.append(CreateEmptyMap())
+			revHSI_list[nr5].OutputGridCoverages.Add(HSI_output_list[count_output])
+		
+		revHSI_list[nr5].OutputGridCoverages[0].Name =  str(revHSI_list[nr5].Name)
 
-	return(HSI_list)
+		count_output = count_output + 1
 
-def run_hyrarchical_structure(HSI_list, equations):
-	for revhsimodel6 in reversed(HSI_list):
+	#make an output of all models
+	complete_model_list = knowledgerules_list + revHSI_list
+
+	return((revHSI_list, complete_model_list))
+
+def run_hyrarchical_structure(revHSI_list, equations):
+	for hsimodel6 in revHSI_list:
 		# get model name
-		origin_model_name = revhsimodel6.Name.replace("HSI_","")
+		origin_model_name = hsimodel6.Name.replace("HSI_","")
 		if(equations[origin_model_name] != "knowledge_rule"):
-			RunModel(revhsimodel6, True)
+			RunModel(hsimodel6, True)
 		else:
 			_AutecologyXMLLogger.Warn("Current equation for HSI model structure is not yet available :" +\
 						equations[origin_model_name])
 		
 
-	return(HSI_list)
+	return(revHSI_list)
 
 def export_model_results(OutputDir, HSI_list, equations):
 	#8. Export submodel results
-	for nr7, revhsimodel7 in enumerate(reversed(HSI_list)):
+	for nr7, hsimodel7 in enumerate(HSI_list):
 		# get model name
-		origin_model_name = revhsimodel7.Name.replace("HSI_","")
+		origin_model_name = hsimodel7.Name.replace("HSI_","")
 		if(equations[origin_model_name] != "knowledge_rule"):
-			WriteToAsc(revhsimodel7.OutputGridCoverages[0], os.path.join(OutputDir, origin_model_name + "_HSI.asc"))
+			WriteToAsc(hsimodel7.OutputGridCoverages[0], os.path.join(OutputDir, origin_model_name + "_HSI.asc"))
 		else:
 			_AutecologyXMLLogger.Warn("Current equation for HSI model structure is not yet available :" +\
 						equations[origin_model_name])			
 
-	return()
+
+
+
+def create_model_from_XML(KnowledgeRuleDir, InputDir, model_name, topic_name, kr_file, system_to_model, flow_diagram, topic_model_list = []):
+	'''
+	Setup a full HABITAT model based on XML 
+
+	Input required:
+	KnowledgeRuleDir : Directory where the knowledge rules XMLs are located
+	InputDir         : Directory where the input maps are located
+	topic_name       : Topic under which the knowledge rule will be added to the model
+	kr_file          : XML knowledge rule file name (ends on .xml)
+	system_to_model  : System available in the XML knowledge rule file
+	flow_diagram     : Flow diagram available under the system available in the XML knowledge rule file
+	topic_model_list : All models and layers available in the project, by default an empty list
+
+	'''
+
+	#region Read XML knowledge rule file
+	#1 . read the species specific information and response curves
+	root = ET.parse(os.path.join(KnowledgeRuleDir,kr_file)).getroot()
+	flow_diagram_overview = make_flowdiagram_dict(root,system_to_model)
+	autecology_overview = make_knowledgerules_dict(root, system_to_model)
+	response_curves_overview = autecology_overview["knowledgerules"]
+
+	#print species name
+	print("Topic : " + autecology_overview["Topic"])
+	print("Content : " + autecology_overview["commonnames"][0]["name"])
+	print("System : " + autecology_overview["systemname"])
+
+	#end region
+
+	#region Setup model structure (currently 2 layers allowed)
+	#2. Setup model structure
+	structure = get_flow_diagram_structure(flow_diagram_overview, flow_diagram)
+	equations = get_flow_diagram_equations(flow_diagram_overview, flow_diagram)
+	(model_list,HSI_list, topic_model_list) = make_hyrarchical_model_structure(model_name, topic_name, structure, equations, topic_model_list)
+	#endregion
+
+	#region Create HSI models
+	#3. fill composite models with hsi models
+	# there are several types of models: 
+	    #1. FormulaBased
+	    #2. BrokenLinearReclassification    
+	    #3. SpatialStatistics
+	    #4. TableReclassification
+	    #5. MultiTableReclassification
+	knowledgerules_list = make_knowledgerule_models(structure, response_curves_overview, model_list)
+
+	#end region
+
+	#region add HSI summarisation models
+	#4. add  hsi models per sub folder
+	(model_list, HSI_list) = add_HSI_collection_models(structure, equations, model_list, HSI_list)
+
+	#endregion
+
+	#region Fill HSI models
+	#5. fill  hsi models
+	# there are several types of models: 
+	    #1. FormulaBased
+	    #2. BrokenLinearReclassification    
+	    #3. SpatialStatistics
+	    #4. TableReclassification
+	    #5. MultiTableReclassification
+	(knowledgerules_list, input_list, output_list) = fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules_list, topic_model_list)
+	#endregion
+
+	#region Fill HSI models
+	#6. connect submodels (current situation is that always the minimum of all HSI will be taken)
+	(revHSI_list, complete_model_list) = connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules_list)
+
+	#store all links to models made
+	topic_model_list.append(complete_model_list)
+
+	#endregion
+
+	return(topic_model_list)
+
+
+def create_and_run_model_from_XML(KnowledgeRuleDir, InputDir, model_name, topic_name, kr_file, system_to_model, flow_diagram, topic_model_list = []):
+	'''
+	Setup a full HABITAT model based on XML and run to produce output
+
+	Input required:
+	KnowledgeRuleDir : Directory where the knowledge rules XMLs are located
+	InputDir         : Directory where the input maps are located
+	topic_name       : Topic under which the knowledge rule will be added to the model
+	kr_file          : XML knowledge rule file name (ends on .xml)
+	system_to_model  : System available in the XML knowledge rule file
+	flow_diagram     : Flow diagram available under the system available in the XML knowledge rule file
+	topic_model_list : All models and layers available in the project, by default an empty list
+
+	'''
+
+	#region Read XML knowledge rule file
+	#1 . read the species specific information and response curves
+	root = ET.parse(os.path.join(KnowledgeRuleDir,kr_file)).getroot()
+	flow_diagram_overview = make_flowdiagram_dict(root,system_to_model)
+	autecology_overview = make_knowledgerules_dict(root, system_to_model)
+	response_curves_overview = autecology_overview["knowledgerules"]
+
+	#print species name
+	print("Topic : " + autecology_overview["Topic"])
+	print("Content : " + autecology_overview["commonnames"][0]["name"])
+	print("System : " + autecology_overview["systemname"])
+
+	#end region
+
+	#region Setup model structure (currently 2 layers allowed)
+	#2. Setup model structure
+	structure = get_flow_diagram_structure(flow_diagram_overview, flow_diagram)
+	equations = get_flow_diagram_equations(flow_diagram_overview, flow_diagram)
+	(model_list,HSI_list, topic_model_list) = make_hyrarchical_model_structure(model_name, topic_name, structure, equations, topic_model_list)
+	#endregion
+
+	#region Create HSI models
+	#3. fill composite models with hsi models
+	# there are several types of models: 
+	    #1. FormulaBased
+	    #2. BrokenLinearReclassification    
+	    #3. SpatialStatistics
+	    #4. TableReclassification
+	    #5. MultiTableReclassification
+	knowledgerules_list = make_knowledgerule_models(structure, response_curves_overview, model_list)
+
+	#end region
+
+	#region add HSI summarisation models
+	#4. add  hsi models per sub folder
+	(model_list, HSI_list) = add_HSI_collection_models(structure, equations, model_list, HSI_list)
+
+	#endregion
+
+	#region Fill HSI models
+	#5. fill  hsi models
+	# there are several types of models: 
+	    #1. FormulaBased
+	    #2. BrokenLinearReclassification    
+	    #3. SpatialStatistics
+	    #4. TableReclassification
+	    #5. MultiTableReclassification
+	(knowledgerules_list, input_list, output_list) = fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules_list, topic_model_list)
+	#endregion
+
+	#region Fill knowledge rule models
+	#6. run knowledge rule models
+	knowledgerules_list = run_knowledgerule_models(knowledgerules_list)
+	#endregion
+
+	#region Fill HSI models
+	#7. connect submodels (current situation is that always the minimum of all HSI will be taken)
+	(revHSI_list, complete_model_list) = connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules_list)
+	revHSI_list = run_hyrarchical_structure(revHSI_list, equations)
+	
+	#store all links to models made
+	topic_model_list = topic_model_list + complete_model_list
+
+	#endregion
+
+	return(topic_model_list)

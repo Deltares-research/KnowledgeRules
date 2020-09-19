@@ -6,13 +6,14 @@
 			<LatName>Chara spp</LatName>
 			<CommonNames>
 				<Name name="Kranswieren" language="NL"/>
+				<Name name="Charophyte green algae" language="ENG"/>
 			</CommonNames>
 			<SpecCode/>
 		</Species>
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
-			<System name="ijsselmeergebied_doorzicht">
+			<System name="Markermeer">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
@@ -26,16 +27,36 @@
 					<Description language="NL">
 						<text><![CDATA[<h1 id="Kranswieren-Charaspp.-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Kranswieren-Charaspp.-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
 					</Description>
+					<Description language="ENG">
+						<text>"To be filled"</text>
+					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
-					<FlowDiagram name="TOBEFILLED"/>
+					<FlowDiagram name="chara_presence_visibility">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_Chara</To>
+							<To>P_Chara_visibility</To>
+							<To>subarea_factor_Chara_visibility</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="chara_presence_extinction">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+							<equation>knowledge_rule</equation>
+							<To>HGI_Chara</To>
+							<To>P_Chara_extinction</To>
+							<To>subarea_factor_Chara_extinction</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
-					<FormulaBased name="HGI_chara">
+					<FormulaBased name="HGI_Chara">
 						<inputLayers>
-							<layer name="P_chara">
+							<layer name="P_Chara">
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_chara"</layer_filename>
+								<layer_filename>"P_Chara_spp"</layer_filename>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
 								<description>"Likeliness of presence for the Chara species"</description>
@@ -50,9 +71,9 @@
 									<html></html>
 								</reference>
 							</references>
-							<equation>"1/(1 + P_chara)"</equation>
+							<equation>"1/(1 + P_Chara)"</equation>
 							<Parameters>
-								<valuesScalar layername = "P_chara" type="scalar">
+								<valuesScalar layername = "P_Chara" type="scalar">
 									<parameter min_input="0" max_input = "1"/>
 								</valuesScalar>
 							</Parameters>
@@ -60,21 +81,21 @@
 						<outputLayers>
 							<layer name="HSI_Chara">
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"HSI_chara"</layer_filename>
+								<layer_filename>"HSI_Chara_spp"</layer_filename>
 								<unit>"-"</unit>
 								<statistic>none</statistic>
 								<description>"Habitat suitability for the Chara species"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>					
-					<FormulaBased name="P_chara_visibility">
+					<FormulaBased name="P_Chara_visibility">
 						<inputLayers>
-							<layer name="subarea">
-								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas_markermeer</layer_filename>
-								<unit>category</unit>
-								<statistic>"constant"</statistic>
-								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							<layer name="subarea_factor_Chara_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Chara"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Chara spp prediction based on visibility"</description>
 							</layer>
 							<layer name="visibility">
 								<parameter_cat>"Water clearity"</parameter_cat>
@@ -105,15 +126,16 @@
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"1/(1+exp(-(-3.811882503+subarea-2.183232932*waterdepth_summer+0.101857262*(waterdepth_summer^2)-0.109802864*waterdepth_summer*visibility-0.00058004*fetch)))"</equation>
+							<equation>"1/(1+exp(-(-3.811882503+subarea_factor_Chara_visibility-2.183232932*waterdepth_summer+0.101857262*(waterdepth_summer^2)-0.109802864*waterdepth_summer*visibility-0.00058004*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername = "subarea" type="constant">
-									<parameter input= "1" input_cat ="MBIJ" output="1.154566403"/>
-									<parameter input= "2" input_cat ="MGZ" output="3.2547517"/>
-									<parameter input= "3" input_cat ="MHE" output="2.723574565"/>
-									<parameter input= "4" input_cat ="MHH" output="3.750643"/>
-									<parameter input= "5" input_cat ="MHRDz" output="3.692823434"/>
-									<parameter input= "6" input_cat ="MIJ" output="1.852459203"/>
+								<valuesConstant layername = "subarea_factor_Chara_visibility" type="constant">
+									<parameter input= "1.852459203" input_cat ="MIJ" output="1.852459203"/>
+									<parameter input= "1.154566403" input_cat ="MBIJ" output="1.154566403"/>
+									<parameter input= "3.2547517" input_cat ="MGZ" output="3.2547517"/>
+									<parameter input= "3.692823434" input_cat ="MHRDz" output="3.692823434"/>									
+									<parameter input= "2.723574565" input_cat ="MHE" output="2.723574565"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input= "3.750643" input_cat ="MHH" output="3.750643"/>
 								</valuesConstant>
 								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -127,23 +149,23 @@
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="P_chara">
+							<layer name="P_Chara">
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_chara_visibility"</layer_filename>
+								<layer_filename>"P_Chara_spp"</layer_filename>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
-								<description>"Likeliness of presence for the Chara species based on among other visibility"</description>
+								<description>"Likeliness of presence for the Chara species"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
-					<FormulaBased name="P_chara_extinction">
+					<FormulaBased name="P_Chara_extinction">
 						<inputLayers>
-							<layer name="subarea">
-								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas_markermeer</layer_filename>
-								<unit>category</unit>
-								<statistic>"constant"</statistic>
-								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							<layer name="subarea_factor_Chara_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Chara"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Chara spp prediction based on extinction"</description>
 							</layer>
 							<layer name="extinction">
 								<parameter_cat>"Water clearity"</parameter_cat>
@@ -174,15 +196,16 @@
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>	
 							</references>
-							<equation>"1/(1+exp(-(0.247702657+subarea-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
+							<equation>"1/(1+exp(-(0.247702657+subarea_factor_Chara_extinction-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
 							<Parameters>
-								<valuesConstant layername = "subarea" type="constant">
-									<parameter input = "1" input_cat ="MBIJ" output="81302272"/>
-									<parameter input = "2" input_cat ="MGZ" output="1.998701637"/>
-									<parameter input = "3" input_cat ="MHE" output="0.724567841"/>
-									<parameter input = "4" input_cat ="MHH" output="1.733868205"/>
-									<parameter input = "5" input_cat ="MHRDz" output="2.214793065"/>
-									<parameter input = "6" input_cat ="MIJ" output="1.45711916"/>
+								<valuesConstant layername = "subarea_factor_Chara_extinction" type="constant">
+									<parameter input = "1.45711916" input_cat ="MIJ" output="1.45711916"/>
+									<parameter input = "-0.81302272" input_cat ="MBIJ" output="-0.81302272"/>
+									<parameter input = "1.998701637" input_cat ="MGZ" output="1.998701637"/>
+									<parameter input = "2.214793065" input_cat ="MHRDz" output="2.214793065"/>									
+									<parameter input = "0.724567841" input_cat ="MHE" output="0.724567841"/>
+									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input = "1.733868205" input_cat ="MHH" output="1.733868205"/>
 								</valuesConstant>
 								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -196,15 +219,93 @@
 							</Parameters>
 						</Content>
 						<outputLayers>
-							<layer name="P_chara">
+							<layer name="P_Chara">
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_chara_extinction"</layer_filename>
+								<layer_filename>"P_Chara_spp"</layer_filename>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
-								<description>"Likeliness of presence for the Chara species based on among other extinction"</description>
+								<description>"Likeliness of presence for the Chara species "</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
+					<MultipleReclassification name="subarea_factor_Chara_visibility">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Chara prediction based on visibility"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input= "1" input_cat ="MIJ" output="1.852459203" output_cat ="MIJ"/>
+									<parameter input= "2" input_cat ="MBIJ" output="1.154566403" output_cat ="MBIJ"/>
+									<parameter input= "3" input_cat ="MGZ" output="3.2547517" output_cat ="MGZ"/>
+									<parameter input= "4" input_cat ="MHRDz" output="3.692823434" output_cat ="MHRDz"/>
+									<parameter input= "5" input_cat ="MHE" output="2.723574565" output_cat ="MHE"/>
+									<parameter input= "6" input_cat ="MWenmid" output="0.0" output_cat ="MWenmid"/>
+									<parameter input= "7" input_cat ="MHH" output="3.750643" output_cat ="MHH"/>
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_Chara_visibility">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Chara"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Chara spp prediction based on visibility"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
+					<MultipleReclassification name="subarea_factor_Chara_extinction">
+						<inputLayers>
+							<layer name="subarea">
+								<parameter_cat>"Area specifics"</parameter_cat>
+								<layer_filename>subareas_markermeer</layer_filename>
+								<unit>category</unit>
+								<statistic>"constant"</statistic>
+								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<description>"Calculate subarea factor for Chara prediction based on extinction"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Parameters>
+								<valuesCategorical layername = "subarea" type="categorical">
+									<parameter input = "1" input_cat ="MIJ" output="1.45711916" output_cat ="MIJ"/>
+									<parameter input = "2" input_cat ="MBIJ" output="-0.81302272" output_cat ="MBIJ"/>
+									<parameter input = "3" input_cat ="MGZ" output="1.998701637" output_cat ="MGZ"/>
+									<parameter input = "4" input_cat ="MHRDz" output="2.214793065" output_cat ="MHRDz"/>
+									<parameter input = "5" input_cat ="MHE" output="0.724567841" output_cat ="MHE"/>
+									<parameter input= "6" input_cat ="MWenmid" output="0.0" output_cat ="MWenmid"/>
+									<parameter input = "7" input_cat ="MHH" output="1.733868205" output_cat ="MHH"/>								
+								</valuesCategorical>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="subarea_factor_Chara_extinction">
+								<parameter_cat>Area specifics</parameter_cat>
+								<layer_filename>"subarea_factor_Chara"</layer_filename>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<description>"Factor for multiplication for specific subarea for Chara spp prediction based on extinction"</description>
+							</layer>
+						</outputLayers>
+					</MultipleReclassification>
 				</KnowledgeRules>
 			</System>
 		</ModelType>
@@ -212,6 +313,9 @@
 	<TopicDescription>
 		<Description language="NL">
 			<text><![CDATA[<h3 id="Kranswieren-Charaspp.-Algemeenvoorkomen">Algemeen voorkomen</h3><p>Kranswieren zijn pioniers van minder voedselrijke, heldere wateren. Onder deze omstandigheden ontwikkelen ze dichte tapijten die bestaan uit een of meerdere soorten kranswieren, waarin nauwelijks andere waterplanten kunnen doordringen. Kenmerkende soorten voor kalkrijke wateren zijn: Gewoon kransblad (<em>Chara vulgaris</em>), Ruw kransblad (<em>Chara aspera</em>), Stekelharig kransblad (<em>Chara hispida</em>), Brokkelig kransblad (<em>Chara contraria</em>), Sterkranswier (<em>Nitellopsis obtusa</em>). In zwak brakke wateren kunnen ook gebogen kransblad (<em>Chara connivens</em>) en brakwaterkransblad (<em>Chara canescens</em>) een rol spelen.<br>In de grote meren van het IJsselmeergebied komen in de ondiepe zone (0,5 - 2,5 m) kranswieren voor als de waterkwaliteit voldoende is verbeterd en er voldoende licht tot op de bodem doordringt. Uitgestrekte 'kranswierweiden' zijn te vinden in de Veluwerandmeren, het IJmeer en de Gouwzee. De laatste jaren is er ook een toename te zien in het Gooimeer, het Zwarte Meer en langs de Friese kust.</p><h3 id="Kranswieren-Charaspp.-Milieuvoorwaarden">Milieuvoorwaarden</h3><p>Kranswieren komen voor in wateren met uiteenlopende chemische samenstelling (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-3">#3</a>). Het doorzicht in de waterkolom is de meest bepalende factor die die de maximale groeidiepte bepaalt waarop lichtbeperking optreedt. In zeer ondiep water (in meren met een vast peil &lt; 20 cm) kunnen kranswieren echter niet groeien vanwege de turbulentie in de waterkolom en begrazing. De alkaliniteit kan zeer hoog zijn; ook in brakke meren en plassen kunnen kranswieren aspectbepalend zijn. Kranswieren hebben basisische condities (pH &gt; 6) nodig. Ze groeien op uiteenlopende bodems (zand, klei, veen).<br>Uitgebreid onderzoek in het IJsselmeergebied heeft aangetoond dat daar de factoren doorzicht en diepte samen voor het grootste deel het voorkomen van Chara sp. verklaart, met name de plekken waar Chara afwezig is. Om ook de plekken waar Chara wel staat goed te kunnen voorspellen is de aanwezigheid in het voorgaande jaar als aanvullende factor nodig (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-1">#1</a>). </p><h3 id="Kranswieren-Charaspp.-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3><p>Kranswiervegetaties zijn gevoelig voor verhoogde troebelheid (door toevoer van nutrienten, slibopwoeling e.d.), en worden dan snel verdrongen door andere waterplanten of draadwieren. Bij matig verminderd doorzicht kunnen kranswieren zich vaak goed handhaven doordat ze zelf de helderheid versterken. Na het verdwijnen van de vegetatie zijn zeer heldere omstandigheden nodig om herkolonisatie mogelijk te maken.<br>Primair zal het beheer van kranswiermeren dus moeten bestaan uit het voorkomen van hoge nutrientenbelasting en andere bronnen van vertroebeling. Daarnaast is het instandhouden van ondiep-watergebieden een vereiste.<br>Ontwikkeling van kranswiervegetaties is mogelijk door maatregelen te nemen die de helderheid vergroten, zoals actief biologisch beheer of doorspoelen. Maatregelen als het selectief maaien van boven de kranswieren uitgroeiende waterplanten en het uitzetten van sporen zijn met wisselend succes toegepast. </p>]]></text>
+		</Description>
+		<Description language="ENG">
+			<text>"To be filled"</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>

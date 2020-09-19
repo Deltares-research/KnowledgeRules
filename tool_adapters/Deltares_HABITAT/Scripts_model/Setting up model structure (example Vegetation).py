@@ -11,17 +11,19 @@ import xml.etree.ElementTree as ET # for reading and writing *.xml files
 from collections import OrderedDict 
 
 # set location of input maps and output 
-os.chdir("d:\\Projects\\Habitat\\Marc_Project_habitat_dev_20200224\\") 
-print("Workdirectory : " + os.getcwd())
+WorkDir = "d:\\Projects\\Habitat\\Marc_Project_habitat_dev_20200224\\" 
+print("Workdirectory : " + WorkDir)
 
-InputDir = "Test_invoerfiles\\Maps\\"
-KnowledgeRuleDir = "Test_invoerfiles\\Response curves\\"
-OutputDir = "OutputMaps\\"
+#Model
+model_name = "Test"
+InputDir = WorkDir + "Test_invoerfiles\\Maps\\"
+KnowledgeRuleDir = WorkDir + "Test_invoerfiles\\Response curves\\"
+OutputDir = WorkDir + "OutputMaps\\"
 
 #Vegetation types Northern Delta
-kr_file = "Vegetationtypes_Northen_Delta.xml"
+kr_file = "Vegetationtypes_Northern_Delta.xml"
 topic_name = "Vegetation types Northern Delta"
-system_to_model = "biesbosch_area"
+system_to_model = "haringvliet_area"
 flow_diagram ="vegetation_ungrazed"
 
 #endregion
@@ -46,7 +48,7 @@ print("System : " + autecology_overview["systemname"])
 #2. Setup model structure
 structure = get_flow_diagram_structure(flow_diagram_overview, flow_diagram)
 equations = get_flow_diagram_equations(flow_diagram_overview, flow_diagram)
-(model_list,HSI_list) = make_hyrarchical_model_structure(topic_name, structure, equations)
+(model_list,HSI_list, topic_model_list) = make_hyrarchical_model_structure(model_name, topic_name, structure, equations)
 #endregion
 
 #region Create HSI models
@@ -75,13 +77,13 @@ knowledgerules_list = make_knowledgerule_models(structure, response_curves_overv
     #3. SpatialStatistics
     #4. TableReclassification
     #5. MultiTableReclassification
-(knowledgerules_list, input_list, output_list) = fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules_list)
+(knowledgerules_list, input_list, output_list) = fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules_list, topic_model_list)
 #endregion
 
 
 #region Fill HSI models
 #6. run  hsi models
-knowledgerules_list = run_knowledgerule_models(knowledgerules_list)
+#knowledgerules_list = run_knowledgerule_models(knowledgerules_list)
 
 #endregion
 
@@ -89,7 +91,7 @@ knowledgerules_list = run_knowledgerule_models(knowledgerules_list)
 #region Fill HSI models
 #7. connect submodels (current situation is that always the minimum of all HSI will be taken)
 HSI_list = connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules_list)
-HSI_list = run_hyrarchical_structure(HSI_list, equations)
+#HSI_list = run_hyrarchical_structure(HSI_list, equations)
 
 #endregion
 

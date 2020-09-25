@@ -104,22 +104,28 @@
 								<statistic>"average"</statistic>
 								<description>"Fetch in the NorthWest direction"</description>
 							</layer>
-							<layer name="waterdepth_summer">
+							<layer name="waterdepth_summer_cm">
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<layer_filename>waterdepth_summer_cm</layer_filename>
 								<unit>cm</unit>
 								<statistic>"average"</statistic>
-								<description>"Water depth in the summer"</description>
+								<description>"Water depth in the summer in centimeter"</description>
 							</layer>
 						</inputLayers>
 						<Content>
+						<type>spatialequation</type>
 							<description>"Calculate Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"cover(((North*0.0551)+(West*0.0672)+(NorthWest*0.0824)+(SouthWest*0.0447)+(South*0.1710)+(SouthEast*0.2475)+(East*0.2406)+(NorthEast*0.0916)),waterdepth_summer*0)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"cover(((North*0.0551)+(West*0.0672)+(NorthWest*0.0824)+(SouthWest*0.0447)+(South*0.1710)+(SouthEast*0.2475)+(East*0.2406)+(NorthEast*0.0916)),waterdepth_summer_cm*0)"</equation>
+								</SpatialEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "North" type="scalar">
 									<parameter min_input="0" max_input="30"/>
@@ -145,7 +151,7 @@
 								<valuesScalar layername = "NorthWest" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "waterdepth_summer" type="scalar">
+								<valuesScalar layername = "waterdepth_summer_cm" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
 							</Parameters>
@@ -171,13 +177,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate North Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1)),1)"</equation>
+								</SpatialEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -205,13 +217,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate NorthEast Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1+45)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1+45)),1)"</equation>
+								</SpatialEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -239,13 +257,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate East Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1+90)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1+90)),1)"</equation>
+								</SpatialEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -273,13 +297,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate SouthEast Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1+135)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1+135)),1)"</equation>
+								</SpatialEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -307,13 +337,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate South Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1+180)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1+180)),1)"</equation>
+								</SpatialEquation>
+							</Equation>							
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -341,13 +377,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate SouthWest Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1+225)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1+225)),1)"</equation>
+								</SpatialEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -375,13 +417,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate West Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1+270)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1+270)),1)"</equation>
+								</SpatialEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -409,13 +457,19 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>spatialequation</type>
 							<description>"Calculate NorthWest Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"slopelength(ldd(directional(watersurface-1+315)),1)"</equation>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"slopelength(ldd(directional(watersurface-1+315)),1)"</equation>
+								</SpatialEquation>
+							</Equation>							
 							<Parameters>
 								<valuesScalar layername = "watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>

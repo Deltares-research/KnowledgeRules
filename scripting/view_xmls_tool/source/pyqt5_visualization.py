@@ -14,10 +14,10 @@ class LabeledSlider(QtWidgets.QWidget):
 
 
 	def __init__(self, minimum, maximum, interval=1, orientation=QtCore.Qt.Horizontal,
-			labels=None, parent=None):
+			max_levels = 11, labels=None, parent=None):
 		super(LabeledSlider, self).__init__(parent=parent)
 
-		levels= numpy.arange(minimum, maximum+interval, interval)
+		levels= range(minimum, maximum+interval, interval)
 		if labels is not None:
 			if not isinstance(labels, (tuple, list)):
 				raise Exception("<labels> is a list or tuple.")
@@ -44,15 +44,18 @@ class LabeledSlider(QtWidgets.QWidget):
 				self.right_margin,self.bottom_margin)
 
 		self.sl=QtWidgets.QSlider(orientation, self)
+
 		self.sl.setMinimum(minimum)
 		self.sl.setMaximum(maximum)
 		self.sl.setValue(minimum)
+
 		if orientation== QtCore.Qt.Horizontal:
 			self.sl.setTickPosition(QtWidgets.QSlider.TicksBelow)
 			self.sl.setMinimumWidth(300) # just to make it easier to read
 		else:
 			self.sl.setTickPosition(QtWidgets.QSlider.TicksLeft)
 			self.sl.setMinimumHeight(300) # just to make it easier to read
+		
 		self.sl.setTickInterval(interval)
 		self.sl.setSingleStep(1)
 
@@ -133,7 +136,7 @@ class LabeledSlider(QtWidgets.QWidget):
 					self.layout.setContentsMargins(self.left_margin,
 							self.top_margin, self.right_margin,
 							self.bottom_margin)
-
+			
 			pos=QtCore.QPoint(left, bottom)
 			painter.drawText(pos, v_str)
 

@@ -9,10 +9,13 @@ from lxml.etree import _Element as Element
 from lxml import etree as ET
 import pandas
 import numpy as np
-import ast
 from asteval import Interpreter
 import inspect
 from collections import OrderedDict
+
+#import for output capture asteval
+from io import StringIO
+import ast
 
 #import for formulas
 import math
@@ -376,13 +379,12 @@ class AutecologyXML(_File):
 		type_tag_rcs = type_tag_krs.findall(self.make_find([self.XMLconvention["rc"]]))
 		type_tag_rc_list = self.find_element_by_name(type_tag_rcs,\
 							self.XMLconvention["rckey"],rcname)
-		
 		#check whether response curve exists or exists multiple times
 		if(len(type_tag_rc_list) == 0):
-			raise ValueError("There is no repsponse curve named " + str(rcname) + " in ModelType " + str(modeltypename) +\
+			raise ValueError("There is no response curve named " + str(rcname) + " in ModelType " + str(modeltypename) +\
 				" and System " + str(systemname) + " .")
-
 		self.check_element_numbers(type_tag_rc_list, expected = 1, operator = "eq")
+
 		type_tag_rc = type_tag_rc_list[0]
 		return(type_tag_rc)
 
@@ -391,7 +393,13 @@ class AutecologyXML(_File):
 		type_tag_fbs = type_tag_krs.findall(self.make_find([self.XMLconvention["fb"]]))
 		type_tag_fb_list = self.find_element_by_name(type_tag_fbs,\
 							self.XMLconvention["fbkey"],fbname)
+		
+		#check whether formula based exists or exists multiple times
+		if(len(type_tag_fb_list) == 0):
+			raise ValueError("There is no formula based named " + str(fbname) + " in ModelType " + str(modeltypename) +\
+				" and System " + str(systemname) + " .")
 		self.check_element_numbers(type_tag_fb_list, expected = 1, operator = "eq")
+
 		type_tag_fb = type_tag_fb_list[0]
 		return(type_tag_fb)
 
@@ -400,7 +408,13 @@ class AutecologyXML(_File):
 		type_tag_mrs = type_tag_krs.findall(self.make_find([self.XMLconvention["mr"]]))
 		type_tag_mr_list = self.find_element_by_name(type_tag_mrs,\
 							self.XMLconvention["mrkey"],mrname)
+
+		#check whether formula based exists or exists multiple times
+		if(len(type_tag_mr_list) == 0):
+			raise ValueError("There is no multiple reclassification named " + str(mrname) + " in ModelType " + str(modeltypename) +\
+				" and System " + str(systemname) + " .")
 		self.check_element_numbers(type_tag_mr_list, expected = 1, operator = "eq")
+
 		type_tag_mr = type_tag_mr_list[0]
 		return(type_tag_mr)
 
@@ -422,7 +436,7 @@ class AutecologyXML(_File):
 				" else " + formula_interpretation_split[2][:-1]
 			else:
 				raise RuntimeError("'if('' is present in formula : "+ formula_text +\
-				 ", but no true/false conditions specified with ';'")
+				 ", but no true/false conditions specified with ','")
 		
 		#Change PCRASTER function ^ to understandable Python code		
 		if("^" in formula_interpretation):
@@ -438,15 +452,30 @@ class AutecologyXML(_File):
 		#remove unnecessary indents
 		formula_interpretation = formula_interpretation.strip()
 
+		
+		return(formula_interpretation)
+
+	def get_formula_interpretation_asteval(self, formula_interpretation_text):
+		#Small changes exist between standard python code and ASTEVAL interpretation
+
+		formula_interpretation_asteval = formula_interpretation_text
+
+		#Change Python function math.exp to understandable asteval code (math library is preloaded)
+		if("exp(" in formula_interpretation_text):
+			formula_interpretation_asteval = formula_interpretation_asteval.replace("math.exp(","exp(")
+
+		#remove unnecessary indents
+		formula_interpretation_asteval = formula_interpretation_asteval.strip()
+
 		#check code validity
 		try:
-			ast.parse(str(formula_interpretation))
+			ast.parse(str(formula_interpretation_asteval))
 
 		except SyntaxError:
-			raise RuntimeError("current formula is not valid : "+ formula_interpretation +" ." +\
-				" formula generated from : " + formula_text )			
+			raise RuntimeError("current formula is not valid for asteval : "+ formula_interpretation_asteval +" ." +\
+				" formula generated from : " + formula_interpretation_text )
 
-		return(formula_interpretation)
+		return(formula_interpretation_asteval)
 
 	def get_data_layer(self,layer_element):
 
@@ -492,23 +521,31 @@ class AutecologyXML(_File):
 		if(rule_dict["type"] == "scalar"):
 			find_scalar = self.make_find(["Content","valuesScalar","parameter"])
 			column_names = rc_element.findall(find_scalar)[0].keys()
+			if(len(column_names) == 0):
+				raise RuntimeError("No input values found for "+ self.XMLconvention["rc"] +" " + rule_dict["name"] +" with type "+rule_dict["type"]+".")
 			for parameter in rc_element.findall(find_scalar):
 				parameter_list.append([float(parameter.get("input")),float(parameter.get("output"))])
 		elif(rule_dict["type"] == "categorical"):
 			find_categorical = self.make_find(["Content","valuesCategorical","parameter"])
 			column_names = rc_element.findall(find_categorical)[0].keys()
+			if(len(column_names) == 0):
+				raise RuntimeError("No input values found for "+ self.XMLconvention["rc"] +" " + rule_dict["name"] +" with type "+rule_dict["type"]+".")
 			for parameter in rc_element.findall(find_categorical):
 				parameter_list.append([int(parameter.get("input")),str(parameter.get("input_cat")),\
 					float(parameter.get("output")),str(parameter.get("output_cat"))])
 		elif(rule_dict["type"] == "ranges"):
 			find_ranges = self.make_find(["Content","valuesRanges","parameter"])
 			column_names = rc_element.findall(find_ranges)[0].keys()
+			if(len(column_names) == 0):
+				raise RuntimeError("No input values found for "+ self.XMLconvention["rc"] +" " + rule_dict["name"] +" with type "+rule_dict["type"]+".")
 			for parameter in rc_element.findall(find_ranges):
 				parameter_list.append([float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),\
 					float(parameter.get("output"))])
 		elif(rule_dict["type"] == "range / categorical"):
 			find_rangecategorical = self.make_find(["Content","valuesRangeCategorical","parameter"])
 			column_names = rc_element.findall(find_rangecategorical)[0].keys()
+			if(len(column_names) == 0):
+				raise RuntimeError("No input values found for "+ self.XMLconvention["rc"] +" " + rule_dict["name"] +" with type "+rule_dict["type"]+".")
 			for parameter in rc_element.findall(find_rangecategorical):
 				parameter_list.append([float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),\
 					str(parameter.get("input_cat")),float(parameter.get("output")),str(parameter.get("output_cat"))])
@@ -536,13 +573,33 @@ class AutecologyXML(_File):
 		rule_dict["outputLayers"] = self.get_data_layers(fb_element, find_outputLayers) 
 
 		#get content
-		rule_dict["equation_text"] = fb_element.find(self.make_find(['Content','equation'])).text.replace('"','')
-		rule_dict["equation_interpretation"] = self.get_formula_interpretation(rule_dict["equation_text"])
+		rule_dict["type"] = fb_element.find(self.make_find(['Content','type'])).text
+		if(rule_dict["type"] == "equation"):
+			type_tag_fb_SimpleEquation_list = fb_element.findall(self.make_find(['Content','Equation','SimpleEquation']))
+			if(len(type_tag_fb_SimpleEquation_list) == 0):
+				raise RuntimeError("SimpleEquation element is not found in Formula Based rule "+ rule_dict["name"] + " with type "+ rule_dict["type"]+".")
+			rule_dict["equation_text"] = type_tag_fb_SimpleEquation_list[0].find(self.make_find(['equation'])).text.replace('"','')
+			rule_dict["equation_spatialtool"] = "Generic"
+			rule_dict["equation_interpretation"] = self.get_formula_interpretation(rule_dict["equation_text"])
+			rule_dict["equation_interpretation_asteval"] = self.get_formula_interpretation_asteval(rule_dict["equation_interpretation"])
+		elif(rule_dict["type"] == "spatialequation"):
+			type_tag_fb_SpatialEquation_list = fb_element.findall(self.make_find(['Content','Equation','SpatialEquation']))
+			if(len(type_tag_fb_SpatialEquation_list) == 0):
+				raise RuntimeError("SpatialEquation element is not found in Formula Based rule "+ rule_dict["name"] + " with type "+ rule_dict["type"]+".")
+			rule_dict["equation_text"] = type_tag_fb_SpatialEquation_list[0].find(self.make_find(['equation'])).text.replace('"','')
+			rule_dict["equation_spatialtool"] = type_tag_fb_SpatialEquation_list[0].find(self.make_find(['spatialtool'])).text.replace('"','')
+			rule_dict["equation_interpretation"] = self.get_formula_interpretation(rule_dict["equation_text"])
+			rule_dict["equation_interpretation_asteval"] = self.get_formula_interpretation_asteval(rule_dict["equation_interpretation"])
+		else:
+			raise RuntimeError("type "+ rule_dict["type"] + " is not available in " + self.XMLconvention["fb"] +".")
+
 
 		rule_dict["parameters"] = [] 
 		#Get the number of values under Parameters
 		fb_values_tags = fb_element.findall(self.make_find(["Content","Parameters","valuesScalar"])) + \
 						fb_element.findall(self.make_find(["Content","Parameters","valuesConstant"])) 
+		if(len(fb_values_tags) == 0):
+			raise RuntimeError("No input values found for "+ self.XMLconvention["fb"] +" " + rule_dict["name"] +".")
 		for values in fb_values_tags:
 			parameter_dict = {}
 			parameter_dict["layername"] = values.get("layername")
@@ -583,13 +640,12 @@ class AutecologyXML(_File):
 		return(rule_dict)
 
 	def get_data_multiple_reclassification_data(self, mr_element):
-		ToFormula = Interpreter()
 
 		rule_dict = {}
 
 		#give details
 		rule_dict["name"] = mr_element.get('name').replace('"','')
-		rule_dict["KnowledgeruleCategorie"] = self.XMLconvention["fb"]
+		rule_dict["KnowledgeruleCategorie"] = self.XMLconvention["mr"]
 		
 		#get input layers
 		find_inputLayers = self.make_find(["inputLayers","layer"])
@@ -602,11 +658,14 @@ class AutecologyXML(_File):
 		#get content
 		rule_dict["parameters"] = [] 
 		#Get the number of values under Parameters
-		mr_values_tags = mr_element.findall(self.make_find(["Content","Parameters","valuesRangeCategorical"]))
+		mr_values_tags = mr_element.findall(self.make_find(["Content","Parameters","valuesRangeCategorical"])) +\
+			mr_element.findall(self.make_find(["Content","Parameters","valuesCategorical"]))
+		if(len(mr_values_tags) == 0):
+			raise RuntimeError("No input values found for "+ self.XMLconvention["mr"] +" " + rule_dict["name"] +".")
 		for values in mr_values_tags:
 			parameter_dict = {}
 			parameter_dict["layername"] = values.get("layername")
-			parameter_dict["type"] = "range / categorical"
+			parameter_dict["type"] = values.get("type")
 
 			if(not(parameter_dict["layername"] in rule_dict["inputLayers"])):
 				raise RuntimeError("Used layer "+ str(parameter_dict["layername"]) + " in " + self.XMLconvention["mr"] + " " +\
@@ -623,7 +682,8 @@ class AutecologyXML(_File):
 						parameter_output = int(parameter.get("output"))
 					else:
 						parameter_output = float(parameter.get("output"))
-					parameter_list.append([float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),str(parameter.get("input_cat")),\
+					
+					parameter_list.append([None, float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),str(parameter.get("input_cat")),\
 						parameter_output,str(parameter.get("output_cat"))])
 			elif(parameter_dict["type"] == "categorical"):
 				for parameter in values.findall(self.make_find(["parameter"])):
@@ -633,11 +693,12 @@ class AutecologyXML(_File):
 					else:
 						parameter_output = float(parameter.get("output"))
 					#add to list
-					parameter_list.append([int(parameter.get("input")),str(parameter.get("input_cat")), parameter_output])
+					parameter_list.append([int(parameter.get("input")), None, None,str(parameter.get("input_cat")),\
+					 	parameter_output,str(parameter.get("output_cat"))])
 			else:
 				raise RuntimeError("type "+ parameter_dict["type"] + " is not available in "+ self.XMLconvention["mr"] +".")
 
-			column_names = values.findall(self.make_find(["parameter"]))[0].keys()
+			column_names = ["input","rangemin_input","rangemax_input","input_cat","output","output_cat"]
 			parameter_dict["data"] = pandas.DataFrame(parameter_list, columns = column_names)
 			rule_dict["parameters"].append(parameter_dict)
 
@@ -647,10 +708,10 @@ class AutecologyXML(_File):
 		parametersettings = {}
 		for i, var in enumerate(fb_data["parameters"]):
 			if(var["type"] == "scalar"):
-				min_var = var["data"]["min_input"].iloc[0]
+				min_var = round(var["data"]["min_input"].iloc[0],5)
 				if(i == 0):
-					max_var = var["data"]["max_input"].iloc[0]
-					stepsize = (max_var-min_var)/10
+					max_var = round(var["data"]["max_input"].iloc[0],5)
+					stepsize = round((max_var-min_var)/10,5)
 					variableparameter = {var["layername"] : list(np.arange(min_var,max_var,stepsize))}
 				
 				parametersettings[var["layername"]] = min_var
@@ -670,6 +731,12 @@ class AutecologyXML(_File):
 
 	def calculate_fb(self, fb_data, parametersettings, variableparameter = None):
 		#CALCULATION WITH ACCEPTING ONE LIST or ONLY SINGLE VALUES?
+
+		#Give error when type is not made available
+		if(fb_data["type"] == "equation"):
+			pass
+		else:
+			raise RuntimeError("type "+ rule_dict["type"] + " in " + self.XMLconvention["fb"] +" is not available to calculate through this library.")
 
 		#set up formula interpretation
 		listparameter = False
@@ -706,7 +773,7 @@ class AutecologyXML(_File):
 
 		#calculate formula
 		if(listparameter == False):
-			parametersettings[self.XMLconvention["fb_result"]] = ToFormula(fb_data["equation_interpretation"])
+			parametersettings[self.XMLconvention["fb_result"]] = ToFormula(fb_data["equation_interpretation_asteval"])
 		elif(listparameter == True):
 			result_calculation = []
 			for element in variableparameter[variable_key]:
@@ -716,7 +783,7 @@ class AutecologyXML(_File):
 				
 				#fill formula dictionary
 				ToFormula.symtable[variable_key] = float(element)
-				result_calculation.append(ToFormula(fb_data["equation_interpretation"]))
+				result_calculation.append(ToFormula(fb_data["equation_interpretation_asteval"]))
 
 			parametersettings[self.XMLconvention["fb_result"]] = result_calculation
 		else:
@@ -733,6 +800,12 @@ class AutecologyXML(_File):
 	def get_fb_variable_and_result(self, fb_data, parametersettings):
 		#initilize the class to get XMLconvention
 		init_Aut = AutecologyXML(None)
+
+		#Give error when type is not made available
+		if(fb_data["type"] == "equation"):
+			pass
+		else:
+			raise RuntimeError("type "+ rule_dict["type"] + " in " + self.XMLconvention["fb"] +" is not available to calculate through this library.")
 
 
 		if(not(init_Aut.XMLconvention["fb_result"] in parametersettings)):
@@ -761,6 +834,10 @@ class AutecologyXML(_File):
 
 
 	def make_mr_dataframe(self, mr_data):
+
+		if(len(mr_data["parameters"]) == 0):
+			raise ValueError("Incorrect data given as mr_data, no parameters available.")
+
 		for nr, cur_par in enumerate(mr_data["parameters"]):
 			df_current_rule = cur_par["data"]
 			
@@ -788,8 +865,12 @@ class AutecologyXML(_File):
 				df_total_rule_headers["unit"].append(cur_par["unit"])
 
 		#sort the data
-		df_total_rule = df_total_rule.sort_values(by=["output"])
+		#df_total_rule = df_total_rule.sort_values(by=["output"])
 	
+		#convert dataframe to strings and replace nan for unspecified (<,>)
+		df_total_rule = df_total_rule.astype(str)
+		df_total_rule = df_total_rule.replace("nan","<,>")
+
 		return(df_total_rule, df_total_rule_headers)
 
 	def _scan(self):
@@ -908,6 +989,22 @@ class AutecologyXML(_File):
 		self.knowledgeRulesOutputStatistics = [[layer["statistic"] for key2, layer in value["outputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
 		self.knowledgeRulesOutputUnits = [[layer["unit"] for key2, layer in value["outputLayers"].items()] for key1, value in self.knowledgeRulesDict["rules"].items()]
 
+		#Check if knowledgerules are correctly implemented
+		for rule_nr, rule_name in enumerate(self.knowledgeRulesNames):
+			#Check formula based rules that can be calculated
+			if(self.knowledgeRulesCategories[rule_nr] == self.XMLconvention["fb"]):
+				if(self.knowledgeRulesDict["rules"][rule_name]["type"] == "equation"):
+					rule = self.knowledgeRulesDict["rules"][rule_name]
+					(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule)
+					parametersettings = self.calculate_fb(rule, parametersettings, variableparameter)
+					try:
+						(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule)
+						parametersettings = self.calculate_fb(rule, parametersettings, variableparameter)
+					except:
+						raise RuntimeError("Equation of FormulaBased " + self.knowledgeRulesNames[rule_nr] + " is not yet correctly implemented.")
+				else:
+					pass
+
 		return()
 
 	def _scan_systemflowdiagrams(self, modeltypename, systemname):
@@ -921,11 +1018,11 @@ class AutecologyXML(_File):
 				equation = fromlink.find(self.make_find(["equation"])).text
 				#make sure knowledge rules are placed at the bottom of the To's
 				if(equation == "knowledge_rule"):
-					ToLinks = fromlink.findall(make_find(["To"]))
+					ToLinks = fromlink.findall(self.make_find(["To"]))
 					knowledge_ruleTo = ToLinks[0].text.replace('"','')
 					to = [tolink.text.replace('"','') for tolink in ToLinks[1:]] + [knowledge_ruleTo]
 				else:
-					to = [tolink.text.replace('"','') for tolink in fromlink.findall(make_find(["To"]))]
+					to = [tolink.text.replace('"','') for tolink in fromlink.findall(self.make_find(["To"]))]
 				from_overview.append(OrderedDict([("From_name",name),("label",label),("equation",equation),("To_names",to)]))
 			syfd_overview.append(OrderedDict([("diagram_name",flow_diagram_name),("Links",from_overview)]))
 
@@ -1235,21 +1332,29 @@ class AutecologyXML(_File):
 				#setup the layout
 				sbox = QtWidgets.QVBoxLayout()
 
+
 				for i, non_variable in enumerate(fb_data["parameters"]):
 					if(non_variable["layername"] == init_Aut.XMLconvention["fb_result"] or non_variable["layername"] == variable_dict["layername"]):
-						pass
+						continue
 					else:
 						comboBox.addItem(non_variable["layername"])
 
 						#Add dataproviders
 						if(non_variable["type"] == "scalar"):
 							slider_label = QtWidgets.QLabel(non_variable["layername"] +" :")
-							min_slide = non_variable["data"]["min_input"].iloc[0]
-							max_slide = non_variable["data"]["max_input"].iloc[0]
-							stepsize_slide = float((max_slide - min_slide)/10)
-							slider = LabeledSlider(min_slide, max_slide, stepsize_slide, orientation = QtCore.Qt.Horizontal)
+							min_slide = round(non_variable["data"]["min_input"].iloc[0],5)
+							max_slide = round(non_variable["data"]["max_input"].iloc[0],5)
+							stepsize_slide = round((max_slide - min_slide) / 10,5)
+							max_levels = 11
+							labels= [min_slide + n * stepsize_slide for n in range(max_levels - 1)]
+							labels= labels + [max_slide]
+							labels= np.around(labels,5).tolist()
+							labels_str = [str(label) for label in labels]
+							
+							slider = LabeledSlider(1, 11, 1, labels = labels_str, orientation = QtCore.Qt.Horizontal)
 							slider.setObjectName(non_variable["layername"])
-							slider.setValue(parametersettings[non_variable["layername"]])
+							slider.sl.labels = labels
+
 							slider.setTracking(True)
 							# slider.setTickPosition(QtWidgets.QSlider.TicksBothSides)
 							print(parametersettings)
@@ -1345,8 +1450,8 @@ class AutecologyXML(_File):
 						
 						#Add dataproviders
 						if(non_variable["type"] == "scalar"):
-							
-							 self.findChild(QtWidgets.QSlider,non_variable["layername"]).setValue(parametersettings[non_variable["layername"]])
+							new_index = self.findChild(QtWidgets.QSlider,non_variable["layername"]).labels.index(parametersettings[non_variable["layername"]])
+							self.findChild(QtWidgets.QSlider,non_variable["layername"]).setValue(new_index)
 							
 						elif(non_variable["type"] == "constant"):
 							
@@ -1395,6 +1500,13 @@ class AutecologyXML(_File):
 				#initilize the class to get XMLconvention
 				init_Aut = AutecologyXML(None)
 
+				#Give error when type is not made available
+				if(fb_data["type"] == "equation"):
+					pass
+				else:
+					raise RuntimeError("type "+ rule_dict["type"] + " in " + self.XMLconvention["fb"] +\
+						" is not available to calculate through this library.")
+
 				#get current variable and results
 				result, variable, variable_dict = AutecologyXML.get_fb_variable_and_result(self, fb_data, parametersettings)
 
@@ -1411,7 +1523,7 @@ class AutecologyXML(_File):
 
 						#Fill previous
 						if(variable_dict["type"] == "scalar"): 
-							parametersettings[variable_dict["layername"]] = variable_dict["data"]["min_input"].iloc[0]
+							parametersettings[variable_dict["layername"]] = round(variable_dict["data"]["min_input"].iloc[0],5)
 						elif(variable_dict["type"] == "constant"):
 							parametersettings[variable_dict["layername"]] = variable_dict["data"]["output"].iloc[0]
 						else:
@@ -1420,9 +1532,9 @@ class AutecologyXML(_File):
 						[newvariable_dict] = [var for var in fb_data["parameters"] if(var["layername"] == new_variable)]
 
 						if(newvariable_dict["type"] == "scalar"):
-							min_range = newvariable_dict["data"]["min_input"].iloc[0]
-							max_range = newvariable_dict["data"]["max_input"].iloc[0]
-							step_range = (max_range - min_range) / 10
+							min_range = round(newvariable_dict["data"]["min_input"].iloc[0],5)
+							max_range = round(newvariable_dict["data"]["max_input"].iloc[0],5)
+							step_range = round((max_range - min_range) / 10,5)
 							fb_list = {newvariable_dict["layername"] : [number for number in np.arange(min_range, max_range, step_range)]}
 
 						elif(newvariable_dict["type"] == "constant"):
@@ -1436,7 +1548,10 @@ class AutecologyXML(_File):
 						pass
 
 				elif(list_settings[0] == "slider"):
-					parametersettings[self.sender().objectName()] = self.sender().value()
+					if(self.sender().value() >= len(self.sender().labels)):
+						parametersettings[self.sender().objectName()] = self.sender().labels[len(self.sender().labels) - 1]
+					else:
+						parametersettings[self.sender().objectName()] = self.sender().labels[self.sender().value()]
 
 				elif(list_settings[0] == "tickbox"):
 					[constant_dict] = [var for var in fb_data["parameters"] if(var["layername"] == list_settings[1])]
@@ -1446,7 +1561,7 @@ class AutecologyXML(_File):
 					raise ValueError("unavailable command")
 
 				#re-calculate the result
-				fb_result = init_Aut.calculate_fb(fb_data, parametersettings, variableparameter = fb_list)		
+				fb_result = init_Aut.calculate_fb(fb_data, parametersettings, variableparameter = fb_list)	
 
 				#make frame based on settings
 				if(list_settings[0] == "combobox"):
@@ -2051,29 +2166,32 @@ class TestAutecologyXML_testxml(unittest.TestCase):
 		#test first system
 		self.xmltest._scan_knowledgerules(modeltypename = self.xmltest.modeltypes[0], systemname = self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.systemname, "testsystem","Error occurs at system :" + self.xmltest.systems[0])
-		self.assertEqual(self.xmltest.knowledgeRulesNr,6,"Error occurs at system :" + self.xmltest.systems[0])
+		self.assertEqual(self.xmltest.knowledgeRulesNr,7,"Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesCategories,["ResponseCurve","ResponseCurve","ResponseCurve",\
-														"ResponseCurve","FormulaBased","MultipleReclassification"],"Error occurs at system :" + self.xmltest.systems[0]) 
+														"ResponseCurve","FormulaBased","FormulaBased","MultipleReclassification"],"Error occurs at system :" + self.xmltest.systems[0]) 
 		# self.assertTrue(isinstance(self.xmltest.knowledgeRulesDict,dict),"Error occurs at model :" + cur_model) 
 		self.assertEqual(self.xmltest.knowledgeRulesNames,["chloride_concentration","soil_type","silt_fraction",\
-													"waterdepth_lakes","vegetation_extinction","vegetation_types"],"Error occurs at model :" + self.xmltest.systems[0])
+													"waterdepth_lakes","vegetation_extinction","Fetch","vegetation_types"],"Error occurs at model :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesInputLayernames,[["chloride_concentration"],["soil_type"],["silt_fraction"],["waterdepth_lakes"],\
-													["subarea","extinction","waterdepth_summer","fetch"],["veg_A","veg_B","chloride_concentration"]],\
+													["subarea","extinction","waterdepth_summer","fetch"],["North","NorthEast","East","SouthEast","South",\
+													"SouthWest","West","NorthWest","waterdepth_summer_cm"],\
+													["veg_A","veg_B","chloride_concentration"]],\
 													"Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesInputStatistics,[["maximum"],["average"],["average"],["average"],\
-													["constant","average","average","average"],["average","average","average"]],\
+													["constant","average","average","average"],["average","average","average","average","average",\
+													"average","average","average","average"],["average","average","average"]],\
 													"Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesInputUnits,[['mg/l'],['categories'],['fraction / description'],['m'],\
-													['categories','Kd','m','m'],['boolean','boolean','mg/L']],\
+													['categories','Kd','m','m'],['m/s','m/s','m/s','m/s','m/s','m/s','m/s','m/s','cm'],['boolean','boolean','mg/L']],\
 													"Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesOutputLayernames,[["HSI_chloride_concentration"],["HSI_soil_type"],["HSI_silt_fraction"],["HSI_waterdepth_lakes"],\
-													["P_vegetation"],["vegetation_types"]],\
+													["P_vegetation"],["fetch"],["vegetation_types"]],\
 													"Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesOutputStatistics,[["average"],["average"],["average"],["average"],\
-													["average"],["average"]],\
+													["average"],["average"],["average"]],\
 													"Error occurs at system :" + self.xmltest.systems[0])
 		self.assertEqual(self.xmltest.knowledgeRulesOutputUnits,[['factor'],['factor'],['factor'],['factor'],\
-													['factor'],['categories']],\
+													['factor'],['m'],['categories']],\
 													"Error occurs at system :" + self.xmltest.systems[0])
 		
 		self.assertTrue(all(elem in self.xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \

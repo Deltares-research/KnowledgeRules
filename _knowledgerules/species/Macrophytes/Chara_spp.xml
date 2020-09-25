@@ -63,6 +63,7 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
@@ -71,7 +72,11 @@
 									<html></html>
 								</reference>
 							</references>
-							<equation>"1/(1 + P_Chara)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1 + P_Chara)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "P_Chara" type="scalar">
 									<parameter min_input="0" max_input = "1"/>
@@ -120,13 +125,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Chara spp. presence based on several parameters among which visibility"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"1/(1+exp(-(-3.811882503+subarea_factor_Chara_visibility-2.183232932*waterdepth_summer+0.101857262*(waterdepth_summer^2)-0.109802864*waterdepth_summer*visibility-0.00058004*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-3.811882503+subarea_factor_Chara_visibility-2.183232932*waterdepth_summer+0.101857262*(waterdepth_summer^2)-0.109802864*waterdepth_summer*visibility-0.00058004*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>							
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_Chara_visibility" type="constant">
 									<parameter input= "1.852459203" input_cat ="MIJ" output="1.852459203"/>
@@ -190,13 +200,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+						<type>equation</type>
 							<description>"Calculate Chara spp. presence based on several parameters among which extinction"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>	
 							</references>
-							<equation>"1/(1+exp(-(0.247702657+subarea_factor_Chara_extinction-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(0.247702657+subarea_factor_Chara_extinction-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>							
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_Chara_extinction" type="constant">
 									<parameter input = "1.45711916" input_cat ="MIJ" output="1.45711916"/>

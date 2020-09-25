@@ -180,13 +180,18 @@ Er is geen voorbeeldproject beschikbaar.
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Geschiktheid van rivieren op basis van andere factoren"</description>
 							<author>"Valesca Harezlak"</author>
 							<date>2013-01-16</date>
 							<references>
 								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
 							</references>
-							<equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie * overig)^(1/7)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie * overig)^(1/7)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "voedsel" type="scalar">
 									<parameter min_input="0" max_input = "1"/>
@@ -247,13 +252,18 @@ Er is geen voorbeeldproject beschikbaar.
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Geschiktheid van meren op basis van andere factoren"</description>
 							<author>"Valesca Harezlak"</author>
 							<date>2013-01-16</date>
 							<references>
 								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
 							</references>
-							<equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie)^(1/6)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"(voedsel * beschutting * waterkwaliteit^2 * reproductie)^(1/6)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "voedsel" type="scalar">
 									<parameter min_input="0" max_input = "1"/>
@@ -332,13 +342,18 @@ Er is geen voorbeeldproject beschikbaar.
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Geschiktheid waterkwaliteit op basis van andere factoren"</description>
 							<author>"Valesca Harezlak"</author>
 							<date>2013-01-16</date>
 							<references>
 								<reference author="Stuber, R.J., Gebhart,G." year="1982" title="" journal="" identification=""/>
 							</references>
-							<equation>(troebelheid + zuurgraad + (zuurstofgehalte * 2) + saliniteit + ((temperatuur_adult * temperatuur_larve * temperatuur_juveniel)^(1/3) * 2)) / 7"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>(troebelheid + zuurgraad + (zuurstofgehalte * 2) + saliniteit + ((temperatuur_adult * temperatuur_larve * temperatuur_juveniel)^(1/3) * 2)) / 7"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "troebelheid" type="scalar">
 									<parameter min_input="0" max_input = "1"/>

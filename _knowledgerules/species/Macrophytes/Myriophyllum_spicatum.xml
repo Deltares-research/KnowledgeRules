@@ -62,13 +62,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_myr_spic)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1 / (1+P_myr_spic)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="P_myr_spic" type="scalar">
 									<parameter min_input="0" max_input="1"/>
@@ -117,13 +122,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Myriophyllum spicatum presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-3.27857109+subarea_factor_myr_spic_visibility-0.722531165*waterdepth_summer-0.223865427*(waterdepth_summer^2)+1.850463753*waterdepth_summer*visibility-0.000108748*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-3.27857109+subarea_factor_myr_spic_visibility-0.722531165*waterdepth_summer-0.223865427*(waterdepth_summer^2)+1.850463753*waterdepth_summer*visibility-0.000108748*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>							
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_myr_spic_visibility" type="constant">
 									<parameter input= "-1.764671097" input_cat ="MIJ" output="-1.764671097"/>
@@ -187,13 +197,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Myriophyllum spicatum presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-6.35471533+subarea_factor_myr_spic_extinction+1.237471255*waterdepth_summer-0.160502853*(waterdepth_summer^2)-0.469718771*waterdepth_summer*extinction+0.485265559*extinction-0.000101317*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-6.35471533+subarea_factor_myr_spic_extinction+1.237471255*waterdepth_summer-0.160502853*(waterdepth_summer^2)-0.469718771*waterdepth_summer*extinction+0.485265559*extinction-0.000101317*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>							
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_myr_spic_extinction" type="constant">
 									<parameter input = "-1.824219126" input_cat ="MIJ" output="-1.824219126"/>

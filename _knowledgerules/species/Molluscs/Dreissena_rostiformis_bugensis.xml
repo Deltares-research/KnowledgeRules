@@ -106,13 +106,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Average substrate type tolerable for the Zebra mossel species"</description>
 							<author>"Mijke van Oorschot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"max(HSI_shell_coverage, HSI_silt_fraction)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"max(HSI_shell_coverage, HSI_silt_fraction)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="HSI_shell_coverage" type="scalar">
 									<parameter  min_input="0" max_input="1" />

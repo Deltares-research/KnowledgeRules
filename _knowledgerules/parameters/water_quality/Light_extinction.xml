@@ -63,19 +63,24 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate extinction based on chlorophyll A and Inorganic Suspended Matter content"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(inorganic_suspeded_solids))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(inorganic_suspeded_solids))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "chlorophylla" type="scalar">
-									<parameter min_input="0" max_input="3.5"/>
+									<parameter min_input="0.001" max_input="3.5"/>
 								</valuesScalar>
 								<valuesScalar layername = "inorganic_suspeded_solids" type="scalar">
-									<parameter min_input="0" max_input="30"/>
+									<parameter min_input="0.001" max_input="30"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
@@ -107,19 +112,24 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate extinction based on chlorophyll A and Inorganic Suspended Matter content"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(inorganic_suspeded_solids))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"0.113-(0.0664*ln(chlorophylla))+(2.63/sqrt(inorganic_suspeded_solids))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "chlorophylla" type="scalar">
-									<parameter min_input="0" max_input="3.5"/>
+									<parameter min_input="0.001" max_input="3.5"/>
 								</valuesScalar>
 								<valuesScalar layername = "inorganic_suspeded_solids" type="scalar">
-									<parameter min_input="0" max_input="30"/>
+									<parameter min_input="0.001" max_input="30"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>

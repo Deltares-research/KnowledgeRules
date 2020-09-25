@@ -152,7 +152,13 @@ class API:
 		
 		obj.systems = AutXML.systems
 		
-		if(AutXML.topic_name == AutXML.XMLconvention["topic_species"]):
+		if(AutXML.topic_name == AutXML.XMLconvention["topic_parameter"]):
+			#get names
+			obj.topic_name = AutXML.topic_name
+			obj.commonnames = AutXML.commonnames
+			obj.subjectlink = None		
+
+		elif(AutXML.topic_name == AutXML.XMLconvention["topic_species"]):
 			#get names
 			obj.topic_name = AutXML.topic_name + " : " + AutXML.latinname
 			obj.commonnames = AutXML.commonnames
@@ -364,27 +370,82 @@ class API:
 				
 				fb_tag = xml_obj.get_element_formula_based(modeltypename = modeltype, systemname = system, fbname = kr)
 				fb_data = xml_obj.get_data_formula_based_data(fb_tag)
-				fb_settings, fb_list = xml_obj.make_fb_first_parametersettings(fb_data)
-				fb_result = xml_obj.calculate_fb(fb_data, parametersettings = fb_settings, variableparameter = fb_list)
-				fb_subframe = xml_obj.visualize_fb_dynamic(fb_data,fb_result)
+				
+				#Only visualize SimpleEquations
+				if(fb_data["type"] == "equation"):
+					fb_settings, fb_list = xml_obj.make_fb_first_parametersettings(fb_data)
+					fb_result = xml_obj.calculate_fb(fb_data, parametersettings = fb_settings, variableparameter = fb_list)
+					fb_subframe = xml_obj.visualize_fb_dynamic(fb_data,fb_result)
 
 				
-				fb_groupbox = QtWidgets.QGroupBox()
-				fb_groupbox_layout = QtWidgets.QGridLayout()
-				fb_subframe_ready = fb_subframe()
-				fb_subframe_ready.show()
-				fb_groupbox_layout.addWidget(fb_subframe_ready)
-				fb_groupbox.setLayout(fb_groupbox_layout)
+					fb_groupbox = QtWidgets.QGroupBox()
+					fb_groupbox_layout = QtWidgets.QGridLayout()
+					fb_subframe_ready = fb_subframe()
+					fb_subframe_ready.show()
+					fb_groupbox_layout.addWidget(fb_subframe_ready)
+					fb_groupbox.setLayout(fb_groupbox_layout)
+				else:
+					kr_textBrowser_novisual = QtWidgets.QTextBrowser()
+					kr_textBrowser_novisual.setReadOnly(True)
+					kr_textBrowser_novisual.setObjectName('kr_novisualtext_%i' % i)
+					kr_textBrowser_novisual.setText("No visual representation of equation feasible")
+					kr_textBrowser_novisual.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+					kr_textBrowser_novisual.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+					kr_textBrowser_novisual.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+					kr_textBrowser_novisual.setFixedWidth(600)
+					kr_textBrowser_novisual.setFixedHeight(33)
+					kr_textBrowser_novisual.setAttribute(103)
+					kr_textBrowser_novisual.show()
+					kr_textBrowser_novisual.setFixedHeight(kr_textBrowser_novisual.document().size().height() +\
+					kr_textBrowser_novisual.contentsMargins().top() + kr_textBrowser_novisual.contentsMargins().bottom())
 
 				#add descriptions
 				font = QtGui.QFont()
 				font.setPointSize(10)
 				font.setUnderline(True)
-				
+			
 				kr_label1 = QtWidgets.QLabel('kr_label1_%i' % i)
 				kr_label1.setFont(font)
 				kr_label1.setObjectName("label")
-				kr_label1.setText(_translate("MainWindow", "Equation:"))
+				kr_label1.setText(_translate("MainWindow", "Type equation:"))
+
+				kr_textBrowser_type = QtWidgets.QTextBrowser()
+				kr_textBrowser_type.setReadOnly(True)
+				kr_textBrowser_type.setObjectName('kr_typetext_%i' % i)
+				kr_textBrowser_type.setText(fb_data["type"])
+				kr_textBrowser_type.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+				kr_textBrowser_type.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+				kr_textBrowser_type.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+				kr_textBrowser_type.setFixedWidth(600)
+				kr_textBrowser_type.setFixedHeight(33)
+				kr_textBrowser_type.setAttribute(103)
+				kr_textBrowser_type.show()
+				kr_textBrowser_type.setFixedHeight(kr_textBrowser_type.document().size().height() +\
+					kr_textBrowser_type.contentsMargins().top() + kr_textBrowser_type.contentsMargins().bottom())
+
+				kr_label2 = QtWidgets.QLabel('kr_label2_%i' % i)
+				kr_label2.setFont(font)
+				kr_label2.setObjectName("label")
+				kr_label2.setText(_translate("MainWindow", "Spatial Tool required:"))
+
+				kr_textBrowser_tool = QtWidgets.QTextBrowser()
+				kr_textBrowser_tool.setReadOnly(True)
+				kr_textBrowser_tool.setObjectName('kr_tooltext_%i' % i)
+				kr_textBrowser_tool.setText(fb_data["equation_spatialtool"])
+				kr_textBrowser_tool.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+				kr_textBrowser_tool.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff) 
+				kr_textBrowser_tool.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+				kr_textBrowser_tool.setFixedWidth(600)
+				kr_textBrowser_tool.setFixedHeight(33)
+				kr_textBrowser_tool.setAttribute(103)
+				kr_textBrowser_tool.show()
+				kr_textBrowser_tool.setFixedHeight(kr_textBrowser_tool.document().size().height() +\
+					kr_textBrowser_tool.contentsMargins().top() + kr_textBrowser_tool.contentsMargins().bottom())
+
+				kr_label3 = QtWidgets.QLabel('kr_label3_%i' % i)
+				kr_label3.setFont(font)
+				kr_label3.setObjectName("label")
+				kr_label3.setText(_translate("MainWindow", "Equation:"))
 
 				kr_textBrowser_eq = QtWidgets.QTextBrowser()
 				kr_textBrowser_eq.setReadOnly(True)
@@ -400,9 +461,18 @@ class API:
 				kr_textBrowser_eq.setFixedHeight(kr_textBrowser_eq.document().size().height() +\
 					kr_textBrowser_eq.contentsMargins().top() + kr_textBrowser_eq.contentsMargins().bottom())
 
+				#Only visualize SimpleEquations
+				if(fb_data["type"] == "equation"):
+					kr_groupboxlayout.addWidget(fb_groupbox)
+				else:
+				
+					kr_groupboxlayout.addWidget(kr_textBrowser_novisual)
 
-				kr_groupboxlayout.addWidget(fb_groupbox)
 				kr_groupboxlayout.addWidget(kr_label1)
+				kr_groupboxlayout.addWidget(kr_textBrowser_type)
+				kr_groupboxlayout.addWidget(kr_label2)
+				kr_groupboxlayout.addWidget(kr_textBrowser_tool)	
+				kr_groupboxlayout.addWidget(kr_label3)
 				kr_groupboxlayout.addWidget(kr_textBrowser_eq)
 
 
@@ -410,6 +480,7 @@ class API:
 
 				mr_tag = xml_obj.get_element_multiple_reclassification(modeltypename = modeltype, systemname = system, mrname = kr)
 				mr_data = xml_obj.get_data_multiple_reclassification_data(mr_tag)
+				print(mr_data)
 				mr_dataframe, mr_headers = xml_obj.make_mr_dataframe(mr_data)
 				mr_subframe = xml_obj.visualize_mr_table(mr_dataframe,mr_headers)
 

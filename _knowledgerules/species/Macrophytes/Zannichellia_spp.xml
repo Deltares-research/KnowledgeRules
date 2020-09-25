@@ -58,13 +58,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_Zannich)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1 / (1+P_Zannich)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="P_Zannich" type="scalar">
 									<parameter min_input="0" max_input="1"/>
@@ -113,13 +118,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Zannichellia species presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-0.836283468+subarea_factor_Zannich_visibility-2.678429997*waterdepth_summer+0.093452326*(waterdepth_summer^2)+0.397326678*waterdepth_summer*visibility-0.000580393*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-0.836283468+subarea_factor_Zannich_visibility-2.678429997*waterdepth_summer+0.093452326*(waterdepth_summer^2)+0.397326678*waterdepth_summer*visibility-0.000580393*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>							
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Zannich_visibility" type="constant">
 									<parameter input="0.039073394" input_cat="MIJ" output="0.039073394"/>									
@@ -183,13 +193,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Zannichellia species presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-1.596244827+subarea_factor_Zannich_extinction-1.714394462*waterdepth_summer+0.08105808*(waterdepth_summer^2)-0.263564618*waterdepth_summer*extinction+0.556030451*extinction-0.00051814*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-1.596244827+subarea_factor_Zannich_extinction-1.714394462*waterdepth_summer+0.08105808*(waterdepth_summer^2)-0.263564618*waterdepth_summer*extinction+0.556030451*extinction-0.00051814*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Zannich_extinction" type="constant">
 									<parameter input="0.237390354" input_cat="MIJ" output="0.237390354"/>

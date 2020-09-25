@@ -4,19 +4,21 @@ sys.path.append('..\\source')
 
 from autecology_xml import AutecologyXML
 
-xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Chara spp.xml")
+xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Chara_spp.xml")
 xmltest._readxml()
 print(type(xmltest.xmlroot))
 xmltest._scan()
 testext = xmltest._read_topicdescription()
 print(type(testext))
 xmltest._scan_modeltype("HSI")
-xmltest._scan_knowledgerules(modeltypename = "HSI", systemname = "ijsselmeergebied")
+xmltest._scan_knowledgerules(modeltypename = "HSI", systemname = "Markermeer")
 print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \
 									in xmltest.knowledgeRulesCategories))
-print(xmltest.knowledgeRulesCategorie)
-print(xmltest.XMLconvention["allowed_knowledgeRulesNames"])
-fb_tag = xmltest.get_element_formula_based(modeltypename = "HSI", systemname = "ijsselmeergebied", fbname = "P_chara_visibility")
+
+print(xmltest.knowledgeRulesNames)
+print(xmltest.knowledgeRulesCategories)
+print(xmltest.XMLconvention["allowed_knowledgeRulesCategories"])
+fb_tag = xmltest.get_element_formula_based(modeltypename = "HSI", systemname = "Markermeer", fbname = "P_Chara_visibility")
 fb_data = xmltest.get_data_formula_based_data(fb_tag)
 
 print(fb_data)

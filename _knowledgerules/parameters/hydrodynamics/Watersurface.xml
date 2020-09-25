@@ -49,13 +49,18 @@
 							</layer>						
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate water surface for a lake in the Netherlands based on summer depth"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"scalar(if(waterdepth_summer>0,1,0))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"scalar(if(waterdepth_summer>0,1,0))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="30.0"/>

@@ -93,13 +93,18 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="" year="" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_potapus)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1 / (1+P_potapus)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="P_potapus" type="scalar">
 									<parameter min_input="0" max_input="1"/>
@@ -148,13 +153,18 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Potamogeton pusillus presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="" year="" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-2.154920185+subarea_factor_potapus_visibility-1.427441069*waterdepth_summer+0.04838721*(waterdepth_summer^2)+0.20374052*waterdepth_summer*visibility-0.000372492*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-2.154920185+subarea_factor_potapus_visibility-1.427441069*waterdepth_summer+0.04838721*(waterdepth_summer^2)+0.20374052*waterdepth_summer*visibility-0.000372492*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>							
 							<Parameters>
 								<valuesConstant layername="subarea_factor_potapus_visibility" type="constant">
 									<parameter input="1.130470453" input_cat="MIJ" output="1.130470453"/>									
@@ -218,13 +228,18 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Potamogeton pusillus presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="" year="" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-1.488180498+subarea_factor_potapus_extinction-0.948768926*waterdepth_summer+0.04251785*(waterdepth_summer^2)-0.134108637*waterdepth_summer*extinction+0.124935344*extinction-0.000350674*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-1.488180498+subarea_factor_potapus_extinction-0.948768926*waterdepth_summer+0.04251785*(waterdepth_summer^2)-0.134108637*waterdepth_summer*extinction+0.124935344*extinction-0.000350674*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_potapus_extinction" type="constant">
 									<parameter input="1.167336985" input_cat="MIJ" output="1.167336985"/>									

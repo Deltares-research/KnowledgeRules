@@ -62,13 +62,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from filamentous algae presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_filam_algae)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1 / (1+P_filam_algae)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="P_filam_algae" type="scalar">
 									<parameter min_input="0" max_input="1"/>
@@ -117,13 +122,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate filamentous algae species presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-1.009677173+subarea_factor_filam_algae_visibility-1.488380475*waterdepth_summer+0.062599049*(waterdepth_summer^2)-0.019458869*waterdepth_summer*visibility-0.0000949*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-1.009677173+subarea_factor_filam_algae_visibility-1.488380475*waterdepth_summer+0.062599049*(waterdepth_summer^2)-0.019458869*waterdepth_summer*visibility-0.0000949*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_filam_algae_visibility" type="constant">
 									<parameter input="-0.050028014" input_cat="MIJ" output="-0.050028014"/>
@@ -133,7 +143,6 @@
 									<parameter input="0.880361938" input_cat="MHE" output="0.880361938"/>
 									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
 									<parameter input="-1.065562397" input_cat="MHH" output="-1.065562397"/>
-									
 								</valuesConstant>
 								<valuesScalar layername = "waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
@@ -188,13 +197,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate filamentous algae presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-0.276884752+subarea_factor_filam_algae_extinction-1.323829778*waterdepth_summer+0.058226538*(waterdepth_summer^2)-0.073627804*waterdepth_summer*extinction-0.0000928*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-0.276884752+subarea_factor_filam_algae_extinction-1.323829778*waterdepth_summer+0.058226538*(waterdepth_summer^2)-0.073627804*waterdepth_summer*extinction-0.0000928*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_filam_algae_extinction" type="constant">
 									<parameter input = "0.116717843" input_cat ="MIJ" output="0.116717843"/>		

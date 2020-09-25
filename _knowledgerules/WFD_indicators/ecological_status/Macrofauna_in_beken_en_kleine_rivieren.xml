@@ -38,13 +38,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Habitatgeschiktheid voor Macrofauna"</description>
 							<author>"Gerben van Geest"</author>
 							<date>2009-01-01</date>
 							<references>
 								<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
 							</references>
-							<equation>"-0.2563 * ln(meanderingsklasse) + 0.9385"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"-0.2563 * ln(meanderingsklasse) + 0.9385"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername="meanderingsklasse" type="constant">
 									<parameter input="1" input_cat="Meanderend (sinuositeit &gt;1.5)" output="1"/>
@@ -76,13 +81,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Habitatgeschiktheid voor Macrofauna"</description>
 							<author>"Gerben van Geest"</author>
 							<date>2009-01-01</date>
 							<references>
 								<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
 							</references>
-							<equation>"0.1532 * ln(stroomsnelheid) + 0.3999"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"0.1532 * ln(stroomsnelheid) + 0.3999"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="stroomsnelheid" type="scalar">
 									<parameter min_input="0.0001" max_input="50.0"/>
@@ -110,13 +120,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Habitatgeschiktheid voor Macrofauna"</description>
 							<author>"Gerben van Geest"</author>
 							<date>2009-01-01</date>
 							<references>
 								<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
 							</references>
-							<equation>"0.1342 * ln(stroomsnelheid) + 0.1753"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"0.1342 * ln(stroomsnelheid) + 0.1753"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="stroomsnelheid" type="scalar">
 									<parameter min_input="50.0" max_input="200.0"/>
@@ -144,13 +159,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Habitatgeschiktheid voor Macrofauna"</description>
 							<author>"Gerben van Geest"</author>
 							<date>2009-01-01</date>
 							<references>
 								<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
 							</references>
-							<equation>"-0.1911 * ln(Ptotaal) + 0.5613"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"-0.1911 * ln(Ptotaal) + 0.5613"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="Ptotaal" type="scalar">
 									<parameter min_input="0.1" max_input="1.0"/>
@@ -178,13 +198,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Habitatgeschiktheid voor Macrofauna"</description>
 							<author>"Gerben van Geest"</author>
 							<date>2009-01-01</date>
 							<references>
 								<reference author="G. van Geest" year="2009" title="" journal="" identification=""/>
 							</references>
-							<equation>"-0.4152 * ln(BZV) + 1.2635"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"-0.4152 * ln(BZV) + 1.2635"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="BZV" type="scalar">
 									<parameter min_input="2.0" max_input="10.0"/>

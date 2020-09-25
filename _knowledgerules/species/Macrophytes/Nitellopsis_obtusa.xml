@@ -62,13 +62,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_Nitelobt)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1 / (1+P_Nitelobt)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="P_Nitelobt" type="scalar">
 									<parameter min_input="0" max_input="1"/>
@@ -117,13 +122,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Nitellopsis obtusa presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-7.551994864+subarea_factor_Nitelobt_visibility+2.035959675*waterdepth_summer-0.887909492*(waterdepth_summer^2)+1.451981197*waterdepth_summer*visibility-0.001251113*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-7.551994864+subarea_factor_Nitelobt_visibility+2.035959675*waterdepth_summer-0.887909492*(waterdepth_summer^2)+1.451981197*waterdepth_summer*visibility-0.001251113*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Nitelobt_visibility" type="constant">
 									<parameter input="6.235589476" input_cat="MIJ" output="6.235589476"/>									
@@ -187,13 +197,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Nitellopsis obtusa presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1/(1+exp(-(-9.206085992+subarea_factor_Nitelobt_extinction+3.715232921*waterdepth_summer-0.818446686*(waterdepth_summer^2)-0.397517433*waterdepth_summer*extinction+0.499419689*extinction-0.00120804*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(-9.206085992+subarea_factor_Nitelobt_extinction+3.715232921*waterdepth_summer-0.818446686*(waterdepth_summer^2)-0.397517433*waterdepth_summer*extinction+0.499419689*extinction-0.00120804*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername="subarea_factor_Nitelobt_extinction" type="constant">
 									<parameter input="6.613101494" input_cat="MIJ" output="6.613101494"/>									

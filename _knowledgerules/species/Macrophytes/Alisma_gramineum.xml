@@ -88,13 +88,18 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from a vegetation presence"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1 / (1+P_ali_gra)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1 / (1+P_ali_gra)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername="P_ali_gra" type="scalar">
 									<parameter min_input="0" max_input="1"/>
@@ -143,13 +148,18 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Alisma gramineum presence based on several parameters among which visibility"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1*exp(-(-6.912056505+subarea_factor_ali_gra_visibility-0.531361693*waterdepth_summer+0.035894273*(waterdepth_summer^2)-0.440335259*waterdepth_summer*visibility-0.000848449*fetch))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1*exp(-(-6.912056505+subarea_factor_ali_gra_visibility-0.531361693*waterdepth_summer+0.035894273*(waterdepth_summer^2)-0.440335259*waterdepth_summer*visibility-0.000848449*fetch))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_ali_gra_visibility" type="constant">
 									<parameter input= "-0.491002242" input_cat ="MIJ" output="-0.491002242"/>
@@ -213,13 +223,18 @@ strijklengte = de jaargemiddelde effectieve strijklengte met windkracht van 4 Bf
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate Alisma gramineum presence based on several parameters among which extinction"</description>
 							<author>"Clara Chrzanowski"</author>
 							<date>2014-10-02</date>
 							<references>
 								<reference author="Clara Chrzanowski" year="2014" title="" journal="" identification=""/>
 							</references>
-							<equation>"1*exp(-(-4.79567066+subarea_factor_ali_gra_extinction-1.810776978*waterdepth_summer+0.042890288*(waterdepth_summer^2)+0.425244597*waterdepth_summer*extinction-0.866421971*extinction-0.000888816*fetch))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1*exp(-(-4.79567066+subarea_factor_ali_gra_extinction-1.810776978*waterdepth_summer+0.042890288*(waterdepth_summer^2)+0.425244597*waterdepth_summer*extinction-0.866421971*extinction-0.000888816*fetch))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_ali_gra_extinction" type="constant">
 									<parameter input ="-0.457302559" input_cat ="MIJ" output="-0.457302559"/>

@@ -259,7 +259,7 @@
 	</complexType>
 	<complexType name="ResponseCurveContentComplexType">
 		<sequence>
-			<element name="type" type="AutXML:TypeSingleType"/>
+			<element name="type" type="AutXML:TypeRCSingleType"/>
 			<element name="description" type="string"/>
 			<element name="author" type="string"/>
 			<element name="date" type="AutXML:dateType"/>
@@ -274,11 +274,12 @@
 	</complexType>
 	<complexType name="FormulaBasedContentComplexType">
 		<sequence>
+			<element name="type" type="AutXML:TypeFBSingleType"/>
 			<element name="description" type="string"/>
 			<element name="author" type="string"/>
 			<element name="date" type="AutXML:dateType"/>
 			<element name="references" type="AutXML:ReferencesComplexType"/>
-			<element name="equation" type="string"/>
+			<element name="Equation" type="AutXML:FBEquationComplexType"/>
 			<element name="Parameters" type="AutXML:FBParametersComplexType"/>
 		</sequence>
 	</complexType>
@@ -294,6 +295,23 @@
 	<complexType name="ReferencesComplexType">
 		<sequence>
 			<element name="reference" type="AutXML:ReferenceComplexType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="FBEquationComplexType">
+		<choice>
+			<element name="SimpleEquation" type="AutXML:FBSimpleEquationComplexType"/>
+			<element name="SpatialEquation" type="AutXML:FBSpatialEquationComplexType"/>
+		</choice>
+	</complexType>
+	<complexType name="FBSimpleEquationComplexType">
+	<sequence>
+		<element name="equation" type="string"/>
+	</sequence>
+	</complexType>
+	<complexType name="FBSpatialEquationComplexType">
+		<sequence>
+			<element name="spatialtool" type="AutXML:SpatialToolSimpleType"/>
+			<element name="equation" type="string"/>
 		</sequence>
 	</complexType>
 	<complexType name="FBParametersComplexType">
@@ -349,7 +367,7 @@
 		<attribute name="layername" type="string" use="required"/>
 		<attribute name="type" type="string" use="required" fixed="range / categorical"/>
 	</complexType>
-		<complexType name="MRValuesCategoricalComplexType">
+	<complexType name="MRValuesCategoricalComplexType">
 		<sequence>
 			<element name="parameter" type="AutXML:ParameterCategoricalRCComplexType" maxOccurs="unbounded"/>
 		</sequence>
@@ -455,6 +473,11 @@
 			<enumeration value="knowledge_rule"/>
 		</restriction>
 	</simpleType>
+	<simpleType name="SpatialToolSimpleType">
+		<restriction base="string">
+			<enumeration value="PCRaster"/>
+		</restriction>
+	</simpleType>
 	<complexType name="ReferenceComplexType">
 		<choice>
 			<element name="html" type="string" minOccurs="0"/>
@@ -473,12 +496,18 @@
 			<pattern value="\d\d\d\d-\d\d-\d\d"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="TypeSingleType">
+	<simpleType name="TypeRCSingleType">
 		<restriction base="string">
 			<enumeration value="scalar"/>
 			<enumeration value="categorical"/>
 			<enumeration value="range / categorical"/>
 			<enumeration value="ranges"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="TypeFBSingleType">
+		<restriction base="string">
+			<enumeration value="equation"/>
+			<enumeration value="spatialequation"/>
 		</restriction>
 	</simpleType>
 	<simpleType name="ExternalIntegerSimpleType">

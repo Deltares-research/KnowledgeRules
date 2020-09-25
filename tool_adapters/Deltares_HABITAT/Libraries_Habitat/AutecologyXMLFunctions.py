@@ -182,7 +182,7 @@ def make_knowledgerules_dict(root,systemname):
 				parameter_list.append([float(parameter.get("rangemin_input")), float(parameter.get("rangemax_input")),\
 				 	str(parameter.get("input_cat")), float(parameter.get("output")), str(parameter.get("output_cat"))])
 		else:
-			_AutecologyXMLLogger.Error("type "+ str(response_curve_dict["type"]) + " is not available.")
+			_AutecologyXMLLogger.Error("Response curve type "+ str(response_curve_dict["type"]) + " is not available.")
 			return()
 
 		response_curve_dict["rule"] = parameter_list  #NO PANDAS AVAILABLE
@@ -196,7 +196,15 @@ def make_knowledgerules_dict(root,systemname):
 		formula_based_dict = {}
 		formula_based_dict["name"] = fb_element.get('name').replace('"','')
 		formula_based_dict["KnowledgeruleCategorie"] = XMLconvention["fb"]
-		formula_based_dict["equation_text"] = Content.find(make_find(['equation'])).text.replace('"','').replace('^','**')
+		formula_based_dict["type"] = Content.find(make_find(['type'])).text.replace('"','')
+		if(formula_based_dict["type"] == "equation"):
+			formula_based_dict["equation_text"] = Content.find(make_find(['Equation','SimpleEquation','equation'])).text.replace('"','').replace('^','**')
+		elif(formula_based_dict["type"] == "spatialequation"):
+			formula_based_dict["equation_text"] = Content.find(make_find(['Equation','SpatialEquation','equation'])).text.replace('"','').replace('^','**')	
+		else:
+			_AutecologyXMLLogger.Error("Formula based type "+ str(response_curve_dict["type"]) + " is not available.")
+			return()
+
 		#get input layers
 		find_inputLayers = make_find(["inputLayers","layer"])
 		formula_based_dict["inputLayers"] = get_data_layers(fb_element, find_inputLayers) 
@@ -327,12 +335,7 @@ def make_hyrarchical_model_structure(model_name, topic_name, structure,equations
 	# Create main composite model if it does not exist yet, else get its position
 	if(model_name in topic_model_list_names):
 		
-		#if main composite model already exists get index
-		#TEST
-		#_AutecologyXMLLogger.Warn("list :" + str([cur_model.Name for i, cur_model in enumerate(topic_model_list) ]))
-		_AutecologyXMLLogger.Warn("type :" + str([type(cur_model) for i, cur_model in enumerate(topic_model_list)]))
-		
-				
+		#if main composite model already exists get index		
 		topic_model_list_position_list = [i for i, cur_model in enumerate(topic_model_list) if(cur_model.Name == model_name)]
 		first = False
 

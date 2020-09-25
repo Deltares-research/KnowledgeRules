@@ -59,6 +59,7 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Equation to calculate the HSI from vegetation coverage presence"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
@@ -67,7 +68,11 @@
 									<html></html>
 								</reference>
 							</references>
-							<equation>"1/(1 + P_tot_cover)"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1 + P_tot_cover)"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesScalar layername = "P_tot_cover" type="scalar">
 									<parameter min_input="0" max_input = "1"/>
@@ -116,13 +121,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate total coverage of aquatic species presence based on several parameters among which visibility"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
-							<equation>"1/(1+exp(-(0.896535408+subarea_factor_tot_cover_visibility-1.774724153*waterdepth_summer+0.107883832*(waterdepth_summer^2)-0.683243807*waterdepth_summer*visibility-0.000336719*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(0.896535408+subarea_factor_tot_cover_visibility-1.774724153*waterdepth_summer+0.107883832*(waterdepth_summer^2)-0.683243807*waterdepth_summer*visibility-0.000336719*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>							
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_tot_cover_visibility" type="constant">
 									<parameter input= "0.542645352" input_cat ="MIJ" output="0.542645352"/>									
@@ -186,13 +196,18 @@
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculate total coverage of aquatic species presence based on several parameters among which extinction"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>	
 							</references>
-							<equation>"1/(1+exp(-(3.161255241+subarea_factor_tot_cover_extinction-1.515602052*waterdepth_summer+0.078178843*(waterdepth_summer^2)-0.184863346*waterdepth_summer*extinction+0.122955669*extinction-0.000293432*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(3.161255241+subarea_factor_tot_cover_extinction-1.515602052*waterdepth_summer+0.078178843*(waterdepth_summer^2)-0.184863346*waterdepth_summer*extinction+0.122955669*extinction-0.000293432*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername = "subarea_factor_tot_cover_extinction" type="constant">
 									<parameter input = "0.274379362" input_cat ="MIJ" output="0.274379362"/>		

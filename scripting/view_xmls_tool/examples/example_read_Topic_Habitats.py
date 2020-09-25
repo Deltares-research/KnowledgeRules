@@ -5,9 +5,7 @@ sys.path.append('..\\source')
 from autecology_xml import AutecologyXML
 from matplotlib import pyplot as plt
 
-#xmltest = AutecologyXML(filename = "../../../_knowledgerules/parameters/water_quality/Light_extinction.xml")
-xmltest = AutecologyXML(filename = "../../../_knowledgerules/parameters/hydrodynamics/Fetch.xml")
-#xmltest = AutecologyXML(filename = "../../../_knowledgerules/parameters/hydrodynamics/Watersurface.xml")
+xmltest = AutecologyXML(filename = "../../../_knowledgerules/Habitats/Vegetation_associations/Vegetationtypes_Northern_Delta.xml")
 xmltest._readxml()
 print(type(xmltest.xmlroot))
 xmltest._scan()
@@ -18,8 +16,11 @@ xmltest._scan_modeltype("HSI")
 print(xmltest.modeltypename)
 print(xmltest.systems)
 
-xmltest._scan_knowledgerules(modeltypename = "HSI", systemname = "ijsselmeergebied")
+xmltest._scan_knowledgerules(modeltypename = xmltest.modeltypename, systemname = xmltest.systems[0])
 print(xmltest.XMLconvention["allowed_knowledgeRulesCategories"])
 print(xmltest.knowledgeRulesNames)
 print(all(elem in xmltest.XMLconvention["allowed_knowledgeRulesCategories"] for elem \
 									in xmltest.knowledgeRulesCategories))
+
+
+print("Done.")

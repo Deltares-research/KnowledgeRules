@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../XMLSchema/AutecologyXML.xsd">
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
 		<EoLpagenr>000000</EoLpagenr>
@@ -217,13 +217,18 @@ TEST]]></text>
 							</layer>
 						</inputLayers>
 						<Content>
+							<type>equation</type>
 							<description>"Calculation of presence of specific vegetation species based on environmental characteristics among which extinction"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
 							<references>
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>	
 							</references>
-							<equation>"1/(1+exp(-(0.247702657+subarea-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
+							<Equation>
+								<SimpleEquation>
+									<equation>"1/(1+exp(-(0.247702657+subarea-1.280411065*waterdepth_summer+0.06854636*(waterdepth_summer^2)-0.278693414*waterdepth_summer*extinction-0.163078252*extinction-0.000435184*fetch)))"</equation>
+								</SimpleEquation>
+							</Equation>
 							<Parameters>
 								<valuesConstant layername = "subarea" type="constant">
 									<parameter input = "1" input_cat ="MBIJ" output="81302272"/>
@@ -251,6 +256,126 @@ TEST]]></text>
 								<unit>"factor"</unit>
 								<statistic>average</statistic>
 								<description>"Likeliness of presence for a specific vegetation species"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="Fetch">
+						<inputLayers>
+							<layer name="North">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_North</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the Northern direction"</description>
+							</layer>
+							<layer name="NorthEast">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_NorthEast</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the NorthEast direction"</description>
+							</layer>
+							<layer name="East">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_East</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the East direction"</description>
+							</layer>
+							<layer name="SouthEast">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_SouthEast</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the SouthEast direction"</description>
+							</layer>							
+							<layer name="South">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_South</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the South direction"</description>
+							</layer>
+							<layer name="SouthWest">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_SouthWest</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the SouthWest direction"</description>
+							</layer>
+							<layer name="West">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_West</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the West direction"</description>
+							</layer>
+							<layer name="NorthWest">
+								<parameter_cat>"Wind fetch"</parameter_cat>
+								<layer_filename>fetch_NorthWest</layer_filename>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
+								<description>"Fetch in the NorthWest direction"</description>
+							</layer>
+							<layer name="waterdepth_summer_cm">
+								<parameter_cat>"Water depth"</parameter_cat>
+								<layer_filename>waterdepth_summer_cm</layer_filename>
+								<unit>cm</unit>
+								<statistic>"average"</statistic>
+								<description>"Water depth in the summer in centimeter"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+						<type>spatialequation</type>
+							<description>"Calculate Fetch for a lake in the Netherlands"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"cover(((North*0.0551)+(West*0.0672)+(NorthWest*0.0824)+(SouthWest*0.0447)+(South*0.1710)+(SouthEast*0.2475)+(East*0.2406)+(NorthEast*0.0916)),waterdepth_summer_cm*0)"</equation>
+								</SpatialEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "North" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "NorthEast" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "East" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "SouthEast" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "South" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "SouthWest" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "West" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "NorthWest" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername = "waterdepth_summer_cm" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="fetch">
+								<parameter_cat>"Wind"</parameter_cat>
+								<layer_filename>fetch_length</layer_filename>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
@@ -287,16 +412,16 @@ TEST]]></text>
 								<reference author="Van den Rijt" title="Ecohydrologisch Model voor de Oevervegetatie van Estuaria" identification="" year="2001" journal=""/>
 							</references>
 							<Parameters>
-								<valuesRangeCategorical layername="veg_A" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="1" output_cat="Scirpetum lacustris"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="2" output_cat="Scripetum tabemaemontani"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_A_present" output="3" output_cat="Kaal slik"/>
-								</valuesRangeCategorical>
-								<valuesRangeCategorical layername="veg_B" type="range / categorical">
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="4" output_cat="Scirpetum maritimi"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="5" output_cat="Haloscirpetum maritime"/>
-									<parameter rangemin_input="0" rangemax_input="1" input_cat="veg_B_present" output="7" output_cat="Spartinetum townsendii"/>
-								</valuesRangeCategorical>
+								<valuesCategorical layername="veg_A" type="categorical">
+									<parameter input="1" input_cat="veg_A_present" output="1" output_cat="Scirpetum lacustris"/>
+									<parameter input="1" input_cat="veg_A_present" output="2" output_cat="Scripetum tabemaemontani"/>
+									<parameter input="1" input_cat="veg_A_present" output="3" output_cat="Kaal slik"/>
+								</valuesCategorical>
+								<valuesCategorical layername="veg_B" type="categorical">
+									<parameter input="1" input_cat="veg_B_present" output="4" output_cat="Scirpetum maritimi"/>
+									<parameter input="1" input_cat="veg_B_present" output="5" output_cat="Haloscirpetum maritime"/>
+									<parameter input="1" input_cat="veg_B_present" output="7" output_cat="Spartinetum townsendii"/>
+								</valuesCategorical>
 								<valuesRangeCategorical layername="chloride_concentration" type="range / categorical">
 									<parameter rangemin_input="0" rangemax_input="200" input_cat="0 - 200" output="1" output_cat="Scirpetum lacustris"/>
 									<parameter rangemin_input="200" rangemax_input="3000" input_cat="200 - 3,000" output="2" output_cat="Scripetum tabemaemontani"/>

@@ -258,7 +258,8 @@ def make_knowledgerules_dict(root,systemname):
 
 		multiple_reclassifiation_dict["parameters"] = [] 
 		#Get the number of values under Parameteers
-		mr_values_tags = Content.findall(make_find(["Parameters","valuesRangeCategorical"]))
+		mr_values_tags = Content.findall(make_find(["Parameters","valuesRangeCategorical"])) +\
+			Content.findall(make_find(["Parameters","valuesCategorical"]))
 		
 		for values in mr_values_tags:
 			parameter_dict = {}
@@ -268,14 +269,30 @@ def make_knowledgerules_dict(root,systemname):
 			parameter_list = []
 			if(parameter_dict["type"] == "range / categorical"):
 				for parameter in values.findall(make_find(["parameter"])):
-					parameter_list.append([float(parameter.get("rangemin_input")), float(parameter.get("rangemax_input")),\
-						str(parameter.get("input_cat")), float(parameter.get("output")), str(parameter.get("output_cat"))])
+					#Transform parameter output to required form
+					if parameter.get("output").isdigit():
+						parameter_output = int(parameter.get("output"))
+					else:
+						parameter_output = float(parameter.get("output"))
+					
+					parameter_list.append([None, float(parameter.get("rangemin_input")),float(parameter.get("rangemax_input")),str(parameter.get("input_cat")),\
+						parameter_output,str(parameter.get("output_cat"))])
+			elif(parameter_dict["type"] == "categorical"):
+				for parameter in values.findall(make_find(["parameter"])):
+					#Transform parameter output to required form
+					if parameter.get("output").isdigit():
+						parameter_output = int(parameter.get("output"))
+					else:
+						parameter_output = float(parameter.get("output"))
+					#add to list
+					parameter_list.append([int(parameter.get("input")), None, None,str(parameter.get("input_cat")),\
+					 	parameter_output,str(parameter.get("output_cat"))])
 
 			else:
 				_AutecologyXMLLogger.Error("type "+ str(parameter_dict["type"]) + " is not available.")
 				return()
 
-			column_names = values.findall(make_find(["parameter"]))[0].keys()
+			column_names =["input","rangemin_input","rangemax_input","input_cat","output","output_cat"]
 			parameter_dict["data"] = parameter_list #NO PANDAS AVAILABLE
 			multiple_reclassifiation_dict["parameters"].append(parameter_dict)
 			
@@ -682,10 +699,10 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 			for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["parameters"]):
 				if(line["type"] == "range / categorical"):					
 					for subline in line["data"]:
-						output_values.append([subline[3],str(subline[4])])
+						output_values.append([subline[4],str(subline[5])])
 				elif(line["type"] == "categorical"):
 					for subline in line["data"]:
-						output_values.append([subline[3],str(subline[4])])
+						output_values.append([subline[4],str(subline[5])])
 				else:
 					_AutecologyXMLLogger.Warn("Current multiplereclassification type is not yet available :" +\
 						str(line["type"]) + ". "+\
@@ -702,11 +719,18 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 				for nr4, line in enumerate(response_curves_overview[knwlrl3.Name]["parameters"]):
 					in_subline = False
 					for subline in line["data"]:
-						if(value_ls[0] == subline[3]):
-							make_string = "<" + str(subline[0]) + ", "+ str(subline[1]) + "]"
+						if((value_ls[0] == subline[4]) & (line["type"] == "range / categorical")):
+							make_string = "<" + str(subline[1]) + ", "+ str(subline[2]) + "]"
 							output_values_df[nr_ls].append(make_string)
 							
 							in_subline = True
+						elif((value_ls[0] == subline[4]) & (line["type"] == "categorical")):
+							make_string = str(subline[0])
+							output_values_df[nr_ls].append(make_string)
+							
+							in_subline = True
+						else:
+							pass
 
 					if(in_subline == False):
 						make_string = "<,>"

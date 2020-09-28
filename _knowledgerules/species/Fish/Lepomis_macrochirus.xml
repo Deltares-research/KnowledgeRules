@@ -31,7 +31,7 @@ Toepasbaarheid
 Amerika
 Voorbeeld project
 Er is geen voorbeeldproject beschikbaar.
-</text>
+						</text>
 					</Description>
 					<Description language="ENG">
 						<text>"To be filled"</text>
@@ -207,7 +207,7 @@ Er is geen voorbeeldproject beschikbaar.
 								</valuesScalar>
 								<valuesScalar layername = "overig" type="scalar">
 									<parameter min_input="0" max_input = "1"/>
-								</valuesScalar>							
+								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
@@ -375,7 +375,7 @@ Er is geen voorbeeldproject beschikbaar.
 								</valuesScalar>
 								<valuesScalar layername = "temperatuur_juveniel" type="scalar">
 									<parameter min_input="0" max_input = "1"/>
-								</valuesScalar>																
+								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>

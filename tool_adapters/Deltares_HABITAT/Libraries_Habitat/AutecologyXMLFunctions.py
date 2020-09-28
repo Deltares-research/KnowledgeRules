@@ -987,7 +987,7 @@ def create_model_from_XML(KnowledgeRuleDir, InputDir, model_name, topic_name, kr
 	(revHSI_list, complete_model_list) = connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules_list)
 
 	#store all links to models made
-	topic_model_list.append(complete_model_list)
+	topic_model_list = topic_model_list + complete_model_list
 
 	#endregion
 

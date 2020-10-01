@@ -107,7 +107,7 @@ def make_knowledgerules_dict(root,systemname):
 	modeltypename = "HSI"
 
 	# get species type tag
-	type_tags =  root.findall(make_find(["Topic","Parameter"])) + root.findall(make_find(["Topic","Species"])) +  root.findall(make_find(["Topic","WFDIndicator"])) +\
+	type_tags =  root.findall(make_find(["Topic","Parameter"])) + root.findall(make_find(["Topic","Species"])) +  root.findall(make_find(["Topic","WFDindicator"])) +\
 		 root.findall(make_find(["Topic","Habitats"]))
 
 	type_tag_root =  type_tags[0]
@@ -127,8 +127,8 @@ def make_knowledgerules_dict(root,systemname):
 		autecology_overview["Topic"] = "Species"
 		autecology_overview["EoLCode"] = type_tag_root.find(make_find(['EoLpagenr'])).text
 		autecology_overview["latinname"] = type_tag_root.find(make_find(['LatName'])).text
-	elif(type_tag_root.tag == make_find(["WFDIndicator"])):
-		autecology_overview["Topic"] = "WFDIndicator"
+	elif(type_tag_root.tag == make_find(["WFDindicator"])):
+		autecology_overview["Topic"] = "WFDindicator"
 		pass
 	elif(type_tag_root.tag == make_find(["Habitats"])):
 		autecology_overview["Topic"] = "Habitats"
@@ -198,9 +198,9 @@ def make_knowledgerules_dict(root,systemname):
 		formula_based_dict["KnowledgeruleCategorie"] = XMLconvention["fb"]
 		formula_based_dict["type"] = Content.find(make_find(['type'])).text.replace('"','')
 		if(formula_based_dict["type"] == "equation"):
-			formula_based_dict["equation_text"] = Content.find(make_find(['Equation','SimpleEquation','equation'])).text.replace('"','').replace('^','**')
+			formula_based_dict["equation_text"] = Content.find(make_find(['Equation','SimpleEquation','equation'])).text.replace('"','')
 		elif(formula_based_dict["type"] == "spatialequation"):
-			formula_based_dict["equation_text"] = Content.find(make_find(['Equation','SpatialEquation','equation'])).text.replace('"','').replace('^','**')	
+			formula_based_dict["equation_text"] = Content.find(make_find(['Equation','SpatialEquation','equation'])).text.replace('"','')	
 		else:
 			_AutecologyXMLLogger.Error("Formula based type "+ str(response_curve_dict["type"]) + " is not available.")
 			return()
@@ -737,7 +737,7 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 						output_values_df[nr_ls].append(make_string)
 
 					if(len(output_values_df[nr_ls]) != (nr4+3)):
-						_AutecologyXMLLogger.Warn("Current multiplereclassification has more values added than current column itteration : Column is " +\
+						_AutecologyXMLLogger.Error("Current multiplereclassification has more values added than current column itteration : Column is " +\
 						str(line["layername"]) + ", Values added are "+ str(output_values_df[nr_ls]) + " . "+\
 						"Classification was not added")
 						return()
@@ -826,8 +826,6 @@ def connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules
 			
 			#Redirect output of submodels as input to new model
 			if(submodel in hsi_modelnames):
-				#TEST
-				_AutecologyXMLLogger.Warn("Submodel found in hsi_outputlayernames :" + submodel)
 				#load layer from previous calculation
 				index_hsi_nr = hsi_modelnames.index(submodel)
 				revHSI_list[nr5].InputGridCoverages[nr6].Name =  "HSI_" + submodel
@@ -842,8 +840,7 @@ def connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules
 
 			# Redirect output of sub-knowledgerules as input to new model
 			elif(submodel in knowledgerules_list_modelnames):
-				#TEST
-				_AutecologyXMLLogger.Warn("Submodel found in knowledgerules_list_outputlayernames :" + submodel)
+				#load layer from previous knowledge rules
 				index_kr_nr = knowledgerules_list_modelnames.index(submodel)
 				revHSI_list[nr5].InputGridCoverages[nr6].Name =  submodel
 
@@ -854,10 +851,35 @@ def connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules
 				LinkMaps(knowledgerules_list[index_model],\
 					 knowledgerules_list[index_model].OutputGridCoverages[index_layer].Name,\
 					 revHSI_list[nr5], revHSI_list[nr5].InputGridCoverages[nr6].Name)
+
+			# Redirect output of composite model with a knowledge_rule based calculation as input to new model
+			elif(submodel in structure.keys()):
+
+				#Get calculation model of composite model
+				calc_model = structure[submodel][-1]
+
+				#load layer from previous knowledge rules
+				index_kr_nr = knowledgerules_list_modelnames.index(calc_model)
+				
+				#connect layer
+				index_values = knowledgerules_list_modelnames_index[index_kr_nr]
+				index_model = index_values
+				index_layer = 0
+
+				#assign name to the input layer
+				revHSI_list[nr5].InputGridCoverages[nr6].Name =  knowledgerules_list[index_model].OutputGridCoverages[index_layer].Name
+
+				#continue to connect the layer
+				LinkMaps(knowledgerules_list[index_model],\
+					 knowledgerules_list[index_model].OutputGridCoverages[index_layer].Name,\
+					 revHSI_list[nr5], revHSI_list[nr5].InputGridCoverages[nr6].Name)
+
+
 			else:
 				_AutecologyXMLLogger.Error("Submodel " + submodel + " in HSI component "+ revhsimodel5.Name +" is not available in earlier layers.")
 
 			count_input = count_input + 1
+			
 
 		#add formula
 		if(equations[origin_model_name] == "min"):
@@ -869,8 +891,9 @@ def connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules
 		elif(equations[origin_model_name] == "geometric_average"):
 			HSI_equation_list.append(CreateEquation(HSI_list[nr5].Name, HSI_list[nr5], "areaaverage("+ ",".join([str(i) for i in revhsimodel5.InputGridCoverages])+ ")"))
 		else:
-			_AutecologyXMLLogger.Warn("Current equation for HSI model structure is not yet available :" +\
+			_AutecologyXMLLogger.Error("Current equation for HSI model structure is not yet available :" +\
 						equations[origin_model_name])
+			return()
 		
 		revHSI_list[nr5].Formulas.Add(HSI_equation_list[nr5])
 

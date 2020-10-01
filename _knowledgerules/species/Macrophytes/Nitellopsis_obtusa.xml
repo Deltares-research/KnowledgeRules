@@ -244,7 +244,7 @@
 						<inputLayers>
 							<layer name="subarea">
 								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas</layer_filename>
+								<layer_filename>subareas_markermeer</layer_filename>
 								<unit>category</unit>
 								<statistic>"constant"</statistic>
 								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>

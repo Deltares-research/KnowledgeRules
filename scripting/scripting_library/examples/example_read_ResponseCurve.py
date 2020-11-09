@@ -1,9 +1,10 @@
 import sys
-sys.path.append("..")
-sys.path.append('..\\source')
-
-from autecology_xml import AutecologyXML
 from matplotlib import pyplot as plt
+
+
+sys.path.append("../")
+from autecology_xml import AutecologyXML
+
 
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Birds/Phalacrocorax carbo.xml")
 #xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Molluscs/Dreissena_polymorpha.xml")

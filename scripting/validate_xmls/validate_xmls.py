@@ -7,9 +7,10 @@ import os
 from lxml import etree
 import sys
 
-sys.path.append('..\\..\\scripting\\view_xmls_tool\\source')
 
+sys.path.append("../scripting_library")
 from autecology_xml import AutecologyXML
+
 
 #INITIALISE
 

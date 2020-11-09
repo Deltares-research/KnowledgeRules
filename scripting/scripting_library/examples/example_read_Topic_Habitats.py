@@ -1,21 +1,17 @@
 import sys
-sys.path.append("..")
-sys.path.append('..\\source')
+from matplotlib import pyplot as plt
 
+
+
+sys.path.append("../")
 from autecology_xml import AutecologyXML
 
-#xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Birds/Phalacrocorax carbo.xml")
-#xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Molluscs/Dreissena_polymorpha.xml")
-#xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Nitellopsis obtusa.xml")
-xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Myriophyllum_spicatum.xml")
+
+xmltest = AutecologyXML(filename = "../../../_knowledgerules/Habitats/Vegetation_associations/Vegetationtypes_Northern_Delta.xml")
 xmltest._readxml()
 print(type(xmltest.xmlroot))
-
 xmltest._scan()
 print(xmltest.topic_name)
-print(xmltest.EoL_ID)
-print(xmltest.EoL_Link)
-print(xmltest.latinname)
 print(xmltest.commonnames)
 
 xmltest._scan_modeltype("HSI")

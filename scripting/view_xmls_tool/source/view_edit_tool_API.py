@@ -12,13 +12,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 #import xml.etree.ElementTree as ET
 #from xml.etree.ElementTree import ElementTree
 from lxml import etree as ET
-import autecology_xml
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 import numpy as np
 import random
 import sip
+
+
+sys.path.append("../../scripting_library/")
+import autecology_xml
 
 
 # # from PyQtWebEngine import QtWebEngineWidgets

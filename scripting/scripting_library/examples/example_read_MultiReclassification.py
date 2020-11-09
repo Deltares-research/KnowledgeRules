@@ -1,10 +1,10 @@
 import sys
-sys.path.append("..")
-sys.path.append('..\\source')
-
 import pandas
 
+
+sys.path.append("../")
 from autecology_xml import AutecologyXML
+
 
 xmltest = AutecologyXML(filename = "../../../_knowledgerules/Habitats/Vegetation_associations/Vegetationtypes_Northen_Delta.xml")
 xmltest._readxml()

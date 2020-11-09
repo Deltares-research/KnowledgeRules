@@ -1,17 +1,21 @@
 import sys
-sys.path.append("..")
-sys.path.append('..\\source')
 
+sys.path.append("../")
 from autecology_xml import AutecologyXML
-from matplotlib import pyplot as plt
 
-#xmltest = AutecologyXML(filename = "../../../_knowledgerules/WFD_indicators/ecological_status/Macrofauna_in_beken_en_kleine_rivieren.xml")
-#xmltest = AutecologyXML(filename = "../../../_knowledgerules/WFD_indicators/ecological_indicators/Aquatic_plants_total_coverage.xml")
-xmltest = AutecologyXML(filename = "../../../_knowledgerules/WFD_indicators/ecological_indicators/Filamentous_algae.xml")
+
+#xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Birds/Phalacrocorax carbo.xml")
+#xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Molluscs/Dreissena_polymorpha.xml")
+#xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Nitellopsis obtusa.xml")
+xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Myriophyllum_spicatum.xml")
 xmltest._readxml()
 print(type(xmltest.xmlroot))
+
 xmltest._scan()
 print(xmltest.topic_name)
+print(xmltest.EoL_ID)
+print(xmltest.EoL_Link)
+print(xmltest.latinname)
 print(xmltest.commonnames)
 
 xmltest._scan_modeltype("HSI")

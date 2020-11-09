@@ -44,9 +44,10 @@ from lxml import etree
 import sys
 import shutil
 
-sys.path.append('..\\..\\scripting\\view_xmls_tool\\source')
 
+sys.path.append("../scripting_library")
 from autecology_xml import AutecologyXML
+
 
 #INITIALISE
 

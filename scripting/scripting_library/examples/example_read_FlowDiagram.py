@@ -1,9 +1,9 @@
 import sys
-sys.path.append("..")
 
-sys.path.append('..\\source')
 
+sys.path.append("../")
 from autecology_xml import AutecologyXML
+
 
 import os #for dir creation
 

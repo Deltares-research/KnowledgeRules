@@ -10,6 +10,8 @@ import sys
 import os
 import view_edit_tool_API
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+sys.path.append("../../scripting_library/")
 import autecology_xml
 
 

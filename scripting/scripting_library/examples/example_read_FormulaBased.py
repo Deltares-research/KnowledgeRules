@@ -1,8 +1,9 @@
 import sys
-sys.path.append("..")
-sys.path.append('..\\source')
 
+
+sys.path.append("../")
 from autecology_xml import AutecologyXML
+
 
 xmltest = AutecologyXML(filename = "../../../_knowledgerules/species/Macrophytes/Chara_spp.xml")
 xmltest._readxml()

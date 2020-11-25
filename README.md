@@ -22,8 +22,7 @@ A knowledge rule is a cause–effect relationship that describe environmental im
 These knowledge rules have been shared in a GitHub storage platform to encourage a dare-to-share principle in using these knowledge rules, enabling users to contribute new knowledge rules and expand on existing ones. By sharing this knowledge and making it centrally available we hope to accelerate and improve environmental impact analysis. 
 GitHub comes with a version-controlled environment, allowing to revert at any time to a previous version. All contributions will thereby be stored.
 
-![Knowledge rule Oxygenconcentration](https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/oxygen_knowledgerule.png)
-![Knowledge rule Substrate](https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/substrate_knowledgerule.png)
+![Knowledge rule Oxygenconcentration](https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/oxygen_knowledgerule.png)![Knowledge rule Substrate](https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/substrate_knowledgerule.png)
 
 <sup>Figures - Example of knowledge rules applicable to determine the habitat suitability of the Chabot bullhead (Cottus perifretum).</sub> 
 

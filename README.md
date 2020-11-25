@@ -1,7 +1,7 @@
 KnowledgeRules
 ===============
 
-KnowledgeRules is a GitHub storage platform to enable the use of ecological knowledge rules on autecology.
+KnowledgeRules is a GitHub storage platform to enable the use knowledge rules for environmental impact assesment.
 This platform contains ways to:
 -	store knowledge rules in a standardized format, 
 -	visualize the stored knowledge rules,
@@ -19,7 +19,7 @@ Some links:
 
 A knowledge rule is a cause–effect relationship that describe environmental impact based on environmental conditions. When these knowledge rules are linked in a cause-effect chain they can be used to describe the impact on environmental characteristics, society and economics and response (management). In regards to ecology, the cause-effect chains can be used to predict habitat suitability for specific species, specie groups and habitat types. The knowledge rules stored on the KnowledgeRules GitHub have been derived from data, modelling and/or expert knowledge. These knowledge rules have been documented either in scientific papers or reports. By storing them in the KnowledgeRules GitHub these knowledge rules are ready-to-use and come with important metadata on their area of application, author, limitations and caveats.
 
-<img src=https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/cause_effect_relationship_bluegill.png alt="Cause-effect relationship describing suitable habitat for the Bluegill" width="450" height="600"><img src=https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/impact_analysis_spawning_ayu.png alt="Spawning suitability Ayu in Tenryuu river" width="350" height="600">
+<img src=https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/cause_effect_relationship_bluegill.png alt="Cause-effect relationship describing suitable habitat for the Bluegill" width="420" height="550"><img src=https://github.com/Deltares/KnowledgeRules/blob/master/docs/images/impact_analysis_spawning_ayu.png alt="Spawning suitability Ayu in Tenryuu river" width="320" height="550">
 
 <sub>Figures 1 and 2 - Example of a cause-effect relatioship describing Bluegill (<em>Lepomis macrochirus</em>) habitat requirements and a result of an impact based analysis for Ayu (<em>Plecoglossus altivelis</em>) spawning habitat in the Tenryuu river.</sub>
 

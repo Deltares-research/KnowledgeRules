@@ -1,7 +1,7 @@
 KnowledgeRules
 ===============
 
-KnowledgeRules is a GitHub storage platform to enable the use knowledge rules for environmental impact assesment.
+KnowledgeRules is a GitHub storage platform to enable the use of knowledge rules for environmental impact assesment.
 This platform contains ways to:
 -	store knowledge rules in a standardized format, 
 -	visualize the stored knowledge rules,

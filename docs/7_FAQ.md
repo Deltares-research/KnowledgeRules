@@ -6,4 +6,4 @@ nav_order: 7
 
 # Frequently asked questions (FAQ)
 
-> To be added
+> **To be added**

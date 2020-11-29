@@ -8,7 +8,7 @@ nav_order: 4
 
 ## Purpose
 
-> To be added
+> **To be added**
 
 ## File format
 
@@ -18,15 +18,15 @@ Within Deltares there is a lot of expertise on the use of XML as it is used to c
 
 ## File structure
 
-> To be added
+> **To be added**
 
 ## XML editors
 **Altova XML Spy**
 Editing programs like Altova XML Spy are common and allow for a clear overview of XML files, but are commercial products
 
-> To be added
+> **To be added**
 
 **XML COPY EDITOR**
 
-> To be added
+> **To be added**
 

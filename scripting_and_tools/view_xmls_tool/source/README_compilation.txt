@@ -6,8 +6,3 @@ https://stackoverflow.com/questions/55120281/cx-freeze-importerror-no-module-nam
 #current method - build in source folder and copy over to compiled folder
 python setup.py build
 python setup.py bdist_msi
-
-#For an executable
-python setup_build.py build -b ..\compiled\ 
-#For a msi installer
-python setup_bdist_msi.py bdist_msi --target-dir= ..\compiled\ -d ..\compiled\

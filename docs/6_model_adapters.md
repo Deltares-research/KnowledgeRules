@@ -6,8 +6,8 @@ nav_order: 6
 
 # Model adapters
 
-> To be added
+> **To be added**
 
 ## Deltares HABITAT
 
-> To be added
+> **To be added**

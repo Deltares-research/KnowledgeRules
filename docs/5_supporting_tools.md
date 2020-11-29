@@ -6,17 +6,17 @@ nav_order: 5
 
 # Supporting tools
 
-> To be added
+> **To be added**
 
 ## File validation
 
-> To be added
+> **To be added**
 
 ## Visualization
 
-> To be added
+> **To be added**
 
 ## Python scripting
 
-> To be added
+> **To be added**
 

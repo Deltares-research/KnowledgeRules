@@ -71,5 +71,5 @@ Response curve:
 
 Formula: 
 
-> To be added
+> **To be added**
 

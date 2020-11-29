@@ -1,7 +1,7 @@
 ---
 layout: default
 title: KnowledgeRules
-nav_orde: 0
+nav_order: 0
 ---
 
 # KnowledgeRules

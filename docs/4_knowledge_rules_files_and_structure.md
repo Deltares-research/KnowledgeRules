@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Knowledge rules files and structure
-nav_orde: 4
+nav_order: 4
 ---
 
 # Knowledge rules files and structure
 
 ## Purpose
 
-
+> To be added
 
 ## File format
 
@@ -18,8 +18,15 @@ Within Deltares there is a lot of expertise on the use of XML as it is used to c
 
 ## File structure
 
+> To be added
+
 ## XML editors
 **Altova XML Spy**
-Editing programs like Altova XML Spy are common in Deltares and allow for a clear overview of XML files, but are commercial products
+Editing programs like Altova XML Spy are common and allow for a clear overview of XML files, but are commercial products
+
+> To be added
 
 **XML COPY EDITOR**
+
+> To be added
+

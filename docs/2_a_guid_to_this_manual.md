@@ -1,7 +1,7 @@
 ---
 layout: default
 title: A guide to this manual
-nav_orde: 2
+nav_order: 2
 ---
 
 # A guide to this manual
@@ -34,7 +34,8 @@ This manual will provide use when you are interested in the following:
 1.  You want to store your obtained autecological knowledge rules in a standard format so that you can shared with others.
 2.  You are looking to re-use existing autecological knowledge rules in your environmental assessment.
 3.  You want to do a field assessment of what could be likely causes for the presence or absence of a specific species or habitat type.
-4.  You want to use …
+
+> To be added
 
 ## Glossary
 
@@ -69,4 +70,6 @@ Flow diagram:
 Response curve: 
 
 Formula: 
+
+> To be added
 

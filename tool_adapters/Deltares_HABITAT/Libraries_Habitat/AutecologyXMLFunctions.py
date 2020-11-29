@@ -816,9 +816,6 @@ def connect_hyrarchical_structure(structure, equations, HSI_list, knowledgerules
 		hsi_modelnames = [str(hsi_model.Name.replace("HSI_","")) for hsi_model in revHSI_list]
 	 	hsi_modelnames_index = [nr_model for nr_model, hsi_model in enumerate(revHSI_list)]
 
-		#TEST
-		_AutecologyXMLLogger.Warn("current hsi_model :" + str(revhsimodel5))
-
 		for nr6, submodel in enumerate(structure[origin_model_name]):
 			#Add a new input grid
 			HSI_input_list.append(CreateEmptyMap())

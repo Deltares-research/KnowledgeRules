@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutecologyXML xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews ../../../XMLSchema/AutecologyXML.xsd">
+	<Topic>
+		<Parameter>
+			<CommonNames>
+				<Name name="Oxygen" language="ENG"/>
+				<Name name="Zuustof" language="NL"/>
+			</CommonNames>
+		</Parameter>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="world">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
+					</SpatialScope>	
+					<TemporalScope>
+						<StartDate>1990-01-01</StartDate>
+						<EndDate>1992-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text><![CDATA["To be filled"]]></text>
+					</Description>
+					<Description language="ENG">
+						<text><![CDATA["To be filled"]]></text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="oxygen_saturation_from_concentration">
+						<From name="parameters">
+							<label>"parameters"</label>
+							<equation>knowledge_rule</equation>
+							<To>oxygen_saturation_from_concentration</To>
+							<To>equalibrium</To>
+						</From>
+						<From name="equalibrium">
+							<label>"parameters"</label>
+							<equation>knowledge_rule</equation>
+							<To>Equalibrium_oxygen_nonstandard_pressure</To>
+							<To>Pressure</To>
+							<To>Pressure_of_water</To>
+							<To>Presurre_coefficient</To>
+							<To>Equalibrium_oxygen_standard_pressure</To>
+						</From>
+					</FlowDiagram>
+					<FlowDiagram name="oxygen_concentration_from_saturation">
+						<From name="parameters">
+							<label>"parameters"</label>
+							<equation>knowledge_rule</equation>
+							<To>oxygen_concentration_from_saturation</To>
+							<To>equalibrium</To>
+						</From>
+						<From name="equalibrium">
+							<label>"parameters"</label>
+							<equation>knowledge_rule</equation>
+							<To>Equalibrium_oxygen_nonstandard_pressure</To>
+							<To>Pressure</To>
+							<To>Pressure_of_water</To>
+							<To>Presurre_coefficient</To>
+							<To>Equalibrium_oxygen_standard_pressure</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="Pressure">
+						<inputLayers>
+							<layer name="altitude">
+								<parameter_cat>"Altitude"</parameter_cat>
+								<layer_filename>altitude</layer_filename>
+								<unit>km</unit>
+								<statistic>"average"</statistic>
+								<description>"Altitude from sealevel in km"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Calculate Pressure from altitude"</description>
+							<author>"Marc Weeber"</author>
+							<date>2020-10-01</date>
+							<references>
+								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+								</reference>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"5.25 * ln(1 - (altitude/44.3))"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "altitude" type="scalar">
+									<parameter min_input="-10" max_input="44"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="P">
+								<parameter_cat>"Pressure"</parameter_cat>
+								<layer_filename>pressure</layer_filename>
+								<unit>atm</unit>
+								<statistic>"average"</statistic>
+								<description>"Nonstandard pressure in atm"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="Pressure_of_water">
+						<inputLayers>
+							<layer name="temperature">
+								<parameter_cat>"Water temperature"</parameter_cat>
+								<layer_filename>watertemperature</layer_filename>
+								<unit>degrees Celsius</unit>
+								<statistic>"average"</statistic>
+								<description>"Water temperature in degrees Celsius"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Calculate Pressure of water from temperature"</description>
+							<author>"Marc Weeber"</author>
+							<date>2020-10-01</date>
+							<references>
+								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+								</reference>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"ln(11.871 - (3840.70 / (temperature - 273.15)) - (216961/ (temperature - 273.15)^2))"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "temperature" type="scalar">
+									<parameter min_input="4" max_input="35"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="Pwv">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>pressure_of_water</layer_filename>
+								<unit>atm</unit>
+								<statistic>"average"</statistic>
+								<description>"Nonstandard pressure of water in atm"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="Presurre_coefficient">
+						<inputLayers>
+							<layer name="temperature">
+								<parameter_cat>"Water temperature"</parameter_cat>
+								<layer_filename>watertemperature</layer_filename>
+								<unit>degrees Celsius</unit>
+								<statistic>"average"</statistic>
+								<description>"Water temperature in degrees Celsius"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Calculate Pressure of water from temperature"</description>
+							<author>"Marc Weeber"</author>
+							<date>2020-10-01</date>
+							<references>
+								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+								</reference>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"0.000975 - (1.426 * (10^-5 * temperature)) + (6.436 * (10^-8 * temperature^2))"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "temperature" type="scalar">
+									<parameter min_input="4" max_input="35"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="pressure_coefficient">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>pressure_coefficient</layer_filename>
+								<unit>-</unit>
+								<statistic>"average"</statistic>
+								<description>"Pressure coefficient used in oxygen calculation"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="Equalibrium_oxygen_standard_pressure">
+						<inputLayers>
+							<layer name="temperature">
+								<parameter_cat>"Water temperature"</parameter_cat>
+								<layer_filename>watertemperature</layer_filename>
+								<unit>degrees Celsius</unit>
+								<statistic>"average"</statistic>
+								<description>"Water temperature in degrees Celsius"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Calculate equalibrium oxygen of water under standard pressure from temperature"</description>
+							<author>"Marc Weeber"</author>
+							<date>2020-10-01</date>
+							<references>
+								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+								</reference>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"exp(7.7117 - 1.31403 * ln(temperature + 45.93))"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "temperature" type="scalar">
+									<parameter min_input="4" max_input="35"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="eq_oxygen_st_pressure">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>"average"</statistic>
+								<description>"Equalibrium of oxygen under standard pressure"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="Equalibrium_oxygen_nonstandard_pressure">
+						<inputLayers>
+							<layer name="eq_oxygen_st_pressure">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>"average"</statistic>
+								<description>"Equalibrium of oxygen under standard pressure"</description>
+							</layer>
+							<layer name="pressure_coefficient">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>pressure_coefficient</layer_filename>
+								<unit>-</unit>
+								<statistic>"average"</statistic>
+								<description>"Pressure coefficient used in oxygen calculation"</description>
+							</layer>
+							<layer name="Pwv">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>pressure_of_water</layer_filename>
+								<unit>atm</unit>
+								<statistic>"average"</statistic>
+								<description>"Nonstandard pressure of water in atm"</description>
+							</layer>
+							<layer name="P">
+								<parameter_cat>"Pressure"</parameter_cat>
+								<layer_filename>pressure</layer_filename>
+								<unit>atm</unit>
+								<statistic>"average"</statistic>
+								<description>"Nonstandard pressure in atm"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Calculate equalibrium oxygen of water under nonstandard pressure"</description>
+							<author>"Marc Weeber"</author>
+							<date>2020-10-01</date>
+							<references>
+								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+								</reference>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"eq_oxygen_st_pressure * (P * (((1 - Pwv/P) * (1 - pressure_coefficient * P)) / ((1 - Pwv) * (1 - pressure_coefficient)))) "</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "eq_oxygen_st_pressure" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+								<valuesScalar layername = "P" type="scalar">
+									<parameter min_input="-3" max_input="2"/>
+								</valuesScalar>
+								<valuesScalar layername = "Pwv" type="scalar">
+									<parameter min_input="3.1" max_input="3.2"/>
+								</valuesScalar>
+								<valuesScalar layername = "pressure_coefficient" type="scalar">
+									<parameter min_input="0.0005" max_input="0.0010"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="eq_oxygen_nonst_pressure">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>equalibrium_oxygen_under_nonstandard_pressure</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>"average"</statistic>
+								<description>"Equalibrium of oxygen under nonstandard pressure"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="oxygen_saturation_from_concentration">
+						<inputLayers>
+							<layer name="eq_oxygen_nonst_pressure">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>"average"</statistic>
+								<description>"Equalibrium of oxygen under standard pressure"</description>
+							</layer>
+							<layer name="oxygen_concentration">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<unit>"mg/L"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Calculate the oxygen saturation from the oxygen concentration"</description>
+							<author>"Marc Weeber"</author>
+							<date>2020-10-01</date>
+							<references>
+								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+								</reference>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"(100 * oxygen_concentration)/eq_oxygen_nonst_pressure"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "eq_oxygen_nonst_pressure" type="scalar">
+									<parameter min_input="0.001" max_input="15"/>
+								</valuesScalar>
+								<valuesScalar layername = "oxygen_concentration" type="scalar">
+									<parameter min_input="0.001" max_input="15"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="oxygen_saturation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<unit>"percentage"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="oxygen_concentration_from_saturation">
+						<inputLayers>
+							<layer name="eq_oxygen_nonst_pressure">
+								<parameter_cat>"Water Pressure"</parameter_cat>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<unit>mg/L</unit>
+								<statistic>"average"</statistic>
+								<description>"Equalibrium of oxygen under standard pressure"</description>
+							</layer>
+							<layer name="oxygen_saturation">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<unit>"percentage"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Calculate the oxygen saturation from the oxygen concentration"</description>
+							<author>"Marc Weeber"</author>
+							<date>2020-10-01</date>
+							<references>
+								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+								</reference>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"(oxygen_saturation * eq_oxygen_nonst_pressure)/100"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername = "eq_oxygen_nonst_pressure" type="scalar">
+									<parameter min_input="0.001" max_input="15"/>
+								</valuesScalar>
+								<valuesScalar layername = "oxygen_saturation" type="scalar">
+									<parameter min_input="0.001" max_input="120"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="oxygen_concentration">
+								<parameter_cat>TOBEFILLED</parameter_cat>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<unit>"mg/L"</unit>
+								<statistic>minimum</statistic>
+								<description>TOBEFILLED</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text><![CDATA["To be filled"]]></text>
+		</Description>
+		<Description language="ENG">
+			<text><![CDATA["To be filled"]]></text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
+			<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+		</reference>	
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

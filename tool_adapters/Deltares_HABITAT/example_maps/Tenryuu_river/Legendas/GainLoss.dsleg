@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<theme xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <quantity columnName="value">
+    <defaultStyle>symbol-shape:Ellipse;line-endcap:Flat;outline-style:True;display-style:vector;geometry-type:Polygon;</defaultStyle>
+    <quantityThemeItems>
+      <label>Both not suitable</label>
+      <style>display-style:vector;line-endcap:Flat;outline-style:False;background-color:# -2832440;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>3.25</intervalMinValue>
+      <intervalMaxValue>4</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>Habitat loss</label>
+      <style>display-style:vector;line-endcap:Flat;outline-style:False;background-color:# -3380437;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>2.5</intervalMinValue>
+      <intervalMaxValue>3.25</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>Habitat gain</label>
+      <style>display-style:vector;line-endcap:Flat;outline-style:False;background-color:# -10037738;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>1.75</intervalMinValue>
+      <intervalMaxValue>2.5</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>Both suitable</label>
+      <style>display-style:vector;line-endcap:Flat;outline-style:False;background-color:# -14779928;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>1</intervalMinValue>
+      <intervalMaxValue>1.75</intervalMaxValue>
+    </quantityThemeItems>
+    <noDataValueType />
+  </quantity>
+</theme>

@@ -11,7 +11,7 @@
 	</Topic>
 	<Autecology>
 		<ModelType name="HSI">
-			<System name="adult">
+			<System name="Tenryuu river">
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Japan" id="1861060"/>
@@ -23,7 +23,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="ENG">
-						<text>TO BE FILLED</text>
+						<text><![CDATA[<h3 id="Ayu-Uncertainty and validation">Ayu-Uncertainty and validation</h1><p>These cause-effect relations have been compared to measurement data of the Ayu in the Tenryuu River, Japan.</p><h3 id="Ayu-Applicability">Applicability</h3><p>These knowledge rules should be applied with caution outside the Tenryuu River as local temporal habitat characteristics have been leading in assembeling these cause-effect relations.</p>]]></text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -146,26 +146,36 @@
 							<To>"SuspendedSedimentAscending"</To>
 						</From>
 					</FlowDiagram>
+					<FlowDiagram name="Ayu_Spawning">
+						<From name="Spawning">
+							<label>"Spawning habitat"</label>
+							<equation>min</equation>
+							<To>"WaterDepthSpawning"</To>
+							<To>"FlowVelocitySpawning"</To>
+							<To>"TemperatureSpawning"</To>
+							<To>"DissolvedOxygenSpawning"</To>
+							<To>"SuspendedMatterSpawning"</To>
+						</From>
+					</FlowDiagram>
 				</SystemFlowDiagrams>
 				<KnowledgeRules>
 					<ResponseCurve name="WaterDepthSpawning">
 						<inputLayers>
 							<layer name="WaterDepthSpawning">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>WaterDepthSpawning</layer_filename>
+								<layer_filename>waterdepth_watercolumn_median</layer_filename>
 								<unit>"m"</unit>
-								<statistic>mean</statistic>
+								<statistic>median</statistic>
 								<description>TOBEFILLED</description>
 							</layer>
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Mean tolerable waterdepth for spawning P. altivelis"</description>
+							<description>"Median tolerable waterdepth for spawning P. altivelis"</description>
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -191,20 +201,19 @@
 						<inputLayers>
 							<layer name="FlowVelocitySpawning">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>FlowVelocitySpawning</layer_filename>
+								<layer_filename>flowvelocity_watercolumn_median</layer_filename>
 								<unit>"m/s"</unit>
-								<statistic>mean</statistic>
+								<statistic>median</statistic>
 								<description>TOBEFILLED</description>
 							</layer>
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Mean tolerable flow velocity for spawning P. altivelis"</description>
+							<description>"Median tolerable flow velocity for spawning P. altivelis"</description>
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -229,20 +238,19 @@
 						<inputLayers>
 							<layer name="TemperatureSpawning">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>TemperatureSpawning</layer_filename>
-								<unit>"degrees celsius"</unit>
-								<statistic>mean</statistic>
+								<layer_filename>watertemperature_watercolumn_median</layer_filename>
+								<unit>"degrees Celsius"</unit>
+								<statistic>median</statistic>
 								<description>TOBEFILLED</description>
 							</layer>
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Mean tolerable temperature for spawning P. altivelis"</description>
+							<description>"Median tolerable temperature for spawning P. altivelis"</description>
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -268,10 +276,10 @@
 						<inputLayers>
 							<layer name="DissolvedOxygenSpawning">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>DissolvedOxygenSpawning</layer_filename>
+								<layer_filename>oxygenconcentration_watercolumn_minimum</layer_filename>
 								<unit>"mg/l"</unit>
-								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>"minimum"</statistic>
+								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -280,8 +288,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -305,27 +312,27 @@
 						<inputLayers>
 							<layer name="SuspendedMatterSpawning">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>SuspendedMatterSpawning</layer_filename>
+								<layer_filename>suspendedmatter_watercolumn_maximum</layer_filename>
 								<unit>"mg/l"</unit>
-								<statistic>maximum</statistic>
+								<statistic>"maximum"</statistic>
 								<description>TOBEFILLED</description>
 							</layer>
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Maximum tolerable dissolve oxygen concentration for spawning P. altivelis"</description>
+							<description>"Maximum tolerable suspended matter concentration for spawning P. altivelis"</description>
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
 								<parameter input="0" output="1"/>
-								<parameter input="21" output="1"/>
+								<parameter input="47" output="1"/>
 								<parameter input="125" output="0"/>
-								<parameter input="300" output="0"/>
+								<parameter input="150" output="0"/>
+								<parameter input="1000" output="0"/>
 							</valuesScalar>
 						</Content>
 						<outputLayers>
@@ -354,8 +361,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -379,7 +385,7 @@
 						<inputLayers>
 							<layer name="FlowVelocityMaxEgg">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>FlowVelocityMaxEgg</layer_filename>
+								<layer_filename>flow_velocity_max</layer_filename>
 								<unit>"m/s"</unit>
 								<statistic>maximum</statistic>
 								<description>TOBEFILLED</description>
@@ -391,8 +397,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -417,7 +422,7 @@
 						<inputLayers>
 							<layer name="FlowVelocityMinEgg">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>FlowVelocityMinEgg</layer_filename>
+								<layer_filename>flow_velocity_min</layer_filename>
 								<unit>"m/s"</unit>
 								<statistic>minimum</statistic>
 								<description>TOBEFILLED</description>
@@ -429,8 +434,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -467,8 +471,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -492,12 +495,12 @@
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenEgg">
 						<inputLayers>
-							<layer name="DissolvedOxygenEgg">
+							<layer name="Oxygen_concentration">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>DissolvedOxygenEgg</layer_filename>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -506,8 +509,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -543,8 +545,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -580,8 +581,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -617,8 +617,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -656,8 +655,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -693,8 +691,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -730,8 +727,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -766,8 +762,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -804,8 +799,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -842,8 +836,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -881,8 +874,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -918,8 +910,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -955,8 +946,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -994,8 +984,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -1032,8 +1021,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -1071,8 +1059,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -1108,8 +1095,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2019-06-20</date>
 							<references>
-								<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
-									<html/>
+								<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="" journal="" identification="">
 								</reference>
 							</references>
 							<valuesScalar>
@@ -1135,11 +1121,14 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="ENG">
-			<text>TO BE FILLED</text>
+			<text><![CDATA[<h3 id="Ayu.-Description">Description</h3><p>An omnivore, the ayu feeds on algae, crustaceans, insects, sponges, and worms. It feeds on algae that accumulates on the rocks, scraping it off the rocks with their saw-shaped teeth. Adults typically maintain a feeding territory, but the form restricted to lakes and associated streams is schooling.</p><h3 id="Ayu.-ReproductionAndDevelopment">Reproduction and Development</h3><p>Most populations of this species are amphidromous and breed in the lower part of rivers during the autumn, laying their eggs in small pits they dig in the gravel. The eggs hatch shortly after and the larvae are carried downriver to the sea. They overwinter in coastal regions, staying there until the spring where the young fish typically are about 6 cm (2.5 in) long and move back to the rivers. Here they reach 15–30 cm (6–12 in) by the summer. They reach maturity by the autumn and move down to the lower part of rivers to breed. Some die after breeding and only live one year, but others return to live in the ocean and may spawn up to three times, each time moving into the lower part of rivers in the autumn. In Japan, some populations live their entire life in freshwater, only moving between lakes and the associated streams where they breed. These have a more variable migration pattern, moving upstream from the lakes in the spring, summer or autumn. Although their larvae mostly stay within freshwater, some are carried downstream with the current to the sea and become part of the amphidromous populations. The freshwater-restricted populations typically reach an age of two or three years. During the breeding season the amphidromous and freshwater-restricted forms may occur together. Ayu are also stocked in reservoirs.</p><h3 id="Ayu.-Environmental criteria">Environmental criteria</h3><p>Although there are reports of ayu up to 70 cm (2.3 ft) long, a more typical maximum size for the species is about 30 cm (1 ft). The form restricted to freshwater is considerably smaller than the amphidromous form. The freshwater-restricted ayu of Lake Biwa that migrate into their spawning streams in the spring can reach up to about 15 cm (6 in) in length, but those that migrate later in the year, primarily in the autumn, only grow to 10 cm (4 in). This is caused by differences in the availability of food.</p>]]></text>
 		</Description>
 	</TopicDescription>
 	<Documentation>
-		<reference author="M. Van Oorschot" year="2019" title="" journal="" identification="">
+		<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="System understanding and ecological modelling of the Tenryuu River - Habitat suitability modeling of Ayu downstream of the Funagira dam and understanding the cascading system of the Tenryuu River" journal="Deltares report" identification="11203051-002-ZWS-0004">
+		</reference>
+		<reference author="Wikipedia" title="Ayu" identification="" year="2020" journal="">
+		<html><![CDATA[https://en.wikipedia.org/wiki/Ayu]]></html>
 		</reference>
 	</Documentation>
 	<DataSources/>

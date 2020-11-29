@@ -143,10 +143,10 @@
 						<inputLayers>
 							<layer name="Oxygen_concentration">
 								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Oxygen_concentration</layer_filename>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
 								<unit>"mg/l"</unit>
-								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<statistic>minimum</statistic>
+								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
 						<Content>

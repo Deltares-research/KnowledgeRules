@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-16"?>
+<theme xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <quantity columnName="value">
+    <defaultStyle>symbol-shape:Ellipse;line-endcap:Flat;outline-style:True;display-style:vector;geometry-type:LineString;</defaultStyle>
+    <quantityThemeItems>
+      <label>0</label>
+      <style>display-style:vector;line-endcap:Flat;border-color:# -1411840;outline-style:True;background-color:# -2698030;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>-990</intervalMinValue>
+      <intervalMaxValue>0</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>0 - 0.2</label>
+      <style>display-style:vector;line-endcap:Flat;border-color:# -28382;outline-style:True;background-color:# -28382;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>0</intervalMinValue>
+      <intervalMaxValue>0.200000002980232</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>0.2 - 0.4</label>
+      <style>display-style:vector;line-endcap:Flat;border-color:# -256;outline-style:True;background-color:# -256;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>0.200000002980232</intervalMinValue>
+      <intervalMaxValue>0.400000005960464</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>0.4 - 0.6</label>
+      <style>display-style:vector;line-endcap:Flat;border-color:# -16711936;outline-style:True;background-color:# -16711936;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>0.400000005960464</intervalMinValue>
+      <intervalMaxValue>0.600000023841858</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>0.6 - 0.8</label>
+      <style>display-style:vector;line-endcap:Flat;border-color:# -16776961;outline-style:True;background-color:# -16776961;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>0.600000023841858</intervalMinValue>
+      <intervalMaxValue>0.800000011920929</intervalMaxValue>
+    </quantityThemeItems>
+    <quantityThemeItems>
+      <label>0.8 - 1</label>
+      <style>display-style:vector;line-endcap:Flat;border-color:# -12582784;outline-style:True;background-color:# -12582784;geometry-type:Polygon;symbol-shape:Ellipse;</style>
+      <intervalMinValue>0.800000011920929</intervalMinValue>
+      <intervalMaxValue>1</intervalMaxValue>
+    </quantityThemeItems>
+    <noDataValueType>System.Single</noDataValueType>
+    <noDataValues>
+      <value>-999</value>
+    </noDataValues>
+  </quantity>
+</theme>

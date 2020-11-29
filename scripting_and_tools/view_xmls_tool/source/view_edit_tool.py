@@ -58,19 +58,21 @@ class UI_MainWindow(object):
 		self.pushButton.clicked.connect(self.load_file)
 		self.boxlayout_1.addWidget(self.pushButton)
 
-		self.pushButton_2 = QtWidgets.QPushButton()
-		self.pushButton_2.setGeometry(QtCore.QRect(120, 10, 93, 28))
-		self.pushButton_2.setFixedSize(93, 28)
-		self.pushButton_2.setObjectName("pushButton_2")
-		self.pushButton_2.clicked.connect(self.new_file)
-		self.boxlayout_1.addWidget(self.pushButton_2)
+		##NOT IMPLEMENTED YET
+		# self.pushButton_2 = QtWidgets.QPushButton()
+		# self.pushButton_2.setGeometry(QtCore.QRect(120, 10, 93, 28))
+		# self.pushButton_2.setFixedSize(93, 28)
+		# self.pushButton_2.setObjectName("pushButton_2")
+		# self.pushButton_2.clicked.connect(self.new_file)
+		# self.boxlayout_1.addWidget(self.pushButton_2)
 
-		self.pushButton_3 = QtWidgets.QPushButton()
-		self.pushButton_3.setGeometry(QtCore.QRect(220, 10, 93, 28))
-		self.pushButton_3.setFixedSize(93, 28)
-		self.pushButton_3.setObjectName("pushButton_3")
-		self.pushButton_3.clicked.connect(self.save_file)
-		self.boxlayout_1.addWidget(self.pushButton_3)
+		##NOT IMPLEMENTED YET
+		# self.pushButton_3 = QtWidgets.QPushButton()
+		# self.pushButton_3.setGeometry(QtCore.QRect(220, 10, 93, 28))
+		# self.pushButton_3.setFixedSize(93, 28)
+		# self.pushButton_3.setObjectName("pushButton_3")
+		# self.pushButton_3.clicked.connect(self.save_file)
+		# self.boxlayout_1.addWidget(self.pushButton_3)
 
 		self.spacer_1 = QtWidgets.QSpacerItem(780, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
 		self.boxlayout_1.addSpacerItem(self.spacer_1)
@@ -197,8 +199,11 @@ class UI_MainWindow(object):
 		_translate = QtCore.QCoreApplication.translate
 		self.MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
 		self.pushButton.setText(_translate("MainWindow", "Open"))
-		self.pushButton_2.setText(_translate("MainWindow", "New"))
-		self.pushButton_3.setText(_translate("MainWindow", "Save"))
+		
+		##NOT IMPLEMENTED YET
+		#self.pushButton_2.setText(_translate("MainWindow", "New"))
+		#self.pushButton_3.setText(_translate("MainWindow", "Save"))
+		
 		self.pushButton_4.setText(_translate("MainWindow", "Exit"))
 		self.label.setText(_translate("MainWindow", "Subject"))
 		self.label_2.setText(_translate("MainWindow", "Common name"))
@@ -336,10 +341,15 @@ class UI_StartWindow(object):
 		self.label_3.setAlignment(QtCore.Qt.AlignCenter)
 		self.label_3.setObjectName("label_3")
 		self.boxlayout.addWidget(self.label_3)
-		self.graphicsView = QtWidgets.QGraphicsView()
-		self.graphicsView.setGeometry(QtCore.QRect(130, 170, 841, 421))
-		self.graphicsView.setObjectName("graphicsView")
-		self.boxlayout.addWidget(self.graphicsView)
+		self.start_image = QtWidgets.QLabel()
+		self.start_image_path = 'image\\start_image.JPG' #path to your image file
+		self.start_image_profile = QtGui.QImage(self.start_image_path) #QImage object
+		self.start_image_profile = self.start_image_profile.scaled(1250,1250, 
+			aspectRatioMode=QtCore.Qt.KeepAspectRatio, 
+			transformMode=QtCore.Qt.SmoothTransformation) # To scale image for example and keep its Aspect Ration    
+		self.start_image.setPixmap(QtGui.QPixmap.fromImage(self.start_image_profile)) 
+		self.start_image.setObjectName("Start_image")
+		self.boxlayout.addWidget(self.start_image)
 		self.label_4 = QtWidgets.QLabel()
 		self.label_4.setGeometry(QtCore.QRect(160, 600, 781, 16))
 		self.label_4.setObjectName("label_4")

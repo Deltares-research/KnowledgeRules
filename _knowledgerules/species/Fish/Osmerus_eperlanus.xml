@@ -96,7 +96,7 @@ The response curves can be applied throughout the year as they contain a large r
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Maximum summer water temperature tolerable for the Zebra mossel species"</description>
+							<description>"Maximum summer water temperature tolerable for the O. eperlanus species"</description>
 							<author>"Mijke van Oorschot"</author>
 							<date>2014-07-29</date>
 							<references>
@@ -127,12 +127,12 @@ The response curves can be applied throughout the year as they contain a large r
 								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
 								<unit>"mg/L"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
 						<Content>
 							<type>scalar</type>
-							<description>"Minimum oxygen tolerable for the Zebra mossel species"</description>
+							<description>"Minimum oxygen tolerable for the O. eperlanus species"</description>
 							<author>"Mijke van Oorschot"</author>
 							<date>2014-07-29</date>
 							<references>

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Knowledge rules files and structure
+nav_orde: 4
+---
+
 #Knowledge rules files and structure
 
 ##Purpose

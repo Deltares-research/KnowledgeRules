@@ -1,3 +1,9 @@
+---
+layout: default
+title: Knowledge rules GitHub
+nav_orde: 3
+---
+
 #Knowledge rules GitHub
 
 ##Purpose

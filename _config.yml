@@ -1,25 +1,26 @@
 title: Knowledge Rules GitHub Documentation
 email: marc.weeber@deltares.nl
 description:
-nav_order: 3
+
 
 
 # Build settings
-theme: jekyll-theme-cayman
+remote_theme: pmarsceill/just-the-docs
+search-enabled: true
 
 # Reading Files
 include:
   - docs
 
 #Navigation
-defaults:
-  # _docs
-  - scope:
-      path: ""
-      type: docs
-    values:
-      sidebar:
-        nav: "docs"
+#defaults:
+#  # _docs
+##  - scope:
+#      path: ""
+#      type: docs
+#    values:
+#      sidebar:
+#        nav: "docs"
 
 # header_pages:
 #  - /docs/1_quick_start/

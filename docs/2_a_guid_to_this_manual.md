@@ -1,3 +1,9 @@
+---
+layout: default
+title: A guide to this manual
+nav_orde: 2
+---
+
 #A guide to this manual
 
 ##Introduction

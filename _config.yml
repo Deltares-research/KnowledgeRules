@@ -1,12 +1,13 @@
-title: Knowledge Rules GitHub Documentation
+title: Knowledge Rules
 email: marc.weeber@deltares.nl
-description:
+description: Knowledge rules GitHub Documentation
 
 
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
 search-enabled: true
+nav_sort: case_insensitive
 
 # Reading Files
 include:

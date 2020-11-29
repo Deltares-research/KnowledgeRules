@@ -4,9 +4,9 @@ title: A guide to this manual
 nav_orde: 2
 ---
 
-#A guide to this manual
+# A guide to this manual
 
-##Introduction
+## Introduction
 KnowledgeRules is a GitHub storage platform to enable the use of ecological knowledge rules on autecology. This platform contains ways to:
 -	store knowledge rules in a standardized format, 
 -	visualize the stored knowledge rules,
@@ -26,7 +26,7 @@ For a more elaborate description of the use of knowledge rules see:
 https://www.researchgate.net/publication/46723038_HABITAT_a_spatial_analysis_tool_for_environmental_impact_and_damage_assessment
 
 
-##How to use this manual
+## How to use this manual
 
 	This manual will provide use when you are interested in the following:
 1.	You want to store your obtained autecological knowledge rules in a standard format so that 	you can shared with others.
@@ -34,7 +34,7 @@ https://www.researchgate.net/publication/46723038_HABITAT_a_spatial_analysis_too
 3.	You want to do a field assessment of what could be likely causes for the presence or absence 	of a specific species or habitat type.
 4.	You want to use …
 
-##Glossary
+## Glossary
 
 knowledge rules: 
 cause–effect relationship: 

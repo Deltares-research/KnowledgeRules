@@ -4,10 +4,10 @@ title: Supporting tools
 nav_orde: 5
 ---
 
-#Supporting tools
+# Supporting tools
 
-##File validation
+## File validation
 
-##Visualization
+## Visualization
 
-##Python scripting
+## Python scripting

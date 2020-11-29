@@ -4,7 +4,7 @@ title: Model adapters
 nav_orde: 6
 ---
 
-#Model adapters
+# Model adapters
 
-##Deltares HABITAT
+## Deltares HABITAT
 

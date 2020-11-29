@@ -1,0 +1,31 @@
+title: Knowledge Rules Documentation
+email: marc.weeber@deltares.nl
+description:
+nav_order: 3
+
+
+# Build settings
+theme: jekyll-theme-cayman
+
+# Reading Files
+include:
+  - docs
+
+#Navigation
+docs:
+
+-title:Quick start
+ url: /1_quick_start/
+-title:A guide to this manual
+ url: /2_a_guid_to_this_manual/
+-title:Knowledge rules GitHub
+ url: /3_knowledge_rules_github.md/
+-title:Knowledge rules files and structure
+ url: /4_knowledge_rules_files_and_structure/
+-title: Supporting tools
+ url: /5_supporting_tools/
+-title: Model adapters
+ url: /6_model_adapters/
+-title:Frequently asked Questions (FAQ)
+ url: /7_FAQ/ 
+

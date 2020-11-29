@@ -790,8 +790,11 @@ class AutecologyXML(_File):
 			raise ValueError("listparameter can only be True of False")
 
 		#Check on non-numeric results
+		if(None in result_calculation):
+			raise Warning("Potential zero division returned from calculation " + fb_data["name"]+", see if parameter ranges need to be limited")
+
 		if(False in np.isfinite(result_calculation)):
-			raise Warning("non-finite number returned from calculation, see if parameter ranges need to be limited")
+			raise Warning("non-finite number returned from calculation " + fb_data["name"]+", see if parameter ranges need to be limited")
 
 		return(parametersettings)
 

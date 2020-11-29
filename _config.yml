@@ -12,26 +12,12 @@ include:
   - docs
 
 #Navigation
-navigation: 
-  - 
-    title:Quick start
-    url: /docs/1_quick_start/
-  -
-    title:A guide to this manual
-    url: /docs/2_a_guid_to_this_manual/
-  - 
-    title:Knowledge rules GitHub
-    url: /docs/3_knowledge_rules_github.md/
-  - 
-    title:Knowledge rules files and structure
-    url: /docs/4_knowledge_rules_files_and_structure/
-  - 
-    title: Supporting tools
-    url: /docs/5_supporting_tools/
-  - 
-    title: Model adapters
-    url: /docs/6_model_adapters/
-  - 
-    title:Frequently asked Questions (FAQ)
-    url: /docs/7_FAQ/ 
+header_pages:
+ - /docs/1_quick_start/
+ - /docs/2_a_guid_to_this_manual/
+ - /docs/3_knowledge_rules_github.md/
+ - /docs/4_knowledge_rules_files_and_structure/
+ - /docs/5_supporting_tools/
+ - /docs/6_model_adapters/
+ - /docs/7_FAQ/ 
 

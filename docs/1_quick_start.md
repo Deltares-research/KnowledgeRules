@@ -65,20 +65,25 @@ Make sure this tool is installed. The tool is free-ware and can be requested by 
 
 2. Start up the HABITAT tool.
    When started, in the HABITAT tool right click **Project** (on the left hand side) and select Add > New Item > Script.
-   Now try if this setup works. There is a small example script located in the folder:
+   
+   
+3. Now try if this setup works. There is a small example script located in the folder:
+   
    **KnowledgeRules-master/tool_adapters/Deltares_HABITAT/Scripts_model**
-
+   
    Load the script named 
+   
    **Case_Tenryuu_river_Plecoglossus_altivelis_Spawning_scenarios.py**
+   
    by copy pasting the text in it to the script opened in the HABITAT tool.
 
-3. Before you can run the script you will need to update the WorkDir path.
+4. Before you can run the script you will need to update the WorkDir path.
 
    Change : **WorkDir = "d:/Projects/check_outs/KnowledgeRules_development/"**
    
    Into   : **WorkDir = "[Location unzipped KnowledgeRules download]/KnowledgeRules-master/"**
    
 
-4. Now you can run the script. Press **Run script** in the top left corner of the HABITAT tool.
+5. Now you can run the script. Press **Run script** in the top left corner of the HABITAT tool.
    The script will now generate two models of the Tenryuu river with different discharges and their impact on spawning suitability for the Ayu fish (<em>Plecoglossus_altivelis</em>).
    

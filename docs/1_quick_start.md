@@ -76,7 +76,7 @@ Make sure this tool is installed. The tool is free-ware and can be requested by 
 
    Change : **WorkDir = "d:/Projects/check_outs/KnowledgeRules_development/"**
    
-   Into   : **WorkDir = "[Location unzipped KnowledgeRules download]/KnowledgeRules-master/**
+   Into   : **WorkDir = "[Location unzipped KnowledgeRules download]/KnowledgeRules-master/"**
    
 
 4. Now you can run the script. Press **Run script** in the top left corner of the HABITAT tool.

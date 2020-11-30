@@ -12,7 +12,7 @@ To get started with the KnowledgeRule Github you will need to download it.
 1. Go to the KnowledgeRules GitHub:
    [https://github.com/Deltares/KnowledgeRules](https://github.com/Deltares/KnowledgeRules)
    
-2. At the GitHub click on the green [Code]{: .btn .btn-green } button in the right hand corner. 
+2. At the GitHub click on the green **Code** button in the right hand corner. 
    Select **download Zip** and download the file "KnowledgeRules-master.zip".
    
 3. Place the zip file in an accesible location on your computer and unzip it.

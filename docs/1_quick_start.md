@@ -23,10 +23,12 @@ If you want to make changes and commit these changes to the KnowledgeRules GitHu
 ## View and edit knowledge rules as XML files
 
 The knowledge rules available in the KnowledgeRule GitHub are located in the folder 
+
 **KnowledgeRules-master/_knowledgerules**.
 
 You can view and edit these knowledge rules as XML by opening these files with a text editor (e.g. Notepad, Notepad++) or with a XML editor (e.g. Altova XML Spy, XML Copy Editor).
 Both Altova XML Spy as XML Copy Editor will automatically check the XML structure with the XSD file located in the folder 
+
 **KnowledgeRules-master/XMLSchema**.
 
 For more information on these editors read the chapter [XML editors](https://deltares.github.io/KnowledgeRules/docs/4_knowledge_rules_files_and_structure.html#xml-editors).
@@ -34,7 +36,9 @@ For more information on these editors read the chapter [XML editors](https://del
 ## View knowledge rules with visualisation tool
 
 The visualisation tool located in the folder 
+
 **KnowledgeRules-master/scripting_and_tools/view_xml_tools** 
+
 can be used to visualize the knowledge rule XML files.
 Read the file **README_compilation.txt** in the **source** folder to compile this tool using Python 3 with the setup.py file.
 
@@ -47,28 +51,32 @@ Start the tool and open any of the knowledge rule XML files to visualise them.
 In this quick setup you will run a calculation for spawning suitability of the Ayu fish (<em>Plecoglossus_altivelis</em>) in the Tenryuu river, Japan.
 
 Automated knowledge rule loading can be done with HABITAT version 3.0.1.51448 and higher.
-Make sure this tool is installed. The tool is free-ware and can be requested by filling out the request form [HERE](https://oss.deltares.nl/web/habitat/download).
+Make sure this tool is installed. The tool is free-ware and can be requested by filling out the request form [here](https://oss.deltares.nl/web/habitat/download).
 
 1. When installed move to this folder:
-   **KnowledgeRules-master\tool_adapters\Deltares_HABITAT\Libraries_Habitat\**
+
+   **KnowledgeRules-master/tool_adapters/Deltares_HABITAT/Libraries_Habitat**
 
    Copy the files in this folder (AutecologyXML.py and HabitatFunctions.py) and place these in your new installation of HABITAT in this folder:
-   **Habitat [VERSION number]\plugins\DeltaShell.Plugins.Toolbox\Scripts\Libraries\**
+   
+   **Habitat [VERSION number]/plugins/DeltaShell.Plugins.Toolbox/Scripts/Libraries**
 
    NB. the HABITAT installation is most likely located in your Program Files (x84) folder in the Deltares folder. 
 
 2. Start up the HABITAT tool.
    When started, in the HABITAT tool right click **Project** (on the left hand side) and select Add > New Item > Script.
    Now try if this setup works. There is a small example script located in the folder:
-   **KnowledgeRules-master\tool_adapters\Deltares_HABITAT\Scripts_model\**
+   **KnowledgeRules-master/tool_adapters/Deltares_HABITAT/Scripts_model**
 
-   Load the script named **Case_Tenryuu_river_Plecoglossus_altivelis_Spawning_scenarios.py** by copy pasting the text in it to the script opened in the HABITAT tool.
+   Load the script named 
+   **Case_Tenryuu_river_Plecoglossus_altivelis_Spawning_scenarios.py**
+   by copy pasting the text in it to the script opened in the HABITAT tool.
 
 3. Before you can run the script you will need to update the WorkDir path.
 
-   Change : **WorkDir = "d:\\Projects\\check_outs\\KnowledgeRules_development\\"**
+   Change : **WorkDir = "d:/Projects/check_outs/KnowledgeRules_development/"**
    
-   Int    : **WorkDir = "[Where you placed the unzipped KnowledgeRules download]\\KnowledgeRules-master\\**
+   Into   : **WorkDir = "[Location unzipped KnowledgeRules download]/KnowledgeRules-master/**
    
 
 4. Now you can run the script. Press **Run script** in the top left corner of the HABITAT tool.

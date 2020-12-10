@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Knowledge Rules project ( Copyright under GPLv3 by Stichting Deltares ) -->
-<schema xmlns:AutXML="http://www.wldelft.nl/fews" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.wldelft.nl/fews" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+<schema xmlns:AutXML="https://github.com/Deltares/KnowledgeRules" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="https://github.com/Deltares/KnowledgeRules" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<element name="AutecologyXML" type="AutXML:AutecologyXMLConfigComplexType"/>
 	<complexType name="AutecologyXMLConfigComplexType">
 		<sequence>
@@ -304,9 +304,9 @@
 		</choice>
 	</complexType>
 	<complexType name="FBSimpleEquationComplexType">
-	<sequence>
-		<element name="equation" type="string"/>
-	</sequence>
+		<sequence>
+			<element name="equation" type="string"/>
+		</sequence>
 	</complexType>
 	<complexType name="FBSpatialEquationComplexType">
 		<sequence>

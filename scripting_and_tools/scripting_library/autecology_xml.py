@@ -118,7 +118,7 @@ class AutecologyXML(_File):
 	def __init__(self, filename):
 		_File.__init__(self,filename)
 		self.xmlroot = None
-		self.xmlns = "http://www.wldelft.nl/fews"
+		self.xmlns = "https://github.com/Deltares/KnowledgeRules"
 
 		#scan
 		self.topic_name = None
@@ -858,23 +858,23 @@ class AutecologyXML(_File):
 			df_current_rule_subset.columns = ["output_cat","output",cur_par["layername"]]
 			
 			if(nr == 0):
-				df_total_rule = df_current_rule_subset
+				mr_dataframe = df_current_rule_subset
 			
 				#store headers for later
-				df_total_rule_headers = {"header" : [mr_data["name"],"",cur_par["layername"]], "unit" : ["str","output id",cur_par["unit"]]}
+				mr_dataframe_headers = {"header" : [mr_data["name"],"",cur_par["layername"]], "unit" : ["str","output id",cur_par["unit"]]}
 			else:
-				df_total_rule = df_total_rule.merge(df_current_rule_subset, on = ["output_cat","output"], how = "outer")
-				df_total_rule_headers["header"].append(cur_par["layername"])
-				df_total_rule_headers["unit"].append(cur_par["unit"])
+				mr_dataframe = mr_dataframe.merge(df_current_rule_subset, on = ["output_cat","output"], how = "outer")
+				mr_dataframe_headers["header"].append(cur_par["layername"])
+				mr_dataframe_headers["unit"].append(cur_par["unit"])
 
 		#sort the data
 		#df_total_rule = df_total_rule.sort_values(by=["output"])
 	
 		#convert dataframe to strings and replace nan for unspecified (<,>)
-		df_total_rule = df_total_rule.astype(str)
-		df_total_rule = df_total_rule.replace("nan","<,>")
+		mr_dataframe = mr_dataframe.astype(str)
+		mr_dataframe = mr_dataframe.replace("nan","<,>")
 
-		return(df_total_rule, df_total_rule_headers)
+		return(mr_dataframe, mr_dataframe_headers)
 
 	def _scan(self):
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Knowledge Rules project ( Copyright under GPLv3 by Stichting Deltares ) -->
-<schema xmlns:AutXML="http://www.wldelft.nl/fews" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.wldelft.nl/fews" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+<schema xmlns:AutXML="https://github.com/Deltares/KnowledgeRules" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="https://github.com/Deltares/KnowledgeRules" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<element name="AutecologyXML" type="AutXML:AutecologyXMLConfigComplexType"/>
 	<complexType name="AutecologyXMLConfigComplexType">
 		<sequence>
@@ -34,6 +34,11 @@
 	<complexType name="TopicComplexType">
 		<choice>
 			<element name="Species" type="AutXML:SpeciesComplexType">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
+			<element name="Parameter" type="AutXML:ParameterComplexType">
 				<annotation>
 					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
 				</annotation>
@@ -74,6 +79,15 @@
 					</annotation>
 				</element>
 			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="ParameterComplexType">
+		<sequence>
+			<element name="CommonNames" type="AutXML:CommonNamesComplexType">
+				<annotation>
+					<documentation>Optional provision of input files, if provided ALL relevant input files needs to be defined, if not, the program will check for files with default naming in the current working folder</documentation>
+				</annotation>
+			</element>
 		</sequence>
 	</complexType>
 	<complexType name="WFDIComplexType">
@@ -245,7 +259,7 @@
 	</complexType>
 	<complexType name="ResponseCurveContentComplexType">
 		<sequence>
-			<element name="type" type="AutXML:TypeSingleType"/>
+			<element name="type" type="AutXML:TypeRCSingleType"/>
 			<element name="description" type="string"/>
 			<element name="author" type="string"/>
 			<element name="date" type="AutXML:dateType"/>
@@ -260,11 +274,12 @@
 	</complexType>
 	<complexType name="FormulaBasedContentComplexType">
 		<sequence>
+			<element name="type" type="AutXML:TypeFBSingleType"/>
 			<element name="description" type="string"/>
 			<element name="author" type="string"/>
 			<element name="date" type="AutXML:dateType"/>
 			<element name="references" type="AutXML:ReferencesComplexType"/>
-			<element name="equation" type="string"/>
+			<element name="Equation" type="AutXML:FBEquationComplexType"/>
 			<element name="Parameters" type="AutXML:FBParametersComplexType"/>
 		</sequence>
 	</complexType>
@@ -282,16 +297,34 @@
 			<element name="reference" type="AutXML:ReferenceComplexType" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
-	<complexType name="FBParametersComplexType">
+	<complexType name="FBEquationComplexType">
+		<choice>
+			<element name="SimpleEquation" type="AutXML:FBSimpleEquationComplexType"/>
+			<element name="SpatialEquation" type="AutXML:FBSpatialEquationComplexType"/>
+		</choice>
+	</complexType>
+	<complexType name="FBSimpleEquationComplexType">
 		<sequence>
-			<element name="valuesConstant" type="AutXML:FBConstantValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="valuesScalar" type="AutXML:FBScalarValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="equation" type="string"/>
 		</sequence>
 	</complexType>
-	<complexType name="MRParametersComplexType">
+	<complexType name="FBSpatialEquationComplexType">
 		<sequence>
-			<element name="valuesRangeCategorical" type="AutXML:MRValuesRangeCategoricalComplexType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="spatialtool" type="AutXML:SpatialToolSimpleType"/>
+			<element name="equation" type="string"/>
 		</sequence>
+	</complexType>
+	<complexType name="FBParametersComplexType">
+		<choice maxOccurs="unbounded">
+			<element name="valuesConstant" type="AutXML:FBConstantValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="valuesScalar" type="AutXML:FBScalarValuesComplexType" minOccurs="0" maxOccurs="unbounded"/>
+		</choice>
+	</complexType>
+	<complexType name="MRParametersComplexType">
+		<choice maxOccurs="unbounded">
+			<element name="valuesRangeCategorical" type="AutXML:MRValuesRangeCategoricalComplexType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="valuesCategorical" type="AutXML:MRValuesCategoricalComplexType" minOccurs="0" maxOccurs="unbounded"/>
+		</choice>
 	</complexType>
 	<complexType name="RCValuesScalarComplexType">
 		<sequence>
@@ -333,6 +366,13 @@
 		</sequence>
 		<attribute name="layername" type="string" use="required"/>
 		<attribute name="type" type="string" use="required" fixed="range / categorical"/>
+	</complexType>
+	<complexType name="MRValuesCategoricalComplexType">
+		<sequence>
+			<element name="parameter" type="AutXML:ParameterCategoricalRCComplexType" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="layername" type="string" use="required"/>
+		<attribute name="type" type="string" use="required" fixed="categorical"/>
 	</complexType>
 	<complexType name="ParameterConstantFBComplexType">
 		<attribute name="input" type="string" use="required"/>
@@ -382,10 +422,13 @@
 	</complexType>
 	<complexType name="layerComplexType">
 		<sequence>
+			<element name="parameter_name" type="string"/>
 			<element name="parameter_cat" type="string"/>
-			<element name="layer_filename" type="string"/>
+			<element name="period" type="string"/>
+			<element name="position" type="string"/>
 			<element name="unit" type="string"/>
 			<element name="statistic" type="string"/>
+			<element name="layer_filename" type="string"/>
 			<element name="description" type="string"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
@@ -420,7 +463,6 @@
 		<sequence>
 			<element name="label" type="string"/>
 			<element name="equation" type="AutXML:LinkEquationSimpleType"/>
-			<element name="specific_equation" type="string" minOccurs="0"/>
 			<element name="To" type="string" maxOccurs="unbounded"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>
@@ -431,7 +473,12 @@
 			<enumeration value="min"/>
 			<enumeration value="max"/>
 			<enumeration value="geometric_average"/>
-			<enumeration value="specific"/>
+			<enumeration value="knowledge_rule"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="SpatialToolSimpleType">
+		<restriction base="string">
+			<enumeration value="PCRaster"/>
 		</restriction>
 	</simpleType>
 	<complexType name="ReferenceComplexType">
@@ -452,12 +499,18 @@
 			<pattern value="\d\d\d\d-\d\d-\d\d"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="TypeSingleType">
+	<simpleType name="TypeRCSingleType">
 		<restriction base="string">
 			<enumeration value="scalar"/>
 			<enumeration value="categorical"/>
 			<enumeration value="range / categorical"/>
 			<enumeration value="ranges"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="TypeFBSingleType">
+		<restriction base="string">
+			<enumeration value="equation"/>
+			<enumeration value="spatialequation"/>
 		</restriction>
 	</simpleType>
 	<simpleType name="ExternalIntegerSimpleType">

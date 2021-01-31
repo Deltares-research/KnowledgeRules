@@ -16,7 +16,7 @@ _AutecologyXMLLogger = _LogManager.GetLogger("AutecologyXMLFunctions")
 
 def make_find(element_name_list):
 	#configuration
-	xmlns = "{http://www.wldelft.nl/fews}"
+	xmlns = "{https://github.com/Deltares/KnowledgeRules}"
 
 	#make find
 	full_string = ""
@@ -31,12 +31,15 @@ def make_find(element_name_list):
 
 def get_data_layer(layer_element):
 
-	layer_dict = {}
+	layer_dict = OrderedDict()
 	layer_dict["layername"] = layer_element.get('name').replace('"','')
+	layer_dict["parameter_name"] = layer_element.find(make_find(['parameter_name'])).text.replace('"','')
 	layer_dict["parameter_cat"] = layer_element.find(make_find(['parameter_cat'])).text.replace('"','')
-	layer_dict["layer_filename"] = layer_element.find(make_find(['layer_filename'])).text.replace('"','')
+	layer_dict["period"] = layer_element.find(make_find(['period'])).text.replace('"','')
+	layer_dict["position"] = layer_element.find(make_find(['position'])).text.replace('"','')
 	layer_dict["unit"] = layer_element.find(make_find(['unit'])).text.replace('"','')
 	layer_dict["statistic"] = layer_element.find(make_find(['statistic'])).text.replace('"','')
+	layer_dict["layer_filename"] = layer_element.find(make_find(['layer_filename'])).text.replace('"','')
 	layer_dict["description"] = layer_element.find(make_find(['description'])).text.replace('"','')
 
 	return(layer_dict)

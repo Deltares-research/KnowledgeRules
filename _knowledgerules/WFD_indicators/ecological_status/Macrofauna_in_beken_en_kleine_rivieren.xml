@@ -30,11 +30,14 @@
 					<FormulaBased name="EKR_meandering">
 						<inputLayers>
 							<layer name="meanderingsklasse">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>meanderingsklasse</layer_filename>
+								<parameter_name>meanderingsklasse</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>meanderingsklasse</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -62,22 +65,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_meanderingsklasse">
+								<parameter_name>HSI_meanderingsklasse</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_meanderingsklasse</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_meanderingsklasse</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="EKR_stroomsnelheid_langzaam">
 						<inputLayers>
 							<layer name="stroomsnelheid">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>stroomsnelheid</layer_filename>
+								<parameter_name>stroomsnelheid</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>cm/s</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>stroomsnelheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -101,22 +110,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_stroomsnelheid">
+								<parameter_name>HSI_stroomsnelheid</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_stroomsnelheid</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_stroomsnelheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="EKR_stroomsnelheid_snel">
 						<inputLayers>
 							<layer name="stroomsnelheid">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>stroomsnelheid</layer_filename>
+								<parameter_name>stroomsnelheid</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>cm/s</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>stroomsnelheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -140,22 +155,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_stroomsnelheid">
+								<parameter_name>HSI_stroomsnelheid</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_stroomsnelheid</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_stroomsnelheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="EKR_totaalfosfaat">
 						<inputLayers>
 							<layer name="Ptotaal">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Ptotaal</layer_filename>
+								<parameter_name>Ptotaal</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/l</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Ptotaal</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -179,22 +200,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Ptotaal">
+								<parameter_name>HSI_Ptotaal</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Ptotaal</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Ptotaal</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="EKR_BZV">
 						<inputLayers>
 							<layer name="BZV">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>BZV</layer_filename>
+								<parameter_name>BZV</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/l</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>BZV</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -218,11 +245,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_BZV">
+								<parameter_name>HSI_BZV</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_BZV</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_BZV</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>

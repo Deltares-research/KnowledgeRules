@@ -422,10 +422,13 @@
 	</complexType>
 	<complexType name="layerComplexType">
 		<sequence>
+			<element name="parameter_name" type="string"/>
 			<element name="parameter_cat" type="string"/>
-			<element name="layer_filename" type="string"/>
+			<element name="period" type="string"/>
+			<element name="position" type="string"/>
 			<element name="unit" type="string"/>
 			<element name="statistic" type="string"/>
+			<element name="layer_filename" type="string"/>
 			<element name="description" type="string"/>
 		</sequence>
 		<attribute name="name" type="string" use="required"/>

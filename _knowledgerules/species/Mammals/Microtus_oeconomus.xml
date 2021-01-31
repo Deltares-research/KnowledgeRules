@@ -141,11 +141,14 @@ De rekenregels kunnen toegepast worden op de grote meren van Nederland.&lt;/p&gt
 					<ResponseCurve name="Inundation">
 						<inputLayers>
 							<layer name="Inundation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Inundation</layer_filename>
+								<parameter_name>Inundation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Inundation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -164,22 +167,28 @@ De rekenregels kunnen toegepast worden op de grote meren van Nederland.&lt;/p&gt
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Inundation">
+								<parameter_name>HSI_Inundation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Inundation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Inundation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="inundation_presence_Field_vole">
 						<inputLayers>
 							<layer name="inundation_presence_Field_vole">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>inundation_presence_Field_vole</layer_filename>
+								<parameter_name>inundation_presence_Field_vole</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>inundation_presence_Field_vole</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -197,22 +206,28 @@ De rekenregels kunnen toegepast worden op de grote meren van Nederland.&lt;/p&gt
 						</Content>
 						<outputLayers>
 							<layer name="HSI_inundation_presence_Field_vole">
+								<parameter_name>HSI_inundation_presence_Field_vole</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_inundation_presence_Field_vole</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_inundation_presence_Field_vole</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Vegetation_type">
 						<inputLayers>
 							<layer name="Vegetation_type">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Vegetation_type</layer_filename>
+								<parameter_name>Vegetation_type</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Vegetation_type</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -234,22 +249,28 @@ De rekenregels kunnen toegepast worden op de grote meren van Nederland.&lt;/p&gt
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Vegetation_type">
+								<parameter_name>HSI_Vegetation_type</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Vegetation_type</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Vegetation_type</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Area_size">
 						<inputLayers>
 							<layer name="Area_size">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Area_size</layer_filename>
+								<parameter_name>Area_size</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m2"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Area_size</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -270,11 +291,14 @@ De rekenregels kunnen toegepast worden op de grote meren van Nederland.&lt;/p&gt
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Area_size">
+								<parameter_name>HSI_Area_size</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Area_size</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Area_size</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

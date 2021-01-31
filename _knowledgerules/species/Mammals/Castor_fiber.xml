@@ -54,11 +54,14 @@
 					<ResponseCurve name="lengte_natuurlijke_oever">
 						<inputLayers>
 							<layer name="lengte_natuurlijke_oever">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>lengte_natuurlijke_oever</layer_filename>
+								<parameter_name>lengte_natuurlijke_oever</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"km"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>lengte_natuurlijke_oever</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -78,22 +81,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_lengte_natuurlijke_oever">
+								<parameter_name>HSI_lengte_natuurlijke_oever</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_lengte_natuurlijke_oever</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_lengte_natuurlijke_oever</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="lengte_steil_talud">
 						<inputLayers>
 							<layer name="lengte_steil_talud">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>lengte_steil_talud</layer_filename>
+								<parameter_name>lengte_steil_talud</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>lengte_steil_talud</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -111,22 +120,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_lengte_steil_talud">
+								<parameter_name>HSI_lengte_steil_talud</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_lengte_steil_talud</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_lengte_steil_talud</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte">
 						<inputLayers>
 							<layer name="waterdiepte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte</layer_filename>
+								<parameter_name>waterdiepte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -144,22 +159,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte">
+								<parameter_name>HSI_waterdiepte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="houtige_vegetatie_verdeling">
 						<inputLayers>
 							<layer name="houtige_vegetatie_verdeling">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>houtige_vegetatie_verdeling</layer_filename>
+								<parameter_name>houtige_vegetatie_verdeling</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>houtige_vegetatie_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -177,22 +198,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_houtige_vegetatie_verdeling">
+								<parameter_name>HSI_houtige_vegetatie_verdeling</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_houtige_vegetatie_verdeling</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_houtige_vegetatie_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="afstand_water_bomen">
 						<inputLayers>
 							<layer name="afstand_water_bomen">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>afstand_water_bomen</layer_filename>
+								<parameter_name>afstand_water_bomen</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>afstand_water_bomen</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -212,22 +239,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_afstand_water_bomen">
+								<parameter_name>HSI_afstand_water_bomen</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_afstand_water_bomen</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_afstand_water_bomen</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="potentieel_leefgebied">
 						<inputLayers>
 							<layer name="potentieel_leefgebied">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>potentieel_leefgebied</layer_filename>
+								<parameter_name>potentieel_leefgebied</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorie"</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>potentieel_leefgebied</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -261,11 +294,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_potentieel_leefgebied">
+								<parameter_name>HSI_potentieel_leefgebied</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_potentieel_leefgebied</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_potentieel_leefgebied</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

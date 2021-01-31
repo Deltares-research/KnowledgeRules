@@ -51,11 +51,14 @@ Er is geen voorbeeldproject beschikbaar.
 					<ResponseCurve name="waterdiepte">
 						<inputLayers>
 							<layer name="waterdiepte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte</layer_filename>
+								<parameter_name>waterdiepte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -76,22 +79,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte">
+								<parameter_name>HSI_waterdiepte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zoutgehalte">
 						<inputLayers>
 							<layer name="zoutgehalte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>zoutgehalte</layer_filename>
+								<parameter_name>zoutgehalte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"promille"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>zoutgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -112,11 +121,14 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_zoutgehalte">
+								<parameter_name>HSI_zoutgehalte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_zoutgehalte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_zoutgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

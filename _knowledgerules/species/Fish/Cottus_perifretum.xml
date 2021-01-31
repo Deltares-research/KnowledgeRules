@@ -56,10 +56,13 @@
 					<ResponseCurve name="waterdepth">
 						<inputLayers>
 							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 						</inputLayers>
@@ -81,22 +84,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth">
+								<parameter_name>HSI_waterdepth</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Waterdepth</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="substrate">
 						<inputLayers>
 							<layer name="substrate">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>substrate</layer_filename>
+								<parameter_name>substrate</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>substrate</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -117,21 +126,27 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_substrate">
+								<parameter_name>HSI_substrate</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_substrate</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_substrate</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="presence_of_macrofytes">
 						<inputLayers>
 							<layer name="HSI_tot_cover">
+								<parameter_name>HSI_tot_cover</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"HSI_tot_cover"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"HSI_tot_cover"</layer_filename>
 								<description>"Habitat suitability for the coverage of aquatic plants"</description>
 							</layer>
 						</inputLayers>
@@ -153,21 +168,27 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_presence_of_macrofytes">
+								<parameter_name>HSI_presence_of_macrofytes</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_presence_of_macrofytes</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_presence_of_macrofytes</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="silt_content">
 						<inputLayers>
 							<layer name="silt_fraction">
+								<parameter_name>silt_fraction</parameter_name>
 								<parameter_cat>"Waterbed substrate"</parameter_cat>
-								<layer_filename>"silt_fraction_waterbed"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"silt_fraction_waterbed"</layer_filename>
 								<description>"Average silt content in water bed"</description>
 							</layer>
 						</inputLayers>
@@ -188,22 +209,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_silt_content">
+								<parameter_name>HSI_silt_content</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_silt_content</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_silt_content</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="oxygen_saturation">
 						<inputLayers>
 							<layer name="oxygen">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<parameter_name>oxygen</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -222,22 +249,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_oxygen_saturation">
+								<parameter_name>HSI_oxygen_saturation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_oxygen_saturation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_oxygen_saturation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperature">
 						<inputLayers>
 							<layer name="temperature">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>temperature</layer_filename>
+								<parameter_name>temperature</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>temperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -257,11 +290,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_temperature">
+								<parameter_name>HSI_temperature</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_temperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

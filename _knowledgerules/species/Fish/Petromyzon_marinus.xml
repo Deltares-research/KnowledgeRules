@@ -63,11 +63,14 @@
 					<ResponseCurve name="Barriers_upwards">
 						<inputLayers>
 							<layer name="Barriers_upwards">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Barriers_upwards</layer_filename>
+								<parameter_name>Barriers_upwards</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Barriers_upwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -86,22 +89,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Barriers_upwards">
+								<parameter_name>HSI_Barriers_upwards</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Barriers_downwards">
 						<inputLayers>
 							<layer name="Barriers_downwards">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Barriers_downwards</layer_filename>
+								<parameter_name>Barriers_downwards</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Barriers_downwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -120,22 +129,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Barriers_downwards">
+								<parameter_name>HSI_Barriers_downwards</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_juveniles">
 						<inputLayers>
 							<layer name="Substrate_juveniles">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Substrate_juveniles</layer_filename>
+								<parameter_name>Substrate_juveniles</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Substrate_juveniles</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -156,22 +171,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Substrate_juveniles">
+								<parameter_name>HSI_Substrate_juveniles</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Substrate_juveniles</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Substrate_juveniles</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity_spawning">
 						<inputLayers>
 							<layer name="Flow_velocity_spawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Flow_velocity_spawning</layer_filename>
+								<parameter_name>Flow_velocity_spawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Flow_velocity_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -190,22 +211,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Flow_velocity_spawning">
+								<parameter_name>HSI_Flow_velocity_spawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Flow_velocity_spawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Flow_velocity_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_spawning">
 						<inputLayers>
 							<layer name="Substrate_spawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Substrate_spawning</layer_filename>
+								<parameter_name>Substrate_spawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Substrate_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -227,11 +254,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Substrate_spawning">
+								<parameter_name>HSI_Substrate_spawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Substrate_spawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Substrate_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

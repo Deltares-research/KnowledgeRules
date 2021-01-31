@@ -54,10 +54,13 @@
 					<FormulaBased name="HGI_myr_spic">
 						<inputLayers>
 							<layer name="P_myr_spic">
+								<parameter_name>P_myr_spic</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
 								<description>"Likeliness of presence for the Myriophyllum spicatum species"</description>
 							</layer>
 						</inputLayers>
@@ -82,10 +85,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_myr_spic">
+								<parameter_name>HSI_myr_spic</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"HSI_myriophyllum_spicatum"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"HSI_myriophyllum_spicatum"</layer_filename>
 								<description>"Habitat suitability for the Myriophyllum spicatum species"</description>
 							</layer>
 						</outputLayers>
@@ -93,31 +99,43 @@
 					<FormulaBased name="P_myr_spic_visibility">
 						<inputLayers>
 							<layer name="subarea_factor_myr_spic_visibility">
+								<parameter_name>subarea_factor_myr_spic_visibility</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on visibility"</description>
 							</layer>
 							<layer name="visibility">
+								<parameter_name>visibility</parameter_name>
 								<parameter_cat>"Water clearity"</parameter_cat>
-								<layer_filename>visibility</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>dm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>visibility</layer_filename>
 								<description>"Light penetration depth in the water column in decimeters"</description>
 							</layer>
 							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 							<layer name="fetch">
+								<parameter_name>fetch</parameter_name>
 								<parameter_cat>"Wind"</parameter_cat>
-								<layer_filename>fetch_length</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_length</layer_filename>
 								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
@@ -133,34 +151,37 @@
 								<SimpleEquation>
 									<equation>"1/(1+exp(-(-3.27857109+subarea_factor_myr_spic_visibility-0.722531165*waterdepth_summer-0.223865427*(waterdepth_summer^2)+1.850463753*waterdepth_summer*visibility-0.000108748*fetch)))"</equation>
 								</SimpleEquation>
-							</Equation>							
+							</Equation>
 							<Parameters>
-								<valuesConstant layername = "subarea_factor_myr_spic_visibility" type="constant">
-									<parameter input= "-1.764671097" input_cat ="MIJ" output="-1.764671097"/>
-									<parameter input= "-1.63963648" input_cat ="MBIJ" output="-1.63963648"/>
-									<parameter input= "3.212869897" input_cat ="MGZ" output="3.212869897"/>
-									<parameter input= "2.099800348" input_cat ="MHRDz" output="2.099800348"/>									
-									<parameter input= "0.472906793" input_cat ="MHE" output="0.472906793"/>
-									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
-									<parameter input= "0.106872035" input_cat ="MHH" output="0.106872035"/>
+								<valuesConstant layername="subarea_factor_myr_spic_visibility" type="constant">
+									<parameter input="-1.764671097" input_cat="MIJ" output="-1.764671097"/>
+									<parameter input="-1.63963648" input_cat="MBIJ" output="-1.63963648"/>
+									<parameter input="3.212869897" input_cat="MGZ" output="3.212869897"/>
+									<parameter input="2.099800348" input_cat="MHRDz" output="2.099800348"/>
+									<parameter input="0.472906793" input_cat="MHE" output="0.472906793"/>
+									<parameter input="0.0" input_cat="MWenmid" output="0.0"/>
+									<parameter input="0.106872035" input_cat="MHH" output="0.106872035"/>
 								</valuesConstant>
-								<valuesScalar layername = "waterdepth_summer" type="scalar">
+								<valuesScalar layername="waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername = "visibility" type="scalar">
+								<valuesScalar layername="visibility" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "fetch" type="scalar">
+								<valuesScalar layername="fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="P_myr_spic">
+								<parameter_name>P_myr_spic</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
 								<description>"Likeliness of presence for the Myriophyllum spicatum species"</description>
 							</layer>
 						</outputLayers>
@@ -168,31 +189,43 @@
 					<FormulaBased name="P_myr_spic_extinction">
 						<inputLayers>
 							<layer name="subarea_factor_myr_spic_extinction">
+								<parameter_name>subarea_factor_myr_spic_extinction</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on extinction"</description>
 							</layer>
 							<layer name="extinction">
+								<parameter_name>extinction</parameter_name>
 								<parameter_cat>"Water clearity"</parameter_cat>
-								<layer_filename>visibility</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>Kd</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>visibility</layer_filename>
 								<description>"Extinction in the water column in Kd"</description>
 							</layer>
 							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 							<layer name="fetch">
+								<parameter_name>fetch</parameter_name>
 								<parameter_cat>"Wind"</parameter_cat>
-								<layer_filename>fetch_length</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_length</layer_filename>
 								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
@@ -208,34 +241,37 @@
 								<SimpleEquation>
 									<equation>"1/(1+exp(-(-6.35471533+subarea_factor_myr_spic_extinction+1.237471255*waterdepth_summer-0.160502853*(waterdepth_summer^2)-0.469718771*waterdepth_summer*extinction+0.485265559*extinction-0.000101317*fetch)))"</equation>
 								</SimpleEquation>
-							</Equation>							
+							</Equation>
 							<Parameters>
-								<valuesConstant layername = "subarea_factor_myr_spic_extinction" type="constant">
-									<parameter input = "-1.824219126" input_cat ="MIJ" output="-1.824219126"/>
-									<parameter input = "-1.571804689" input_cat ="MBIJ" output="-1.571804689"/>
-									<parameter input = "3.92010267" input_cat ="MGZ" output="3.92010267"/>
-									<parameter input = "2.554598687" input_cat ="MHRDz" output="2.554598687"/>									
-									<parameter input = "0.635048234" input_cat ="MHE" output="0.635048234"/>
-									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
-									<parameter input = "0.532617294" input_cat ="MHH" output="0.532617294"/>
+								<valuesConstant layername="subarea_factor_myr_spic_extinction" type="constant">
+									<parameter input="-1.824219126" input_cat="MIJ" output="-1.824219126"/>
+									<parameter input="-1.571804689" input_cat="MBIJ" output="-1.571804689"/>
+									<parameter input="3.92010267" input_cat="MGZ" output="3.92010267"/>
+									<parameter input="2.554598687" input_cat="MHRDz" output="2.554598687"/>
+									<parameter input="0.635048234" input_cat="MHE" output="0.635048234"/>
+									<parameter input="0.0" input_cat="MWenmid" output="0.0"/>
+									<parameter input="0.532617294" input_cat="MHH" output="0.532617294"/>
 								</valuesConstant>
-								<valuesScalar layername = "waterdepth_summer" type="scalar">
+								<valuesScalar layername="waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername = "extinction" type="scalar">
+								<valuesScalar layername="extinction" type="scalar">
 									<parameter min_input="0" max_input="10"/>
 								</valuesScalar>
-								<valuesScalar layername = "fetch" type="scalar">
+								<valuesScalar layername="fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="P_myr_spic">
+								<parameter_name>P_myr_spic</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"P_myriophyllum_spicatum"</layer_filename>
 								<description>"Likeliness of presence for the Myriophyllum spicatum species"</description>
 							</layer>
 						</outputLayers>
@@ -243,10 +279,13 @@
 					<MultipleReclassification name="subarea_factor_myr_spic_visibility">
 						<inputLayers>
 							<layer name="subarea">
+								<parameter_name>subarea</parameter_name>
 								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas_markermeer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>"constant"</statistic>
+								<layer_filename>subareas_markermeer</layer_filename>
 								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
 							</layer>
 						</inputLayers>
@@ -258,23 +297,26 @@
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
 							<Parameters>
-								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input= "1" input_cat ="MIJ" output="-1.764671097"  output_cat ="MIJ"/>
-									<parameter input= "2" input_cat ="MBIJ" output="-1.63963648"  output_cat ="MBIJ"/>
-									<parameter input= "3" input_cat ="MGZ" output="3.212869897"  output_cat ="MGZ"/>
-									<parameter input= "4" input_cat ="MHRDz" output="2.099800348"  output_cat ="MHRDz"/>									
-									<parameter input= "5" input_cat ="MHE" output="0.472906793"  output_cat ="MHE"/>
-									<parameter input= "6" input_cat ="MWenmid" output="0.0"  output_cat ="MWenmid"/>
-									<parameter input= "7" input_cat ="MHH" output="0.106872035"  output_cat ="MHH"/>
+								<valuesCategorical layername="subarea" type="categorical">
+									<parameter input="1" input_cat="MIJ" output="-1.764671097" output_cat="MIJ"/>
+									<parameter input="2" input_cat="MBIJ" output="-1.63963648" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="3.212869897" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="2.099800348" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="0.472906793" output_cat="MHE"/>
+									<parameter input="6" input_cat="MWenmid" output="0.0" output_cat="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="0.106872035" output_cat="MHH"/>
 								</valuesCategorical>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="subarea_factor_myr_spic_visibility">
+								<parameter_name>subarea_factor_myr_spic_visibility</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on visibility"</description>
 							</layer>
 						</outputLayers>
@@ -282,10 +324,13 @@
 					<MultipleReclassification name="subarea_factor_myr_spic_extinction">
 						<inputLayers>
 							<layer name="subarea">
+								<parameter_name>subarea</parameter_name>
 								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas_markermeer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>"constant"</statistic>
+								<layer_filename>subareas_markermeer</layer_filename>
 								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
 							</layer>
 						</inputLayers>
@@ -297,23 +342,26 @@
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
 							<Parameters>
-								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input = "1" input_cat ="MIJ" output="-1.824219126" output_cat ="MIJ"/>
-									<parameter input = "2" input_cat ="MBIJ" output="-1.571804689" output_cat ="MBIJ"/>
-									<parameter input = "3" input_cat ="MGZ" output="3.92010267"  output_cat ="MGZ"/>
-									<parameter input = "4" input_cat ="MHRDz" output="2.554598687"  output_cat ="MHRDz"/>									
-									<parameter input = "5" input_cat ="MHE" output="0.635048234"  output_cat ="MHE"/>
-									<parameter input = "6" input_cat ="MWenmid" output="0.0"  output_cat ="MWenmid"/>
-									<parameter input = "7" input_cat ="MHH" output="0.532617294" output_cat ="MHH"/>								
+								<valuesCategorical layername="subarea" type="categorical">
+									<parameter input="1" input_cat="MIJ" output="-1.824219126" output_cat="MIJ"/>
+									<parameter input="2" input_cat="MBIJ" output="-1.571804689" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="3.92010267" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="2.554598687" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="0.635048234" output_cat="MHE"/>
+									<parameter input="6" input_cat="MWenmid" output="0.0" output_cat="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="0.532617294" output_cat="MHH"/>
 								</valuesCategorical>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="subarea_factor_myr_spic_extinction">
+								<parameter_name>subarea_factor_myr_spic_extinction</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_myr_spic"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for Myriophyllum spicatum prediction based on extinction"</description>
 							</layer>
 						</outputLayers>

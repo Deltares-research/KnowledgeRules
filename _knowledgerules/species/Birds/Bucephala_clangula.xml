@@ -40,11 +40,14 @@
 					<ResponseCurve name="waterdiepte_winter">
 						<inputLayers>
 							<layer name="waterdiepte_winter">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte_winter</layer_filename>
+								<parameter_name>waterdiepte_winter</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -65,22 +68,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte_winter">
+								<parameter_name>HSI_waterdiepte_winter</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte_winter</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="schelpdieren_aanwezigheid">
 						<inputLayers>
 							<layer name="schelpdieren_aanwezigheid">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>schelpdieren_aanwezigheid</layer_filename>
+								<parameter_name>schelpdieren_aanwezigheid</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>schelpdieren_aanwezigheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -98,11 +107,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_schelpdieren_aanwezigheid">
+								<parameter_name>HSI_schelpdieren_aanwezigheid</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_schelpdieren_aanwezigheid</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_schelpdieren_aanwezigheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

@@ -49,11 +49,14 @@
 					<ResponseCurve name="waterdiepte">
 						<inputLayers>
 							<layer name="waterdiepte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte</layer_filename>
+								<parameter_name>waterdiepte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -80,22 +83,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte">
+								<parameter_name>HSI_waterdiepte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="slibgehalte">
 						<inputLayers>
 							<layer name="slibgehalte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>slibgehalte</layer_filename>
+								<parameter_name>slibgehalte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>slibgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -114,22 +123,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_slibgehalte">
+								<parameter_name>HSI_slibgehalte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_slibgehalte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_slibgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="chloridegehalte">
 						<inputLayers>
 							<layer name="chloridegehalte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>chloridegehalte</layer_filename>
+								<parameter_name>chloridegehalte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>chloridegehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -148,22 +163,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_chloridegehalte">
+								<parameter_name>HSI_chloridegehalte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_chloridegehalte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_chloridegehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="getijdeverschil">
 						<inputLayers>
 							<layer name="getijdeverschil">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>getijdeverschil</layer_filename>
+								<parameter_name>getijdeverschil</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>getijdeverschil</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -183,22 +204,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_getijdeverschil">
+								<parameter_name>HSI_getijdeverschil</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_getijdeverschil</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_getijdeverschil</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="droogvalduur">
 						<inputLayers>
 							<layer name="droogvalduur">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>droogvalduur</layer_filename>
+								<parameter_name>droogvalduur</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>droogvalduur</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -223,11 +250,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_droogvalduur">
+								<parameter_name>HSI_droogvalduur</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_droogvalduur</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_droogvalduur</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

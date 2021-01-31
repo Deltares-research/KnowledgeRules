@@ -52,11 +52,14 @@
 					<ResponseCurve name="percentage_of_ligth_at_bottom">
 						<inputLayers>
 							<layer name="percentage_of_ligth_at_bottom">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>percentage_of_ligth_at_bottom</layer_filename>
+								<parameter_name>percentage_of_ligth_at_bottom</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>percentage_of_ligth_at_bottom</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -92,22 +95,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_percentage_of_ligth_at_bottom">
+								<parameter_name>HSI_percentage_of_ligth_at_bottom</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_percentage_of_ligth_at_bottom</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_percentage_of_ligth_at_bottom</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="salinity">
 						<inputLayers>
 							<layer name="salinity">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>salinity</layer_filename>
+								<parameter_name>salinity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"ppt"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>salinity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -130,22 +139,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_salinity">
+								<parameter_name>HSI_salinity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_salinity</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_salinity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="flow_velocity">
 						<inputLayers>
 							<layer name="flow_velocity">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>flow_velocity</layer_filename>
+								<parameter_name>flow_velocity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>flow_velocity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -166,22 +181,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_flow_velocity">
+								<parameter_name>HSI_flow_velocity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_flow_velocity</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_flow_velocity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="sediment_composition">
 						<inputLayers>
 							<layer name="sediment_composition">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>sediment_composition</layer_filename>
+								<parameter_name>sediment_composition</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>sediment_composition</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -203,22 +224,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_sediment_composition">
+								<parameter_name>HSI_sediment_composition</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_sediment_composition</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_sediment_composition</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="percentage_fallen_dry">
 						<inputLayers>
 							<layer name="percentage_fallen_dry">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>percentage_fallen_dry</layer_filename>
+								<parameter_name>percentage_fallen_dry</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>percentage_fallen_dry</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -243,11 +270,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_percentage_fallen_dry">
+								<parameter_name>HSI_percentage_fallen_dry</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_percentage_fallen_dry</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_percentage_fallen_dry</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

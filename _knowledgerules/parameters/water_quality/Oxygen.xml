@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
 	<Topic>
 		<Parameter>
@@ -14,7 +13,7 @@
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
-					</SpatialScope>	
+					</SpatialScope>
 					<TemporalScope>
 						<StartDate>1990-01-01</StartDate>
 						<EndDate>1992-01-01</EndDate>
@@ -22,10 +21,10 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA["To be filled"]]></text>
+						<text>"To be filled"</text>
 					</Description>
 					<Description language="ENG">
-						<text><![CDATA["To be filled"]]></text>
+						<text>"To be filled"</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -68,10 +67,13 @@
 					<FormulaBased name="Pressure">
 						<inputLayers>
 							<layer name="altitude">
+								<parameter_name>altitude</parameter_name>
 								<parameter_cat>"Altitude"</parameter_cat>
-								<layer_filename>altitude</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>km</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>altitude</layer_filename>
 								<description>"Altitude from sealevel in km"</description>
 							</layer>
 						</inputLayers>
@@ -82,7 +84,7 @@
 							<date>2020-10-01</date>
 							<references>
 								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+									<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
 								</reference>
 							</references>
 							<Equation>
@@ -91,17 +93,20 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "altitude" type="scalar">
+								<valuesScalar layername="altitude" type="scalar">
 									<parameter min_input="-10" max_input="44"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="P">
+								<parameter_name>P</parameter_name>
 								<parameter_cat>"Pressure"</parameter_cat>
-								<layer_filename>pressure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>atm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>pressure</layer_filename>
 								<description>"Nonstandard pressure in atm"</description>
 							</layer>
 						</outputLayers>
@@ -109,10 +114,13 @@
 					<FormulaBased name="Pressure_of_water">
 						<inputLayers>
 							<layer name="temperature">
+								<parameter_name>temperature</parameter_name>
 								<parameter_cat>"Water temperature"</parameter_cat>
-								<layer_filename>watertemperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>degrees Celsius</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watertemperature</layer_filename>
 								<description>"Water temperature in degrees Celsius"</description>
 							</layer>
 						</inputLayers>
@@ -123,7 +131,7 @@
 							<date>2020-10-01</date>
 							<references>
 								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+									<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
 								</reference>
 							</references>
 							<Equation>
@@ -132,17 +140,20 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "temperature" type="scalar">
+								<valuesScalar layername="temperature" type="scalar">
 									<parameter min_input="4" max_input="35"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="Pwv">
+								<parameter_name>Pwv</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>pressure_of_water</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>atm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>pressure_of_water</layer_filename>
 								<description>"Nonstandard pressure of water in atm"</description>
 							</layer>
 						</outputLayers>
@@ -150,10 +161,13 @@
 					<FormulaBased name="Presurre_coefficient">
 						<inputLayers>
 							<layer name="temperature">
+								<parameter_name>temperature</parameter_name>
 								<parameter_cat>"Water temperature"</parameter_cat>
-								<layer_filename>watertemperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>degrees Celsius</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watertemperature</layer_filename>
 								<description>"Water temperature in degrees Celsius"</description>
 							</layer>
 						</inputLayers>
@@ -164,7 +178,7 @@
 							<date>2020-10-01</date>
 							<references>
 								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+									<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
 								</reference>
 							</references>
 							<Equation>
@@ -173,17 +187,20 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "temperature" type="scalar">
+								<valuesScalar layername="temperature" type="scalar">
 									<parameter min_input="4" max_input="35"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="pressure_coefficient">
+								<parameter_name>pressure_coefficient</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>pressure_coefficient</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>-</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>pressure_coefficient</layer_filename>
 								<description>"Pressure coefficient used in oxygen calculation"</description>
 							</layer>
 						</outputLayers>
@@ -191,10 +208,13 @@
 					<FormulaBased name="Equalibrium_oxygen_standard_pressure">
 						<inputLayers>
 							<layer name="temperature">
+								<parameter_name>temperature</parameter_name>
 								<parameter_cat>"Water temperature"</parameter_cat>
-								<layer_filename>watertemperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>degrees Celsius</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watertemperature</layer_filename>
 								<description>"Water temperature in degrees Celsius"</description>
 							</layer>
 						</inputLayers>
@@ -205,7 +225,7 @@
 							<date>2020-10-01</date>
 							<references>
 								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+									<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
 								</reference>
 							</references>
 							<Equation>
@@ -214,17 +234,20 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "temperature" type="scalar">
+								<valuesScalar layername="temperature" type="scalar">
 									<parameter min_input="4" max_input="35"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="eq_oxygen_st_pressure">
+								<parameter_name>eq_oxygen_st_pressure</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
 								<description>"Equalibrium of oxygen under standard pressure"</description>
 							</layer>
 						</outputLayers>
@@ -232,31 +255,43 @@
 					<FormulaBased name="Equalibrium_oxygen_nonstandard_pressure">
 						<inputLayers>
 							<layer name="eq_oxygen_st_pressure">
+								<parameter_name>eq_oxygen_st_pressure</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
 								<description>"Equalibrium of oxygen under standard pressure"</description>
 							</layer>
 							<layer name="pressure_coefficient">
+								<parameter_name>pressure_coefficient</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>pressure_coefficient</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>-</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>pressure_coefficient</layer_filename>
 								<description>"Pressure coefficient used in oxygen calculation"</description>
 							</layer>
 							<layer name="Pwv">
+								<parameter_name>Pwv</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>pressure_of_water</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>atm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>pressure_of_water</layer_filename>
 								<description>"Nonstandard pressure of water in atm"</description>
 							</layer>
 							<layer name="P">
+								<parameter_name>P</parameter_name>
 								<parameter_cat>"Pressure"</parameter_cat>
-								<layer_filename>pressure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>atm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>pressure</layer_filename>
 								<description>"Nonstandard pressure in atm"</description>
 							</layer>
 						</inputLayers>
@@ -267,7 +302,7 @@
 							<date>2020-10-01</date>
 							<references>
 								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+									<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
 								</reference>
 							</references>
 							<Equation>
@@ -276,26 +311,29 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "eq_oxygen_st_pressure" type="scalar">
+								<valuesScalar layername="eq_oxygen_st_pressure" type="scalar">
 									<parameter min_input="0" max_input="10"/>
 								</valuesScalar>
-								<valuesScalar layername = "P" type="scalar">
+								<valuesScalar layername="P" type="scalar">
 									<parameter min_input="-3" max_input="2"/>
 								</valuesScalar>
-								<valuesScalar layername = "Pwv" type="scalar">
+								<valuesScalar layername="Pwv" type="scalar">
 									<parameter min_input="3.1" max_input="3.2"/>
 								</valuesScalar>
-								<valuesScalar layername = "pressure_coefficient" type="scalar">
+								<valuesScalar layername="pressure_coefficient" type="scalar">
 									<parameter min_input="0.0005" max_input="0.0010"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="eq_oxygen_nonst_pressure">
+								<parameter_name>eq_oxygen_nonst_pressure</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>equalibrium_oxygen_under_nonstandard_pressure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>equalibrium_oxygen_under_nonstandard_pressure</layer_filename>
 								<description>"Equalibrium of oxygen under nonstandard pressure"</description>
 							</layer>
 						</outputLayers>
@@ -303,18 +341,24 @@
 					<FormulaBased name="oxygen_saturation_from_concentration">
 						<inputLayers>
 							<layer name="eq_oxygen_nonst_pressure">
+								<parameter_name>eq_oxygen_nonst_pressure</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
 								<description>"Equalibrium of oxygen under standard pressure"</description>
 							</layer>
 							<layer name="oxygen_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<parameter_name>oxygen_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/L"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -324,7 +368,7 @@
 							<date>2020-10-01</date>
 							<references>
 								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+									<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
 								</reference>
 							</references>
 							<Equation>
@@ -333,39 +377,48 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "eq_oxygen_nonst_pressure" type="scalar">
+								<valuesScalar layername="eq_oxygen_nonst_pressure" type="scalar">
 									<parameter min_input="0.001" max_input="15"/>
 								</valuesScalar>
-								<valuesScalar layername = "oxygen_concentration" type="scalar">
+								<valuesScalar layername="oxygen_concentration" type="scalar">
 									<parameter min_input="0.001" max_input="15"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="oxygen_saturation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<parameter_name>oxygen_saturation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="oxygen_concentration_from_saturation">
 						<inputLayers>
 							<layer name="eq_oxygen_nonst_pressure">
+								<parameter_name>eq_oxygen_nonst_pressure</parameter_name>
 								<parameter_cat>"Water Pressure"</parameter_cat>
-								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>equalibrium_oxygen_under_standard_pressure</layer_filename>
 								<description>"Equalibrium of oxygen under standard pressure"</description>
 							</layer>
 							<layer name="oxygen_saturation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<parameter_name>oxygen_saturation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oxygen_saturation_watercolumn</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -375,7 +428,7 @@
 							<date>2020-10-01</date>
 							<references>
 								<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-								<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
+									<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
 								</reference>
 							</references>
 							<Equation>
@@ -384,21 +437,24 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "eq_oxygen_nonst_pressure" type="scalar">
+								<valuesScalar layername="eq_oxygen_nonst_pressure" type="scalar">
 									<parameter min_input="0.001" max_input="15"/>
 								</valuesScalar>
-								<valuesScalar layername = "oxygen_saturation" type="scalar">
+								<valuesScalar layername="oxygen_saturation" type="scalar">
 									<parameter min_input="0.001" max_input="120"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="oxygen_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<parameter_name>oxygen_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/L"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
@@ -408,16 +464,16 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA["To be filled"]]></text>
+			<text>"To be filled"</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA["To be filled"]]></text>
+			<text>"To be filled"</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>
 		<reference author="Mortimer, C.H." year="2014" title="The oxygen content of air-saturated fresh waters over ranges of temperature and atmospheric pressure of limnological interest." identification="Number 22, 23 p." journal="Mitteilungen der IVL">
-			<html><![CDATA[https://www.waterontheweb.org/under/waterquality/oxygen.html]]></html>
-		</reference>	
+			<html>https://www.waterontheweb.org/under/waterquality/oxygen.html</html>
+		</reference>
 	</Documentation>
 	<DataSources/>
 </AutecologyXML>

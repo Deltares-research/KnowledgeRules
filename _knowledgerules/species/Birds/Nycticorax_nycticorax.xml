@@ -65,11 +65,14 @@
 					<ResponseCurve name="swamp_vegetation">
 						<inputLayers>
 							<layer name="swamp_vegetation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>swamp_vegetation</layer_filename>
+								<parameter_name>swamp_vegetation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>swamp_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -90,22 +93,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_swamp_vegetation">
+								<parameter_name>HSI_swamp_vegetation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_swamp_vegetation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_swamp_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="disturbance_distance">
 						<inputLayers>
 							<layer name="disturbance_distance">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>disturbance_distance</layer_filename>
+								<parameter_name>disturbance_distance</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>disturbance_distance</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -125,22 +134,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_disturbance_distance">
+								<parameter_name>HSI_disturbance_distance</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_disturbance_distance</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_disturbance_distance</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DDE_presence_fish">
 						<inputLayers>
 							<layer name="DDE_presence_fish">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>DDE_presence_fish</layer_filename>
+								<parameter_name>DDE_presence_fish</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>DDE_presence_fish</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -159,22 +174,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_DDE_presence_fish">
+								<parameter_name>HSI_DDE_presence_fish</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_DDE_presence_fish</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_DDE_presence_fish</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="PCB_presence_fish">
 						<inputLayers>
 							<layer name="PCB_presence_fish">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>PCB_presence_fish</layer_filename>
+								<parameter_name>PCB_presence_fish</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>PCB_presence_fish</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -194,11 +215,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_PCB_presence_fish">
+								<parameter_name>HSI_PCB_presence_fish</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_PCB_presence_fish</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_PCB_presence_fish</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

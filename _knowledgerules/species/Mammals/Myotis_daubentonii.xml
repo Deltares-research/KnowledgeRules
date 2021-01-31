@@ -58,11 +58,14 @@
 					<ResponseCurve name="Emerse_vegetation">
 						<inputLayers>
 							<layer name="Emerse_vegetation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Emerse_vegetation</layer_filename>
+								<parameter_name>Emerse_vegetation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Emerse_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -81,22 +84,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Emerse_vegetation">
+								<parameter_name>HSI_Emerse_vegetation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Emerse_vegetation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Emerse_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Light_source">
 						<inputLayers>
 							<layer name="Light_source">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Light_source</layer_filename>
+								<parameter_name>Light_source</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Light_source</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -115,22 +124,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Light_source">
+								<parameter_name>HSI_Light_source</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Light_source</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Light_source</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Watersurface">
 						<inputLayers>
 							<layer name="Watersurface">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Watersurface</layer_filename>
+								<parameter_name>Watersurface</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Watersurface</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -150,22 +165,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Watersurface">
+								<parameter_name>HSI_Watersurface</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Watersurface</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Distance_line_element">
 						<inputLayers>
 							<layer name="Distance_line_element">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Distance_line_element</layer_filename>
+								<parameter_name>Distance_line_element</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"km"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Distance_line_element</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -184,22 +205,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Distance_line_element">
+								<parameter_name>HSI_Distance_line_element</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Distance_line_element</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Distance_line_element</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Distance_colony_tree">
 						<inputLayers>
 							<layer name="Distance_colony_tree">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Distance_colony_tree</layer_filename>
+								<parameter_name>Distance_colony_tree</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Distance_colony_tree</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -217,22 +244,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Distance_colony_tree">
+								<parameter_name>HSI_Distance_colony_tree</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Distance_colony_tree</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Distance_colony_tree</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Water_width">
 						<inputLayers>
 							<layer name="Water_width">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Water_width</layer_filename>
+								<parameter_name>Water_width</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Water_width</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -251,22 +284,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Water_width">
+								<parameter_name>HSI_Water_width</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Water_width</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Water_width</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Shelter">
 						<inputLayers>
 							<layer name="Shelter">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Shelter</layer_filename>
+								<parameter_name>Shelter</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Shelter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -285,22 +324,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Shelter">
+								<parameter_name>HSI_Shelter</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Shelter</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Shelter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Trophy_rate">
 						<inputLayers>
 							<layer name="Trophy_rate">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Trophy_rate</layer_filename>
+								<parameter_name>Trophy_rate</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>Average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Trophy_rate</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -319,11 +364,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Trophy_rate">
+								<parameter_name>HSI_Trophy_rate</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Trophy_rate</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Trophy_rate</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

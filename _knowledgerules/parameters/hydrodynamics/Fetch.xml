@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
 	<Topic>
 		<Parameter>
@@ -14,7 +13,7 @@
 				<Scope>
 					<SpatialScope>
 						<GeoNames name="Lake Ijsselmeer" id="2753361"/>
-					</SpatialScope>	
+					</SpatialScope>
 					<TemporalScope>
 						<StartDate>1990-01-01</StartDate>
 						<EndDate>1992-01-01</EndDate>
@@ -22,10 +21,10 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Kranswieren-Charaspp.-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd op het Markermeer.</p><h1 id="Kranswieren-Charaspp.-Toepasbaarheid">Toepasbaarheid</h1><p>Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)</p>]]></text>
+						<text>&lt;h1 id="Kranswieren-Charaspp.-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;Deze dosis-effect relaties zijn gevalideerd op het Markermeer.&lt;/p&gt;&lt;h1 id="Kranswieren-Charaspp.-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;Markermeer en mogelijk ook andere zoete wateren waar weinig lange voorlanden aanwezig zijn (zoals het IJsselmeer)&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
-						<text><![CDATA["To be filled"]]></text>
+						<text>"To be filled"</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -49,71 +48,98 @@
 					<FormulaBased name="Fetch">
 						<inputLayers>
 							<layer name="North">
+								<parameter_name>North</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_North</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_North</layer_filename>
 								<description>"Fetch in the Northern direction"</description>
 							</layer>
 							<layer name="NorthEast">
+								<parameter_name>NorthEast</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_NorthEast</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_NorthEast</layer_filename>
 								<description>"Fetch in the NorthEast direction"</description>
 							</layer>
 							<layer name="East">
+								<parameter_name>East</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_East</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_East</layer_filename>
 								<description>"Fetch in the East direction"</description>
 							</layer>
 							<layer name="SouthEast">
+								<parameter_name>SouthEast</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>m/s</unit>
+								<statistic>"average"</statistic>
 								<layer_filename>fetch_SouthEast</layer_filename>
-								<unit>m/s</unit>
-								<statistic>"average"</statistic>
 								<description>"Fetch in the SouthEast direction"</description>
-							</layer>							
+							</layer>
 							<layer name="South">
+								<parameter_name>South</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_South</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_South</layer_filename>
 								<description>"Fetch in the South direction"</description>
 							</layer>
 							<layer name="SouthWest">
+								<parameter_name>SouthWest</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_SouthWest</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_SouthWest</layer_filename>
 								<description>"Fetch in the SouthWest direction"</description>
 							</layer>
 							<layer name="West">
+								<parameter_name>West</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_West</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_West</layer_filename>
 								<description>"Fetch in the West direction"</description>
 							</layer>
 							<layer name="NorthWest">
+								<parameter_name>NorthWest</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_NorthWest</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_NorthWest</layer_filename>
 								<description>"Fetch in the NorthWest direction"</description>
 							</layer>
 							<layer name="waterdepth_summer_cm">
+								<parameter_name>waterdepth_summer_cm</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer_cm</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>cm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer_cm</layer_filename>
 								<description>"Water depth in the summer in centimeter"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-						<type>spatialequation</type>
+							<type>spatialequation</type>
 							<description>"Calculate Fetch for a lake in the Netherlands"</description>
 							<author>"Marjolein Haasnoot"</author>
 							<date>2014-07-29</date>
@@ -127,41 +153,44 @@
 								</SpatialEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "North" type="scalar">
+								<valuesScalar layername="North" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "NorthEast" type="scalar">
+								<valuesScalar layername="NorthEast" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "East" type="scalar">
+								<valuesScalar layername="East" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "SouthEast" type="scalar">
+								<valuesScalar layername="SouthEast" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "South" type="scalar">
+								<valuesScalar layername="South" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "SouthWest" type="scalar">
+								<valuesScalar layername="SouthWest" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "West" type="scalar">
+								<valuesScalar layername="West" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "NorthWest" type="scalar">
+								<valuesScalar layername="NorthWest" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
-								<valuesScalar layername = "waterdepth_summer_cm" type="scalar">
+								<valuesScalar layername="waterdepth_summer_cm" type="scalar">
 									<parameter min_input="0" max_input="30"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="fetch">
+								<parameter_name>fetch</parameter_name>
 								<parameter_cat>"Wind"</parameter_cat>
-								<layer_filename>fetch_length</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_length</layer_filename>
 								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</outputLayers>
@@ -169,10 +198,13 @@
 					<FormulaBased name="North_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -191,17 +223,20 @@
 								</SpatialEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="North">
+								<parameter_name>North</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_North</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_North</layer_filename>
 								<description>"Fetch in the Northern direction"</description>
 							</layer>
 						</outputLayers>
@@ -209,10 +244,13 @@
 					<FormulaBased name="NorthEast_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -231,17 +269,20 @@
 								</SpatialEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="NorthEast">
+								<parameter_name>NorthEast</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_NorthEast</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_NorthEast</layer_filename>
 								<description>"Fetch in the NorthEast direction"</description>
 							</layer>
 						</outputLayers>
@@ -249,10 +290,13 @@
 					<FormulaBased name="East_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -271,17 +315,20 @@
 								</SpatialEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="East">
+								<parameter_name>East</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_East</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_East</layer_filename>
 								<description>"Fetch in the East direction"</description>
 							</layer>
 						</outputLayers>
@@ -289,10 +336,13 @@
 					<FormulaBased name="SouthEast_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -311,17 +361,20 @@
 								</SpatialEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="SouthEast">
+								<parameter_name>SouthEast</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_SouthEast</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_SouthEast</layer_filename>
 								<description>"Fetch in the SouthEast direction"</description>
 							</layer>
 						</outputLayers>
@@ -329,10 +382,13 @@
 					<FormulaBased name="South_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -349,19 +405,22 @@
 									<spatialtool>PCRaster</spatialtool>
 									<equation>"slopelength(ldd(directional(watersurface-1+180)),1)"</equation>
 								</SpatialEquation>
-							</Equation>							
+							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="South">
+								<parameter_name>South</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_South</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_South</layer_filename>
 								<description>"Fetch in the South direction"</description>
 							</layer>
 						</outputLayers>
@@ -369,10 +428,13 @@
 					<FormulaBased name="SouthWest_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -391,17 +453,20 @@
 								</SpatialEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="SouthWest">
+								<parameter_name>SouthWest</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_SouthWest</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_SouthWest</layer_filename>
 								<description>"Fetch in the SouthWest direction"</description>
 							</layer>
 						</outputLayers>
@@ -409,10 +474,13 @@
 					<FormulaBased name="West_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -431,17 +499,20 @@
 								</SpatialEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="West">
+								<parameter_name>West</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_West</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_West</layer_filename>
 								<description>"Fetch in the West direction"</description>
 							</layer>
 						</outputLayers>
@@ -449,10 +520,13 @@
 					<FormulaBased name="NorthWest_Fetch_length">
 						<inputLayers>
 							<layer name="watersurface">
+								<parameter_name>watersurface</parameter_name>
 								<parameter_cat>"Water surface"</parameter_cat>
-								<layer_filename>watersurface</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>watersurface</layer_filename>
 								<description>"Water surface in square meters"</description>
 							</layer>
 						</inputLayers>
@@ -469,19 +543,22 @@
 									<spatialtool>PCRaster</spatialtool>
 									<equation>"slopelength(ldd(directional(watersurface-1+315)),1)"</equation>
 								</SpatialEquation>
-							</Equation>							
+							</Equation>
 							<Parameters>
-								<valuesScalar layername = "watersurface" type="scalar">
+								<valuesScalar layername="watersurface" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="NorthWest">
+								<parameter_name>NorthWest</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_NorthWest</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_NorthWest</layer_filename>
 								<description>"Fetch in the NorthWest direction"</description>
 							</layer>
 						</outputLayers>
@@ -492,28 +569,28 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Kranswieren-Charaspp.-Algemeenvoorkomen">Algemeen voorkomen</h3><p>Kranswieren zijn pioniers van minder voedselrijke, heldere wateren. Onder deze omstandigheden ontwikkelen ze dichte tapijten die bestaan uit een of meerdere soorten kranswieren, waarin nauwelijks andere waterplanten kunnen doordringen. Kenmerkende soorten voor kalkrijke wateren zijn: Gewoon kransblad (<em>Chara vulgaris</em>), Ruw kransblad (<em>Chara aspera</em>), Stekelharig kransblad (<em>Chara hispida</em>), Brokkelig kransblad (<em>Chara contraria</em>), Sterkranswier (<em>Nitellopsis obtusa</em>). In zwak brakke wateren kunnen ook gebogen kransblad (<em>Chara connivens</em>) en brakwaterkransblad (<em>Chara canescens</em>) een rol spelen.<br>In de grote meren van het IJsselmeergebied komen in de ondiepe zone (0,5 - 2,5 m) kranswieren voor als de waterkwaliteit voldoende is verbeterd en er voldoende licht tot op de bodem doordringt. Uitgestrekte 'kranswierweiden' zijn te vinden in de Veluwerandmeren, het IJmeer en de Gouwzee. De laatste jaren is er ook een toename te zien in het Gooimeer, het Zwarte Meer en langs de Friese kust.</p><h3 id="Kranswieren-Charaspp.-Milieuvoorwaarden">Milieuvoorwaarden</h3><p>Kranswieren komen voor in wateren met uiteenlopende chemische samenstelling (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-3">#3</a>). Het doorzicht in de waterkolom is de meest bepalende factor die die de maximale groeidiepte bepaalt waarop lichtbeperking optreedt. In zeer ondiep water (in meren met een vast peil &lt; 20 cm) kunnen kranswieren echter niet groeien vanwege de turbulentie in de waterkolom en begrazing. De alkaliniteit kan zeer hoog zijn; ook in brakke meren en plassen kunnen kranswieren aspectbepalend zijn. Kranswieren hebben basisische condities (pH &gt; 6) nodig. Ze groeien op uiteenlopende bodems (zand, klei, veen).<br>Uitgebreid onderzoek in het IJsselmeergebied heeft aangetoond dat daar de factoren doorzicht en diepte samen voor het grootste deel het voorkomen van Chara sp. verklaart, met name de plekken waar Chara afwezig is. Om ook de plekken waar Chara wel staat goed te kunnen voorspellen is de aanwezigheid in het voorgaande jaar als aanvullende factor nodig (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-1">#1</a>). </p><h3 id="Kranswieren-Charaspp.-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3><p>Kranswiervegetaties zijn gevoelig voor verhoogde troebelheid (door toevoer van nutrienten, slibopwoeling e.d.), en worden dan snel verdrongen door andere waterplanten of draadwieren. Bij matig verminderd doorzicht kunnen kranswieren zich vaak goed handhaven doordat ze zelf de helderheid versterken. Na het verdwijnen van de vegetatie zijn zeer heldere omstandigheden nodig om herkolonisatie mogelijk te maken.<br>Primair zal het beheer van kranswiermeren dus moeten bestaan uit het voorkomen van hoge nutrientenbelasting en andere bronnen van vertroebeling. Daarnaast is het instandhouden van ondiep-watergebieden een vereiste.<br>Ontwikkeling van kranswiervegetaties is mogelijk door maatregelen te nemen die de helderheid vergroten, zoals actief biologisch beheer of doorspoelen. Maatregelen als het selectief maaien van boven de kranswieren uitgroeiende waterplanten en het uitzetten van sporen zijn met wisselend succes toegepast. </p>]]></text>
+			<text>&lt;h3 id="Kranswieren-Charaspp.-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;Kranswieren zijn pioniers van minder voedselrijke, heldere wateren. Onder deze omstandigheden ontwikkelen ze dichte tapijten die bestaan uit een of meerdere soorten kranswieren, waarin nauwelijks andere waterplanten kunnen doordringen. Kenmerkende soorten voor kalkrijke wateren zijn: Gewoon kransblad (&lt;em&gt;Chara vulgaris&lt;/em&gt;), Ruw kransblad (&lt;em&gt;Chara aspera&lt;/em&gt;), Stekelharig kransblad (&lt;em&gt;Chara hispida&lt;/em&gt;), Brokkelig kransblad (&lt;em&gt;Chara contraria&lt;/em&gt;), Sterkranswier (&lt;em&gt;Nitellopsis obtusa&lt;/em&gt;). In zwak brakke wateren kunnen ook gebogen kransblad (&lt;em&gt;Chara connivens&lt;/em&gt;) en brakwaterkransblad (&lt;em&gt;Chara canescens&lt;/em&gt;) een rol spelen.&lt;br&gt;In de grote meren van het IJsselmeergebied komen in de ondiepe zone (0,5 - 2,5 m) kranswieren voor als de waterkwaliteit voldoende is verbeterd en er voldoende licht tot op de bodem doordringt. Uitgestrekte 'kranswierweiden' zijn te vinden in de Veluwerandmeren, het IJmeer en de Gouwzee. De laatste jaren is er ook een toename te zien in het Gooimeer, het Zwarte Meer en langs de Friese kust.&lt;/p&gt;&lt;h3 id="Kranswieren-Charaspp.-Milieuvoorwaarden"&gt;Milieuvoorwaarden&lt;/h3&gt;&lt;p&gt;Kranswieren komen voor in wateren met uiteenlopende chemische samenstelling (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-3"&gt;#3&lt;/a&gt;). Het doorzicht in de waterkolom is de meest bepalende factor die die de maximale groeidiepte bepaalt waarop lichtbeperking optreedt. In zeer ondiep water (in meren met een vast peil &amp;lt; 20 cm) kunnen kranswieren echter niet groeien vanwege de turbulentie in de waterkolom en begrazing. De alkaliniteit kan zeer hoog zijn; ook in brakke meren en plassen kunnen kranswieren aspectbepalend zijn. Kranswieren hebben basisische condities (pH &amp;gt; 6) nodig. Ze groeien op uiteenlopende bodems (zand, klei, veen).&lt;br&gt;Uitgebreid onderzoek in het IJsselmeergebied heeft aangetoond dat daar de factoren doorzicht en diepte samen voor het grootste deel het voorkomen van Chara sp. verklaart, met name de plekken waar Chara afwezig is. Om ook de plekken waar Chara wel staat goed te kunnen voorspellen is de aanwezigheid in het voorgaande jaar als aanvullende factor nodig (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722892#Kranswieren-Charaspp.-1"&gt;#1&lt;/a&gt;). &lt;/p&gt;&lt;h3 id="Kranswieren-Charaspp.-Beheerenontwikkelingskansen"&gt;Beheer en ontwikkelingskansen&lt;/h3&gt;&lt;p&gt;Kranswiervegetaties zijn gevoelig voor verhoogde troebelheid (door toevoer van nutrienten, slibopwoeling e.d.), en worden dan snel verdrongen door andere waterplanten of draadwieren. Bij matig verminderd doorzicht kunnen kranswieren zich vaak goed handhaven doordat ze zelf de helderheid versterken. Na het verdwijnen van de vegetatie zijn zeer heldere omstandigheden nodig om herkolonisatie mogelijk te maken.&lt;br&gt;Primair zal het beheer van kranswiermeren dus moeten bestaan uit het voorkomen van hoge nutrientenbelasting en andere bronnen van vertroebeling. Daarnaast is het instandhouden van ondiep-watergebieden een vereiste.&lt;br&gt;Ontwikkeling van kranswiervegetaties is mogelijk door maatregelen te nemen die de helderheid vergroten, zoals actief biologisch beheer of doorspoelen. Maatregelen als het selectief maaien van boven de kranswieren uitgroeiende waterplanten en het uitzetten van sporen zijn met wisselend succes toegepast. &lt;/p&gt;</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA["To be filled"]]></text>
+			<text>"To be filled"</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>
-			<reference author=" Haasnoot, M., Van den Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer." journal="WL" identification="report Q4015. 2006">
-			<html><![CDATA[http://habitat.wldelft.nl/confluence/display/HABITAT/5+Toepassingen]]></html>
+		<reference author=" Haasnoot, M., Van den Wolfshaar, K.E." year="2006" title="Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer." journal="WL" identification="report Q4015. 2006">
+			<html>http://habitat.wldelft.nl/confluence/display/HABITAT/5+Toepassingen</html>
 		</reference>
 		<reference author=" Haasnoot, M., Kranenbarg, J. en van Buren, R.." year="2005" title="Seizoensgebonden peilen in het IJsselmeergebied." journal="WL" identification="report Q3889. 2005">
-			<html><![CDATA[http://habitat.wldelft.nl/confluence/display/HABITAT/5+Toepassingen]]></html>
+			<html>http://habitat.wldelft.nl/confluence/display/HABITAT/5+Toepassingen</html>
 		</reference>
 		<reference author="Van den Berg M.S., Scheffer,M. , Van Nes, E. and Coops, H." year="1999" title="Dynamics and stability of Chara sp. and Potamogeton pectinatus in a shallow lake changing in eutrophication level." journal="Hydrobiologia " identification="408/409: 335-342.">
-			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722921/Van%20den%20Berg%202003%20Hyd506-509%20611-623.pdf?version=1&modificationDate=1172139605000&api=v2]]></html>
+			<html>https://publicwiki.deltares.nl/download/attachments/25722921/Van%20den%20Berg%202003%20Hyd506-509%20611-623.pdf?version=1&amp;modificationDate=1172139605000&amp;api=v2</html>
 		</reference>
 		<reference author="Scheffer, M." year="1998" title="Ecology of Shallow Lakes." journal="Chapman and Hall, London" identification="357 pp. "/>
 		<reference author="Van Zuidam, B." year="2014" title="Upgrade kennisregels waterplanten" journal="" identification="">
-			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf]]></html>
+			<html>https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf</html>
 		</reference>
 		<reference author="Van Zuidam, B." year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="" identification="">
-			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf]]></html>
+			<html>https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf</html>
 		</reference>
 	</Documentation>
 	<DataSources/>

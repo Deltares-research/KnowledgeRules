@@ -79,11 +79,14 @@
 					<ResponseCurve name="totalphosporus_concentration">
 						<inputLayers>
 							<layer name="totalphosporus_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>totalphosporus_concentration</layer_filename>
+								<parameter_name>totalphosporus_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg P/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>totalphosporus_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -106,22 +109,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_totalphosporus_concentration">
+								<parameter_name>HSI_totalphosporus_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_totalphosporus_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_totalphosporus_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth_open_water">
 						<inputLayers>
 							<layer name="waterdepth_open_water">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdepth_open_water</layer_filename>
+								<parameter_name>waterdepth_open_water</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdepth_open_water</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -141,22 +150,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth_open_water">
+								<parameter_name>HSI_waterdepth_open_water</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdepth_open_water</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdepth_open_water</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth_resting_area">
 						<inputLayers>
 							<layer name="waterdepth_resting_area">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdepth_resting_area</layer_filename>
+								<parameter_name>waterdepth_resting_area</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdepth_resting_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -175,22 +190,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth_resting_area">
+								<parameter_name>HSI_waterdepth_resting_area</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdepth_resting_area</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdepth_resting_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="transparency_winter">
 						<inputLayers>
 							<layer name="transparency_winter">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>transparency_winter</layer_filename>
+								<parameter_name>transparency_winter</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>transparency_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -209,22 +230,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_transparency_winter">
+								<parameter_name>HSI_transparency_winter</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_transparency_winter</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_transparency_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="disturbance_distance">
 						<inputLayers>
 							<layer name="disturbance_distance">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>disturbance_distance</layer_filename>
+								<parameter_name>disturbance_distance</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>disturbance_distance</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -243,22 +270,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_disturbance_distance">
+								<parameter_name>HSI_disturbance_distance</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_disturbance_distance</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_disturbance_distance</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="PCB_presence_fish">
 						<inputLayers>
 							<layer name="PCB_presence_fish">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>PCB_presence_fish</layer_filename>
+								<parameter_name>PCB_presence_fish</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/kg"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>PCB_presence_fish</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -277,22 +310,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_PCB_presence_fish">
+								<parameter_name>HSI_PCB_presence_fish</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_PCB_presence_fish</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_PCB_presence_fish</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="wind_fetch">
 						<inputLayers>
 							<layer name="wind_fetch">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>wind_fetch</layer_filename>
+								<parameter_name>wind_fetch</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>wind_fetch</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -312,11 +351,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_wind_fetch">
+								<parameter_name>HSI_wind_fetch</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_wind_fetch</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_wind_fetch</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

@@ -83,11 +83,14 @@
 					<ResponseCurve name="bankvegetation_structure">
 						<inputLayers>
 							<layer name="bankvegetation_structure">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>bankvegetation_structure</layer_filename>
+								<parameter_name>bankvegetation_structure</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorie"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>bankvegetation_structure</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -114,22 +117,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_bankvegetation_structure">
+								<parameter_name>HSI_bankvegetation_structure</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_bankvegetation_structure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_bankvegetation_structure</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="bankvegetation_width">
 						<inputLayers>
 							<layer name="bankvegetation_width">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>bankvegetation_width</layer_filename>
+								<parameter_name>bankvegetation_width</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>bankvegetation_width</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -149,22 +158,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_bankvegetation_width">
+								<parameter_name>HSI_bankvegetation_width</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_bankvegetation_width</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_bankvegetation_width</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="bankvegetation_length">
 						<inputLayers>
 							<layer name="bankvegetation_length">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>bankvegetation_length</layer_filename>
+								<parameter_name>bankvegetation_length</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>bankvegetation_length</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -184,22 +199,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_bankvegetation_length">
+								<parameter_name>HSI_bankvegetation_length</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_bankvegetation_length</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_bankvegetation_length</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="surfacewater_area">
 						<inputLayers>
 							<layer name="surfacewater_area">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>surfacewater_area</layer_filename>
+								<parameter_name>surfacewater_area</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"Ha"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>surfacewater_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -219,22 +240,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_surfacewater_area">
+								<parameter_name>HSI_surfacewater_area</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_surfacewater_area</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_surfacewater_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth">
 						<inputLayers>
 							<layer name="waterdepth">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdepth</layer_filename>
+								<parameter_name>waterdepth</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -255,22 +282,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth">
+								<parameter_name>HSI_waterdepth</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdepth</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="aquaticplants_coverage">
 						<inputLayers>
 							<layer name="aquaticplants_coverage">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>aquaticplants_coverage</layer_filename>
+								<parameter_name>aquaticplants_coverage</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>aquaticplants_coverage</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -289,22 +322,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_aquaticplants_coverage">
+								<parameter_name>HSI_aquaticplants_coverage</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_aquaticplants_coverage</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_aquaticplants_coverage</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="orthophosphate_concentration">
 						<inputLayers>
 							<layer name="orthophosphate_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>orthophosphate_concentration</layer_filename>
+								<parameter_name>orthophosphate_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg P/L"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>orthophosphate_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -325,22 +364,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_orthophosphate_concentration">
+								<parameter_name>HSI_orthophosphate_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_orthophosphate_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_orthophosphate_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="PCB_concentration">
 						<inputLayers>
 							<layer name="PCB_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>PCB_concentration</layer_filename>
+								<parameter_name>PCB_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/kg dryweight"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>PCB_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -360,22 +405,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_PCB_concentration">
+								<parameter_name>HSI_PCB_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_PCB_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_PCB_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DDE_concentration">
 						<inputLayers>
 							<layer name="DDE_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>DDE_concentration</layer_filename>
+								<parameter_name>DDE_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/kg dryweight"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>DDE_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -395,22 +446,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_DDE_concentration">
+								<parameter_name>HSI_DDE_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_DDE_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_DDE_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="HCB_concentration">
 						<inputLayers>
 							<layer name="HCB_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>HCB_concentration</layer_filename>
+								<parameter_name>HCB_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/kg dryweight"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HCB_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -430,22 +487,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_HCB_concentration">
+								<parameter_name>HSI_HCB_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_HCB_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_HCB_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="mercury_concentration">
 						<inputLayers>
 							<layer name="mercury_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>mercury_concentration</layer_filename>
+								<parameter_name>mercury_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/kg dryweight"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>mercury_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -465,22 +528,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_mercury_concentration">
+								<parameter_name>HSI_mercury_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_mercury_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_mercury_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="cadmium_concentration">
 						<inputLayers>
 							<layer name="cadmium_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>cadmium_concentration</layer_filename>
+								<parameter_name>cadmium_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/kg dryweight"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>cadmium_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -500,22 +569,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_cadmium_concentration">
+								<parameter_name>HSI_cadmium_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_cadmium_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_cadmium_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="mussel_density">
 						<inputLayers>
 							<layer name="mussel_density">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>mussel_density</layer_filename>
+								<parameter_name>mussel_density</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"individuals per m2"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>mussel_density</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -535,22 +610,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_mussel_density">
+								<parameter_name>HSI_mussel_density</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_mussel_density</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_mussel_density</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="mussel_average_weight">
 						<inputLayers>
 							<layer name="mussel_average_weight">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>mussel_average_weight</layer_filename>
+								<parameter_name>mussel_average_weight</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"gram fresh weight per individual"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>mussel_average_weight</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -570,11 +651,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_mussel_average_weight">
+								<parameter_name>HSI_mussel_average_weight</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_mussel_average_weight</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_mussel_average_weight</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

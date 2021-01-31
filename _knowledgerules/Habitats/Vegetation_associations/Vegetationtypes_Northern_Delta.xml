@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
 	<Topic>
 		<Habitats>
@@ -26,7 +25,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h2 id="VegetatietypenNoordelijkeDeltabekken-1.OevervegetatieontwikkelinginhetNoordelijkDeltabekken#1en#2">1. Oevervegetatieontwikkeling in het Noordelijk Deltabekken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-1">#1</a> en <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-2">#2</a></h2><p>Als input van deze kennisregels zijn de volgende gegevens nodig:</p><ul>	<li>Digital Terrain Model (DTM) in cm + NAP</li>	<li>Waterniveau bij GHW (gemiddeld hoog water), GLW (gemiddeld laag water), GHWS (gemiddeld springtijhoogwater), EHW (extreem hoog water).</li>	<li>Zoutgehalte (mg Cl-/L)</li></ul><p>Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gekalibreerd worden. De klassegrenzen van de vegetatiezones (zie bovenstaande figuur) aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 1.</p><p>Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 1). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 2.</p><p>Met de klassegrenzen en de kaart met zoutgehalten kunnen vervolgens de vegetatietypen geclassificeerd worden. </p><p><strong>Situatie met begrazing</strong><br><p>Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gecalibreerd worden. De klassegrenzen van de vegetatiezones aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 4.</p><p>Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 2). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 5.</p>]]></text>
+						<text>&lt;h2 id="VegetatietypenNoordelijkeDeltabekken-1.OevervegetatieontwikkelinginhetNoordelijkDeltabekken#1en#2"&gt;1. Oevervegetatieontwikkeling in het Noordelijk Deltabekken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-1"&gt;#1&lt;/a&gt; en &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-2"&gt;#2&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Als input van deze kennisregels zijn de volgende gegevens nodig:&lt;/p&gt;&lt;ul&gt;	&lt;li&gt;Digital Terrain Model (DTM) in cm + NAP&lt;/li&gt;	&lt;li&gt;Waterniveau bij GHW (gemiddeld hoog water), GLW (gemiddeld laag water), GHWS (gemiddeld springtijhoogwater), EHW (extreem hoog water).&lt;/li&gt;	&lt;li&gt;Zoutgehalte (mg Cl-/L)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gekalibreerd worden. De klassegrenzen van de vegetatiezones (zie bovenstaande figuur) aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 1.&lt;/p&gt;&lt;p&gt;Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 1). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 2.&lt;/p&gt;&lt;p&gt;Met de klassegrenzen en de kaart met zoutgehalten kunnen vervolgens de vegetatietypen geclassificeerd worden. &lt;/p&gt;&lt;p&gt;&lt;strong&gt;Situatie met begrazing&lt;/strong&gt;&lt;br&gt;&lt;p&gt;Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gecalibreerd worden. De klassegrenzen van de vegetatiezones aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 4.&lt;/p&gt;&lt;p&gt;Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 2). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 5.&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
 						<text>"To be filled"</text>
@@ -70,17 +69,23 @@
 					<FormulaBased name="bound_A">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -109,10 +114,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_A">
+								<parameter_name>bound_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_A"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_A"</layer_filename>
 								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -120,24 +128,33 @@
 					<FormulaBased name="bound_B">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -169,10 +186,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -180,24 +200,33 @@
 					<FormulaBased name="veg_A_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_A">
+								<parameter_name>bound_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_A"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_A"</layer_filename>
 								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -212,7 +241,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if((((bankheight_GLW - bankheight_GHW) > bound_A) and ((bankheight_GLW - bankheight_GHW) < bankheight_GLW)), 1, 0)]]></equation>
+									<equation>if((((bankheight_GLW - bankheight_GHW) &gt; bound_A) and ((bankheight_GLW - bankheight_GHW) &lt; bankheight_GLW)), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -229,10 +258,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_A">
+								<parameter_name>veg_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_A_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_A_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type A</description>
 							</layer>
 						</outputLayers>
@@ -240,31 +272,43 @@
 					<FormulaBased name="veg_B_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_A">
+								<parameter_name>bound_A</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bound_A"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_A"</layer_filename>
 								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -279,7 +323,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bound_B) and ((bankheight_GLW - bankheight_GHW) < bound_A), 1,0)]]></equation>
+									<equation>if(((bankheight_GLW - bankheight_GHW) &gt; bound_B) and ((bankheight_GLW - bankheight_GHW) &lt; bound_A), 1,0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -299,10 +343,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_B">
+								<parameter_name>veg_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_B_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_B_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type B</description>
 							</layer>
 						</outputLayers>
@@ -310,31 +357,43 @@
 					<FormulaBased name="veg_C_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -349,7 +408,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bankheight_GHW) and ((bankheight_GLW - bankheight_GHW) < bound_B), 1, 0)]]></equation>
+									<equation>if(((bankheight_GLW - bankheight_GHW) &gt; bankheight_GHW) and ((bankheight_GLW - bankheight_GHW) &lt; bound_B), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -366,10 +425,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_C">
+								<parameter_name>veg_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_C_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_C_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type C</description>
 							</layer>
 						</outputLayers>
@@ -377,38 +439,53 @@
 					<FormulaBased name="veg_D_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -423,7 +500,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bound_B), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_D) and ((bankheight_GLW - bankheight_GHW) &lt; bound_B), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -446,10 +523,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_D">
+								<parameter_name>veg_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_D_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_D_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type D</description>
 							</layer>
 						</outputLayers>
@@ -457,31 +537,43 @@
 					<FormulaBased name="veg_E_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -496,7 +588,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bankheight_GHW), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_D) and ((bankheight_GLW - bankheight_GHW) &lt; bankheight_GHW), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -516,10 +608,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_E">
+								<parameter_name>veg_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_E_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_E_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type E</description>
 							</layer>
 						</outputLayers>
@@ -527,31 +622,43 @@
 					<FormulaBased name="veg_F_presence">
 						<inputLayers>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -566,7 +673,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GHW - bankheight_GHWS) < bound_C), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_D) and ((bankheight_GHW - bankheight_GHWS) &lt; bound_C), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -586,10 +693,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_F">
+								<parameter_name>veg_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_F_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_F_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type F</description>
 							</layer>
 						</outputLayers>
@@ -597,31 +707,43 @@
 					<FormulaBased name="veg_G_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -636,7 +758,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_C) and ((bankheight_GLW - bankheight_GHW) < bankheight_GHW), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_C) and ((bankheight_GLW - bankheight_GHW) &lt; bankheight_GHW), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -656,10 +778,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_G">
+								<parameter_name>veg_G</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_G_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_G_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type G</description>
 							</layer>
 						</outputLayers>
@@ -667,31 +792,43 @@
 					<FormulaBased name="veg_H_presence">
 						<inputLayers>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_EHW">
+								<parameter_name>bankheight_EHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_EHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_EHW"</layer_filename>
 								<description>"Maximal possible water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -706,7 +843,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) < bound_D), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHWS - bankheight_EHW) &gt; bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) &lt; bound_D), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -726,10 +863,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_H">
+								<parameter_name>veg_H</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_H_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_H_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type H</description>
 							</layer>
 						</outputLayers>
@@ -737,66 +877,93 @@
 					<MultipleReclassification name="vegetationtypes_without_grazing">
 						<inputLayers>
 							<layer name="veg_A">
+								<parameter_name>veg_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_A_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_A_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type A</description>
 							</layer>
 							<layer name="veg_B">
+								<parameter_name>veg_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_B_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_B_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type B</description>
 							</layer>
 							<layer name="veg_C">
+								<parameter_name>veg_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_C_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_C_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type C</description>
 							</layer>
 							<layer name="veg_D">
+								<parameter_name>veg_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_D_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_D_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type D</description>
 							</layer>
 							<layer name="veg_E">
+								<parameter_name>veg_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_E_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_E_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type E</description>
 							</layer>
 							<layer name="veg_F">
+								<parameter_name>veg_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_F_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_F_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type F</description>
 							</layer>
 							<layer name="veg_G">
+								<parameter_name>veg_G</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_G_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_G_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type G</description>
 							</layer>
 							<layer name="veg_H">
+								<parameter_name>veg_H</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_H_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_H_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type H</description>
 							</layer>
 							<layer name="chloride_concentration">
+								<parameter_name>chloride_concentration</parameter_name>
 								<parameter_cat>"salinity"</parameter_cat>
-								<layer_filename>"chloride_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>average</statistic>
+								<layer_filename>"chloride_concentration"</layer_filename>
 								<description>Chloride concentration in surface water</description>
 							</layer>
 						</inputLayers>
@@ -868,10 +1035,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_types">
+								<parameter_name>vegetation_types</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"vegetation_types"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
+								<layer_filename>"vegetation_types"</layer_filename>
 								<description>"Vegetation types without grazing according to ..."</description>
 							</layer>
 						</outputLayers>
@@ -879,52 +1049,73 @@
 					<MultipleReclassification name="vegetationtypes_with_grazing">
 						<inputLayers>
 							<layer name="veg_A">
+								<parameter_name>veg_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_A_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_A_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type A</description>
 							</layer>
 							<layer name="veg_B">
+								<parameter_name>veg_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_B_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_B_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type B</description>
 							</layer>
 							<layer name="veg_C">
+								<parameter_name>veg_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_C_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_C_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type C</description>
 							</layer>
 							<layer name="veg_D">
+								<parameter_name>veg_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_D_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_D_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type D</description>
 							</layer>
 							<layer name="veg_E">
+								<parameter_name>veg_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_E_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_E_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type E</description>
 							</layer>
 							<layer name="veg_F">
+								<parameter_name>veg_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_F_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_F_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type F</description>
 							</layer>
 							<layer name="chloride_concentration">
+								<parameter_name>chloride_concentration</parameter_name>
 								<parameter_cat>"salinity"</parameter_cat>
-								<layer_filename>"chloride_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>average</statistic>
+								<layer_filename>"chloride_concentration"</layer_filename>
 								<description>Chloride concentration in surface water</description>
 							</layer>
 						</inputLayers>
@@ -981,10 +1172,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_types">
+								<parameter_name>vegetation_types</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"vegetation_types"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
+								<layer_filename>"vegetation_types"</layer_filename>
 								<description>"Vegetation types under grazing according to ..."</description>
 							</layer>
 						</outputLayers>
@@ -1003,7 +1197,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h2 id="VegetatietypenNoordelijkeDeltabekken-2.OevervegetatieontwikkelingindeBiesbosch#3">2. Oevervegetatieontwikkeling in de Biesbosch <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-3">#3</a></h2><p>Als input van deze kennisregels zijn de volgende gegevens nodig:</p><ul>	<li>Digital Terrain Model (DTM) in cm + NAP</li>	<li>Waterniveau bij GHW (gemiddeld hoog water)</li>	<li>Getijdenamplitudo (cm)</li></ul><p>De vegetatieontwikkeling wordt bepaald aan de hand van de getijdenamplitudo (ten opzichte van GHW) en de specifieke beheersvorm. In figuren 3a t/m 3c staat een schematische weergave van de vegetatieontwikkeling van de Biesbosch bij verschillende getijdenamplitudo`s en beheersvormen.</p><p>Voor het classificeren van de vegetatie wordt aangenomen dat er een ruimtelijke kaart beschikbaar is van de getijdenamplitudo en beheersvarianten ingedeeld in verschillende klassen (tabellen 6 en 7).</p><p>Aan de hand van het DTM en GHW moet een kaart met hoogteligging (in cm) gemaakt worden. Met de volgende classificatietabel worden verschillende vegetatietypen onderscheiden op basis van hoogteligging ten opzichte van GHW in combinatie met getijdenamplitudo en beheersvariant (tabel 8).</p>]]></text>
+						<text>&lt;h2 id="VegetatietypenNoordelijkeDeltabekken-2.OevervegetatieontwikkelingindeBiesbosch#3"&gt;2. Oevervegetatieontwikkeling in de Biesbosch &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-3"&gt;#3&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Als input van deze kennisregels zijn de volgende gegevens nodig:&lt;/p&gt;&lt;ul&gt;	&lt;li&gt;Digital Terrain Model (DTM) in cm + NAP&lt;/li&gt;	&lt;li&gt;Waterniveau bij GHW (gemiddeld hoog water)&lt;/li&gt;	&lt;li&gt;Getijdenamplitudo (cm)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;De vegetatieontwikkeling wordt bepaald aan de hand van de getijdenamplitudo (ten opzichte van GHW) en de specifieke beheersvorm. In figuren 3a t/m 3c staat een schematische weergave van de vegetatieontwikkeling van de Biesbosch bij verschillende getijdenamplitudo`s en beheersvormen.&lt;/p&gt;&lt;p&gt;Voor het classificeren van de vegetatie wordt aangenomen dat er een ruimtelijke kaart beschikbaar is van de getijdenamplitudo en beheersvarianten ingedeeld in verschillende klassen (tabellen 6 en 7).&lt;/p&gt;&lt;p&gt;Aan de hand van het DTM en GHW moet een kaart met hoogteligging (in cm) gemaakt worden. Met de volgende classificatietabel worden verschillende vegetatietypen onderscheiden op basis van hoogteligging ten opzichte van GHW in combinatie met getijdenamplitudo en beheersvariant (tabel 8).&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
 						<text>"To be filled"</text>
@@ -1024,10 +1218,13 @@
 					<ResponseCurve name="tidal_amplitude">
 						<inputLayers>
 							<layer name="tidal_amplitude">
+								<parameter_name>tidal_amplitude</parameter_name>
 								<parameter_cat>"tidal amplitude"</parameter_cat>
-								<layer_filename>tidal_amplitude</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>average</statistic>
+								<layer_filename>tidal_amplitude</layer_filename>
 								<description>"The average tidal amplitude in meter"</description>
 							</layer>
 						</inputLayers>
@@ -1037,7 +1234,7 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2014-03-06</date>
 							<references>
-								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""></reference>
+								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""/>
 							</references>
 							<valuesRangeCategorical>
 								<parameter rangemin_input="0" rangemax_input="0.3" input_cat="small tidal amplitude" output="1" output_cat="1"/>
@@ -1047,10 +1244,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="tidal_amplitude_number">
+								<parameter_name>tidal_amplitude_number</parameter_name>
 								<parameter_cat>"tidal amplitude"</parameter_cat>
-								<layer_filename>tidal_amplitude_category</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>average</statistic>
+								<layer_filename>tidal_amplitude_category</layer_filename>
 								<description>The average tidal amplitude as category</description>
 							</layer>
 						</outputLayers>
@@ -1058,10 +1258,13 @@
 					<ResponseCurve name="vegetation_management">
 						<inputLayers>
 							<layer name="vegetation_management_category">
+								<parameter_name>vegetation_management_category</parameter_name>
 								<parameter_cat>"vegetation management"</parameter_cat>
-								<layer_filename>vegetation_management_category</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>average</statistic>
+								<layer_filename>vegetation_management_category</layer_filename>
 								<description>"The average vegetation management practiced in categories"</description>
 							</layer>
 						</inputLayers>
@@ -1071,23 +1274,26 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2014-03-06</date>
 							<references>
-								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""></reference>
+								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""/>
 							</references>
 							<valuesCategorical>
-								<parameter input= "1" input_cat="Unmanaged" output="1" output_cat="Unmanaged"/>
-								<parameter input= "2" input_cat="Harvesting of reeds and rushes" output="2" output_cat="Harvesting of reeds and rushes"/>
-								<parameter input= "3" input_cat="Harvesting of hay" output="3" output_cat="Harvesting of hay"/>
-								<parameter input= "4" input_cat="Extensive grazing" output="4" output_cat="Extensive grazing"/>
-								<parameter input= "4" input_cat="Intensive grazing" output="4" output_cat="Intensive grazing"/>
-								<parameter input= "5" input_cat="Intensive grazing" output="4" output_cat="Intensive grazing"/>
+								<parameter input="1" input_cat="Unmanaged" output="1" output_cat="Unmanaged"/>
+								<parameter input="2" input_cat="Harvesting of reeds and rushes" output="2" output_cat="Harvesting of reeds and rushes"/>
+								<parameter input="3" input_cat="Harvesting of hay" output="3" output_cat="Harvesting of hay"/>
+								<parameter input="4" input_cat="Extensive grazing" output="4" output_cat="Extensive grazing"/>
+								<parameter input="4" input_cat="Intensive grazing" output="4" output_cat="Intensive grazing"/>
+								<parameter input="5" input_cat="Intensive grazing" output="4" output_cat="Intensive grazing"/>
 							</valuesCategorical>
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_management_nr">
+								<parameter_name>vegetation_management_nr</parameter_name>
 								<parameter_cat>vegetation management</parameter_cat>
-								<layer_filename>vegetation_management_nr</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category nr"</unit>
 								<statistic>average</statistic>
+								<layer_filename>vegetation_management_nr</layer_filename>
 								<description>"The average vegetation management practiced in categorie nrs"</description>
 							</layer>
 						</outputLayers>
@@ -1095,24 +1301,33 @@
 					<MultipleReclassification name="vegetation_classification">
 						<inputLayers>
 							<layer name="elevation">
+								<parameter_name>elevation</parameter_name>
 								<parameter_cat>"elevation"</parameter_cat>
-								<layer_filename>elevation_cm</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>cm</unit>
 								<statistic>average</statistic>
+								<layer_filename>elevation_cm</layer_filename>
 								<description>"The elevation in comparison to the average sealevel in cm"</description>
 							</layer>
 							<layer name="tidal_amplitude_number">
+								<parameter_name>tidal_amplitude_number</parameter_name>
 								<parameter_cat>"tidal amplitude"</parameter_cat>
-								<layer_filename>tidal_amplitude_category</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>average</statistic>
+								<layer_filename>tidal_amplitude_category</layer_filename>
 								<description>The average tidal amplitude as category</description>
 							</layer>
 							<layer name="vegetation_management_nr">
+								<parameter_name>vegetation_management_nr</parameter_name>
 								<parameter_cat>vegetation management</parameter_cat>
-								<layer_filename>vegetation_management_nr</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category nr"</unit>
 								<statistic>average</statistic>
+								<layer_filename>vegetation_management_nr</layer_filename>
 								<description>"The average vegetation management practiced in categorie nrs"</description>
 							</layer>
 						</inputLayers>
@@ -1121,21 +1336,21 @@
 							<author>"Mijke van Oorschot"</author>
 							<date>2014-03-06</date>
 							<references>
-								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""></reference>
+								<reference author="Van Oorschot" title="" identification="" year="2014" journal=""/>
 							</references>
 							<Parameters>
 								<valuesRangeCategorical layername="elevation" type="range / categorical">
 									<parameter rangemin_input="-30" rangemax_input="-25" input_cat="-30 - -25" output="1" output_cat="Kaal + Biezen"/>
 									<parameter rangemin_input="-25" rangemax_input="-10" input_cat="-25 - -10" output="2" output_cat="Riet + spindotter/waterpeper- water ereprijs"/>
 									<parameter rangemin_input="-10" rangemax_input="15" input_cat="-10 - 15" output="3" output_cat="Ruig riet"/>
-									<parameter rangemin_input="15" rangemax_input="45" input_cat="15 - 45" output="4" output_cat="Natte strooiselruigte"/>									
-									<parameter rangemin_input="45" rangemax_input="50" input_cat="45 - 50" output="5" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter rangemin_input="15" rangemax_input="45" input_cat="15 - 45" output="4" output_cat="Natte strooiselruigte"/>
+									<parameter rangemin_input="45" rangemax_input="50" input_cat="45 - 50" output="5" output_cat="Droge nitrofiele ruigte"/>
 									<parameter rangemin_input="-30" rangemax_input="-25" input_cat="-30 - -25" output="6" output_cat="Kaal + biezen"/>
-									<parameter rangemin_input="-25" rangemax_input="15" input_cat="-25 - 15" output="7" output_cat="Rietland + spindotter"/>									
+									<parameter rangemin_input="-25" rangemax_input="15" input_cat="-25 - 15" output="7" output_cat="Rietland + spindotter"/>
 									<parameter rangemin_input="15" rangemax_input="25" input_cat="15 - 25" output="8" output_cat="Ruig riet"/>
 									<parameter rangemin_input="25" rangemax_input="50" input_cat="25 - 50" output="9" output_cat="Overig"/>
 									<parameter rangemin_input="15" rangemax_input="25" input_cat="15 - 25" output="10" output_cat="Fioringgras"/>
-									<parameter rangemin_input="25" rangemax_input="40" input_cat="25 - 40" output="11" output_cat="Vossestaart + kweek"/>									
+									<parameter rangemin_input="25" rangemax_input="40" input_cat="25 - 40" output="11" output_cat="Vossestaart + kweek"/>
 									<parameter rangemin_input="40" rangemax_input="50" input_cat="40 - 50" output="12" output_cat="Glanshaver (klei en zavel), rood zwenkgras (zand)"/>
 									<parameter rangemin_input="-30" rangemax_input="-10" input_cat="-30 - -10" output="13" output_cat="Overig"/>
 									<parameter rangemin_input="-10" rangemax_input="0" input_cat="-10 - 0" output="14" output_cat="Liesgras"/>
@@ -1152,8 +1367,8 @@
 									<parameter rangemin_input="-80" rangemax_input="-50" input_cat="-80 - -50" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
 									<parameter rangemin_input="-50" rangemax_input="-20" input_cat="-50 - -20" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
 									<parameter rangemin_input="-20" rangemax_input="10" input_cat="-20 - 10" output="27" output_cat="Ruig riet"/>
-									<parameter rangemin_input="10" rangemax_input="50" input_cat="10 - 50" output="28" output_cat="Natte strooiselruigte"/>									
-									<parameter rangemin_input="50" rangemax_input="160" input_cat="50 - 160" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter rangemin_input="10" rangemax_input="50" input_cat="10 - 50" output="28" output_cat="Natte strooiselruigte"/>
+									<parameter rangemin_input="50" rangemax_input="160" input_cat="50 - 160" output="29" output_cat="Droge nitrofiele ruigte"/>
 									<parameter rangemin_input="-80" rangemax_input="-50" input_cat="-80 - -50" output="30" output_cat="Biezen"/>
 									<parameter rangemin_input="-50" rangemax_input="0" input_cat="-50 - 0" output="31" output_cat="Rietland + spindotter"/>
 									<parameter rangemin_input="0" rangemax_input="10" input_cat="0 - 10" output="32" output_cat="Ruig riet"/>
@@ -1169,7 +1384,7 @@
 									<parameter rangemin_input="-5" rangemax_input="20" input_cat="-5 - 20" output="42" output_cat="Fioringras"/>
 									<parameter rangemin_input="20" rangemax_input="160" input_cat="20 - 160" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
 									<parameter rangemin_input="-80" rangemax_input="-5" input_cat="-80 - -5" output="44" output_cat="Overig"/>
-									<parameter rangemin_input="-20" rangemax_input="-5" input_cat="-20 - -5" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter rangemin_input="-20" rangemax_input="-5" input_cat="-20 - -5" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>
 									<parameter rangemin_input="-5" rangemax_input="20" input_cat="-5 - 20" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
 									<parameter rangemin_input="20" rangemax_input="160" input_cat="20 - 160" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
 									<parameter rangemin_input="-80" rangemax_input="-20" input_cat="-80 - -20" output="48" output_cat="Overig"/>
@@ -1230,8 +1445,8 @@
 									<parameter input="2" input_cat="2" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
 									<parameter input="2" input_cat="2" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
 									<parameter input="2" input_cat="2" output="27" output_cat="Ruig riet"/>
-									<parameter input="2" input_cat="2" output="28" output_cat="Natte strooiselruigte"/>									
-									<parameter input="2" input_cat="2" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter input="2" input_cat="2" output="28" output_cat="Natte strooiselruigte"/>
+									<parameter input="2" input_cat="2" output="29" output_cat="Droge nitrofiele ruigte"/>
 									<parameter input="2" input_cat="2" output="30" output_cat="Biezen"/>
 									<parameter input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
 									<parameter input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
@@ -1247,7 +1462,7 @@
 									<parameter input="2" input_cat="2" output="42" output_cat="Fioringras"/>
 									<parameter input="2" input_cat="2" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
 									<parameter input="2" input_cat="2" output="44" output_cat="Overig"/>
-									<parameter input="2" input_cat="2" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter input="2" input_cat="2" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>
 									<parameter input="2" input_cat="2" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
 									<parameter input="2" input_cat="2" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
 									<parameter input="2" input_cat="2" output="48" output_cat="Overig"/>
@@ -1307,8 +1522,8 @@
 									<parameter input="1" input_cat="1" output="25" output_cat="Kaal + Biezen + Waterpeper + Waterereprijs"/>
 									<parameter input="1" input_cat="1" output="26" output_cat="Riet + spindotter + waterpeper + waterereprijs"/>
 									<parameter input="1" input_cat="1" output="27" output_cat="Ruig riet"/>
-									<parameter input="1" input_cat="1" output="28" output_cat="Natte strooiselruigte"/>									
-									<parameter input="1" input_cat="1" output="29" output_cat="Droge nitrofiele ruigte"/>									
+									<parameter input="1" input_cat="1" output="28" output_cat="Natte strooiselruigte"/>
+									<parameter input="1" input_cat="1" output="29" output_cat="Droge nitrofiele ruigte"/>
 									<parameter input="2" input_cat="2" output="30" output_cat="Biezen"/>
 									<parameter input="2" input_cat="2" output="31" output_cat="Rietland + spindotter"/>
 									<parameter input="2" input_cat="2" output="32" output_cat="Ruig riet"/>
@@ -1324,7 +1539,7 @@
 									<parameter input="5" input_cat="5" output="42" output_cat="Fioringras"/>
 									<parameter input="5" input_cat="5" output="43" output_cat="Ruw beemdgras, engels raaigras"/>
 									<parameter input="5" input_cat="5" output="44" output_cat="Overig"/>
-									<parameter input="6" input_cat="6" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>									
+									<parameter input="6" input_cat="6" output="45" output_cat="Waterweegbree - wilgenvloedbos"/>
 									<parameter input="6" input_cat="6" output="46" output_cat="Fluitekruid - wilgenvloedbos"/>
 									<parameter input="6" input_cat="6" output="47" output_cat="Brandnetel - wilgenvloedbos + elzen-vogelkers verbond"/>
 									<parameter input="6" input_cat="6" output="48" output_cat="Overig"/>
@@ -1359,10 +1574,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_types">
+								<parameter_name>vegetation_types</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"vegetation_types"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
+								<layer_filename>"vegetation_types"</layer_filename>
 								<description>"Vegetation types based on altitude, tide and management according to ..."</description>
 							</layer>
 						</outputLayers>
@@ -1381,7 +1599,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h2 id="VegetatietypenNoordelijkeDeltabekken-3.OevervegetatieontwikkelingindeHaringvliet#4">3. Oevervegetatieontwikkeling in de Haringvliet <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-4">#4</a></h2><p>Als input van deze kennisregels zijn de volgende gegevens nodig:</p><ul>	<li>Digital Terrain Model (DTM) in cm + NAP</li>	<li>Waterniveau bij GHW (gemiddeld hoog water), GLW (gemiddeld laag water), GHWS (gemiddeld springtijhoogwater), EHW (extreem hoog water).</li>	<li>Zoutgehalte (mg Cl-/L)</li></ul><p><strong>Onbeheerde situatie</strong><br>In figuur 4 staat een schematische weergave van de vegetatieontwikkeling in de Haringvliet bij een onbeheerde situatie. </p><p>Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gecalibreerd worden. De klassegrenzen van de vegetatiezones aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 9.</p><p>Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 4). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 10.</p><p>Met de klassegrenzen en de kaart met zoutgehalten kunnen vervolgens de vegetatietypen geclassificeerd worden. </p><p><strong>Situatie na begrazing</strong><br>In figuur 5 staat een schematische weergave van de vegetatieontwikkeling in de Haringvliet bij begrazing. </p><p>Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gecalibreerd worden. De klassegrenzen van de vegetatiezones aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 12.</p><p>Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 5). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 13.</p>]]></text>
+						<text>&lt;h2 id="VegetatietypenNoordelijkeDeltabekken-3.OevervegetatieontwikkelingindeHaringvliet#4"&gt;3. Oevervegetatieontwikkeling in de Haringvliet &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-4"&gt;#4&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Als input van deze kennisregels zijn de volgende gegevens nodig:&lt;/p&gt;&lt;ul&gt;	&lt;li&gt;Digital Terrain Model (DTM) in cm + NAP&lt;/li&gt;	&lt;li&gt;Waterniveau bij GHW (gemiddeld hoog water), GLW (gemiddeld laag water), GHWS (gemiddeld springtijhoogwater), EHW (extreem hoog water).&lt;/li&gt;	&lt;li&gt;Zoutgehalte (mg Cl-/L)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Onbeheerde situatie&lt;/strong&gt;&lt;br&gt;In figuur 4 staat een schematische weergave van de vegetatieontwikkeling in de Haringvliet bij een onbeheerde situatie. &lt;/p&gt;&lt;p&gt;Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gecalibreerd worden. De klassegrenzen van de vegetatiezones aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 9.&lt;/p&gt;&lt;p&gt;Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 4). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 10.&lt;/p&gt;&lt;p&gt;Met de klassegrenzen en de kaart met zoutgehalten kunnen vervolgens de vegetatietypen geclassificeerd worden. &lt;/p&gt;&lt;p&gt;&lt;strong&gt;Situatie na begrazing&lt;/strong&gt;&lt;br&gt;In figuur 5 staat een schematische weergave van de vegetatieontwikkeling in de Haringvliet bij begrazing. &lt;/p&gt;&lt;p&gt;Voor elke waterstand moet de hoogteligging van de oever berekend in combinatie met een hoogtekaart. De GLW bankheight wordt gebruikt als nul-lijn, waarop de overige bankheightn gecalibreerd worden. De klassegrenzen van de vegetatiezones aan de hand van de overstromingsklassen kunnen worden berekend met de formules in tabel 12.&lt;/p&gt;&lt;p&gt;Om de klassegrenzen te gebruiken in een table reclassification worden ze omgezet in nominal kaarten waarbij de geschiktheid van de betreffende vegetatieklasse weergegeven wordt met een '1' en de ongeschiktheid met een '0'. Er worden meer vegetatieklassen dan vegetatiegrenzen onderscheiden omdat de bankheightn van naar aanleiding van de waterniveaus ook als klassegrens onderscheiden worden (zie ook figuur 5). De omzetting van de klassen in nominale kaarten staat weergegeven in tabel 13.&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
 						<text>"To be filled"</text>
@@ -1435,17 +1653,23 @@
 					<FormulaBased name="bound_A">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1474,10 +1698,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_A">
+								<parameter_name>bound_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_A"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_A"</layer_filename>
 								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1485,17 +1712,23 @@
 					<FormulaBased name="bound_B_grazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1524,10 +1757,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1535,17 +1771,23 @@
 					<FormulaBased name="bound_B_ungrazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1574,10 +1816,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1585,29 +1830,38 @@
 					<FormulaBased name="bound_C_grazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
 						<Content>
-						<type>equation</type>
+							<type>equation</type>
 							<description>"Vegatation boundary C with grazing based on waterlevel along the bank"</description>
 							<author>M. van Oorschot</author>
 							<date>2014-03-06</date>
@@ -1634,10 +1888,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1645,17 +1902,23 @@
 					<FormulaBased name="bound_C_ungrazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1684,10 +1947,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1695,24 +1961,33 @@
 					<FormulaBased name="bound_D_grazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1744,10 +2019,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1755,17 +2033,23 @@
 					<FormulaBased name="bound_D_ungrazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHWS"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHWS"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1794,10 +2078,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1805,17 +2092,23 @@
 					<FormulaBased name="bound_E">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1844,10 +2137,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_E">
+								<parameter_name>bound_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_E"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_E"</layer_filename>
 								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1855,24 +2151,33 @@
 					<FormulaBased name="bound_F">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_EHW">
+								<parameter_name>bankheight_EHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_EHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_EHW"</layer_filename>
 								<description>"Maximal possible water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -1901,10 +2206,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="bound_F">
+								<parameter_name>bound_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_F"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_F"</layer_filename>
 								<description>"Vegetation type class border for vegetation F in Northen Delta"</description>
 							</layer>
 						</outputLayers>
@@ -1912,24 +2220,33 @@
 					<FormulaBased name="veg_A_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_A">
+								<parameter_name>bound_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_A"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_A"</layer_filename>
 								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -1944,7 +2261,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if((((bankheight_GLW - bankheight_GHW) > bound_A) and ((bankheight_GLW - bankheight_GHW) < bankheight_GLW)), 1, 0)]]></equation>
+									<equation>if((((bankheight_GLW - bankheight_GHW) &gt; bound_A) and ((bankheight_GLW - bankheight_GHW) &lt; bankheight_GLW)), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -1961,10 +2278,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_A">
+								<parameter_name>veg_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_A_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_A_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type A</description>
 							</layer>
 						</outputLayers>
@@ -1972,31 +2292,43 @@
 					<FormulaBased name="veg_B_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_A">
+								<parameter_name>bound_A</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bound_A"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_A"</layer_filename>
 								<description>"Vegetation type class border for vegetation A in Northen Delta"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2011,7 +2343,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bound_B) and ((bankheight_GLW - bankheight_GHW) < bound_A), 1,0)]]></equation>
+									<equation>if(((bankheight_GLW - bankheight_GHW) &gt; bound_B) and ((bankheight_GLW - bankheight_GHW) &lt; bound_A), 1,0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2031,10 +2363,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_B">
+								<parameter_name>veg_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_B_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_B_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type B</description>
 							</layer>
 						</outputLayers>
@@ -2042,38 +2377,53 @@
 					<FormulaBased name="veg_C_presence_grazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2088,7 +2438,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bound_B), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_D) and ((bankheight_GLW - bankheight_GHW) &lt; bound_B), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2111,10 +2461,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_C">
+								<parameter_name>veg_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_C_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_C_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type C</description>
 							</layer>
 						</outputLayers>
@@ -2122,31 +2475,43 @@
 					<FormulaBased name="veg_C_presence_ungrazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2161,7 +2526,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bound_C) and ((bankheight_GLW - bankheight_GHW) < bound_B), 1, 0)]]></equation>
+									<equation>if(((bankheight_GLW - bankheight_GHW) &gt; bound_C) and ((bankheight_GLW - bankheight_GHW) &lt; bound_B), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2181,10 +2546,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_C">
+								<parameter_name>veg_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_C_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_C_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type C</description>
 							</layer>
 						</outputLayers>
@@ -2192,31 +2560,43 @@
 					<FormulaBased name="veg_D_presence_grazed">
 						<inputLayers>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2231,7 +2611,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GHW - bankheight_GHWS) < bound_C), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_D) and ((bankheight_GHW - bankheight_GHWS) &lt; bound_C), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2251,10 +2631,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_D">
+								<parameter_name>veg_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_D_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_D_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type D</description>
 							</layer>
 						</outputLayers>
@@ -2262,24 +2645,33 @@
 					<FormulaBased name="veg_D_presence_ungrazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2294,7 +2686,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GLW - bankheight_GHW) > bankheight_GHW) and ((bankheight_GLW - bankheight_GHW) < bound_B), 1, 0)]]></equation>
+									<equation>if(((bankheight_GLW - bankheight_GHW) &gt; bankheight_GHW) and ((bankheight_GLW - bankheight_GHW) &lt; bound_B), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2311,10 +2703,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_D">
+								<parameter_name>veg_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_D_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_D_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type D</description>
 							</layer>
 						</outputLayers>
@@ -2322,38 +2717,53 @@
 					<FormulaBased name="veg_E_presence_grazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_B">
+								<parameter_name>bound_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_B"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_B"</layer_filename>
 								<description>"Vegetation type class border for vegetation B in Northen Delta"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2368,7 +2778,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_C) and ((bankheight_GLW - bankheight_GHW) < bound_B), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_C) and ((bankheight_GLW - bankheight_GHW) &lt; bound_B), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2391,10 +2801,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_E">
+								<parameter_name>veg_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_E_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_E_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type E</description>
 							</layer>
 						</outputLayers>
@@ -2402,17 +2815,23 @@
 					<FormulaBased name="veg_E_presence_ungrazed">
 						<inputLayers>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -2427,7 +2846,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > 0), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; 0), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2441,10 +2860,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_E">
+								<parameter_name>veg_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_E_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_E_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type E</description>
 							</layer>
 						</outputLayers>
@@ -2452,45 +2874,63 @@
 					<FormulaBased name="veg_F_presence_grazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_EHW">
+								<parameter_name>bankheight_EHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_EHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_EHW"</layer_filename>
 								<description>"Maximal possible water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2505,7 +2945,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bound_C), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHWS - bankheight_EHW) &gt; bound_D) and ((bankheight_GLW - bankheight_GHW) &lt; bound_C), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2531,10 +2971,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_F">
+								<parameter_name>veg_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_F_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_F_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type F</description>
 							</layer>
 						</outputLayers>
@@ -2542,38 +2985,53 @@
 					<FormulaBased name="veg_F_presence_ungrazed">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 							<layer name="bound_E">
+								<parameter_name>bound_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_E"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_E"</layer_filename>
 								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2588,13 +3046,13 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_E) and ((bankheight_GLW - bankheight_GHW) < bound_C), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_E) and ((bankheight_GLW - bankheight_GHW) &lt; bound_C), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
 								<valuesScalar layername="bankheight_GLW" type="scalar">
 									<parameter min_input="0" max_input="5"/>
-								</valuesScalar>								
+								</valuesScalar>
 								<valuesScalar layername="bankheight_GHW" type="scalar">
 									<parameter min_input="0" max_input="5"/>
 								</valuesScalar>
@@ -2611,10 +3069,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_F">
+								<parameter_name>veg_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_F_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_F_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type F</description>
 							</layer>
 						</outputLayers>
@@ -2622,38 +3083,53 @@
 					<FormulaBased name="veg_G_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GLW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GLW"</layer_filename>
 								<description>"Average low water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_C">
+								<parameter_name>bound_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_C"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_C"</layer_filename>
 								<description>"Vegetation type class border for vegetation C in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2668,7 +3144,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_D) and ((bankheight_GLW - bankheight_GHW) < bound_C), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_D) and ((bankheight_GLW - bankheight_GHW) &lt; bound_C), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2691,10 +3167,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_G">
+								<parameter_name>veg_G</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_G_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_G_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type G</description>
 							</layer>
 						</outputLayers>
@@ -2702,38 +3181,53 @@
 					<FormulaBased name="veg_H_presence">
 						<inputLayers>
 							<layer name="bankheight_GLW">
+								<parameter_name>bankheight_GLW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"m"</unit>
+								<statistic>"average"</statistic>
 								<layer_filename>"bankheight_GLW"</layer_filename>
-								<unit>"m"</unit>
-								<statistic>"average"</statistic>
 								<description>"Average low water level along bank height in meters"</description>
-							</layer>							
+							</layer>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_D">
+								<parameter_name>bound_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_D"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_D"</layer_filename>
 								<description>"Vegetation type class border for vegetation D in Northen Delta"</description>
 							</layer>
 							<layer name="bound_E">
+								<parameter_name>bound_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_E"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_E"</layer_filename>
 								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2748,7 +3242,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHW - bankheight_GHWS) > bound_E) and ((bankheight_GLW - bankheight_GHW) < bound_D), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHW - bankheight_GHWS) &gt; bound_E) and ((bankheight_GLW - bankheight_GHW) &lt; bound_D), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2771,10 +3265,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_H">
+								<parameter_name>veg_H</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_H_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_H_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type H</description>
 							</layer>
 						</outputLayers>
@@ -2782,17 +3279,23 @@
 					<FormulaBased name="veg_I_presence">
 						<inputLayers>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_EHW">
+								<parameter_name>bankheight_EHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_EHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_EHW"</layer_filename>
 								<description>"Maximal possible water level along bank height in meters"</description>
 							</layer>
 						</inputLayers>
@@ -2807,7 +3310,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > 0), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHWS - bankheight_EHW) &gt; 0), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2821,42 +3324,57 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_I">
+								<parameter_name>veg_I</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_I_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_I_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type I</description>
 							</layer>
 						</outputLayers>
-					</FormulaBased>					
+					</FormulaBased>
 					<FormulaBased name="veg_J_presence">
 						<inputLayers>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_EHW">
+								<parameter_name>bankheight_EHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_EHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_EHW"</layer_filename>
 								<description>"Maximal possible water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_E">
+								<parameter_name>bound_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_E"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_E"</layer_filename>
 								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2871,7 +3389,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) < bound_E), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHWS - bankheight_EHW) &gt; bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) &lt; bound_E), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2891,10 +3409,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_J">
+								<parameter_name>veg_J</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_J_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_J_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type J</description>
 							</layer>
 						</outputLayers>
@@ -2902,31 +3423,43 @@
 					<FormulaBased name="veg_K_presence">
 						<inputLayers>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_EHW">
+								<parameter_name>bankheight_EHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_EHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_EHW"</layer_filename>
 								<description>"Maximal possible water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_F">
+								<parameter_name>bound_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_F"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_F"</layer_filename>
 								<description>"Vegetation type class border for vegetation F in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -2941,7 +3474,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) < bound_F), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHWS - bankheight_EHW) &gt; bankheight_EHW) and ((bankheight_GHW - bankheight_GHWS) &lt; bound_F), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -2961,49 +3494,67 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_K">
+								<parameter_name>veg_K</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_K_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_K_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type K</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>
 					<FormulaBased name="veg_L_presence">
-						<inputLayers>				
+						<inputLayers>
 							<layer name="bankheight_GHW">
+								<parameter_name>bankheight_GHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average high water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_GHWS">
+								<parameter_name>bankheight_GHWS</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_GHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_GHW"</layer_filename>
 								<description>"Average springtide water level along bank height in meters"</description>
 							</layer>
 							<layer name="bankheight_EHW">
+								<parameter_name>bankheight_EHW</parameter_name>
 								<parameter_cat>"water level"</parameter_cat>
-								<layer_filename>"bankheight_EHW"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bankheight_EHW"</layer_filename>
 								<description>"Maximal possible water level along bank height in meters"</description>
 							</layer>
 							<layer name="bound_E">
+								<parameter_name>bound_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_E"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_E"</layer_filename>
 								<description>"Vegetation type class border for vegetation E in Northen Delta"</description>
 							</layer>
 							<layer name="bound_F">
+								<parameter_name>bound_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"bound_F"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"bound_F"</layer_filename>
 								<description>"Vegetation type class border for vegetation F in Northen Delta"</description>
 							</layer>
 						</inputLayers>
@@ -3018,7 +3569,7 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation><![CDATA[if(((bankheight_GHWS - bankheight_EHW) > bound_F) and ((bankheight_GHW - bankheight_GHWS) < bound_E), 1, 0)]]></equation>
+									<equation>if(((bankheight_GHWS - bankheight_EHW) &gt; bound_F) and ((bankheight_GHW - bankheight_GHWS) &lt; bound_E), 1, 0)</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
@@ -3041,10 +3592,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="veg_L">
+								<parameter_name>veg_L</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_L_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_L_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type L</description>
 							</layer>
 						</outputLayers>
@@ -3052,94 +3606,133 @@
 					<MultipleReclassification name="vegetationtypes_without_grazing">
 						<inputLayers>
 							<layer name="veg_A">
+								<parameter_name>veg_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_A_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_A_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type A</description>
 							</layer>
 							<layer name="veg_B">
+								<parameter_name>veg_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_B_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_B_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type B</description>
 							</layer>
 							<layer name="veg_C">
+								<parameter_name>veg_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_C_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_C_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type C</description>
 							</layer>
 							<layer name="veg_D">
+								<parameter_name>veg_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_D_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_D_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type D</description>
 							</layer>
 							<layer name="veg_E">
+								<parameter_name>veg_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_E_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_E_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type E</description>
 							</layer>
 							<layer name="veg_F">
+								<parameter_name>veg_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_F_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_F_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type F</description>
 							</layer>
 							<layer name="veg_G">
+								<parameter_name>veg_G</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_G_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_G_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type G</description>
 							</layer>
 							<layer name="veg_H">
+								<parameter_name>veg_H</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_H_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_H_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type H</description>
 							</layer>
 							<layer name="veg_I">
+								<parameter_name>veg_I</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_I_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_I_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type I</description>
 							</layer>
 							<layer name="veg_J">
+								<parameter_name>veg_J</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_J_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_J_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type J</description>
 							</layer>
 							<layer name="veg_K">
+								<parameter_name>veg_K</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_K_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_K_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type K</description>
 							</layer>
 							<layer name="veg_L">
+								<parameter_name>veg_L</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_L_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_L_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type L</description>
 							</layer>
 							<layer name="chloride_concentration">
+								<parameter_name>chloride_concentration</parameter_name>
 								<parameter_cat>"salinity"</parameter_cat>
-								<layer_filename>"chloride_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>average</statistic>
+								<layer_filename>"chloride_concentration"</layer_filename>
 								<description>Chloride concentration in surface water</description>
 							</layer>
 						</inputLayers>
@@ -3226,10 +3819,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_types">
+								<parameter_name>vegetation_types</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"vegetation_types"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
+								<layer_filename>"vegetation_types"</layer_filename>
 								<description>"Vegetation types without grazing according to ..."</description>
 							</layer>
 						</outputLayers>
@@ -3237,52 +3833,73 @@
 					<MultipleReclassification name="vegetationtypes_with_grazing">
 						<inputLayers>
 							<layer name="veg_A">
+								<parameter_name>veg_A</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_A_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_A_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type A</description>
 							</layer>
 							<layer name="veg_B">
+								<parameter_name>veg_B</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_B_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_B_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type B</description>
 							</layer>
 							<layer name="veg_C">
+								<parameter_name>veg_C</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_C_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_C_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type C</description>
 							</layer>
 							<layer name="veg_D">
+								<parameter_name>veg_D</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_D_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_D_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type D</description>
 							</layer>
 							<layer name="veg_E">
+								<parameter_name>veg_E</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_E_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_E_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type E</description>
 							</layer>
 							<layer name="veg_F">
+								<parameter_name>veg_F</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_F_presence"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_F_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type F</description>
 							</layer>
 							<layer name="chloride_concentration">
+								<parameter_name>chloride_concentration</parameter_name>
 								<parameter_cat>"salinity"</parameter_cat>
-								<layer_filename>"chloride_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>average</statistic>
+								<layer_filename>"chloride_concentration"</layer_filename>
 								<description>Chloride concentration in surface water</description>
 							</layer>
 						</inputLayers>
@@ -3335,10 +3952,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_types">
+								<parameter_name>vegetation_types</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"vegetation_types"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
+								<layer_filename>"vegetation_types"</layer_filename>
 								<description>"Vegetation types under grazing according to ..."</description>
 							</layer>
 						</outputLayers>
@@ -3349,10 +3969,10 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h1 id="VegetatietypenNoordelijkeDeltabekken-Algemeen">Algemeen</h1><p>De kennisregels voor het berekenen van vegetatiezones in estuaria zijn overgenomen uit het EMOE model (Ecohydrologisch Model voor de Oever vegetatie van Estuaria <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-1">#1</a>.</p><h1 id="VegetatietypenNoordelijkeDeltabekken-Habitatbeschrijving.">Habitatbeschrijving.</h1><h2 id="VegetatietypenNoordelijkeDeltabekken-Algemeenvoorkomen">Algemeen voorkomen</h2><p>Er zijn verschillende rekenregels beschikbaar voor verschillende gebieden. Er zijn generieke rekenregels voor het Noordelijk Deltabekken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-1">#1</a><a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-2">#2</a>. Daarnaast zijn er rekenregels die specifiek gekalibreerd zijn voor toepassingen in de Biesbosch <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-3">#3</a> en Haringvliet <a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-4">#4</a>. Naast de natuurlijke toestand van het systeem zijn ook rekenregels beschikbaar voor vegetatieontwikkeling bij verschillende beheersvormen.</p><h2 id="VegetatietypenNoordelijkeDeltabekken-Milieurandvoorwaarden">Milieurandvoorwaarden</h2><p>De vegetatiezones worden berekend aan de hand van hoogteligging, waterniveau of getijdenamplitudo en zoutgehalte. Bodemtype kan in sommige gevallen ook bepalend zijn voor de vegetatieontwikkeling, maar is niet opgenomen in deze rekenregels. De vegetatietypen zijn tot stand gekomen door data analyse, maar berusten ook voor een deel op expertkennis van I.S. Zonneveld.</p><h2 id="VegetatietypenNoordelijkeDeltabekken-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h2><p>Er zijn voor de verschillende gebieden een aantal beheersvormen gedefinieerd die andere vegetatieontwikkeling tot gevolg hebben. Voor de Noordelijke Deltabekken (generiek) en de Haringvliet zijn dit begrazing en voor de Biesbosch zijn dit riet en biezen snijden, hooiland beheer, extensieve begrazing, intensieve begrazing en griend- en bosbeheer.</p>]]></text>
+			<text>&lt;h1 id="VegetatietypenNoordelijkeDeltabekken-Algemeen"&gt;Algemeen&lt;/h1&gt;&lt;p&gt;De kennisregels voor het berekenen van vegetatiezones in estuaria zijn overgenomen uit het EMOE model (Ecohydrologisch Model voor de Oever vegetatie van Estuaria &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h1 id="VegetatietypenNoordelijkeDeltabekken-Habitatbeschrijving."&gt;Habitatbeschrijving.&lt;/h1&gt;&lt;h2 id="VegetatietypenNoordelijkeDeltabekken-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h2&gt;&lt;p&gt;Er zijn verschillende rekenregels beschikbaar voor verschillende gebieden. Er zijn generieke rekenregels voor het Noordelijk Deltabekken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-1"&gt;#1&lt;/a&gt;&lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-2"&gt;#2&lt;/a&gt;. Daarnaast zijn er rekenregels die specifiek gekalibreerd zijn voor toepassingen in de Biesbosch &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-3"&gt;#3&lt;/a&gt; en Haringvliet &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Vegetatietypen+Noordelijke+Deltabekken#VegetatietypenNoordelijkeDeltabekken-4"&gt;#4&lt;/a&gt;. Naast de natuurlijke toestand van het systeem zijn ook rekenregels beschikbaar voor vegetatieontwikkeling bij verschillende beheersvormen.&lt;/p&gt;&lt;h2 id="VegetatietypenNoordelijkeDeltabekken-Milieurandvoorwaarden"&gt;Milieurandvoorwaarden&lt;/h2&gt;&lt;p&gt;De vegetatiezones worden berekend aan de hand van hoogteligging, waterniveau of getijdenamplitudo en zoutgehalte. Bodemtype kan in sommige gevallen ook bepalend zijn voor de vegetatieontwikkeling, maar is niet opgenomen in deze rekenregels. De vegetatietypen zijn tot stand gekomen door data analyse, maar berusten ook voor een deel op expertkennis van I.S. Zonneveld.&lt;/p&gt;&lt;h2 id="VegetatietypenNoordelijkeDeltabekken-Beheerenontwikkelingskansen"&gt;Beheer en ontwikkelingskansen&lt;/h2&gt;&lt;p&gt;Er zijn voor de verschillende gebieden een aantal beheersvormen gedefinieerd die andere vegetatieontwikkeling tot gevolg hebben. Voor de Noordelijke Deltabekken (generiek) en de Haringvliet zijn dit begrazing en voor de Biesbosch zijn dit riet en biezen snijden, hooiland beheer, extensieve begrazing, intensieve begrazing en griend- en bosbeheer.&lt;/p&gt;</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA["to be filled"]]></text>
+			<text>"to be filled"</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>

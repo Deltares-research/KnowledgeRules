@@ -51,10 +51,13 @@ The response curves can be applied throughout the year as they contain a large r
 					<ResponseCurve name="transparency">
 						<inputLayers>
 							<layer name="visibility">
+								<parameter_name>visibility</parameter_name>
 								<parameter_cat>"Water clearity"</parameter_cat>
-								<layer_filename>visibility</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>dm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>visibility</layer_filename>
 								<description>"Light penetration depth in the water column in decimeters"</description>
 							</layer>
 						</inputLayers>
@@ -76,22 +79,28 @@ The response curves can be applied throughout the year as they contain a large r
 						</Content>
 						<outputLayers>
 							<layer name="HSI_transparency">
+								<parameter_name>HSI_transparency</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_transparency</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_transparency</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="water_temperature">
 						<inputLayers>
 							<layer name="water_temperature_summer">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>water_temperature_summer</layer_filename>
+								<parameter_name>water_temperature_summer</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>summer maximum (june - august)</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>water_temperature_summer</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -112,21 +121,27 @@ The response curves can be applied throughout the year as they contain a large r
 						</Content>
 						<outputLayers>
 							<layer name="HSI_water_temperature">
+								<parameter_name>HSI_water_temperature</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_water_temperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_water_temperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="oxygen">
 						<inputLayers>
 							<layer name="oxygen">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<parameter_name>oxygen</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/L"</unit>
 								<statistic>minimum</statistic>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
 								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
@@ -148,11 +163,14 @@ The response curves can be applied throughout the year as they contain a large r
 						</Content>
 						<outputLayers>
 							<layer name="HSI_oxygen">
+								<parameter_name>HSI_oxygen</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_oxygen</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_oxygen</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

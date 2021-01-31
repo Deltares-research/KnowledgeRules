@@ -144,38 +144,53 @@ Er is geen voorbeeldproject beschikbaar.
 					<FormulaBased name="geschiktheid_rivieren">
 						<inputLayers>
 							<layer name="voedsel">
+								<parameter_name>voedsel</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_voedsel</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_voedsel</layer_filename>
 								<description>"HSI van voedselbeschikbaarheid"</description>
 							</layer>
 							<layer name="beschutting">
+								<parameter_name>beschutting</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
 								<layer_filename>HSI_beschutting</layer_filename>
-								<unit>factor</unit>
-								<statistic>average</statistic>
 								<description>"HSI van beschuttingbeschikbaarheid"</description>
-							</layer>							
+							</layer>
 							<layer name="waterkwaliteit">
+								<parameter_name>waterkwaliteit</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterkwaliteit</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_waterkwaliteit</layer_filename>
 								<description>"HSI van waterkwaliteit"</description>
 							</layer>
 							<layer name="reproductie">
+								<parameter_name>reproductie</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_reproductie</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_reproductie</layer_filename>
 								<description>"HSI voor reproductiegelegenheid"</description>
 							</layer>
 							<layer name="overig">
+								<parameter_name>overig</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_overig</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_overig</layer_filename>
 								<description>"HSI overig"</description>
 							</layer>
 						</inputLayers>
@@ -193,29 +208,32 @@ Er is geen voorbeeldproject beschikbaar.
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "voedsel" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="voedsel" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "beschutting" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="beschutting" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "waterkwaliteit" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="waterkwaliteit" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "reproductie" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="reproductie" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "overig" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="overig" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="habitatgeschiktheid_rivieren">
+								<parameter_name>habitatgeschiktheid_rivieren</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_habitatgeschiktheid_rivieren</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_habitatgeschiktheid_rivieren</layer_filename>
 								<description>"HSI habitat geschiktheid rivieren"</description>
 							</layer>
 						</outputLayers>
@@ -223,31 +241,43 @@ Er is geen voorbeeldproject beschikbaar.
 					<FormulaBased name="geschiktheid_meren">
 						<inputLayers>
 							<layer name="voedsel">
+								<parameter_name>voedsel</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_voedsel</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_voedsel</layer_filename>
 								<description>"HSI van voedselbeschikbaarheid"</description>
 							</layer>
 							<layer name="beschutting">
+								<parameter_name>beschutting</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_beschutting</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_beschutting</layer_filename>
 								<description>"HSI van beschuttingbeschikbaarheid"</description>
 							</layer>
 							<layer name="waterkwaliteit">
+								<parameter_name>waterkwaliteit</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterkwaliteit</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_waterkwaliteit</layer_filename>
 								<description>"HSI van waterkwaliteit"</description>
 							</layer>
 							<layer name="reproductie">
+								<parameter_name>reproductie</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_reproductie</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_reproductie</layer_filename>
 								<description>"HSI voor reproductiegelegenheid"</description>
 							</layer>
 						</inputLayers>
@@ -265,26 +295,29 @@ Er is geen voorbeeldproject beschikbaar.
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "voedsel" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="voedsel" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "beschutting" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="beschutting" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "waterkwaliteit" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="waterkwaliteit" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "reproductie" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="reproductie" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="habitatgeschiktheid_meren">
+								<parameter_name>habitatgeschiktheid_meren</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_habitatgeschiktheid_meren</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_habitatgeschiktheid_meren</layer_filename>
 								<description>"HSI habitat geschiktheid meren"</description>
 							</layer>
 						</outputLayers>
@@ -292,52 +325,73 @@ Er is geen voorbeeldproject beschikbaar.
 					<FormulaBased name="geschiktheid_waterkwaliteit">
 						<inputLayers>
 							<layer name="troebelheid">
+								<parameter_name>troebelheid</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_troebelheid</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_troebelheid</layer_filename>
 								<description>"HSI van troebelheid"</description>
 							</layer>
 							<layer name="zuurgraad">
+								<parameter_name>zuurgraad</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_zuurgraad</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_zuurgraad</layer_filename>
 								<description>"HSI van zuurgraad"</description>
 							</layer>
 							<layer name="zuurstofgehalte">
+								<parameter_name>zuurstofgehalte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_zuurstofgehalte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_zuurstofgehalte</layer_filename>
 								<description>"HSI van zuurstofgehalte"</description>
 							</layer>
 							<layer name="saliniteit">
+								<parameter_name>saliniteit</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_saliniteit</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_saliniteit</layer_filename>
 								<description>"HSI voor saliniteit"</description>
 							</layer>
 							<layer name="temperatuur_adult">
+								<parameter_name>temperatuur_adult</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperatuur_adult</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_temperatuur_adult</layer_filename>
 								<description>"HSI temperatuur adult"</description>
 							</layer>
 							<layer name="temperatuur_larve">
+								<parameter_name>temperatuur_larve</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperatuur_larve</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_temperatuur_larve</layer_filename>
 								<description>"HSI temperatuur larve"</description>
 							</layer>
 							<layer name="temperatuur_juveniel">
+								<parameter_name>temperatuur_juveniel</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperatuur_juveniel</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_temperatuur_juveniel</layer_filename>
 								<description>"HSI temperatuur juveniel"</description>
 							</layer>
 						</inputLayers>
@@ -355,35 +409,38 @@ Er is geen voorbeeldproject beschikbaar.
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername = "troebelheid" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="troebelheid" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "zuurgraad" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
-								</valuesScalar>		
-								<valuesScalar layername = "zuurstofgehalte" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="zuurgraad" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "saliniteit" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
-								</valuesScalar>	
-								<valuesScalar layername = "temperatuur_adult" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="zuurstofgehalte" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "temperatuur_larve" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="saliniteit" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
-								<valuesScalar layername = "temperatuur_juveniel" type="scalar">
-									<parameter min_input="0" max_input = "1"/>
+								<valuesScalar layername="temperatuur_adult" type="scalar">
+									<parameter min_input="0" max_input="1"/>
+								</valuesScalar>
+								<valuesScalar layername="temperatuur_larve" type="scalar">
+									<parameter min_input="0" max_input="1"/>
+								</valuesScalar>
+								<valuesScalar layername="temperatuur_juveniel" type="scalar">
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterkwaliteit">
+								<parameter_name>HSI_waterkwaliteit</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterkwaliteit</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_waterkwaliteit</layer_filename>
 								<description>"HSI waterkwaliteit"</description>
 							</layer>
 						</outputLayers>
@@ -391,11 +448,14 @@ Er is geen voorbeeldproject beschikbaar.
 					<ResponseCurve name="poelen_verdeling">
 						<inputLayers>
 							<layer name="poelen_verdeling">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>poelen_verdeling</layer_filename>
+								<parameter_name>poelen_verdeling</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>poelen_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -414,22 +474,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_poelen_verdeling">
+								<parameter_name>HSI_poelen_verdeling</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_poelen_verdeling</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_poelen_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="beschutting_verdeling">
 						<inputLayers>
 							<layer name="beschutting_verdeling">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>beschutting_verdeling</layer_filename>
+								<parameter_name>beschutting_verdeling</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>beschutting_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -449,22 +515,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_beschutting_verdeling">
+								<parameter_name>HSI_beschutting_verdeling</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_beschutting_verdeling</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_beschutting_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="vegetatie_verdeling">
 						<inputLayers>
 							<layer name="vegetatie_verdeling">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>vegetatie_verdeling</layer_filename>
+								<parameter_name>vegetatie_verdeling</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>vegetatie_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -484,22 +556,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_vegetatie_verdeling">
+								<parameter_name>HSI_vegetatie_verdeling</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_vegetatie_verdeling</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_vegetatie_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="oeverzone_verdeling">
 						<inputLayers>
 							<layer name="oeverzone_verdeling">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oeverzone_verdeling</layer_filename>
+								<parameter_name>oeverzone_verdeling</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oeverzone_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -519,22 +597,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_oeverzone_verdeling">
+								<parameter_name>HSI_oeverzone_verdeling</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_oeverzone_verdeling</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_oeverzone_verdeling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="totaal_opgeloste_vastestof">
 						<inputLayers>
 							<layer name="totaal_opgeloste_vastestof">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>totaal_opgeloste_vastestof</layer_filename>
+								<parameter_name>totaal_opgeloste_vastestof</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"ppm"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>totaal_opgeloste_vastestof</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -555,22 +639,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_totaal_opgeloste_vastestof">
+								<parameter_name>HSI_totaal_opgeloste_vastestof</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_totaal_opgeloste_vastestof</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_totaal_opgeloste_vastestof</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="troebelheid">
 						<inputLayers>
 							<layer name="troebelheid">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>troebelheid</layer_filename>
+								<parameter_name>troebelheid</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"ppm"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>troebelheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -589,22 +679,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_troebelheid">
+								<parameter_name>HSI_troebelheid</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_troebelheid</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_troebelheid</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurgraad">
 						<inputLayers>
 							<layer name="zuurgraad">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>zuurgraad</layer_filename>
+								<parameter_name>zuurgraad</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>zuurgraad</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -627,22 +723,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_zuurgraad">
+								<parameter_name>HSI_zuurgraad</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_zuurgraad</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_zuurgraad</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zuurstofgehalte">
 						<inputLayers>
 							<layer name="zuurstofgehalte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>zuurstofgehalte</layer_filename>
+								<parameter_name>zuurstofgehalte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>zuurstofgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -662,22 +764,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_zuurstofgehalte">
+								<parameter_name>HSI_zuurstofgehalte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_zuurstofgehalte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_zuurstofgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="saliniteit">
 						<inputLayers>
 							<layer name="saliniteit">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>saliniteit</layer_filename>
+								<parameter_name>saliniteit</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"ppt"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>saliniteit</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -697,22 +805,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_saliniteit">
+								<parameter_name>HSI_saliniteit</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_saliniteit</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_saliniteit</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_adult">
 						<inputLayers>
 							<layer name="temperatuur_adult">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>temperatuur_adult</layer_filename>
+								<parameter_name>temperatuur_adult</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"graden Celsius"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>temperatuur_adult</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -734,22 +848,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_temperatuur_adult">
+								<parameter_name>HSI_temperatuur_adult</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperatuur_adult</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_temperatuur_adult</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_embryo">
 						<inputLayers>
 							<layer name="temperatuur_embryo">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>temperatuur_embryo</layer_filename>
+								<parameter_name>temperatuur_embryo</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"graden Celsius"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>temperatuur_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -772,22 +892,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_temperatuur_embryo">
+								<parameter_name>HSI_temperatuur_embryo</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperatuur_embryo</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_temperatuur_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_larve">
 						<inputLayers>
 							<layer name="temperatuur_larve">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>temperatuur_larve</layer_filename>
+								<parameter_name>temperatuur_larve</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"graden Celsius"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>temperatuur_larve</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -809,22 +935,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_temperatuur_larve">
+								<parameter_name>HSI_temperatuur_larve</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperatuur_larve</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_temperatuur_larve</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="temperatuur_juveniel">
 						<inputLayers>
 							<layer name="temperatuur_juveniel">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>temperatuur_juveniel</layer_filename>
+								<parameter_name>temperatuur_juveniel</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"graden Celsius"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>temperatuur_juveniel</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -845,22 +977,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_temperatuur_juveniel">
+								<parameter_name>HSI_temperatuur_juveniel</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_temperatuur_juveniel</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_temperatuur_juveniel</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_adult">
 						<inputLayers>
 							<layer name="stroomsnelheid_adult">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>stroomsnelheid_adult</layer_filename>
+								<parameter_name>stroomsnelheid_adult</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm/sec"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>stroomsnelheid_adult</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -879,22 +1017,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_stroomsnelheid_adult">
+								<parameter_name>HSI_stroomsnelheid_adult</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_stroomsnelheid_adult</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_stroomsnelheid_adult</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_embryo">
 						<inputLayers>
 							<layer name="stroomsnelheid_embryo">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>stroomsnelheid_embryo</layer_filename>
+								<parameter_name>stroomsnelheid_embryo</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm/sec"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>stroomsnelheid_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -914,22 +1058,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_stroomsnelheid_embryo">
+								<parameter_name>HSI_stroomsnelheid_embryo</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_stroomsnelheid_embryo</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_stroomsnelheid_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_larve">
 						<inputLayers>
 							<layer name="stroomsnelheid_larve">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>stroomsnelheid_larve</layer_filename>
+								<parameter_name>stroomsnelheid_larve</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm/sec"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>stroomsnelheid_larve</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -953,22 +1103,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_stroomsnelheid_larve">
+								<parameter_name>HSI_stroomsnelheid_larve</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_stroomsnelheid_larve</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_stroomsnelheid_larve</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomsnelheid_juveniel">
 						<inputLayers>
 							<layer name="stroomsnelheid_juveniel">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>stroomsnelheid_juveniel</layer_filename>
+								<parameter_name>stroomsnelheid_juveniel</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm/sec"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>stroomsnelheid_juveniel</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -988,22 +1144,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_stroomsnelheid_juveniel">
+								<parameter_name>HSI_stroomsnelheid_juveniel</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_stroomsnelheid_juveniel</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_stroomsnelheid_juveniel</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="stroomgradient">
 						<inputLayers>
 							<layer name="stroomgradient">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>stroomgradient</layer_filename>
+								<parameter_name>stroomgradient</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/km"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>stroomgradient</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -1025,22 +1187,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_stroomgradient">
+								<parameter_name>HSI_stroomgradient</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_stroomgradient</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_stroomgradient</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="drainage_embryo">
 						<inputLayers>
 							<layer name="drainage_embryo">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>drainage_embryo</layer_filename>
+								<parameter_name>drainage_embryo</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>drainage_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -1061,22 +1229,28 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_drainage_embryo">
+								<parameter_name>HSI_drainage_embryo</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_drainage_embryo</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_drainage_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="substraattype_embryo">
 						<inputLayers>
 							<layer name="substraattype_embryo">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>substraattype_embryo</layer_filename>
+								<parameter_name>substraattype_embryo</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>samenstelling substraat</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>substraattype_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -1094,11 +1268,14 @@ Er is geen voorbeeldproject beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_substraattype_embryo">
+								<parameter_name>HSI_substraattype_embryo</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_substraattype_embryo</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_substraattype_embryo</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

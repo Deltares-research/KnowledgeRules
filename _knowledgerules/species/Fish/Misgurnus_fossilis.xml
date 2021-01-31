@@ -64,11 +64,14 @@
 					<ResponseCurve name="Flow_velocity">
 						<inputLayers>
 							<layer name="Flow_velocity">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Flow_velocity</layer_filename>
+								<parameter_name>Flow_velocity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Flow_velocity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -87,22 +90,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Flow_velocity">
+								<parameter_name>HSI_Flow_velocity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Flow_velocity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Acidity">
 						<inputLayers>
 							<layer name="Acidity">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Acidity</layer_filename>
+								<parameter_name>Acidity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"pH"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Acidity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -126,22 +135,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Acidity">
+								<parameter_name>HSI_Acidity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Acidity</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Acidity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Watertemperature">
 						<inputLayers>
 							<layer name="Watertemperature">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Watertemperature</layer_filename>
+								<parameter_name>Watertemperature</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Watertemperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -162,22 +177,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Watertemperature">
+								<parameter_name>HSI_Watertemperature</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Watertemperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Watertemperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Shallow_water_mud">
 						<inputLayers>
 							<layer name="Shallow_water_mud">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Shallow_water_mud</layer_filename>
+								<parameter_name>Shallow_water_mud</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Shallow_water_mud</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -195,22 +216,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Shallow_water_mud">
+								<parameter_name>HSI_Shallow_water_mud</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Shallow_water_mud</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Shallow_water_mud</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Bank_vegetation">
 						<inputLayers>
 							<layer name="Bank_vegetation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Bank_vegetation</layer_filename>
+								<parameter_name>Bank_vegetation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Bank_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -230,22 +257,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Bank_vegetation">
+								<parameter_name>HSI_Bank_vegetation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Bank_vegetation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Bank_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Submerse_vegetation">
 						<inputLayers>
 							<layer name="Submerse_vegetation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Submerse_vegetation</layer_filename>
+								<parameter_name>Submerse_vegetation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"%"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Submerse_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -267,11 +300,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Submerse_vegetation">
+								<parameter_name>HSI_Submerse_vegetation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Submerse_vegetation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Submerse_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

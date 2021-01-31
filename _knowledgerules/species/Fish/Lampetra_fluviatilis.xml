@@ -56,11 +56,14 @@
 					<ResponseCurve name="Watertemperature">
 						<inputLayers>
 							<layer name="Watertemperature">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Watertemperature</layer_filename>
+								<parameter_name>Watertemperature</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Watertemperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -83,22 +86,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Watertemperature">
+								<parameter_name>HSI_Watertemperature</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Watertemperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Watertemperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Shelter_detritus">
 						<inputLayers>
 							<layer name="Shelter_detritus">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Shelter_detritus</layer_filename>
+								<parameter_name>Shelter_detritus</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Shelter_detritus</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -119,22 +128,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Shelter_detritus">
+								<parameter_name>HSI_Shelter_detritus</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Shelter_detritus</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Shelter_detritus</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Oxygen_concentration">
 						<inputLayers>
 							<layer name="Oxygen_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Oxygen_concentration</layer_filename>
+								<parameter_name>Oxygen_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Oxygen_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -154,22 +169,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Oxygen_concentration">
+								<parameter_name>HSI_Oxygen_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Oxygen_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Oxygen_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Sediment_type">
 						<inputLayers>
 							<layer name="Sediment_type">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Sediment_type</layer_filename>
+								<parameter_name>Sediment_type</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Sediment_type</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -190,22 +211,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Sediment_type">
+								<parameter_name>HSI_Sediment_type</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Sediment_type</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Sediment_type</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth">
 						<inputLayers>
 							<layer name="Waterdepth">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Waterdepth</layer_filename>
+								<parameter_name>Waterdepth</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -223,22 +250,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Waterdepth">
+								<parameter_name>HSI_Waterdepth</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Waterdepth</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_spawning">
 						<inputLayers>
 							<layer name="Substrate_spawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Substrate_spawning</layer_filename>
+								<parameter_name>Substrate_spawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorical"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Substrate_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -259,22 +292,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Substrate_spawning">
+								<parameter_name>HSI_Substrate_spawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Substrate_spawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Substrate_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Barriers_upwards">
 						<inputLayers>
 							<layer name="Barriers_upwards">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Barriers_upwards</layer_filename>
+								<parameter_name>Barriers_upwards</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Barriers_upwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -293,22 +332,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Barriers_upwards">
+								<parameter_name>HSI_Barriers_upwards</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Barriers_downwards">
 						<inputLayers>
 							<layer name="Barriers_downwards">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Barriers_downwards</layer_filename>
+								<parameter_name>Barriers_downwards</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Barriers_downwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -327,11 +372,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Barriers_downwards">
+								<parameter_name>HSI_Barriers_downwards</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

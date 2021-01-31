@@ -54,11 +54,14 @@
 					<ResponseCurve name="surface_steep_wall">
 						<inputLayers>
 							<layer name="surface_steep_wall">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>surface_steep_wall</layer_filename>
+								<parameter_name>surface_steep_wall</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m2"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>surface_steep_wall</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -79,22 +82,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_surface_steep_wall">
+								<parameter_name>HSI_surface_steep_wall</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_surface_steep_wall</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_surface_steep_wall</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="exposure">
 						<inputLayers>
 							<layer name="exposure">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>exposure</layer_filename>
+								<parameter_name>exposure</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>exposure</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -112,22 +121,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_exposure">
+								<parameter_name>HSI_exposure</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_exposure</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_exposure</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="presence_open_space">
 						<inputLayers>
 							<layer name="presence_open_space">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>presence_open_space</layer_filename>
+								<parameter_name>presence_open_space</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>presence_open_space</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -147,22 +162,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_presence_open_space">
+								<parameter_name>HSI_presence_open_space</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_presence_open_space</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_presence_open_space</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="distance_to_feeding_area">
 						<inputLayers>
 							<layer name="distance_to_feeding_area">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>distance_to_feeding_area</layer_filename>
+								<parameter_name>distance_to_feeding_area</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>distance_to_feeding_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -182,11 +203,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_distance_to_feeding_area">
+								<parameter_name>HSI_distance_to_feeding_area</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_distance_to_feeding_area</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_distance_to_feeding_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

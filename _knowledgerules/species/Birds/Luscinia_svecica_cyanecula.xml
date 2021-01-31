@@ -61,11 +61,14 @@
 					<ResponseCurve name="openplekken_op_bodem">
 						<inputLayers>
 							<layer name="openplekken_op_bodem">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>openplekken_op_bodem</layer_filename>
+								<parameter_name>openplekken_op_bodem</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categorie"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>openplekken_op_bodem</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -83,22 +86,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_openplekken_op_bodem">
+								<parameter_name>HSI_openplekken_op_bodem</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_openplekken_op_bodem</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_openplekken_op_bodem</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="taludvorm">
 						<inputLayers>
 							<layer name="taludvorm">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>taludvorm</layer_filename>
+								<parameter_name>taludvorm</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"hellingsgraden"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>taludvorm</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -117,22 +126,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_taludvorm">
+								<parameter_name>HSI_taludvorm</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_taludvorm</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_taludvorm</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterpeil">
 						<inputLayers>
 							<layer name="waterpeil">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterpeil</layer_filename>
+								<parameter_name>waterpeil</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterpeil</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -156,22 +171,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterpeil">
+								<parameter_name>HSI_waterpeil</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterpeil</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterpeil</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="overstroming_periode">
 						<inputLayers>
 							<layer name="overstroming_periode">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>overstroming_periode</layer_filename>
+								<parameter_name>overstroming_periode</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>maand / categorie"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>overstroming_periode</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -191,22 +212,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_overstroming_periode">
+								<parameter_name>HSI_overstroming_periode</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_overstroming_periode</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_overstroming_periode</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="moerasland_areaal">
 						<inputLayers>
 							<layer name="moerasland_areaal">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>moerasland_areaal</layer_filename>
+								<parameter_name>moerasland_areaal</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"Ha"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>moerasland_areaal</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -226,22 +253,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_moerasland_areaal">
+								<parameter_name>HSI_moerasland_areaal</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_moerasland_areaal</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_moerasland_areaal</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="moerasland_breedte">
 						<inputLayers>
 							<layer name="moerasland_breedte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>moerasland_breedte</layer_filename>
+								<parameter_name>moerasland_breedte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>moerasland_breedte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -262,22 +295,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_moerasland_breedte">
+								<parameter_name>HSI_moerasland_breedte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_moerasland_breedte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_moerasland_breedte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="vegetatie_successiestadia">
 						<inputLayers>
 							<layer name="vegetatie_successiestadia">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>vegetatie_successiestadia</layer_filename>
+								<parameter_name>vegetatie_successiestadia</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cat"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>vegetatie_successiestadia</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -301,22 +340,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_vegetatie_successiestadia">
+								<parameter_name>HSI_vegetatie_successiestadia</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_vegetatie_successiestadia</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_vegetatie_successiestadia</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="broedhabitat_afstand_tot_slikken">
 						<inputLayers>
 							<layer name="broedhabitat_afstand_tot_slikken">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>broedhabitat_afstand_tot_slikken</layer_filename>
+								<parameter_name>broedhabitat_afstand_tot_slikken</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m / cat"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>broedhabitat_afstand_tot_slikken</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -335,11 +380,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_broedhabitat_afstand_tot_slikken">
+								<parameter_name>HSI_broedhabitat_afstand_tot_slikken</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_broedhabitat_afstand_tot_slikken</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_broedhabitat_afstand_tot_slikken</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

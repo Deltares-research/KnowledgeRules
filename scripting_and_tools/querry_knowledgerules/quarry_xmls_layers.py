@@ -22,9 +22,9 @@ path_xsd = "../../xmlschema/AutecologyXML.xsd"
 
 
 layer_csv_full_trace = [["Overall_Topic_1", "Overall_Topic_2", "Topic_name", "ModelType",\
- "System", "KnowledgeRule", "Layername", "parameter_cat", "layer_filename", "unit", "statistic", "description"]]
-layer_csv_parameters = [["Layername", "parameter_cat", "layer_filename", "unit", "statistic", "description","Count"]]
-layer_csv            = [["Layername", "parameter_cat", "layer_filename", "unit", "statistic", "description"]]
+ "System", "KnowledgeRule", "layername", "parameter_cat", "layer_filename", "unit", "statistic", "description"]]
+layer_csv_parameters = [["layername", "parameter_name", "parameter_cat", "period", "position", "unit", "statistic", "layer_filename", "description","Count"]]
+layer_csv            = [["layername", "parameter_name", "parameter_cat", "period", "position", "unit", "statistic", "layer_filename", "description"]]
 
 #start log
 
@@ -109,17 +109,13 @@ for level1_dir in level1_dirs :
 
 						for inlayer_name, inlayer in value["inputLayers"].items():
 
-							#"Layername", "parameter_cat", "layer_filename", "unit", "statistic", "description"
-							layername = inlayer_name
-							parameter_cat = inlayer["parameter_cat"]
-							layer_filename = inlayer["layer_filename"]
-							unit = inlayer["unit"]
-							statistic = inlayer["statistic"]
-							description = inlayer["description"]
-
+							#check the values returned
+							if(layer_csv[0] !=  list(inlayer.keys())):
+								print(list(inlayer.keys()))
+								raise Exception("Keys of data layer are not similar to columns presented")
 
 							#write part
-							x7 = [layername, parameter_cat, layer_filename, unit, statistic, description]
+							x7 = list(inlayer.values())
 
 
 							#add all together
@@ -131,25 +127,18 @@ for level1_dir in level1_dirs :
 								layer_csv_parameters.append(x7 + [str(1)])
 							else:
 								line_nr = layer_csv.index(x7)
-								layer_csv_parameters[line_nr][6] = str(int(layer_csv_parameters[line_nr][6]) + 1)
+								layer_csv_parameters[line_nr][-1] = str(int(layer_csv_parameters[line_nr][-1]) + 1)
 
 
 
 						for outlayer_name, outlayer in value["outputLayers"].items():
 
-							#"Layername", "parameter_cat", "layer_filename", "unit", "statistic", "description"
-							layername = outlayer_name
-							parameter_cat = outlayer["parameter_cat"]
-							layer_filename = outlayer["layer_filename"]
-							unit = outlayer["unit"]
-							statistic = outlayer["statistic"]
-							description = outlayer["description"]
-
+							#check the values returned
+							if(layer_csv[0] !=  list(outlayer.keys())):
+								raise Exception("Keys of data layer are not similar to columns presented")
 
 							#write part
-							x7 = [layername, parameter_cat, layer_filename, unit, statistic, description]
-
-
+							x7 = list(outlayer.values())
 							#add all together
 							layer_csv_full_trace.append(x1+x2+x3+x4+x5+x6+x7)
 
@@ -159,7 +148,7 @@ for level1_dir in level1_dirs :
 								layer_csv_parameters.append(x7 + [str(1)])
 							else:
 								line_nr = layer_csv.index(x7)
-								layer_csv_parameters[line_nr][6] = str(int(layer_csv_parameters[line_nr][6]) + 1)
+								layer_csv_parameters[line_nr][-1] = str(int(layer_csv_parameters[line_nr][-1]) + 1)
 
 
 log.append([" Total number of XMLs : " + str(nr_xmls)])

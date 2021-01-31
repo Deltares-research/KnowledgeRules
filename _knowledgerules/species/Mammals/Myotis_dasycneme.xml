@@ -33,11 +33,14 @@
 					<ResponseCurve name="Afstand kolonie tot foerageergebied">
 						<inputLayers>
 							<layer name="Afstand kolonie tot foerageergebied">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Afstand kolonie tot foerageergebied</layer_filename>
+								<parameter_name>Afstand kolonie tot foerageergebied</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"km"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Afstand kolonie tot foerageergebied</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -60,22 +63,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Afstand kolonie tot foerageergebied">
+								<parameter_name>HSI_Afstand kolonie tot foerageergebied</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Afstand kolonie tot foerageergebied</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Afstand kolonie tot foerageergebied</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Huisvesting">
 						<inputLayers>
 							<layer name="Huisvesting">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Huisvesting</layer_filename>
+								<parameter_name>Huisvesting</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>Gebouwtype</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Huisvesting</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -96,22 +105,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Huisvesting">
+								<parameter_name>HSI_Huisvesting</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Huisvesting</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Huisvesting</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="formaat_waterlichaam_waterweg">
 						<inputLayers>
 							<layer name="formaat_waterlichaam_waterweg">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>formaat_waterlichaam_waterweg</layer_filename>
+								<parameter_name>formaat_waterlichaam_waterweg</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>formaat_waterlichaam_waterweg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -130,22 +145,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_formaat_waterlichaam_waterweg">
+								<parameter_name>HSI_formaat_waterlichaam_waterweg</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_formaat_waterlichaam_waterweg</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_formaat_waterlichaam_waterweg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="formaat_waterlichaam_plas">
 						<inputLayers>
 							<layer name="formaat_waterlichaam_plas">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>formaat_waterlichaam_plas</layer_filename>
+								<parameter_name>formaat_waterlichaam_plas</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>none</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>formaat_waterlichaam_plas</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -163,22 +184,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_formaat_waterlichaam_plas">
+								<parameter_name>HSI_formaat_waterlichaam_plas</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_formaat_waterlichaam_plas</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_formaat_waterlichaam_plas</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Oevervegetatie">
 						<inputLayers>
 							<layer name="Oevervegetatie">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Oevervegetatie</layer_filename>
+								<parameter_name>Oevervegetatie</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>Oevervegetatie</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Oevervegetatie</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -202,22 +229,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Oevervegetatie">
+								<parameter_name>HSI_Oevervegetatie</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Oevervegetatie</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Oevervegetatie</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Grondsoort">
 						<inputLayers>
 							<layer name="Grondsoort">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Grondsoort</layer_filename>
+								<parameter_name>Grondsoort</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>Grondsoort</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Grondsoort</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -239,11 +272,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Grondsoort">
+								<parameter_name>HSI_Grondsoort</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Grondsoort</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Grondsoort</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

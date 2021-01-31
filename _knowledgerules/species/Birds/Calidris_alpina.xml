@@ -52,11 +52,14 @@
 					<ResponseCurve name="waterdiepte_zomer">
 						<inputLayers>
 							<layer name="waterdiepte_zomer">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte_zomer</layer_filename>
+								<parameter_name>waterdiepte_zomer</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte_zomer</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -75,22 +78,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte_zomer">
+								<parameter_name>HSI_waterdiepte_zomer</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte_zomer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte_zomer</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte_winter">
 						<inputLayers>
 							<layer name="waterdiepte_winter">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte_winter</layer_filename>
+								<parameter_name>waterdiepte_winter</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -110,22 +119,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte_winter">
+								<parameter_name>HSI_waterdiepte_winter</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte_winter</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="vluchtplaats_waterdiepte_winter">
 						<inputLayers>
 							<layer name="vluchtplaats_waterdiepte_winter">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>vluchtplaats_waterdiepte_winter</layer_filename>
+								<parameter_name>vluchtplaats_waterdiepte_winter</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>vluchtplaats_waterdiepte_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -144,22 +159,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_vluchtplaats_waterdiepte_winter">
+								<parameter_name>HSI_vluchtplaats_waterdiepte_winter</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_vluchtplaats_waterdiepte_winter</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_vluchtplaats_waterdiepte_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="vegetatie_bedekkingsgraad">
 						<inputLayers>
 							<layer name="vegetatie_bedekkingsgraad">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>vegetatie_bedekkingsgraad</layer_filename>
+								<parameter_name>vegetatie_bedekkingsgraad</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>vegetatie_bedekkingsgraad</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -178,11 +199,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_vegetatie_bedekkingsgraad">
+								<parameter_name>HSI_vegetatie_bedekkingsgraad</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_vegetatie_bedekkingsgraad</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_vegetatie_bedekkingsgraad</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

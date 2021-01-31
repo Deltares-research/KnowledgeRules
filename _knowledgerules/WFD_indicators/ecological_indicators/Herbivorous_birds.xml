@@ -21,10 +21,10 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h5 id="Algemeen-Plant-etendevogels-Indelinggroepen">Indeling groepen</h5><div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" resolved="" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal"><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" groep : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> groep </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" soorten : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> soorten </p></div></th></tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow"><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" groep : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> groep </p></div></th><th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" soorten : No sort applied, activate to apply an ascending sort" style="user-select: none;"><div class="tablesorter-header-inner"><p> soorten </p></div></th></tr></thead><tbody aria-live="polite" aria-relevant="all"><tr role="row"><td class="confluenceTd"><p> ganzen &lt; 0.2 m </p></td><td class="confluenceTd"><p> Brandgans, Grauwe gans, Rotgans </p></td></tr><tr role="row"><td class="confluenceTd"><p> grondel eenden, ganzen en zwanen 0-0,2m  </p></td><td class="confluenceTd"><p> Kleine zwaan, Smient, Bergeend, Tafeleend, Brandgans, Pijlstaart </p></td></tr><tr role="row"><td class="confluenceTd"><p> ganzen en eenden &lt; 0.2 m </p></td><td class="confluenceTd"><p> Brandgans, Grauwe gans, Rotgans, Smient, Wintertaling, Pijlstaart, Krakeend, Kleine rietgans, Kolgans, Slobeend </p></td></tr><tr role="row"><td class="confluenceTd"><p> grondel ganzen zwanen 0-0,2m  </p></td><td class="confluenceTd"><p> Kleine zwaan, Smient, Bergeend, Tafeleend, Brandgans, Pijlstaart </p></td></tr><tr role="row"><td class="confluenceTd"><p> zwanen 0,5 - 1m </p></td><td class="confluenceTd"><p> Kleine zwaan, Tafeleend </p></td></tr><tr role="row"><td class="confluenceTd"><p> duikeend/meerkoet 1-2m </p></td><td class="confluenceTd"><p> Meerkoet, Tafeleend </p></td></tr></tbody></table></div><h1 id="Algemeen-Plant-etendevogels-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p><img class="emoticon emoticon-warning" src="./Algemeen - Plant-etende vogels - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)">&nbsp;De dosis-effect relaties zijn gebaseerd op expert judgement van RIZA (Haasnoot et. al 2005). De relaties zijn alleen kwalitatief vergeleken met meetgegevens.</p><h1 id="Algemeen-Plant-etendevogels-Toepasbaarheid">Toepasbaarheid</h1><p>Deze dosis-effect relaties zijn van toepassing in Nederland. Deze relaties geven een geschiktheid in het algemeen voor plant-etende vogels en niet voor specifieke soorten per se. Voor specifieke soorten zijn eventueel additionele dosis-effect relaties nodig. </p><h1 id="Algemeen-Plant-etendevogels-Voorbeeldproject">Voorbeeld project</h1><p>Haasnoot, M. en K. van de Wolfshaar (ed), 2006. Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. WL report Q4015. 2006</p>]]></text>
+						<text>&lt;h5 id="Algemeen-Plant-etendevogels-Indelinggroepen"&gt;Indeling groepen&lt;/h5&gt;&lt;div class="table-wrap"&gt;&lt;table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" resolved="" style="padding: 0px;"&gt;&lt;thead class="tableFloatingHeaderOriginal"&gt;&lt;tr role="row" class="tablesorter-headerRow"&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" groep : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; groep &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" soorten : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; soorten &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;thead class="tableFloatingHeader" style="display: none;"&gt;&lt;tr role="row" class="tablesorter-headerRow"&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" groep : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; groep &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none" aria-label=" soorten : No sort applied, activate to apply an ascending sort" style="user-select: none;"&gt;&lt;div class="tablesorter-header-inner"&gt;&lt;p&gt; soorten &lt;/p&gt;&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody aria-live="polite" aria-relevant="all"&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; ganzen &amp;lt; 0.2 m &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Brandgans, Grauwe gans, Rotgans &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; grondel eenden, ganzen en zwanen 0-0,2m  &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Kleine zwaan, Smient, Bergeend, Tafeleend, Brandgans, Pijlstaart &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; ganzen en eenden &amp;lt; 0.2 m &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Brandgans, Grauwe gans, Rotgans, Smient, Wintertaling, Pijlstaart, Krakeend, Kleine rietgans, Kolgans, Slobeend &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; grondel ganzen zwanen 0-0,2m  &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Kleine zwaan, Smient, Bergeend, Tafeleend, Brandgans, Pijlstaart &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; zwanen 0,5 - 1m &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Kleine zwaan, Tafeleend &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr role="row"&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; duikeend/meerkoet 1-2m &lt;/p&gt;&lt;/td&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; Meerkoet, Tafeleend &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;h1 id="Algemeen-Plant-etendevogels-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;&lt;img class="emoticon emoticon-warning" src="./Algemeen - Plant-etende vogels - HABITAT - Spatial analysis tool - Deltares Public Wiki_files/warning.svg" data-emoticon-name="warning" alt="(warning)"&gt;&amp;nbsp;De dosis-effect relaties zijn gebaseerd op expert judgement van RIZA (Haasnoot et. al 2005). De relaties zijn alleen kwalitatief vergeleken met meetgegevens.&lt;/p&gt;&lt;h1 id="Algemeen-Plant-etendevogels-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;Deze dosis-effect relaties zijn van toepassing in Nederland. Deze relaties geven een geschiktheid in het algemeen voor plant-etende vogels en niet voor specifieke soorten per se. Voor specifieke soorten zijn eventueel additionele dosis-effect relaties nodig. &lt;/p&gt;&lt;h1 id="Algemeen-Plant-etendevogels-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Haasnoot, M. en K. van de Wolfshaar (ed), 2006. Habitat analyse in het kader van de Planstudie/MER voor Krammer, Volkerak en Zoommeer. WL report Q4015. 2006&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
-						<text><![CDATA["TOBEFILLED"]]></text>
+						<text>"TOBEFILLED"</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -41,24 +41,33 @@
 					<MultipleReclassification name="birds_potential">
 						<inputLayers>
 							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 							<layer name="HSI_terrestic_herbivorous_birds">
+								<parameter_name>HSI_terrestic_herbivorous_birds</parameter_name>
 								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>"hsi_terrestic_herbivorous_birds"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"hsi_terrestic_herbivorous_birds"</layer_filename>
 								<description>"HSI for herbivorous birds based on terrestic vegetation"</description>
 							</layer>
 							<layer name="HSI_aquatic_vegetation">
+								<parameter_name>HSI_aquatic_vegetation</parameter_name>
 								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>hsi_aquatic_vegetation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>hsi_aquatic_vegetation</layer_filename>
 								<description>"HSI determined for aquatic vegetation as factor</description>
 							</layer>
 						</inputLayers>
@@ -67,36 +76,39 @@
 							<author>"M. Haasnoot"</author>
 							<date>2009-01-01</date>
 							<references>
-								<reference author="Haasnoot, M. en K.E. van de Wolfshaar" title="" identification="" year="2006" journal=""></reference>
+								<reference author="Haasnoot, M. en K.E. van de Wolfshaar" title="" identification="" year="2006" journal=""/>
 							</references>
 							<Parameters>
 								<valuesRangeCategorical layername="waterdepth_summer" type="range / categorical">
-								<parameter rangemin_input="-500.0" rangemax_input="0.0"  input_cat="-500.0 - 0" output="1" output_cat="land"/>
-								<parameter rangemin_input="0.0" rangemax_input="0.2"  input_cat=".lt. 0.2 m" output="2" output_cat= "goose .lt. 0.2 m"/>
-								<parameter rangemin_input="0.0" rangemax_input="0.2"  input_cat=".lt. 0.2 m" output="3" output_cat= "goose and ducks .lt. 0.2 m"/>
-								<parameter rangemin_input="0.2" rangemax_input="0.5"  input_cat="0.2 - 0.5 m" output="4" output_cat= "grondel ducks, goose and swans 0.2 - 0.5 m"/>
-								<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="0.5 - 1.0 m" output="5" output_cat= "swans 0.5 - 1 m"/>
-								<parameter rangemin_input="1.0" rangemax_input="2.0"  input_cat="1.0 - 2.0 m" output="6" output_cat= "diving ducks/coots 1 - 2 m"/>
-								<parameter rangemin_input="2.0" rangemax_input="999999.0"  input_cat="" output="7" output_cat="not reachable"/>
+									<parameter rangemin_input="-500.0" rangemax_input="0.0" input_cat="-500.0 - 0" output="1" output_cat="land"/>
+									<parameter rangemin_input="0.0" rangemax_input="0.2" input_cat=".lt. 0.2 m" output="2" output_cat="goose .lt. 0.2 m"/>
+									<parameter rangemin_input="0.0" rangemax_input="0.2" input_cat=".lt. 0.2 m" output="3" output_cat="goose and ducks .lt. 0.2 m"/>
+									<parameter rangemin_input="0.2" rangemax_input="0.5" input_cat="0.2 - 0.5 m" output="4" output_cat="grondel ducks, goose and swans 0.2 - 0.5 m"/>
+									<parameter rangemin_input="0.5" rangemax_input="1.0" input_cat="0.5 - 1.0 m" output="5" output_cat="swans 0.5 - 1 m"/>
+									<parameter rangemin_input="1.0" rangemax_input="2.0" input_cat="1.0 - 2.0 m" output="6" output_cat="diving ducks/coots 1 - 2 m"/>
+									<parameter rangemin_input="2.0" rangemax_input="999999.0" input_cat="" output="7" output_cat="not reachable"/>
 								</valuesRangeCategorical>
-								<valuesRangeCategorical  layername="HSI_terrestic_herbivorous_birds" type="range / categorical">
-									<parameter rangemin_input="0.0" rangemax_input="1.0"  input_cat="" output="2" output_cat="goose .lt. 0.2 m"/>
+								<valuesRangeCategorical layername="HSI_terrestic_herbivorous_birds" type="range / categorical">
+									<parameter rangemin_input="0.0" rangemax_input="1.0" input_cat="" output="2" output_cat="goose .lt. 0.2 m"/>
 								</valuesRangeCategorical>
-								<valuesRangeCategorical  layername="HSI_aquatic_vegetation" type="range / categorical">
-									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="3" output_cat="goose .lt. 0.2 m"/>
-									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="4" output_cat="swans 0.5 - 1 m"/>
-									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="5" output_cat="diving ducks/coots 1 - 2 m"/>
-									<parameter rangemin_input="0.5" rangemax_input="1.0"  input_cat="" output="5" output_cat="not reachable"/>
-									<parameter rangemin_input="0.0" rangemax_input="0.5"  input_cat="" output="5" output_cat="no macrophytes"/>											
+								<valuesRangeCategorical layername="HSI_aquatic_vegetation" type="range / categorical">
+									<parameter rangemin_input="0.5" rangemax_input="1.0" input_cat="" output="3" output_cat="goose .lt. 0.2 m"/>
+									<parameter rangemin_input="0.5" rangemax_input="1.0" input_cat="" output="4" output_cat="swans 0.5 - 1 m"/>
+									<parameter rangemin_input="0.5" rangemax_input="1.0" input_cat="" output="5" output_cat="diving ducks/coots 1 - 2 m"/>
+									<parameter rangemin_input="0.5" rangemax_input="1.0" input_cat="" output="5" output_cat="not reachable"/>
+									<parameter rangemin_input="0.0" rangemax_input="0.5" input_cat="" output="5" output_cat="no macrophytes"/>
 								</valuesRangeCategorical>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="herbivorous_birdgroup">
+								<parameter_name>herbivorous_birdgroup</parameter_name>
 								<parameter_cat>"Birds"</parameter_cat>
-								<layer_filename>herbivorous_birdgroup</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>average</statistic>
+								<layer_filename>herbivorous_birdgroup</layer_filename>
 								<description>"Potential for herbivorous birdgroup to be present expressed in categories"</description>
 							</layer>
 						</outputLayers>
@@ -104,10 +116,13 @@
 					<ResponseCurve name="terrestic_vegetation">
 						<inputLayers>
 							<layer name="terrestic_vegetation_type">
+								<parameter_name>terrestic_vegetation_type</parameter_name>
 								<parameter_cat>"Terrestic vegetation"</parameter_cat>
-								<layer_filename>terrestic_vegetation_type</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>terrestic_vegetation_type</layer_filename>
 								<description>"Terrestic vegetation types in categories"</description>
 							</layer>
 						</inputLayers>
@@ -117,22 +132,25 @@
 							<author>M. Haasnoot</author>
 							<date>2009-01-01</date>
 							<references>
-								<reference author="Haasnoot, M. en K.E. van de Wolfshaar" title="" identification="" year="2006" journal=""></reference>
+								<reference author="Haasnoot, M. en K.E. van de Wolfshaar" title="" identification="" year="2006" journal=""/>
 							</references>
 							<valuesCategorical>
-								<parameter   input="1" input_cat="bay mud" output="1.0" output_cat=""/>
-								<parameter   input="2" input_cat="salt marsh" output="1.0" output_cat=""/>
-								<parameter   input="3" input_cat="wet grassland" output="1.0" output_cat=""/>
-								<parameter   input="4" input_cat="bushes" output="0.0" output_cat=""/>
-								<parameter   input="5" input_cat="forest" output="0.0" output_cat=""/>
+								<parameter input="1" input_cat="bay mud" output="1.0" output_cat=""/>
+								<parameter input="2" input_cat="salt marsh" output="1.0" output_cat=""/>
+								<parameter input="3" input_cat="wet grassland" output="1.0" output_cat=""/>
+								<parameter input="4" input_cat="bushes" output="0.0" output_cat=""/>
+								<parameter input="5" input_cat="forest" output="0.0" output_cat=""/>
 							</valuesCategorical>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_terrestic_herbivorous_birds">
+								<parameter_name>HSI_terrestic_herbivorous_birds</parameter_name>
 								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>"hsi_terrestic_herbivorous_birds"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"hsi_terrestic_herbivorous_birds"</layer_filename>
 								<description>"HSI for herbivorous birds based on terrestic vegetation"</description>
 							</layer>
 						</outputLayers>
@@ -143,10 +161,10 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Algemeen-Plant-etendevogels-Algemeenvoorkomen">Algemeen voorkomen</h3><p>Deze groep omvat vogels die boven en rond de waterlijn op vegetatie foerageren, dit zijn met name eenden en ganzen. Ganzen foerageren voornamelijk op graslanden en kwelders (Brandgans, Rotgans, Kolgans, Grauwe gans). Daarnaast wordt ook wel gefoerageerd op akkers (Kolgans) en slikken (Rotgans, Brandgans). De Grauwe gans is ook een liefhebber van rietwortels. Van sommige ganzen is bekend dat ze ook foerageren op waterplanten, voornamelijk in zoete gebieden maar ook in zoute gebieden (Brandgans). Diverse eenden foerageren rondom de waterlijn op vegetatie (Smient, Krakeend, Wintertaling en Slobeend). Van de meeste eenden wordt gezegd dat ze in zoute en zoete wateren voorkomen (en ook foerageren). Ook zwanen zijn waterplant-eters. Zij kunnen een grotere diepte bereiken dan andere vogels. De Kleine zwaan foerageert vooral op fonteinkruid, maar eet ook van akkers en graslanden. Waterplant-etende duikeenden, zoals de meerkoet, kunnen waterplanten op een grotere diepte bereiken <a href="https://publicwiki.deltares.nl/display/HBTHOME/Algemeen+-+Plant-etende+vogels#Algemeen-Plant-etendevogels-1">#1</a>.</p><h3 id="Algemeen-Plant-etendevogels-Voedselhabitatenstrategie">Voedselhabitat en strategie</h3><p>Deze groep omvat vogels die foerageren op waterplanten en vegetatie rond de waterlijn, zoals kwelder en graslanden.</p><h3 id="Algemeen-Plant-etendevogels-Reproductieenmigratie">Reproductie en migratie</h3><p>Onder deze vogels bevinden zich zowel stand en trekvogels.</p>]]></text>
+			<text>&lt;h3 id="Algemeen-Plant-etendevogels-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;Deze groep omvat vogels die boven en rond de waterlijn op vegetatie foerageren, dit zijn met name eenden en ganzen. Ganzen foerageren voornamelijk op graslanden en kwelders (Brandgans, Rotgans, Kolgans, Grauwe gans). Daarnaast wordt ook wel gefoerageerd op akkers (Kolgans) en slikken (Rotgans, Brandgans). De Grauwe gans is ook een liefhebber van rietwortels. Van sommige ganzen is bekend dat ze ook foerageren op waterplanten, voornamelijk in zoete gebieden maar ook in zoute gebieden (Brandgans). Diverse eenden foerageren rondom de waterlijn op vegetatie (Smient, Krakeend, Wintertaling en Slobeend). Van de meeste eenden wordt gezegd dat ze in zoute en zoete wateren voorkomen (en ook foerageren). Ook zwanen zijn waterplant-eters. Zij kunnen een grotere diepte bereiken dan andere vogels. De Kleine zwaan foerageert vooral op fonteinkruid, maar eet ook van akkers en graslanden. Waterplant-etende duikeenden, zoals de meerkoet, kunnen waterplanten op een grotere diepte bereiken &lt;a href="https://publicwiki.deltares.nl/display/HBTHOME/Algemeen+-+Plant-etende+vogels#Algemeen-Plant-etendevogels-1"&gt;#1&lt;/a&gt;.&lt;/p&gt;&lt;h3 id="Algemeen-Plant-etendevogels-Voedselhabitatenstrategie"&gt;Voedselhabitat en strategie&lt;/h3&gt;&lt;p&gt;Deze groep omvat vogels die foerageren op waterplanten en vegetatie rond de waterlijn, zoals kwelder en graslanden.&lt;/p&gt;&lt;h3 id="Algemeen-Plant-etendevogels-Reproductieenmigratie"&gt;Reproductie en migratie&lt;/h3&gt;&lt;p&gt;Onder deze vogels bevinden zich zowel stand en trekvogels.&lt;/p&gt;</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA["TOBEFILLED"]]></text>
+			<text>"TOBEFILLED"</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>

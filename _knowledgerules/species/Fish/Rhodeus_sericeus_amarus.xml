@@ -51,11 +51,14 @@ Volkerak-Zoommeer Habitat analyse (#4)
 					<ResponseCurve name="ondergedoken_waterplanten">
 						<inputLayers>
 							<layer name="ondergedoken_waterplanten">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>ondergedoken_waterplanten</layer_filename>
+								<parameter_name>ondergedoken_waterplanten</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"bedekkingsgraad"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>ondergedoken_waterplanten</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -79,22 +82,28 @@ Volkerak-Zoommeer Habitat analyse (#4)
 						</Content>
 						<outputLayers>
 							<layer name="HSI_ondergedoken_waterplanten">
+								<parameter_name>HSI_ondergedoken_waterplanten</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_ondergedoken_waterplanten</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_ondergedoken_waterplanten</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="oevervegetatie">
 						<inputLayers>
 							<layer name="oevervegetatie">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oevervegetatie</layer_filename>
+								<parameter_name>oevervegetatie</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"bedekkingsgraad"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oevervegetatie</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -118,22 +127,28 @@ Volkerak-Zoommeer Habitat analyse (#4)
 						</Content>
 						<outputLayers>
 							<layer name="HSI_oevervegetatie">
+								<parameter_name>HSI_oevervegetatie</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_oevervegetatie</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_oevervegetatie</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte">
 						<inputLayers>
 							<layer name="waterdiepte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte</layer_filename>
+								<parameter_name>waterdiepte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -152,22 +167,28 @@ Volkerak-Zoommeer Habitat analyse (#4)
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte">
+								<parameter_name>HSI_waterdiepte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="zoutgehalte">
 						<inputLayers>
 							<layer name="zoutgehalte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>zoutgehalte</layer_filename>
+								<parameter_name>zoutgehalte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"gCl/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>zoutgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -185,11 +206,14 @@ Volkerak-Zoommeer Habitat analyse (#4)
 						</Content>
 						<outputLayers>
 							<layer name="HSI_zoutgehalte">
+								<parameter_name>HSI_zoutgehalte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_zoutgehalte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_zoutgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

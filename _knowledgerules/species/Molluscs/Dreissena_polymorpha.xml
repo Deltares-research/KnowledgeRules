@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,10 +24,10 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[<h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Onzekerheidenvalidatie">Onzekerheid en validatie</h1><p>Deze dosis-effect relaties zijn gevalideerd voor het IJsselmeer (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-4">#4</a>) en Markermeer (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-5">#5</a>, <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-7">#7</a>). In deze validatie is voor het IJsselmeer nog geen effecrelaties voor slibconcentraties meegenomen.<br>Voor de validatie van het Markermeer zijn de effectrelaties voor slibconcentraties wel meegenomen. Echter, de slibconcentraties zijn bekend voor het jaar 2007 en de driehoeksmosselmeting is gedaan in 2004. Nieuwe driehoeksmosseldata is te verwachten in 2010/2011. Nieuwe validatie is dan nodig, wat waarschijnlijk leidt tot een betere predictie van het model, doordat mismatch van het model van de meetdata nu vooral plaats heeft op de plaatsen waar volgens het model slib limiterend is voor de groei van driehoeksmosselen.</p><div class="table-wrap"><table class="confluenceTable" resolved=""><thead><tr><th class="confluenceTh"><p>aanwezigheid goed voorspeld</p></th><td class="confluenceTd"><p> 0.69 </p></td></tr></thead><tbody><tr><th class="confluenceTh"><p>afwezigheid goed voorspeld</p></th><td class="confluenceTd"><p> 0.80 </p></td></tr><tr><th class="confluenceTh"><p>aanwezigheid fout voorspeld</p></th><td class="confluenceTd"><p> 0.31 </p></td></tr><tr><th class="confluenceTh"><p>afwezigheid fout voorspeld</p></th><td class="confluenceTd"><p> 0.20 </p></td></tr></tbody></table></div><p>Hierbij is aanwezigheid van de driehoeksmossel in het model gezet op een habitatgeschiktheid van 0.5.</p><h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Toepasbaarheid">Toepasbaarheid</h1><p>Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.</p><h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Voorbeeldproject">Voorbeeld project</h1><p>Volkerak-Zoommeer Habitat analyse (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-1">#1</a>).<br>Seizoensgebonden peil in het IJsselmeergebied (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-12">#12</a>)</p>]]></text>
+						<text>&lt;h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Onzekerheidenvalidatie"&gt;Onzekerheid en validatie&lt;/h1&gt;&lt;p&gt;Deze dosis-effect relaties zijn gevalideerd voor het IJsselmeer (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-4"&gt;#4&lt;/a&gt;) en Markermeer (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-5"&gt;#5&lt;/a&gt;, &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-7"&gt;#7&lt;/a&gt;). In deze validatie is voor het IJsselmeer nog geen effecrelaties voor slibconcentraties meegenomen.&lt;br&gt;Voor de validatie van het Markermeer zijn de effectrelaties voor slibconcentraties wel meegenomen. Echter, de slibconcentraties zijn bekend voor het jaar 2007 en de driehoeksmosselmeting is gedaan in 2004. Nieuwe driehoeksmosseldata is te verwachten in 2010/2011. Nieuwe validatie is dan nodig, wat waarschijnlijk leidt tot een betere predictie van het model, doordat mismatch van het model van de meetdata nu vooral plaats heeft op de plaatsen waar volgens het model slib limiterend is voor de groei van driehoeksmosselen.&lt;/p&gt;&lt;div class="table-wrap"&gt;&lt;table class="confluenceTable" resolved=""&gt;&lt;thead&gt;&lt;tr&gt;&lt;th class="confluenceTh"&gt;&lt;p&gt;aanwezigheid goed voorspeld&lt;/p&gt;&lt;/th&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 0.69 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th class="confluenceTh"&gt;&lt;p&gt;afwezigheid goed voorspeld&lt;/p&gt;&lt;/th&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 0.80 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th class="confluenceTh"&gt;&lt;p&gt;aanwezigheid fout voorspeld&lt;/p&gt;&lt;/th&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 0.31 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th class="confluenceTh"&gt;&lt;p&gt;afwezigheid fout voorspeld&lt;/p&gt;&lt;/th&gt;&lt;td class="confluenceTd"&gt;&lt;p&gt; 0.20 &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;p&gt;Hierbij is aanwezigheid van de driehoeksmossel in het model gezet op een habitatgeschiktheid van 0.5.&lt;/p&gt;&lt;h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Toepasbaarheid"&gt;Toepasbaarheid&lt;/h1&gt;&lt;p&gt;Deze dosis-effect relaties zijn toepasbaar op zoete wateren in Nederland.&lt;/p&gt;&lt;h1 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Voorbeeldproject"&gt;Voorbeeld project&lt;/h1&gt;&lt;p&gt;Volkerak-Zoommeer Habitat analyse (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-1"&gt;#1&lt;/a&gt;).&lt;br&gt;Seizoensgebonden peil in het IJsselmeergebied (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-12"&gt;#12&lt;/a&gt;)&lt;/p&gt;</text>
 					</Description>
 					<Description language="ENG">
-						<text><![CDATA[To be filled]]></text>
+						<text>To be filled</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -69,10 +68,13 @@
 					<ResponseCurve name="chloride_concentration">
 						<inputLayers>
 							<layer name="chloride_concentration">
+								<parameter_name>chloride_concentration</parameter_name>
 								<parameter_cat>"Salinity"</parameter_cat>
-								<layer_filename>"chloride_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"g/l"</unit>
 								<statistic>minimum</statistic>
+								<layer_filename>"chloride_concentration"</layer_filename>
 								<description>"Chlorine concentration"</description>
 							</layer>
 						</inputLayers>
@@ -93,10 +95,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_chloride_concentration">
+								<parameter_name>HSI_chloride_concentration</parameter_name>
 								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>HSI_chlorine_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_chlorine_concentration</layer_filename>
 								<description>"HSI based on chlorine concentration"</description>
 							</layer>
 						</outputLayers>
@@ -104,10 +109,13 @@
 					<ResponseCurve name="water_temperature">
 						<inputLayers>
 							<layer name="water_temperature">
+								<parameter_name>water_temperature</parameter_name>
 								<parameter_cat>"Water Temperature"</parameter_cat>
-								<layer_filename>"water_temperature"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>summer average</statistic>
+								<layer_filename>"water_temperature"</layer_filename>
 								<description>"Average summer water temperature"</description>
 							</layer>
 						</inputLayers>
@@ -129,10 +137,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_water_temperature">
+								<parameter_name>HSI_water_temperature</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_water_temperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_water_temperature</layer_filename>
 								<description>HSI based on water temperature</description>
 							</layer>
 						</outputLayers>
@@ -140,10 +151,13 @@
 					<ResponseCurve name="orthophosphate_concentration">
 						<inputLayers>
 							<layer name="orthophosphate_concentration">
+								<parameter_name>orthophosphate_concentration</parameter_name>
 								<parameter_cat>"Nutrient concentration"</parameter_cat>
-								<layer_filename>"orthophosphate_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"orthophosphate_concentration"</layer_filename>
 								<description>"Average orthophosphate concentration in water"</description>
 							</layer>
 						</inputLayers>
@@ -164,10 +178,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_orthophosphate_concentration">
+								<parameter_name>HSI_orthophosphate_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_orthophosphate_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_orthophosphate_concentration"</layer_filename>
 								<description>"HSI based on orthophosphate concentration"</description>
 							</layer>
 						</outputLayers>
@@ -175,10 +192,13 @@
 					<ResponseCurve name="oxygen_concentration">
 						<inputLayers>
 							<layer name="oxygen_concentration">
+								<parameter_name>oxygen_concentration</parameter_name>
 								<parameter_cat>Oxygen</parameter_cat>
-								<layer_filename>"oxygen_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"oxygen_concentration"</layer_filename>
 								<description>"Average oxygen content in mg/l"</description>
 							</layer>
 						</inputLayers>
@@ -199,10 +219,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_oxygen_concentration">
+								<parameter_name>HSI_oxygen_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_oxygen_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_oxygen_concentration"</layer_filename>
 								<description>"HSI based on oxygen concentration"</description>
 							</layer>
 						</outputLayers>
@@ -210,10 +233,13 @@
 					<ResponseCurve name="substrate_type">
 						<inputLayers>
 							<layer name="substrate_type">
+								<parameter_name>substrate_type</parameter_name>
 								<parameter_cat>"Waterbed substrate"</parameter_cat>
-								<layer_filename>"substrate_type"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"categories"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"substrate_type"</layer_filename>
 								<description>"Average substrate type of waterbed"</description>
 							</layer>
 						</inputLayers>
@@ -226,30 +252,36 @@
 								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
 							</references>
 							<valuesCategorical>
-								<parameter input= "1" input_cat="clay" output="0.466" output_cat=""/>
-								<parameter input= "2" input_cat="loam" output="0.688" output_cat=""/>
-								<parameter input= "3" input_cat="sand" output="0.743" output_cat=""/>
-								<parameter input= "4" input_cat="peat" output="0.074" output_cat=""/>
-								<parameter input= "5" input_cat="construction rocks" output="0.879" output_cat=""/>
+								<parameter input="1" input_cat="clay" output="0.466" output_cat=""/>
+								<parameter input="2" input_cat="loam" output="0.688" output_cat=""/>
+								<parameter input="3" input_cat="sand" output="0.743" output_cat=""/>
+								<parameter input="4" input_cat="peat" output="0.074" output_cat=""/>
+								<parameter input="5" input_cat="construction rocks" output="0.879" output_cat=""/>
 							</valuesCategorical>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_substrate_type">
+								<parameter_name>HSI_substrate_type</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_substrate_type"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_substrate_type"</layer_filename>
 								<description>"HSI based on substrate type"</description>
 							</layer>
-						</outputLayers>						
+						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="silt_fraction">
 						<inputLayers>
 							<layer name="silt_fraction">
+								<parameter_name>silt_fraction</parameter_name>
 								<parameter_cat>"Waterbed substrate"</parameter_cat>
-								<layer_filename>"silt_fraction"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage / categories"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"silt_fraction"</layer_filename>
 								<description>"Average silt content in water bed"</description>
 							</layer>
 						</inputLayers>
@@ -262,17 +294,20 @@
 								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
 							</references>
 							<valuesRangeCategorical>
-								<parameter rangemin_input="0" rangemax_input="10"  input_cat="slibarm" output="0.753" output_cat=""/>
-								<parameter rangemin_input="10" rangemax_input="25"  input_cat="matig slibrijk" output="0.45" output_cat=""/>
-								<parameter rangemin_input="25" rangemax_input="100"  input_cat="slibrijk" output="0.103" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="10" input_cat="slibarm" output="0.753" output_cat=""/>
+								<parameter rangemin_input="10" rangemax_input="25" input_cat="matig slibrijk" output="0.45" output_cat=""/>
+								<parameter rangemin_input="25" rangemax_input="100" input_cat="slibrijk" output="0.103" output_cat=""/>
 							</valuesRangeCategorical>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_silt_fraction">
+								<parameter_name>HSI_silt_fraction</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_silt_fraction"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_silt_fraction"</layer_filename>
 								<description>"HSI based on silt fraction"</description>
 							</layer>
 						</outputLayers>
@@ -280,10 +315,13 @@
 					<ResponseCurve name="shell_coverage">
 						<inputLayers>
 							<layer name="shell_coverage">
+								<parameter_name>shell_coverage</parameter_name>
 								<parameter_cat>"Waterbed substrate"</parameter_cat>
-								<layer_filename>"shell_coverage"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"ml/m2"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"shell_coverage"</layer_filename>
 								<description>"Average shell content coverage waterbed"</description>
 							</layer>
 						</inputLayers>
@@ -306,10 +344,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_shell_coverage">
+								<parameter_name>HSI_shell_coverage</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_shell_coverage</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_shell_coverage</layer_filename>
 								<description>"HSI based on shell content coverage of the waterbed"</description>
 							</layer>
 						</outputLayers>
@@ -317,10 +358,13 @@
 					<ResponseCurve name="silt_concentration">
 						<inputLayers>
 							<layer name="silt_concentration">
+								<parameter_name>silt_concentration</parameter_name>
 								<parameter_cat>"Waterbed substrate"</parameter_cat>
-								<layer_filename>"silt_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"silt_concentration"</layer_filename>
 								<description>"Average silt content waterbed"</description>
 							</layer>
 						</inputLayers>
@@ -344,21 +388,27 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_silt_concentration">
+								<parameter_name>HSI_silt_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_silt_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_silt_concentration"</layer_filename>
 								<description>"HSI based on silt concentration waterbed"</description>
 							</layer>
 						</outputLayers>
-					</ResponseCurve>	
+					</ResponseCurve>
 					<ResponseCurve name="waterdepth_lakes">
 						<inputLayers>
 							<layer name="waterdepth_lakes">
+								<parameter_name>waterdepth_lakes</parameter_name>
 								<parameter_cat>"Waterdepth"</parameter_cat>
-								<layer_filename>"waterdepth_lakes"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"waterdepth_lakes"</layer_filename>
 								<description>"Waterdepth in lakes"</description>
 							</layer>
 						</inputLayers>
@@ -381,10 +431,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth_lakes">
+								<parameter_name>HSI_waterdepth_lakes</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_waterdepth_lakes"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_waterdepth_lakes"</layer_filename>
 								<description>"HSI based on waterdepth in lakes"</description>
 							</layer>
 						</outputLayers>
@@ -392,10 +445,13 @@
 					<ResponseCurve name="waterdepth_rivers">
 						<inputLayers>
 							<layer name="waterdepth_rivers">
+								<parameter_name>waterdepth_rivers</parameter_name>
 								<parameter_cat>"Waterdepth"</parameter_cat>
-								<layer_filename>"waterdepth_rivers"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"waterdepth_rivers"</layer_filename>
 								<description>"Waterdepth in rivers in meters"</description>
 							</layer>
 						</inputLayers>
@@ -416,10 +472,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth_rivers">
+								<parameter_name>HSI_waterdepth_rivers</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_waterdepth_rivers"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_waterdepth_rivers"</layer_filename>
 								<description>HSI based on waterdepth rivers</description>
 							</layer>
 						</outputLayers>
@@ -427,10 +486,13 @@
 					<ResponseCurve name="flow_velocity">
 						<inputLayers>
 							<layer name="flow_velocity">
+								<parameter_name>flow_velocity</parameter_name>
 								<parameter_cat>"Water flow"</parameter_cat>
-								<layer_filename>"flow_velocity"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"flow_velocity"</layer_filename>
 								<description>"Flow velocity in meters per second"</description>
 							</layer>
 						</inputLayers>
@@ -451,10 +513,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_flow_velocity">
+								<parameter_name>HSI_flow_velocity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_flow_velocity"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_flow_velocity"</layer_filename>
 								<description>HSI based on flow velocity</description>
 							</layer>
 						</outputLayers>
@@ -462,10 +527,13 @@
 					<ResponseCurve name="acidity">
 						<inputLayers>
 							<layer name="acidity">
+								<parameter_name>acidity</parameter_name>
 								<parameter_cat>"Water acidity"</parameter_cat>
-								<layer_filename>"acidity"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>pH</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>"acidity"</layer_filename>
 								<description>"Average acidity of water in pH"</description>
 							</layer>
 						</inputLayers>
@@ -488,10 +556,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_acidity">
+								<parameter_name>HSI_acidity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_acidity"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_acidity"</layer_filename>
 								<description>"HSI based on acidity"</description>
 							</layer>
 						</outputLayers>
@@ -499,10 +570,13 @@
 					<ResponseCurve name="calcium_concentration">
 						<inputLayers>
 							<layer name="calcium_concentration">
+								<parameter_name>calcium_concentration</parameter_name>
 								<parameter_cat>"Water nutrients"</parameter_cat>
-								<layer_filename>"calcium_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>mg/L</unit>
 								<statistic>average</statistic>
+								<layer_filename>"calcium_concentration"</layer_filename>
 								<description>Calcium concentration in water in mg Ca per liter</description>
 							</layer>
 						</inputLayers>
@@ -523,10 +597,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_calcium_concentration">
+								<parameter_name>HSI_calcium_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_calcium_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_calcium_concentration"</layer_filename>
 								<description>HSI based on calcium concentration in water</description>
 							</layer>
 						</outputLayers>
@@ -537,10 +614,10 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[<h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Algemeenvoorkomen">Algemeen voorkomen</h3><p>De Driehoeksmossel komt voor in rivieren, meren, plassen en kanalen en hecht zich aan allerlei hardsubstraat. Driehoeksmosselen zijn in de winter stapelvoedsel voor watervogels zoald de Kuifeend <em>Aythya fuligula</em>, de Tafeleend <em>A. ferina</em>, de Topper <em>A. marila</em> en de Meerkoet <em>Fulica atra</em>.  Driehoeksmosselen zijn een doelsoort van zoete, grote stagnante wateren in het beneden rivierengebied.</p><h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Milieurandvoorwaarden">Milieurandvoorwaarden</h3><p>De milieucondities die van belang zijn voor de driehoeksmossel zijn zoet water, bodemtype, waterdiepte en watertemperatuur <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2">#2</a>, <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-6">#6</a>.</p><p>Driehoeksmosselen vestigen zich op hard substraat zoals stenen en schelpen. Ze foerageren door algen te filteren uit het water. Hoge slibconcentraties in het water of op de bodem kunnen dit verhinderen en zorgen uiteindelijk voor verstikking. <br>Uit experimenten in het lab uitgevoerd naar mosselfiltratie van driehoeksmosselen onder verschillende anorganische slibconcentraties blijkt dat de filtratie van driehoeksmosselen op slib afneemt met toenemende slibconcentraties (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-11">#11</a>). Een slibconcentratie van meer dan 1 g/L maakt de filtratie voor de mosselen erg lastig. Bij deze concentratie is niet alleen de filtratie op slib zelf laag, maar ook die op de groenalg (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-11">#11</a>). Op den duur zou dit kunnen betekenen dat de mosselen weinig goed voedsel binnen krijgen (en teveel bezig zijn met het verwijderen van slib via pseudofaeces) waardoor ze niet goed groeien en misschien wel dood gaan. <br>De diepte waarop mosselen voorkomen verschilt per gebied. Er zijn waarnemingen tot 50 meter diepte gedaan ([#9). De hoogste dichtheden vinden meestal plaats op een diepte tussen de 2 en 5 m (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2">#2</a>). In ondieptes wordt de afwezigheid mogelijk veroorzaakt door de snelle temperatuurwisselen of door predatiedruk op mosselen of door een hoge wintersterfte als gevolg van een lange periode met zuurstofloosheid bij ijsbedekking (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-8">#8</a>). Bij grotere dieptes (&gt;5m) zijn temperatuur en zuurstofgehalte vaak limiterende factoren (<a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-10">#10</a>).</p><p>De groei en reproduktie van de driehoeksmosselen wordt beïnvloed door de watertemperatuur <a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2">#2</a>. In koude wateren (&lt; 15 ˚C) is de periode van groei kort en is de reproduktie minimaal (Morton, 1969; Lewandowski, 1982; Strayer, 1991). Ook warme wateren hebben een negatief effect op de populatie-ontwikkeling (Walz, 1974). Sterftecijfers nemen toe bij watertemperaturen van &gt; 26-32 ˚C (Strayer, 1991). Noordhuis en Houwing (2003) suggereren dat er mogelijk een negatief effect is van relatief warme winters. De eerste eieren en larven worden in de Poolse meren gesignaleerd bij watertemperaturen van 17-19 ˚C (Lewandowski, 1982) en in de Noord-Amerikaanse meren bij 13 ˚C (Hebert e.a., 1989).</p><p>In het IJsselmeer begint de jaarlijkse lengtegroei van de driehoeksmosselen in april en eindigt in september. Uit onderzoek van Reeders (1989) is gebleken, dat bij een watertemperatuur van 5-20 ˚C de filtratiesnelheid optimaal is. Beneden de 5 ˚C neemt de filtratiesnelheid abrupt af tot een geringe waarde en bij een watertemperatuur van meer dan 20 ˚C neemt de snelheid geleidelijk af. Volgens het onderzoek van Morton (1969) vindt alleen lengtegroei plaats bij een watertemperatuur van meer dan 11 ˚C en komt bij een watertemperatuur van meer dan 30 ˚C de lengtegroei geheel tot stilstand. De driehoeksmossel is zeer gevoelig voor snelle stijgingen van de watertemperatuur. Bij bestrijding van de driehoeksmosselen in koelwatersystemen wordt daarom de thermoshock-methode gehanteerd: bij een watertemperatuur van 35 ˚C wordt in een half uur alle aangroei gedood (Jenner en Mommen, 1985). De ontwikkelingsmogelijkheden van driehoeksmosselen in de Randmeren wordt beperkt door een aantal factoren, waaronder de snelle stijging van de watertemperatuur en grote dagelijkse temperatuurschommelingen die in het voorjaar in de ondiepe en beschutte meren kunnen optreden. Door deze veranderingen wordt de voortplanting van de driehoeksmosselen volledig verstoord (Vanhemelrijk e.a., 1993).</p><h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Beheerenontwikkelingskansen">Beheer en ontwikkelingskansen</h3><p>Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen tot een verandering van het voorkomen van de driehoeksmossel leiden.</p>]]></text>
+			<text>&lt;h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Algemeenvoorkomen"&gt;Algemeen voorkomen&lt;/h3&gt;&lt;p&gt;De Driehoeksmossel komt voor in rivieren, meren, plassen en kanalen en hecht zich aan allerlei hardsubstraat. Driehoeksmosselen zijn in de winter stapelvoedsel voor watervogels zoald de Kuifeend &lt;em&gt;Aythya fuligula&lt;/em&gt;, de Tafeleend &lt;em&gt;A. ferina&lt;/em&gt;, de Topper &lt;em&gt;A. marila&lt;/em&gt; en de Meerkoet &lt;em&gt;Fulica atra&lt;/em&gt;.  Driehoeksmosselen zijn een doelsoort van zoete, grote stagnante wateren in het beneden rivierengebied.&lt;/p&gt;&lt;h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Milieurandvoorwaarden"&gt;Milieurandvoorwaarden&lt;/h3&gt;&lt;p&gt;De milieucondities die van belang zijn voor de driehoeksmossel zijn zoet water, bodemtype, waterdiepte en watertemperatuur &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2"&gt;#2&lt;/a&gt;, &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-6"&gt;#6&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Driehoeksmosselen vestigen zich op hard substraat zoals stenen en schelpen. Ze foerageren door algen te filteren uit het water. Hoge slibconcentraties in het water of op de bodem kunnen dit verhinderen en zorgen uiteindelijk voor verstikking. &lt;br&gt;Uit experimenten in het lab uitgevoerd naar mosselfiltratie van driehoeksmosselen onder verschillende anorganische slibconcentraties blijkt dat de filtratie van driehoeksmosselen op slib afneemt met toenemende slibconcentraties (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-11"&gt;#11&lt;/a&gt;). Een slibconcentratie van meer dan 1 g/L maakt de filtratie voor de mosselen erg lastig. Bij deze concentratie is niet alleen de filtratie op slib zelf laag, maar ook die op de groenalg (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-11"&gt;#11&lt;/a&gt;). Op den duur zou dit kunnen betekenen dat de mosselen weinig goed voedsel binnen krijgen (en teveel bezig zijn met het verwijderen van slib via pseudofaeces) waardoor ze niet goed groeien en misschien wel dood gaan. &lt;br&gt;De diepte waarop mosselen voorkomen verschilt per gebied. Er zijn waarnemingen tot 50 meter diepte gedaan ([#9). De hoogste dichtheden vinden meestal plaats op een diepte tussen de 2 en 5 m (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2"&gt;#2&lt;/a&gt;). In ondieptes wordt de afwezigheid mogelijk veroorzaakt door de snelle temperatuurwisselen of door predatiedruk op mosselen of door een hoge wintersterfte als gevolg van een lange periode met zuurstofloosheid bij ijsbedekking (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-8"&gt;#8&lt;/a&gt;). Bij grotere dieptes (&amp;gt;5m) zijn temperatuur en zuurstofgehalte vaak limiterende factoren (&lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-10"&gt;#10&lt;/a&gt;).&lt;/p&gt;&lt;p&gt;De groei en reproduktie van de driehoeksmosselen wordt beïnvloed door de watertemperatuur &lt;a href="https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962#Driehoeksmossel-Dreissenapolymorpha+quagga-2"&gt;#2&lt;/a&gt;. In koude wateren (&amp;lt; 15 ˚C) is de periode van groei kort en is de reproduktie minimaal (Morton, 1969; Lewandowski, 1982; Strayer, 1991). Ook warme wateren hebben een negatief effect op de populatie-ontwikkeling (Walz, 1974). Sterftecijfers nemen toe bij watertemperaturen van &amp;gt; 26-32 ˚C (Strayer, 1991). Noordhuis en Houwing (2003) suggereren dat er mogelijk een negatief effect is van relatief warme winters. De eerste eieren en larven worden in de Poolse meren gesignaleerd bij watertemperaturen van 17-19 ˚C (Lewandowski, 1982) en in de Noord-Amerikaanse meren bij 13 ˚C (Hebert e.a., 1989).&lt;/p&gt;&lt;p&gt;In het IJsselmeer begint de jaarlijkse lengtegroei van de driehoeksmosselen in april en eindigt in september. Uit onderzoek van Reeders (1989) is gebleken, dat bij een watertemperatuur van 5-20 ˚C de filtratiesnelheid optimaal is. Beneden de 5 ˚C neemt de filtratiesnelheid abrupt af tot een geringe waarde en bij een watertemperatuur van meer dan 20 ˚C neemt de snelheid geleidelijk af. Volgens het onderzoek van Morton (1969) vindt alleen lengtegroei plaats bij een watertemperatuur van meer dan 11 ˚C en komt bij een watertemperatuur van meer dan 30 ˚C de lengtegroei geheel tot stilstand. De driehoeksmossel is zeer gevoelig voor snelle stijgingen van de watertemperatuur. Bij bestrijding van de driehoeksmosselen in koelwatersystemen wordt daarom de thermoshock-methode gehanteerd: bij een watertemperatuur van 35 ˚C wordt in een half uur alle aangroei gedood (Jenner en Mommen, 1985). De ontwikkelingsmogelijkheden van driehoeksmosselen in de Randmeren wordt beperkt door een aantal factoren, waaronder de snelle stijging van de watertemperatuur en grote dagelijkse temperatuurschommelingen die in het voorjaar in de ondiepe en beschutte meren kunnen optreden. Door deze veranderingen wordt de voortplanting van de driehoeksmosselen volledig verstoord (Vanhemelrijk e.a., 1993).&lt;/p&gt;&lt;h3 id="Driehoeksmossel-Dreissenapolymorpha+quagga-Beheerenontwikkelingskansen"&gt;Beheer en ontwikkelingskansen&lt;/h3&gt;&lt;p&gt;Met name veranderingen aan zoutgehalte, waterdiepte en watertemperatuur kunnen tot een verandering van het voorkomen van de driehoeksmossel leiden.&lt;/p&gt;</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA[To be filled]]></text>
+			<text>To be filled</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>
@@ -553,7 +630,7 @@
 		<reference author="Noordhuis, R. en EJ. Houwing" year="2003" title="Oorzaken en gevolgen van een vermoedelijke crash met betrekking tot waterkwaliteit, slibhuishouding en natuurwaarden." journal="RIZA, Lelystad" identification="RIZA rapport 2003.016">
 		</reference>
 		<reference author="Van de Wolfshaar, K.E., M. Haasnoot" year="2007" title="Toetsing dosis-effect relaties HABITAT. Pilot voor het Markermeer en de Voordelta." journal="WL | Delft Hydraulics" identification="WL-report Q4327">
-			<html><![CDATA["http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"]]></html>
+			<html>"http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"</html>
 		</reference>
 		<reference author="Strayer, D.L." year="1991" title=" Projected distribution of the zebra mussel. Dreissana polymorpha, in North America." journal="Can. J. Fish. Aquati. Sci." identification="48:1389-1395">
 		</reference>
@@ -562,16 +639,16 @@
 		<reference author="Sprung, M." year="1994" title="The other life: An account of present knowledge of the larval phase of Dreissana polymorpha." journal="Zebra Myssels, biology, impacts and control." identification="Chapter 2 pp 39-53">
 		</reference>
 		<reference author="Dionisio, M." year="2009" title="Memo: Invloed van slibconcentratie op mosselfiltratie" journal="Deltares" identification="-">
-			<html><![CDATA["https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962&preview=/25722962/25952424/Memo%20Slibinvloed%20driehoeksmosselen.doc#Driehoeksmossel-Dreissenapolymorpha+quagga-3"]]></html>
+			<html>"https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962&amp;preview=/25722962/25952424/Memo%20Slibinvloed%20driehoeksmosselen.doc#Driehoeksmossel-Dreissenapolymorpha+quagga-3"</html>
 		</reference>
 		<reference author="Haasnoot et al" year="2005" title="Seizoensgebonden Peilen in het IJsselmeergbied" journal="Deltares" identification="-">
-			<html><![CDATA[http://public.deltares.nl/download/attachments/16384257/Haasnoot+et+al+2005.pdf?version=1]]></html>
+			<html>http://public.deltares.nl/download/attachments/16384257/Haasnoot+et+al+2005.pdf?version=1</html>
 		</reference>
 		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="Deltares" identification="-">
-			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf]]></html>
+			<html>https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf</html>
 		</reference>
 		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="Deltares" identification="-">
-			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf]]></html>
+			<html>https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf</html>
 		</reference>
 	</Documentation>
 	<DataSources/>

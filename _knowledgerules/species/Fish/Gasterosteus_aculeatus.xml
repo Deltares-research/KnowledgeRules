@@ -49,11 +49,14 @@
 					<ResponseCurve name="Waterdepth_winter">
 						<inputLayers>
 							<layer name="Waterdepth_winter">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Waterdepth_winter</layer_filename>
+								<parameter_name>Waterdepth_winter</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Waterdepth_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -73,11 +76,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Waterdepth_winter">
+								<parameter_name>HSI_Waterdepth_winter</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Waterdepth_winter</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Waterdepth_winter</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

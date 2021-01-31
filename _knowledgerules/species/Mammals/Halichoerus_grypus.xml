@@ -40,11 +40,14 @@
 					<ResponseCurve name="afstand_tot_scheepvaartroute">
 						<inputLayers>
 							<layer name="afstand_tot_scheepvaartroute">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>afstand_tot_scheepvaartroute</layer_filename>
+								<parameter_name>afstand_tot_scheepvaartroute</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>afstand_tot_scheepvaartroute</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -62,22 +65,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_afstand_tot_scheepvaartroute">
+								<parameter_name>HSI_afstand_tot_scheepvaartroute</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_afstand_tot_scheepvaartroute</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_afstand_tot_scheepvaartroute</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="ecotoop_kraamkamer">
 						<inputLayers>
 							<layer name="ecotoop_kraamkamer">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>ecotoop_kraamkamer</layer_filename>
+								<parameter_name>ecotoop_kraamkamer</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"Ecotoop"</unit>
 								<statistic>Ecotoop</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>ecotoop_kraamkamer</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -99,11 +108,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_ecotoop_kraamkamer">
+								<parameter_name>HSI_ecotoop_kraamkamer</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_ecotoop_kraamkamer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_ecotoop_kraamkamer</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

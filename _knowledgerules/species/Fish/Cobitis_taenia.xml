@@ -53,11 +53,14 @@
 					<ResponseCurve name="Coverage_submers_macrofytes">
 						<inputLayers>
 							<layer name="Coverage_submers_macrofytes">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Coverage_submers_macrofytes</layer_filename>
+								<parameter_name>Coverage_submers_macrofytes</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>fraction</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Coverage_submers_macrofytes</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -82,22 +85,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Coverage_submers_macrofytes">
+								<parameter_name>HSI_Coverage_submers_macrofytes</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Coverage_submers_macrofytes</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Coverage_submers_macrofytes</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Coverage_bank_vegetation">
 						<inputLayers>
 							<layer name="Coverage_bank_vegetation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Coverage_bank_vegetation</layer_filename>
+								<parameter_name>Coverage_bank_vegetation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>fraction</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Coverage_bank_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -122,22 +131,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Coverage_bank_vegetation">
+								<parameter_name>HSI_Coverage_bank_vegetation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Coverage_bank_vegetation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Coverage_bank_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Waterdepth">
 						<inputLayers>
 							<layer name="Waterdepth">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Waterdepth</layer_filename>
+								<parameter_name>Waterdepth</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -156,22 +171,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Waterdepth">
+								<parameter_name>HSI_Waterdepth</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Waterdepth</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity">
 						<inputLayers>
 							<layer name="Salinity">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Salinity</layer_filename>
+								<parameter_name>Salinity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>gCl/l</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Salinity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -190,11 +211,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Salinity">
+								<parameter_name>HSI_Salinity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Salinity</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Salinity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

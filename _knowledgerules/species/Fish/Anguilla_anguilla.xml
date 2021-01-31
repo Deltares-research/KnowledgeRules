@@ -64,11 +64,14 @@ Er is geen voorbeeld project beschikbaar.
 					<ResponseCurve name="bed_temperature">
 						<inputLayers>
 							<layer name="bed_temperature">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>bed_temperature</layer_filename>
+								<parameter_name>bed_temperature</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>bed_temperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -92,22 +95,28 @@ Er is geen voorbeeld project beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_bed_temperature">
+								<parameter_name>HSI_bed_temperature</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_bed_temperature</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_bed_temperature</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="oxygen">
 						<inputLayers>
 							<layer name="oxygen">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen</layer_filename>
+								<parameter_name>oxygen</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/L"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>oxygen</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -128,22 +137,28 @@ Er is geen voorbeeld project beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_oxygen">
+								<parameter_name>HSI_oxygen</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_oxygen</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_oxygen</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="acidity">
 						<inputLayers>
 							<layer name="acidity">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>acidity</layer_filename>
+								<parameter_name>acidity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"pH"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>acidity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -166,22 +181,28 @@ Er is geen voorbeeld project beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_acidity">
+								<parameter_name>HSI_acidity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_acidity</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_acidity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="bed_coverage">
 						<inputLayers>
 							<layer name="bed_coverage">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>bed_coverage</layer_filename>
+								<parameter_name>bed_coverage</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage"</unit>
 								<statistic>average (growth season average (March - September) + non growth season average (October - Februari))</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>bed_coverage</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -203,22 +224,28 @@ Er is geen voorbeeld project beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_bed_coverage">
+								<parameter_name>HSI_bed_coverage</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_bed_coverage</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_bed_coverage</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="soft_bed_sediment">
 						<inputLayers>
 							<layer name="soft_bed_sediment">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>soft_bed_sediment</layer_filename>
+								<parameter_name>soft_bed_sediment</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage sediment smaller than 3 mm"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>soft_bed_sediment</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -238,11 +265,14 @@ Er is geen voorbeeld project beschikbaar.
 						</Content>
 						<outputLayers>
 							<layer name="HSI_soft_bed_sediment">
+								<parameter_name>HSI_soft_bed_sediment</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_soft_bed_sediment</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_soft_bed_sediment</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

@@ -56,11 +56,14 @@
 					<ResponseCurve name="transparency">
 						<inputLayers>
 							<layer name="transparency">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>transparency</layer_filename>
+								<parameter_name>transparency</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>transparency</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -81,22 +84,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_transparency">
+								<parameter_name>HSI_transparency</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_transparency</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_transparency</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdepth">
 						<inputLayers>
 							<layer name="waterdepth">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdepth</layer_filename>
+								<parameter_name>waterdepth</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -117,11 +126,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth">
+								<parameter_name>HSI_waterdepth</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdepth</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdepth</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

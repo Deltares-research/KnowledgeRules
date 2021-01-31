@@ -52,11 +52,14 @@
 					<ResponseCurve name="Salinity_germination">
 						<inputLayers>
 							<layer name="Salinity_germination">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Salinity_germination</layer_filename>
+								<parameter_name>Salinity_germination</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"gCl/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Salinity_germination</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -76,22 +79,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Salinity_germination">
+								<parameter_name>HSI_Salinity_germination</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Salinity_germination</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Salinity_germination</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity_seedling">
 						<inputLayers>
 							<layer name="Salinity_seedling">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Salinity_seedling</layer_filename>
+								<parameter_name>Salinity_seedling</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"gCl/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Salinity_seedling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -111,22 +120,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Salinity_seedling">
+								<parameter_name>HSI_Salinity_seedling</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Salinity_seedling</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Salinity_seedling</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Salinity_adult">
 						<inputLayers>
 							<layer name="Salinity_adult">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Salinity_adult</layer_filename>
+								<parameter_name>Salinity_adult</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"gCl/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Salinity_adult</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -146,22 +161,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Salinity_adult">
+								<parameter_name>HSI_Salinity_adult</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Salinity_adult</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Salinity_adult</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Grazing_of_bank_vegetation">
 						<inputLayers>
 							<layer name="Grazing_of_bank_vegetation">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Grazing_of_bank_vegetation</layer_filename>
+								<parameter_name>Grazing_of_bank_vegetation</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Grazing_of_bank_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -181,11 +202,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Grazing_of_bank_vegetation">
+								<parameter_name>HSI_Grazing_of_bank_vegetation</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Grazing_of_bank_vegetation</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Grazing_of_bank_vegetation</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

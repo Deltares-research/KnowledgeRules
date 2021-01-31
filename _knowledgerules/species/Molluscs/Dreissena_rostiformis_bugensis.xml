@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
 	<Topic>
 		<Species>
@@ -25,10 +24,10 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="NL">
-						<text><![CDATA[To be filled]]></text>
+						<text>To be filled</text>
 					</Description>
 					<Description language="ENG">
-						<text><![CDATA[To be filled]]></text>
+						<text>To be filled</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -38,7 +37,7 @@
 							<equation>min</equation>
 							<To>waterdepth_lakes</To>
 							<To>silt_fraction_waterbed</To>
-							<To>substrate</To>							
+							<To>substrate</To>
 							<To>orthophosphate_concentration</To>
 							<To>silt_concentration</To>
 						</From>
@@ -55,10 +54,13 @@
 					<ResponseCurve name="orthophosphate_concentration">
 						<inputLayers>
 							<layer name="orthophosphate_concentration">
+								<parameter_name>orthophosphate_concentration</parameter_name>
 								<parameter_cat>"Nutrient concentration"</parameter_cat>
-								<layer_filename>"orthophosphate_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"orthophosphate_concentration"</layer_filename>
 								<description>"Average orthophosphate concentration in water"</description>
 							</layer>
 						</inputLayers>
@@ -80,10 +82,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_orthophosphate_concentration">
+								<parameter_name>HSI_orthophosphate_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_orthophosphate_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_orthophosphate_concentration"</layer_filename>
 								<description>"HSI based on orthophosphate concentration"</description>
 							</layer>
 						</outputLayers>
@@ -91,17 +96,23 @@
 					<FormulaBased name="substrate_suitability">
 						<inputLayers>
 							<layer name="HSI_silt_fraction">
+								<parameter_name>HSI_silt_fraction</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_silt_fraction"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_silt_fraction"</layer_filename>
 								<description>"HSI based on silt fraction"</description>
 							</layer>
 							<layer name="HSI_shell_coverage">
+								<parameter_name>HSI_shell_coverage</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_shell_coverage</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_shell_coverage</layer_filename>
 								<description>"HSI based on shell content coverage of the waterbed"</description>
 							</layer>
 						</inputLayers>
@@ -120,30 +131,36 @@
 							</Equation>
 							<Parameters>
 								<valuesScalar layername="HSI_shell_coverage" type="scalar">
-									<parameter  min_input="0" max_input="1" />
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
 								<valuesScalar layername="HSI_silt_fraction" type="scalar">
-									<parameter  min_input="0" max_input="1" />
+									<parameter min_input="0" max_input="1"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_substrate_suitability">
+								<parameter_name>HSI_substrate_suitability</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_substrate_suitability"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_substrate_suitability"</layer_filename>
 								<description>"HSI based on substrate suitability for Quagga mussels"</description>
 							</layer>
-						</outputLayers>						
+						</outputLayers>
 					</FormulaBased>
 					<ResponseCurve name="silt_fraction_waterbed">
 						<inputLayers>
 							<layer name="silt_fraction">
+								<parameter_name>silt_fraction</parameter_name>
 								<parameter_cat>"Waterbed substrate"</parameter_cat>
-								<layer_filename>"silt_fraction_waterbed"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"percentage"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"silt_fraction_waterbed"</layer_filename>
 								<description>"Average silt content in water bed"</description>
 							</layer>
 						</inputLayers>
@@ -156,17 +173,20 @@
 								<reference author="K.E. van de Wolfshaar, M. Haasnoot" year="2014" title="" journal="" identification=""/>
 							</references>
 							<valuesRangeCategorical>
-								<parameter rangemin_input="0" rangemax_input="10"  input_cat="slibarm" output="0.753" output_cat=""/>
-								<parameter rangemin_input="10" rangemax_input="25"  input_cat="matig slibrijk" output="0.6" output_cat=""/>
-								<parameter rangemin_input="25" rangemax_input="100"  input_cat="slibrijk" output="0.3" output_cat=""/>
+								<parameter rangemin_input="0" rangemax_input="10" input_cat="slibarm" output="0.753" output_cat=""/>
+								<parameter rangemin_input="10" rangemax_input="25" input_cat="matig slibrijk" output="0.6" output_cat=""/>
+								<parameter rangemin_input="25" rangemax_input="100" input_cat="slibrijk" output="0.3" output_cat=""/>
 							</valuesRangeCategorical>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_silt_fraction">
+								<parameter_name>HSI_silt_fraction</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_silt_fraction"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_silt_fraction"</layer_filename>
 								<description>"HSI based on silt fraction"</description>
 							</layer>
 						</outputLayers>
@@ -174,10 +194,13 @@
 					<ResponseCurve name="shell_coverage">
 						<inputLayers>
 							<layer name="shell_coverage">
+								<parameter_name>shell_coverage</parameter_name>
 								<parameter_cat>"Waterbed substrate"</parameter_cat>
-								<layer_filename>"shell_substrate"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"ml/m2"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"shell_substrate"</layer_filename>
 								<description>"Average shell substrate coverage of waterbed"</description>
 							</layer>
 						</inputLayers>
@@ -200,10 +223,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_shell_coverage">
+								<parameter_name>HSI_shell_coverage</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_shell_coverage</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_shell_coverage</layer_filename>
 								<description>"HSI based on shell content coverage of the waterbed"</description>
 							</layer>
 						</outputLayers>
@@ -211,10 +237,13 @@
 					<ResponseCurve name="silt_concentration">
 						<inputLayers>
 							<layer name="ISS_concentration">
+								<parameter_name>ISS_concentration</parameter_name>
 								<parameter_cat>"Suspended solids"</parameter_cat>
-								<layer_filename>"inorganic_suspended_solids"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"inorganic_suspended_solids"</layer_filename>
 								<description>"Average silt concentration in water"</description>
 							</layer>
 						</inputLayers>
@@ -238,21 +267,27 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_silt_concentration">
+								<parameter_name>HSI_silt_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_silt_concentration"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_silt_concentration"</layer_filename>
 								<description>"HSI based on silt concentration in water column"</description>
 							</layer>
 						</outputLayers>
-					</ResponseCurve>	
+					</ResponseCurve>
 					<ResponseCurve name="waterdepth_lakes">
 						<inputLayers>
 							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 						</inputLayers>
@@ -275,10 +310,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth_lakes_quaggamussel">
+								<parameter_name>HSI_waterdepth_lakes_quaggamussel</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_waterdepth_lakes_quaggamussel"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_waterdepth_lakes_quaggamussel"</layer_filename>
 								<description>"HSI based on waterdepth for quagga mussels in lakes"</description>
 							</layer>
 						</outputLayers>
@@ -289,10 +327,10 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="NL">
-			<text><![CDATA[To be filled]]></text>
+			<text>To be filled</text>
 		</Description>
 		<Description language="ENG">
-			<text><![CDATA[To be filled]]></text>
+			<text>To be filled</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>
@@ -305,7 +343,7 @@
 		<reference author="Noordhuis, R. en EJ. Houwing" year="2003" title="Oorzaken en gevolgen van een vermoedelijke crash met betrekking tot waterkwaliteit, slibhuishouding en natuurwaarden." journal="RIZA, Lelystad" identification="RIZA rapport 2003.016">
 		</reference>
 		<reference author="Van de Wolfshaar, K.E., M. Haasnoot" year="2007" title="Toetsing dosis-effect relaties HABITAT. Pilot voor het Markermeer en de Voordelta." journal="WL | Delft Hydraulics" identification="WL-report Q4327">
-			<html><![CDATA["http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"]]></html>
+			<html>"http://public.deltares.nl/download/attachments/16384257/Van+de+Wolfshaar+en+Haasnoot+2007.pdf?version=1"</html>
 		</reference>
 		<reference author="Strayer, D.L." year="1991" title=" Projected distribution of the zebra mussel. Dreissana polymorpha, in North America." journal="Can. J. Fish. Aquati. Sci." identification="48:1389-1395">
 		</reference>
@@ -314,16 +352,16 @@
 		<reference author="Sprung, M." year="1994" title="The other life: An account of present knowledge of the larval phase of Dreissana polymorpha." journal="Zebra Myssels, biology, impacts and control." identification="Chapter 2 pp 39-53">
 		</reference>
 		<reference author="Dionisio, M." year="2009" title="Memo: Invloed van slibconcentratie op mosselfiltratie" journal="Deltares" identification="-">
-			<html><![CDATA["https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962&preview=/25722962/25952424/Memo%20Slibinvloed%20driehoeksmosselen.doc#Driehoeksmossel-Dreissenapolymorpha+quagga-3"]]></html>
+			<html>"https://publicwiki.deltares.nl/pages/viewpage.action?pageId=25722962&amp;preview=/25722962/25952424/Memo%20Slibinvloed%20driehoeksmosselen.doc#Driehoeksmossel-Dreissenapolymorpha+quagga-3"</html>
 		</reference>
 		<reference author="Haasnoot et al" year="2005" title="Seizoensgebonden Peilen in het IJsselmeergbied" journal="Deltares" identification="-">
-			<html><![CDATA[http://public.deltares.nl/download/attachments/16384257/Haasnoot+et+al+2005.pdf?version=1]]></html>
+			<html>http://public.deltares.nl/download/attachments/16384257/Haasnoot+et+al+2005.pdf?version=1</html>
 		</reference>
 		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten" journal="Deltares" identification="-">
-			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf]]></html>
+			<html>https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+v4.pdf</html>
 		</reference>
 		<reference author="Zuidam, B. van" year="2014" title="Upgrade kennisregels waterplanten - bijlage" journal="Deltares" identification="-">
-			<html><![CDATA[https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf]]></html>
+			<html>https://publicwiki.deltares.nl/download/attachments/25722892/Rapportage+kennisregels+-+bijlage+v3.pdf</html>
 		</reference>
 	</Documentation>
 	<DataSources/>

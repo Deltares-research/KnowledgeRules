@@ -58,11 +58,14 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 					<ResponseCurve name="Flow_velocity_general">
 						<inputLayers>
 							<layer name="Flow_velocity_general">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Flow_velocity_general</layer_filename>
+								<parameter_name>Flow_velocity_general</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Flow_velocity_general</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -86,22 +89,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Flow_velocity_general">
+								<parameter_name>HSI_Flow_velocity_general</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Flow_velocity_general</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Flow_velocity_general</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Acidity">
 						<inputLayers>
 							<layer name="Acidity">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Acidity</layer_filename>
+								<parameter_name>Acidity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"pH"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Acidity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -121,22 +130,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Acidity">
+								<parameter_name>HSI_Acidity</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Acidity</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Acidity</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Oxygen_concentration">
 						<inputLayers>
 							<layer name="Oxygen_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Oxygen_concentration</layer_filename>
+								<parameter_name>Oxygen_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Oxygen_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -155,22 +170,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Oxygen_concentration">
+								<parameter_name>HSI_Oxygen_concentration</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Oxygen_concentration</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Oxygen_concentration</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Passability_fish_ladder">
 						<inputLayers>
 							<layer name="Passability_fish_ladder">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Passability_fish_ladder</layer_filename>
+								<parameter_name>Passability_fish_ladder</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Passability_fish_ladder</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -193,22 +214,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Passability_fish_ladder">
+								<parameter_name>HSI_Passability_fish_ladder</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Passability_fish_ladder</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Passability_fish_ladder</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Barriers_upwards">
 						<inputLayers>
 							<layer name="Barriers_upwards">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Barriers_upwards</layer_filename>
+								<parameter_name>Barriers_upwards</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Barriers_upwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -227,22 +254,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Barriers_upwards">
+								<parameter_name>HSI_Barriers_upwards</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Barriers_upwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Barriers_downwards">
 						<inputLayers>
 							<layer name="Barriers_downwards">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Barriers_downwards</layer_filename>
+								<parameter_name>Barriers_downwards</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Barriers_downwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -261,22 +294,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Barriers_downwards">
+								<parameter_name>HSI_Barriers_downwards</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Barriers_downwards</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Flow_velocity_spawning">
 						<inputLayers>
 							<layer name="Flow_velocity_spawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Flow_velocity_spawning</layer_filename>
+								<parameter_name>Flow_velocity_spawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m/s</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Flow_velocity_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -296,22 +335,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Flow_velocity_spawning">
+								<parameter_name>HSI_Flow_velocity_spawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Flow_velocity_spawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Flow_velocity_spawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Substrate_spawning_area">
 						<inputLayers>
 							<layer name="Substrate_spawning_area">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Substrate_spawning_area</layer_filename>
+								<parameter_name>Substrate_spawning_area</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"category"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Substrate_spawning_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -332,22 +377,28 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Substrate_spawning_area">
+								<parameter_name>HSI_Substrate_spawning_area</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Substrate_spawning_area</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Substrate_spawning_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="Depth_spawning_area">
 						<inputLayers>
 							<layer name="Depth_spawning_area">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>Depth_spawning_area</layer_filename>
+								<parameter_name>Depth_spawning_area</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>Depth_spawning_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -367,11 +418,14 @@ De dosis-effect relaties voor migratie kunnen aanvullend zijn maar de eerste beh
 						</Content>
 						<outputLayers>
 							<layer name="HSI_Depth_spawning_area">
+								<parameter_name>HSI_Depth_spawning_area</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_Depth_spawning_area</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_Depth_spawning_area</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

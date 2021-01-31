@@ -45,10 +45,13 @@ TEST]]></text>
 					<ResponseCurve name="chloride_concentration">
 						<inputLayers>
 							<layer name="chloride_concentration">
+								<parameter_name>"Chloride"</parameter_name>
 								<parameter_cat>"Salinity"</parameter_cat>
-								<layer_filename>"chloride_concentration"</layer_filename>
+								<period>"YearRnd"</period>
+								<position>"WaterColumn"</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
+								<layer_filename>"chloride_concentration"</layer_filename>
 								<description>"Chloride concentration measured in water in mg per liter"</description>
 							</layer>
 						</inputLayers>
@@ -69,10 +72,13 @@ TEST]]></text>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_chloride_concentration">
+								<parameter_name>"HSI_chloride_concentration"</parameter_name>
 								<parameter_cat>"HSI"</parameter_cat>
-								<layer_filename>HSI_chloride_concentration</layer_filename>
+								<period>"YearRnd"</period>
+								<position>"Undefined"</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_chloride_concentration</layer_filename>
 								<description>"HSI based on chloride"</description>
 							</layer>
 						</outputLayers>
@@ -80,10 +86,13 @@ TEST]]></text>
 					<ResponseCurve name="soil_type">
 						<inputLayers>
 							<layer name="soil_type">
+								<parameter_name>"Soil"</parameter_name>
 								<parameter_cat>"Waterbed soil"</parameter_cat>
-								<layer_filename>soil_type</layer_filename>
+								<period>"YearRnd"</period>
+								<position>"BenthicZone"</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
+								<layer_filename>soil_type</layer_filename>
 								<description>"Average soil type of waterbed soil in categories"</description>
 							</layer>
 						</inputLayers>
@@ -105,10 +114,13 @@ TEST]]></text>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_soil_type">
+								<parameter_name>HSI_soil_type</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>"HSI_soil_type"</layer_filename>
+								<period>"YearRnd"</period>
+								<position>"Undefined"</position>								
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>"HSI_soil_type"</layer_filename>
 								<description>"HSI based on soil type"</description>
 							</layer>
 						</outputLayers>
@@ -116,10 +128,13 @@ TEST]]></text>
 					<ResponseCurve name="silt_fraction">
 						<inputLayers>
 							<layer name="silt_fraction">
+								<parameter_name>"Silt"</parameter_name>
 								<parameter_cat>"Waterbed soil"</parameter_cat>
-								<layer_filename>"silt_fraction"</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterColumn</position>
 								<unit>"fraction / description"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"silt_fraction"</layer_filename>
 								<description>"Average silt content in waterbed soil"</description>
 							</layer>
 						</inputLayers>
@@ -139,10 +154,13 @@ TEST]]></text>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_silt_fraction">
+								<parameter_name>HSI Silt</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_silt_fraction</layer_filename>
+								<period>YearRnd</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_silt_fraction</layer_filename>
 								<description>"HSI based on silt fraction"</description>
 							</layer>
 						</outputLayers>
@@ -150,10 +168,13 @@ TEST]]></text>
 					<ResponseCurve name="waterdepth_lakes">
 						<inputLayers>
 							<layer name="waterdepth_lakes">
+								<parameter_name>"Waterdepth"</parameter_name>
 								<parameter_cat>"Waterdepth"</parameter_cat>
-								<layer_filename>"waterdepth_lakes"</layer_filename>
+								<period>YearRnd</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"waterdepth_lakes"</layer_filename>
 								<description>"Waterdepth in lakes in meters"</description>
 							</layer>
 						</inputLayers>
@@ -176,10 +197,13 @@ TEST]]></text>
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdepth_lakes">
+								<parameter_name>"HSI waterdepth"</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdepth_in_lakes</layer_filename>
+								<period>YearRnd</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
+								<layer_filename>HSI_waterdepth_in_lakes</layer_filename>
 								<description>HSI based on waterdepth in lakes</description>
 							</layer>
 						</outputLayers>
@@ -187,31 +211,43 @@ TEST]]></text>
 					<FormulaBased name="vegetation_extinction">
 						<inputLayers>
 							<layer name="subarea">
+								<parameter_name>Subarea</parameter_name>
 								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas_markermeer</layer_filename>
+								<period>YearRnd</period>
+								<position>Undefined</position>
 								<unit>categories</unit>
 								<statistic>"constant"</statistic>
+								<layer_filename>subareas_markermeer</layer_filename>
 								<description>"Subareas for the Markermeer area that influence the aquatic plant potential calculation"</description>
 							</layer>
 							<layer name="extinction">
+								<parameter_name>Extinction</parameter_name>
 								<parameter_cat>"Water clearity"</parameter_cat>
-								<layer_filename>extinction</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterColumn</position>
 								<unit>Kd</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>extinction</layer_filename>
 								<description>"Extinction in the water column in Kd"</description>
 							</layer>
 							<layer name="waterdepth_summer">
+								<parameter_name>Waterdepth</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>JunToAug_NH</period>
+								<position>WaterColumn</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 							<layer name="fetch">
+								<parameter_name>"Fetch"</parameter_name>
 								<parameter_cat>"Wind"</parameter_cat>
-								<layer_filename>fetch_length</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_length</layer_filename>
 								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
@@ -250,10 +286,13 @@ TEST]]></text>
 						</Content>
 						<outputLayers>
 							<layer name="P_vegetation">
+								<parameter_name>Chance of Vegetation</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_vegetation"</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterBody</position>
 								<unit>"factor"</unit>
 								<statistic>average</statistic>
+								<layer_filename>"P_vegetation"</layer_filename>
 								<description>"Likeliness of presence for a specific vegetation species"</description>
 							</layer>
 						</outputLayers>
@@ -261,66 +300,93 @@ TEST]]></text>
 					<FormulaBased name="Fetch">
 						<inputLayers>
 							<layer name="North">
+								<parameter_name>Northern wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_North</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_North</layer_filename>
 								<description>"Fetch in the Northern direction"</description>
 							</layer>
 							<layer name="NorthEast">
+								<parameter_name>NorthEastern wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_NorthEast</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_NorthEast</layer_filename>
 								<description>"Fetch in the NorthEast direction"</description>
 							</layer>
 							<layer name="East">
+								<parameter_name>Eastern wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_East</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_East</layer_filename>
 								<description>"Fetch in the East direction"</description>
 							</layer>
 							<layer name="SouthEast">
+								<parameter_name>SouthEastern wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_SouthEast</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_SouthEast</layer_filename>
 								<description>"Fetch in the SouthEast direction"</description>
 							</layer>							
 							<layer name="South">
+								<parameter_name>Southern wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_South</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_South</layer_filename>
 								<description>"Fetch in the South direction"</description>
 							</layer>
 							<layer name="SouthWest">
+								<parameter_name>SouthWestern wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_SouthWest</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_SouthWest</layer_filename>
 								<description>"Fetch in the SouthWest direction"</description>
 							</layer>
 							<layer name="West">
+								<parameter_name>Western wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_West</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_West</layer_filename>
 								<description>"Fetch in the West direction"</description>
 							</layer>
 							<layer name="NorthWest">
+								<parameter_name>NorthWestern wind fetch</parameter_name>
 								<parameter_cat>"Wind fetch"</parameter_cat>
-								<layer_filename>fetch_NorthWest</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterSurface</position>
 								<unit>m/s</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_NorthWest</layer_filename>
 								<description>"Fetch in the NorthWest direction"</description>
 							</layer>
 							<layer name="waterdepth_summer_cm">
+								<parameter_name>"Water depth"</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer_cm</layer_filename>
+								<period>YearRnd</period>
+								<position>WaterColumn</position>
 								<unit>cm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer_cm</layer_filename>
 								<description>"Water depth in the summer in centimeter"</description>
 							</layer>
 						</inputLayers>
@@ -370,10 +436,13 @@ TEST]]></text>
 						</Content>
 						<outputLayers>
 							<layer name="fetch">
+								<parameter_name>Fetch</parameter_name>
 								<parameter_cat>"Wind"</parameter_cat>
-								<layer_filename>fetch_length</layer_filename>
+								<period>"YearRnd"</period>
+								<position>WaterSurface</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_length</layer_filename>
 								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</outputLayers>
@@ -381,24 +450,33 @@ TEST]]></text>
 					<MultipleReclassification name="vegetation_types">
 						<inputLayers>
 							<layer name="veg_A">
+								<parameter_name>"Vegetation class A"</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_A_presence"</layer_filename>
+								<period>"YearRnd"</period>
+								<position>LandWaterInterface</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_A_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type A</description>
 							</layer>
 							<layer name="veg_B">
+								<parameter_name>"Vegetation class B"</parameter_name>
 								<parameter_cat>"vegetation"</parameter_cat>
-								<layer_filename>"veg_B_presence"</layer_filename>
+								<period>"YearRnd"</period>
+								<position>LandWaterInterface</position>
 								<unit>boolean</unit>
 								<statistic>average</statistic>
+								<layer_filename>"veg_B_presence"</layer_filename>
 								<description>A boolean presence approximation of vegetation type B</description>
 							</layer>
 							<layer name="chloride_concentration">
+								<parameter_name>"Chloride concentration"</parameter_name>
 								<parameter_cat>"salinity"</parameter_cat>
-								<layer_filename>"chloride_concentration"</layer_filename>
+								<period>"YearRnd"</period>
+								<position>WaterColumn</position>
 								<unit>mg/L</unit>
 								<statistic>average</statistic>
+								<layer_filename>"chloride_concentration"</layer_filename>
 								<description>Chloride concentration in surface water</description>
 							</layer>
 						</inputLayers>
@@ -433,10 +511,13 @@ TEST]]></text>
 						</Content>
 						<outputLayers>
 							<layer name="vegetation_types">
+								<parameter_name>Vegetation types</parameter_name>
 								<parameter_cat>"Vegetation"</parameter_cat>						
-								<layer_filename>"vegetation_types"</layer_filename>
+								<period>"YearRnd"</period>
+								<position>LandWaterInterface</position>
 								<unit>categories</unit>
 								<statistic>average</statistic>
+								<layer_filename>"vegetation_types"</layer_filename>
 								<description>"Vegetation types according to ..."</description>
 							</layer>
 						</outputLayers>

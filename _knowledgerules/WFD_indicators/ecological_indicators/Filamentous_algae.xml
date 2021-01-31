@@ -54,10 +54,13 @@
 					<FormulaBased name="HGI_filam_algae">
 						<inputLayers>
 							<layer name="P_filam_algae">
+								<parameter_name>P_filam_algae</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_filamentous_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"P_filamentous_algae"</layer_filename>
 								<description>"Likeliness of presence for presence of filamentous algae"</description>
 							</layer>
 						</inputLayers>
@@ -82,10 +85,13 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_filam_algae">
+								<parameter_name>HSI_filam_algae</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"HSI_filam_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"-"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"HSI_filam_algae"</layer_filename>
 								<description>"Habitat suitability for the presence of filamentous algae"</description>
 							</layer>
 						</outputLayers>
@@ -93,31 +99,43 @@
 					<FormulaBased name="P_filam_algae_visibility">
 						<inputLayers>
 							<layer name="subarea_factor_filam_algae_visibility">
+								<parameter_name>subarea_factor_filam_algae_visibility</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for filamentous algae prediction based on visibility"</description>
 							</layer>
 							<layer name="visibility">
+								<parameter_name>visibility</parameter_name>
 								<parameter_cat>"Water clearity"</parameter_cat>
-								<layer_filename>visibility</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>dm</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>visibility</layer_filename>
 								<description>"Light penetration depth in the water column in decimeters"</description>
 							</layer>
 							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 							<layer name="fetch">
+								<parameter_name>fetch</parameter_name>
 								<parameter_cat>"Wind"</parameter_cat>
-								<layer_filename>fetch_length</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_length</layer_filename>
 								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
@@ -135,32 +153,35 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesConstant layername = "subarea_factor_filam_algae_visibility" type="constant">
+								<valuesConstant layername="subarea_factor_filam_algae_visibility" type="constant">
 									<parameter input="-0.050028014" input_cat="MIJ" output="-0.050028014"/>
 									<parameter input="0.481107461" input_cat="MBIJ" output="0.481107461"/>
 									<parameter input="-1.70762488" input_cat="MGZ" output="-1.70762488"/>
 									<parameter input="0.745918564" input_cat="MHRDz" output="0.745918564"/>
 									<parameter input="0.880361938" input_cat="MHE" output="0.880361938"/>
-									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
+									<parameter input="0.0" input_cat="MWenmid" output="0.0"/>
 									<parameter input="-1.065562397" input_cat="MHH" output="-1.065562397"/>
 								</valuesConstant>
-								<valuesScalar layername = "waterdepth_summer" type="scalar">
+								<valuesScalar layername="waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername = "visibility" type="scalar">
+								<valuesScalar layername="visibility" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername = "fetch" type="scalar">
+								<valuesScalar layername="fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="P_filam_algae">
+								<parameter_name>P_filam_algae</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_filamentous_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"P_filamentous_algae"</layer_filename>
 								<description>"Likeliness of presence for presence of filamentous algae"</description>
 							</layer>
 						</outputLayers>
@@ -168,31 +189,43 @@
 					<FormulaBased name="P_filam_algae_extinction">
 						<inputLayers>
 							<layer name="subarea_factor_filam_algae_extinction">
+								<parameter_name>subarea_factor_filam_algae_extinction</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for filamentous algae prediction based on extinction"</description>
 							</layer>
 							<layer name="extinction">
+								<parameter_name>extinction</parameter_name>
 								<parameter_cat>"Water clearity"</parameter_cat>
-								<layer_filename>visibility</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>Kd</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>visibility</layer_filename>
 								<description>"Extinction in the water column in Kd"</description>
 							</layer>
 							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
 								<parameter_cat>"Water depth"</parameter_cat>
-								<layer_filename>waterdepth_summer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
 								<description>"Water depth in the summer in meters"</description>
 							</layer>
 							<layer name="fetch">
+								<parameter_name>fetch</parameter_name>
 								<parameter_cat>"Wind"</parameter_cat>
-								<layer_filename>fetch_length</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>m</unit>
 								<statistic>"average"</statistic>
+								<layer_filename>fetch_length</layer_filename>
 								<description>"Prevailing wind fetch length in meters"</description>
 							</layer>
 						</inputLayers>
@@ -210,32 +243,35 @@
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesConstant layername = "subarea_factor_filam_algae_extinction" type="constant">
-									<parameter input = "0.116717843" input_cat ="MIJ" output="0.116717843"/>		
-									<parameter input = "0.199633777" input_cat ="MBIJ" output="0.199633777"/>
-									<parameter input = "-1.816998776" input_cat ="MGZ" output="-1.816998776"/>
-									<parameter input = "0.557899615" input_cat = "MHRDz" output="0.557899615"/>
-									<parameter input = "-1.096343135" input_cat ="MHE" output="-1.096343135"/>
-									<parameter input= "0.0"               input_cat ="MWenmid" output="0.0"/>
-									<parameter input = "-1.268619697" input_cat = "MHH" output="-1.268619697"/>
+								<valuesConstant layername="subarea_factor_filam_algae_extinction" type="constant">
+									<parameter input="0.116717843" input_cat="MIJ" output="0.116717843"/>
+									<parameter input="0.199633777" input_cat="MBIJ" output="0.199633777"/>
+									<parameter input="-1.816998776" input_cat="MGZ" output="-1.816998776"/>
+									<parameter input="0.557899615" input_cat="MHRDz" output="0.557899615"/>
+									<parameter input="-1.096343135" input_cat="MHE" output="-1.096343135"/>
+									<parameter input="0.0" input_cat="MWenmid" output="0.0"/>
+									<parameter input="-1.268619697" input_cat="MHH" output="-1.268619697"/>
 								</valuesConstant>
-								<valuesScalar layername = "waterdepth_summer" type="scalar">
+								<valuesScalar layername="waterdepth_summer" type="scalar">
 									<parameter min_input="0" max_input="3.5"/>
 								</valuesScalar>
-								<valuesScalar layername = "extinction" type="scalar">
+								<valuesScalar layername="extinction" type="scalar">
 									<parameter min_input="0" max_input="10"/>
 								</valuesScalar>
-								<valuesScalar layername = "fetch" type="scalar">
+								<valuesScalar layername="fetch" type="scalar">
 									<parameter min_input="0" max_input="50000"/>
 								</valuesScalar>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="P_filam_algae">
+								<parameter_name>P_filam_algae</parameter_name>
 								<parameter_cat>Vegetation</parameter_cat>
-								<layer_filename>"P_filamentous_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"P_filamentous_algae"</layer_filename>
 								<description>"Likeliness of presence for presence of filamentous algae"</description>
 							</layer>
 						</outputLayers>
@@ -243,10 +279,13 @@
 					<MultipleReclassification name="subarea_factor_filam_algae_visibility">
 						<inputLayers>
 							<layer name="subarea">
+								<parameter_name>subarea</parameter_name>
 								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas_markermeer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>"constant"</statistic>
+								<layer_filename>subareas_markermeer</layer_filename>
 								<description>"Subareas for the Markermeer area that influence the filamentous algae potential calculation"</description>
 							</layer>
 						</inputLayers>
@@ -258,23 +297,26 @@
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
 							<Parameters>
-								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input="1" input_cat="MIJ" output="-0.050028014" output_cat ="MIJ"/>
-									<parameter input="2" input_cat="MBIJ" output="0.481107461" output_cat ="MBIJ"/>
-									<parameter input="3" input_cat="MGZ" output="-1.70762488" output_cat ="MGZ"/>
-									<parameter input="4" input_cat="MHRDz" output="0.745918564" output_cat ="MHRDz"/>
-									<parameter input="5" input_cat="MHE" output="0.880361938" output_cat ="MHE"/>
-									<parameter input="6" input_cat ="MWenmid" output="0.0"  output_cat ="MWenmid"/>
-									<parameter input="7" input_cat="MHH" output="-1.065562397" output_cat ="MHH"/>
+								<valuesCategorical layername="subarea" type="categorical">
+									<parameter input="1" input_cat="MIJ" output="-0.050028014" output_cat="MIJ"/>
+									<parameter input="2" input_cat="MBIJ" output="0.481107461" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="-1.70762488" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="0.745918564" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="0.880361938" output_cat="MHE"/>
+									<parameter input="6" input_cat="MWenmid" output="0.0" output_cat="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="-1.065562397" output_cat="MHH"/>
 								</valuesCategorical>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="subarea_factor_filam_algae_visibility">
+								<parameter_name>subarea_factor_filam_algae_visibility</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for filamentous algae prediction based on visibility"</description>
 							</layer>
 						</outputLayers>
@@ -282,10 +324,13 @@
 					<MultipleReclassification name="subarea_factor_filam_algae_extinction">
 						<inputLayers>
 							<layer name="subarea">
+								<parameter_name>subarea</parameter_name>
 								<parameter_cat>"Area specifics"</parameter_cat>
-								<layer_filename>subareas_markermeer</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>category</unit>
 								<statistic>"constant"</statistic>
+								<layer_filename>subareas_markermeer</layer_filename>
 								<description>"Subareas for the Markermeer area that influence the filamentous algae potential calculation"</description>
 							</layer>
 						</inputLayers>
@@ -297,23 +342,26 @@
 								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
 							</references>
 							<Parameters>
-								<valuesCategorical layername = "subarea" type="categorical">
-									<parameter input = "1" input_cat = "MIJ" output="0.116717843" output_cat ="MIJ"/>		
-									<parameter input = "2" input_cat = "MBIJ" output="0.199633777"  output_cat ="MBIJ"/>
-									<parameter input = "3" input_cat = "MGZ" output="-1.816998776" output_cat ="MGZ"/>
-									<parameter input = "4" input_cat = "MHRDz" output="0.557899615" output_cat ="MHRDz"/>
-									<parameter input = "5" input_cat = "MHE" output="-1.096343135" output_cat ="MHE"/>
-									<parameter input = "6" input_cat = "MWenmid" output="0.0" output_cat ="MWenmid"/>
-									<parameter input = "7" input_cat = "MHH" output="-1.268619697" output_cat ="MHH"/>								
+								<valuesCategorical layername="subarea" type="categorical">
+									<parameter input="1" input_cat="MIJ" output="0.116717843" output_cat="MIJ"/>
+									<parameter input="2" input_cat="MBIJ" output="0.199633777" output_cat="MBIJ"/>
+									<parameter input="3" input_cat="MGZ" output="-1.816998776" output_cat="MGZ"/>
+									<parameter input="4" input_cat="MHRDz" output="0.557899615" output_cat="MHRDz"/>
+									<parameter input="5" input_cat="MHE" output="-1.096343135" output_cat="MHE"/>
+									<parameter input="6" input_cat="MWenmid" output="0.0" output_cat="MWenmid"/>
+									<parameter input="7" input_cat="MHH" output="-1.268619697" output_cat="MHH"/>
 								</valuesCategorical>
 							</Parameters>
 						</Content>
 						<outputLayers>
 							<layer name="subarea_factor_filam_algae_extinction">
+								<parameter_name>subarea_factor_filam_algae_extinction</parameter_name>
 								<parameter_cat>Area specifics</parameter_cat>
-								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"factor"</unit>
 								<statistic>none</statistic>
+								<layer_filename>"subarea_factor_filamentous_algae"</layer_filename>
 								<description>"Factor for multiplication for specific subarea for filamentous algae prediction based on extinction"</description>
 							</layer>
 						</outputLayers>

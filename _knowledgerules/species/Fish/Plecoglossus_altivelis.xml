@@ -23,7 +23,7 @@
 				</Scope>
 				<SystemDescription>
 					<Description language="ENG">
-						<text><![CDATA[<h3 id="Ayu-Uncertainty and validation">Ayu-Uncertainty and validation</h1><p>These cause-effect relations have been compared to measurement data of the Ayu in the Tenryuu River, Japan.</p><h3 id="Ayu-Applicability">Applicability</h3><p>These knowledge rules should be applied with caution outside the Tenryuu River as local temporal habitat characteristics have been leading in assembeling these cause-effect relations.</p>]]></text>
+						<text>&lt;h3 id="Ayu-Uncertainty and validation"&gt;Ayu-Uncertainty and validation&lt;/h1&gt;&lt;p&gt;These cause-effect relations have been compared to measurement data of the Ayu in the Tenryuu River, Japan.&lt;/p&gt;&lt;h3 id="Ayu-Applicability"&gt;Applicability&lt;/h3&gt;&lt;p&gt;These knowledge rules should be applied with caution outside the Tenryuu River as local temporal habitat characteristics have been leading in assembeling these cause-effect relations.&lt;/p&gt;</text>
 					</Description>
 				</SystemDescription>
 				<SystemFlowDiagrams>
@@ -162,11 +162,14 @@
 					<ResponseCurve name="WaterDepthSpawning">
 						<inputLayers>
 							<layer name="WaterDepthSpawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdepth_watercolumn_median</layer_filename>
+								<parameter_name>WaterDepthSpawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>median</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdepth_watercolumn_median</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -189,22 +192,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_WaterDepthSpawning">
+								<parameter_name>HSI_WaterDepthSpawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_WaterDepthSpawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_WaterDepthSpawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocitySpawning">
 						<inputLayers>
 							<layer name="FlowVelocitySpawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>flowvelocity_watercolumn_median</layer_filename>
+								<parameter_name>FlowVelocitySpawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>median</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>flowvelocity_watercolumn_median</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -226,22 +235,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_FlowVelocitySpawning">
+								<parameter_name>HSI_FlowVelocitySpawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_FlowVelocitySpawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_FlowVelocitySpawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureSpawning">
 						<inputLayers>
 							<layer name="TemperatureSpawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>watertemperature_watercolumn_median</layer_filename>
+								<parameter_name>TemperatureSpawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>median</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>watertemperature_watercolumn_median</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -264,21 +279,27 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_TemperatureSpawning">
+								<parameter_name>HSI_TemperatureSpawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_TemperatureSpawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_TemperatureSpawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenSpawning">
 						<inputLayers>
 							<layer name="DissolvedOxygenSpawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygenconcentration_watercolumn_minimum</layer_filename>
+								<parameter_name>DissolvedOxygenSpawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>"minimum"</statistic>
+								<layer_filename>oxygenconcentration_watercolumn_minimum</layer_filename>
 								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
@@ -300,22 +321,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_DissolvedOxygenSpawning">
+								<parameter_name>HSI_DissolvedOxygenSpawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_DissolvedOxygenSpawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_DissolvedOxygenSpawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedMatterSpawning">
 						<inputLayers>
 							<layer name="SuspendedMatterSpawning">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>suspendedmatter_watercolumn_maximum</layer_filename>
+								<parameter_name>SuspendedMatterSpawning</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>"maximum"</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>suspendedmatter_watercolumn_maximum</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -337,22 +364,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_SuspendedMatterSpawning">
+								<parameter_name>HSI_SuspendedMatterSpawning</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_SuspendedMatterSpawning</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_SuspendedMatterSpawning</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthEgg">
 						<inputLayers>
 							<layer name="WaterDepthEgg">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>WaterDepthEgg</layer_filename>
+								<parameter_name>WaterDepthEgg</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>WaterDepthEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -373,22 +406,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_WaterDepthEgg">
+								<parameter_name>HSI_WaterDepthEgg</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_WaterDepthEgg</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_WaterDepthEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMaxEgg">
 						<inputLayers>
 							<layer name="FlowVelocityMaxEgg">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>flow_velocity_max</layer_filename>
+								<parameter_name>FlowVelocityMaxEgg</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>flow_velocity_max</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -410,22 +449,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_FlowVelocityMaxEgg">
+								<parameter_name>HSI_FlowVelocityMaxEgg</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_FlowVelocityMaxEgg</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_FlowVelocityMaxEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMinEgg">
 						<inputLayers>
 							<layer name="FlowVelocityMinEgg">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>flow_velocity_min</layer_filename>
+								<parameter_name>FlowVelocityMinEgg</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>flow_velocity_min</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -447,22 +492,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_FlowVelocityMinEgg">
+								<parameter_name>HSI_FlowVelocityMinEgg</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_FlowVelocityMinEgg</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_FlowVelocityMinEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureEgg">
 						<inputLayers>
 							<layer name="TemperatureEgg">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>TemperatureEgg</layer_filename>
+								<parameter_name>TemperatureEgg</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees celcius"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>TemperatureEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -485,21 +536,27 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_TemperatureEgg">
+								<parameter_name>HSI_TemperatureEgg</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_TemperatureEgg</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_TemperatureEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenEgg">
 						<inputLayers>
 							<layer name="Oxygen_concentration">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<parameter_name>Oxygen_concentration</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
+								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
 								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
@@ -521,22 +578,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_DissolvedOxygenEgg">
+								<parameter_name>HSI_DissolvedOxygenEgg</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_DissolvedOxygenEgg</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_DissolvedOxygenEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedSedimentEgg">
 						<inputLayers>
 							<layer name="SuspendedSedimentEgg">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>SuspendedSedimentEgg</layer_filename>
+								<parameter_name>SuspendedSedimentEgg</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>SuspendedSedimentEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -557,22 +620,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_SuspendedSedimentEgg">
+								<parameter_name>HSI_SuspendedSedimentEgg</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_SuspendedSedimentEgg</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_SuspendedSedimentEgg</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthDescending">
 						<inputLayers>
 							<layer name="WaterDepthDescending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>WaterDepthDescending</layer_filename>
+								<parameter_name>WaterDepthDescending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>WaterDepthDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -593,22 +662,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_WaterDepthDescending">
+								<parameter_name>HSI_WaterDepthDescending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_WaterDepthDescending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_WaterDepthDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureDescending">
 						<inputLayers>
 							<layer name="TemperatureDescending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>TemperatureDescending</layer_filename>
+								<parameter_name>TemperatureDescending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees celcius"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>TemperatureDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -631,22 +706,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_TemperatureDescending">
+								<parameter_name>HSI_TemperatureDescending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_TemperatureDescending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_TemperatureDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenDescending">
 						<inputLayers>
 							<layer name="DissolvedOxygenDescending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>DissolvedOxygenDescending</layer_filename>
+								<parameter_name>DissolvedOxygenDescending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>DissolvedOxygenDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -667,22 +748,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_DissolvedOxygenDescending">
+								<parameter_name>HSI_DissolvedOxygenDescending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_DissolvedOxygenDescending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_DissolvedOxygenDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedSedimentDescending">
 						<inputLayers>
 							<layer name="SuspendedSedimentDescending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>SuspendedSedimentDescending</layer_filename>
+								<parameter_name>SuspendedSedimentDescending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>SuspendedSedimentDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -703,22 +790,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_SuspendedSedimentDescending">
+								<parameter_name>HSI_SuspendedSedimentDescending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_SuspendedSedimentDescending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_SuspendedSedimentDescending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthAscending">
 						<inputLayers>
 							<layer name="WaterDepthAscending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>WaterDepthAscending</layer_filename>
+								<parameter_name>WaterDepthAscending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>WaterDepthAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -738,22 +831,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_WaterDepthAscending">
+								<parameter_name>HSI_WaterDepthAscending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_WaterDepthAscending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_WaterDepthAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMeanAscending">
 						<inputLayers>
 							<layer name="FlowVelocityMeanAscending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>FlowVelocityMeanAscending</layer_filename>
+								<parameter_name>FlowVelocityMeanAscending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>FlowVelocityMeanAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -775,22 +874,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_FlowVelocityMeanAscending">
+								<parameter_name>HSI_FlowVelocityMeanAscending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_FlowVelocityMeanAscending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_FlowVelocityMeanAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityMaxAscending">
 						<inputLayers>
 							<layer name="FlowVelocityMaxAscending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>FlowVelocityMaxAscending</layer_filename>
+								<parameter_name>FlowVelocityMaxAscending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>FlowVelocityMaxAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -812,22 +917,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_FlowVelocityMaxAscending">
+								<parameter_name>HSI_FlowVelocityMaxAscending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_FlowVelocityMaxAscending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_FlowVelocityMaxAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureAscending">
 						<inputLayers>
 							<layer name="TemperatureAscending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>TemperatureAscending</layer_filename>
+								<parameter_name>TemperatureAscending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees celsius"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>TemperatureAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -850,22 +961,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_TemperatureAscending">
+								<parameter_name>HSI_TemperatureAscending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_TemperatureAscending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_TemperatureAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenAscending">
 						<inputLayers>
 							<layer name="DissolvedOxygenAscending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>DissolvedOxygenAscending</layer_filename>
+								<parameter_name>DissolvedOxygenAscending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>DissolvedOxygenAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -886,22 +1003,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_DissolvedOxygenAscending">
+								<parameter_name>HSI_DissolvedOxygenAscending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_DissolvedOxygenAscending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_DissolvedOxygenAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedSedimentAscending">
 						<inputLayers>
 							<layer name="SuspendedSedimentAscending">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>SuspendedMatterAscending</layer_filename>
+								<parameter_name>SuspendedSedimentAscending</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>SuspendedMatterAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -922,22 +1045,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_SuspendedSedimentAscending">
+								<parameter_name>HSI_SuspendedSedimentAscending</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_SuspendedSedimentAscending</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_SuspendedSedimentAscending</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="WaterDepthFeeding">
 						<inputLayers>
 							<layer name="WaterDepthFeeding">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>WaterDepthFeeding</layer_filename>
+								<parameter_name>WaterDepthFeeding</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>WaterDepthFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -960,22 +1089,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_WaterDepthFeeding">
+								<parameter_name>HSI_WaterDepthFeeding</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_WaterDepthFeeding</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_WaterDepthFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="FlowVelocityFeeding">
 						<inputLayers>
 							<layer name="FlowVelocityFeeding">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>FlowVelocityFeeding</layer_filename>
+								<parameter_name>FlowVelocityFeeding</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>FlowVelocityFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -997,22 +1132,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_FlowVelocityFeeding">
+								<parameter_name>HSI_FlowVelocityFeeding</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_FlowVelocityFeeding</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_FlowVelocityFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="TemperatureFeeding">
 						<inputLayers>
 							<layer name="TemperatureFeeding">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>TemperatureFeeding</layer_filename>
+								<parameter_name>TemperatureFeeding</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"degrees celsius"</unit>
 								<statistic>mean</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>TemperatureFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -1035,22 +1176,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_TemperatureFeeding">
+								<parameter_name>HSI_TemperatureFeeding</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_TemperatureFeeding</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_TemperatureFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="DissolvedOxygenFeeding">
 						<inputLayers>
 							<layer name="DissolvedOxygenFeeding">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>DissolvedOxygenFeeding</layer_filename>
+								<parameter_name>DissolvedOxygenFeeding</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>DissolvedOxygenFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -1071,22 +1218,28 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_DissolvedOxygenFeeding">
+								<parameter_name>HSI_DissolvedOxygenFeeding</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_DissolvedOxygenFeeding</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_DissolvedOxygenFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="SuspendedSedimentFeeding">
 						<inputLayers>
 							<layer name="SuspendedSedimentFeeding">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>SuspendedSedimentFeeding</layer_filename>
+								<parameter_name>SuspendedSedimentFeeding</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>SuspendedSedimentFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -1107,11 +1260,14 @@
 						</Content>
 						<outputLayers>
 							<layer name="HSI_SuspendedSedimentFeeding">
+								<parameter_name>HSI_SuspendedSedimentFeeding</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_SuspendedSedimentFeeding</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_SuspendedSedimentFeeding</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
@@ -1121,14 +1277,14 @@
 	</Autecology>
 	<TopicDescription>
 		<Description language="ENG">
-			<text><![CDATA[<h3 id="Ayu.-Description">Description</h3><p>An omnivore, the ayu feeds on algae, crustaceans, insects, sponges, and worms. It feeds on algae that accumulates on the rocks, scraping it off the rocks with their saw-shaped teeth. Adults typically maintain a feeding territory, but the form restricted to lakes and associated streams is schooling.</p><h3 id="Ayu.-ReproductionAndDevelopment">Reproduction and Development</h3><p>Most populations of this species are amphidromous and breed in the lower part of rivers during the autumn, laying their eggs in small pits they dig in the gravel. The eggs hatch shortly after and the larvae are carried downriver to the sea. They overwinter in coastal regions, staying there until the spring where the young fish typically are about 6 cm (2.5 in) long and move back to the rivers. Here they reach 15–30 cm (6–12 in) by the summer. They reach maturity by the autumn and move down to the lower part of rivers to breed. Some die after breeding and only live one year, but others return to live in the ocean and may spawn up to three times, each time moving into the lower part of rivers in the autumn. In Japan, some populations live their entire life in freshwater, only moving between lakes and the associated streams where they breed. These have a more variable migration pattern, moving upstream from the lakes in the spring, summer or autumn. Although their larvae mostly stay within freshwater, some are carried downstream with the current to the sea and become part of the amphidromous populations. The freshwater-restricted populations typically reach an age of two or three years. During the breeding season the amphidromous and freshwater-restricted forms may occur together. Ayu are also stocked in reservoirs.</p><h3 id="Ayu.-Environmental criteria">Environmental criteria</h3><p>Although there are reports of ayu up to 70 cm (2.3 ft) long, a more typical maximum size for the species is about 30 cm (1 ft). The form restricted to freshwater is considerably smaller than the amphidromous form. The freshwater-restricted ayu of Lake Biwa that migrate into their spawning streams in the spring can reach up to about 15 cm (6 in) in length, but those that migrate later in the year, primarily in the autumn, only grow to 10 cm (4 in). This is caused by differences in the availability of food.</p>]]></text>
+			<text>&lt;h3 id="Ayu.-Description"&gt;Description&lt;/h3&gt;&lt;p&gt;An omnivore, the ayu feeds on algae, crustaceans, insects, sponges, and worms. It feeds on algae that accumulates on the rocks, scraping it off the rocks with their saw-shaped teeth. Adults typically maintain a feeding territory, but the form restricted to lakes and associated streams is schooling.&lt;/p&gt;&lt;h3 id="Ayu.-ReproductionAndDevelopment"&gt;Reproduction and Development&lt;/h3&gt;&lt;p&gt;Most populations of this species are amphidromous and breed in the lower part of rivers during the autumn, laying their eggs in small pits they dig in the gravel. The eggs hatch shortly after and the larvae are carried downriver to the sea. They overwinter in coastal regions, staying there until the spring where the young fish typically are about 6 cm (2.5 in) long and move back to the rivers. Here they reach 15–30 cm (6–12 in) by the summer. They reach maturity by the autumn and move down to the lower part of rivers to breed. Some die after breeding and only live one year, but others return to live in the ocean and may spawn up to three times, each time moving into the lower part of rivers in the autumn. In Japan, some populations live their entire life in freshwater, only moving between lakes and the associated streams where they breed. These have a more variable migration pattern, moving upstream from the lakes in the spring, summer or autumn. Although their larvae mostly stay within freshwater, some are carried downstream with the current to the sea and become part of the amphidromous populations. The freshwater-restricted populations typically reach an age of two or three years. During the breeding season the amphidromous and freshwater-restricted forms may occur together. Ayu are also stocked in reservoirs.&lt;/p&gt;&lt;h3 id="Ayu.-Environmental criteria"&gt;Environmental criteria&lt;/h3&gt;&lt;p&gt;Although there are reports of ayu up to 70 cm (2.3 ft) long, a more typical maximum size for the species is about 30 cm (1 ft). The form restricted to freshwater is considerably smaller than the amphidromous form. The freshwater-restricted ayu of Lake Biwa that migrate into their spawning streams in the spring can reach up to about 15 cm (6 in) in length, but those that migrate later in the year, primarily in the autumn, only grow to 10 cm (4 in). This is caused by differences in the availability of food.&lt;/p&gt;</text>
 		</Description>
 	</TopicDescription>
 	<Documentation>
 		<reference author="M. Van Oorschot, M. Yossef and M. Jeuken" year="2019" title="System understanding and ecological modelling of the Tenryuu River - Habitat suitability modeling of Ayu downstream of the Funagira dam and understanding the cascading system of the Tenryuu River" journal="Deltares report" identification="11203051-002-ZWS-0004">
 		</reference>
 		<reference author="Wikipedia" title="Ayu" identification="" year="2020" journal="">
-		<html><![CDATA[https://en.wikipedia.org/wiki/Ayu]]></html>
+			<html>https://en.wikipedia.org/wiki/Ayu</html>
 		</reference>
 	</Documentation>
 	<DataSources/>

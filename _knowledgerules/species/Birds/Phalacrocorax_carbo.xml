@@ -67,11 +67,14 @@ Niet aanwezig
 					<ResponseCurve name="afstand_tot_moeras">
 						<inputLayers>
 							<layer name="afstand_tot_moeras">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>afstand_tot_moeras</layer_filename>
+								<parameter_name>afstand_tot_moeras</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"km"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>afstand_tot_moeras</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -97,22 +100,28 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_afstand_tot_moeras">
+								<parameter_name>HSI_afstand_tot_moeras</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_afstand_tot_moeras</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_afstand_tot_moeras</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="waterdiepte">
 						<inputLayers>
 							<layer name="waterdiepte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>waterdiepte</layer_filename>
+								<parameter_name>waterdiepte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -137,22 +146,28 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_waterdiepte">
+								<parameter_name>HSI_waterdiepte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_waterdiepte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_waterdiepte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="doorzicht">
 						<inputLayers>
 							<layer name="doorzicht">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>doorzicht</layer_filename>
+								<parameter_name>doorzicht</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"cm"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>doorzicht</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -173,22 +188,28 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_doorzicht">
+								<parameter_name>HSI_doorzicht</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_doorzicht</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_doorzicht</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="totaalfosfaatgehalte">
 						<inputLayers>
 							<layer name="totaalfosfaatgehalte">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>totaalfosfaatgehalte</layer_filename>
+								<parameter_name>totaalfosfaatgehalte</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"mg/L P"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>totaalfosfaatgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -212,22 +233,28 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_totaalfosfaatgehalte">
+								<parameter_name>HSI_totaalfosfaatgehalte</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_totaalfosfaatgehalte</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_totaalfosfaatgehalte</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="PCB_gehalte_in_vis">
 						<inputLayers>
 							<layer name="PCB_gehalte_in_vis">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>PCB_gehalte_in_vis</layer_filename>
+								<parameter_name>PCB_gehalte_in_vis</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"PCB-gehalte in vis (microgram/kilogram)"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>PCB_gehalte_in_vis</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -250,22 +277,28 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_PCB_gehalte_in_vis">
+								<parameter_name>HSI_PCB_gehalte_in_vis</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_PCB_gehalte_in_vis</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_PCB_gehalte_in_vis</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="rust_nest">
 						<inputLayers>
 							<layer name="rust_nest">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>rust_nest</layer_filename>
+								<parameter_name>rust_nest</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"verstoringsafstand in moerasgebieden (m)"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>rust_nest</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -285,22 +318,28 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_rust_nest">
+								<parameter_name>HSI_rust_nest</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_rust_nest</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_rust_nest</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="rust_voedsel">
 						<inputLayers>
 							<layer name="rust_voedsel">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>rust_voedsel</layer_filename>
+								<parameter_name>rust_voedsel</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"verstoringsafstand op open water (m)"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>rust_voedsel</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -320,22 +359,28 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_rust_voedsel">
+								<parameter_name>HSI_rust_voedsel</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_rust_voedsel</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_rust_voedsel</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>
 					<ResponseCurve name="type_moeras">
 						<inputLayers>
 							<layer name="type_moeras">
-								<parameter_cat>TOBEFILLED</parameter_cat>
-								<layer_filename>type_moeras</layer_filename>
+								<parameter_name>type_moeras</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>"description"</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>type_moeras</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</inputLayers>
 						<Content>
@@ -356,11 +401,14 @@ Niet aanwezig
 						</Content>
 						<outputLayers>
 							<layer name="HSI_type_moeras">
+								<parameter_name>HSI_type_moeras</parameter_name>
 								<parameter_cat>HSI</parameter_cat>
-								<layer_filename>HSI_type_moeras</layer_filename>
+								<period>Undefined</period>
+								<position>Undefined</position>
 								<unit>factor</unit>
 								<statistic>average</statistic>
-								<description>TOBEFILLED</description>
+								<layer_filename>HSI_type_moeras</layer_filename>
+								<description>Undefined</description>
 							</layer>
 						</outputLayers>
 					</ResponseCurve>

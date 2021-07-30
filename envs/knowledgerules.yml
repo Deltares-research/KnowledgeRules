@@ -1,0 +1,16 @@
+name: knowledgerules
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.9
+  - matplotlib
+  - numpy
+  - pyqt
+  - lxml
+  - pandas
+  - asteval
+  - requests
+  - pip:
+    - blockdiag==2.0.1

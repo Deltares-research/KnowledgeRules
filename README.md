@@ -30,6 +30,7 @@ GitHub comes with a version-controlled environment, allowing to revert at any ti
 
 For a more elaborate description of the use of knowledge rules and their use see [Haasnoot, Verkade and De Bruijn (2009)](https://www.researchgate.net/publication/46723038_HABITAT_a_spatial_analysis_tool_for_environmental_impact_and_damage_assessment).
 
+
 ## License
 Copyright (c) 2021, Deltares
 

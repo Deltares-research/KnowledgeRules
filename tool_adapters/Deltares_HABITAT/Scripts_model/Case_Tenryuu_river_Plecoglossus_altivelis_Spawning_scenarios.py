@@ -6,7 +6,7 @@ from Libraries.HabitatFunctions import *
 from Libraries.AutecologyXMLFunctions import *
 
 # set location of input maps and output 
-WorkDir = "d:\\Projects\\check_outs\\KnowledgeRules_development\\"      #Where is your workdirectory?
+WorkDir = "d:\\Projects\\Habitat\\KnowledgeRules\\"      #Where is your workdirectory?
 print("Workdirectory : " + WorkDir)
 
 #region Aju cause-and-effect model

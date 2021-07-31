@@ -168,7 +168,7 @@
 								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>median</statistic>
-								<layer_filename>waterdepth_watercolumn_median</layer_filename>
+								<layer_filename>waterdepth_spawning_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -212,7 +212,7 @@
 								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>median</statistic>
-								<layer_filename>flowvelocity_watercolumn_median</layer_filename>
+								<layer_filename>flow_velocity_spawning_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -255,7 +255,7 @@
 								<position>Undefined</position>
 								<unit>"degrees Celsius"</unit>
 								<statistic>median</statistic>
-								<layer_filename>watertemperature_watercolumn_median</layer_filename>
+								<layer_filename>water_temperature_spawning_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -299,7 +299,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>"minimum"</statistic>
-								<layer_filename>oxygenconcentration_watercolumn_minimum</layer_filename>
+								<layer_filename>oxygen_concentration_watercolumn_spawning_min</layer_filename>
 								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
@@ -341,7 +341,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>"maximum"</statistic>
-								<layer_filename>suspendedmatter_watercolumn_maximum</layer_filename>
+								<layer_filename>suspended_sediment_spawning_max</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -384,7 +384,7 @@
 								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>minimum</statistic>
-								<layer_filename>WaterDepthEgg</layer_filename>
+								<layer_filename>waterdepth_egg_min</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -426,7 +426,7 @@
 								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>maximum</statistic>
-								<layer_filename>flow_velocity_max</layer_filename>
+								<layer_filename>flow_velocity_egg_max</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -469,7 +469,7 @@
 								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>minimum</statistic>
-								<layer_filename>flow_velocity_min</layer_filename>
+								<layer_filename>flow_velocity_egg_min</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -512,7 +512,7 @@
 								<position>Undefined</position>
 								<unit>"degrees celcius"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>TemperatureEgg</layer_filename>
+								<layer_filename>water_temperature_egg_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -556,7 +556,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<layer_filename>oxygen_concentration_watercolumn</layer_filename>
+								<layer_filename>oxygen_concentration_watercolumn_egg_min</layer_filename>
 								<description>"Minimum oxygen concentration in the watercolumn in milligrams per liter."</description>
 							</layer>
 						</inputLayers>
@@ -598,7 +598,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<layer_filename>SuspendedSedimentEgg</layer_filename>
+								<layer_filename>suspended_sediment_egg_max</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -640,7 +640,7 @@
 								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>WaterDepthDescending</layer_filename>
+								<layer_filename>waterdepth_descending_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -682,7 +682,7 @@
 								<position>Undefined</position>
 								<unit>"degrees celcius"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>TemperatureDescending</layer_filename>
+								<layer_filename>water_temperature_descending_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -726,7 +726,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<layer_filename>DissolvedOxygenDescending</layer_filename>
+								<layer_filename>oxygen_concentration_watercolumn_descending_min</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -768,7 +768,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<layer_filename>SuspendedSedimentDescending</layer_filename>
+								<layer_filename>suspended_sediment_descending_max</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -810,7 +810,7 @@
 								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>WaterDepthAscending</layer_filename>
+								<layer_filename>waterdepth_ascending_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -851,7 +851,7 @@
 								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>FlowVelocityMeanAscending</layer_filename>
+								<layer_filename>flow_velocity_ascending_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -894,7 +894,7 @@
 								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>maximum</statistic>
-								<layer_filename>FlowVelocityMaxAscending</layer_filename>
+								<layer_filename>flow_velocity_ascending_max</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -937,7 +937,7 @@
 								<position>Undefined</position>
 								<unit>"degrees celsius"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>TemperatureAscending</layer_filename>
+								<layer_filename>water_temperature_ascending_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -981,7 +981,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<layer_filename>DissolvedOxygenAscending</layer_filename>
+								<layer_filename>oxygen_concentration_watercolumn_ascending_min</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -1023,7 +1023,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<layer_filename>SuspendedMatterAscending</layer_filename>
+								<layer_filename>suspended_sediment_ascending_max</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -1065,7 +1065,7 @@
 								<position>Undefined</position>
 								<unit>"m"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>WaterDepthFeeding</layer_filename>
+								<layer_filename>waterdepth_feeding_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -1109,7 +1109,7 @@
 								<position>Undefined</position>
 								<unit>"m/s"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>FlowVelocityFeeding</layer_filename>
+								<layer_filename>flow_velocity_feeding_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -1152,7 +1152,7 @@
 								<position>Undefined</position>
 								<unit>"degrees celsius"</unit>
 								<statistic>mean</statistic>
-								<layer_filename>TemperatureFeeding</layer_filename>
+								<layer_filename>water_temperature_feeding_mean</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -1196,7 +1196,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>minimum</statistic>
-								<layer_filename>DissolvedOxygenFeeding</layer_filename>
+								<layer_filename>oxygen_concentration_watercolumn_feeding_min</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>
@@ -1238,7 +1238,7 @@
 								<position>Undefined</position>
 								<unit>"mg/l"</unit>
 								<statistic>maximum</statistic>
-								<layer_filename>SuspendedSedimentFeeding</layer_filename>
+								<layer_filename>suspended_sediment_feeding_max</layer_filename>
 								<description>Undefined</description>
 							</layer>
 						</inputLayers>

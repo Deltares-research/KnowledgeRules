@@ -41,6 +41,7 @@
 							<To>"SouthWest_Fetch_length"</To>
 							<To>"West_Fetch_length"</To>
 							<To>"NorthWest_Fetch_length"</To>
+							<To>"Waterdepth_in_cm"</To>
 						</From>
 					</FlowDiagram>
 				</SystemFlowDiagrams>
@@ -560,6 +561,52 @@
 								<statistic>"average"</statistic>
 								<layer_filename>fetch_NorthWest</layer_filename>
 								<description>"Fetch in the NorthWest direction"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="Waterdepth_in_cm">
+						<inputLayers>
+							<layer name="waterdepth_summer">
+								<parameter_name>waterdepth_summer</parameter_name>
+								<parameter_cat>"Water depth"</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer</layer_filename>
+								<description>"Water depth in the summer in meters"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>spatialequation</type>
+							<description>"Calculate the waterdepth in centimeter from meters"</description>
+							<author>"Marjolein Haasnoot"</author>
+							<date>2014-07-29</date>
+							<references>
+								<reference author="M. Haasnoot" year="2014" title="" identification="" journal=""/>
+							</references>
+							<Equation>
+								<SpatialEquation>
+									<spatialtool>PCRaster</spatialtool>
+									<equation>"waterdepth_summer * 100.0"</equation>
+								</SpatialEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername="waterdepth_summer" type="scalar">
+									<parameter min_input="0" max_input="30.0"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="waterdepth_summer_cm">
+								<parameter_name>waterdepth_summer_cm</parameter_name>
+								<parameter_cat>"Water depth"</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>m</unit>
+								<statistic>"average"</statistic>
+								<layer_filename>waterdepth_summer_cm</layer_filename>
+								<description>"Water depth in the summer in centimeters"</description>
 							</layer>
 						</outputLayers>
 					</FormulaBased>

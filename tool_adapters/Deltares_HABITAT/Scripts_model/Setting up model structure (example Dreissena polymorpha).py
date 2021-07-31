@@ -11,20 +11,20 @@ import xml.etree.ElementTree as ET # for reading and writing *.xml files
 from collections import OrderedDict 
 
 # set location of input maps and output 
-WorkDir = "d:\\Projects\\Habitat\\Marc_Project_habitat_dev_20200224\\" 
+WorkDir = "d:\\Projects\\Habitat\\KnowledgeRules\\"   #Where is your workdirectory? 
 print("Workdirectory : " + WorkDir)
 
 #Model
 model_name = "Test"
-InputDir = WorkDir + "Test_invoerfiles\\Maps\\"
-KnowledgeRuleDir = WorkDir + "Test_invoerfiles\\Response curves\\"
+InputDir = WorkDir + "tool_adapters\\Deltares_HABITAT\\example_maps\\"
+KnowledgeRuleDir = WorkDir + "_knowledgerules\\"
 OutputDir = WorkDir + "OutputMaps\\"
 
 #Vegetation types Northern Delta
-kr_file = "Dreissena_polymorpha.xml"
-topic_name = "Dreissena polymorpha"
-system_to_model = "adult"
-flow_diagram ="livingarea_stagnant_waters"
+kr_file = "species\\Molluscs\\Dreissena_polymorpha.xml"                   #which cause-effect model needs to be used?
+topic_name = "Dreissena polymorpha"                                       #what is the topic name for that model?
+system_to_model = "adult"                                                 #which System in that model should be used?
+flow_diagram ="livingarea_stagnant_waters"                                #which Flowdiagram in that model should be used?
 
 #endregion
 

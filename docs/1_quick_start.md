@@ -79,7 +79,7 @@ Make sure this tool is installed. The tool is free-ware and can be requested by 
 
 4. Before you can run the script you will need to update the WorkDir path.
 
-   Change : **WorkDir = "d:/Projects/check_outs/KnowledgeRules_development/"**
+   Change : **WorkDir = "d:/Projects/Habitat/KnowledgeRules/"**
    
    Into   : **WorkDir = "[Location unzipped KnowledgeRules download]/KnowledgeRules-master/"**
    

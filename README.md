@@ -10,8 +10,6 @@ This platform contains ways to:
 
 Some links:
 
-[The KnowledgeRules GitHub can be found here](https://github.com/Deltares/KnowledgeRules).
-
 [Documentation and installation instructions can be found here](https://deltares.github.io/KnowledgeRules/).
 
 [Wiki pages of storage of knowledge rules can be found here](https://publicwiki.deltares.nl/display/HBTHOME/Ecological+knowledge+base).
@@ -31,3 +29,12 @@ GitHub comes with a version-controlled environment, allowing to revert at any ti
 <sup>Figures 3 and 4 - Example of knowledge rules applicable to determine the habitat suitability of the Chabot bullhead (<em>Cottus perifretum</em>).</sub> 
 
 For a more elaborate description of the use of knowledge rules and their use see [Haasnoot, Verkade and De Bruijn (2009)](https://www.researchgate.net/publication/46723038_HABITAT_a_spatial_analysis_tool_for_environmental_impact_and_damage_assessment).
+
+## License
+Copyright (c) 2021, Deltares
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.

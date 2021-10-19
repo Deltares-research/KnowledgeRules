@@ -82,8 +82,9 @@ for level1_dir in level1_dirs :
 				xmltest = AutecologyXML(filename = path_xml_file)
 				xmltest._readxml()
 				xmltest._scan()
-			except:
+			except Exception as e:
 				validation_log.append(["XML could not be read with AutecologyXML : " + path_xml_file]) 
+				validation_log.append([e])
 				continue
 
 			#CHECK languages Names and descriptions
@@ -106,17 +107,19 @@ for level1_dir in level1_dirs :
 				#check scan of XML modeltypes
 				try:
 					xmltest._scan_modeltype(cur_modeltype)
-				except:
+				except Exception as e:
 					validation_log.append(["XML ModelType could not be scanned with AutecologyXML. File : " + path_xml_file +\
-										   " with ModelType " + str(cur_modeltype)]) 
+										   " with ModelType " + str(cur_modeltype)])
+					validation_log.append([e]) 
 					continue
 
 				for cur_system in xmltest.systems:
 					try:
 						xmltest._scan_knowledgerules(cur_modeltype, cur_system)
-					except:
+					except Exception as e:
 						validation_log.append(["XML Knowledgerules could not be scanned with AutecologyXML. File : " + path_xml_file +\
 										   " with ModelType " + str(cur_modeltype) + " and System " + str(cur_system)]) 
+						validation_log.append([e])
 						continue
 
 					#check if languages are correct

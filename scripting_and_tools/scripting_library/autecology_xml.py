@@ -115,6 +115,15 @@ class AutecologyXML(_File):
 				pass
 		return(full_string)
 
+
+	def is_number_tryexcept(self, s):
+		""" Returns True is string is a number. """
+		try:
+			float(s)
+			return True
+		except ValueError:
+		    	return False
+
 	def __init__(self, filename):
 		_File.__init__(self,filename)
 		self.xmlroot = None
@@ -707,7 +716,7 @@ class AutecologyXML(_File):
 
 		return(rule_dict)
 
-	def make_fb_first_parametersettings(self, fb_data):
+	def make_fb_first_parametersettings(self, fb_data, fb_name):
 		parametersettings = {}
 		for i, var in enumerate(fb_data["parameters"]):
 			if(var["type"] == "scalar"):
@@ -770,7 +779,9 @@ class AutecologyXML(_File):
 
 			#check if a string converts to float
 			if(not str(parametersettings[parametername]).lstrip("-").replace('.','',1).isdigit()):
-				raise ValueError("Value of parametersettings should be float or int : " + str(parametername))
+				raise ValueError("Value of parametersettings should be float or int : '" + str(parametername) + "'  '" + str(parametersettings[parametername]) + "'. " +\
+						"In knowledgerule : " + str(fb_data["name"]) + ".")
+
 			#fill formula dictionary
 			ToFormula.symtable[parametername] = float(parametersettings[parametername])
 
@@ -781,8 +792,9 @@ class AutecologyXML(_File):
 			result_calculation = []
 			for element in variableparameter[variable_key]:
 				#check if a string converts to float
-				if(not str(element).lstrip("-").replace('.','',1).isdigit()):
-					raise ValueError("Value of parametersettings should be float or int : " + str(parametername))
+				if(not self.is_number_tryexcept(element)):
+					raise ValueError("Value of result for calculation parametersettings should be float or int : '" + str(variable_key) + "'  '" + str(element) + "'. " +\
+						"In knowledgerule : " + str(fb_data["name"]) + ".")
 				
 				#fill formula dictionary
 				ToFormula.symtable[variable_key] = float(element)
@@ -1001,10 +1013,10 @@ class AutecologyXML(_File):
 			if(self.knowledgeRulesCategories[rule_nr] == self.XMLconvention["fb"]):
 				if(self.knowledgeRulesDict["rules"][rule_name]["type"] == "equation"):
 					rule = self.knowledgeRulesDict["rules"][rule_name]
-					(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule)
+					(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule, rule_name)
 					parametersettings = self.calculate_fb(rule, parametersettings, variableparameter)
 					try:
-						(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule)
+						(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule, rule_name)
 						parametersettings = self.calculate_fb(rule, parametersettings, variableparameter)
 					except:
 						raise RuntimeError("Equation of FormulaBased " + self.knowledgeRulesNames[rule_nr] + " is not yet correctly implemented.")

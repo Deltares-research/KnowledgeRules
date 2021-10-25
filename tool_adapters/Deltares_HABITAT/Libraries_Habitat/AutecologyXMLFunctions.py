@@ -642,7 +642,7 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 					if(nr4 == 0):
 						make_string = "<" + str(line[0]) + ", "+ str(line[0]) + "]"
 					else:
-						make_string = "<" + str(line[0]) + ", "+ str(line[0]) + "]"
+						make_string = "[" + str(line[0]) + ", "+ str(line[0]) + "]"
 
 					#add range / categorical value and HSI value	 
 					AddMultiTableReclassificationRow(knowledgerules_list[nr3], [make_string], float(line[2]), description = str(line[2]))
@@ -666,7 +666,7 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 					if(nr4 == 0):
 						make_string = "[" + str(line[0]) + ", "+ str(line[1]) + "]"
 					else:
-						make_string = "<" + str(line[0]) + ", "+ str(line[1]) + "]"
+						make_string = "[" + str(line[0]) + ", "+ str(line[1]) + "]"
 
 					#add range / categorical value and HSI value	 
 					AddMultiTableReclassificationRow(knowledgerules_list[nr3], [make_string], float(line[3]), description = str(line[2]))
@@ -723,7 +723,7 @@ def fill_knowledgerule_models(InputDir, response_curves_overview, knowledgerules
 					in_subline = False
 					for subline in line["data"]:
 						if((value_ls[0] == subline[4]) & (line["type"] == "range / categorical")):
-							make_string = "<" + str(subline[1]) + ", "+ str(subline[2]) + "]"
+							make_string = "[" + str(subline[1]) + ", "+ str(subline[2]) + "]"
 							output_values_df[nr_ls].append(make_string)
 							
 							in_subline = True

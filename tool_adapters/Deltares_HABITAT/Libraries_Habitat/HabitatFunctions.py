@@ -92,18 +92,6 @@ def AddBrokenLinearReclassificationRow(model, x, y):
 	"""Adds a row with x,y to the model"""
 	model.InputTables[0].Rows.Add(x,y)
 
-def AddSpatialStatisticsRow(model, value, description = ""):
-	"""Adds a row with values to the model"""
-	
-	# output value, Description, Grid1, Grid2 ... etc.
-	rowValues = [value, description]
-	array = _Array.CreateInstance(_Object,len(rowValues))
-	
-	for index in range(len(rowValues)):
-		array[index] = rowValues[index]
-		
-	model.InputTables[0].Rows.Add(array)
-
 def AddMultiTableReclassificationRow(model, values, output, description = ""):
 	"""Adds a row with values to the model"""
 	
@@ -116,6 +104,18 @@ def AddMultiTableReclassificationRow(model, values, output, description = ""):
 		
 	model.InputTables[0].Rows.Add(array)
 	
+def AddSpatialStatsReclassificationRow(model, values, description):
+    """Adds a row with values to the model"""
+
+    # output value, Description, Grid1, Grid2 ... etc.
+    rowValues = values + [description]  
+    array = _Array.CreateInstance(_Object,len(rowValues))
+
+    for index in range(len(rowValues)):
+        array[index] = rowValues[index]
+        
+    model.InputTables[0].Rows.Add(array)
+
 def ClearAllRows(model):
 	"""Clears all rows from the model"""
 	model.InputTables[0].Rows.Clear()
@@ -154,3 +154,16 @@ def WriteStatisticsToCSV(model, path, delimiter = ";"):
 			continue
 		row_list = row.replace("\t",delimiter)
 		csvfile.writelines(row_list)
+
+def CreateCurveFromCsv(path, model):
+	with open(path) as csvfile: 
+		lines = csv.reader(csvfile, delimiter=';')
+		print lines
+		first = True
+		for line in lines:
+			if (first):
+				# skip header
+				first = False
+				continue
+	
+			AddBrokenLinearReclassificationRow(model, line[0], line[1])

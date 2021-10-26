@@ -92,6 +92,18 @@ def AddBrokenLinearReclassificationRow(model, x, y):
 	"""Adds a row with x,y to the model"""
 	model.InputTables[0].Rows.Add(x,y)
 
+def AddSpatialStatisticsRow(model, value, description = ""):
+	"""Adds a row with values to the model"""
+	
+	# output value, Description, Grid1, Grid2 ... etc.
+	rowValues = [value, description]
+	array = _Array.CreateInstance(_Object,len(rowValues))
+	
+	for index in range(len(rowValues)):
+		array[index] = rowValues[index]
+		
+	model.InputTables[0].Rows.Add(array)
+
 def AddMultiTableReclassificationRow(model, values, output, description = ""):
 	"""Adds a row with values to the model"""
 	
@@ -132,3 +144,13 @@ def WriteToAsc(output, path):
                 rowValues.append(output[yValues[output.SizeY - i -1], xValues[j]])
 
             writer.writerow(rowValues)
+
+def WriteStatisticsToCSV(model, path, delimiter = ";"):
+    statistics_output = model.Statistics
+    with open(path, 'w') as csvfile:
+	statistics_lines = statistics_output.split("\n")
+	for nr, row in enumerate(statistics_lines):
+		if(nr == 0):
+			continue
+		row_list = row.replace("\t",delimiter)
+		csvfile.writelines(row_list)

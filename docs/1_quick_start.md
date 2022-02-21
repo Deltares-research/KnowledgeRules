@@ -51,7 +51,7 @@ Start the tool and open any of the knowledge rule XML files to visualise them.
 In this quick setup you will run a calculation for spawning suitability of the Ayu fish (<em>Plecoglossus_altivelis</em>) in the Tenryuu river, Japan.
 
 Automated knowledge rule loading can be done with HABITAT version 3.0.1.51448 and higher.
-Make sure this tool is installed. The tool is free-ware and can be requested by filling out the request form [here](https://oss.deltares.nl/web/habitat/download).
+Make sure this tool is installed. The tool is free-ware and can be requested by filling out the request form [here](https://oss.deltares.nl/web/habitat/download-habitat).
 
 1. When installed move to this folder:
 

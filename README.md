@@ -10,6 +10,8 @@ This platform contains ways to:
 
 Some links:
 
+[KnowledgeRules works with the Deltares HABITAT software, this can be found and downloaded here](https://oss.deltares.nl/web/habitat/)
+
 [Documentation and installation instructions can be found here](https://deltares.github.io/KnowledgeRules/).
 
 [Wiki pages of storage of knowledge rules can be found here](https://publicwiki.deltares.nl/display/HBTHOME/Ecological+knowledge+base).

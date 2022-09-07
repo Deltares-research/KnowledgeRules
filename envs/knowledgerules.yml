@@ -5,12 +5,15 @@ channels:
 
 dependencies:
   - python=3.9
+  - cx_Freeze
   - matplotlib
   - numpy
   - pyqt
   - lxml
   - pandas
+  - pip
   - asteval
   - requests
+  - tk
   - pip:
     - blockdiag==2.0.1

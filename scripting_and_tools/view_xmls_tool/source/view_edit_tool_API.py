@@ -24,8 +24,8 @@ sys.path.append("../../scripting_library/")
 import autecology_xml
 
 
-# # from PyQtWebEngine import QtWebEngineWidgets
-from PyQt5 import QtWebEngineWidgets
+# # from PyQtWebEngine import QtWebEngineWidgets ##Issue with cx_Freeze
+#from PyQt5 import QtWebEngineWidgets ##Issue with cx_Freeze
 
 class API:
 
@@ -113,7 +113,9 @@ class API:
 
 		#get value from combobox
 		comboboxvalue = obj.MainWindow.findChild(QtWidgets.QComboBox, obj.MainWindow.sender().objectName()).currentText()
-
+		if(comboboxvalue == ""):
+			comboboxvalue = xml_obj.flowdiagrams[0]
+		
 		#delete widget
 		obj.system_groupbox_1_layout.removeWidget(obj.fd_subframe_ready)
 		sip.delete(obj.fd_subframe_ready)
@@ -298,6 +300,7 @@ class API:
 		obj.system_groupbox_1.setObjectName("flow diagram")
 		obj.system_groupbox_1_layout = QtWidgets.QGridLayout()
 
+		obj.comboBox_3.clear() 
 		for fdname in xml_obj.flowdiagrams:
 			obj.comboBox_3.addItem(fdname)
 

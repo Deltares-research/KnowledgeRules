@@ -1,0 +1,103 @@
+<AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
+	<Topic>
+		<WFDindicator>
+			<CommonNames>
+				<Name name="Vis biomassa" language="NL"/>
+				<Name name="Fish biomass" language="ENG"/>
+			</CommonNames>
+		</WFDindicator>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="biomass">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Caribbean" id="7729891"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2002-01-01</StartDate>
+						<EndDate>2006-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>"&lt;a href=&quot;https://publicwiki.deltares.nl/display/HBTHOME/Visbiomassa#Visbiomassa-1&quot;&gt;#1&lt;/a&gt; is er een relatie opgesteld tussen de visbiomassa en het fosfaatgehalte voor meren en plassen in de Caraïben. De visbiomassa is de hoeveelheid natgewicht vis per hectare. Deze formule is alleen geldig bij fosfaatconcentraties van 10 tot 500 mgP/l.&lt;/p&gt;&lt;h2 id=&quot;Visbiomassa-Hoe?&quot;&gt;Hoe?&lt;/h2&gt;&lt;p&gt;De afgeleide formule luidt als volgt &lt;a href=&quot;https://publicwiki.deltares.nl/display/HBTHOME/Visbiomassa#Visbiomassa-2&quot;&gt;#2&lt;/a&gt;:&lt;/p&gt;&lt;p&gt;log B = 0.708 log &lt;a class=&quot;unresolved&quot; href=&quot;https://publicwiki.deltares.nl/display/HBTHOME/Visbiomassa#&quot;&gt;t-P&lt;/a&gt; + 0.774 (R^2^ = 0.75; P &amp;lt; 0.001)&lt;/p&gt;&lt;p&gt;B = visbiomassa (kg/ha)&lt;br&gt; t-P = totaal fosfaatgehalte (microgram P/L)&lt;/p&gt;&lt;h2 id=&quot;Visbiomassa-Referenties&quot;&gt;Referenties&lt;/h2&gt;&lt;p&gt;1 &lt;span class=&quot;confluence-anchor-link conf-macro output-inline&quot; data-hasbody=&quot;false&quot; data-macro-name=&quot;anchor&quot; id=&quot;Visbiomassa-1&quot;&gt; &lt;/span&gt; Hanson, J.M., Legget, W.C., 1982. Emperical prediction of fish biomass and yield. Canadian journal of Fisheries and Aquatic sciences 39 : 257-263&lt;br&gt; 2 &lt;span class=&quot;confluence-anchor-link conf-macro output-inline&quot; data-hasbody=&quot;false&quot; data-macro-name=&quot;anchor&quot; id=&quot;Visbiomassa-2&quot;&gt; &lt;/span&gt; Duel, H., Specken, B., 1994. Habitatmodel Aalscholver: een model voor het analyseren van de kwaliteit van water- en moerasgebieden als broed- en foerageerhabitat van de aalscholver (Phalacrocorax carbo). Werkdocument P95-019, TNO-BSA, Werkgroep Planning, Delft, december 1994&lt;/p&gt;"</text>
+					</Description>
+					<Description language="ENG">
+						<text>"TOBEFILLED"</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="fish_biomass">
+						<From name="fish_biomass">
+							<label>"fish biomass"</label>
+							<equation>average</equation>
+							<To>fish_biomass</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<FormulaBased name="fish_biomass">
+						<inputLayers>
+							<layer name="phosphorus_concentration">
+								<parameter_name>P_conc</parameter_name>
+								<parameter_cat>"water_quality"</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"µg/l"</unit>								
+								<statistic>"average"</statistic>
+								<layer_filename>"phosphorus_concentration"</layer_filename>
+								<description>"Average phosphorus concentration in water"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Fish biomass based on phosphorus concentration in lakes in the Caribbean"</description>
+							<author>M. Weeber</author>
+							<date>2015-10-06</date>
+							<references>
+								<reference author="Hanson, J.M., Legget, W.C.," title="Emperical prediction of fish biomass and yield. " identification="" year="1982" journal="Canadian journal of Fisheries and Aquatic sciences 39 : 257-263"/>
+								<reference author="Duel, H., Specken, B" title="Habitatmodel Aalscholver: een model voor het analyseren van de kwaliteit van water- en moerasgebieden als broed- en foerageerhabitat van de aalscholver (Phalacrocorax carbo)." identification="" year="1994" journal="Werkdocument P95-019, TNO-BSA, Werkgroep Planning, Delft, december 1994"/>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>0.708 * log(TP) + 0.774</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername="TP" type="scalar">
+									<parameter min_input="10" max_input="500"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="fish_biomass">
+								<parameter_name>fish_biomass</parameter_name>
+								<parameter_cat>"fish"</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"kg/ha"</unit>
+								<statistic>"average"</statistic>
+								<layer_filename>"fish_biomass"</layer_filename>
+								<description>"Fish biomass in kg per hectare"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>""</text>
+		</Description>
+		<Description language="ENG">
+			<text>"TOBEFILLED"</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+	<reference author="Hanson, J.M., Legget, W.C.," title="Emperical prediction of fish biomass and yield. " identification="" year="1982" journal="Canadian journal of Fisheries and Aquatic sciences 39 : 257-263"/>
+	<reference author="Duel, H., Specken, B" title="Habitatmodel Aalscholver: een model voor het analyseren van de kwaliteit van water- en moerasgebieden als broed- en foerageerhabitat van de aalscholver (Phalacrocorax carbo)." identification="" year="1994" journal="Werkdocument P95-019, TNO-BSA, Werkgroep Planning, Delft, december 1994"/>	
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

@@ -716,7 +716,7 @@ class AutecologyXML(_File):
 
 		return(rule_dict)
 
-	def make_fb_first_parametersettings(self, fb_data, fb_name):
+	def make_fb_first_parametersettings(self, fb_data):
 		parametersettings = {}
 		for i, var in enumerate(fb_data["parameters"]):
 			if(var["type"] == "scalar"):
@@ -1013,10 +1013,10 @@ class AutecologyXML(_File):
 			if(self.knowledgeRulesCategories[rule_nr] == self.XMLconvention["fb"]):
 				if(self.knowledgeRulesDict["rules"][rule_name]["type"] == "equation"):
 					rule = self.knowledgeRulesDict["rules"][rule_name]
-					(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule, rule_name)
+					(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule)
 					parametersettings = self.calculate_fb(rule, parametersettings, variableparameter)
 					try:
-						(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule, rule_name)
+						(parametersettings,variableparameter) = self.make_fb_first_parametersettings(rule)
 						parametersettings = self.calculate_fb(rule, parametersettings, variableparameter)
 					except:
 						raise RuntimeError("Equation of FormulaBased " + self.knowledgeRulesNames[rule_nr] + " is not yet correctly implemented.")

@@ -39,8 +39,8 @@
 				<KnowledgeRules>
 					<FormulaBased name="fish_biomass">
 						<inputLayers>
-							<layer name="phosphorus_concentration">
-								<parameter_name>P_conc</parameter_name>
+							<layer name="TP_conc">
+								<parameter_name>total_phosphorus_concentration</parameter_name>
 								<parameter_cat>"water_quality"</parameter_cat>
 								<period>Undefined</period>
 								<position>Undefined</position>
@@ -61,11 +61,11 @@
 							</references>
 							<Equation>
 								<SimpleEquation>
-									<equation>0.708 * log(TP) + 0.774</equation>
+									<equation>0.708 * log(TP_conc) + 0.774</equation>
 								</SimpleEquation>
 							</Equation>
 							<Parameters>
-								<valuesScalar layername="TP" type="scalar">
+								<valuesScalar layername="TP_conc" type="scalar">
 									<parameter min_input="10" max_input="500"/>
 								</valuesScalar>
 							</Parameters>

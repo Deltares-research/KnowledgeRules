@@ -768,7 +768,7 @@ class AutecologyXML(_File):
 		more_pr = [i for i in list(parametersettings.keys()) if(not (i in fb_data_names))]
 		less_pr = [i for i in fb_data_names if(not (i in list(parametersettings.keys())))]
 		if(len(more_pr) > 0):
-			raise ValueError("To many or incorrect parametersettings were provided : " + str(more_pr))
+			raise ValueError("To many or incorrect parametersettings were provided in FormulaBased " + fb_data["name"] + " : " + str(more_pr))
 		if(len(less_pr) > 0):
 			raise ValueError("Missing parametersettings : " + str(less_pr))
 

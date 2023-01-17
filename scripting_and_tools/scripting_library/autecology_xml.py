@@ -9,7 +9,7 @@ from lxml.etree import _Element as Element
 from lxml import etree as ET
 import pandas
 import numpy as np
-from asteval import Interpreter
+from asteval import Interpreter, make_symbol_table
 import inspect
 from collections import OrderedDict
 
@@ -457,6 +457,9 @@ class AutecologyXML(_File):
 		#Change PCRASTER function exp to understandable Python code
 		if("exp(" in formula_interpretation):
 			formula_interpretation = formula_interpretation.replace("exp(","math.exp(")
+        #Change PCRASTER function ln to understandable Python code
+		if("ln(" in formula_interpretation):
+			formula_interpretation = formula_interpretation.replace("ln(","math.log(")
 
 		#remove unnecessary indents
 		formula_interpretation = formula_interpretation.strip()
@@ -472,6 +475,10 @@ class AutecologyXML(_File):
 		#Change Python function math.exp to understandable asteval code (math library is preloaded)
 		if("exp(" in formula_interpretation_text):
 			formula_interpretation_asteval = formula_interpretation_asteval.replace("math.exp(","exp(")
+        
+        #Change Python function math.log to understandable asteval code (math library is preloaded)
+		if("ln(" in formula_interpretation_text):
+			formula_interpretation_asteval = formula_interpretation_asteval.replace("math.log(","ln(")
 
 		#remove unnecessary indents
 		formula_interpretation_asteval = formula_interpretation_asteval.strip()
@@ -568,7 +575,8 @@ class AutecologyXML(_File):
 		return(rule_dict)
 
 	def get_data_formula_based_data(self, fb_element):
-		ToFormula = Interpreter()
+		syms = make_symbol_table(math=math)
+		ToFormula = Interpreter(symtable = syms)
 
 		rule_dict = {}
 
@@ -752,7 +760,8 @@ class AutecologyXML(_File):
 
 		#set up formula interpretation
 		listparameter = False
-		ToFormula = Interpreter()
+		syms = make_symbol_table(math=math)
+		ToFormula = Interpreter(symtable = syms)
 		
 		#check if parametersettings is complete
 		fb_data_names = [value["layername"] for value in fb_data["parameters"]]

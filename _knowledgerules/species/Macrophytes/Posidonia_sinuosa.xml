@@ -1,0 +1,391 @@
+﻿<AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>1015125</EoLpagenr>
+			<LatName>Posidonia sinuosa</LatName>
+			<CommonNames>
+				<Name name="" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="Seagrass">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="Gulf St Vincent" id="2062018"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2012-01-01</StartDate>
+						<EndDate>2013-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="ENG">
+						<text>""</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="presence">
+						<From name="habitat_quality">
+							<label>"habitat_quality"</label>
+							<equation>min</equation>
+							<To>light_availability</To>
+							<To>salinity</To>
+							<To>temperature</To>
+							<To>flow_velocity</To>
+							<To>low_tide_exposure</To>
+							<To>substrate</To>
+							<To>wave_exposure</To>
+						</From>
+					</FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+					<ResponseCurve name="light_availability">
+						<inputLayers>
+							<layer name="percentage_of_ligth_at_bottom">
+								<parameter_name>percentage_of_ligth_at_bottom</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"%SI"</unit>
+								<statistic>average</statistic>
+								<layer_filename>percentage_of_ligth_at_bottom</layer_filename>
+								<description>"percentage of ligth that reaches the bottom %SI based on a 90-day rolling mean"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"percentage of ligth that reaches the bottom %SI based on a 90-day rolling mean"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+								<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="3.9" output="0"/>
+								<parameter input="4" output="0.1"/>
+								<parameter input="7.8" output="0.2"/>
+                <parameter input="8.5" output="0.3"/>
+								<parameter input="10" output="0.4"/>
+								<parameter input="11" output="0.5"/>
+								<parameter input="12" output="0.6"/>
+								<parameter input="12.2" output="0.7"/>
+								<parameter input="15" output="0.8"/>
+								<parameter input="17" output="0.9"/>
+								<parameter input="20" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_percentage_of_ligth_at_bottom">
+								<parameter_name>HSI_percentage_of_ligth_at_bottom</parameter_name>
+								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<layer_filename>HSI_percentage_of_ligth_at_bottom</layer_filename>
+								<description>Undefined</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="salinity">
+						<inputLayers>
+							<layer name="salinity">
+								<parameter_name>salinity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"ppt"</unit>
+								<statistic>average</statistic>
+								<layer_filename>salinity</layer_filename>
+								<description>" Annual average salinity expressed in ppt" </description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>" Annual average salinity expressed in ppt" </description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+								<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="10" output="0.5"/>
+								<parameter input="20" output="1"/>
+								<parameter input="40" output="1"/>
+								<parameter input="55" output="0.66"/>
+								<parameter input="57" output="0.33"/>
+								<parameter input="57.1" output="0"/>
+								<parameter input="100" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_salinity">
+								<parameter_name>HSI_salinity</parameter_name>
+								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<layer_filename>HSI_salinity</layer_filename>
+								<description>Undefined</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+          <ResponseCurve name="temperature">
+						<inputLayers>
+							<layer name="temperature">
+								<parameter_name>temperature</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>year</period>
+								<position>Undefined</position>
+								<unit>"degrees Celsius"</unit>
+								<statistic>average</statistic>
+								<layer_filename>temperature</layer_filename>
+								<description>"Annual average water temperature expressed in degrees Celsius"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Annual average water temperature expressed in degrees Celsius"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+								<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="12.9" output="0"/>
+								<parameter input="13" output="0.5"/>
+								<parameter input="18" output="1"/>
+								<parameter input="20.5" output="1"/>
+								<parameter input="23" output="1"/>
+								<parameter input="24" output="0.25"/>
+								<parameter input="24.1" output="0"/>
+								<parameter input="50" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_temperature">
+								<parameter_name>HSI_temperature</parameter_name>
+								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<layer_filename>HSI_salinity</layer_filename>
+								<description>Undefined</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="flow_velocity">
+						<inputLayers>
+							<layer name="flow_velocity">
+								<parameter_name>flow_velocity</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"m/s"</unit>
+								<statistic>average</statistic>
+								<layer_filename>flow_velocity</layer_filename>
+								<description>"Maximum hourly flow velocity expressed in meters per second"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum hourly flow velocity expressed in meters per second"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+								<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.05" output="1"/>
+								<parameter input="1.5" output="1"/>
+								<parameter input="1.6" output="0"/>
+								<parameter input="30" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_flow_velocity">
+								<parameter_name>HSI_flow_velocity</parameter_name>
+								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<layer_filename>HSI_flow_velocity</layer_filename>
+								<description>Undefined</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+          <ResponseCurve name="low_tide_exposure">
+						<inputLayers>
+							<layer name="low_tide_exposure">
+								<parameter_name>low_tide_exposure</parameter_name>
+								<parameter_cat>waterlevel</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<layer_filename>low_tide_exposure</layer_filename>
+								<description>Average fraction 
+of the time that the water depth exceeds 10 cm</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Average fraction 
+of the time that the water depth exceeds 10 cm"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+								<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.99" output="0"/>
+								<parameter input="1" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_low_tide_exposure">
+								<parameter_name>HSI_low_tide_exposure</parameter_name>
+								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<layer_filename>HSI_low_tide_exposure</layer_filename>
+								<description>Undefined</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+          <ResponseCurve name="substrate">
+						<inputLayers>
+							<layer name="soft_substrate">
+								<parameter_name>soft_substrate</parameter_name>
+								<parameter_cat>substrate</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"%"</unit>
+								<statistic>average</statistic>
+								<layer_filename>low_tide_exposure</layer_filename>
+								<description>Percentage of soft substrate in area</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Percentage of soft substrate in area vs hard substrate"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+								<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="0"/>
+								<parameter input="0.1" output="0"/>
+								<parameter input="0.9" output="1"/>
+								<parameter input="1" output="1"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_substrate">
+								<parameter_name>HSI_substrate</parameter_name>
+								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<layer_filename>HSI_substrate</layer_filename>
+								<description>Undefined</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+					<ResponseCurve name="wave_exposure">
+						<inputLayers>
+							<layer name="wave_exposure">
+								<parameter_name>Waves</parameter_name>
+								<parameter_cat>Undefined</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"m/s"</unit>
+								<statistic>average</statistic>
+								<layer_filename>wave_exposure</layer_filename>
+								<description>"Maximum hourly wave exposure (bottom orbital 
+velocity)"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>scalar</type>
+							<description>"Maximum hourly wave exposure (bottom orbital 
+velocity)"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+								<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+							</references>
+							<valuesScalar>
+								<parameter input="0" output="1"/>
+								<parameter input="0.4" output="1"/>
+								<parameter input="0.41" output="0"/>
+								<parameter input="0.5" output="0"/>
+								<parameter input="2" output="0"/>
+							</valuesScalar>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_wave_exposure">
+								<parameter_name>HSI_wave_exposure</parameter_name>
+								<parameter_cat>HSI</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>factor</unit>
+								<statistic>average</statistic>
+								<layer_filename>HSI_wave_exposure</layer_filename>
+								<description>Undefined</description>
+							</layer>
+						</outputLayers>
+					</ResponseCurve>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="ENG">
+			<text>""</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+    <reference author="Erftemeijer, P.L.A., Van Gils, J, Fernandes,M.B., Daly, R., Van der Heijden, L., Herman, P.M.J." year="2023" title="Habitat suitability modelling to improve understanding of seagrass loss and 
+recovery and to guide decisions in relation to coastal discharge" journal="Marine Pollution Bulletin" identification="https://doi.org/10.1016/j.marpolbul.2022.114370"/>
+		<reference author="Erftemeijer, P.L.A. " year="2013" title=". Seagrass Habitat Model – Adelaide's Coastal Waters. Literature 
+Review of Habitat Requirements of Seagrasses in Adelaide's Coastal Waters." journal="" identification="Technical Report WV04758"/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

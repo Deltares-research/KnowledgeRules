@@ -1,0 +1,267 @@
+﻿<AutecologyXML xmlns="https://github.com/Deltares/KnowledgeRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://github.com/Deltares/KnowledgeRules ../../../xmlschema/AutecologyXML.xsd">
+	<Topic>
+		<Species>
+			<EoLpagenr>46466768</EoLpagenr>
+			<LatName>Modiolus modiolus</LatName>
+			<CommonNames>
+				<Name name="Gewone paardenmossel" language="NL"/>
+				<Name name="Northern horsemussel" language="ENG"/>
+			</CommonNames>
+			<SpecCode/>
+		</Species>
+	</Topic>
+	<Autecology>
+		<ModelType name="HSI">
+			<System name="North Sea">
+				<Scope>
+					<SpatialScope>
+						<GeoNames name="North Sea" id="2960848"/>
+					</SpatialScope>
+					<TemporalScope>
+						<StartDate>2020-01-01</StartDate>
+						<EndDate>2021-01-01</EndDate>
+					</TemporalScope>
+				</Scope>
+				<SystemDescription>
+					<Description language="NL">
+						<text>"To be filled"</text>
+					</Description>
+					<Description language="ENG">
+						<text>"To be filled"</text>
+					</Description>
+				</SystemDescription>
+				<SystemFlowDiagrams>
+					<FlowDiagram name="northern horsemussel">
+						<From name="habitat_suitability">
+							<label>"habitat_suitability"</label>
+              <equation>knowledge_rule</equation>
+							<To>HGI_M_modiolus</To>
+							<To>Odds_M_modiolus</To>
+          </From>
+          </FlowDiagram>
+				</SystemFlowDiagrams>
+				<KnowledgeRules>
+          <FormulaBased name="HGI_M_modiolus">
+						<inputLayers>
+							<layer name="Odds_M_modiolus">
+								<parameter_name>Odds_M_modiolus</parameter_name>
+								<parameter_cat>Mollucs</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"-"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"Odds_M_modiolus"</layer_filename>
+								<description>"Log odds (logit) for the Modiolus modiolus species"</description>
+							</layer>
+						</inputLayers>
+            <Content>
+							<type>equation</type>
+							<description>"Equation to calculate the Log Odds (Logit) to HSI for Modiolus modiolus"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="P. Herman and F.F. van Rees" year="2021" title="Mapping Reef forming North Sea Species" identification="11207716-000-ZKS-0001" journal=""/>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"exp(Odds_M_modiolus) / (1 + exp(Odds_M_modiolus))"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername="Odds_M_modiolus" type="scalar">
+									<parameter min_input="-200" max_input="200"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="HSI_M_modiolus">
+								<parameter_name>HSI_M_modiolus</parameter_name>
+								<parameter_cat>Mollucs</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"-"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"HSI_M_modiolus"</layer_filename>
+								<description>"Habitat suitability for the Modiolus modiolus species"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+					<FormulaBased name="Odds_M_modiolus">
+						<inputLayers>
+							<layer name="mean_stress">
+								<parameter_name>mean_stress</parameter_name>
+								<parameter_cat>Dynamics</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"factor"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"mean_stress"</layer_filename>
+								<description>"Stress experienced at bedlevel (DCSM-FM)"</description>
+							</layer>
+							<layer name="depth">
+								<parameter_name>depth</parameter_name>
+								<parameter_cat>Water level</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"m"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"depth"</layer_filename>
+								<description>"Depth at 178 m resolution (EMODnet)"</description>
+							</layer>
+              <layer name="bpi5">
+								<parameter_name>bpi5</parameter_name>
+								<parameter_cat>Water level</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"bpi5"</layer_filename>
+								<description>"Bathymetric Position Index 5 km (VdReijden 2018)"</description>
+							</layer>
+              <layer name="bpi10">
+								<parameter_name>bpi10</parameter_name>
+								<parameter_cat>Water level</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"bpi10"</layer_filename>
+								<description>"Bathymetric Position Index 10 km (VdReijden 2018)"</description>
+							</layer>
+              <layer name="bpi75">
+								<parameter_name>bpi75</parameter_name>
+								<parameter_cat>Water level</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"bpi75"</layer_filename>
+								<description>"Bathymetric Position Index 75 km (VdReijden 2018)"</description>
+							</layer>
+              <layer name="meantemp">
+								<parameter_name>meantemp</parameter_name>
+								<parameter_cat>Temperature</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"meantemp"</layer_filename>
+								<description>"Average temperature over the year (Copernicus)"</description>
+							</layer>
+              <layer name="difftemp">
+								<parameter_name>difftemp</parameter_name>
+								<parameter_cat>Temperature</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"difftemp"</layer_filename>
+								<description>"Temperature Difference over the year (Copernicus)"</description>
+							</layer>
+              <layer name="salinity">
+								<parameter_name>salinity</parameter_name>
+								<parameter_cat>Salinity</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"salinity"</layer_filename>
+								<description>"Mean salinity over year (Copernicus)"</description>
+							</layer>
+              <layer name="gravel">
+								<parameter_name>gravel</parameter_name>
+								<parameter_cat>Substrate</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"gravel"</layer_filename>
+								<description>"Fraction of gravel in sediment (Stephens2015)"</description>
+							</layer>
+              <layer name="mud">
+								<parameter_name>mud</parameter_name>
+								<parameter_cat>Substrate</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"unknown"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"mud"</layer_filename>
+								<description>"Fraction of mud in sediment (Stephens2015)"</description>
+							</layer>
+						</inputLayers>
+						<Content>
+							<type>equation</type>
+							<description>"Equation to calculate the Log Odds (logit) for Modiolus modiiolus"</description>
+							<author>"Marc Weeber"</author>
+							<date>2023-01-10</date>
+							<references>
+								<reference author="P. Herman and F.F. van Rees" year="2021" title="Mapping Reef forming North Sea Species" identification="11207716-000-ZKS-0001" journal=""/>
+							</references>
+							<Equation>
+								<SimpleEquation>
+									<equation>"-42.2252 + 3.1633 * mean_stress + -1.2120 * mean_stress^2 + 0.0099 * depth +  0.0001 * depth^2 + -0.1310 * bpi5 + -0.0025 * bpi5^2 + 0.2042* bpi10 + 0.0046 * bpi10^2 + 0.0677 * bpi75 + -0.0023 * bpi75^2 + -0.9922* meantemp + -0.0207 * meantemp^2 + -0.7015 * difftemp + 0.0405 * difftemp^2 + 1.8861* salinity + -0.0098 * salinity^2 + 4.2560 * gravel + -0.5981 * gravel^2 + -17.6456 * mud + 23.7077 * mud^2"</equation>
+								</SimpleEquation>
+							</Equation>
+							<Parameters>
+								<valuesScalar layername="mean_stress" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+								<valuesScalar layername="depth" type="scalar">
+									<parameter min_input="0" max_input="700"/>
+								</valuesScalar>
+                <valuesScalar layername="bpi5" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+                <valuesScalar layername="bpi10" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+                <valuesScalar layername="bpi75" type="scalar">
+									<parameter min_input="0" max_input="10"/>
+								</valuesScalar>
+                <valuesScalar layername="meantemp" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+                <valuesScalar layername="difftemp" type="scalar">
+									<parameter min_input="0" max_input="30"/>
+								</valuesScalar>
+								<valuesScalar layername="salinity" type="scalar">
+									<parameter min_input="0" max_input="40"/>
+								</valuesScalar>
+								<valuesScalar layername="gravel" type="scalar">
+									<parameter min_input="0.01" max_input="1.0"/>
+								</valuesScalar>
+                <valuesScalar layername="mud" type="scalar">
+									<parameter min_input="0.01" max_input="1.0"/>
+								</valuesScalar>
+							</Parameters>
+						</Content>
+						<outputLayers>
+							<layer name="Odds_M_modiolus">
+								<parameter_name>Odds_M_modiolus</parameter_name>
+								<parameter_cat>Mollucs</parameter_cat>
+								<period>Undefined</period>
+								<position>Undefined</position>
+								<unit>"-"</unit>
+								<statistic>none</statistic>
+								<layer_filename>"Odds_M_modiolus"</layer_filename>
+								<description>"Log odds (logit) for the Modiolus modiolus species"</description>
+							</layer>
+						</outputLayers>
+					</FormulaBased>
+				</KnowledgeRules>
+			</System>
+		</ModelType>
+	</Autecology>
+	<TopicDescription>
+		<Description language="NL">
+			<text>""</text>
+		</Description>
+		<Description language="ENG">
+			<text>"To be filled"</text>
+		</Description>
+	</TopicDescription>
+	<Documentation>
+		<reference author="P. Herman and F.F. van Rees" year="2021" title="Mapping Reef forming North Sea Species" identification="11207716-000-ZKS-0001" journal=""/>
+	</Documentation>
+	<DataSources/>
+</AutecologyXML>

@@ -731,7 +731,7 @@ class AutecologyXML(_File):
 				min_var = round(var["data"]["min_input"].iloc[0],5)
 				if(i == 0):
 					max_var = round(var["data"]["max_input"].iloc[0],5)
-					stepsize = round((max_var-min_var)/10,5)
+					stepsize = round((max_var-min_var)/1000,5)
 					variableparameter = {var["layername"] : list(np.arange(min_var,max_var,stepsize))}
 				
 				parametersettings[var["layername"]] = min_var
